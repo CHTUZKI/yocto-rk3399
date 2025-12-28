@@ -1,0 +1,111 @@
+
+# ============================================
+# 标准构建流程
+# ============================================
+
+# 1. 清除旧的环境变量（如果存在）
+unset BB_ENV_EXTRAWHITE
+
+# 2. 进入项目根目录
+cd /home/xuning/yocto-rk3399
+
+# 3. 初始化构建环境（指向 build 目录）
+source poky/oe-init-build-env build
+
+# 4. 验证配置（可选，首次构建建议执行）
+# bitbake-layers show-layers
+# bitbake -e | grep ^MACHINE=
+
+# 5. 构建最小镜像
+bitbake rk3399-image-minimal
+
+
+
+
+
+# ============================================
+# 清理构建命令
+# ============================================
+
+# 完全清理（删除所有构建产物和缓存）
+cd /home/xuning/yocto-rk3399
+source poky/oe-init-build-env build
+bitbake rk3399-image-minimal -c cleanall
+bitbake rk3399-image-minimal
+
+# 清理任务（保留下载的源码）
+cd /home/xuning/yocto-rk3399
+source poky/oe-init-build-env build
+bitbake rk3399-image-minimal -c clean
+bitbake rk3399-image-minimal
+
+# 清理共享状态缓存（强制重新构建）
+cd /home/xuning/yocto-rk3399
+unset BB_ENV_EXTRAWHITE
+source poky/oe-init-build-env build
+bitbake rk3399-image-minimal -c cleansstate
+bitbake rk3399-image-minimal
+
+# ============================================
+# 单独构建组件
+# ============================================
+
+# === 构建U-Boot ===
+cd /home/xuning/yocto-rk3399
+unset BB_ENV_EXTRAWHITE
+source poky/oe-init-build-env build
+
+# 清理并重新构建U-Boot（完全清理）
+bitbake u-boot-rockchip -c cleansstate
+bitbake u-boot-rockchip
+
+# 重新构建镜像（包含新的U-Boot）
+bitbake rk3399-image-minimal
+
+# 或者只重新配置和编译（更快，不清理）
+bitbake u-boot-rockchip -c configure -c compile -f
+bitbake u-boot-rockchip
+
+# === 构建内核 ===
+cd /home/xuning/yocto-rk3399
+unset BB_ENV_EXTRAWHITE
+source poky/oe-init-build-env build
+bitbake linux-rockchip -c cleansstate
+bitbake linux-rockchip
+bitbake rk3399-image-minimal
+
+# === 构建 rkbin-tools（首次构建需要）===
+cd /home/xuning/yocto-rk3399
+unset BB_ENV_EXTRAWHITE
+source poky/oe-init-build-env build
+bitbake rkbin-tools-native
+
+# ============================================
+# 验证和调试命令
+# ============================================
+
+# 验证层配置
+cd /home/xuning/yocto-rk3399
+unset BB_ENV_EXTRAWHITE
+source poky/oe-init-build-env build
+bitbake-layers show-layers
+bitbake-layers show-recipes | grep rk3399
+
+# 查看机器配置
+bitbake -e | grep ^MACHINE=
+
+# 查看镜像输出路径
+ls -lh tmp/deploy/images/rk3399-firefly/
+
+# 查看构建日志（如果出错）
+# tail -f tmp/log/cooker/rk3399-firefly/console-latest.log
+
+# ============================================
+# 烧录工具（Windows）
+# ============================================
+# RKDevTool.exe
+# 
+# 烧录到SD卡（Linux）:
+# sudo bmaptool copy tmp/deploy/images/rk3399-firefly/rk3399-image-minimal-rk3399-firefly.wic /dev/sdX
+# 或使用 dd:
+# sudo dd if=tmp/deploy/images/rk3399-firefly/rk3399-image-minimal-rk3399-firefly.wic of=/dev/sdX bs=4M status=progress

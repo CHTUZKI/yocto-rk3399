@@ -1,0 +1,41 @@
+# Yocto build directories (track only build/conf, ignore the rest)
+build/*
+!build/conf/
+downloads/
+sstate-cache/
+tmp/
+
+# External git repositories (now submodules)
+# poky/ is now a submodule, no need to ignore
+
+# Build artifacts
+*.log
+*.tmp
+*.lock
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Editor and IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Local configuration files (keep examples)
+local.conf.local
+site.conf.local
+auto.conf
+auto.conf.cmd
+
+# Temporary files
+*.bak
+*.orig
+*.rej
+

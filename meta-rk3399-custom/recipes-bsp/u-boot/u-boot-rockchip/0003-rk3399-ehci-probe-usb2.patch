@@ -1,0 +1,48 @@
+From ccfd8b3f8b001aab0a2469e43ce8768863cb454d Mon Sep 17 00:00:00 2001
+From: schwar3kat <61094841+schwar3kat@users.noreply.github.com>
+Date: Wed, 18 Jan 2023 15:46:39 +1300
+Subject: [PATCH] arm: dts: rockchip: rk3399: usb: ehci: Fix EHCI probe in rk3399 to access peripherals by USB 2.
+
+Commit message: Clean up mbox format in rk3399-ehci-probe-usb2.patch. No diff changes.
+
+arch/arm/dts/rk3399.dtsi has a node
+
+  usb_host0_ehci: usb@fe380000 {
+       compatible = "generic-ehci";
+
+with clocks:
+
+       clocks = <&cru HCLK_HOST0>, <&cru HCLK_HOST0_ARB>,
+                <&u2phy0>;
+
+The first 2 refer to nodes with class UCLASS_CLK, but &u2phy0
+has class UCLASS_PHY.
+
+Since clk_get_bulk() only looks for devices with UCLASS_CLK,
+it fails with -ENODEV and then ehci_usb_probe() aborts.
+
+This patch removes u2phy0 from the clock list in rk3399-u-boot.dtsi.
+
+Signed-off-by: Xavier Drudis Ferran <xdrudis@tinet.cat>
+
+---
+ arch/arm/dts/rk3399-u-boot.dtsi | 8 ++++++++
+ 1 file changed, 8 insertions(+)
+
+diff --git a/arch/arm/dts/rk3399-u-boot.dtsi b/arch/arm/dts/rk3399-u-boot.dtsi
+index 716b9a43..63c7b104 100644
+--- a/arch/arm/dts/rk3399-u-boot.dtsi
++++ b/arch/arm/dts/rk3399-u-boot.dtsi
+@@ -147,3 +147,11 @@
+ &vopl {
+ 	u-boot,dm-pre-reloc;
+ };
++
++&usb_host0_ehci {
++	clocks = <&cru HCLK_HOST0>, <&cru HCLK_HOST0_ARB>;
++};
++
++&usb_host1_ehci {
++	clocks = <&cru HCLK_HOST1>, <&cru HCLK_HOST1_ARB>;
++};
+

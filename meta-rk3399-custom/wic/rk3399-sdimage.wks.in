@@ -1,0 +1,17 @@
+# WIC file for RK3399 SD/eMMC image
+# Based on Armbian's partition layout
+
+# Bootloader partitions (before partition table)
+# idbloader.bin at sector 64 (0x40)
+# uboot.img at sector 16384 (0x4000)
+# trust.bin at sector 24576 (0x6000)
+
+# Partition table starts at 16MB (sector 32768)
+part /boot --source bootimg-partition --ondisk mmcblk --fstype=vfat --label boot --align 4096 --size 240
+part / --source rootfs --ondisk mmcblk --fstype=ext4 --label root --align 4096
+
+# Bootloader installation
+# Note: Bootloader files (idbloader.bin, uboot.img, trust.bin) are written at specific offsets
+# before the partition table by the bootloader plugin
+bootloader --ptable gpt --append "--idbloader ${DEPLOY_DIR_IMAGE}/idbloader.bin --offset 64 --uboot ${DEPLOY_DIR_IMAGE}/uboot.img --offset 16384 --trust ${DEPLOY_DIR_IMAGE}/trust.bin --offset 24576"
+
