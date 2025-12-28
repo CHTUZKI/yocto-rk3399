@@ -2,6 +2,8 @@ SUMMARY = "Minimal system image for RK3399"
 DESCRIPTION = "Minimal system image for RK3399 platform with essential packages only"
 
 inherit core-image
+inherit rockchip-image
+inherit bootimg-rockchip
 
 # Base packages - minimal set
 IMAGE_INSTALL = " \
@@ -39,9 +41,10 @@ WKS_FILE = "rk3399-sdimage.wks.in"
 BOOT_PARTITION_SIZE = "240"
 
 # Boot files to install in boot partition
-# RK3399 uses Image (uncompressed kernel) and device tree
+# RK3399 uses Image (uncompressed kernel), device tree, and boot script
 # Device tree file name without path prefix
-IMAGE_BOOT_FILES = "Image rk3399-firefly.dtb"
+# boot.scr and boot.cmd are in boot/ subdirectory
+IMAGE_BOOT_FILES = "Image rk3399-firefly.dtb boot/boot.scr boot/boot.cmd"
 
 # Create .img file from .wic file (compatible with Armbian naming)
 # This creates a .img file by copying the .wic file after all images are built

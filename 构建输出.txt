@@ -1,0 +1,81 @@
+Loading cache...done.
+Loaded 1657 entries from dependency cache.
+Parsing recipes...done.
+Parsing of 893 .bb files complete (892 cached, 1 parsed). 1658 targets, 60 skipped, 0 masked, 0 errors.
+NOTE: Resolving any missing task queue dependencies
+
+Build Configuration:
+BB_VERSION           = "2.0.0"
+BUILD_SYS            = "x86_64-linux"
+NATIVELSBSTRING      = "universal"
+TARGET_SYS           = "aarch64-poky-linux"
+MACHINE              = "rk3399-firefly"
+DISTRO               = "poky"
+DISTRO_VERSION       = "4.0.32"
+TUNE_FEATURES        = "aarch64"
+TARGET_FPU           = ""
+meta                 
+meta-poky            
+meta-yocto-bsp       = "kirkstone:2c05660b21c7cc1082aeac8b75d8a2d82e249f63"
+meta-rk3399-custom   = "main:538dc6598c58a9df9c705631d33f36e785c21798"
+
+Initialising tasks...WARNING: /home/xuning/yocto-rk3399/meta-rk3399-custom/recipes-kernel/linux/linux-rockchip_6.1.bb:do_compile is tainted from a forced run
+WARNING: /home/xuning/yocto-rk3399/meta-rk3399-custom/recipes-bsp/u-boot/u-boot-rockchip_2025.10.bb:do_compile is tainted from a forced run
+done.
+Sstate summary: Wanted 8 Local 1 Mirrors 0 Missed 7 Current 1376 (12% match, 99% complete)
+NOTE: Executing Tasks
+NOTE: Running setscene task 1384 of 1384 (/home/xuning/yocto-rk3399/meta-rk3399-custom/recipes-bsp/rk3399-blobs/rk3399-blobs.bb:do_populate_lic_setscene)
+NOTE: recipe rk3399-blobs-1.0-r0: task do_populate_lic_setscene: Started
+NOTE: recipe rk3399-blobs-1.0-r0: task do_populate_lic_setscene: Succeeded
+NOTE: Running task 2608 of 3522 (/home/xuning/yocto-rk3399/meta-rk3399-custom/recipes-bsp/rk3399-blobs/rk3399-blobs.bb:do_install)
+NOTE: recipe rk3399-blobs-1.0-r0: task do_install: Started
+NOTE: recipe rk3399-blobs-1.0-r0: task do_install: Succeeded
+NOTE: Running task 3270 of 3522 (/home/xuning/yocto-rk3399/meta-rk3399-custom/recipes-bsp/rk3399-blobs/rk3399-blobs.bb:do_package)
+NOTE: Running task 3485 of 3522 (/home/xuning/yocto-rk3399/meta-rk3399-custom/recipes-bsp/rk3399-blobs/rk3399-blobs.bb:do_deploy)
+NOTE: recipe rk3399-blobs-1.0-r0: task do_package: Started
+NOTE: recipe rk3399-blobs-1.0-r0: task do_deploy: Started
+NOTE: recipe rk3399-blobs-1.0-r0: task do_deploy: Succeeded
+NOTE: recipe rk3399-blobs-1.0-r0: task do_package: Succeeded
+NOTE: Running task 3509 of 3522 (/home/xuning/yocto-rk3399/meta-rk3399-custom/recipes-bsp/rk3399-blobs/rk3399-blobs.bb:do_packagedata)
+NOTE: recipe rk3399-blobs-1.0-r0: task do_packagedata: Started
+NOTE: recipe rk3399-blobs-1.0-r0: task do_packagedata: Succeeded
+NOTE: Running task 3510 of 3522 (/home/xuning/yocto-rk3399/meta-rk3399-custom/recipes-bsp/rk3399-blobs/rk3399-blobs.bb:do_package_write_rpm)
+NOTE: Running task 3511 of 3522 (/home/xuning/yocto-rk3399/meta-rk3399-custom/recipes-bsp/rk3399-blobs/rk3399-blobs.bb:do_package_qa)
+NOTE: recipe rk3399-blobs-1.0-r0: task do_package_qa: Started
+NOTE: recipe rk3399-blobs-1.0-r0: task do_package_write_rpm: Started
+NOTE: recipe rk3399-blobs-1.0-r0: task do_package_qa: Succeeded
+NOTE: recipe rk3399-blobs-1.0-r0: task do_package_write_rpm: Succeeded
+NOTE: Running task 3512 of 3522 (/home/xuning/yocto-rk3399/meta-rk3399-custom/recipes-core/images/rk3399-image-minimal.bb:do_rootfs)
+NOTE: recipe rk3399-image-minimal-1.0-r0: task do_rootfs: Started
+NOTE: recipe rk3399-image-minimal-1.0-r0: task do_rootfs: Succeeded
+NOTE: Running task 3513 of 3522 (/home/xuning/yocto-rk3399/meta-rk3399-custom/recipes-core/images/rk3399-image-minimal.bb:do_flush_pseudodb)
+NOTE: recipe rk3399-image-minimal-1.0-r0: task do_flush_pseudodb: Started
+NOTE: recipe rk3399-image-minimal-1.0-r0: task do_flush_pseudodb: Succeeded
+NOTE: Running task 3514 of 3522 (/home/xuning/yocto-rk3399/meta-rk3399-custom/recipes-core/images/rk3399-image-minimal.bb:do_image_qa)
+NOTE: recipe rk3399-image-minimal-1.0-r0: task do_image_qa: Started
+NOTE: recipe rk3399-image-minimal-1.0-r0: task do_image_qa: Succeeded
+NOTE: Running task 3515 of 3522 (/home/xuning/yocto-rk3399/meta-rk3399-custom/recipes-core/images/rk3399-image-minimal.bb:do_image)
+NOTE: recipe rk3399-image-minimal-1.0-r0: task do_image: Started
+NOTE: recipe rk3399-image-minimal-1.0-r0: task do_image: Succeeded
+NOTE: Running task 3516 of 3522 (/home/xuning/yocto-rk3399/meta-rk3399-custom/recipes-core/images/rk3399-image-minimal.bb:do_write_wks_template)
+NOTE: Running task 3517 of 3522 (/home/xuning/yocto-rk3399/meta-rk3399-custom/recipes-core/images/rk3399-image-minimal.bb:do_rootfs_wicenv)
+NOTE: recipe rk3399-image-minimal-1.0-r0: task do_write_wks_template: Started
+NOTE: recipe rk3399-image-minimal-1.0-r0: task do_write_wks_template: Succeeded
+NOTE: Running task 3518 of 3522 (/home/xuning/yocto-rk3399/meta-rk3399-custom/recipes-core/images/rk3399-image-minimal.bb:do_image_ext4)
+NOTE: recipe rk3399-image-minimal-1.0-r0: task do_rootfs_wicenv: Started
+NOTE: recipe rk3399-image-minimal-1.0-r0: task do_rootfs_wicenv: Succeeded
+NOTE: Running task 3519 of 3522 (/home/xuning/yocto-rk3399/meta-rk3399-custom/recipes-core/images/rk3399-image-minimal.bb:do_image_wic)
+NOTE: recipe rk3399-image-minimal-1.0-r0: task do_image_ext4: Started
+NOTE: recipe rk3399-image-minimal-1.0-r0: task do_image_wic: Started
+NOTE: recipe rk3399-image-minimal-1.0-r0: task do_image_ext4: Succeeded
+NOTE: recipe rk3399-image-minimal-1.0-r0: task do_image_wic: Succeeded
+NOTE: Running task 3520 of 3522 (/home/xuning/yocto-rk3399/meta-rk3399-custom/recipes-core/images/rk3399-image-minimal.bb:do_image_complete)
+NOTE: recipe rk3399-image-minimal-1.0-r0: task do_image_complete: Started
+NOTE: recipe rk3399-image-minimal-1.0-r0: task do_image_complete: Succeeded
+NOTE: Running task 3521 of 3522 (/home/xuning/yocto-rk3399/meta-rk3399-custom/recipes-core/images/rk3399-image-minimal.bb:do_populate_lic_deploy)
+NOTE: recipe rk3399-image-minimal-1.0-r0: task do_populate_lic_deploy: Started
+NOTE: recipe rk3399-image-minimal-1.0-r0: task do_populate_lic_deploy: Succeeded
+NOTE: Running noexec task 3522 of 3522 (/home/xuning/yocto-rk3399/meta-rk3399-custom/recipes-core/images/rk3399-image-minimal.bb:do_build)
+NOTE: Tasks Summary: Attempted 3522 tasks of which 3505 didn't need to be rerun and all succeeded.
+
+Summary: There were 2 WARNING messages.
