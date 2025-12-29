@@ -52,6 +52,17 @@ RK3399_BOOT_SCENARIO = "only-blobs"
 python do_patch:append() {
     import os
     import shutil
+    import subprocess
+    
+    # Replace clk_rk3399.c with debug version
+    debug_clk = "/home/xuning/yocto-rk3399/meta-rk3399-custom/recipes-bsp/u-boot/u-boot-rockchip/debug-files/clk_rk3399.c"
+    target_clk = os.path.join(d.getVar('S'), 'drivers/clk/rockchip/clk_rk3399.c')
+    
+    if os.path.exists(debug_clk):
+        bb.note("Replacing clk_rk3399.c with debug version from %s" % debug_clk)
+        shutil.copy2(debug_clk, target_clk)
+    else:
+        bb.warn("Debug file not found: %s, using original clk_rk3399.c" % debug_clk)
     
     # Replace serial driver with debug version
     debug_file = "/home/xuning/yocto-rk3399/meta-rk3399-custom/recipes-bsp/u-boot/u-boot-rockchip/debug-files/serial_ns16550.c"
@@ -153,6 +164,18 @@ do_configure:prepend() {
     # Copy Firefly device tree file to U-Boot source tree
     install -d ${S}/arch/arm/dts
     install -m 0644 ${WORKDIR}/rk3399-firefly.dts ${S}/arch/arm/dts/
+}
+
+do_compile:prepend() {
+    # Verify that bl31.elf exists before compilation
+    # This check provides a clear error message if the dependency wasn't deployed
+    # The task dependency (do_compile[depends]) should ensure it's built, but this
+    # provides a safety check and clearer error message
+    if [ ! -f "${DEPLOY_DIR_IMAGE}/bl31.elf" ]; then
+        bbfatal "bl31.elf not found in ${DEPLOY_DIR_IMAGE}/bl31.elf. " \
+                "This usually happens after cleansstate. " \
+                "Please run: bitbake arm-trusted-firmware-rk3399 -c deploy"
+    fi
 }
 
 do_deploy:append() {

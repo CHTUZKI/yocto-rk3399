@@ -91,9 +91,10 @@ fi
 # Set boot arguments
 # Add earlycon for early kernel console output (fixes serial garbage during kernel boot)
 # RK3399 UART2 (ttyS2) base address is 0xff1a0000
-# Format: earlycon=<name>[,<options>] where name can be uart8250,mmio32,<address>[,baudrate]
-# Include baud rate (1500000) to match U-Boot's baud rate
-setenv bootargs "earlycon=uart8250,mmio32,0xff1a0000,1500000 root=${rootdev} rootwait rootfstype=${rootfstype} ${consoleargs} consoleblank=0 loglevel=${verbosity}"
+# Format: earlycon=uart8250,mmio32,<address>,<baudrate>n8
+# For RK3399, use uart8250 driver with mmio32 access mode, explicitly specify baudrate 1500000
+# The format must be: earlycon=uart8250,mmio32,0xff1a0000,1500000n8
+setenv bootargs "earlycon=uart8250,mmio32,0xff1a0000,1500000n8 root=${rootdev} rootwait rootfstype=${rootfstype} ${consoleargs} consoleblank=0 loglevel=${verbosity}"
 
 # Load kernel, device tree, and optional ramdisk
 echo "[BOOTSCRIPT] Loading kernel from ${prefix}Image"

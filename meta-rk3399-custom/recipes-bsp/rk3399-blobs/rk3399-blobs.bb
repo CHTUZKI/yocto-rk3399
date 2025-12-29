@@ -12,8 +12,9 @@ DEPENDS = " \
     rkbin-tools-native \
 "
 
-# Ensure U-Boot is compiled before we try to use its mkimage
+# Ensure U-Boot is compiled and deployed before we try to use u-boot-dtb.bin
 do_compile[depends] += "u-boot-rockchip:do_compile"
+do_compile[depends] += "u-boot-rockchip:do_deploy"
 # Also depend on rk-binary-native for boot_merger and make.sh scripts
 do_compile[depends] += "rk-binary-native:do_populate_sysroot"
 

@@ -1,388 +1,51 @@
-00:06:50 704	Layer<>: RunProc is ending, ret=0
-00:06:52 113	Error:Loading loader failed,err=-9
-00:07:08 247	瑞芯微开发工具 v3.3.1.0 start run
-00:07:45 696	Error:Loading loader failed,err=-9
-00:07:50 706	瑞芯微开发工具 v3.3.1.0 start run
-00:07:56 547	Error:RKU_Write-->WriteFile failed,bRet=0,err=31,size=31,write=0
-00:08:18 605	INFO:RKU_ResetPipe-->DeviceIoControl OK
-00:08:18 615	Error:RKU_Write-->WriteFile failed,bRet=0,err=31,size=31,write=0
-00:08:34 977	Error:RKU_Write-->WriteFile failed,bRet=1,err=0,size=31,write=0
-00:08:36 990	INFO:RKU_ResetPipe-->DeviceIoControl OK
-00:08:42 012	Error:RKU_Write-->WriteFile failed,bRet=1,err=0,size=31,write=0
-00:08:42 022	Error:ResetMaskromProc-->RKU_ResetDevice failed,err=-3
-00:09:49 504	Error:RKU_Write-->WriteFile failed,bRet=1,err=0,size=31,write=0
-00:09:51 531	INFO:RKU_ResetPipe-->DeviceIoControl OK
-00:09:56 548	Error:RKU_Write-->WriteFile failed,bRet=1,err=0,size=31,write=0
-00:09:56 560	Error:ResetDeviceProc-->RKU_ResetDevice failed,err=-3
-00:10:07 354	Error:RKU_Write-->WriteFile failed,bRet=1,err=0,size=31,write=0
-00:10:09 380	INFO:RKU_ResetPipe-->DeviceIoControl OK
-00:10:14 408	Error:RKU_Write-->WriteFile failed,bRet=1,err=0,size=31,write=0
-00:10:31 697	Error:RKU_Write-->WriteFile failed,bRet=0,err=31,size=31,write=0
-00:10:53 758	INFO:RKU_ResetPipe-->DeviceIoControl OK
-00:10:53 769	Error:RKU_Write-->WriteFile failed,bRet=0,err=31,size=31,write=0
-00:11:14 215	Error:RKU_Write-->WriteFile failed,bRet=1,err=0,size=31,write=0
-00:11:14 225	Error:ListStorageProc-->RKU_ReadCapability failed,err=-3
-00:11:34 545	瑞芯微开发工具 v3.3.1.0 start run
-00:12:25 463	Layer<2-3-3-1>:下载Boot开始
-00:12:25 528	<LAYER 2-3-3-1> ERROR:Boot_VendorRequest-->DeviceIoControl failed,Total(67586),Sended(0),crc(ca54),err(31)
-00:12:25 539	<LAYER 2-3-3-1> ERROR:DownloadBoot-->Boot_VendorRequest471 failed,index(0)
-00:12:25 550	Error:Layer<2-3-3-1>:下载Boot失败
-00:12:25 572	Layer<2-3-3-1>: RunProc is ending, ret=0
-00:12:45 730	Layer<2-3-3-1>:测试设备开始
-00:12:45 744	Layer<2-3-3-1>:测试设备成功
-00:12:45 757	Layer<2-3-3-1>:校验芯片开始
-00:12:45 769	Layer<2-3-3-1>:校验芯片成功
-00:12:45 782	Layer<2-3-3-1>:获取FlashInfo开始
-00:12:45 793	<LAYER 2-3-3-1> INFO:FlashInfo: 00 E0 A3 03 00 04 04 00 28 00 01
-00:12:45 803	<LAYER 2-3-3-1> INFO:GetFlashInfo-->Emmc storage.
-00:12:45 815	Layer<2-3-3-1>:获取FlashInfo成功
-00:12:45 828	Layer<2-3-3-1>:准备IDB开始
-00:12:45 838	<LAYER 2-3-3-1> INFO:CS(1)		(29820MB)		(UNKNOWN)
-00:12:45 860	Layer<2-3-3-1>:准备IDB成功
-00:12:45 873	Layer<2-3-3-1>:下载IDB开始
-00:12:46 071	Layer<2-3-3-1>:下载IDB成功
-00:12:46 084	Layer<2-3-3-1>:等待Loader开始
-00:12:52 047	Error:Layer<2-3-3-1>:等待Loader失败
-00:12:52 068	Layer<2-3-3-1>: RunProc is ending, ret=0
-00:13:27 404	Layer<2-3-3-1>:下载Boot开始
-00:13:38 564	<LAYER 2-3-3-1> ERROR:Boot_VendorRequest-->DeviceIoControl failed,Total(51202),Sended(0),crc(41f5),err(0)
-00:13:38 575	<LAYER 2-3-3-1> ERROR:DownloadBoot-->Boot_VendorRequest472 failed,index(0)
-00:13:38 587	Error:Layer<2-3-3-1>:下载Boot失败
-00:13:38 608	Layer<2-3-3-1>: RunProc is ending, ret=0
-00:13:47 816	瑞芯微开发工具 v3.3.1.0 start run
-00:14:16 243	Layer<2-3-3-1>:下载Boot开始
-00:14:27 402	<LAYER 2-3-3-1> ERROR:Boot_VendorRequest-->DeviceIoControl failed,Total(51202),Sended(0),crc(41f5),err(0)
-00:14:27 413	<LAYER 2-3-3-1> ERROR:DownloadBoot-->Boot_VendorRequest472 failed,index(0)
-00:14:27 425	Error:Layer<2-3-3-1>:下载Boot失败
-00:14:27 447	Layer<2-3-3-1>: RunProc is ending, ret=0
-00:14:31 885	Error:RKU_Write-->WriteFile failed,bRet=0,err=31,size=31,write=0
-00:14:43 914	INFO:RKU_ResetPipe-->DeviceIoControl OK
-00:14:48 939	Error:RKU_Write-->WriteFile failed,bRet=1,err=0,size=31,write=0
-00:14:48 950	Error:ResetDeviceProc-->RKU_ResetDevice failed,err=-3
-00:15:02 000	Layer<2-3-3-1>:下载Boot开始
-00:15:02 065	<LAYER 2-3-3-1> ERROR:Boot_VendorRequest-->DeviceIoControl failed,Total(77826),Sended(0),crc(e19f),err(31)
-00:15:02 076	<LAYER 2-3-3-1> ERROR:DownloadBoot-->Boot_VendorRequest471 failed,index(0)
-00:15:02 089	Error:Layer<2-3-3-1>:下载Boot失败
-00:16:21 378	Layer<2-3-3-1>:下载Boot开始
-00:16:25 291	Layer<2-3-3-1>:下载Boot成功
-00:16:25 304	Layer<2-3-3-1>:等待Maskrom开始
-00:16:25 948	Layer<2-3-3-1>:等待Maskrom成功
-00:16:25 962	Layer<2-3-3-1>:测试设备开始
-00:16:25 976	Layer<2-3-3-1>:测试设备成功
-00:16:25 991	Layer<2-3-3-1>:校验芯片开始
-00:16:26 005	Layer<2-3-3-1>:校验芯片成功
-00:16:26 019	Layer<2-3-3-1>:获取FlashInfo开始
-00:16:26 031	<LAYER 2-3-3-1> INFO:FlashInfo: 00 E0 A3 03 00 04 04 00 28 00 01
-00:16:26 043	<LAYER 2-3-3-1> INFO:GetFlashInfo-->Emmc storage.
-00:16:26 057	Layer<2-3-3-1>:获取FlashInfo成功
-00:16:26 071	Layer<2-3-3-1>:准备IDB开始
-00:16:26 083	<LAYER 2-3-3-1> INFO:CS(1)		(29820MB)		(UNKNOWN)
-00:16:26 102	Layer<2-3-3-1>:准备IDB成功
-00:16:26 116	Layer<2-3-3-1>:下载IDB开始
-00:16:26 161	Layer<2-3-3-1>:下载IDB成功
-00:16:26 175	Layer<2-3-3-1>:下载固件开始
-00:16:26 186	<LAYER 2-3-3-1> INFO:FlashInfo: 00 E0 A3 03 00 04 04 00 28 00 01
-00:16:26 197	<LAYER 2-3-3-1> INFO:GetFlashInfo-->Emmc storage.
-00:16:26 210	<LAYER 2-3-3-1> INFO:Start download image,total=2728988160,band=64,DirectLBA=1,First4Access=1,Gpt=1
-00:16:26 224	<LAYER 2-3-3-1> INFO:Start to download trust,offset=0x6000,size=4194304
-00:16:26 340	<LAYER 2-3-3-1> INFO:Start to download uboot,offset=0x4000,size=4194304
-00:16:26 456	<LAYER 2-3-3-1> INFO:Start to download boot,offset=0xa000,size=22562816
-00:16:27 059	<LAYER 2-3-3-1> INFO:Start to download rootfs:grow,offset=0x5a000,size=2698002432
-00:17:35 885	Layer<2-3-3-1>:下载固件成功
-00:38:33 483	Error:LoadFwProc-->create image object failed,ret=-5!
-01:20:27 938	Error:LoadFwProc-->create image object failed,ret=-9!
-01:25:42 139	Error:LoadFwProc-->create image object failed,ret=-9!
-01:28:04 183	Error:LoadFwProc-->create image object failed,ret=-9!
-01:31:11 580	Error:LoadFwProc-->create image object failed,ret=-9!
-01:32:39 091	Error:LoadFwProc-->create image object failed,ret=-9!
-01:34:06 780	Error:LoadFwProc-->create image object failed,ret=-9!
-01:45:40 921	Layer<2-3-3-1>:测试设备开始
-01:45:40 936	Layer<2-3-3-1>:测试设备成功
-01:45:40 951	Layer<2-3-3-1>:校验芯片开始
-01:45:40 965	Layer<2-3-3-1>:校验芯片成功
-01:45:40 980	Layer<2-3-3-1>:获取FlashInfo开始
-01:45:40 992	<LAYER 2-3-3-1> INFO:FlashInfo: 00 E0 A3 03 00 04 04 00 28 00 01
-01:45:41 007	<LAYER 2-3-3-1> INFO:GetFlashInfo-->Emmc storage.
-01:45:41 020	Layer<2-3-3-1>:获取FlashInfo成功
-01:45:41 034	Layer<2-3-3-1>:准备IDB开始
-01:45:41 048	<LAYER 2-3-3-1> INFO:CS(1)		(29820MB)		(UNKNOWN)
-01:45:41 078	Layer<2-3-3-1>:准备IDB成功
-01:45:41 091	Layer<2-3-3-1>:下载IDB开始
-01:45:41 473	Layer<2-3-3-1>:下载IDB成功
-01:45:41 487	Layer<2-3-3-1>:下载固件开始
-01:45:41 500	<LAYER 2-3-3-1> INFO:FlashInfo: 00 E0 A3 03 00 04 04 00 28 00 01
-01:45:41 514	<LAYER 2-3-3-1> INFO:GetFlashInfo-->Emmc storage.
-01:45:41 528	<LAYER 2-3-3-1> INFO:Start download image,total=1073776128,band=64,DirectLBA=1,First4Access=1,Gpt=1
-01:45:41 791	<LAYER 2-3-3-1> INFO:Start to download root,offset=0x9e000,size=1073741824
-01:46:47 818	Layer<2-3-3-1>:下载固件成功
-01:53:50 827	Layer<2-3-3-1>:测试设备开始
-01:53:50 843	Layer<2-3-3-1>:测试设备成功
-01:53:50 857	Layer<2-3-3-1>:校验芯片开始
-01:53:50 873	Layer<2-3-3-1>:校验芯片成功
-01:53:50 887	Layer<2-3-3-1>:获取FlashInfo开始
-01:53:50 899	<LAYER 2-3-3-1> INFO:FlashInfo: 00 E0 A3 03 00 04 04 00 28 00 01
-01:53:50 911	<LAYER 2-3-3-1> INFO:GetFlashInfo-->Emmc storage.
-01:53:50 925	Layer<2-3-3-1>:获取FlashInfo成功
-01:53:50 938	Layer<2-3-3-1>:准备IDB开始
-01:53:50 950	<LAYER 2-3-3-1> INFO:CS(1)		(29820MB)		(UNKNOWN)
-01:53:50 982	Layer<2-3-3-1>:准备IDB成功
-01:53:50 997	Layer<2-3-3-1>:下载IDB开始
-01:53:51 109	Layer<2-3-3-1>:下载IDB成功
-01:53:51 124	Layer<2-3-3-1>:下载固件开始
-01:53:51 136	<LAYER 2-3-3-1> INFO:FlashInfo: 00 E0 A3 03 00 04 04 00 28 00 01
-01:53:51 148	<LAYER 2-3-3-1> INFO:GetFlashInfo-->Emmc storage.
-01:53:51 164	<LAYER 2-3-3-1> INFO:Start download image,total=1073776128,band=64,DirectLBA=1,First4Access=1,Gpt=1
-01:53:51 186	<LAYER 2-3-3-1> INFO:Start to download root,offset=0x9e000,size=1073741824
-01:54:56 831	Layer<2-3-3-1>:下载固件成功
-01:57:04 347	ERROR:CheckPartitionSize-->uboot part_size=1048576,100000;file_size=4194304,400000
-01:58:40 899	ERROR:CheckPartitionSize-->uboot part_size=1048576,100000;file_size=4194304,400000
-02:00:13 261	Layer<2-3-3-1>:测试设备开始
-02:00:13 277	Layer<2-3-3-1>:测试设备成功
-02:00:13 291	Layer<2-3-3-1>:校验芯片开始
-02:00:13 306	Layer<2-3-3-1>:校验芯片成功
-02:00:13 323	Layer<2-3-3-1>:获取FlashInfo开始
-02:00:13 339	<LAYER 2-3-3-1> INFO:FlashInfo: 00 E0 A3 03 00 04 04 00 28 00 01
-02:00:13 354	<LAYER 2-3-3-1> INFO:GetFlashInfo-->Emmc storage.
-02:00:13 389	Layer<2-3-3-1>:获取FlashInfo成功
-02:00:13 408	Layer<2-3-3-1>:准备IDB开始
-02:00:13 423	<LAYER 2-3-3-1> INFO:CS(1)		(29820MB)		(UNKNOWN)
-02:00:13 456	Layer<2-3-3-1>:准备IDB成功
-02:00:13 473	Layer<2-3-3-1>:下载IDB开始
-02:00:13 650	Layer<2-3-3-1>:下载IDB成功
-02:00:13 667	Layer<2-3-3-1>:下载固件开始
-02:00:13 682	<LAYER 2-3-3-1> INFO:FlashInfo: 00 E0 A3 03 00 04 04 00 28 00 01
-02:00:13 695	<LAYER 2-3-3-1> INFO:GetFlashInfo-->Emmc storage.
-02:00:13 714	<LAYER 2-3-3-1> INFO:Start download image,total=1082164736,band=64,DirectLBA=1,First4Access=1,Gpt=1
-02:00:13 731	<LAYER 2-3-3-1> ERROR:RKA_Gpt_Download->Fail to check parameter, trust was overlapped
-02:00:13 744	<LAYER 2-3-3-1> ERROR:DownloadImage-->RKA_Gpt_Download failed
-02:00:13 760	Error:Layer<2-3-3-1>:下载固件失败
-02:01:03 377	Layer<2-3-3-1>:测试设备开始
-02:01:03 390	Layer<2-3-3-1>:测试设备成功
-02:01:03 403	Layer<2-3-3-1>:校验芯片开始
-02:01:03 417	Layer<2-3-3-1>:校验芯片成功
-02:01:03 431	Layer<2-3-3-1>:获取FlashInfo开始
-02:01:03 443	<LAYER 2-3-3-1> INFO:FlashInfo: 00 E0 A3 03 00 04 04 00 28 00 01
-02:01:03 455	<LAYER 2-3-3-1> INFO:GetFlashInfo-->Emmc storage.
-02:01:03 471	Layer<2-3-3-1>:获取FlashInfo成功
-02:01:03 485	Layer<2-3-3-1>:准备IDB开始
-02:01:03 496	<LAYER 2-3-3-1> INFO:CS(1)		(29820MB)		(UNKNOWN)
-02:01:03 525	Layer<2-3-3-1>:准备IDB成功
-02:01:03 539	Layer<2-3-3-1>:下载IDB开始
-02:01:04 738	Layer<2-3-3-1>:下载IDB成功
-02:01:04 751	Layer<2-3-3-1>:下载固件开始
-02:01:04 763	<LAYER 2-3-3-1> INFO:FlashInfo: 00 E0 A3 03 00 04 04 00 28 00 01
-02:01:04 775	<LAYER 2-3-3-1> INFO:GetFlashInfo-->Emmc storage.
-02:01:04 791	<LAYER 2-3-3-1> INFO:Start download image,total=1082164736,band=64,DirectLBA=1,First4Access=1,Gpt=1
-02:01:04 803	<LAYER 2-3-3-1> ERROR:RKA_Gpt_Download->Fail to check parameter, trust was overlapped
-02:01:04 814	<LAYER 2-3-3-1> ERROR:DownloadImage-->RKA_Gpt_Download failed
-02:01:04 827	Error:Layer<2-3-3-1>:下载固件失败
-02:01:13 801	瑞芯微开发工具 v3.3.1.0 start run
-02:01:35 961	Layer<2-3-3-1>:测试设备开始
-02:01:35 975	Layer<2-3-3-1>:测试设备成功
-02:01:35 987	Layer<2-3-3-1>:校验芯片开始
-02:01:36 000	Layer<2-3-3-1>:校验芯片成功
-02:01:36 013	Layer<2-3-3-1>:获取FlashInfo开始
-02:01:36 025	<LAYER 2-3-3-1> INFO:FlashInfo: 00 E0 A3 03 00 04 04 00 28 00 01
-02:01:36 036	<LAYER 2-3-3-1> INFO:GetFlashInfo-->Emmc storage.
-02:01:36 050	Layer<2-3-3-1>:获取FlashInfo成功
-02:01:36 062	Layer<2-3-3-1>:准备IDB开始
-02:01:36 074	<LAYER 2-3-3-1> INFO:CS(1)		(29820MB)		(UNKNOWN)
-02:01:36 102	Layer<2-3-3-1>:准备IDB成功
-02:01:36 115	Layer<2-3-3-1>:下载IDB开始
-02:01:36 737	Layer<2-3-3-1>:下载IDB成功
-02:01:36 750	Layer<2-3-3-1>:下载固件开始
-02:01:36 762	<LAYER 2-3-3-1> INFO:FlashInfo: 00 E0 A3 03 00 04 04 00 28 00 01
-02:01:36 774	<LAYER 2-3-3-1> INFO:GetFlashInfo-->Emmc storage.
-02:01:36 790	<LAYER 2-3-3-1> INFO:Start download image,total=1082164736,band=64,DirectLBA=1,First4Access=1,Gpt=1
-02:01:36 801	<LAYER 2-3-3-1> ERROR:RKA_Gpt_Download->Fail to check parameter, trust was overlapped
-02:01:36 812	<LAYER 2-3-3-1> ERROR:DownloadImage-->RKA_Gpt_Download failed
-02:01:36 828	Error:Layer<2-3-3-1>:下载固件失败
-02:05:04 025	Layer<2-3-3-1>:测试设备开始
-02:05:04 040	Layer<2-3-3-1>:测试设备成功
-02:05:04 055	Layer<2-3-3-1>:校验芯片开始
-02:05:04 068	Layer<2-3-3-1>:校验芯片成功
-02:05:04 081	Layer<2-3-3-1>:获取FlashInfo开始
-02:05:04 093	<LAYER 2-3-3-1> INFO:FlashInfo: 00 E0 A3 03 00 04 04 00 28 00 01
-02:05:04 105	<LAYER 2-3-3-1> INFO:GetFlashInfo-->Emmc storage.
-02:05:04 117	Layer<2-3-3-1>:获取FlashInfo成功
-02:05:04 130	Layer<2-3-3-1>:准备IDB开始
-02:05:04 142	<LAYER 2-3-3-1> INFO:CS(1)		(29820MB)		(UNKNOWN)
-02:05:04 170	Layer<2-3-3-1>:准备IDB成功
-02:05:04 183	Layer<2-3-3-1>:下载IDB开始
-02:05:04 228	Layer<2-3-3-1>:下载IDB成功
-02:05:04 243	Layer<2-3-3-1>:下载固件开始
-02:05:04 255	<LAYER 2-3-3-1> INFO:FlashInfo: 00 E0 A3 03 00 04 04 00 28 00 01
-02:05:04 268	<LAYER 2-3-3-1> INFO:GetFlashInfo-->Emmc storage.
-02:05:04 283	<LAYER 2-3-3-1> INFO:Start download image,total=1082164736,band=64,DirectLBA=1,First4Access=1,Gpt=1
-02:05:04 295	<LAYER 2-3-3-1> ERROR:RKA_Gpt_Download->Fail to check parameter, trust was overlapped
-02:05:04 307	<LAYER 2-3-3-1> ERROR:DownloadImage-->RKA_Gpt_Download failed
-02:05:04 334	Error:Layer<2-3-3-1>:下载固件失败
-02:05:24 019	Layer<2-3-3-1>:测试设备开始
-02:05:24 032	Layer<2-3-3-1>:测试设备成功
-02:05:24 045	Layer<2-3-3-1>:校验芯片开始
-02:05:24 059	Layer<2-3-3-1>:校验芯片成功
-02:05:24 072	Layer<2-3-3-1>:获取FlashInfo开始
-02:05:24 083	<LAYER 2-3-3-1> INFO:FlashInfo: 00 E0 A3 03 00 04 04 00 28 00 01
-02:05:24 094	<LAYER 2-3-3-1> INFO:GetFlashInfo-->Emmc storage.
-02:05:24 106	Layer<2-3-3-1>:获取FlashInfo成功
-02:05:24 118	Layer<2-3-3-1>:准备IDB开始
-02:05:24 130	<LAYER 2-3-3-1> INFO:CS(1)		(29820MB)		(UNKNOWN)
-02:05:24 158	Layer<2-3-3-1>:准备IDB成功
-02:05:24 172	Layer<2-3-3-1>:下载IDB开始
-02:05:24 372	Layer<2-3-3-1>:下载IDB成功
-02:05:24 387	Layer<2-3-3-1>:下载固件开始
-02:05:24 401	<LAYER 2-3-3-1> INFO:FlashInfo: 00 E0 A3 03 00 04 04 00 28 00 01
-02:05:24 413	<LAYER 2-3-3-1> INFO:GetFlashInfo-->Emmc storage.
-02:05:24 429	<LAYER 2-3-3-1> INFO:Start download image,total=1082164736,band=64,DirectLBA=1,First4Access=1,Gpt=1
-02:05:24 440	<LAYER 2-3-3-1> ERROR:RKA_Gpt_Download->Fail to check parameter, trust was overlapped
-02:05:24 451	<LAYER 2-3-3-1> ERROR:DownloadImage-->RKA_Gpt_Download failed
-02:05:24 464	Error:Layer<2-3-3-1>:下载固件失败
-02:05:36 696	Error:RKU_Write-->WriteFile failed,bRet=0,err=31,size=31,write=0
-02:05:58 736	INFO:RKU_ResetPipe-->DeviceIoControl OK
-02:05:58 747	Error:RKU_Write-->WriteFile failed,bRet=0,err=31,size=31,write=0
-02:06:01 104	Layer<2-3-3-1>:下载Boot开始
-02:06:01 184	<LAYER 2-3-3-1> ERROR:Boot_VendorRequest-->DeviceIoControl failed,Total(147458),Sended(0),crc(eee5),err(31)
-02:06:01 196	<LAYER 2-3-3-1> ERROR:DownloadBoot-->Boot_VendorRequest471 failed,index(0)
-02:06:01 210	Error:Layer<2-3-3-1>:下载Boot失败
-02:06:13 408	瑞芯微开发工具 v3.3.1.0 start run
-02:06:35 476	Layer<2-3-3-1>:测试设备开始
-02:06:35 489	Layer<2-3-3-1>:测试设备成功
-02:06:35 505	Layer<2-3-3-1>:校验芯片开始
-02:06:35 518	Layer<2-3-3-1>:校验芯片成功
-02:06:35 531	Layer<2-3-3-1>:获取FlashInfo开始
-02:06:35 543	<LAYER 2-3-3-1> INFO:FlashInfo: 00 E0 A3 03 00 04 04 00 28 00 01
-02:06:35 555	<LAYER 2-3-3-1> INFO:GetFlashInfo-->Emmc storage.
-02:06:35 567	Layer<2-3-3-1>:获取FlashInfo成功
-02:06:35 581	Layer<2-3-3-1>:准备IDB开始
-02:06:35 592	<LAYER 2-3-3-1> INFO:CS(1)		(29820MB)		(UNKNOWN)
-02:06:35 621	Layer<2-3-3-1>:准备IDB成功
-02:06:35 634	Layer<2-3-3-1>:下载IDB开始
-02:06:35 839	Layer<2-3-3-1>:下载IDB成功
-02:06:35 855	Layer<2-3-3-1>:下载固件开始
-02:06:35 868	<LAYER 2-3-3-1> INFO:FlashInfo: 00 E0 A3 03 00 04 04 00 28 00 01
-02:06:35 880	<LAYER 2-3-3-1> INFO:GetFlashInfo-->Emmc storage.
-02:06:35 895	<LAYER 2-3-3-1> INFO:Start download image,total=1082164736,band=64,DirectLBA=1,First4Access=1,Gpt=1
-02:06:35 908	<LAYER 2-3-3-1> ERROR:RKA_Gpt_Download->Fail to check parameter, trust was overlapped
-02:06:35 919	<LAYER 2-3-3-1> ERROR:DownloadImage-->RKA_Gpt_Download failed
-02:06:35 934	Error:Layer<2-3-3-1>:下载固件失败
-02:06:41 567	Layer<2-3-3-1>:测试设备开始
-02:06:41 580	Layer<2-3-3-1>:测试设备成功
-02:06:41 593	Layer<2-3-3-1>:校验芯片开始
-02:06:41 606	Layer<2-3-3-1>:校验芯片成功
-02:06:41 618	Layer<2-3-3-1>:获取FlashInfo开始
-02:06:41 630	<LAYER 2-3-3-1> INFO:FlashInfo: 00 E0 A3 03 00 04 04 00 28 00 01
-02:06:41 641	<LAYER 2-3-3-1> INFO:GetFlashInfo-->Emmc storage.
-02:06:41 655	Layer<2-3-3-1>:获取FlashInfo成功
-02:06:41 668	Layer<2-3-3-1>:准备IDB开始
-02:06:41 680	<LAYER 2-3-3-1> INFO:CS(1)		(29820MB)		(UNKNOWN)
-02:06:41 723	Layer<2-3-3-1>:准备IDB成功
-02:06:41 738	Layer<2-3-3-1>:下载IDB开始
-02:06:41 776	Layer<2-3-3-1>:下载IDB成功
-02:06:41 789	Layer<2-3-3-1>:下载固件开始
-02:06:41 801	<LAYER 2-3-3-1> INFO:FlashInfo: 00 E0 A3 03 00 04 04 00 28 00 01
-02:06:41 813	<LAYER 2-3-3-1> INFO:GetFlashInfo-->Emmc storage.
-02:06:41 826	<LAYER 2-3-3-1> INFO:Start download image,total=2728988160,band=64,DirectLBA=1,First4Access=1,Gpt=1
-02:06:41 849	<LAYER 2-3-3-1> INFO:Start to download trust,offset=0x6000,size=4194304
-02:06:42 094	<LAYER 2-3-3-1> INFO:Start to download uboot,offset=0x4000,size=4194304
-02:06:42 327	<LAYER 2-3-3-1> INFO:Start to download boot,offset=0xa000,size=22562816
-02:06:43 560	<LAYER 2-3-3-1> INFO:Start to download rootfs:grow,offset=0x5a000,size=2698002432
-02:09:06 202	Layer<2-3-3-1>:下载固件成功
-02:09:23 043	Layer<2-3-3-1>:测试设备开始
-02:09:23 056	Layer<2-3-3-1>:测试设备成功
-02:09:23 069	Layer<2-3-3-1>:校验芯片开始
-02:09:23 083	Layer<2-3-3-1>:校验芯片成功
-02:09:23 095	Layer<2-3-3-1>:获取FlashInfo开始
-02:09:23 107	<LAYER 2-3-3-1> INFO:FlashInfo: 00 E0 A3 03 00 04 04 00 28 00 01
-02:09:23 118	<LAYER 2-3-3-1> INFO:GetFlashInfo-->Emmc storage.
-02:09:23 131	Layer<2-3-3-1>:获取FlashInfo成功
-02:09:23 144	Layer<2-3-3-1>:准备IDB开始
-02:09:23 155	<LAYER 2-3-3-1> INFO:CS(1)		(29820MB)		(UNKNOWN)
-02:09:23 183	Layer<2-3-3-1>:准备IDB成功
-02:09:23 196	Layer<2-3-3-1>:下载IDB开始
-02:09:23 392	Layer<2-3-3-1>:下载IDB成功
-02:09:23 407	Layer<2-3-3-1>:下载固件开始
-02:09:23 419	<LAYER 2-3-3-1> INFO:FlashInfo: 00 E0 A3 03 00 04 04 00 28 00 01
-02:09:23 431	<LAYER 2-3-3-1> INFO:GetFlashInfo-->Emmc storage.
-02:09:23 449	<LAYER 2-3-3-1> INFO:Start download image,total=1082164736,band=64,DirectLBA=1,First4Access=1,Gpt=1
-02:09:23 461	<LAYER 2-3-3-1> ERROR:RKA_Gpt_Download->Fail to check parameter, trust was overlapped
-02:09:23 471	<LAYER 2-3-3-1> ERROR:DownloadImage-->RKA_Gpt_Download failed
-02:09:23 485	Error:Layer<2-3-3-1>:下载固件失败
-02:10:58 722	Layer<2-3-3-1>:测试设备开始
-02:10:58 735	Layer<2-3-3-1>:测试设备成功
-02:10:58 748	Layer<2-3-3-1>:校验芯片开始
-02:10:58 761	Layer<2-3-3-1>:校验芯片成功
-02:10:58 774	Layer<2-3-3-1>:获取FlashInfo开始
-02:10:58 786	<LAYER 2-3-3-1> INFO:FlashInfo: 00 E0 A3 03 00 04 04 00 28 00 01
-02:10:58 797	<LAYER 2-3-3-1> INFO:GetFlashInfo-->Emmc storage.
-02:10:58 810	Layer<2-3-3-1>:获取FlashInfo成功
-02:10:58 824	Layer<2-3-3-1>:准备IDB开始
-02:10:58 836	<LAYER 2-3-3-1> INFO:CS(1)		(29820MB)		(UNKNOWN)
-02:10:58 866	Layer<2-3-3-1>:准备IDB成功
-02:10:58 879	Layer<2-3-3-1>:下载IDB开始
-02:10:58 922	Layer<2-3-3-1>:下载IDB成功
-02:10:58 936	Layer<2-3-3-1>:下载固件开始
-02:10:58 947	<LAYER 2-3-3-1> INFO:FlashInfo: 00 E0 A3 03 00 04 04 00 28 00 01
-02:10:58 959	<LAYER 2-3-3-1> INFO:GetFlashInfo-->Emmc storage.
-02:10:58 975	<LAYER 2-3-3-1> INFO:Start download image,total=1082164736,band=64,DirectLBA=1,First4Access=1,Gpt=1
-02:10:58 986	<LAYER 2-3-3-1> ERROR:RKA_Gpt_Download->Fail to check parameter, boot was overlapped
-02:10:58 997	<LAYER 2-3-3-1> ERROR:DownloadImage-->RKA_Gpt_Download failed
-02:10:59 010	Error:Layer<2-3-3-1>:下载固件失败
-02:12:21 167	Layer<2-3-3-1>:测试设备开始
-02:12:21 181	Layer<2-3-3-1>:测试设备成功
-02:12:21 194	Layer<2-3-3-1>:校验芯片开始
-02:12:21 208	Layer<2-3-3-1>:校验芯片成功
-02:12:21 221	Layer<2-3-3-1>:获取FlashInfo开始
-02:12:21 233	<LAYER 2-3-3-1> INFO:FlashInfo: 00 E0 A3 03 00 04 04 00 28 00 01
-02:12:21 245	<LAYER 2-3-3-1> INFO:GetFlashInfo-->Emmc storage.
-02:12:21 258	Layer<2-3-3-1>:获取FlashInfo成功
-02:12:21 271	Layer<2-3-3-1>:准备IDB开始
-02:12:21 283	<LAYER 2-3-3-1> INFO:CS(1)		(29820MB)		(UNKNOWN)
-02:12:21 311	Layer<2-3-3-1>:准备IDB成功
-02:12:21 325	Layer<2-3-3-1>:下载IDB开始
-02:12:21 368	Layer<2-3-3-1>:下载IDB成功
-02:12:21 382	Layer<2-3-3-1>:下载固件开始
-02:12:21 394	<LAYER 2-3-3-1> INFO:FlashInfo: 00 E0 A3 03 00 04 04 00 28 00 01
-02:12:21 406	<LAYER 2-3-3-1> INFO:GetFlashInfo-->Emmc storage.
-02:12:21 421	<LAYER 2-3-3-1> INFO:Start download image,total=1082164736,band=64,DirectLBA=1,First4Access=1,Gpt=1
-02:12:21 433	<LAYER 2-3-3-1> ERROR:RKA_Gpt_Download->Fail to check parameter, boot was overlapped
-02:12:21 444	<LAYER 2-3-3-1> ERROR:DownloadImage-->RKA_Gpt_Download failed
-02:12:21 458	Error:Layer<2-3-3-1>:下载固件失败
-02:15:39 693	Layer<2-3-3-1>:测试设备开始
-02:15:39 696	Layer<2-3-3-1>:测试设备成功
-02:15:39 711	Layer<2-3-3-1>:校验芯片开始
-02:15:39 726	Layer<2-3-3-1>:校验芯片成功
-02:15:39 741	Layer<2-3-3-1>:获取FlashInfo开始
-02:15:39 757	<LAYER 2-3-3-1> INFO:FlashInfo: 00 E0 A3 03 00 04 04 00 28 00 01
-02:15:39 771	<LAYER 2-3-3-1> INFO:GetFlashInfo-->Emmc storage.
-02:15:39 786	Layer<2-3-3-1>:获取FlashInfo成功
-02:15:39 802	Layer<2-3-3-1>:准备IDB开始
-02:15:39 816	<LAYER 2-3-3-1> INFO:CS(1)		(29820MB)		(UNKNOWN)
-02:15:39 844	Layer<2-3-3-1>:准备IDB成功
-02:15:39 859	Layer<2-3-3-1>:下载IDB开始
-02:15:39 903	Layer<2-3-3-1>:下载IDB成功
-02:15:39 918	Layer<2-3-3-1>:下载固件开始
-02:15:39 931	<LAYER 2-3-3-1> INFO:FlashInfo: 00 E0 A3 03 00 04 04 00 28 00 01
-02:15:39 943	<LAYER 2-3-3-1> INFO:GetFlashInfo-->Emmc storage.
-02:15:39 962	<LAYER 2-3-3-1> INFO:Start download image,total=1073776128,band=64,DirectLBA=1,First4Access=1,Gpt=1
-02:15:39 988	<LAYER 2-3-3-1> INFO:Start to download root,offset=0x9e000,size=1073741824
-02:16:45 920	Layer<2-3-3-1>:下载固件成功
-02:18:51 064	Layer<2-3-3-1>:测试设备开始
-02:18:51 081	Layer<2-3-3-1>:测试设备成功
-02:18:51 097	Layer<2-3-3-1>:校验芯片开始
-02:18:51 119	Layer<2-3-3-1>:校验芯片成功
-02:18:51 136	Layer<2-3-3-1>:获取FlashInfo开始
-02:18:51 152	<LAYER 2-3-3-1> INFO:FlashInfo: 00 E0 A3 03 00 04 04 00 28 00 01
-02:18:51 167	<LAYER 2-3-3-1> INFO:GetFlashInfo-->Emmc storage.
-02:18:51 204	Layer<2-3-3-1>:获取FlashInfo成功
-02:18:51 223	Layer<2-3-3-1>:准备IDB开始
-02:18:51 238	<LAYER 2-3-3-1> INFO:CS(1)		(29820MB)		(UNKNOWN)
-02:18:51 271	Layer<2-3-3-1>:准备IDB成功
-02:18:51 290	Layer<2-3-3-1>:下载IDB开始
-02:18:51 405	Layer<2-3-3-1>:下载IDB成功
-02:18:51 423	Layer<2-3-3-1>:下载固件开始
-02:18:51 439	<LAYER 2-3-3-1> INFO:FlashInfo: 00 E0 A3 03 00 04 04 00 28 00 01
-02:18:51 456	<LAYER 2-3-3-1> INFO:GetFlashInfo-->Emmc storage.
-02:18:51 480	<LAYER 2-3-3-1> INFO:Start download image,total=1082164736,band=64,DirectLBA=1,First4Access=1,Gpt=1
-02:18:51 504	<LAYER 2-3-3-1> ERROR:RKA_Gpt_Download->Fail to check parameter, root:grow was overlapped
-02:18:51 526	<LAYER 2-3-3-1> ERROR:DownloadImage-->RKA_Gpt_Download failed
-02:18:51 555	Error:Layer<2-3-3-1>:下载固件失败
+13:01:01 363	Layer<2-3-3-1>:下载Boot开始
+13:01:05 383	Layer<2-3-3-1>:下载Boot成功
+13:01:05 385	Layer<2-3-3-1>:等待Maskrom开始
+13:01:06 041	Layer<2-3-3-1>:等待Maskrom成功
+13:01:06 044	Layer<2-3-3-1>:测试设备开始
+13:01:06 046	Layer<2-3-3-1>:测试设备成功
+13:01:06 049	Layer<2-3-3-1>:校验芯片开始
+13:01:06 051	Layer<2-3-3-1>:校验芯片成功
+13:01:06 053	Layer<2-3-3-1>:获取FlashInfo开始
+13:01:06 054	<LAYER 2-3-3-1> INFO:FlashInfo: 00 E0 A3 03 00 04 04 00 28 00 01
+13:01:06 055	<LAYER 2-3-3-1> INFO:GetFlashInfo-->Emmc storage.
+13:01:06 057	Layer<2-3-3-1>:获取FlashInfo成功
+13:01:06 059	Layer<2-3-3-1>:准备IDB开始
+13:01:06 059	<LAYER 2-3-3-1> INFO:CS(1)		(29820MB)		(UNKNOWN)
+13:01:06 067	Layer<2-3-3-1>:准备IDB成功
+13:01:06 070	Layer<2-3-3-1>:下载IDB开始
+13:01:06 146	Layer<2-3-3-1>:下载IDB成功
+13:01:06 149	Layer<2-3-3-1>:下载固件开始
+13:01:06 150	<LAYER 2-3-3-1> INFO:FlashInfo: 00 E0 A3 03 00 04 04 00 28 00 01
+13:01:06 151	<LAYER 2-3-3-1> INFO:GetFlashInfo-->Emmc storage.
+13:01:06 152	<LAYER 2-3-3-1> INFO:Start download image,total=2728988160,band=64,DirectLBA=1,First4Access=1,Gpt=1
+13:01:06 154	<LAYER 2-3-3-1> INFO:Start to download trust,offset=0x6000,size=4194304
+13:01:06 256	<LAYER 2-3-3-1> INFO:Start to download uboot,offset=0x4000,size=4194304
+13:01:06 360	<LAYER 2-3-3-1> INFO:Start to download boot,offset=0xa000,size=22562816
+13:01:06 948	<LAYER 2-3-3-1> INFO:Start to download rootfs:grow,offset=0x5a000,size=2698002432
+13:02:16 689	Layer<2-3-3-1>:下载固件成功
+13:02:34 897	Layer<2-3-3-1>:测试设备开始
+13:02:34 899	Layer<2-3-3-1>:测试设备成功
+13:02:34 901	Layer<2-3-3-1>:校验芯片开始
+13:02:34 903	Layer<2-3-3-1>:校验芯片成功
+13:02:34 904	Layer<2-3-3-1>:获取FlashInfo开始
+13:02:34 905	<LAYER 2-3-3-1> INFO:FlashInfo: 00 E0 A3 03 00 04 04 00 28 00 01
+13:02:34 906	<LAYER 2-3-3-1> INFO:GetFlashInfo-->Emmc storage.
+13:02:34 908	Layer<2-3-3-1>:获取FlashInfo成功
+13:02:34 909	Layer<2-3-3-1>:准备IDB开始
+13:02:34 910	<LAYER 2-3-3-1> INFO:CS(1)		(29820MB)		(UNKNOWN)
+13:02:34 932	Layer<2-3-3-1>:准备IDB成功
+13:02:34 934	Layer<2-3-3-1>:下载IDB开始
+13:02:35 008	Layer<2-3-3-1>:下载IDB成功
+13:02:35 010	Layer<2-3-3-1>:下载固件开始
+13:02:35 011	<LAYER 2-3-3-1> INFO:FlashInfo: 00 E0 A3 03 00 04 04 00 28 00 01
+13:02:35 012	<LAYER 2-3-3-1> INFO:GetFlashInfo-->Emmc storage.
+13:02:35 015	<LAYER 2-3-3-1> INFO:Start download image,total=1082164736,band=64,DirectLBA=1,First4Access=1,Gpt=1
+13:02:35 027	<LAYER 2-3-3-1> INFO:Start to download uboot,offset=0x4000,size=4194304
+13:02:35 279	<LAYER 2-3-3-1> INFO:Start to download trust,offset=0x6000,size=4194304
+13:02:35 534	<LAYER 2-3-3-1> INFO:Start to download root,offset=0xa4000,size=1073741824
+13:03:41 097	Layer<2-3-3-1>:下载固件成功
+13:04:52 247	Layer<2-3-3-1>:下载Boot开始
+13:04:56 963	Layer<2-3-3-1>:下载Boot成功
+13:04:56 964	Layer<2-3-3-1>:等待Maskrom开始
+13:05:02 044	Error:Layer<2-3-3-1>:等待Maskrom失败

@@ -17,13 +17,14 @@ KERNEL_VERSION_SANITY_SKIP = "1"
 KBRANCH = "rk-6.1-rkr5.1"
 SRCREV = "${AUTOREV}"
 
-SRC_URI = " \
-    git://github.com/armbian/linux-rockchip.git;branch=${KBRANCH};protocol=https \
-    file://defconfig \
-    file://rk3399-firefly-aio.dts \
-    file://rk3399-firefly-port.dtsi \
-    file://rk3399-firefly-core.dtsi \
-"
+SRC_URI = "git://github.com/armbian/linux-rockchip.git;branch=${KBRANCH};protocol=https \
+           file://defconfig \
+           file://rk3399-firefly-aio.dts \
+           file://rk3399-firefly-port.dtsi \
+           file://rk3399-firefly-core.dtsi \
+           file://0001-Fix-RK3399-earlycon-uartclk-initialization.patch \
+           file://0002-Fix-RK3399-earlycon-Force-uartclk-to-24MHz.patch \
+           "
 
 S = "${WORKDIR}/git"
 B = "${WORKDIR}/build"
@@ -52,6 +53,22 @@ do_configure:prepend() {
     install -m 0644 ${WORKDIR}/rk3399-firefly-aio.dts ${S}/arch/arm64/boot/dts/rockchip/
     install -m 0644 ${WORKDIR}/rk3399-firefly-port.dtsi ${S}/arch/arm64/boot/dts/rockchip/
     install -m 0644 ${WORKDIR}/rk3399-firefly-core.dtsi ${S}/arch/arm64/boot/dts/rockchip/
+    
+    # DEBUG: Replace earlycon source files with debug versions
+    DEBUG_FILES_DIR="/home/xuning/yocto-rk3399/meta-rk3399-custom/recipes-kernel/linux/linux-rockchip/debug-files"
+    if [ -f "${DEBUG_FILES_DIR}/8250_early.c" ]; then
+        bbnote "Replacing 8250_early.c with debug version"
+        cp -f "${DEBUG_FILES_DIR}/8250_early.c" "${S}/drivers/tty/serial/8250/8250_early.c"
+    else
+        bbwarn "Debug file not found: ${DEBUG_FILES_DIR}/8250_early.c"
+    fi
+    
+    if [ -f "${DEBUG_FILES_DIR}/earlycon.c" ]; then
+        bbnote "Replacing earlycon.c with debug version"
+        cp -f "${DEBUG_FILES_DIR}/earlycon.c" "${S}/drivers/tty/serial/earlycon.c"
+    else
+        bbwarn "Debug file not found: ${DEBUG_FILES_DIR}/earlycon.c"
+    fi
 }
 
 KERNEL_EXTRA_ARGS += " \
@@ -100,7 +117,11 @@ do_install() {
 do_deploy:append() {
     install -d ${DEPLOY_DIR_IMAGE}
     install -m 0644 ${B}/arch/${ARCH}/boot/${KERNEL_IMAGETYPE} ${DEPLOY_DIR_IMAGE}/${KERNEL_IMAGETYPE}-${KERNEL_VERSION}
-    [ -e ${B}/arch/${ARCH}/boot/dts/rockchip/rk3399-firefly-aio.dtb ] && install -m 0644 ${B}/arch/${ARCH}/boot/dts/rockchip/rk3399-firefly-aio.dtb ${DEPLOY_DIR_IMAGE}/
+    if [ -e ${B}/arch/${ARCH}/boot/dts/rockchip/rk3399-firefly-aio.dtb ]; then
+        # Use deploy mechanism to avoid conflicts
+        install -m 0644 ${B}/arch/${ARCH}/boot/dts/rockchip/rk3399-firefly-aio.dtb ${DEPLOY_DIR_IMAGE}/rk3399-firefly-aio--${KERNEL_VERSION}-${MACHINE}.dtb
+        ln -sf rk3399-firefly-aio--${KERNEL_VERSION}-${MACHINE}.dtb ${DEPLOY_DIR_IMAGE}/rk3399-firefly-aio.dtb
+    fi
 }
 
 FILES:${KERNEL_PACKAGE_NAME}-base = ""

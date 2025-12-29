@@ -44,6 +44,10 @@
 	model = "AIO-3399J Board (Linux Opensource)";
 	compatible = "rockchip,rk3399-firefly", "rockchip,rk3399";
 
+	chosen {
+		stdout-path = "serial2:1500000n8";
+	};
+
 	test-power {
 		status = "okay";
 	};
@@ -277,6 +281,14 @@
 
 &vcc3v3_3g {
     gpio = <&gpio2 6 GPIO_ACTIVE_HIGH>;
+};
+
+&uart2 {
+	pinctrl-names = "default";
+	pinctrl-0 = <&uart2c_xfer>;
+	status = "okay";
+	/* Set clock frequency to 24MHz for proper 1500000 baud rate calculation */
+	clock-frequency = <24000000>;
 };
 
 &uart4 {
