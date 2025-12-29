@@ -52,6 +52,10 @@ do_create_boot_script() {
     # Create boot script
     cat > ${BOOTIMG_ROOT_DIR}/boot/boot.cmd << 'EOF'
 # Boot script for RK3399
+# DEBUG: Add early debug output
+echo "[BOOTSCRIPT] Starting boot script"
+echo "[BOOTSCRIPT] Current baudrate check"
+
 # Set load addresses (RK3399 has 2GB RAM, use safe addresses)
 setenv ramdisk_addr_r "0x21000000"
 setenv kernel_addr_r "0x00280000"
@@ -65,11 +69,11 @@ setenv console "both"
 setenv rootfstype "ext4"
 
 # Set device tree file name
-setenv fdtfile "rk3399-firefly.dtb"
+setenv fdtfile "rk3399-firefly-aio.dtb"
 
 test -n "${distro_bootpart}" || distro_bootpart=1
 
-echo "Boot script loaded from ${devtype} ${devnum}:${distro_bootpart}"
+echo "[BOOTSCRIPT] Boot script loaded from ${devtype} ${devnum}:${distro_bootpart}"
 
 # Configure console
 if test "${console}" = "display" || test "${console}" = "both"; then 
@@ -87,18 +91,24 @@ fi
 # Set boot arguments
 # Add earlycon for early kernel console output (fixes serial garbage during kernel boot)
 # RK3399 UART2 (ttyS2) base address is 0xff1a0000
-# Format: earlycon=<name>[,<options>] where name can be uart8250,mmio32,<address>
-# Try without baud rate first, let kernel use device tree settings
-setenv bootargs "earlycon=uart8250,mmio32,0xff1a0000 root=${rootdev} rootwait rootfstype=${rootfstype} ${consoleargs} consoleblank=0 loglevel=${verbosity}"
+# Format: earlycon=<name>[,<options>] where name can be uart8250,mmio32,<address>[,baudrate]
+# Include baud rate (1500000) to match U-Boot's baud rate
+setenv bootargs "earlycon=uart8250,mmio32,0xff1a0000,1500000 root=${rootdev} rootwait rootfstype=${rootfstype} ${consoleargs} consoleblank=0 loglevel=${verbosity}"
 
 # Load kernel, device tree, and optional ramdisk
+echo "[BOOTSCRIPT] Loading kernel from ${prefix}Image"
 load ${devtype} ${devnum}:${distro_bootpart} ${kernel_addr_r} ${prefix}Image
+echo "[BOOTSCRIPT] Loading DTB from ${prefix}dtb/${fdtfile}"
 load ${devtype} ${devnum}:${distro_bootpart} ${fdt_addr_r} ${prefix}dtb/${fdtfile}
 # Try to load ramdisk, but continue if it doesn't exist
+echo "[BOOTSCRIPT] Checking for ramdisk"
 if load ${devtype} ${devnum}:${distro_bootpart} ${ramdisk_addr_r} ${prefix}uInitrd; then
+    echo "[BOOTSCRIPT] Ramdisk found, calling booti with initrd"
+    echo "[BOOTSCRIPT] bootargs: ${bootargs}"
     booti ${kernel_addr_r} ${ramdisk_addr_r} ${fdt_addr_r}
 else
-    echo "No ramdisk found, booting without initrd"
+    echo "[BOOTSCRIPT] No ramdisk found, booting without initrd"
+    echo "[BOOTSCRIPT] bootargs: ${bootargs}"
     booti ${kernel_addr_r} - ${fdt_addr_r}
 fi
 EOF

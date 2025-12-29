@@ -44,7 +44,7 @@ BOOT_PARTITION_SIZE = "240"
 # RK3399 uses Image (uncompressed kernel), device tree, and boot script
 # Device tree file name without path prefix
 # boot.scr and boot.cmd are in boot/ subdirectory
-IMAGE_BOOT_FILES = "Image rk3399-firefly.dtb boot/boot.scr boot/boot.cmd"
+IMAGE_BOOT_FILES = "Image rk3399-firefly-aio.dtb boot/boot.scr boot/boot.cmd"
 
 # Create .img file from .wic file (compatible with Armbian naming)
 # This creates a .img file by copying the .wic file after all images are built

@@ -20,6 +20,9 @@ SRCREV = "${AUTOREV}"
 SRC_URI = " \
     git://github.com/armbian/linux-rockchip.git;branch=${KBRANCH};protocol=https \
     file://defconfig \
+    file://rk3399-firefly-aio.dts \
+    file://rk3399-firefly-port.dtsi \
+    file://rk3399-firefly-core.dtsi \
 "
 
 S = "${WORKDIR}/git"
@@ -33,16 +36,22 @@ KERNEL_FEATURES = ""
 KERNEL_DANGLING_FEATURES_WARN_ONLY = "1"
 
 # Device tree
-KERNEL_DEVICETREE = "rockchip/rk3399-firefly.dtb"
+KERNEL_DEVICETREE = "rockchip/rk3399-firefly-aio.dtb"
 
 COMPATIBLE_MACHINE = "rk3399-.*"
 
-# Use Armbian's kernel configuration approach
+# Copy device tree files to kernel source
 do_configure:prepend() {
     # Use defconfig if provided
     if [ -f "${WORKDIR}/defconfig" ]; then
         cp ${WORKDIR}/defconfig ${B}/.config
     fi
+    
+    # Copy device tree files to kernel source tree
+    install -d ${S}/arch/arm64/boot/dts/rockchip
+    install -m 0644 ${WORKDIR}/rk3399-firefly-aio.dts ${S}/arch/arm64/boot/dts/rockchip/
+    install -m 0644 ${WORKDIR}/rk3399-firefly-port.dtsi ${S}/arch/arm64/boot/dts/rockchip/
+    install -m 0644 ${WORKDIR}/rk3399-firefly-core.dtsi ${S}/arch/arm64/boot/dts/rockchip/
 }
 
 KERNEL_EXTRA_ARGS += " \
@@ -81,7 +90,7 @@ do_install() {
     
     # Install device tree
     install -d ${D}/boot/dtb/rockchip
-    install -m 0644 ${B}/arch/${ARCH}/boot/dts/rockchip/rk3399-firefly.dtb ${D}/boot/dtb/rockchip/
+    install -m 0644 ${B}/arch/${ARCH}/boot/dts/rockchip/rk3399-firefly-aio.dtb ${D}/boot/dtb/rockchip/
     
     install -d ${D}${sysconfdir}/modules-load.d
     install -d ${D}${sysconfdir}/modprobe.d
@@ -91,7 +100,7 @@ do_install() {
 do_deploy:append() {
     install -d ${DEPLOY_DIR_IMAGE}
     install -m 0644 ${B}/arch/${ARCH}/boot/${KERNEL_IMAGETYPE} ${DEPLOY_DIR_IMAGE}/${KERNEL_IMAGETYPE}-${KERNEL_VERSION}
-    [ -e ${B}/arch/${ARCH}/boot/dts/rockchip/rk3399-firefly.dtb ] && install -m 0644 ${B}/arch/${ARCH}/boot/dts/rockchip/rk3399-firefly.dtb ${DEPLOY_DIR_IMAGE}/
+    [ -e ${B}/arch/${ARCH}/boot/dts/rockchip/rk3399-firefly-aio.dtb ] && install -m 0644 ${B}/arch/${ARCH}/boot/dts/rockchip/rk3399-firefly-aio.dtb ${DEPLOY_DIR_IMAGE}/
 }
 
 FILES:${KERNEL_PACKAGE_NAME}-base = ""
