@@ -85,7 +85,11 @@ if test "${devtype}" = "mmc"; then
 fi
 
 # Set boot arguments
-setenv bootargs "root=${rootdev} rootwait rootfstype=${rootfstype} ${consoleargs} consoleblank=0 loglevel=${verbosity}"
+# Add earlycon for early kernel console output (fixes serial garbage during kernel boot)
+# RK3399 UART2 (ttyS2) base address is 0xff1a0000
+# Format: earlycon=<name>[,<options>] where name can be uart8250,mmio32,<address>
+# Try without baud rate first, let kernel use device tree settings
+setenv bootargs "earlycon=uart8250,mmio32,0xff1a0000 root=${rootdev} rootwait rootfstype=${rootfstype} ${consoleargs} consoleblank=0 loglevel=${verbosity}"
 
 # Load kernel, device tree, and optional ramdisk
 load ${devtype} ${devnum}:${distro_bootpart} ${kernel_addr_r} ${prefix}Image

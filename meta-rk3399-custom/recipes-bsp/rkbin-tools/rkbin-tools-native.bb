@@ -60,6 +60,19 @@ do_install() {
     elif [ -f "${S}/rk33/rk3399_miniloader_v1.26.bin" ]; then
         install -m 0644 ${S}/rk33/rk3399_miniloader_v1.26.bin ${D}${datadir}/rkbin/rk33/
     fi
+    # Install usbplug blob (required for RKDevTool Maskrom mode)
+    if [ -f "${S}/bin/rk33/rk3399_usbplug_v1.30.bin" ]; then
+        install -m 0644 ${S}/bin/rk33/rk3399_usbplug_v1.30.bin ${D}${datadir}/rkbin/rk33/
+        # Create symlink for v1.26 compatibility (INI file expects v1.26)
+        ln -sf rk3399_usbplug_v1.30.bin ${D}${datadir}/rkbin/rk33/rk3399_usbplug_v1.26.bin
+    elif [ -f "${S}/rk33/rk3399_usbplug_v1.30.bin" ]; then
+        install -m 0644 ${S}/rk33/rk3399_usbplug_v1.30.bin ${D}${datadir}/rkbin/rk33/
+        ln -sf rk3399_usbplug_v1.30.bin ${D}${datadir}/rkbin/rk33/rk3399_usbplug_v1.26.bin
+    elif [ -f "${S}/bin/rk33/rk3399_usbplug_v1.26.bin" ]; then
+        install -m 0644 ${S}/bin/rk33/rk3399_usbplug_v1.26.bin ${D}${datadir}/rkbin/rk33/
+    elif [ -f "${S}/rk33/rk3399_usbplug_v1.26.bin" ]; then
+        install -m 0644 ${S}/rk33/rk3399_usbplug_v1.26.bin ${D}${datadir}/rkbin/rk33/
+    fi
     # Install BL31 (try v1.36 first, fallback to v1.35)
     # Check both rk33/ and bin/rk33/ directories
     if [ -f "${S}/bin/rk33/rk3399_bl31_v1.36.elf" ]; then
@@ -76,12 +89,8 @@ do_install() {
     fi
     
     # Install tools
-    if [ -f "${S}/tools/trust_merger" ]; then
-        install -m 0755 ${S}/tools/trust_merger ${D}${bindir}/
-    fi
-    if [ -f "${S}/tools/loaderimage" ]; then
-        install -m 0755 ${S}/tools/loaderimage ${D}${bindir}/
-    fi
+    # Note: trust_merger and loaderimage are provided by rk-binary-native to avoid conflicts
+    # Only install mkimage here (rk-binary-native may not provide it)
     if [ -f "${S}/tools/mkimage" ]; then
         install -m 0755 ${S}/tools/mkimage ${D}${bindir}/
     fi

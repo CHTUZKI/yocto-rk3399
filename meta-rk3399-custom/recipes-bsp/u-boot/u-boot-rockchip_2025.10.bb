@@ -52,10 +52,13 @@ do_configure:prepend() {
 }
 
 do_deploy:append() {
-    # Deploy U-Boot images
+    # Deploy additional U-Boot images
+    # Note: u-boot-dtb.bin is already deployed by base class u-boot.inc
+    # Only deploy u-boot.itb which is not deployed by base class
     install -d ${DEPLOY_DIR_IMAGE}
-    install -m 0644 ${B}/u-boot.itb ${DEPLOY_DIR_IMAGE}/u-boot.itb
-    install -m 0644 ${B}/u-boot-dtb.bin ${DEPLOY_DIR_IMAGE}/u-boot-dtb.bin
+    if [ -f "${B}/u-boot.itb" ]; then
+        install -m 0644 ${B}/u-boot.itb ${DEPLOY_DIR_IMAGE}/u-boot.itb
+    fi
 }
 
 FILES:${PN} = "/boot"
