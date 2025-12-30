@@ -40,6 +40,7 @@ gen_rkparameter() {
 	# uboot.img at sector 16384 (0x4000), size 4MB (0x2000 sectors)
 	# trust.bin at sector 24576 (0x6000), size 4MB (0x2000 sectors)
 	# Note: miniloader needs these in parameter file to find uboot
+	# uboot-env will be handled as a GPT partition, not fixed offset
 	echo -n "0x00002000@0x0004000(uboot),0x00002000@0x0006000(trust)," >> "${OUT}"
 	
 	# Add GPT partitions from the image, but adjust partition starts to avoid overlap
@@ -102,9 +103,10 @@ gen_rkparameter() {
 	done
 	echo >> "${OUT}"
 
-	if [ "${RK_PARTITION_GROW}" = "1" ]; then
-		sed -i "s/[^,]*\(@[^,]*\)),$/-\1:grow)/" "${OUT}"
-	fi
+	# Disable grow for uboot-env partition to avoid Rockchip tool conflicts
+	# if [ "${RK_PARTITION_GROW}" = "1" ]; then
+	# 	sed -i 's/[^,]*\(@[^,]*\)),$/-\1:grow)/' "${OUT}"
+	# fi
 
 	echo "uuid: rootfs=${RK_ROOTDEV_UUID}" >> "${OUT}"
 }

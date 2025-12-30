@@ -49,69 +49,94 @@ do_create_boot_script() {
     # Create boot partition structure
     install -d ${BOOTIMG_ROOT_DIR}/boot
     
-    # Create boot script
-    cat > ${BOOTIMG_ROOT_DIR}/boot/boot.cmd << 'EOF'
-# Boot script for RK3399
-# DEBUG: Add early debug output
-echo "[BOOTSCRIPT] Starting boot script"
-echo "[BOOTSCRIPT] Current baudrate check"
+    # Find kernel image file name from deploy directory
+    # Look for Image-* files (kernel with version number)
+    kernel_file=""
+    
+    # Priority 1: Try Image-${KERNEL_VERSION} format (e.g., Image-6.1.115)
+    if [ -n "${KERNEL_VERSION}" ] && [ -f "${DEPLOY_DIR_IMAGE}/Image-${KERNEL_VERSION}" ]; then
+        kernel_file="Image-${KERNEL_VERSION}"
+        bbnote "Found kernel file using KERNEL_VERSION: ${kernel_file}"
+    else
+        # Priority 2: Try to find Image-X.Y.Z format (simple version number, not Yocto build name)
+        # Exclude files with Yocto build suffixes like "-r0-rk3399-firefly-..."
+        img_found=$(ls -1 ${DEPLOY_DIR_IMAGE}/Image-* 2>/dev/null | grep -E "Image-[0-9]+\.[0-9]+\.[0-9]+$" | sort -V | tail -1)
+        if [ -n "${img_found}" ] && [ -f "${img_found}" ]; then
+            kernel_file=$(basename ${img_found})
+            bbnote "Found kernel file with version number: ${kernel_file}"
+        else
+            # Priority 3: Try any Image-* file (fallback)
+            img_found=$(ls -1 ${DEPLOY_DIR_IMAGE}/Image-* 2>/dev/null | grep -v "\.bin$" | sort -V | tail -1)
+            if [ -n "${img_found}" ] && [ -f "${img_found}" ]; then
+                kernel_file=$(basename ${img_found})
+                bbnote "Found kernel file by scanning: ${kernel_file}"
+            fi
+        fi
+    fi
+    
+    # Fallback to Image if no versioned file found
+    if [ -z "${kernel_file}" ]; then
+        if [ -f "${DEPLOY_DIR_IMAGE}/Image" ]; then
+            kernel_file="Image"
+            bbnote "Using kernel file without version: ${kernel_file}"
+        else
+            bbfatal "Kernel image file not found in ${DEPLOY_DIR_IMAGE}. Please ensure kernel is built first."
+        fi
+    fi
+    
+    # Create boot script with kernel filename embedded
+    cat > ${BOOTIMG_ROOT_DIR}/boot/boot.cmd << EOF
+# Boot script for RK3399 - Load from root partition
+# This script loads kernel and DTB from root partition (ext4)
+echo "[BOOTSCRIPT] Starting RK3399 boot script"
 
 # Set load addresses (RK3399 has 2GB RAM, use safe addresses)
-setenv ramdisk_addr_r "0x21000000"
+setenv ramdisk_addr_r "0x28000000"
 setenv kernel_addr_r "0x00280000"
-setenv fdt_addr_r "0x01f00000"
-setenv load_addr "0x39000000"
+setenv fdt_addr_r "0x03000000"
 
 # Set default values
-setenv rootdev "/dev/mmcblk0p2"
-setenv verbosity "1"
-setenv console "both"
-setenv rootfstype "ext4"
+setenv rootdev "/dev/mmcblk0p3"
+setenv rootpart "3"
+setenv verbosity "7"
+setenv rootfstype="ext4"
 
 # Set device tree file name
 setenv fdtfile "rk3399-firefly-aio.dtb"
 
-test -n "${distro_bootpart}" || distro_bootpart=1
+# Set kernel file name (embedded at build time)
+setenv kernel_image "${kernel_file}"
 
-echo "[BOOTSCRIPT] Boot script loaded from ${devtype} ${devnum}:${distro_bootpart}"
-
-# Configure console
-if test "${console}" = "display" || test "${console}" = "both"; then 
-    setenv consoleargs "console=tty1"
-fi
-if test "${console}" = "serial" || test "${console}" = "both"; then 
-    setenv consoleargs "console=ttyS2,1500000 ${consoleargs}"
-fi
-
-# Get partition UUID for rootfs
-if test "${devtype}" = "mmc"; then 
-    part uuid mmc ${devnum}:${distro_bootpart} partuuid
-fi
+echo "[BOOTSCRIPT] Loading kernel from root partition (ext4)"
 
 # Set boot arguments
-# Add earlycon for early kernel console output (fixes serial garbage during kernel boot)
+# Add earlycon for early kernel console output
 # RK3399 UART2 (ttyS2) base address is 0xff1a0000
-# Format: earlycon=uart8250,mmio32,<address>,<baudrate>n8
-# For RK3399, use uart8250 driver with mmio32 access mode, explicitly specify baudrate 1500000
-# The format must be: earlycon=uart8250,mmio32,0xff1a0000,1500000n8
-setenv bootargs "earlycon=uart8250,mmio32,0xff1a0000,1500000n8 root=${rootdev} rootwait rootfstype=${rootfstype} ${consoleargs} consoleblank=0 loglevel=${verbosity}"
+setenv bootargs "earlycon=uart8250,mmio32,0xff1a0000,1500000n8 root=\${rootdev} rootwait rootfstype=\${rootfstype} console=ttyS2,1500000 consoleblank=0 loglevel=\${verbosity}"
 
-# Load kernel, device tree, and optional ramdisk
-echo "[BOOTSCRIPT] Loading kernel from ${prefix}Image"
-load ${devtype} ${devnum}:${distro_bootpart} ${kernel_addr_r} ${prefix}Image
-echo "[BOOTSCRIPT] Loading DTB from ${prefix}dtb/${fdtfile}"
-load ${devtype} ${devnum}:${distro_bootpart} ${fdt_addr_r} ${prefix}dtb/${fdtfile}
-# Try to load ramdisk, but continue if it doesn't exist
-echo "[BOOTSCRIPT] Checking for ramdisk"
-if load ${devtype} ${devnum}:${distro_bootpart} ${ramdisk_addr_r} ${prefix}uInitrd; then
-    echo "[BOOTSCRIPT] Ramdisk found, calling booti with initrd"
-    echo "[BOOTSCRIPT] bootargs: ${bootargs}"
-    booti ${kernel_addr_r} ${ramdisk_addr_r} ${fdt_addr_r}
+# Load kernel from root partition (ext4 filesystem)
+echo "[BOOTSCRIPT] Loading kernel: \${kernel_image}"
+if ext4load mmc 0:3 \${kernel_addr_r} /boot/\${kernel_image}; then
+    echo "[BOOTSCRIPT] Kernel loaded successfully"
 else
-    echo "[BOOTSCRIPT] No ramdisk found, booting without initrd"
-    echo "[BOOTSCRIPT] bootargs: ${bootargs}"
-    booti ${kernel_addr_r} - ${fdt_addr_r}
+    echo "[BOOTSCRIPT] ERROR: Could not load kernel \${kernel_image}"
+    echo "[BOOTSCRIPT] Available files in /boot directory:"
+    ext4ls mmc 0:3 /boot
+    exit
 fi
+
+# Load device tree from root partition
+echo "[BOOTSCRIPT] Loading DTB: \${fdtfile}"
+if ext4load mmc 0:3 \${fdt_addr_r} /boot/\${fdtfile}; then
+    echo "[BOOTSCRIPT] DTB loaded successfully"
+else
+    echo "[BOOTSCRIPT] ERROR: DTB file \${fdtfile} not found"
+    exit
+fi
+
+# Boot the kernel using standard ARM64 boot
+echo "[BOOTSCRIPT] bootargs: \${bootargs}"
+booti \${kernel_addr_r} - \${fdt_addr_r}
 EOF
     
     # Compile boot script

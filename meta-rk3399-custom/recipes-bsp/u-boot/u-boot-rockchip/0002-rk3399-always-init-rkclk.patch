@@ -17,7 +17,7 @@ index f8cbda44..687c3ad7 100644
  
 -	if (init_clocks)
 +	if (init_clocks || 1 == 1)
- 		rkclk_init(priv->cru)
+ 		rkclk_init(priv->cru);
  
  	return 0;
 

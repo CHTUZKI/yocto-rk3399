@@ -8,15 +8,18 @@
 #include <dt-bindings/pwm/pwm.h>
 #include <dt-bindings/pinctrl/rockchip.h>
 #include "rk3399.dtsi"
+#include "rk3399-u-boot.dtsi"         /* defines dmc/dfi nodes */
 #include "rk3399-sdram-ddr3-1600.dtsi"
-#include "rk3399-u-boot.dtsi"
 
 / {
 	model = "Firefly-RK3399 Board";
 	compatible = "firefly,firefly-rk3399", "rockchip,rk3399";
 
+	/* Dummy node to satisfy pcie clkreq phandle; PCIe is disabled below */
+	pcie_clkreqn: dummy-pcie-clkreqn {};
+
 	chosen {
-		stdout-path = &uart2;
+		stdout-path = "serial2:1500000n8";
 		u-boot,spl-boot-order = &sdmmc, &sdhci;
 	};
 
@@ -585,7 +588,7 @@
 };
 
 &pwm2 {
-	status = "okay";
+	status = "disabled";
 };
 
 &saradc {
@@ -596,7 +599,7 @@
 
 &sdmmc {
 	bus-width = <4>;
-	status = "okay";
+	status = "disabled";
 };
 
 &sdhci {

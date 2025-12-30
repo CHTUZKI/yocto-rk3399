@@ -1,5 +1,11 @@
 # WIC file for RK3399 SD/eMMC image
 # Based on Armbian's partition layout
+#
+# Partition layout:
+# - Partition 1: uboot (8MB) - U-Boot bootloader (handled by bootloader plugin)
+# - Partition 2: trust (8MB) - ATF/TrustZone (handled by bootloader plugin)  
+# - Partition 2: boot (240MB) - FAT boot partition (for compatibility, may be empty)
+# - Partition 3: root (~29GB) - ext4 root partition with /boot directory containing kernel/DTB
 
 # Bootloader partitions (before partition table)
 # idbloader.bin at sector 64 (0x40)
@@ -7,7 +13,9 @@
 # trust.bin at sector 24576 (0x6000)
 
 # Partition table starts at 16MB (sector 32768)
+# Partition 2: boot partition (FAT) - may be empty, kernel is in root partition
 part /boot --source bootimg-partition --ondisk mmcblk --fstype=vfat --label boot --align 4096 --size 240
+# Partition 3: root partition (ext4) - contains /boot directory with kernel and DTB
 part / --source rootfs --ondisk mmcblk --fstype=ext4 --label root --align 4096
 
 # Bootloader installation

@@ -1,0 +1,24 @@
+# Emergency boot commands for RK3399
+# Use this when fatload fails with "Can't set block device"
+
+# Method 1: Try different MMC access methods
+mmc dev 0
+mmc rescan
+
+# Try raw read from boot partition
+mmc read 0x00280000 0x8000 0x1000
+mmc read 0x03000000 0x9000 0x100
+
+# Check if kernel is loaded
+md 0x00280000 4
+
+# Method 2: Use Rockchip boot command if available
+# boot rockchip
+
+# Method 3: Try different partition numbering
+# fatload mmc 0:1 0x00280000 Image
+# fatload mmc 0:1 0x03000000 rk3399-firefly-aio.dtb
+
+# Boot with correct root partition
+setenv bootargs root=/dev/mmcblk0p3 rootwait rootfstype=ext4 console=ttyS2,1500000
+booti 0x00280000 - 0x03000000

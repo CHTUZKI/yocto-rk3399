@@ -1,5 +1,7 @@
-DDR Version 1.30 20230417
+\0DDR Version 1.30 20230417
 In
+soft reset
+SRX
 channel 0
 CS = 0
 MR0=0x18
@@ -75,7 +77,7 @@ support 416 856 328 666 928 MHz, current 856MHz
 OUT
 Boot1 Release Time: May 26 2022 18:14:35, version: 1.30
 CPUId = 0x0
-ChipType = 0x10, 321
+ChipType = 0x10, 403
 mmc_set_bus_width: 1
 EmmcClk: 375KHZ
 mmc_switch index:183, value:0x2
@@ -108,7 +110,7 @@ mmc0:cmd55,20
 mmc0:cmd1,20
 NeedKHz=200KHz, Clock=12000KHz
 SdmmcInit=0 1
-StorageInit ok = 83449
+StorageInit ok = 85032
 SecureMode = 0
 SecureInit read PBA: 0x4
 SecureInit read PBA: 0x404
@@ -123,15 +125,15 @@ atags_set_bootdev: ret:(0)
 GPT part:  0, name:            uboot, start:0x4000, size:0x2000
 GPT part:  1, name:            trust, start:0x6000, size:0x2000
 GPT part:  2, name:             boot, start:0x8000, size:0x9c000
-GPT part:  3, name:             root, start:0xa4000, size:0x3999fdf
+GPT part:  3, name:             root, start:0xa4000, size:0x299998
 find part:uboot OK. first_lba:0x4000.
 find part:trust OK. first_lba:0x6000.
 LoadTrust Addr:0x6000
 No find bl30.bin
 No find bl32.bin
 Load uboot, ReadLba = 4000
-Load OK, addr=0x200000, size=0xe7198
-RunBL31 0x40000 @ 115340 us
+Load OK, addr=0x200000, size=0xaf980
+RunBL31 0x40000 @ 116687 us
 NOTICE:  BL31: v1.3(release):8f40012ab
 NOTICE:  BL31: Built : 14:20:53, Feb 16 2023
 NOTICE:  BL31: Rockchip release version: v1.1
@@ -146,88 +148,38 @@ INFO:    BL31: Preparing for EL3 exit to normal world
 INFO:    Entry point address = 0x200000
 INFO:    SPSR = 0x3c9
 
-[CLK] ===== rk3399_clk_probe() START =====
-[CLK] CRITICAL: Clock controller is being probed!
-[CLK] This happens AFTER PMIC initialization!
-[CLK] Current baudrate: 1500000
-[CLK] init_clocks: 0
-[CLK] ===== rk3399_clk_probe() END =====
 
+U-Boot 2022.07-rk3399 (Jul 11 2022 - 13:42:58 +0000)
 
-U-Boot 2024.10-dirty (Oct 07 2024 - 14:54:35 +0000)
-
-
-[CPUINFO] print_cpuinfo() called
-[CPUINFO] Current baudrate: 1500000
-[CPUINFO] About to print SoC info
 SoC: Rockchip rk3399
-Reset cause: POR
-[CPUINFO] SoC and Reset cause printed
-[CPUINFO] Current baudrate after printf: 1500000
-[CPUINFO] About to set reset_reason env
-[CPUINFO] print_cpuinfo() completed
-
-[BOARDINFO] show_board_info() called
-[BOARDINFO] Current baudrate: 1500000
-[BOARDINFO] Trying to get Model from device tree
-[BOARDINFO] About to print Model from device tree
-[BOARDINFO] Current baudrate: 1500000
+Reset cause: RST
 Model: Firefly-RK3399 Board
-[BOARDINFO] Model printed from device tree
-
-[DRAM] announce_dram_init() called
-[DRAM] Current baudrate: 1500000
-[DRAM] About to print DRAM: 
-DRAM:  [DRAM] DRAM: printed
-[DRAM] show_dram_config() - About to print DRAM size
-[DRAM] Current baudrate: 1500000
-[DRAM] ram_size: 2147483648
-2 GiB
-[DRAM] DRAM size printed
-[DRAM] Current baudrate after print_size: 1500000
-
-[INITR_DM] ===== START =====
-[INITR_DM] Line: int ret;
-[INITR_DM] Current baudrate: 1500000
-[INITR_DM] Line: oftree_reset();
-[INITR_DM] Line: gd->dm_root = NULL;
-[INITR_DM] Line: bootstage_start(...);
-
-[INITR_DM] ===== BEFORE dm_init_and_scan() =====
-[INITR_DM] About to initialize device tree (PMIC will be probed here)
-[INITR_DM] Current baudrate: 1500000
-[INITR_DM] Line: ret = dm_init_and_scan(false);
-
-[PMIC] About to print PMIC info
-[PMIC] Current baudrate: 1500000
+DRAM:  2 GiB
 PMIC:  RK808 
-[PMIC] PMIC info printed
-[PMIC] Current baudrate after printf: 1500000
-[PMIC] ===== CRITICAL DEBUG POINT =====
-[PMIC] Checking serial device state...
-[PMIC] Serial device exists: serial@ff1a0000
-[PMIC] Serial flags: 513
-[PMIC] About to return from rk8xx_probe()
-[PMIC] ===== END CRITICAL DEBUG =====
-[PMIC] rk8xx_probe() returning 0
-[PMIC] Final baudrate check: 1500000
-[PMIC] ===== CRITICAL: About to return from rk8xx_probe() =====
-[PMIC] WARNING: After this return, dm_init_and_scan() will continue!
-[PMIC] Other devices may be initialized after PMIC!
-[PMIC] ===== END CRITICAL WARNING =====
-
-
-
-[INITR_DM] Line: bootstage_accum(...);
-[INITR_DM] dm_init_and_scan() returned: 0
-
-[INITR_DM] ===== AFTER dm_init_and_scan() =====
-[INITR_DM] CRITICAL: Device tree initialization completed (PMIC probed)
-[INITR_DM] Current baudrate: 1500000
-[INITR_DM] Serial device after dm_init_and_scan: serial@ff1a0000
-[INITR_DM] ===== END AFTER dm_init_and_scan() =====
-[INITR_DM] Line: if (ret) return ret;
-[INITR_DM] Line: return 0;
-[INITR_DM] ===== END =====
-
-[BOARD_R] ===== AFTER initr_dm() (separate debug) =====	[BOARD_R] CurpAnt b@udrad@: 15  000	\0[BO\0_R]\0eriaH\0devaB@ Af`@` inId`_dM2\0b@rial@Dd @ 0  \0[BABD\0\08<888\0E\0\0\0\0\0\0@L@t`@H(\0\088888\0N\0\0\0\088888\0\0\0\0\0\0\0\0\0\0\0\0\0\088888\0\0\0\0\0\088888\0\0\0\0\0\0\0\0\0\0\0\0\0\088888\0\0\0\0\0\0\088888\0\0\0\0\0\0\0\0\0\0\0\0\0\088888\0\0\0\0\0\0\0\0@N``\0`N\0`@```L\0D`NH\0@@@`F@D`@`@L@``@H\0\0\0\0\0\0\0\0\0@p`\0D`LB`@NL\0@L\0@L@`\0b@``@LB@\0f@HH\0@@\0B@HH@@\0\0\0\0\0\0\088888\0\0\0\0@@@`F@D`@`@L@``@H\0\0\088888\0\0\0\0\0\0\088888\0\0\0\0\00\0\0D`@`\0@@@`F@D`@`@L@``@H\0\0\0`@```Lb\0\0\0\0\0\0\088888\0\0\0\0\00\0@p`\0@L\0b@``@LB@0\0@L@`@@@`H@`\0N`\0@N@`@@L\0`\0N`\0B@`B``BHB@LDN\0\0\0\0\0\0\088888\0\0\0\0\00\0@@BB@LF\0f@@B@\0D`LB`@NLb\0f@HH\0@@\0B@HH@@\0\0\0\0\0\0\0\0\088888\0\0\0\0\00\0\0D`@`\0@L@``@H\0@@DN`@\0L@p`\0b`@`\088888\0\0\0\0\0\0\0```@L`\0@@`@`@`@0\0  \0 \0  \0\0\0\0\0\0\0@`@@H\0\0\0€M禜\0b@`@@H\0DD @    \0\0\0\0\0\0\088888\0\0\0\0\0\0\0\0\0F\0\0\0&繺0L@``@H\0@@DN`@\0@p`\0b`@`\088888\0\0\0\0\0\0\0\00閯€?h\0\0\0\0@N@ \0@L@`\0\0\08嶂剟?`B\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0H篭0\0H\0B@@\0@N@`@@L@`\0\0\0@?@乗0\0\0```\0 \0@@`@`@`@0\0\0 \0\0\0\0\0慉\0\0\0\0\0\0 ?888\0\0\0\0\0\0\0\0\0@B@`@\0L@`\0\0\08(888\0\0\0D$@‐0\0\088888\0\0\0\0\0\0@N@@@@L@`\0\0\088888\0\0\0\0\0\0\0```\0L`\0@@`@`@`@0\0        \0\0\0\0\0\0!\00G88\0\0\0\0\0\0\0\0\0\0\0	@L\0\0(888\0\0\04@\0\0\0\0\0釂\0 \0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0朦觜齄?o??????鳅禳??????夵鲐瘙??棹??劈嗑?????瘙瘅?纛怏?叁稽狘鹸觚??轵????逐螯|?鼽????噫傀??旧氵p螨欥|喏???稔?瘘?痿??稔?滆翩??顸??瘘瘘鼾椟??矬?q?邺?鲳?瘘????楮狲摭?柠瘀铨鹳?瘌狺耵??????鳇?u??斛???纟帱??????鳋??狳瘕????罂????=琮?篌瘀棼聒?弪G硒蟒???????裹酎狐螨???妣玄?瘘?夻?囫t?~尹?瘙觜帙?鳋??挈?|滯?啭??鴻????瘊???铨?~帼铧奎酎??嵇?瘙?鼽??帑??觚???帏蝥??瘊R廄??豇??滢?佝豇?锵濑?鴴??蟒佚?犁鼽??瘘酤??酎??鰴????鼬?酤齄稔?稔恺钹?蛭?蝾簏?貘?狳??鴳?麹?熿椠泓???啁颃篑?齜邃鸶怵?妪瘙?妣瘘??鹑?凒??咩?瘥????待??妖?挲??酎????瘘??耱听簋?帱\0\0\0\0\0P,\0\0\0\0\0\0\0\0\0\0\0\0\0\0??酏蟒"\0\0\0\0\0\0\0\0\0\0\0\0@?R酏帼?麼???更???躔?瘙x?忐€恂颃?妣???戽???瘙???p狴颀?瘘?狺鼽鎏??@\0\0\0\0\0\0\0\0\0\0\0鲽蟒趄揲俐锫??鱰镦?\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0续€??觌麴?~???????撖????????????????????谚狲?掰?|瘘?????濑?蝠?鳇?酤?鼽瘙?镟??????瘘??????跎唼??鼬?邺?顸???琬赛????,捔???帱?哈??纥齄?聱蝤鳇??????漫瘘???瘙篾????????餍觜??????????鼜?????m?瘊??稔?箴饤趑潺?????纩酤酤踽?鼾h鶅?忥?丫螯??潼??帻燏???茳??????鼃颀?鳇?????x?s?篪鼰膻瘥?铠?颃??聒?满???潸绢?睑?蒺稂??????镅鶁?赛铰鷆?嵇瘊瘕?螟?潋?厉?黒0?顸曝??飹帼??劈帻???顸蟒扊??咯酤??掼襻泾瘘??~??尹?x?瘙?螨?叁?镑?瘊?會鲇????簏?鳋?稔政???????痧??鸻?蝮?鼽齨鳋螟??????琰镲???漶?????x威???桀犋?婵鲽?网?漯?酤?铠冼蝤}^吸渠齄?篪蟒??瘙狲????????]篪睨?升瘙??酤?p簋???禳?瘙卟??耕二??忭?簋???威??狒?m簋?琰???\0\0	????媵??麴??????鼯??睨?<?滮???帱?瑛??顸???桁搌??鳋酤?削聒????觞<骁?铪?????屮???黯v疴轺????|覃叁???????齄???鳋~m郿???d???齄?猃豉??????泗??隐?顸瘙?????酤?简??A漫??????眭黟?籍疝???鼅???攸?貔妩???觜???雉?????稔?妃帼麮??????鳇???疋??稂帱?瘥?欬????宁呜?狺???瘙????筻鳊?簋???瘕舔?????轺?瘘镡??轧??琬???疣??膻??轧?箭褒瘘豇螯狃?鳋???滯??黟?铪?帼?啭铑佝?稔??螨?????????????鸾?????鳋瘙??颀??????????鸺?鳇????恻???禳??甍拶嗑????鳊蔌???酏????傀??螋???桊?鼅酐?t?翥酏辋????j??????甍酤簖邙??????铪狷瘀??????簖?鬨0\0\0\0\0\0\0\0茵狐伫???鳅??蜢顸??朦??趔傀??帻鸁?鼯?聒鼾瘥鳇??\0棱??帼韠鳿0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0厉瘐???揞\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0旔?扆?齄??\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0P~?騬翳佝??酏\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0烃聒?帼?挈?濑?铪簏??黯???????颃瘙??瘕????耋齄?????贬?孆酤?睨??唼???鳋????瘙挲??铪?觚???觚?恂鼽命忐?????蝼酤????鳇黩|?鳄?鲵簏???鳋???埸铨?鳊?骧黀???鹂佯??澌??佚鳊?鲈?傀瘥豉?簋??????豇??????鳋???鼹?撖??痼????颃稔鳆????兀
+Core:  257 devices, 27 uclasses, devicetree: separate
+MMC:   mmc@fe330000: 0
+Loading Environment from MMC... OK
+In:    serial@ff1a0000
+Out:   serial@ff1a0000
+Err:   serial@ff1a0000
+Model: Firefly-RK3399 Board
+Net:   eth0: ethernet@fe300000
+Hit any key to stop autoboot:  2  1  0 
+## Resetting to default environment
+himport_r: can't insert "stdin=serial,usbkbd" into hash table
+himport_r: can't insert "stdout=serial,vidconsole" into hash table
+himport_r: can't insert "stderr=serial,vidconsole" into hash table
+switch to partitions #0, OK
+mmc0(part 0) is current device
+switch to partitions #3, OK
+mmc0(part 3) is current device
+Unknown command 'if' - try 'help'
+Unknown command 'then' - try 'help'
+Unknown command 'if' - try 'help'
+Unknown command 'then' - try 'help'
+Bad Linux ARM64 Image magic!
+Unknown command 'else' - try 'help'
+Unknown command 'fi' - try 'help'
+Unknown command 'else' - try 'help'
+Unknown command 'fi' - try 'help'
+=> 
