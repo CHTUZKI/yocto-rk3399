@@ -86,21 +86,14 @@ do_create_boot_script() {
     
     # Create boot script with kernel filename embedded
     cat > ${BOOTIMG_ROOT_DIR}/boot/boot.cmd << EOF
-# Boot script for RK3399 - Load from root partition
-# This script loads kernel and DTB from root partition (ext4)
+# Boot script for RK3399 - Minimal kernel/DTB loader
+# This script only loads kernel and DTB, bootargs handled by Yocto distro boot
 echo "[BOOTSCRIPT] Starting RK3399 boot script"
 
 # Set load addresses (RK3399 has 2GB RAM, use safe addresses)
 setenv ramdisk_addr_r "0x28000000"
 setenv kernel_addr_r "0x00280000"
 setenv fdt_addr_r "0x03000000"
-
-# Set default values
-# Note: GPT partition 3 (root) maps to /dev/mmcblk0p4 in Linux (GPT partitions start at 1)
-setenv rootdev "/dev/mmcblk0p4"
-setenv rootpart "4"
-setenv verbosity "7"
-setenv rootfstype="ext4"
 
 # Set device tree file name
 setenv fdtfile "rk3399-firefly-aio.dtb"
@@ -110,26 +103,21 @@ setenv kernel_image "${kernel_file}"
 
 echo "[BOOTSCRIPT] Loading kernel from root partition (ext4)"
 
-# Set boot arguments
-# Add earlycon for early kernel console output
-# RK3399 UART2 (ttyS2) base address is 0xff1a0000
-setenv bootargs "earlycon=uart8250,mmio32,0xff1a0000,1500000n8 root=\${rootdev} rootwait rootfstype=\${rootfstype} console=ttyS2,1500000n8 consoleblank=0 loglevel=\${verbosity}"
-
 # Load kernel from root partition (ext4 filesystem)
-# Note: U-Boot uses partition index (0-based), GPT partition 3 is index 3
+# Note: U-Boot uses partition index (0-based), GPT partition 1 is index 1
 echo "[BOOTSCRIPT] Loading kernel: \${kernel_image}"
-if ext4load mmc 0:3 \${kernel_addr_r} /boot/\${kernel_image}; then
+if ext4load mmc 0:1 \${kernel_addr_r} /boot/\${kernel_image}; then
     echo "[BOOTSCRIPT] Kernel loaded successfully"
 else
     echo "[BOOTSCRIPT] ERROR: Could not load kernel \${kernel_image}"
     echo "[BOOTSCRIPT] Available files in /boot directory:"
-    ext4ls mmc 0:3 /boot
+    ext4ls mmc 0:1 /boot
     exit
 fi
 
 # Load device tree from root partition
 echo "[BOOTSCRIPT] Loading DTB: \${fdtfile}"
-if ext4load mmc 0:3 \${fdt_addr_r} /boot/\${fdtfile}; then
+if ext4load mmc 0:1 \${fdt_addr_r} /boot/\${fdtfile}; then
     echo "[BOOTSCRIPT] DTB loaded successfully"
 else
     echo "[BOOTSCRIPT] ERROR: DTB file \${fdtfile} not found"
@@ -137,7 +125,7 @@ else
 fi
 
 # Boot the kernel using standard ARM64 boot
-echo "[BOOTSCRIPT] bootargs: \${bootargs}"
+# Let Yocto distro boot handle bootargs
 booti \${kernel_addr_r} - \${fdt_addr_r}
 EOF
     

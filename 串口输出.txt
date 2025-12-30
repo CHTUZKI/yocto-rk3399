@@ -110,7 +110,7 @@ mmc0:cmd55,20
 mmc0:cmd1,20
 NeedKHz=200KHz, Clock=12000KHz
 SdmmcInit=0 1
-StorageInit ok = 85032
+StorageInit ok = 84617
 SecureMode = 0
 SecureInit read PBA: 0x4
 SecureInit read PBA: 0x404
@@ -132,8 +132,8 @@ LoadTrust Addr:0x6000
 No find bl30.bin
 No find bl32.bin
 Load uboot, ReadLba = 4000
-Load OK, addr=0x200000, size=0xaf980
-RunBL31 0x40000 @ 116687 us
+Load OK, addr=0x200000, size=0xbeea0
+RunBL31 0x40000 @ 117244 us
 NOTICE:  BL31: v1.3(release):8f40012ab
 NOTICE:  BL31: Built : 14:20:53, Feb 16 2023
 NOTICE:  BL31: Rockchip release version: v1.1
@@ -156,7 +156,7 @@ Reset cause: RST
 Model: Firefly-RK3399 Board
 DRAM:  2 GiB
 PMIC:  RK808 
-Core:  257 devices, 27 uclasses, devicetree: separate
+Core:  259 devices, 27 uclasses, devicetree: separate
 MMC:   mmc@fe330000: 0
 Loading Environment from MMC... OK
 In:    serial@ff1a0000
@@ -165,21 +165,181 @@ Err:   serial@ff1a0000
 Model: Firefly-RK3399 Board
 Net:   eth0: ethernet@fe300000
 Hit any key to stop autoboot:  2  1  0 
-## Resetting to default environment
-himport_r: can't insert "stdin=serial,usbkbd" into hash table
-himport_r: can't insert "stdout=serial,vidconsole" into hash table
-himport_r: can't insert "stderr=serial,vidconsole" into hash table
 switch to partitions #0, OK
 mmc0(part 0) is current device
-switch to partitions #3, OK
-mmc0(part 3) is current device
-Unknown command 'if' - try 'help'
-Unknown command 'then' - try 'help'
-Unknown command 'if' - try 'help'
-Unknown command 'then' - try 'help'
-Bad Linux ARM64 Image magic!
-Unknown command 'else' - try 'help'
-Unknown command 'fi' - try 'help'
-Unknown command 'else' - try 'help'
-Unknown command 'fi' - try 'help'
-=> 
+9295880 bytes read in 866 ms (10.2 MiB/s)
+110785 bytes read in 26 ms (4.1 MiB/s)
+Moving Image from 0x280000 to 0x400000, end=d40000
+## Flattened Device Tree blob at 03000000
+   Booting using the fdt blob at 0x3000000
+ERROR: reserving fdt memory region failed (addr=0 size=0 flags=0)
+   Loading Device Tree to 000000007defb000, end 000000007df190c0 ... OK
+
+Starting kernel ...
+
+Booting Linux on physical CPU 0x0000000000 [0x410fd034]
+Linux version 6.1.115 (oe-user@oe-host) (aarch64-poky-linux-gcc (GCC) 11.5.0, GNU ld (GNU Binutils) 2.38.20220708) #1 SMP Wed Dec 24 10:54:39 UTC 2025
+Machine model: AIO-3399J Board (Linux Opensource)
+earlycon: uart8250 at MMIO32 0x00000000ff1a0000 (options '1500000n8')
+printk: bootconsole [uart8250] enabled
+OF: fdt: Reserved memory: failed to reserve memory for node 'drm-logo@0': base 0x0000000000000000, size 0 MiB
+Zone ranges:
+  DMA      [mem 0x0000000000200000-0x000000007fffffff]
+  DMA32    empty
+  Normal   empty
+Movable zone start for each node
+Early memory node ranges
+  node   0: [mem 0x0000000000200000-0x000000007fffffff]
+Initmem setup node 0 [mem 0x0000000000200000-0x000000007fffffff]
+On node 0, zone DMA: 512 pages in unavailable ranges
+psci: probing for conduit method from DT.
+psci: PSCIv1.0 detected in firmware.
+psci: Using standard PSCI v0.2 function IDs
+psci: MIGRATE_INFO_TYPE not supported.
+psci: SMC Calling Convention v1.0
+percpu: Embedded 14 pages/cpu s24936 r0 d32408 u57344
+Detected VIPT I-cache on CPU0
+CPU features: detected: GIC system register CPU interface
+alternatives: applying boot alternatives
+Built 1 zonelists, mobility grouping on.  Total pages: 515592
+Kernel command line: earlycon=uart8250,mmio32,0xff1a0000,1500000n8 root=/dev/mmcblk0p4 rootwait rootfstype=ext4 console=ttyS2,1500000 consoleblank=0 loglevel=7
+Dentry cache hash table entries: 262144 (order: 9, 2097152 bytes, linear)
+Inode-cache hash table entries: 131072 (order: 8, 1048576 bytes, linear)
+mem auto-init: stack:off, heap alloc:off, heap free:off
+Memory: 2044688K/2095104K available (6144K kernel code, 758K rwdata, 1124K rodata, 896K init, 366K bss, 50416K reserved, 0K cma-reserved)
+SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=6, Nodes=1
+rcu: Hierarchical RCU implementation.
+rcu: 	RCU restricting CPUs from NR_CPUS=256 to nr_cpu_ids=6.
+rcu: RCU calculated value of scheduler-enlistment delay is 25 jiffies.
+rcu: Adjusting geometry for rcu_fanout_leaf=16, nr_cpu_ids=6
+NR_IRQS: 64, nr_irqs: 64, preallocated irqs: 0
+GICv3: GIC: Using split EOI/Deactivate mode
+GICv3: 256 SPIs implemented
+GICv3: 0 Extended SPIs implemented
+Root IRQ handler: gic_handle_irq
+GICv3: GICv3 features: 16 PPIs
+GICv3: CPU0: found redistributor 0 region 0:0x00000000fef00000
+ITS [mem 0xfee20000-0xfee3ffff]
+ITS@0x00000000fee20000: allocated 65536 Devices @280000 (flat, esz 8, psz 64K, shr 0)
+ITS: using cache flushing for cmd queue
+GICv3: using LPI property table @0x0000000000240000
+GIC: using cache flushing for LPI property table
+GICv3: CPU0: using allocated LPI pending table @0x0000000000250000
+GICv3: GIC: PPI partition interrupt-partition-0[0] { /cpus/cpu@0[0] /cpus/cpu@1[1] /cpus/cpu@2[2] /cpus/cpu@3[3] }
+GICv3: GIC: PPI partition interrupt-partition-1[1] { /cpus/cpu@100[4] /cpus/cpu@101[5] }
+rcu: srcu_init: Setting srcu_struct sizes based on contention.
+arch_timer: cp15 timer(s) running at 24.00MHz (phys).
+clocksource: arch_sys_counter: mask: 0xffffffffffffff max_cycles: 0x588fe9dc0, max_idle_ns: 440795202592 ns
+sched_clock: 56 bits at 24MHz, resolution 41ns, wraps every 4398046511097ns
+Failed to get pclk for 'rk_timer'
+Console: colour dummy device 80x25
+Calibrating delay loop (skipped), value calculated using timer frequency.. 48.00 BogoMIPS (lpj=96000)
+pid_max: default: 32768 minimum: 301
+Mount-cache hash table entries: 4096 (order: 3, 32768 bytes, linear)
+Mountpoint-cache hash table entries: 4096 (order: 3, 32768 bytes, linear)
+cacheinfo: Unable to detect cache hierarchy for CPU 0
+rcu: Hierarchical SRCU implementation.
+rcu: 	Max phase no-delay instances is 1000.
+Platform MSI: interrupt-controller@fee20000 domain created
+smp: Bringing up secondary CPUs ...
+Detected VIPT I-cache on CPU1
+cacheinfo: Unable to detect cache hierarchy for CPU 1
+GICv3: CPU1: found redistributor 1 region 0:0x00000000fef20000
+GICv3: CPU1: using allocated LPI pending table @0x0000000000260000
+CPU1: Booted secondary processor 0x0000000001 [0x410fd034]
+Detected VIPT I-cache on CPU2
+cacheinfo: Unable to detect cache hierarchy for CPU 2
+GICv3: CPU2: found redistributor 2 region 0:0x00000000fef40000
+GICv3: CPU2: using allocated LPI pending table @0x0000000000270000
+CPU2: Booted secondary processor 0x0000000002 [0x410fd034]
+Detected VIPT I-cache on CPU3
+cacheinfo: Unable to detect cache hierarchy for CPU 3
+GICv3: CPU3: found redistributor 3 region 0:0x00000000fef60000
+GICv3: CPU3: using allocated LPI pending table @0x0000000000300000
+CPU3: Booted secondary processor 0x0000000003 [0x410fd034]
+CPU features: detected: Spectre-v2
+CPU features: detected: Spectre-v4
+CPU features: detected: Spectre-BHB
+CPU features: detected: ARM errata 1165522, 1319367, or 1530923
+Detected PIPT I-cache on CPU4
+cacheinfo: Unable to detect cache hierarchy for CPU 4
+GICv3: CPU4: found redistributor 100 region 0:0x00000000fef80000
+GICv3: CPU4: using allocated LPI pending table @0x0000000000310000
+CPU4: Booted secondary processor 0x0000000100 [0x410fd082]
+Detected PIPT I-cache on CPU5
+cacheinfo: Unable to detect cache hierarchy for CPU 5
+GICv3: CPU5: found redistributor 101 region 0:0x00000000fefa0000
+GICv3: CPU5: using allocated LPI pending table @0x0000000000320000
+CPU5: Booted secondary processor 0x0000000101 [0x410fd082]
+smp: Brought up 1 node, 6 CPUs
+SMP: Total of 6 processors activated.
+CPU features: detected: 32-bit EL0 Support
+CPU features: detected: CRC32 instructions
+CPU: All CPU(s) started at EL2
+alternatives: applying system-wide alternatives
+clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 7645041785100000 ns
+futex hash table entries: 2048 (order: 5, 131072 bytes, linear)
+pinctrl core: initialized pinctrl subsystem
+NET: Registered PF_NETLINK/PF_ROUTE protocol family
+DMA: preallocated 256 KiB GFP_KERNEL pool for atomic allocations
+DMA: preallocated 256 KiB GFP_KERNEL|GFP_DMA pool for atomic allocations
+DMA: preallocated 256 KiB GFP_KERNEL|GFP_DMA32 pool for atomic allocations
+ASID allocator initialised with 65536 entries
+platform ff770000.syscon:mipi-dphy-rx0: Fixed dependency cycle(s) with /i2c@ff110000/ov13850@36
+platform fe330000.mmc: Fixed dependency cycle(s) with /syscon@ff770000/phy@f780
+platform ff770000.syscon:phy@f780: Fixed dependency cycle(s) with /mmc@fe330000
+platform ff770000.syscon:mipi-dphy-rx0: Fixed dependency cycle(s) with /rkisp1@ff910000
+platform ff910000.rkisp1: Fixed dependency cycle(s) with /syscon@ff770000/mipi-dphy-rx0
+platform ff900000.vop: Fixed dependency cycle(s) with /hdmi@ff940000
+platform ff940000.hdmi: Fixed dependency cycle(s) with /vop@ff900000
+platform ff920000.rkisp1: Fixed dependency cycle(s) with /mipi-dphy-tx1rx1@ff968000
+platform ff968000.mipi-dphy-tx1rx1: Fixed dependency cycle(s) with /rkisp1@ff920000
+platform ff968000.mipi-dphy-tx1rx1: Fixed dependency cycle(s) with /i2c@ff110000/ov13850@46
+iommu: Default domain type: Translated 
+iommu: DMA domain TLB invalidation policy: strict mode 
+usbcore: registered new interface driver usbfs
+usbcore: registered new interface driver hub
+usbcore: registered new device driver usb
+pps_core: LinuxPPS API ver. 1 registered
+pps_core: Software ver. 5.3.6 - Copyright 2005-2007 Rodolfo Giometti <giometti@linux.it>
+PTP clock support registered
+clocksource: Switched to clocksource arch_sys_counter
+NET: Registered PF_INET protocol family
+IP idents hash table entries: 32768 (order: 6, 262144 bytes, linear)
+tcp_listen_portaddr_hash hash table entries: 1024 (order: 2, 16384 bytes, linear)
+Table-perturb hash table entries: 65536 (order: 6, 262144 bytes, linear)
+TCP established hash table entries: 16384 (order: 5, 131072 bytes, linear)
+TCP bind hash table entries: 16384 (order: 7, 524288 bytes, linear)
+TCP: Hash tables configured (established 16384 bind 16384)
+UDP hash table entries: 1024 (order: 3, 32768 bytes, linear)
+UDP-Lite hash table entries: 1024 (order: 3, 32768 bytes, linear)
+workingset: timestamp_bits=62 max_order=19 bucket_order=0
+io scheduler mq-deadline registered
+io scheduler kyber registered
+Serial: 8250/16550 driver, 4 ports, IRQ sharing disabled
+led_vk2c21_init
+=============================================
+cacheinfo: Unable to detect cache hierarchy for CPU 0
+i2c_dev: i2c /dev entries driver
+sdhci: Secure Digital Host Controller Interface driver
+sdhci: Copyright(c) Pierre Ossman
+Synopsys Designware Multimedia Card Interface Driver
+sdhci-pltfm: SDHCI platform and OF driver helper
+usbcore: registered new interface driver usbhid
+usbhid: USB HID core driver
+NET: Registered PF_INET6 protocol family
+Segment Routing with IPv6
+In-situ OAM (IOAM) with IPv6
+sit: IPv6, IPv4 and MPLS over IPv4 tunneling driver
+rk_iommu ff650800.iommu: ignoring dependency for device, assuming no driver
+rk_iommu ff660480.iommu: ignoring dependency for device, assuming no driver
+rk_iommu ff670800.iommu: ignoring dependency for device, assuming no driver
+rk_iommu ff8f3f00.iommu: ignoring dependency for device, assuming no driver
+rk_iommu ff903f00.iommu: ignoring dependency for device, assuming no driver
+rk_iommu ff914000.iommu: ignoring dependency for device, assuming no driver
+rk_iommu ff924000.iommu: ignoring dependency for device, assuming no driver
+/usb@fe800000: Failed to get clk index: 0 ret: -517
+/usb@fe900000: Failed to get clk index: 0 ret: -517
+clk: Disabling unused clocks
+Warning: unable to open an initial console.
+Waiting for root device /dev/mmcblk0p4...

@@ -5,7 +5,7 @@
 
 inherit image
 
-export RK_ROOTDEV_UUID ?= "614e0000-0000-4b53-8000-1d28000054a9"
+export RK_ROOTDEV_UUID ?= "/dev/mmcblk0p3"
 export RK_PARTITION_GROW ?= "1"
 export RK_ROOTFS_TYPE ?= "ext4"
 
@@ -108,7 +108,7 @@ gen_rkparameter() {
 	# 	sed -i 's/[^,]*\(@[^,]*\)),$/-\1:grow)/' "${OUT}"
 	# fi
 
-	echo "uuid: rootfs=${RK_ROOTDEV_UUID}" >> "${OUT}"
+	echo "root: ${RK_ROOTDEV_UUID}" >> "${OUT}"
 }
 
 # Generate Rockchip update.img using official tools

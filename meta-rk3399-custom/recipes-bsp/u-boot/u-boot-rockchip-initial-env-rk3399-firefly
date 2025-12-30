@@ -23,7 +23,7 @@ fdtfile=rk3399-firefly-aio.dtb
 kernel_image=Image-6.1.115
 
 # Helper commands for loading kernel and DTB
-# Note: U-Boot uses partition index (0-based), GPT partition 3 is index 3
+# Note: U-Boot uses partition index (0-based), GPT partition 3 (root) is index 3
 load_kernel=ext4load mmc 0:3 ${kernel_addr_r} /boot/Image-6.1.115
 load_dtb=ext4load mmc 0:3 ${fdt_addr_r} /boot/rk3399-firefly-aio.dtb
 

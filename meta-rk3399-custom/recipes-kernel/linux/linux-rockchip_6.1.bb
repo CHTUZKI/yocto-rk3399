@@ -15,7 +15,7 @@ KERNEL_VERSION_SANITY_SKIP = "1"
 
 # Kernel source - Armbian linux-rockchip
 KBRANCH = "rk-6.1-rkr5.1"
-SRCREV = "${AUTOREV}"
+SRCREV = "b908c7339f51eddcfe8402cd15d1e1f8f4e67c29"
 
 SRC_URI = "git://github.com/armbian/linux-rockchip.git;branch=${KBRANCH};protocol=https \
            file://defconfig \

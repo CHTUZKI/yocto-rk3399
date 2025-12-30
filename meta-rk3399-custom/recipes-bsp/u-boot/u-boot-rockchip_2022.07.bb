@@ -60,45 +60,20 @@ do_configure:prepend() {
             sed -i 's/^CONFIG_BAUDRATE=.*/CONFIG_BAUDRATE=1500000/' ${S}/configs/${UBOOT_MACHINE}
         fi
         
-        # Disable distro boot to use our custom bootcmd
-        # This prevents distro_bootcmd from overriding CONFIG_BOOTCOMMAND
-        # First try to replace if exists, if not, add the disable line
-        if grep -q "^CONFIG_DISTRO_DEFAULTS=y" ${S}/configs/${UBOOT_MACHINE}; then
-            sed -i 's/^CONFIG_DISTRO_DEFAULTS=y/# CONFIG_DISTRO_DEFAULTS is not set/' ${S}/configs/${UBOOT_MACHINE}
-        else
-            # If not found, add the disable line before CONFIG_BOOTCOMMAND (if exists) or at the end
-            if grep -q "^CONFIG_BOOTCOMMAND=" ${S}/configs/${UBOOT_MACHINE}; then
-                sed -i '/^CONFIG_BOOTCOMMAND=/i# CONFIG_DISTRO_DEFAULTS is not set' ${S}/configs/${UBOOT_MACHINE}
-            else
-                echo "# CONFIG_DISTRO_DEFAULTS is not set" >> ${S}/configs/${UBOOT_MACHINE}
-            fi
-        fi
+        # Enable Yocto standard distro boot for proper bootargs generation
+        # This allows Yocto to dynamically generate correct bootargs
+        sed -i 's/^# CONFIG_DISTRO_DEFAULTS is not set/CONFIG_DISTRO_DEFAULTS=y/' ${S}/configs/${UBOOT_MACHINE}
         
-        # Set custom bootcmd to load kernel from root partition (partition 4)
-        # U-Boot CONFIG_BOOTCOMMAND doesn't support if-then-else-fi syntax
-        # Use simple command chain that works reliably
-        BOOTCMD='mmc dev 0; mmc rescan; run load_kernel; run load_dtb; booti ${kernel_addr_r} - ${fdt_addr_r}'
-        
-        # Define helper commands for loading kernel and DTB
-        # These will be added as environment variables
-        # Note: GPT partition 3 (root) maps to /dev/mmcblk0p4 in Linux (GPT partitions start at 1)
-        LOAD_KERNEL='ext4load mmc 0:4 ${kernel_addr_r} /boot/Image-6.1.115'
-        LOAD_DTB='ext4load mmc 0:4 ${fdt_addr_r} /boot/rk3399-firefly-aio.dtb'
-        
-        # Set load addresses
-        KERNEL_ADDR='0x00280000'
-        FDT_ADDR='0x03000000'
-        
-        # Remove any existing CONFIG_BOOTCOMMAND
+        # Use Yocto standard bootcmd - let distro boot handle everything
+        # Remove any existing CONFIG_BOOTCOMMAND to use Yocto default
         sed -i '/^CONFIG_BOOTCOMMAND=/d' ${S}/configs/${UBOOT_MACHINE} || true
         
-        # Add new CONFIG_BOOTCOMMAND
-        # Note: U-Boot defconfig uses double quotes for CONFIG_BOOTCOMMAND
-        echo "CONFIG_BOOTCOMMAND=\"${BOOTCMD}\"" >> ${S}/configs/${UBOOT_MACHINE}
+        # Let Yocto handle all environment variables automatically
+        # Remove CONFIG_EXTRA_ENV_SETTINGS to use Yocto defaults
+        sed -i '/^CONFIG_EXTRA_ENV_SETTINGS=/d' ${S}/configs/${UBOOT_MACHINE} || true
         
-        # Add helper commands as environment variables
-        # root=/dev/mmcblk0p4: GPT partition 3 (root) maps to Linux device p4
-        echo "CONFIG_EXTRA_ENV_SETTINGS=\"load_kernel=${LOAD_KERNEL}\\nload_dtb=${LOAD_DTB}\\nkernel_addr_r=${KERNEL_ADDR}\\nfdt_addr_r=${FDT_ADDR}\\nbootargs=earlycon=uart8250,mmio32,0xff1a0000,1500000n8 root=/dev/mmcblk0p4 rootwait rootfstype=ext4 console=ttyS2,1500000n8 consoleblank=0 loglevel=7\"" >> ${S}/configs/${UBOOT_MACHINE}
+        # Don't set any hardcoded bootargs - let Yocto handle it
+        # Yocto will generate correct environment variables automatically
     fi
     
     # Copy Firefly device tree file to U-Boot source tree
