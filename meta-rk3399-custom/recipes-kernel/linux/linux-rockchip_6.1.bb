@@ -53,22 +53,6 @@ do_configure:prepend() {
     install -m 0644 ${WORKDIR}/rk3399-firefly-aio.dts ${S}/arch/arm64/boot/dts/rockchip/
     install -m 0644 ${WORKDIR}/rk3399-firefly-port.dtsi ${S}/arch/arm64/boot/dts/rockchip/
     install -m 0644 ${WORKDIR}/rk3399-firefly-core.dtsi ${S}/arch/arm64/boot/dts/rockchip/
-    
-    # DEBUG: Replace earlycon source files with debug versions
-    DEBUG_FILES_DIR="/home/xuning/yocto-rk3399/meta-rk3399-custom/recipes-kernel/linux/linux-rockchip/debug-files"
-    if [ -f "${DEBUG_FILES_DIR}/8250_early.c" ]; then
-        bbnote "Replacing 8250_early.c with debug version"
-        cp -f "${DEBUG_FILES_DIR}/8250_early.c" "${S}/drivers/tty/serial/8250/8250_early.c"
-    else
-        bbwarn "Debug file not found: ${DEBUG_FILES_DIR}/8250_early.c"
-    fi
-    
-    if [ -f "${DEBUG_FILES_DIR}/earlycon.c" ]; then
-        bbnote "Replacing earlycon.c with debug version"
-        cp -f "${DEBUG_FILES_DIR}/earlycon.c" "${S}/drivers/tty/serial/earlycon.c"
-    else
-        bbwarn "Debug file not found: ${DEBUG_FILES_DIR}/earlycon.c"
-    fi
 }
 
 KERNEL_EXTRA_ARGS += " \

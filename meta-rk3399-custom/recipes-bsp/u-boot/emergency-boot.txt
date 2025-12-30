@@ -20,5 +20,5 @@ md 0x00280000 4
 # fatload mmc 0:1 0x03000000 rk3399-firefly-aio.dtb
 
 # Boot with correct root partition
-setenv bootargs root=/dev/mmcblk0p3 rootwait rootfstype=ext4 console=ttyS2,1500000
+setenv bootargs root=/dev/mmcblk0p4 rootwait rootfstype=ext4 console=ttyS2,1500000
 booti 0x00280000 - 0x03000000

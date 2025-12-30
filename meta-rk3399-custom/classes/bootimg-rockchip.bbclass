@@ -96,8 +96,9 @@ setenv kernel_addr_r "0x00280000"
 setenv fdt_addr_r "0x03000000"
 
 # Set default values
-setenv rootdev "/dev/mmcblk0p3"
-setenv rootpart "3"
+# Note: GPT partition 3 (root) maps to /dev/mmcblk0p4 in Linux (GPT partitions start at 1)
+setenv rootdev "/dev/mmcblk0p4"
+setenv rootpart "4"
 setenv verbosity "7"
 setenv rootfstype="ext4"
 
@@ -112,9 +113,10 @@ echo "[BOOTSCRIPT] Loading kernel from root partition (ext4)"
 # Set boot arguments
 # Add earlycon for early kernel console output
 # RK3399 UART2 (ttyS2) base address is 0xff1a0000
-setenv bootargs "earlycon=uart8250,mmio32,0xff1a0000,1500000n8 root=\${rootdev} rootwait rootfstype=\${rootfstype} console=ttyS2,1500000 consoleblank=0 loglevel=\${verbosity}"
+setenv bootargs "earlycon=uart8250,mmio32,0xff1a0000,1500000n8 root=\${rootdev} rootwait rootfstype=\${rootfstype} console=ttyS2,1500000n8 consoleblank=0 loglevel=\${verbosity}"
 
 # Load kernel from root partition (ext4 filesystem)
+# Note: U-Boot uses partition index (0-based), GPT partition 3 is index 3
 echo "[BOOTSCRIPT] Loading kernel: \${kernel_image}"
 if ext4load mmc 0:3 \${kernel_addr_r} /boot/\${kernel_image}; then
     echo "[BOOTSCRIPT] Kernel loaded successfully"

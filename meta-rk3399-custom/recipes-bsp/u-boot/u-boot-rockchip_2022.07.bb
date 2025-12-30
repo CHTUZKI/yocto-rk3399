@@ -74,15 +74,16 @@ do_configure:prepend() {
             fi
         fi
         
-        # Set custom bootcmd to load kernel from root partition (partition 3)
+        # Set custom bootcmd to load kernel from root partition (partition 4)
         # U-Boot CONFIG_BOOTCOMMAND doesn't support if-then-else-fi syntax
         # Use simple command chain that works reliably
         BOOTCMD='mmc dev 0; mmc rescan; run load_kernel; run load_dtb; booti ${kernel_addr_r} - ${fdt_addr_r}'
         
         # Define helper commands for loading kernel and DTB
         # These will be added as environment variables
-        LOAD_KERNEL='ext4load mmc 0:3 ${kernel_addr_r} /boot/Image-6.1.115'
-        LOAD_DTB='ext4load mmc 0:3 ${fdt_addr_r} /boot/rk3399-firefly-aio.dtb'
+        # Note: GPT partition 3 (root) maps to /dev/mmcblk0p4 in Linux (GPT partitions start at 1)
+        LOAD_KERNEL='ext4load mmc 0:4 ${kernel_addr_r} /boot/Image-6.1.115'
+        LOAD_DTB='ext4load mmc 0:4 ${fdt_addr_r} /boot/rk3399-firefly-aio.dtb'
         
         # Set load addresses
         KERNEL_ADDR='0x00280000'
@@ -96,7 +97,8 @@ do_configure:prepend() {
         echo "CONFIG_BOOTCOMMAND=\"${BOOTCMD}\"" >> ${S}/configs/${UBOOT_MACHINE}
         
         # Add helper commands as environment variables
-        echo "CONFIG_EXTRA_ENV_SETTINGS=\"load_kernel=${LOAD_KERNEL}\\nload_dtb=${LOAD_DTB}\\nkernel_addr_r=${KERNEL_ADDR}\\nfdt_addr_r=${FDT_ADDR}\\nbootargs=earlycon=uart8250,mmio32,0xff1a0000,1500000n8 root=/dev/mmcblk0p3 rootwait rootfstype=ext4 console=ttyS2,1500000 consoleblank=0 loglevel=7\"" >> ${S}/configs/${UBOOT_MACHINE}
+        # root=/dev/mmcblk0p4: GPT partition 3 (root) maps to Linux device p4
+        echo "CONFIG_EXTRA_ENV_SETTINGS=\"load_kernel=${LOAD_KERNEL}\\nload_dtb=${LOAD_DTB}\\nkernel_addr_r=${KERNEL_ADDR}\\nfdt_addr_r=${FDT_ADDR}\\nbootargs=earlycon=uart8250,mmio32,0xff1a0000,1500000n8 root=/dev/mmcblk0p4 rootwait rootfstype=ext4 console=ttyS2,1500000n8 consoleblank=0 loglevel=7\"" >> ${S}/configs/${UBOOT_MACHINE}
     fi
     
     # Copy Firefly device tree file to U-Boot source tree
