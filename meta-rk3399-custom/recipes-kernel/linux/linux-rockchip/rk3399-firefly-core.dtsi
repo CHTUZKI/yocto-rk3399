@@ -304,15 +304,15 @@
 
 &i2c0 {
 	status = "okay";
-	i2c-scl-rising-time-ns = <168>;
-	i2c-scl-falling-time-ns = <4>;
-	clock-frequency = <400000>;
+	i2c-scl-rising-time-ns = <200>;  /* 增加上升时间 */
+	i2c-scl-falling-time-ns = <20>;   /* 增加下降时间 */
+	clock-frequency = <100000>;       /* 降低到100KHz */
 
 	vdd_cpu_b: syr827@40 {
 		compatible = "silergy,syr827";
 		reg = <0x40>;
 		vin-supply = <&vcc5v0_sys>;
-		regulator-compatible = "fan53555-reg";
+		regulator-compatible = "fan53555-regulator";
 		regulator-name = "vdd_cpu_b";
 		pinctrl-0 = <&vsel1_gpio>;
 		vsel-gpios = <&gpio1 18 GPIO_ACTIVE_HIGH>;
@@ -332,7 +332,7 @@
 		compatible = "silergy,syr828";
 		reg = <0x41>;
 		vin-supply = <&vcc5v0_sys>;
-		regulator-compatible = "fan53555-reg";
+		regulator-compatible = "fan53555-regulator";
 		regulator-name = "vdd_gpu";
 		pinctrl-0 = <&vsel2_gpio>;
 		vsel-gpios = <&gpio1 14 0>;
@@ -375,40 +375,9 @@
 		vcc12-supply = <&vcc3v3_sys>;
 		vddio-supply = <&vcc1v8_pmu>;
 
+		/* 增强调节器配置的可靠性 */
 		regulators {
-			vdd_center: DCDC_REG1 {
-				regulator-always-on;
-				regulator-boot-on;
-				regulator-min-microvolt = <750000>;
-				regulator-max-microvolt = <1350000>;
-				regulator-ramp-delay = <6001>;
-				regulator-name = "vdd_center";
-				regulator-state-mem {
-					regulator-off-in-suspend;
-				};
-			};
-
-			vdd_cpu_l: DCDC_REG2 {
-				regulator-always-on;
-				regulator-boot-on;
-				regulator-min-microvolt = <750000>;
-				regulator-max-microvolt = <1350000>;
-				regulator-ramp-delay = <6001>;
-				regulator-name = "vdd_cpu_l";
-				regulator-state-mem {
-					regulator-off-in-suspend;
-				};
-			};
-
-			vcc_ddr: DCDC_REG3 {
-				regulator-always-on;
-				regulator-boot-on;
-				regulator-name = "vcc_ddr";
-				regulator-state-mem {
-					regulator-on-in-suspend;
-				};
-			};
-
+			/* 确保DCDC_REG4 (vcc_1v8) 优先初始化 */
 			vcc_1v8: DCDC_REG4 {
 				regulator-always-on;
 				regulator-boot-on;
@@ -421,117 +390,152 @@
 				};
 			};
 
-			vcc1v8_dvp: LDO_REG1 {
-				regulator-always-on;
-				regulator-boot-on;
-				regulator-min-microvolt = <1800000>;
-				regulator-max-microvolt = <1800000>;
-				regulator-name = "vcc1v8_dvp";
-				regulator-state-mem {
-					regulator-off-in-suspend;
-				};
-			};
-
-			vcc2v8_dvp: LDO_REG2 {
-				regulator-always-on;
-				regulator-boot-on;
-				regulator-min-microvolt = <2800000>;
-				regulator-max-microvolt = <2800000>;
-				regulator-name = "vcc2v8_dvp";
-				regulator-state-mem {
-					regulator-off-in-suspend;
-				};
-			};
-
-			vcc1v8_pmu: LDO_REG3 {
-				regulator-always-on;
-				regulator-boot-on;
-				regulator-min-microvolt = <1800000>;
-				regulator-max-microvolt = <1800000>;
-				regulator-name = "vcc1v8_pmu";
-				regulator-state-mem {
-					regulator-on-in-suspend;
-					regulator-suspend-microvolt = <1800000>;
-				};
-			};
-
-			vccio_sd: LDO_REG4 {
-				regulator-always-on;
-				regulator-boot-on;
-				regulator-min-microvolt = <1800000>;
-				regulator-max-microvolt = <3300000>;
-				regulator-name = "vccio_sd";
-				regulator-state-mem {
-					regulator-on-in-suspend;
-					regulator-suspend-microvolt = <3300000>;
-				};
-			};
-
-			vcca3v0_codec: LDO_REG5 {
-				regulator-always-on;
-				regulator-boot-on;
-				regulator-min-microvolt = <3000000>;
-				regulator-max-microvolt = <3000000>;
-				regulator-name = "vcca3v0_codec";
-				regulator-state-mem {
-					regulator-off-in-suspend;
-				};
-			};
-
-			vcc_1v5: LDO_REG6 {
-				regulator-always-on;
-				regulator-boot-on;
-				regulator-min-microvolt = <1500000>;
-				regulator-max-microvolt = <1500000>;
-				regulator-name = "vcc_1v5";
-				regulator-state-mem {
-					regulator-on-in-suspend;
-					regulator-suspend-microvolt = <1500000>;
-				};
-			};
-
-			vcca1v8_codec: LDO_REG7 {
-				regulator-always-on;
-				regulator-boot-on;
-				regulator-min-microvolt = <1800000>;
-				regulator-max-microvolt = <1800000>;
-				regulator-name = "vcca1v8_codec";
-				regulator-state-mem {
-					regulator-off-in-suspend;
-				};
-			};
-
-			vcc_3v0: LDO_REG8 {
-				regulator-always-on;
-				regulator-boot-on;
-				regulator-min-microvolt = <3000000>;
-				regulator-max-microvolt = <3000000>;
-				regulator-name = "vcc_3v0";
-				regulator-state-mem {
-					regulator-on-in-suspend;
-					regulator-suspend-microvolt = <3000000>;
-				};
-			};
-
-			vcc3v3_s3: SWITCH_REG1 {
-				regulator-always-on;
-				regulator-boot-on;
-				regulator-name = "vcc3v3_s3";
-				regulator-state-mem {
-					regulator-off-in-suspend;
-				};
-			};
-
-			vcc3v3_s0: SWITCH_REG2 {
-				regulator-always-on;
-				regulator-boot-on;
-				regulator-name = "vcc3v3_s0";
-				regulator-state-mem {
-					regulator-off-in-suspend;
-				};
+		/* 增强其他调节器配置 */
+		vdd_center: DCDC_REG1 {
+			regulator-always-on;
+			regulator-boot-on;
+			regulator-min-microvolt = <750000>;
+			regulator-max-microvolt = <1350000>;
+			regulator-ramp-delay = <6001>;
+			regulator-name = "vdd_center";
+			regulator-state-mem {
+				regulator-off-in-suspend;
 			};
 		};
+
+		vdd_cpu_l: DCDC_REG2 {
+			regulator-always-on;
+			regulator-boot-on;
+			regulator-min-microvolt = <750000>;
+			regulator-max-microvolt = <1350000>;
+			regulator-ramp-delay = <6001>;
+			regulator-name = "vdd_cpu_l";
+			regulator-state-mem {
+				regulator-off-in-suspend;
+			};
+		};
+
+		vcc_ddr: DCDC_REG3 {
+			regulator-always-on;
+			regulator-boot-on;
+			regulator-name = "vcc_ddr";
+			regulator-state-mem {
+				regulator-on-in-suspend;
+			};
+		};
+
+		vcc1v8_dvp: LDO_REG1 {
+			regulator-always-on;
+			regulator-boot-on;
+		};
+
+		vcc2v8_dvp: LDO_REG2 {
+			regulator-always-on;
+			regulator-boot-on;
+			regulator-min-microvolt = <2800000>;
+			regulator-max-microvolt = <2800000>;
+			regulator-name = "vcc2v8_dvp";
+			regulator-state-mem {
+				regulator-off-in-suspend;
+			};
+		};
+
+		vcc1v8_pmu: LDO_REG3 {
+			regulator-always-on;
+			regulator-boot-on;
+			regulator-min-microvolt = <1800000>;
+			regulator-max-microvolt = <1800000>;
+			regulator-name = "vcc1v8_pmu";
+			regulator-state-mem {
+				regulator-on-in-suspend;
+				regulator-suspend-microvolt = <1800000>;
+			};
+		};
+
+		vccio_sd: LDO_REG4 {
+			regulator-always-on;
+			regulator-boot-on;
+			regulator-min-microvolt = <1800000>;
+			regulator-max-microvolt = <3300000>;
+			regulator-name = "vccio_sd";
+			regulator-state-mem {
+				regulator-on-in-suspend;
+				regulator-suspend-microvolt = <3300000>;
+			};
+		};
+
+		vcca3v0_codec: LDO_REG5 {
+			regulator-always-on;
+			regulator-boot-on;
+			regulator-min-microvolt = <3000000>;
+			regulator-max-microvolt = <3000000>;
+			regulator-name = "vcca3v0_codec";
+			regulator-state-mem {
+				regulator-off-in-suspend;
+			};
+		};
+
+		vcc_1v5: LDO_REG6 {
+			regulator-always-on;
+			regulator-boot-on;
+			regulator-min-microvolt = <1500000>;
+			regulator-max-microvolt = <1500000>;
+			regulator-name = "vcc_1v5";
+			regulator-state-mem {
+				regulator-on-in-suspend;
+				regulator-suspend-microvolt = <1500000>;
+			};
+		};
+
+		vcca1v8_codec: LDO_REG7 {
+			regulator-always-on;
+			regulator-boot-on;
+			regulator-min-microvolt = <1800000>;
+			regulator-max-microvolt = <1800000>;
+			regulator-name = "vcca1v8_codec";
+			regulator-state-mem {
+				regulator-off-in-suspend;
+			};
+		};
+
+		vcc_3v0: LDO_REG8 {
+			regulator-always-on;
+			regulator-boot-on;
+			regulator-min-microvolt = <3000000>;
+			regulator-max-microvolt = <3000000>;
+			regulator-name = "vcc_3v0";
+			regulator-state-mem {
+				regulator-on-in-suspend;
+				regulator-suspend-microvolt = <3000000>;
+			};
+		};
+
+		vcc3v3_s3: SWITCH_REG1 {
+			regulator-always-on;
+			regulator-boot-on;
+			regulator-name = "vcc3v3_s3";
+			regulator-state-mem {
+				regulator-off-in-suspend;
+			};
+		};
+
+		vcc3v3_s0: SWITCH_REG2 {
+			regulator-always-on;
+			regulator-boot-on;
+			regulator-name = "vcc3v3_s0";
+			regulator-state-mem {
+				regulator-off-in-suspend;
+			};
+		};
+		};
 	};
+};
+
+&i2c0 {
+	status = "okay";
+	i2c-scl-rising-time-ns = <168>;
+	i2c-scl-falling-time-ns = <4>;
+	clock-frequency = <100000>;  /* 降低到100KHz提高稳定性 */
 };
 
 &i2c4 {
@@ -621,6 +625,10 @@
 	keep-power-in-suspend;
 	mmc-hs400-enhanced-strobe;
 	status = "okay";
+	
+	/* 确保电源供应正确 */
+	vmmc-supply = <&vcc3v3_sys>;
+	vqmmc-supply = <&vcc_1v8>;
 };
 
 &sdio0 {
@@ -652,7 +660,7 @@
 	num-slots = <1>;
 	sd-uhs-sdr104;
 	vmmc-supply = <&vcc_sd>;
-	vqmmc-supply = <&vccio_sd>;
+	vqmmc-supply = <&vcc_1v8>;  /* 使用修复后的vcc_1v8 */
 	pinctrl-names = "default";
 	pinctrl-0 = <&sdmmc_clk &sdmmc_cmd &sdmmc_cd &sdmmc_bus4>;
 	status = "okay";
