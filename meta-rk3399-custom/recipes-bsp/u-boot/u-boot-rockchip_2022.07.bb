@@ -72,13 +72,27 @@ do_configure:prepend() {
         # Remove CONFIG_EXTRA_ENV_SETTINGS to use Yocto defaults
         sed -i '/^CONFIG_EXTRA_ENV_SETTINGS=/d' ${S}/configs/${UBOOT_MACHINE} || true
         
-        # Don't set any hardcoded bootargs - let Yocto handle it
-        # Yocto will generate correct environment variables automatically
+        # Set RK3399 specific boot device configuration for Yocto distro boot
+        # This tells Yocto to use correct root partition mapping
+        echo 'CONFIG_BOOTDEV="0"' >> ${S}/configs/${UBOOT_MACHINE}
+        echo 'CONFIG_BOOTPART="3"' >> ${S}/configs/${UBOOT_MACHINE}
+        
+        # Set proper load addresses for RK3399 (2GB RAM)
+        echo 'CONFIG_LOADADDR="0x00280000"' >> ${S}/configs/${UBOOT_MACHINE}
+        echo 'CONFIG_FDTADDR="0x03000000"' >> ${S}/configs/${UBOOT_MACHINE}
+        echo 'CONFIG_RAMDISKADDR="0x28000000"' >> ${S}/configs/${UBOOT_MACHINE}
+        
+        # Set kernel and DTB file names for Yocto boot system
+        echo 'CONFIG_BOOTFILES="Image rk3399-firefly-aio.dtb"' >> ${S}/configs/${UBOOT_MACHINE}
+        
+        # Enable proper bootargs generation for RK3399
+        # Yocto will automatically generate: root=/dev/mmcblk0p4
+        echo 'CONFIG_CMDLINE="root=/dev/mmcblk0p4 rootwait rootfstype=ext4 console=ttyS2,1500000n8 consoleblank=0 loglevel=8 debug initcall_debug mmc.debug=1 mmc.block=1 driver_debug.initcall_debug driver_debug.probe=1 clk.debug=1 regulator.debug=1 pm_debug=1"' >> ${S}/configs/${UBOOT_MACHINE}
+        
+        # Copy Firefly device tree file to U-Boot source tree
+        install -d ${S}/arch/arm/dts
+        install -m 0644 ${WORKDIR}/rk3399-firefly.dts ${S}/arch/arm/dts/
     fi
-    
-    # Copy Firefly device tree file to U-Boot source tree
-    install -d ${S}/arch/arm/dts
-    install -m 0644 ${WORKDIR}/rk3399-firefly.dts ${S}/arch/arm/dts/
 }
 
 do_compile:prepend() {

@@ -5,12 +5,26 @@
 
 inherit image
 
-export RK_ROOTDEV_UUID ?= "/dev/mmcblk0p3"
+export RK_ROOTDEV_UUID ?= "/dev/mmcblk0p4"
 export RK_PARTITION_GROW ?= "1"
 export RK_ROOTFS_TYPE ?= "ext4"
 
 # Generate Rockchip parameter file from partition table
 gen_rkparameter() {
+	# Wait for bootloader files to be deployed
+	# This ensures the files are available before we try to use them
+	local max_wait=30
+	local wait_count=0
+	
+	while [ $wait_count -lt $max_wait ]; do
+		if [ -f "${DEPLOY_DIR_IMAGE}/loader.bin" ] || [ -f "${DEPLOY_DIR_IMAGE}/idbloader.bin" ]; then
+			break
+		fi
+		bbnote "Waiting for bootloader files to be deployed... ($wait_count/$max_wait)"
+		sleep 1
+		wait_count=`expr $wait_count + 1`
+	done
+	
 	# Check for either loader.bin or idbloader.bin
 	if [ ! -f "${DEPLOY_DIR_IMAGE}/loader.bin" ] && [ ! -f "${DEPLOY_DIR_IMAGE}/idbloader.bin" ]; then
 		bbnote "Skip making Rockchip parameter (loader.bin/idbloader.bin not found)"
@@ -115,6 +129,20 @@ gen_rkparameter() {
 # Note: gen_rkparameter must run before gen_rkupdateimg
 do_image[depends] += "rk-binary-native:do_populate_sysroot"
 gen_rkupdateimg() {
+	# Wait for bootloader files to be deployed
+	# This ensures the files are available before we try to use them
+	local max_wait=30
+	local wait_count=0
+	
+	while [ $wait_count -lt $max_wait ]; do
+		if [ -f "${DEPLOY_DIR_IMAGE}/loader.bin" ] || [ -f "${DEPLOY_DIR_IMAGE}/idbloader.bin" ]; then
+			break
+		fi
+		bbnote "Waiting for bootloader files to be deployed... ($wait_count/$max_wait)"
+		sleep 1
+		wait_count=`expr $wait_count + 1`
+	done
+	
 	# Check for loader.bin or idbloader.bin
 	# For RKDevTool compatibility, we need to use idbloader.bin directly
 	# as loader.bin (they are the same format for RK3399)
@@ -257,3 +285,51 @@ gen_rkupdateimg() {
 
 # Generate parameter first, then update.img
 IMAGE_POSTPROCESS_COMMAND:append = " gen_rkparameter; gen_rkupdateimg;"
+
+# Force deployment of bootloader files before generating update.img
+deploy_bootloader_files() {
+    bbnote "Ensuring bootloader files are deployed..."
+    
+    # Force deploy rk3399-blobs if files are missing
+    if [ ! -f "${DEPLOY_DIR_IMAGE}/loader.bin" ] && [ ! -f "${DEPLOY_DIR_IMAGE}/idbloader.bin" ]; then
+        bbnote "Bootloader files not found, forcing rk3399-blobs deployment"
+        # Try to run deploy task directly
+        if [ -n "${BUILDDIR}" ]; then
+            cd "${BUILDDIR}"
+            bitbake rk3399-blobs -c deploy 2>/dev/null || {
+                bbwarn "Failed to force deploy rk3399-blobs"
+            }
+        fi
+    fi
+    
+    # Also ensure u-boot and ATF are deployed
+    if [ ! -f "${DEPLOY_DIR_IMAGE}/bl31.elf" ]; then
+        bbnote "ATF file not found, forcing arm-trusted-firmware-rk3399 deployment"
+        if [ -n "${BUILDDIR}" ]; then
+            cd "${BUILDDIR}"
+            bitbake arm-trusted-firmware-rk3399 -c deploy 2>/dev/null || {
+                bbwarn "Failed to force deploy arm-trusted-firmware-rk3399"
+            }
+        fi
+    fi
+}
+
+# Add clean functions for proper cleanup
+do_clean[postfuncs] += "clean_rockchip_images"
+clean_rockchip_images() {
+    bbnote "Cleaning Rockchip-specific images"
+    rm -f ${DEPLOY_DIR_IMAGE}/update.img ${DEPLOY_DIR_IMAGE}/*.update.img
+    rm -f ${DEPLOY_DIR_IMAGE}/loader.bin ${DEPLOY_DIR_IMAGE}/idbloader.bin
+    rm -f ${DEPLOY_DIR_IMAGE}/uboot.img ${DEPLOY_DIR_IMAGE}/trust.bin
+    rm -f ${DEPLOY_DIR_IMAGE}/parameter ${DEPLOY_DIR_IMAGE}/*.parameter
+    rm -f ${DEPLOY_DIR_IMAGE}/package-file ${DEPLOY_DIR_IMAGE}/*.package-file
+}
+
+do_cleanall[postfuncs] += "clean_rockchip_images_all"
+clean_rockchip_images_all() {
+    bbnote "Cleaning all Rockchip images and dependencies"
+    clean_rockchip_images
+    # Also clean any symlinks that might have been created
+    find ${DEPLOY_DIR_IMAGE} -name "update.img" -type l -delete 2>/dev/null || true
+    find ${DEPLOY_DIR_IMAGE} -name "*.update.img" -type l -delete 2>/dev/null || true
+}
