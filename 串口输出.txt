@@ -1,344 +1,508 @@
-\0DDR Version 1.30 20230417
-In
-soft reset
-SRX
-channel 0
-CS = 0
-MR0=0x18
-MR4=0x2
-MR5=0x1
-MR8=0x8
-MR12=0x72
-MR14=0x72
-MR18=0x0
-MR19=0x0
-MR24=0x8
-MR25=0x0
-channel 1
-CS = 0
-MR0=0x18
-MR4=0x2
-MR5=0x1
-MR8=0x8
-MR12=0x72
-MR14=0x72
-MR18=0x0
-MR19=0x0
-MR24=0x8
-MR25=0x0
-channel 0 training pass!
-channel 1 training pass!
-change freq to 416MHz 0,1
-Channel 0: LPDDR4,416MHz
-Bus Width=32 Col=10 Bank=8 Row=15 CS=1 Die Bus-Width=16 Size=1024MB
-Channel 1: LPDDR4,416MHz
-Bus Width=32 Col=10 Bank=8 Row=15 CS=1 Die Bus-Width=16 Size=1024MB
-256B stride
-channel 0
-CS = 0
-MR0=0x18
-MR4=0x2
-MR5=0x1
-MR8=0x8
-MR12=0x72
-MR14=0x72
-MR18=0x0
-MR19=0x0
-MR24=0x8
-MR25=0x0
-channel 1
-CS = 0
-MR0=0x18
-MR4=0x2
-MR5=0x1
-MR8=0x8
-MR12=0x72
-MR14=0x72
-MR18=0x0
-MR19=0x0
-MR24=0x8
-MR25=0x0
-channel 0 training pass!
-channel 1 training pass!
-channel 0, cs 0, advanced training done
-channel 1, cs 0, advanced training done
-change freq to 856MHz 1,0
-ch 0 ddrconfig = 0x101, ddrsize = 0x20
-ch 1 ddrconfig = 0x101, ddrsize = 0x20
-pmugrf_os_reg[2] = 0x3281F281, stride = 0x9
-ddr_set_rate to 328MHZ
-ddr_set_rate to 666MHZ
-ddr_set_rate to 928MHZ
-channel 0, cs 0, advanced training done
-channel 1, cs 0, advanced training done
-ddr_set_rate to 416MHZ, ctl_index 0
-ddr_set_rate to 856MHZ, ctl_index 1
-support 416 856 328 666 928 MHz, current 856MHz
-OUT
-Boot1 Release Time: May 26 2022 18:14:35, version: 1.30
-CPUId = 0x0
-ChipType = 0x10, 403
-mmc_set_bus_width: 1
-EmmcClk: 375KHZ
-mmc_switch index:183, value:0x2
-mmc_switch index:185, value:0x2
-EmmcClk: 375KHZ
-mmc_set_bus_width: 8
-EmmcClk: 200000KHZ
-SdmmcInit=2 0
-BootCapSize=100000
-UserCapSize=29820MB
-FwPartOffset=2000 , 100000
-NeedKHz=200KHz, Clock=12000KHz
-NeedKHz=200KHz, Clock=12000KHz
-NeedKHz=200KHz, Clock=12000KHz
-mmc0:cmd8,20
-mmc0:cmd5,20
-mmc0:cmd55,20
-mmc0:cmd1,20
-NeedKHz=200KHz, Clock=12000KHz
-NeedKHz=200KHz, Clock=12000KHz
-mmc0:cmd8,20
-mmc0:cmd5,20
-mmc0:cmd55,20
-mmc0:cmd1,20
-NeedKHz=200KHz, Clock=12000KHz
-NeedKHz=200KHz, Clock=12000KHz
-mmc0:cmd8,20
-mmc0:cmd5,20
-mmc0:cmd55,20
-mmc0:cmd1,20
-NeedKHz=200KHz, Clock=12000KHz
-SdmmcInit=0 1
-StorageInit ok = 84568
-SecureMode = 0
-SecureInit read PBA: 0x4
-SecureInit read PBA: 0x404
-SecureInit read PBA: 0x804
-SecureInit read PBA: 0xc04
-SecureInit read PBA: 0x1004
-SecureInit read PBA: 0x1404
-SecureInit read PBA: 0x1804
-SecureInit read PBA: 0x1c04
-SecureInit ret = 0, SecureMode = 0
-atags_set_bootdev: ret:(0)
-GPT part:  0, name:            uboot, start:0x4000, size:0x2000
-GPT part:  1, name:            trust, start:0x6000, size:0x2000
-GPT part:  2, name:             boot, start:0x8000, size:0x9c000
-GPT part:  3, name:             root, start:0xa4000, size:0x299998
-find part:uboot OK. first_lba:0x4000.
-find part:trust OK. first_lba:0x6000.
-LoadTrust Addr:0x6000
-No find bl30.bin
-No find bl32.bin
-Load uboot, ReadLba = 4000
-Load OK, addr=0x200000, size=0xbef78
-RunBL31 0x40000 @ 117210 us
-NOTICE:  BL31: v1.3(release):8f40012ab
-NOTICE:  BL31: Built : 14:20:53, Feb 16 2023
-NOTICE:  BL31: Rockchip release version: v1.1
-INFO:    GICv3 with legacy support detected. ARM GICV3 driver initialized in EL3
-INFO:    Using opteed sec cpu_context!
-INFO:    boot cpu mask: 0
-INFO:    plat_rockchip_pmu_init(1203): pd status 3e
-INFO:    BL31: Initializing runtime services
-WARNING: No OPTEE provided by BL2 boot loader, Booting device without OPTEE initialization. SMC`s destined for OPTEE will return SMC_UNK
-ERROR:   Error initializing runtime service opteed_fast
-INFO:    BL31: Preparing for EL3 exit to normal world
-INFO:    Entry point address = 0x200000
-INFO:    SPSR = 0x3c9
-
-
-U-Boot 2022.07-rk3399 (Jul 11 2022 - 13:42:58 +0000)
-
-SoC: Rockchip rk3399
-Reset cause: RST
-Model: Firefly-RK3399 Board
-DRAM:  2 GiB
-PMIC:  RK808 
-Core:  259 devices, 27 uclasses, devicetree: separate
-MMC:   mmc@fe330000: 0
-Loading Environment from MMC... OK
-In:    serial@ff1a0000
-Out:   serial@ff1a0000
-Err:   serial@ff1a0000
-Model: Firefly-RK3399 Board
-Net:   eth0: ethernet@fe300000
-Hit any key to stop autoboot:  2  1  0 
-switch to partitions #0, OK
-mmc0(part 0) is current device
-9429000 bytes read in 879 ms (10.2 MiB/s)
-110789 bytes read in 26 ms (4.1 MiB/s)
-Moving Image from 0x280000 to 0x400000, end=d60000
-## Flattened Device Tree blob at 03000000
-   Booting using the fdt blob at 0x3000000
-ERROR: reserving fdt memory region failed (addr=0 size=0 flags=0)
-   Loading Device Tree to 000000007defb000, end 000000007df190c4 ... OK
-
-Starting kernel ...
-
-Booting Linux on physical CPU 0x0000000000 [0x410fd034]
-Linux version 6.1.115 (oe-user@oe-host) (aarch64-poky-linux-gcc (GCC) 11.5.0, GNU ld (GNU Binutils) 2.38.20220708) #1 SMP Wed Dec 24 10:54:39 UTC 2025
-Machine model: AIO-3399J Board (Linux Opensource)
-earlycon: uart8250 at MMIO32 0x00000000ff1a0000 (options '1500000n8')
-printk: bootconsole [uart8250] enabled
-OF: fdt: Reserved memory: failed to reserve memory for node 'drm-logo@0': base 0x0000000000000000, size 0 MiB
-Zone ranges:
-  DMA      [mem 0x0000000000200000-0x000000007fffffff]
-  DMA32    empty
-  Normal   empty
-Movable zone start for each node
-Early memory node ranges
-  node   0: [mem 0x0000000000200000-0x000000007fffffff]
-Initmem setup node 0 [mem 0x0000000000200000-0x000000007fffffff]
-On node 0, zone DMA: 512 pages in unavailable ranges
-psci: probing for conduit method from DT.
-psci: PSCIv1.0 detected in firmware.
-psci: Using standard PSCI v0.2 function IDs
-psci: MIGRATE_INFO_TYPE not supported.
-psci: SMC Calling Convention v1.0
-percpu: Embedded 14 pages/cpu s24936 r0 d32408 u57344
-Detected VIPT I-cache on CPU0
-CPU features: detected: GIC system register CPU interface
-alternatives: applying boot alternatives
-Built 1 zonelists, mobility grouping on.  Total pages: 515592
-Kernel command line: earlycon=uart8250,mmio32,0xff1a0000,1500000n8 root=/dev/mmcblk0p4 rootwait rootfstype=ext4 console=ttyS2,1500000 consoleblank=0 loglevel=7
-Dentry cache hash table entries: 262144 (order: 9, 2097152 bytes, linear)
-Inode-cache hash table entries: 131072 (order: 8, 1048576 bytes, linear)
-mem auto-init: stack:off, heap alloc:off, heap free:off
-Memory: 2044516K/2095104K available (6208K kernel code, 760K rwdata, 1164K rodata, 960K init, 373K bss, 50588K reserved, 0K cma-reserved)
-SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=6, Nodes=1
-rcu: Hierarchical RCU implementation.
-rcu: 	RCU restricting CPUs from NR_CPUS=256 to nr_cpu_ids=6.
-rcu: RCU calculated value of scheduler-enlistment delay is 25 jiffies.
-rcu: Adjusting geometry for rcu_fanout_leaf=16, nr_cpu_ids=6
-NR_IRQS: 64, nr_irqs: 64, preallocated irqs: 0
-GICv3: GIC: Using split EOI/Deactivate mode
-GICv3: 256 SPIs implemented
-GICv3: 0 Extended SPIs implemented
-Root IRQ handler: gic_handle_irq
-GICv3: GICv3 features: 16 PPIs
-GICv3: CPU0: found redistributor 0 region 0:0x00000000fef00000
-ITS [mem 0xfee20000-0xfee3ffff]
-ITS@0x00000000fee20000: allocated 65536 Devices @280000 (flat, esz 8, psz 64K, shr 0)
-ITS: using cache flushing for cmd queue
-GICv3: using LPI property table @0x0000000000240000
-GIC: using cache flushing for LPI property table
-GICv3: CPU0: using allocated LPI pending table @0x0000000000250000
-GICv3: GIC: PPI partition interrupt-partition-0[0] { /cpus/cpu@0[0] /cpus/cpu@1[1] /cpus/cpu@2[2] /cpus/cpu@3[3] }
-GICv3: GIC: PPI partition interrupt-partition-1[1] { /cpus/cpu@100[4] /cpus/cpu@101[5] }
-rcu: srcu_init: Setting srcu_struct sizes based on contention.
-arch_timer: cp15 timer(s) running at 24.00MHz (phys).
-clocksource: arch_sys_counter: mask: 0xffffffffffffff max_cycles: 0x588fe9dc0, max_idle_ns: 440795202592 ns
-sched_clock: 56 bits at 24MHz, resolution 41ns, wraps every 4398046511097ns
-Failed to get pclk for 'rk_timer'
-Console: colour dummy device 80x25
-Calibrating delay loop (skipped), value calculated using timer frequency.. 48.00 BogoMIPS (lpj=96000)
-pid_max: default: 32768 minimum: 301
-Mount-cache hash table entries: 4096 (order: 3, 32768 bytes, linear)
-Mountpoint-cache hash table entries: 4096 (order: 3, 32768 bytes, linear)
-cacheinfo: Unable to detect cache hierarchy for CPU 0
-rcu: Hierarchical SRCU implementation.
-rcu: 	Max phase no-delay instances is 1000.
-Platform MSI: interrupt-controller@fee20000 domain created
-smp: Bringing up secondary CPUs ...
-Detected VIPT I-cache on CPU1
-cacheinfo: Unable to detect cache hierarchy for CPU 1
-GICv3: CPU1: found redistributor 1 region 0:0x00000000fef20000
-GICv3: CPU1: using allocated LPI pending table @0x0000000000260000
-CPU1: Booted secondary processor 0x0000000001 [0x410fd034]
-Detected VIPT I-cache on CPU2
-cacheinfo: Unable to detect cache hierarchy for CPU 2
-GICv3: CPU2: found redistributor 2 region 0:0x00000000fef40000
-GICv3: CPU2: using allocated LPI pending table @0x0000000000270000
-CPU2: Booted secondary processor 0x0000000002 [0x410fd034]
-Detected VIPT I-cache on CPU3
-cacheinfo: Unable to detect cache hierarchy for CPU 3
-GICv3: CPU3: found redistributor 3 region 0:0x00000000fef60000
-GICv3: CPU3: using allocated LPI pending table @0x0000000000300000
-CPU3: Booted secondary processor 0x0000000003 [0x410fd034]
-CPU features: detected: Spectre-v2
-CPU features: detected: Spectre-v4
-CPU features: detected: Spectre-BHB
-CPU features: detected: ARM errata 1165522, 1319367, or 1530923
-Detected PIPT I-cache on CPU4
-cacheinfo: Unable to detect cache hierarchy for CPU 4
-GICv3: CPU4: found redistributor 100 region 0:0x00000000fef80000
-GICv3: CPU4: using allocated LPI pending table @0x0000000000310000
-CPU4: Booted secondary processor 0x0000000100 [0x410fd082]
-Detected PIPT I-cache on CPU5
-cacheinfo: Unable to detect cache hierarchy for CPU 5
-GICv3: CPU5: found redistributor 101 region 0:0x00000000fefa0000
-GICv3: CPU5: using allocated LPI pending table @0x0000000000320000
-CPU5: Booted secondary processor 0x0000000101 [0x410fd082]
-smp: Brought up 1 node, 6 CPUs
-SMP: Total of 6 processors activated.
-CPU features: detected: 32-bit EL0 Support
-CPU features: detected: CRC32 instructions
-CPU: All CPU(s) started at EL2
-alternatives: applying system-wide alternatives
-devtmpfs: initialized
-clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 7645041785100000 ns
-futex hash table entries: 2048 (order: 5, 131072 bytes, linear)
-pinctrl core: initialized pinctrl subsystem
-NET: Registered PF_NETLINK/PF_ROUTE protocol family
-DMA: preallocated 256 KiB GFP_KERNEL pool for atomic allocations
-DMA: preallocated 256 KiB GFP_KERNEL|GFP_DMA pool for atomic allocations
-DMA: preallocated 256 KiB GFP_KERNEL|GFP_DMA32 pool for atomic allocations
-ASID allocator initialised with 65536 entries
-platform ff770000.syscon:mipi-dphy-rx0: Fixed dependency cycle(s) with /i2c@ff110000/ov13850@36
-platform ff770000.syscon:mipi-dphy-rx0: Fixed dependency cycle(s) with /rkisp1@ff910000
-platform ff910000.rkisp1: Fixed dependency cycle(s) with /syscon@ff770000/mipi-dphy-rx0
-platform ff900000.vop: Fixed dependency cycle(s) with /hdmi@ff940000
-platform ff940000.hdmi: Fixed dependency cycle(s) with /vop@ff900000
-platform ff920000.rkisp1: Fixed dependency cycle(s) with /mipi-dphy-tx1rx1@ff968000
-platform ff968000.mipi-dphy-tx1rx1: Fixed dependency cycle(s) with /rkisp1@ff920000
-platform ff968000.mipi-dphy-tx1rx1: Fixed dependency cycle(s) with /i2c@ff110000/ov13850@46
-iommu: Default domain type: Translated 
-iommu: DMA domain TLB invalidation policy: strict mode 
-usbcore: registered new interface driver usbfs
-usbcore: registered new interface driver hub
-usbcore: registered new device driver usb
-pps_core: LinuxPPS API ver. 1 registered
-pps_core: Software ver. 5.3.6 - Copyright 2005-2007 Rodolfo Giometti <giometti@linux.it>
-PTP clock support registered
-clocksource: Switched to clocksource arch_sys_counter
-NET: Registered PF_INET protocol family
-IP idents hash table entries: 32768 (order: 6, 262144 bytes, linear)
-tcp_listen_portaddr_hash hash table entries: 1024 (order: 2, 16384 bytes, linear)
-Table-perturb hash table entries: 65536 (order: 6, 262144 bytes, linear)
-TCP established hash table entries: 16384 (order: 5, 131072 bytes, linear)
-TCP bind hash table entries: 16384 (order: 7, 524288 bytes, linear)
-TCP: Hash tables configured (established 16384 bind 16384)
-UDP hash table entries: 1024 (order: 3, 32768 bytes, linear)
-UDP-Lite hash table entries: 1024 (order: 3, 32768 bytes, linear)
-workingset: timestamp_bits=62 max_order=19 bucket_order=0
-io scheduler mq-deadline registered
-io scheduler kyber registered
-Serial: 8250/16550 driver, 4 ports, IRQ sharing disabled
-led_vk2c21_init
-=============================================
-cacheinfo: Unable to detect cache hierarchy for CPU 0
-i2c_dev: i2c /dev entries driver
-sdhci: Secure Digital Host Controller Interface driver
-sdhci: Copyright(c) Pierre Ossman
-Synopsys Designware Multimedia Card Interface Driver
-sdhci-pltfm: SDHCI platform and OF driver helper
-usbcore: registered new interface driver usbhid
-usbhid: USB HID core driver
-NET: Registered PF_INET6 protocol family
-Segment Routing with IPv6
-In-situ OAM (IOAM) with IPv6
-sit: IPv6, IPv4 and MPLS over IPv4 tunneling driver
-rk_iommu ff650800.iommu: ignoring dependency for device, assuming no driver
-rk_iommu ff660480.iommu: ignoring dependency for device, assuming no driver
-rk_iommu ff670800.iommu: ignoring dependency for device, assuming no driver
-rk_iommu ff8f3f00.iommu: ignoring dependency for device, assuming no driver
-rk_iommu ff903f00.iommu: ignoring dependency for device, assuming no driver
-rk_iommu ff914000.iommu: ignoring dependency for device, assuming no driver
-rk_iommu ff924000.iommu: ignoring dependency for device, assuming no driver
-/usb@fe800000: Failed to get clk index: 0 ret: -517
-/usb@fe900000: Failed to get clk index: 0 ret: -517
+t
+devices_kset: Moving fe330000.mmc to end of list
+PM: Moving platform:fe330000.mmc to end of list
+platform fe330000.mmc: Retrying from deferred list
+platform fe330000.mmc: scheduling asynchronous probe
+devices_kset: Moving fe310000.mmc to end of list
+bus: 'platform': __driver_probe_device: matched device fe330000.mmc with driver sdhci-arasan
+PM: Moving platform:fe310000.mmc to end of list
+platform fe330000.mmc: error -EPROBE_DEFER: supplier ff770000.syscon:phy@f780 not ready
+platform fe310000.mmc: Retrying from deferred list
+platform fe330000.mmc: Added to deferred list
+platform fe310000.mmc: scheduling asynchronous probe
+platform fe330000.mmc: async probe completed
+devices_kset: Moving fe320000.mmc to end of list
+bus: 'platform': __driver_probe_device: matched device fe310000.mmc with driver dwmmc_rockchip
+platform fe310000.mmc: error -EPROBE_DEFER: wait for supplier DCDC_REG4
+platform fe310000.mmc: Added to deferred list
+platform fe310000.mmc: async probe completed
+PM: Moving platform:fe320000.mmc to end of list
+platform fe320000.mmc: Retrying from deferred list
+platform fe320000.mmc: scheduling asynchronous probe
+platform fe3a0000.usb: Relaxing link with ff770000.syscon:usb2phy@e450
+bus: 'platform': __driver_probe_device: matched device fe320000.mmc with driver dwmmc_rockchip
+platform fe380000.usb: Relaxing link with ff770000.syscon:usb2phy@e450
+platform fe320000.mmc: error -EPROBE_DEFER: wait for supplier DCDC_REG4
+platform fe3e0000.usb: Relaxing link with ff770000.syscon:usb2phy@e460
+platform fe320000.mmc: Added to deferred list
+platform fe3c0000.usb: Relaxing link with ff770000.syscon:usb2phy@e460
+platform fe320000.mmc: async probe completed
+platform fe330000.mmc: Relaxing link with ff770000.syscon:phy@f780
+platform f8000000.pcie: Relaxing link with ff770000.syscon:pcie-phy
+platform ff8f0000.vop: Relaxing link with ff940000.hdmi
+platform fe320000.mmc: Relaxing link with vcc3v3-sys
+platform fe310000.mmc: Relaxing link with vcc3v3-sys
+platform fe300000.ethernet: Relaxing link with vcc-phy-regulator
+platform vdd-log: Relaxing link with ff420020.pwm
+platform ff100000.saradc: Relaxing link with vccadc-ref
+i2c 1-001c: Relaxing link with ff100000.saradc
+i2c 1-0036: Relaxing link with dvdd-1v2
+i2c 1-0036: Relaxing link with vcc_mipi
+i2c 1-0046: Relaxing link with dvdd-1v2
+i2c 1-0046: Relaxing link with vcc_mipi
+i2c 0-0040: Relaxing link with vcc5v0-sys
+i2c 0-0041: Relaxing link with vcc5v0-sys
+i2c 0-001b: Relaxing link with vcc3v3-sys
+i2c 0-001b: Relaxing link with vcc1-supply
+devices_kset: Moving fe300000.ethernet to end of list
+PM: Moving platform:fe300000.ethernet to end of list
+platform fe300000.ethernet: Retrying from deferred list
+bus: 'platform': __driver_probe_device: matched device fe300000.ethernet with driver rk_gmac-dwmac
+bus: 'platform': really_probe: probing driver rk_gmac-dwmac with device fe300000.ethernet
+rk_gmac-dwmac fe300000.ethernet: no init pinctrl state
+rk_gmac-dwmac fe300000.ethernet: no sleep pinctrl state
+rk_gmac-dwmac fe300000.ethernet: no idle pinctrl state
+rk_gmac-dwmac fe300000.ethernet: adding to PM domain gmac
+rk_gmac-dwmac fe300000.ethernet: genpd_add_device()
+rk_gmac-dwmac fe300000.ethernet: Clock clk_gmac con_id (null) managed by runtime PM.
+rk_gmac-dwmac fe300000.ethernet: Clock clk_rmii_rx con_id (null) managed by runtime PM.
+rk_gmac-dwmac fe300000.ethernet: Clock clk_rmii_tx con_id (null) managed by runtime PM.
+rk_gmac-dwmac fe300000.ethernet: Clock clk_mac_ref con_id (null) managed by runtime PM.
+rk_gmac-dwmac fe300000.ethernet: Clock clk_mac_refout con_id (null) managed by runtime PM.
+rk_gmac-dwmac fe300000.ethernet: Clock aclk_gmac con_id (null) managed by runtime PM.
+rk_gmac-dwmac fe300000.ethernet: Clock pclk_gmac con_id (null) managed by runtime PM.
+rk_gmac-dwmac fe300000.ethernet: IRQ eth_wake_irq not found
+rk_gmac-dwmac fe300000.ethernet: IRQ eth_lpi not found
+rk_gmac-dwmac fe300000.ethernet: PTP uses main clock
+rk_gmac-dwmac fe300000.ethernet: Looking up phy-supply from device tree
+rk_gmac-dwmac fe300000.ethernet: error -EPROBE_DEFER: failed to get phy regulator
+rk_gmac-dwmac fe300000.ethernet: removing from PM domain gmac
+rk_gmac-dwmac fe300000.ethernet: genpd_remove_device()
+rk_gmac-dwmac fe300000.ethernet: Driver rk_gmac-dwmac requests probe deferral
+platform fe300000.ethernet: Added to deferred list
+rockchip-pm-domain ff310000.power-management:power-controller: Looking up gmac-supply from device tree
+rockchip-pm-domain ff310000.power-management:power-controller: Looking up gmac-supply property in node /power-management@ff310000/power-controller failed
+devices_kset: Moving fe800000.usb to end of list
+PM: Moving platform:fe800000.usb to end of list
+platform fe800000.usb: Retrying from deferred list
+bus: 'platform': __driver_probe_device: matched device fe800000.usb with driver dwc3
+platform fe800000.usb: error -EPROBE_DEFER: wait for supplier usb3-port
+platform fe800000.usb: Added to deferred list
+devices_kset: Moving fe900000.usb to end of list
+PM: Moving platform:fe900000.usb to end of list
+platform fe900000.usb: Retrying from deferred list
+bus: 'platform': __driver_probe_device: matched device fe900000.usb with driver dwc3
+platform fe900000.usb: error -EPROBE_DEFER: wait for supplier usb3-port
+platform fe900000.usb: Added to deferred list
+devices_kset: Moving 0-0040 to end of list
+PM: Moving i2c:0-0040 to end of list
+i2c 0-0040: Retrying from deferred list
+bus: 'i2c': __driver_probe_device: matched device 0-0040 with driver fan53555-regulator
+bus: 'i2c': really_probe: probing driver fan53555-regulator with device 0-0040
+fan53555-regulator 0-0040: no default pinctrl state
+fan53555-regulator 0-0040: probe
+rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x40
+rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
+rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
+rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x40
+rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
+rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
+fan53555-regulator 0-0040: FAN53555 Option[8] Rev[1] Detected!
+fan53555-regulator 0-0040: Looking up vin-supply from device tree
+vdd_cpu_b: unable to resolve supply early: -EPROBE_DEFER
+rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x40
+rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
+rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
+rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x40
+rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
+rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
+rk3x-i2c ff3c0000.i2c: IRQ: state 2, ipd: 15
+rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 31
+rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x40
+rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
+rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
+rk3x-i2c ff3c0000.i2c: IRQ: state 2, ipd: 15
+rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 31
+fan53555-regulator 0-0040: Failed to register regulator!
+fan53555-regulator 0-0040: Driver fan53555-regulator requests probe deferral
+i2c 0-0040: Added to deferred list
+devices_kset: Moving 0-0041 to end of list
+PM: Moving i2c:0-0041 to end of list
+devices_kset: Moving ff9a0000.gpu to end of list
+PM: Moving platform:ff9a0000.gpu to end of list
+i2c 0-0041: Retrying from deferred list
+bus: 'i2c': __driver_probe_device: matched device 0-0041 with driver fan53555-regulator
+bus: 'i2c': really_probe: probing driver fan53555-regulator with device 0-0041
+fan53555-regulator 0-0041: no default pinctrl state
+fan53555-regulator 0-0041: probe
+rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x41
+rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
+rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
+rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x41
+rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
+rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
+fan53555-regulator 0-0041: FAN53555 Option[8] Rev[1] Detected!
+fan53555-regulator 0-0041: Looking up vin-supply from device tree
+vdd_gpu: unable to resolve supply early: -EPROBE_DEFER
+rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x41
+rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
+rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
+rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x41
+rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
+rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
+rk3x-i2c ff3c0000.i2c: IRQ: state 2, ipd: 15
+rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 31
+rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x41
+rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
+rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
+rk3x-i2c ff3c0000.i2c: IRQ: state 2, ipd: 15
+rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 31
+fan53555-regulator 0-0041: Failed to register regulator!
+fan53555-regulator 0-0041: Driver fan53555-regulator requests probe deferral
+i2c 0-0041: Added to deferred list
+devices_kset: Moving 0-001b to end of list
+PM: Moving i2c:0-001b to end of list
+devices_kset: Moving sdmmc-pwrseq to end of list
+PM: Moving platform:sdmmc-pwrseq to end of list
+devices_kset: Moving wireless-bluetooth to end of list
+PM: Moving platform:wireless-bluetooth to end of list
+devices_kset: Moving sdio-pwrseq to end of list
+PM: Moving platform:sdio-pwrseq to end of list
+i2c 0-001b: Retrying from deferred list
+bus: 'i2c': __driver_probe_device: matched device 0-001b with driver rk808
+bus: 'i2c': really_probe: probing driver rk808 with device 0-001b
+rk808 0-001b: no init pinctrl state
+rk808 0-001b: no sleep pinctrl state
+rk808 0-001b: no idle pinctrl state
+device: 'wakeup0': device_add
+rk808 0-001b: probe
+rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x1b
+rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
+rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
+rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x1b
+rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
+rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
+rk808 0-001b: chip id: 0x0
+rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x1b
+rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
+rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
+rk3x-i2c ff3c0000.i2c: IRQ: state 2, ipd: 15
+rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 31
+rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x1b
+rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
+rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
+rk3x-i2c ff3c0000.i2c: IRQ: state 2, ipd: 15
+rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 31
+rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x1b
+rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
+rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
+rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x1b
+rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
+rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
+rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x1b
+rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
+rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
+rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x1b
+rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
+rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
+rk3x-i2c ff3c0000.i2c: IRQ: state 2, ipd: 15
+rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 31
+rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x1b
+rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
+rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
+rk3x-i2c ff3c0000.i2c: IRQ: state 2, ipd: 15
+rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 31
+rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x1b
+rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
+rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
+rk3x-i2c ff3c0000.i2c: IRQ: state 2, ipd: 15
+rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 31
+rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x1b
+rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
+rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
+rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x1b
+rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
+rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
+rk3x-i2c ff3c0000.i2c: IRQ: state 2, ipd: 15
+rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 31
+rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x1b
+rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
+rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
+rk3x-i2c ff3c0000.i2c: IRQ: state 2, ipd: 15
+rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 31
+Registering platform device 'rk808-clkout'. Parent at 0-001b
+device: 'rk808-clkout': device_add
+bus: 'platform': add device rk808-clkout
+PM: Adding info for platform:rk808-clkout
+Registering platform device 'rk808-regulator'. Parent at 0-001b
+device: 'rk808-regulator': device_add
+bus: 'platform': add device rk808-regulator
+PM: Adding info for platform:rk808-regulator
+bus: 'platform': __driver_probe_device: matched device rk808-regulator with driver rk808-regulator
+bus: 'platform': really_probe: probing driver rk808-regulator with device rk808-regulator
+rk808-regulator rk808-regulator: no default pinctrl state
+rk808-regulator rk808-regulator: there is no dvs0 gpio
+rk808-regulator rk808-regulator: there is no dvs1 gpio
+rk808 0-001b: Looking up vcc1-supply from device tree
+vdd_center: unable to resolve supply early: -EPROBE_DEFER
+rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x1b
+rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
+rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
+rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x1b
+rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
+rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
+rk3x-i2c ff3c0000.i2c: IRQ: state 2, ipd: 15
+rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 31
+rk808 0-001b: failed to register 0 regulator
+rk808-regulator rk808-regulator: Driver rk808-regulator requests probe deferral
+platform rk808-regulator: Added to deferred list
+Registering platform device 'rk808-rtc'. Parent at 0-001b
+device: 'rk808-rtc': device_add
+bus: 'platform': add device rk808-rtc
+PM: Adding info for platform:rk808-rtc
+driver: 'rk808': driver_bound: bound to device '0-001b'
+pmic@1b Dropping the fwnode link to LDO_REG3
+mmc@fe320000 Linked as a fwnode consumer to pmic@1b
+mmc@fe320000 Dropping the fwnode link to DCDC_REG4
+mmc@fe310000 Linked as a fwnode consumer to pmic@1b
+mmc@fe310000 Dropping the fwnode link to DCDC_REG4
+io-domains Linked as a fwnode consumer to pmic@1b
+io-domains Dropping the fwnode link to LDO_REG1
+io-domains Dropping the fwnode link to LDO_REG4
+io-domains Dropping the fwnode link to LDO_REG7
+io-domains Dropping the fwnode link to LDO_REG8
+io-domains Linked as a fwnode consumer to pmic@1b
+io-domains Dropping the fwnode link to LDO_REG8
+device: 'i2c:0-001b--platform:ff320000.syscon:io-domains': device_add
+devices_kset: Moving ff320000.syscon:io-domains to end of list
+PM: Moving platform:ff320000.syscon:io-domains to end of list
+platform ff320000.syscon:io-domains: Linked as a consumer to 0-001b
+io-domains Dropping the fwnode link to pmic@1b
+device: 'i2c:0-001b--platform:ff770000.syscon:io-domains': device_add
+devices_kset: Moving ff770000.syscon:io-domains to end of list
+PM: Moving platform:ff770000.syscon:io-domains to end of list
+platform ff770000.syscon:io-domains: Linked as a consumer to 0-001b
+io-domains Dropping the fwnode link to pmic@1b
+device: 'i2c:0-001b--platform:fe310000.mmc': device_add
+devices_kset: Moving fe310000.mmc to end of list
+PM: Moving platform:fe310000.mmc to end of list
+platform fe310000.mmc: Linked as a consumer to 0-001b
+mmc@fe310000 Dropping the fwnode link to pmic@1b
+device: 'i2c:0-001b--platform:fe320000.mmc': device_add
+devices_kset: Moving fe320000.mmc to end of list
+PM: Moving platform:fe320000.mmc to end of list
+platform fe320000.mmc: Linked as a consumer to 0-001b
+mmc@fe320000 Dropping the fwnode link to pmic@1b
+rk808 0-001b: Dropping the link to vcc3v3-sys
+device: 'platform:vcc3v3-sys--i2c:0-001b': device_unregister
+rk808 0-001b: Dropping the link to vcc1-supply
+device: 'platform:vcc1-supply--i2c:0-001b': device_unregister
+bus: 'i2c': really_probe: bound device 0-001b to driver rk808
+devices_kset: Moving sdio-pwrseq to end of list
+PM: Moving platform:sdio-pwrseq to end of list
+platform sdio-pwrseq: Retrying from deferred list
+bus: 'platform': __driver_probe_device: matched device sdio-pwrseq with driver pwrseq_simple
+bus: 'platform': really_probe: probing driver pwrseq_simple with device sdio-pwrseq
+pwrseq_simple sdio-pwrseq: no init pinctrl state
+pwrseq_simple sdio-pwrseq: no sleep pinctrl state
+pwrseq_simple sdio-pwrseq: no idle pinctrl state
+pwrseq_simple sdio-pwrseq: Driver pwrseq_simple requests probe deferral
+platform sdio-pwrseq: Added to deferred list
+devices_kset: Moving sdmmc-pwrseq to end of list
+PM: Moving platform:sdmmc-pwrseq to end of list
+platform sdmmc-pwrseq: Retrying from deferred list
+bus: 'platform': __driver_probe_device: matched device sdmmc-pwrseq with driver pwrseq_simple
+bus: 'platform': really_probe: probing driver pwrseq_simple with device sdmmc-pwrseq
+pwrseq_simple sdmmc-pwrseq: no init pinctrl state
+pwrseq_simple sdmmc-pwrseq: no sleep pinctrl state
+pwrseq_simple sdmmc-pwrseq: no idle pinctrl state
+pwrseq_simple sdmmc-pwrseq: Driver pwrseq_simple requests probe deferral
+platform sdmmc-pwrseq: Added to deferred list
+devices_kset: Moving fe330000.mmc to end of list
+PM: Moving platform:fe330000.mmc to end of list
+platform fe330000.mmc: Retrying from deferred list
+platform fe330000.mmc: scheduling asynchronous probe
+devices_kset: Moving fe310000.mmc to end of list
+bus: 'platform': __driver_probe_device: matched device fe330000.mmc with driver sdhci-arasan
+PM: Moving platform:fe310000.mmc to end of list
+bus: 'platform': really_probe: probing driver sdhci-arasan with device fe330000.mmc
+platform fe310000.mmc: Retrying from deferred list
+sdhci-arasan fe330000.mmc: no pinctrl handle
+platform fe310000.mmc: scheduling asynchronous probe
+sdhci-arasan fe330000.mmc: adding to PM domain emmc
+devices_kset: Moving fe320000.mmc to end of list
+bus: 'platform': __driver_probe_device: matched device fe310000.mmc with driver dwmmc_rockchip
+bus: 'platform': really_probe: probing driver dwmmc_rockchip with device fe310000.mmc
+dwmmc_rockchip fe310000.mmc: no init pinctrl state
+dwmmc_rockchip fe310000.mmc: no sleep pinctrl state
+dwmmc_rockchip fe310000.mmc: no idle pinctrl state
+sdhci-arasan fe330000.mmc: genpd_add_device()
+PM: Moving platform:fe320000.mmc to end of list
+sdhci-arasan fe330000.mmc: Clock clk_emmc con_id (null) managed by runtime PM.
+platform fe320000.mmc: Retrying from deferred list
+sdhci-arasan fe330000.mmc: Clock aclk_emmc con_id (null) managed by runtime PM.
+platform fe320000.mmc: scheduling asynchronous probe
+dwmmc_rockchip fe310000.mmc: adding to PM domain sdioaudio
+device: 'wakeup1': device_add
+devices_kset: Moving fe300000.ethernet to end of list
+bus: 'platform': __driver_probe_device: matched device fe320000.mmc with driver dwmmc_rockchip
+bus: 'platform': really_probe: probing driver dwmmc_rockchip with device fe320000.mmc
+dwmmc_rockchip fe310000.mmc: genpd_add_device()
+dwmmc_rockchip fe320000.mmc: no init pinctrl state
+dwmmc_rockchip fe320000.mmc: no sleep pinctrl state
+dwmmc_rockchip fe320000.mmc: no idle pinctrl state
+PM: Moving platform:fe300000.ethernet to end of list
+sdhci-arasan fe330000.mmc: error -ENOSYS: No phy for arasan,sdhci-5.1.
+device: 'wakeup1': device_unregister
+sdhci-arasan fe330000.mmc: removing from PM domain emmc
+sdhci-arasan fe330000.mmc: genpd_remove_device()
+sdhci-arasan: probe of fe330000.mmc failed with error -38
+dwmmc_rockchip fe310000.mmc: Clock hclk_sdio con_id (null) managed by runtime PM.
+dwmmc_rockchip fe310000.mmc: Clock clk_sdio con_id (null) managed by runtime PM.
+dwmmc_rockchip fe310000.mmc: Clock sdio_drv con_id (null) managed by runtime PM.
+dwmmc_rockchip fe310000.mmc: Clock sdio_sample con_id (null) managed by runtime PM.
+dwmmc_rockchip fe320000.mmc: adding to PM domain sd
+dwmmc_rockchip fe320000.mmc: genpd_add_device()
+dwmmc_rockchip fe320000.mmc: Clock hclk_sdmmc con_id (null) managed by runtime PM.
+dwmmc_rockchip fe320000.mmc: Clock clk_sdmmc con_id (null) managed by runtime PM.
+dwmmc_rockchip fe320000.mmc: Clock sdmmc_drv con_id (null) managed by runtime PM.
+dwmmc_rockchip fe320000.mmc: Clock sdmmc_sample con_id (null) managed by runtime PM.
+dwmmc_rockchip fe310000.mmc: No normal pinctrl state
+dwmmc_rockchip fe310000.mmc: No idle pinctrl state
+dwmmc_rockchip fe320000.mmc: No normal pinctrl state
+dwmmc_rockchip fe320000.mmc: No idle pinctrl state
+platform fe300000.ethernet: Retrying from deferred list
+rockchip-pm-domain ff310000.power-management:power-controller: Looking up emmc-supply from device tree
+bus: 'platform': __driver_probe_device: matched device fe300000.ethernet with driver rk_gmac-dwmac
+rockchip-pm-domain ff310000.power-management:power-controller: Looking up emmc-supply property in node /power-management@ff310000/power-controller failed
+dwmmc_rockchip fe320000.mmc: IDMAC supports 32-bit address mode.
+dwmmc_rockchip fe320000.mmc: Using internal DMA controller.
+dwmmc_rockchip fe320000.mmc: Version ID is 270a
+dwmmc_rockchip fe320000.mmc: DW MMC controller at irq 56,32 bit host data width,256 deep fifo
+device: 'wakeup1': device_add
+bus: 'platform': really_probe: probing driver rk_gmac-dwmac with device fe300000.ethernet
+dwmmc_rockchip fe310000.mmc: IDMAC supports 32-bit address mode.
+dwmmc_rockchip fe320000.mmc: Looking up vmmc-supply from device tree
+rk_gmac-dwmac fe300000.ethernet: no init pinctrl state
+rk_gmac-dwmac fe300000.ethernet: no sleep pinctrl state
+rk_gmac-dwmac fe300000.ethernet: no idle pinctrl state
+dwmmc_rockchip fe320000.mmc: Looking up vqmmc-supply from device tree
+rk_gmac-dwmac fe300000.ethernet: adding to PM domain gmac
+rk_gmac-dwmac fe300000.ethernet: genpd_add_device()
+rk_gmac-dwmac fe300000.ethernet: Clock clk_gmac con_id (null) managed by runtime PM.
+rk_gmac-dwmac fe300000.ethernet: Clock clk_rmii_rx con_id (null) managed by runtime PM.
+rk_gmac-dwmac fe300000.ethernet: Clock clk_rmii_tx con_id (null) managed by runtime PM.
+rk_gmac-dwmac fe300000.ethernet: Clock clk_mac_ref con_id (null) managed by runtime PM.
+rk_gmac-dwmac fe300000.ethernet: Clock clk_mac_refout con_id (null) managed by runtime PM.
+rk_gmac-dwmac fe300000.ethernet: Clock aclk_gmac con_id (null) managed by runtime PM.
+rk_gmac-dwmac fe300000.ethernet: Clock pclk_gmac con_id (null) managed by runtime PM.
+device: 'wakeup1': device_unregister
+rk_gmac-dwmac fe300000.ethernet: IRQ eth_wake_irq not found
+rk_gmac-dwmac fe300000.ethernet: IRQ eth_lpi not found
+rk_gmac-dwmac fe300000.ethernet: PTP uses main clock
+rk_gmac-dwmac fe300000.ethernet: Looking up phy-supply from device tree
+rk_gmac-dwmac fe300000.ethernet: error -EPROBE_DEFER: failed to get phy regulator
+rk_gmac-dwmac fe300000.ethernet: removing from PM domain gmac
+rk_gmac-dwmac fe300000.ethernet: genpd_remove_device()
+rk_gmac-dwmac fe300000.ethernet: Driver rk_gmac-dwmac requests probe deferral
+platform fe330000.mmc: async probe completed
+platform fe300000.ethernet: Added to deferred list
+devices_kset: Moving fe800000.usb to end of list
+PM: Moving platform:fe800000.usb to end of list
+platform fe800000.usb: Retrying from deferred list
+bus: 'platform': __driver_probe_device: matched device fe800000.usb with driver dwc3
+platform fe800000.usb: error -EPROBE_DEFER: wait for supplier usb3-port
+platform fe800000.usb: Added to deferred list
+devices_kset: Moving fe900000.usb to end of list
+PM: Moving platform:fe900000.usb to end of list
+platform fe900000.usb: Retrying from deferred list
+bus: 'platform': __driver_probe_device: matched device fe900000.usb with driver dwc3
+platform fe900000.usb: error -EPROBE_DEFER: wait for supplier usb3-port
+platform fe900000.usb: Added to deferred list
+devices_kset: Moving 0-0040 to end of list
+PM: Moving i2c:0-0040 to end of list
+i2c 0-0040: Retrying from deferred list
+bus: 'i2c': __driver_probe_device: matched device 0-0040 with driver fan53555-regulator
+dwmmc_rockchip fe310000.mmc: Using internal DMA controller.
+dwmmc_rockchip fe310000.mmc: Version ID is 270a
+dwmmc_rockchip fe310000.mmc: DW MMC controller at irq 55,32 bit host data width,256 deep fifo
+device: 'wakeup2': device_add
+dwmmc_rockchip fe310000.mmc: Looking up vmmc-supply from device tree
+dwmmc_rockchip fe310000.mmc: Looking up vqmmc-supply from device tree
+device: 'wakeup2': device_unregister
+dwmmc_rockchip fe310000.mmc: removing from PM domain sdioaudio
+dwmmc_rockchip fe310000.mmc: genpd_remove_device()
+dwmmc_rockchip fe320000.mmc: removing from PM domain sd
+dwmmc_rockchip fe320000.mmc: genpd_remove_device()
+dwmmc_rockchip fe320000.mmc: Driver dwmmc_rockchip requests probe deferral
+platform fe320000.mmc: Added to deferred list
+platform fe320000.mmc: async probe completed
+rockchip-pm-domain ff310000.power-management:power-controller: Looking up sd-supply from device tree
+rockchip-pm-domain ff310000.power-management:power-controller: Looking up sd-supply property in node /power-management@ff310000/power-controller failed
+rockchip-pm-domain ff310000.power-management:power-controller: Looking up perihp-supply from device tree
+bus: 'i2c': really_probe: probing driver fan53555-regulator with device 0-0040
+rockchip-pm-domain ff310000.power-management:power-controller: Looking up perihp-supply property in node /power-management@ff310000/power-controller failed
+dwmmc_rockchip fe310000.mmc: Driver dwmmc_rockchip requests probe deferral
+fan53555-regulator 0-0040: no default pinctrl state
+rockchip-pm-domain ff310000.power-management:power-controller: Looking up sdioaudio-supply from device tree
+fan53555-regulator 0-0040: probe
+rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x40
+rockchip-pm-domain ff310000.power-management:power-controller: Looking up sdioaudio-supply property in node /power-management@ff310000/power-controller failed
+platform fe310000.mmc: Added to deferred list
+rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
+rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
+rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x40
+rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
+rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
+fan53555-regulator 0-0040: FAN53555 Option[8] Rev[1] Detected!
+fan53555-regulator 0-0040: Looking up vin-supply from device tree
+vdd_cpu_b: unable to resolve supply early: -EPROBE_DEFER
+rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x40
+rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
+platform fe310000.mmc: async probe completed
+rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
+rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x40
+rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
+rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
+rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x40
+rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
+rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
+fan53555-regulator 0-0040: Failed to register regulator!
+fan53555-regulator 0-0040: Driver fan53555-regulator requests probe deferral
+i2c 0-0040: Added to deferred list
+devices_kset: Moving 0-0041 to end of list
+PM: Moving i2c:0-0041 to end of list
+devices_kset: Moving ff9a0000.gpu to end of list
+PM: Moving platform:ff9a0000.gpu to end of list
+i2c 0-0041: Retrying from deferred list
+bus: 'i2c': __driver_probe_device: matched device 0-0041 with driver fan53555-regulator
+bus: 'i2c': really_probe: probing driver fan53555-regulator with device 0-0041
+fan53555-regulator 0-0041: no default pinctrl state
+fan53555-regulator 0-0041: probe
+rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x41
+rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
+rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
+rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x41
+rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
+rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
+fan53555-regulator 0-0041: FAN53555 Option[8] Rev[1] Detected!
+fan53555-regulator 0-0041: Looking up vin-supply from device tree
+vdd_gpu: unable to resolve supply early: -EPROBE_DEFER
+rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x41
+rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
+rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
+rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x41
+rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
+rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
+rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x41
+rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
+rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
+fan53555-regulator 0-0041: Failed to register regulator!
+fan53555-regulator 0-0041: Driver fan53555-regulator requests probe deferral
+i2c 0-0041: Added to deferred list
+devices_kset: Moving rk808-regulator to end of list
+PM: Moving platform:rk808-regulator to end of list
+platform rk808-regulator: Retrying from deferred list
+bus: 'platform': __driver_probe_device: matched device rk808-regulator with driver rk808-regulator
+bus: 'platform': really_probe: probing driver rk808-regulator with device rk808-regulator
+rk808-regulator rk808-regulator: no default pinctrl state
+rk808-regulator rk808-regulator: there is no dvs0 gpio
+rk808-regulator rk808-regulator: there is no dvs1 gpio
+rk808 0-001b: Looking up vcc1-supply from device tree
+vdd_center: unable to resolve supply early: -EPROBE_DEFER
+rk808 0-001b: failed to register 0 regulator
+rk808-regulator rk808-regulator: Driver rk808-regulator requests probe deferral
+platform rk808-regulator: Added to deferred list
 ### dt-test ### start of unittest - you will see error messages
 ### dt-test ### EXPECT \ : Duplicate name in testcase-data, renamed to "duplicate-name#1"
 Duplicate name in testcase-data, renamed to "duplicate-name#1"
@@ -574,7 +738,16 @@ OF: /testcase-data/phandle-tests/consumer-b: #phandle-cells = 2 found 1
 ### dt-test ### pass of_unittest_match_node():1241
 ### dt-test ### pass of_unittest_match_node():1241
 ### dt-test ### pass of_unittest_match_node():1241
+device: 'testcase-data:testcase-device2': device_add
+bus: 'platform': add device testcase-data:testcase-device2
+PM: Adding info for platform:testcase-data:testcase-device2
+testcase-device2 Linked as a fwnode consumer to intc2
+device: 'testcase-data:testcase-device1': device_add
+bus: 'platform': add device testcase-data:testcase-device1
+PM: Adding info for platform:testcase-data:testcase-device1
+testcase-device1 Linked as a fwnode consumer to intc0
 ### dt-test ### pass of_unittest_platform_populate():1265
+platform testcase-data:testcase-device1: error -EPROBE_DEFER: IRQ index 0 not found
 ### dt-test ### pass of_unittest_platform_populate():1269
 ### dt-test ### pass of_unittest_platform_populate():1275
 ### dt-test ### EXPECT \ : platform testcase-data:testcase-device2: error -ENXIO: IRQ index 0 not found
@@ -582,62 +755,272 @@ platform testcase-data:testcase-device2: error -ENXIO: IRQ index 0 not found
 ### dt-test ### EXPECT / : platform testcase-data:testcase-device2: error -ENXIO: IRQ index 0 not found
 ### dt-test ### pass of_unittest_platform_populate():1285
 ### dt-test ### pass of_unittest_platform_populate():1290
+Registering platform device 'unittest-bus.0'. Parent at platform
+device: 'unittest-bus.0': device_add
+bus: 'platform': add device unittest-bus.0
+PM: Adding info for platform:unittest-bus.0
 ### dt-test ### pass of_unittest_platform_populate():1296
+device: 'testcase-data:platform-tests:test-device@1': device_add
+bus: 'platform': add device testcase-data:platform-tests:test-device@1
+PM: Adding info for platform:testcase-data:platform-tests:test-device@1
+device: 'testcase-data:platform-tests:test-device@1:dev@100': device_add
+bus: 'platform': add device testcase-data:platform-tests:test-device@1:dev@100
+PM: Adding info for platform:testcase-data:platform-tests:test-device@1:dev@100
+device: 'testcase-data:platform-tests:test-device@0': device_add
+bus: 'platform': add device testcase-data:platform-tests:test-device@0
+PM: Adding info for platform:testcase-data:platform-tests:test-device@0
+device: 'testcase-data:platform-tests:test-device@0:dev@100': device_add
+bus: 'platform': add device testcase-data:platform-tests:test-device@0:dev@100
+PM: Adding info for platform:testcase-data:platform-tests:test-device@0:dev@100
 ### dt-test ### pass of_unittest_platform_populate():1316
 ### dt-test ### pass of_unittest_platform_populate():1316
+bus: 'platform': remove device testcase-data:platform-tests:test-device@0:dev@100
+PM: Removing info for platform:testcase-data:platform-tests:test-device@0:dev@100
+bus: 'platform': remove device testcase-data:platform-tests:test-device@0
+PM: Removing info for platform:testcase-data:platform-tests:test-device@0
+bus: 'platform': remove device testcase-data:platform-tests:test-device@1:dev@100
+PM: Removing info for platform:testcase-data:platform-tests:test-device@1:dev@100
+bus: 'platform': remove device testcase-data:platform-tests:test-device@1
+PM: Removing info for platform:testcase-data:platform-tests:test-device@1
 ### dt-test ### pass of_unittest_platform_populate():1326
 ### dt-test ### pass of_unittest_platform_populate():1326
-/usb@fe800000: Failed to get clk index: 0 ret: -517
+bus: 'platform': remove device unittest-bus.0
+PM: Removing info for platform:unittest-bus.0
+bus: 'platform': add driver unittest
+device: 'testcase-data:overlay-node:test-bus:i2c-test-bus': device_add
+bus: 'platform': add device testcase-data:overlay-node:test-bus:i2c-test-bus
+PM: Adding info for platform:testcase-data:overlay-node:test-bus:i2c-test-bus
+device: 'testcase-data:overlay-node:test-bus:test-unittest3': device_add
+bus: 'platform': add device testcase-data:overlay-node:test-bus:test-unittest3
+PM: Adding info for platform:testcase-data:overlay-node:test-bus:test-unittest3
+bus: 'platform': __driver_probe_device: matched device testcase-data:overlay-node:test-bus:test-unittest3 with driver unittest
+bus: 'platform': really_probe: probing driver unittest with device testcase-data:overlay-node:test-bus:test-unittest3
+unittest testcase-data:overlay-node:test-bus:test-unittest3: no pinctrl handle
+driver: 'unittest': driver_bound: bound to device 'testcase-data:overlay-node:test-bus:test-unittest3'
+devices_kset: Moving sdio-pwrseq to end of list
+bus: 'platform': really_probe: bound device testcase-data:overlay-node:test-bus:test-unittest3 to driver unittest
+PM: Moving platform:sdio-pwrseq to end of list
+device: 'testcase-data:overlay-node:test-bus:test-unittest1': device_add
+platform sdio-pwrseq: Retrying from deferred list
+bus: 'platform': add device testcase-data:overlay-node:test-bus:test-unittest1
+bus: 'platform': __driver_probe_device: matched device sdio-pwrseq with driver pwrseq_simple
+PM: Adding info for platform:testcase-data:overlay-node:test-bus:test-unittest1
+bus: 'platform': really_probe: probing driver pwrseq_simple with device sdio-pwrseq
+bus: 'platform': __driver_probe_device: matched device testcase-data:overlay-node:test-bus:test-unittest1 with driver unittest
+pwrseq_simple sdio-pwrseq: no init pinctrl state
+bus: 'platform': really_probe: probing driver unittest with device testcase-data:overlay-node:test-bus:test-unittest1
+pwrseq_simple sdio-pwrseq: no sleep pinctrl state
+unittest testcase-data:overlay-node:test-bus:test-unittest1: no pinctrl handle
+pwrseq_simple sdio-pwrseq: no idle pinctrl state
+driver: 'unittest': driver_bound: bound to device 'testcase-data:overlay-node:test-bus:test-unittest1'
+pwrseq_simple sdio-pwrseq: Driver pwrseq_simple requests probe deferral
+bus: 'platform': really_probe: bound device testcase-data:overlay-node:test-bus:test-unittest1 to driver unittest
+platform sdio-pwrseq: Added to deferred list
+device: 'testcase-data:overlay-node:test-bus:test-unittest100': device_add
+devices_kset: Moving sdmmc-pwrseq to end of list
+bus: 'platform': add device testcase-data:overlay-node:test-bus:test-unittest100
+PM: Moving platform:sdmmc-pwrseq to end of list
+PM: Adding info for platform:testcase-data:overlay-node:test-bus:test-unittest100
+platform sdmmc-pwrseq: Retrying from deferred list
+bus: 'platform': __driver_probe_device: matched device testcase-data:overlay-node:test-bus:test-unittest100 with driver unittest
+bus: 'platform': __driver_probe_device: matched device sdmmc-pwrseq with driver pwrseq_simple
+bus: 'platform': really_probe: probing driver unittest with device testcase-data:overlay-node:test-bus:test-unittest100
+bus: 'platform': really_probe: probing driver pwrseq_simple with device sdmmc-pwrseq
+unittest testcase-data:overlay-node:test-bus:test-unittest100: no pinctrl handle
+pwrseq_simple sdmmc-pwrseq: no init pinctrl state
+driver: 'unittest': driver_bound: bound to device 'testcase-data:overlay-node:test-bus:test-unittest100'
+pwrseq_simple sdmmc-pwrseq: no sleep pinctrl state
+bus: 'platform': really_probe: bound device testcase-data:overlay-node:test-bus:test-unittest100 to driver unittest
+pwrseq_simple sdmmc-pwrseq: no idle pinctrl state
 ### dt-test ### pass of_unittest_overlay():2982
-/usb@fe900000: Failed to get clk index: 0 ret: -517
+pwrseq_simple sdmmc-pwrseq: Driver pwrseq_simple requests probe deferral
 ### dt-test ### EXPECT \ : OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data/overlay-node/test-bus/test-unittest0/status
+platform sdmmc-pwrseq: Added to deferred list
 OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data/overlay-node/test-bus/test-unittest0/status
-/usb@fe800000: Failed to get clk index: 0 ret: -517
+devices_kset: Moving fe300000.ethernet to end of list
+device: 'testcase-data:overlay-node:test-bus:test-unittest0': device_add
+PM: Moving platform:fe300000.ethernet to end of list
+bus: 'platform': add device testcase-data:overlay-node:test-bus:test-unittest0
+platform fe300000.ethernet: Retrying from deferred list
+PM: Adding info for platform:testcase-data:overlay-node:test-bus:test-unittest0
+bus: 'platform': __driver_probe_device: matched device fe300000.ethernet with driver rk_gmac-dwmac
+bus: 'platform': __driver_probe_device: matched device testcase-data:overlay-node:test-bus:test-unittest0 with driver unittest
+bus: 'platform': really_probe: probing driver rk_gmac-dwmac with device fe300000.ethernet
+bus: 'platform': really_probe: probing driver unittest with device testcase-data:overlay-node:test-bus:test-unittest0
+rk_gmac-dwmac fe300000.ethernet: no init pinctrl state
+unittest testcase-data:overlay-node:test-bus:test-unittest0: no pinctrl handle
+rk_gmac-dwmac fe300000.ethernet: no sleep pinctrl state
+driver: 'unittest': driver_bound: bound to device 'testcase-data:overlay-node:test-bus:test-unittest0'
+rk_gmac-dwmac fe300000.ethernet: no idle pinctrl state
+bus: 'platform': really_probe: bound device testcase-data:overlay-node:test-bus:test-unittest0 to driver unittest
+rk_gmac-dwmac fe300000.ethernet: adding to PM domain gmac
 ### dt-test ### EXPECT / : OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data/overlay-node/test-bus/test-unittest0/status
-/usb@fe900000: Failed to get clk index: 0 ret: -517
+rk_gmac-dwmac fe300000.ethernet: genpd_add_device()
 ### dt-test ### pass of_unittest_overlay_0():2111
-/usb@fe800000: Failed to get clk index: 0 ret: -517
+rk_gmac-dwmac fe300000.ethernet: Clock clk_gmac con_id (null) managed by runtime PM.
 ### dt-test ### EXPECT \ : OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data/overlay-node/test-bus/test-unittest1/status
+rk_gmac-dwmac fe300000.ethernet: Clock clk_rmii_rx con_id (null) managed by runtime PM.
 OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data/overlay-node/test-bus/test-unittest1/status
+rk_gmac-dwmac fe300000.ethernet: Clock clk_rmii_tx con_id (null) managed by runtime PM.
+bus: 'platform': remove device testcase-data:overlay-node:test-bus:test-unittest1
+rk_gmac-dwmac fe300000.ethernet: Clock clk_mac_ref con_id (null) managed by runtime PM.
+PM: Removing info for platform:testcase-data:overlay-node:test-bus:test-unittest1
+rk_gmac-dwmac fe300000.ethernet: Clock clk_mac_refout con_id (null) managed by runtime PM.
 ### dt-test ### EXPECT / : OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data/overlay-node/test-bus/test-unittest1/status
+rk_gmac-dwmac fe300000.ethernet: Clock aclk_gmac con_id (null) managed by runtime PM.
 ### dt-test ### pass of_unittest_overlay_1():2131
+rk_gmac-dwmac fe300000.ethernet: Clock pclk_gmac con_id (null) managed by runtime PM.
 ### dt-test ### EXPECT \ : OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data/overlay-node/test-bus/test-unittest2/status
+rk_gmac-dwmac fe300000.ethernet: IRQ eth_wake_irq not found
 OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data/overlay-node/test-bus/test-unittest2/status
+rk_gmac-dwmac fe300000.ethernet: IRQ eth_lpi not found
+device: 'testcase-data:overlay-node:test-bus:test-unittest2': device_add
+rk_gmac-dwmac fe300000.ethernet: PTP uses main clock
+bus: 'platform': add device testcase-data:overlay-node:test-bus:test-unittest2
+rk_gmac-dwmac fe300000.ethernet: Looking up phy-supply from device tree
+PM: Adding info for platform:testcase-data:overlay-node:test-bus:test-unittest2
+rk_gmac-dwmac fe300000.ethernet: error -EPROBE_DEFER: failed to get phy regulator
+bus: 'platform': __driver_probe_device: matched device testcase-data:overlay-node:test-bus:test-unittest2 with driver unittest
+rk_gmac-dwmac fe300000.ethernet: removing from PM domain gmac
+bus: 'platform': really_probe: probing driver unittest with device testcase-data:overlay-node:test-bus:test-unittest2
+rk_gmac-dwmac fe300000.ethernet: genpd_remove_device()
+unittest testcase-data:overlay-node:test-bus:test-unittest2: no pinctrl handle
+rk_gmac-dwmac fe300000.ethernet: Driver rk_gmac-dwmac requests probe deferral
+driver: 'unittest': driver_bound: bound to device 'testcase-data:overlay-node:test-bus:test-unittest2'
+platform fe300000.ethernet: Added to deferred list
+devices_kset: Moving fe800000.usb to end of list
+bus: 'platform': really_probe: bound device testcase-data:overlay-node:test-bus:test-unittest2 to driver unittest
+PM: Moving platform:fe800000.usb to end of list
 ### dt-test ### EXPECT / : OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data/overlay-node/test-bus/test-unittest2/status
 ### dt-test ### pass of_unittest_overlay_2():2151
-/usb@fe900000: Failed to get clk index: 0 ret: -517
+platform fe800000.usb: Retrying from deferred list
 ### dt-test ### EXPECT \ : OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data/overlay-node/test-bus/test-unittest3/status
-/usb@fe800000: Failed to get clk index: 0 ret: -517
+bus: 'platform': __driver_probe_device: matched device fe800000.usb with driver dwc3
 OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data/overlay-node/test-bus/test-unittest3/status
+platform fe800000.usb: error -EPROBE_DEFER: wait for supplier usb3-port
+bus: 'platform': remove device testcase-data:overlay-node:test-bus:test-unittest3
+platform fe800000.usb: Added to deferred list
+PM: Removing info for platform:testcase-data:overlay-node:test-bus:test-unittest3
+devices_kset: Moving fe900000.usb to end of list
+PM: Moving platform:fe900000.usb to end of list
+platform fe900000.usb: Retrying from deferred list
 ### dt-test ### EXPECT / : OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data/overlay-node/test-bus/test-unittest3/status
 ### dt-test ### pass of_unittest_overlay_3():2171
+bus: 'platform': __driver_probe_device: matched device fe900000.usb with driver dwc3
+device: 'testcase-data:overlay-node:test-bus:test-unittest4': device_add
+platform fe900000.usb: error -EPROBE_DEFER: wait for supplier usb3-port
+bus: 'platform': add device testcase-data:overlay-node:test-bus:test-unittest4
+platform fe900000.usb: Added to deferred list
+PM: Adding info for platform:testcase-data:overlay-node:test-bus:test-unittest4
+devices_kset: Moving fe320000.mmc to end of list
+PM: Moving platform:fe320000.mmc to end of list
+platform fe320000.mmc: Retrying from deferred list
+bus: 'platform': __driver_probe_device: matched device testcase-data:overlay-node:test-bus:test-unittest4 with driver unittest
+platform fe320000.mmc: scheduling asynchronous probe
+bus: 'platform': really_probe: probing driver unittest with device testcase-data:overlay-node:test-bus:test-unittest4
+devices_kset: Moving fe310000.mmc to end of list
+bus: 'platform': __driver_probe_device: matched device fe320000.mmc with driver dwmmc_rockchip
+bus: 'platform': really_probe: probing driver dwmmc_rockchip with device fe320000.mmc
+dwmmc_rockchip fe320000.mmc: no init pinctrl state
+dwmmc_rockchip fe320000.mmc: no sleep pinctrl state
+dwmmc_rockchip fe320000.mmc: no idle pinctrl state
+dwmmc_rockchip fe320000.mmc: adding to PM domain sd
+dwmmc_rockchip fe320000.mmc: genpd_add_device()
+dwmmc_rockchip fe320000.mmc: Clock hclk_sdmmc con_id (null) managed by runtime PM.
+dwmmc_rockchip fe320000.mmc: Clock clk_sdmmc con_id (null) managed by runtime PM.
+dwmmc_rockchip fe320000.mmc: Clock sdmmc_drv con_id (null) managed by runtime PM.
+dwmmc_rockchip fe320000.mmc: Clock sdmmc_sample con_id (null) managed by runtime PM.
+dwmmc_rockchip fe320000.mmc: No normal pinctrl state
+dwmmc_rockchip fe320000.mmc: No idle pinctrl state
+unittest testcase-data:overlay-node:test-bus:test-unittest4: no pinctrl handle
+PM: Moving platform:fe310000.mmc to end of list
+dwmmc_rockchip fe320000.mmc: IDMAC supports 32-bit address mode.
+dwmmc_rockchip fe320000.mmc: Using internal DMA controller.
+dwmmc_rockchip fe320000.mmc: Version ID is 270a
+dwmmc_rockchip fe320000.mmc: DW MMC controller at irq 56,32 bit host data width,256 deep fifo
+device: 'wakeup1': device_add
+dwmmc_rockchip fe320000.mmc: Looking up vmmc-supply from device tree
+dwmmc_rockchip fe320000.mmc: Looking up vqmmc-supply from device tree
+driver: 'unittest': driver_bound: bound to device 'testcase-data:overlay-node:test-bus:test-unittest4'
+device: 'wakeup1': device_unregister
+dwmmc_rockchip fe320000.mmc: removing from PM domain sd
+dwmmc_rockchip fe320000.mmc: genpd_remove_device()
+dwmmc_rockchip fe320000.mmc: Driver dwmmc_rockchip requests probe deferral
+platform fe320000.mmc: Added to deferred list
+platform fe320000.mmc: async probe completed
+platform fe310000.mmc: Retrying from deferred list
+bus: 'platform': really_probe: bound device testcase-data:overlay-node:test-bus:test-unittest4 to driver unittest
+platform fe310000.mmc: scheduling asynchronous probe
 ### dt-test ### pass of_unittest_overlay_4():2181
-/usb@fe900000: Failed to get clk index: 0 ret: -517
+devices_kset: Moving 0-0040 to end of list
+bus: 'platform': __driver_probe_device: matched device fe310000.mmc with driver dwmmc_rockchip
+bus: 'platform': really_probe: probing driver dwmmc_rockchip with device fe310000.mmc
+dwmmc_rockchip fe310000.mmc: no init pinctrl state
+dwmmc_rockchip fe310000.mmc: no sleep pinctrl state
+dwmmc_rockchip fe310000.mmc: no idle pinctrl state
+dwmmc_rockchip fe310000.mmc: adding to PM domain sdioaudio
+dwmmc_rockchip fe310000.mmc: genpd_add_device()
 ### dt-test ### EXPECT \ : OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data/overlay-node/test-bus/test-unittest5/status
 OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data/overlay-node/test-bus/test-unittest5/status
-/usb@fe800000: Failed to get clk index: 0 ret: -517
+device: 'testcase-data:overlay-node:test-bus:test-unittest5': device_add
+bus: 'platform': add device testcase-data:overlay-node:test-bus:test-unittest5
+PM: Adding info for platform:testcase-data:overlay-node:test-bus:test-unittest5
+PM: Moving i2c:0-0040 to end of list
+i2c 0-0040: Retrying from deferred list
+bus: 'platform': __driver_probe_device: matched device testcase-data:overlay-node:test-bus:test-unittest5 with driver unittest
+bus: 'platform': really_probe: probing driver unittest with device testcase-data:overlay-node:test-bus:test-unittest5
+unittest testcase-data:overlay-node:test-bus:test-unittest5: no pinctrl handle
+driver: 'unittest': driver_bound: bound to device 'testcase-data:overlay-node:test-bus:test-unittest5'
+bus: 'platform': really_probe: bound device testcase-data:overlay-node:test-bus:test-unittest5 to driver unittest
+bus: 'platform': remove device testcase-data:overlay-node:test-bus:test-unittest5
+PM: Removing info for platform:testcase-data:overlay-node:test-bus:test-unittest5
 ### dt-test ### EXPECT / : OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data/overlay-node/test-bus/test-unittest5/status
-/usb@fe900000: Failed to get clk index: 0 ret: -517
 ### dt-test ### pass of_unittest_overlay_5():2201
-/usb@fe800000: Failed to get clk index: 0 ret: -517
 ### dt-test ### EXPECT \ : OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data/overlay-node/test-bus/test-unittest6/status
+dwmmc_rockchip fe310000.mmc: Clock hclk_sdio con_id (null) managed by runtime PM.
 OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data/overlay-node/test-bus/test-unittest6/status
+device: 'testcase-data:overlay-node:test-bus:test-unittest6': device_add
+bus: 'platform': add device testcase-data:overlay-node:test-bus:test-unittest6
+PM: Adding info for platform:testcase-data:overlay-node:test-bus:test-unittest6
+bus: 'platform': __driver_probe_device: matched device testcase-data:overlay-node:test-bus:test-unittest6 with driver unittest
+bus: 'platform': really_probe: probing driver unittest with device testcase-data:overlay-node:test-bus:test-unittest6
+unittest testcase-data:overlay-node:test-bus:test-unittest6: no pinctrl handle
+driver: 'unittest': driver_bound: bound to device 'testcase-data:overlay-node:test-bus:test-unittest6'
+bus: 'platform': really_probe: bound device testcase-data:overlay-node:test-bus:test-unittest6 to driver unittest
 ### dt-test ### EXPECT / : OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data/overlay-node/test-bus/test-unittest6/status
 ### dt-test ### EXPECT \ : OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data/overlay-node/test-bus/test-unittest7/status
-/usb@fe900000: Failed to get clk index: 0 ret: -517
+bus: 'i2c': __driver_probe_device: matched device 0-0040 with driver fan53555-regulator
 OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data/overlay-node/test-bus/test-unittest7/status
-/usb@fe800000: Failed to get clk index: 0 ret: -517
+device: 'testcase-data:overlay-node:test-bus:test-unittest7': device_add
+bus: 'platform': add device testcase-data:overlay-node:test-bus:test-unittest7
+PM: Adding info for platform:testcase-data:overlay-node:test-bus:test-unittest7
+bus: 'platform': __driver_probe_device: matched device testcase-data:overlay-node:test-bus:test-unittest7 with driver unittest
+bus: 'platform': really_probe: probing driver unittest with device testcase-data:overlay-node:test-bus:test-unittest7
+unittest testcase-data:overlay-node:test-bus:test-unittest7: no pinctrl handle
+driver: 'unittest': driver_bound: bound to device 'testcase-data:overlay-node:test-bus:test-unittest7'
+bus: 'platform': really_probe: bound device testcase-data:overlay-node:test-bus:test-unittest7 to driver unittest
 ### dt-test ### EXPECT / : OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data/overlay-node/test-bus/test-unittest7/status
-/usb@fe900000: Failed to get clk index: 0 ret: -517
+bus: 'platform': remove device testcase-data:overlay-node:test-bus:test-unittest7
+PM: Removing info for platform:testcase-data:overlay-node:test-bus:test-unittest7
+dwmmc_rockchip fe310000.mmc: Clock clk_sdio con_id (null) managed by runtime PM.
+bus: 'platform': remove device testcase-data:overlay-node:test-bus:test-unittest6
+PM: Removing info for platform:testcase-data:overlay-node:test-bus:test-unittest6
 ### dt-test ### pass of_unittest_overlay_6():2302
-/usb@fe800000: Failed to get clk index: 0 ret: -517
 ### dt-test ### EXPECT \ : OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data/overlay-node/test-bus/test-unittest8/status
+bus: 'i2c': really_probe: probing driver fan53555-regulator with device 0-0040
 OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data/overlay-node/test-bus/test-unittest8/status
+device: 'testcase-data:overlay-node:test-bus:test-unittest8': device_add
+bus: 'platform': add device testcase-data:overlay-node:test-bus:test-unittest8
+PM: Adding info for platform:testcase-data:overlay-node:test-bus:test-unittest8
+bus: 'platform': __driver_probe_device: matched device testcase-data:overlay-node:test-bus:test-unittest8 with driver unittest
+bus: 'platform': really_probe: probing driver unittest with device testcase-data:overlay-node:test-bus:test-unittest8
+unittest testcase-data:overlay-node:test-bus:test-unittest8: no pinctrl handle
+driver: 'unittest': driver_bound: bound to device 'testcase-data:overlay-node:test-bus:test-unittest8'
+bus: 'platform': really_probe: bound device testcase-data:overlay-node:test-bus:test-unittest8 to driver unittest
 ### dt-test ### EXPECT / : OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data/overlay-node/test-bus/test-unittest8/status
 ### dt-test ### EXPECT \ : OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data/overlay-node/test-bus/test-unittest8/property-foo
-/usb@fe900000: Failed to get clk index: 0 ret: -517
+dwmmc_rockchip fe310000.mmc: Clock sdio_drv con_id (null) managed by runtime PM.
 OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data/overlay-node/test-bus/test-unittest8/property-foo
-/usb@fe800000: Failed to get clk index: 0 ret: -517
 ### dt-test ### EXPECT / : OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data/overlay-node/test-bus/test-unittest8/property-foo
 ### dt-test ### EXPECT \ : OF: overlay: node_overlaps_later_cs: #6 overlaps with #7 @/testcase-data/overlay-node/test-bus/test-unittest8
 ### dt-test ### EXPECT \ : OF: overlay: overlay #6 is not topmost
@@ -645,165 +1028,928 @@ OF: overlay: node_overlaps_later_cs: #6 overlaps with #7 @/testcase-data/overlay
 OF: overlay: overlay #6 is not topmost
 ### dt-test ### EXPECT / : OF: overlay: overlay #6 is not topmost
 ### dt-test ### EXPECT / : OF: overlay: node_overlaps_later_cs: #6 overlaps with #7 @/testcase-data/overlay-node/test-bus/test-unittest8
+bus: 'platform': remove device testcase-data:overlay-node:test-bus:test-unittest8
+PM: Removing info for platform:testcase-data:overlay-node:test-bus:test-unittest8
 ### dt-test ### pass of_unittest_overlay_8():2395
-/usb@fe900000: Failed to get clk index: 0 ret: -517
+fan53555-regulator 0-0040: no default pinctrl state
+dwmmc_rockchip fe310000.mmc: Clock sdio_sample con_id (null) managed by runtime PM.
+device: 'testcase-data:overlay-node:test-bus:test-unittest10': device_add
+bus: 'platform': add device testcase-data:overlay-node:test-bus:test-unittest10
+PM: Adding info for platform:testcase-data:overlay-node:test-bus:test-unittest10
+bus: 'platform': __driver_probe_device: matched device testcase-data:overlay-node:test-bus:test-unittest10 with driver unittest
+bus: 'platform': really_probe: probing driver unittest with device testcase-data:overlay-node:test-bus:test-unittest10
+unittest testcase-data:overlay-node:test-bus:test-unittest10: no pinctrl handle
+fan53555-regulator 0-0040: probe
+device: 'testcase-data:overlay-node:test-bus:test-unittest10:test-unittest101': device_add
+bus: 'platform': add device testcase-data:overlay-node:test-bus:test-unittest10:test-unittest101
+PM: Adding info for platform:testcase-data:overlay-node:test-bus:test-unittest10:test-unittest101
+bus: 'platform': __driver_probe_device: matched device testcase-data:overlay-node:test-bus:test-unittest10:test-unittest101 with driver unittest
+bus: 'platform': really_probe: probing driver unittest with device testcase-data:overlay-node:test-bus:test-unittest10:test-unittest101
+unittest testcase-data:overlay-node:test-bus:test-unittest10:test-unittest101: no pinctrl handle
+driver: 'unittest': driver_bound: bound to device 'testcase-data:overlay-node:test-bus:test-unittest10:test-unittest101'
+bus: 'platform': really_probe: bound device testcase-data:overlay-node:test-bus:test-unittest10:test-unittest101 to driver unittest
+driver: 'unittest': driver_bound: bound to device 'testcase-data:overlay-node:test-bus:test-unittest10'
+bus: 'platform': really_probe: bound device testcase-data:overlay-node:test-bus:test-unittest10 to driver unittest
 ### dt-test ### pass of_unittest_overlay_10():2407
 ### dt-test ### pass of_unittest_overlay_10():2413
-/usb@fe800000: Failed to get clk index: 0 ret: -517
 ### dt-test ### pass of_unittest_overlay_10():2419
-/usb@fe900000: Failed to get clk index: 0 ret: -517
+dwmmc_rockchip fe310000.mmc: No normal pinctrl state
+rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x40
+device: 'testcase-data:overlay-node:test-bus:test-unittest11': device_add
+bus: 'platform': add device testcase-data:overlay-node:test-bus:test-unittest11
+dwmmc_rockchip fe310000.mmc: No idle pinctrl state
+PM: Adding info for platform:testcase-data:overlay-node:test-bus:test-unittest11
+bus: 'platform': __driver_probe_device: matched device testcase-data:overlay-node:test-bus:test-unittest11 with driver unittest
+bus: 'platform': really_probe: probing driver unittest with device testcase-data:overlay-node:test-bus:test-unittest11
+unittest testcase-data:overlay-node:test-bus:test-unittest11: no pinctrl handle
+device: 'testcase-data:overlay-node:test-bus:test-unittest11:test-unittest111': device_add
+bus: 'platform': add device testcase-data:overlay-node:test-bus:test-unittest11:test-unittest111
+PM: Adding info for platform:testcase-data:overlay-node:test-bus:test-unittest11:test-unittest111
+rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
+bus: 'platform': __driver_probe_device: matched device testcase-data:overlay-node:test-bus:test-unittest11:test-unittest111 with driver unittest
+rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
+bus: 'platform': really_probe: probing driver unittest with device testcase-data:overlay-node:test-bus:test-unittest11:test-unittest111
+rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x40
+unittest testcase-data:overlay-node:test-bus:test-unittest11:test-unittest111: no pinctrl handle
+rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
+driver: 'unittest': driver_bound: bound to device 'testcase-data:overlay-node:test-bus:test-unittest11:test-unittest111'
+rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
+bus: 'platform': really_probe: bound device testcase-data:overlay-node:test-bus:test-unittest11:test-unittest111 to driver unittest
+fan53555-regulator 0-0040: FAN53555 Option[8] Rev[1] Detected!
+driver: 'unittest': driver_bound: bound to device 'testcase-data:overlay-node:test-bus:test-unittest11'
+fan53555-regulator 0-0040: Looking up vin-supply from device tree
+dwmmc_rockchip fe310000.mmc: IDMAC supports 32-bit address mode.
+dwmmc_rockchip fe310000.mmc: Using internal DMA controller.
+dwmmc_rockchip fe310000.mmc: Version ID is 270a
+dwmmc_rockchip fe310000.mmc: DW MMC controller at irq 55,32 bit host data width,256 deep fifo
+device: 'wakeup1': device_add
+bus: 'platform': really_probe: bound device testcase-data:overlay-node:test-bus:test-unittest11 to driver unittest
+dwmmc_rockchip fe310000.mmc: Looking up vmmc-supply from device tree
+dwmmc_rockchip fe310000.mmc: Looking up vqmmc-supply from device tree
+device: 'wakeup1': device_unregister
+dwmmc_rockchip fe310000.mmc: removing from PM domain sdioaudio
+dwmmc_rockchip fe310000.mmc: genpd_remove_device()
+dwmmc_rockchip fe310000.mmc: Driver dwmmc_rockchip requests probe deferral
+platform fe310000.mmc: Added to deferred list
+platform fe310000.mmc: async probe completed
+vdd_cpu_b: unable to resolve supply early: -EPROBE_DEFER
+bus: 'platform': remove device testcase-data:overlay-node:test-bus:test-unittest11:test-unittest111
+rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x40
+PM: Removing info for platform:testcase-data:overlay-node:test-bus:test-unittest11:test-unittest111
+rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
+bus: 'platform': remove device testcase-data:overlay-node:test-bus:test-unittest11
+rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
+PM: Removing info for platform:testcase-data:overlay-node:test-bus:test-unittest11
+rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x40
 ### dt-test ### pass of_unittest_overlay_11():2431
+rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
+bus: 'i2c': add driver unittest-i2c-dev
+rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
+i2c-core: driver [unittest-i2c-dev] registered
+rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x40
 ### dt-test ### pass of_unittest_overlay_i2c_init():2654
-/usb@fe800000: Failed to get clk index: 0 ret: -517
-/usb@fe900000: Failed to get clk index: 0 ret: -517
+rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
+bus: 'platform': add driver unittest-i2c-bus
+rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
+bus: 'platform': __driver_probe_device: matched device testcase-data:overlay-node:test-bus:i2c-test-bus with driver unittest-i2c-bus
+fan53555-regulator 0-0040: Failed to register regulator!
+bus: 'platform': really_probe: probing driver unittest-i2c-bus with device testcase-data:overlay-node:test-bus:i2c-test-bus
+fan53555-regulator 0-0040: Driver fan53555-regulator requests probe deferral
+unittest-i2c-bus testcase-data:overlay-node:test-bus:i2c-test-bus: no pinctrl handle
+i2c 0-0040: Added to deferred list
+device: 'i2c-9': device_add
+devices_kset: Moving 0-0041 to end of list
+bus: 'i2c': add device i2c-9
+PM: Moving i2c:0-0041 to end of list
+PM: Adding info for i2c:i2c-9
+devices_kset: Moving ff9a0000.gpu to end of list
+PM: Moving platform:ff9a0000.gpu to end of list
+i2c 0-0041: Retrying from deferred list
+device: 'i2c-9': device_add
+bus: 'i2c': __driver_probe_device: matched device 0-0041 with driver fan53555-regulator
+PM: Adding info for No Bus:i2c-9
+bus: 'i2c': really_probe: probing driver fan53555-regulator with device 0-0041
+i2c_dev: adapter [testcase-data:overlay-node:test-bus:i2c-test-bu] registered as minor 9
+fan53555-regulator 0-0041: no default pinctrl state
+i2c i2c-9: adapter [testcase-data:overlay-node:test-bus:i2c-test-bu] registered
+fan53555-regulator 0-0041: probe
+i2c i2c-9: of_i2c: walking child nodes
+rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x41
+i2c i2c-9: of_i2c: register /testcase-data/overlay-node/test-bus/i2c-test-bus/test-unittest14
+rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
+device: '9-000a': device_add
+rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
+bus: 'i2c': add device 9-000a
+rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x41
+PM: Adding info for i2c:9-000a
+rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
+i2c i2c-9: client [unittest-i2c-mux] registered with bus id 9-000a
+rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
+i2c i2c-9: of_i2c: register /testcase-data/overlay-node/test-bus/i2c-test-bus/test-unittest13
+fan53555-regulator 0-0041: FAN53555 Option[8] Rev[1] Detected!
+device: '9-0009': device_add
+fan53555-regulator 0-0041: Looking up vin-supply from device tree
+bus: 'i2c': add device 9-0009
+vdd_gpu: unable to resolve supply early: -EPROBE_DEFER
+PM: Adding info for i2c:9-0009
+rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x41
+bus: 'i2c': __driver_probe_device: matched device 9-0009 with driver unittest-i2c-dev
+rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
+bus: 'i2c': really_probe: probing driver unittest-i2c-dev with device 9-0009
+rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
+unittest-i2c-dev 9-0009: no pinctrl handle
+rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x41
+unittest-i2c-dev 9-0009: probe
+rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
+driver: 'unittest-i2c-dev': driver_bound: bound to device '9-0009'
+rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
+bus: 'i2c': really_probe: bound device 9-0009 to driver unittest-i2c-dev
+rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x41
+i2c i2c-9: client [unittest-i2c-dev] registered with bus id 9-0009
+rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
+driver: 'unittest-i2c-bus': driver_bound: bound to device 'testcase-data:overlay-node:test-bus:i2c-test-bus'
+rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
+bus: 'platform': really_probe: bound device testcase-data:overlay-node:test-bus:i2c-test-bus to driver unittest-i2c-bus
+fan53555-regulator 0-0041: Failed to register regulator!
 ### dt-test ### pass of_unittest_overlay_i2c_init():2660
+fan53555-regulator 0-0041: Driver fan53555-regulator requests probe deferral
 ### dt-test ### pass of_unittest_overlay():2998
-/usb@fe800000: Failed to get clk index: 0 ret: -517
+i2c 0-0041: Added to deferred list
 ### dt-test ### EXPECT \ : OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data/overlay-node/test-bus/i2c-test-bus/test-unittest12/status
+devices_kset: Moving rk808-regulator to end of list
 OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data/overlay-node/test-bus/i2c-test-bus/test-unittest12/status
-/usb@fe900000: Failed to get clk index: 0 ret: -517
+PM: Moving platform:rk808-regulator to end of list
+i2c i2c-9: of_i2c: register /testcase-data/overlay-node/test-bus/i2c-test-bus/test-unittest12
+platform rk808-regulator: Retrying from deferred list
+device: '9-0008': device_add
+bus: 'platform': __driver_probe_device: matched device rk808-regulator with driver rk808-regulator
+bus: 'i2c': add device 9-0008
+bus: 'platform': really_probe: probing driver rk808-regulator with device rk808-regulator
+PM: Adding info for i2c:9-0008
+rk808-regulator rk808-regulator: no default pinctrl state
+bus: 'i2c': __driver_probe_device: matched device 9-0008 with driver unittest-i2c-dev
+rk808-regulator rk808-regulator: there is no dvs0 gpio
+bus: 'i2c': really_probe: probing driver unittest-i2c-dev with device 9-0008
+rk808-regulator rk808-regulator: there is no dvs1 gpio
+unittest-i2c-dev 9-0008: no pinctrl handle
+rk808 0-001b: Looking up vcc1-supply from device tree
+unittest-i2c-dev 9-0008: probe
+vdd_center: unable to resolve supply early: -EPROBE_DEFER
+driver: 'unittest-i2c-dev': driver_bound: bound to device '9-0008'
+rk808 0-001b: failed to register 0 regulator
+bus: 'i2c': really_probe: bound device 9-0008 to driver unittest-i2c-dev
+rk808-regulator rk808-regulator: Driver rk808-regulator requests probe deferral
+i2c i2c-9: client [unittest-i2c-dev] registered with bus id 9-0008
+platform rk808-regulator: Added to deferred list
 ### dt-test ### EXPECT / : OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data/overlay-node/test-bus/i2c-test-bus/test-unittest12/status
+devices_kset: Moving sdio-pwrseq to end of list
 ### dt-test ### pass of_unittest_overlay_i2c_12():2707
-/usb@fe800000: Failed to get clk index: 0 ret: -517
+PM: Moving platform:sdio-pwrseq to end of list
 ### dt-test ### EXPECT \ : OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data/overlay-node/test-bus/i2c-test-bus/test-unittest13/status
-/usb@fe900000: Failed to get clk index: 0 ret: -517
+platform sdio-pwrseq: Retrying from deferred list
 OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data/overlay-node/test-bus/i2c-test-bus/test-unittest13/status
+bus: 'platform': __driver_probe_device: matched device sdio-pwrseq with driver pwrseq_simple
+device: '9-0009': device_unregister
+bus: 'platform': really_probe: probing driver pwrseq_simple with device sdio-pwrseq
+bus: 'i2c': remove device 9-0009
+pwrseq_simple sdio-pwrseq: no init pinctrl state
+unittest-i2c-dev 9-0009: remove
+pwrseq_simple sdio-pwrseq: no sleep pinctrl state
+PM: Removing info for i2c:9-0009
+pwrseq_simple sdio-pwrseq: no idle pinctrl state
 ### dt-test ### EXPECT / : OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data/overlay-node/test-bus/i2c-test-bus/test-unittest13/status
+pwrseq_simple sdio-pwrseq: Driver pwrseq_simple requests probe deferral
 ### dt-test ### pass of_unittest_overlay_i2c_13():2727
+platform sdio-pwrseq: Added to deferred list
 ### dt-test ### EXPECT \ : i2c i2c-1: Added multiplexed i2c bus 3
+devices_kset: Moving sdmmc-pwrseq to end of list
+PM: Moving platform:sdmmc-pwrseq to end of list
+platform sdmmc-pwrseq: Retrying from deferred list
+i2c i2c-9: of_i2c: register /testcase-data/overlay-node/test-bus/i2c-test-bus/test-unittest15
+bus: 'platform': __driver_probe_device: matched device sdmmc-pwrseq with driver pwrseq_simple
+device: '9-000b': device_add
+bus: 'platform': really_probe: probing driver pwrseq_simple with device sdmmc-pwrseq
+bus: 'i2c': add device 9-000b
+pwrseq_simple sdmmc-pwrseq: no init pinctrl state
+PM: Adding info for i2c:9-000b
+pwrseq_simple sdmmc-pwrseq: no sleep pinctrl state
+i2c i2c-9: client [unittest-i2c-mux] registered with bus id 9-000b
+pwrseq_simple sdmmc-pwrseq: no idle pinctrl state
 ### dt-test ### EXPECT / : i2c i2c-1: Added multiplexed i2c bus 3
 ### dt-test ### pass of_unittest_overlay_i2c_15():2751
+pwrseq_simple sdmmc-pwrseq: Driver pwrseq_simple requests probe deferral
+bus: 'platform': remove driver unittest-i2c-bus
+platform sdmmc-pwrseq: Added to deferred list
+device: '9-000a': device_unregister
+devices_kset: Moving fe300000.ethernet to end of list
+bus: 'i2c': remove device 9-000a
+PM: Moving platform:fe300000.ethernet to end of list
+PM: Removing info for i2c:9-000a
+platform fe300000.ethernet: Retrying from deferred list
+device: '9-0008': device_unregister
+bus: 'platform': __driver_probe_device: matched device fe300000.ethernet with driver rk_gmac-dwmac
+bus: 'i2c': remove device 9-0008
+bus: 'platform': really_probe: probing driver rk_gmac-dwmac with device fe300000.ethernet
+unittest-i2c-dev 9-0008: remove
+rk_gmac-dwmac fe300000.ethernet: no init pinctrl state
+PM: Removing info for i2c:9-0008
+rk_gmac-dwmac fe300000.ethernet: no sleep pinctrl state
+device: '9-000b': device_unregister
+rk_gmac-dwmac fe300000.ethernet: no idle pinctrl state
+bus: 'i2c': remove device 9-000b
+rk_gmac-dwmac fe300000.ethernet: adding to PM domain gmac
+PM: Removing info for i2c:9-000b
+rk_gmac-dwmac fe300000.ethernet: genpd_add_device()
+i2c i2c-9: adapter [testcase-data:overlay-node:test-bus:i2c-test-bu] unregistered
+rk_gmac-dwmac fe300000.ethernet: Clock clk_gmac con_id (null) managed by runtime PM.
+device: 'i2c-9': device_unregister
+rk_gmac-dwmac fe300000.ethernet: Clock clk_rmii_rx con_id (null) managed by runtime PM.
+PM: Removing info for No Bus:i2c-9
+rk_gmac-dwmac fe300000.ethernet: Clock clk_rmii_tx con_id (null) managed by runtime PM.
+i2c_dev: adapter [testcase-data:overlay-node:test-bus:i2c-test-bu] unregistered
+rk_gmac-dwmac fe300000.ethernet: Clock clk_mac_ref con_id (null) managed by runtime PM.
+bus: 'i2c': remove device i2c-9
+rk_gmac-dwmac fe300000.ethernet: Clock clk_mac_refout con_id (null) managed by runtime PM.
+PM: Removing info for i2c:i2c-9
+rk_gmac-dwmac fe300000.ethernet: Clock aclk_gmac con_id (null) managed by runtime PM.
+driver: 'unittest-i2c-bus': driver_release
+rk_gmac-dwmac fe300000.ethernet: Clock pclk_gmac con_id (null) managed by runtime PM.
+bus: 'i2c': remove driver unittest-i2c-dev
+rk_gmac-dwmac fe300000.ethernet: IRQ eth_wake_irq not found
+driver: 'unittest-i2c-dev': driver_release
+rk_gmac-dwmac fe300000.ethernet: IRQ eth_lpi not found
+i2c-core: driver [unittest-i2c-dev] unregistered
+rk_gmac-dwmac fe300000.ethernet: PTP uses main clock
+rk_gmac-dwmac fe300000.ethernet: Looking up phy-supply from device tree
+device: 'testcase-data:overlay-node:test-bus:gpio@0': device_add
+rk_gmac-dwmac fe300000.ethernet: error -EPROBE_DEFER: failed to get phy regulator
+bus: 'platform': add device testcase-data:overlay-node:test-bus:gpio@0
+rk_gmac-dwmac fe300000.ethernet: removing from PM domain gmac
+PM: Adding info for platform:testcase-data:overlay-node:test-bus:gpio@0
+rk_gmac-dwmac fe300000.ethernet: genpd_remove_device()
 ### dt-test ### pass of_unittest_overlay_gpio():1710
+rk_gmac-dwmac fe300000.ethernet: Driver rk_gmac-dwmac requests probe deferral
+platform fe300000.ethernet: Added to deferred list
+device: 'testcase-data:overlay-node:test-bus:gpio@2': device_add
+devices_kset: Moving fe800000.usb to end of list
+bus: 'platform': add device testcase-data:overlay-node:test-bus:gpio@2
+PM: Moving platform:fe800000.usb to end of list
+PM: Adding info for platform:testcase-data:overlay-node:test-bus:gpio@2
+platform fe800000.usb: Retrying from deferred list
 ### dt-test ### pass of_unittest_overlay_gpio():1713
+bus: 'platform': __driver_probe_device: matched device fe800000.usb with driver dwc3
 ### dt-test ### pass of_unittest_overlay_gpio():1716
+platform fe800000.usb: error -EPROBE_DEFER: wait for supplier usb3-port
 ### dt-test ### EXPECT \ : gpio-<<int>> (line-B-input): hogged as input
+platform fe800000.usb: Added to deferred list
 ### dt-test ### EXPECT \ : gpio-<<int>> (line-A-input): hogged as input
+devices_kset: Moving fe900000.usb to end of list
+bus: 'platform': add driver unittest-gpio
+PM: Moving platform:fe900000.usb to end of list
+bus: 'platform': __driver_probe_device: matched device testcase-data:overlay-node:test-bus:gpio@0 with driver unittest-gpio
+platform fe900000.usb: Retrying from deferred list
+bus: 'platform': really_probe: probing driver unittest-gpio with device testcase-data:overlay-node:test-bus:gpio@0
+bus: 'platform': __driver_probe_device: matched device fe900000.usb with driver dwc3
+unittest-gpio testcase-data:overlay-node:test-bus:gpio@0: no pinctrl handle
+platform fe900000.usb: error -EPROBE_DEFER: wait for supplier usb3-port
 gpio-509 (line-B-input): hogged as input
+platform fe900000.usb: Added to deferred list
+device: 'gpiochip5': device_add
+devices_kset: Moving fe320000.mmc to end of list
+bus: 'gpio': add device gpiochip5
+PM: Moving platform:fe320000.mmc to end of list
+PM: Adding info for gpio:gpiochip5
+platform fe320000.mmc: Retrying from deferred list
 ### dt-test ### pass unittest_gpio_probe():1633
+platform fe320000.mmc: scheduling asynchronous probe
+driver: 'unittest-gpio': driver_bound: bound to device 'testcase-data:overlay-node:test-bus:gpio@0'
+devices_kset: Moving fe310000.mmc to end of list
+bus: 'platform': __driver_probe_device: matched device fe320000.mmc with driver dwmmc_rockchip
+bus: 'platform': really_probe: probing driver dwmmc_rockchip with device fe320000.mmc
+dwmmc_rockchip fe320000.mmc: no init pinctrl state
+dwmmc_rockchip fe320000.mmc: no sleep pinctrl state
+dwmmc_rockchip fe320000.mmc: no idle pinctrl state
+dwmmc_rockchip fe320000.mmc: adding to PM domain sd
+dwmmc_rockchip fe320000.mmc: genpd_add_device()
+dwmmc_rockchip fe320000.mmc: Clock hclk_sdmmc con_id (null) managed by runtime PM.
+dwmmc_rockchip fe320000.mmc: Clock clk_sdmmc con_id (null) managed by runtime PM.
+dwmmc_rockchip fe320000.mmc: Clock sdmmc_drv con_id (null) managed by runtime PM.
+dwmmc_rockchip fe320000.mmc: Clock sdmmc_sample con_id (null) managed by runtime PM.
+dwmmc_rockchip fe320000.mmc: No normal pinctrl state
+dwmmc_rockchip fe320000.mmc: No idle pinctrl state
+bus: 'platform': really_probe: bound device testcase-data:overlay-node:test-bus:gpio@0 to driver unittest-gpio
+PM: Moving platform:fe310000.mmc to end of list
+bus: 'platform': __driver_probe_device: matched device testcase-data:overlay-node:test-bus:gpio@2 with driver unittest-gpio
+platform fe310000.mmc: Retrying from deferred list
+bus: 'platform': really_probe: probing driver unittest-gpio with device testcase-data:overlay-node:test-bus:gpio@2
+platform fe310000.mmc: scheduling asynchronous probe
+unittest-gpio testcase-data:overlay-node:test-bus:gpio@2: no pinctrl handle
+dwmmc_rockchip fe320000.mmc: IDMAC supports 32-bit address mode.
+dwmmc_rockchip fe320000.mmc: Using internal DMA controller.
+dwmmc_rockchip fe320000.mmc: Version ID is 270a
+dwmmc_rockchip fe320000.mmc: DW MMC controller at irq 56,32 bit host data width,256 deep fifo
+device: 'wakeup1': device_add
+devices_kset: Moving 0-0040 to end of list
+dwmmc_rockchip fe320000.mmc: Looking up vmmc-supply from device tree
+bus: 'platform': __driver_probe_device: matched device fe310000.mmc with driver dwmmc_rockchip
+dwmmc_rockchip fe320000.mmc: Looking up vqmmc-supply from device tree
+bus: 'platform': really_probe: probing driver dwmmc_rockchip with device fe310000.mmc
+device: 'wakeup1': device_unregister
+dwmmc_rockchip fe320000.mmc: removing from PM domain sd
+dwmmc_rockchip fe320000.mmc: genpd_remove_device()
+dwmmc_rockchip fe310000.mmc: no init pinctrl state
+dwmmc_rockchip fe320000.mmc: Driver dwmmc_rockchip requests probe deferral
+dwmmc_rockchip fe310000.mmc: no sleep pinctrl state
+dwmmc_rockchip fe310000.mmc: no idle pinctrl state
+dwmmc_rockchip fe310000.mmc: adding to PM domain sdioaudio
 gpio-503 (line-A-input): hogged as input
+device: 'gpiochip6': device_add
+bus: 'gpio': add device gpiochip6
+platform fe320000.mmc: Added to deferred list
+PM: Adding info for gpio:gpiochip6
+platform fe320000.mmc: async probe completed
+PM: Moving i2c:0-0040 to end of list
+dwmmc_rockchip fe310000.mmc: genpd_add_device()
+i2c 0-0040: Retrying from deferred list
 ### dt-test ### pass unittest_gpio_probe():1633
-/usb@fe800000: Failed to get clk index: 0 ret: -517
+driver: 'unittest-gpio': driver_bound: bound to device 'testcase-data:overlay-node:test-bus:gpio@2'
+bus: 'platform': really_probe: bound device testcase-data:overlay-node:test-bus:gpio@2 to driver unittest-gpio
 ### dt-test ### pass of_unittest_overlay_gpio():1731
-/usb@fe900000: Failed to get clk index: 0 ret: -517
 ### dt-test ### EXPECT / : gpio-<<int>> (line-A-input): hogged as input
 ### dt-test ### EXPECT / : gpio-<<int>> (line-B-input): hogged as input
-/usb@fe800000: Failed to get clk index: 0 ret: -517
 ### dt-test ### pass of_unittest_overlay_gpio():1739
 ### dt-test ### pass of_unittest_overlay_gpio():1742
 ### dt-test ### EXPECT \ : gpio-<<int>> (line-D-input): hogged as input
+dwmmc_rockchip fe310000.mmc: Clock hclk_sdio con_id (null) managed by runtime PM.
+bus: 'i2c': __driver_probe_device: matched device 0-0040 with driver fan53555-regulator
+dwmmc_rockchip fe310000.mmc: Clock clk_sdio con_id (null) managed by runtime PM.
+device: 'testcase-data:overlay-node:test-bus:gpio@3': device_add
+bus: 'platform': add device testcase-data:overlay-node:test-bus:gpio@3
+PM: Adding info for platform:testcase-data:overlay-node:test-bus:gpio@3
+bus: 'platform': __driver_probe_device: matched device testcase-data:overlay-node:test-bus:gpio@3 with driver unittest-gpio
+bus: 'platform': really_probe: probing driver unittest-gpio with device testcase-data:overlay-node:test-bus:gpio@3
+unittest-gpio testcase-data:overlay-node:test-bus:gpio@3: no pinctrl handle
 gpio-501 (line-D-input): hogged as input
+device: 'gpiochip7': device_add
+bus: 'gpio': add device gpiochip7
+PM: Adding info for gpio:gpiochip7
 ### dt-test ### pass unittest_gpio_probe():1633
+driver: 'unittest-gpio': driver_bound: bound to device 'testcase-data:overlay-node:test-bus:gpio@3'
+bus: 'platform': really_probe: bound device testcase-data:overlay-node:test-bus:gpio@3 to driver unittest-gpio
 ### dt-test ### pass of_unittest_overlay_gpio():1768
-/usb@fe900000: Failed to get clk index: 0 ret: -517
 ### dt-test ### EXPECT / : gpio-<<int>> (line-D-input): hogged as input
 ### dt-test ### pass of_unittest_overlay_gpio():1774
-/usb@fe800000: Failed to get clk index: 0 ret: -517
 ### dt-test ### pass of_unittest_overlay_gpio():1777
+bus: 'i2c': really_probe: probing driver fan53555-regulator with device 0-0040
+fan53555-regulator 0-0040: no default pinctrl state
+dwmmc_rockchip fe310000.mmc: Clock sdio_drv con_id (null) managed by runtime PM.
+device: 'testcase-data:overlay-node:test-bus:gpio@4': device_add
+bus: 'platform': add device testcase-data:overlay-node:test-bus:gpio@4
+PM: Adding info for platform:testcase-data:overlay-node:test-bus:gpio@4
+bus: 'platform': __driver_probe_device: matched device testcase-data:overlay-node:test-bus:gpio@4 with driver unittest-gpio
+bus: 'platform': really_probe: probing driver unittest-gpio with device testcase-data:overlay-node:test-bus:gpio@4
+unittest-gpio testcase-data:overlay-node:test-bus:gpio@4: no pinctrl handle
+device: 'gpiochip8': device_add
+bus: 'gpio': add device gpiochip8
+PM: Adding info for gpio:gpiochip8
 ### dt-test ### pass unittest_gpio_probe():1633
+driver: 'unittest-gpio': driver_bound: bound to device 'testcase-data:overlay-node:test-bus:gpio@4'
+bus: 'platform': really_probe: bound device testcase-data:overlay-node:test-bus:gpio@4 to driver unittest-gpio
 ### dt-test ### pass of_unittest_overlay_gpio():1795
-/usb@fe900000: Failed to get clk index: 0 ret: -517
 ### dt-test ### pass of_unittest_overlay_gpio():1798
 ### dt-test ### EXPECT \ : gpio-<<int>> (line-C-input): hogged as input
-/usb@fe800000: Failed to get clk index: 0 ret: -517
+fan53555-regulator 0-0040: probe
 gpio-495 (line-C-input): hogged as input
 ### dt-test ### pass of_unittest_overlay_gpio():1815
 ### dt-test ### EXPECT / : gpio-<<int>> (line-C-input): hogged as input
 ### dt-test ### pass of_unittest_overlay_gpio():1821
-/usb@fe900000: Failed to get clk index: 0 ret: -517
+dwmmc_rockchip fe310000.mmc: Clock sdio_sample con_id (null) managed by runtime PM.
+rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x40
+dwmmc_rockchip fe310000.mmc: No normal pinctrl state
+rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
+dwmmc_rockchip fe310000.mmc: No idle pinctrl state
+bus: 'platform': remove device testcase-data:overlay-node:test-bus:test-unittest10:test-unittest101
+PM: Removing info for platform:testcase-data:overlay-node:test-bus:test-unittest10:test-unittest101
+bus: 'platform': remove device testcase-data:overlay-node:test-bus:test-unittest10
+PM: Removing info for platform:testcase-data:overlay-node:test-bus:test-unittest10
+rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
+bus: 'platform': remove device testcase-data:overlay-node:test-bus:test-unittest4
+PM: Removing info for platform:testcase-data:overlay-node:test-bus:test-unittest4
+device: 'testcase-data:overlay-node:test-bus:test-unittest3': device_add
+rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x40
+bus: 'platform': add device testcase-data:overlay-node:test-bus:test-unittest3
+rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
+PM: Adding info for platform:testcase-data:overlay-node:test-bus:test-unittest3
+dwmmc_rockchip fe310000.mmc: IDMAC supports 32-bit address mode.
+dwmmc_rockchip fe310000.mmc: Using internal DMA controller.
+dwmmc_rockchip fe310000.mmc: Version ID is 270a
+dwmmc_rockchip fe310000.mmc: DW MMC controller at irq 55,32 bit host data width,256 deep fifo
+device: 'wakeup1': device_add
+rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
+dwmmc_rockchip fe310000.mmc: Looking up vmmc-supply from device tree
+dwmmc_rockchip fe310000.mmc: Looking up vqmmc-supply from device tree
+bus: 'platform': __driver_probe_device: matched device testcase-data:overlay-node:test-bus:test-unittest3 with driver unittest
+fan53555-regulator 0-0040: FAN53555 Option[8] Rev[1] Detected!
+device: 'wakeup1': device_unregister
+dwmmc_rockchip fe310000.mmc: removing from PM domain sdioaudio
+dwmmc_rockchip fe310000.mmc: genpd_remove_device()
+dwmmc_rockchip fe310000.mmc: Driver dwmmc_rockchip requests probe deferral
+platform fe310000.mmc: Added to deferred list
+bus: 'platform': really_probe: probing driver unittest with device testcase-data:overlay-node:test-bus:test-unittest3
+platform fe310000.mmc: async probe completed
+fan53555-regulator 0-0040: Looking up vin-supply from device tree
+unittest testcase-data:overlay-node:test-bus:test-unittest3: no pinctrl handle
+vdd_cpu_b: unable to resolve supply early: -EPROBE_DEFER
+driver: 'unittest': driver_bound: bound to device 'testcase-data:overlay-node:test-bus:test-unittest3'
+rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x40
+bus: 'platform': really_probe: bound device testcase-data:overlay-node:test-bus:test-unittest3 to driver unittest
+rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
+bus: 'platform': remove device testcase-data:overlay-node:test-bus:test-unittest2
+rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
+PM: Removing info for platform:testcase-data:overlay-node:test-bus:test-unittest2
+rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x40
+device: 'testcase-data:overlay-node:test-bus:test-unittest1': device_add
+rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
+bus: 'platform': add device testcase-data:overlay-node:test-bus:test-unittest1
+rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
+PM: Adding info for platform:testcase-data:overlay-node:test-bus:test-unittest1
+rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x40
+bus: 'platform': __driver_probe_device: matched device testcase-data:overlay-node:test-bus:test-unittest1 with driver unittest
+rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
+bus: 'platform': really_probe: probing driver unittest with device testcase-data:overlay-node:test-bus:test-unittest1
+rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
+unittest testcase-data:overlay-node:test-bus:test-unittest1: no pinctrl handle
+fan53555-regulator 0-0040: Failed to register regulator!
+driver: 'unittest': driver_bound: bound to device 'testcase-data:overlay-node:test-bus:test-unittest1'
+fan53555-regulator 0-0040: Driver fan53555-regulator requests probe deferral
+bus: 'platform': really_probe: bound device testcase-data:overlay-node:test-bus:test-unittest1 to driver unittest
+i2c 0-0040: Added to deferred list
+bus: 'platform': remove device testcase-data:overlay-node:test-bus:test-unittest0
+devices_kset: Moving 0-0041 to end of list
+PM: Removing info for platform:testcase-data:overlay-node:test-bus:test-unittest0
+PM: Moving i2c:0-0041 to end of list
+devices_kset: Moving ff9a0000.gpu to end of list
+PM: Moving platform:ff9a0000.gpu to end of list
+i2c 0-0041: Retrying from deferred list
 ### dt-test ### pass of_unittest_overlay_notify():2839
-/usb@fe800000: Failed to get clk index: 0 ret: -517
+bus: 'i2c': __driver_probe_device: matched device 0-0041 with driver fan53555-regulator
 ### dt-test ### EXPECT \ : OF: overlay: overlay changeset pre-apply notifier error -16, target: /testcase-data/overlay-node/test-bus
+bus: 'i2c': really_probe: probing driver fan53555-regulator with device 0-0041
 OF: overlay: overlay changeset pre-apply notifier error -16, target: /testcase-data/overlay-node/test-bus
-/usb@fe900000: Failed to get clk index: 0 ret: -517
+fan53555-regulator 0-0041: no default pinctrl state
 ### dt-test ### pass of_unittest_overlay_notify():2860
+fan53555-regulator 0-0041: probe
 ### dt-test ### EXPECT / : OF: overlay: overlay changeset pre-apply notifier error -16, target: /testcase-data/overlay-node/test-bus
+rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x41
 ### dt-test ### pass of_unittest_overlay_notify():2865
+rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
 ### dt-test ### EXPECT \ : OF: overlay: overlay changeset post-apply notifier error -17, target: /testcase-data/overlay-node/test-bus
+rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
+devie: 'testcase-data:overlay-node:test-bus:test-unittest17': device_add
+rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x41
+bus: 'platform': add device testcase-data:overlay-node:test-bus:test-unittest17
+rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
+PM: Adding info for platform:testcase-data:overlay-node:test-bus:test-unittest17
+rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
+bus: 'platform': __driver_probe_device: matched device testcase-data:overlay-node:test-bus:test-unittest17 with driver unittest
+fan53555-regulator 0-0041: FAN53555 Option[8] Rev[1] Detected!
+bus: 'platform': really_probe: probing driver unittest with device testcase-data:overlay-node:test-bus:test-unittest17
+fan53555-regulator 0-0041: Looking up vin-supply from device tree
+unittest testcase-data:overlay-node:test-bus:test-unittest17: no pinctrl handle
+vdd_gpu: unable to resolve supply early: -EPROBE_DEFER
+driver: 'unittest': driver_bound: bound to device 'testcase-data:overlay-node:test-bus:test-unittest17'
+rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x41
+bus: 'platform': really_probe: bound device testcase-data:overlay-node:test-bus:test-unittest17 to driver unittest
+rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
 OF: overlay: overlay changeset post-apply notifier error -17, target: /testcase-data/overlay-node/test-bus
-/usb@fe800000: Failed to get clk index: 0 ret: -517
+rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
 ### dt-test ### pass of_unittest_overlay_notify():2871
-/usb@fe900000: Failed to get clk index: 0 ret: -517
+rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x41
 ### dt-test ### EXPECT / : OF: overlay: overlay changeset post-apply notifier error -17, target: /testcase-data/overlay-node/test-bus
+rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
 ### dt-test ### pass of_unittest_overlay_notify():2876
+rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
+bus: 'platform': remove device testcase-data:overlay-node:test-bus:test-unittest17
+rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x41
+PM: Removing info for platform:testcase-data:overlay-node:test-bus:test-unittest17
+rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
 ### dt-test ### pass of_unittest_overlay_notify():2880
+rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
+device: 'testcase-data:overlay-node:test-bus:test-unittest18': device_add
+fan53555-regulator 0-0041: Failed to register regulator!
+bus: 'platform': add device testcase-data:overlay-node:test-bus:test-unittest18
+fan53555-regulator 0-0041: Driver fan53555-regulator requests probe deferral
+PM: Adding info for platform:testcase-data:overlay-node:test-bus:test-unittest18
+i2c 0-0041: Added to deferred list
+bus: 'platform': __driver_probe_device: matched device testcase-data:overlay-node:test-bus:test-unittest18 with driver unittest
+devices_kset: Moving rk808-regulator to end of list
+bus: 'platform': really_probe: probing driver unittest with device testcase-data:overlay-node:test-bus:test-unittest18
+PM: Moving platform:rk808-regulator to end of list
+unittest testcase-data:overlay-node:test-bus:test-unittest18: no pinctrl handle
+platform rk808-regulator: Retrying from deferred list
+driver: 'unittest': driver_bound: bound to device 'testcase-data:overlay-node:test-bus:test-unittest18'
+bus: 'platform': __driver_probe_device: matched device rk808-regulator with driver rk808-regulator
+bus: 'platform': really_probe: bound device testcase-data:overlay-node:test-bus:test-unittest18 to driver unittest
+bus: 'platform': really_probe: probing driver rk808-regulator with device rk808-regulator
 ### dt-test ### pass of_unittest_overlay_notify():2886
+rk808-regulator rk808-regulator: no default pinctrl state
 ### dt-test ### pass of_unittest_overlay_notify():2889
-/usb@fe800000: Failed to get clk index: 0 ret: -517
+rk808-regulator rk808-regulator: there is no dvs0 gpio
 ### dt-test ### EXPECT \ : OF: overlay: overlay changeset pre-remove notifier error -18, target: /testcase-data/overlay-node/test-bus
+rk808-regulator rk808-regulator: there is no dvs1 gpio
 OF: overlay: overlay changeset pre-remove notifier error -18, target: /testcase-data/overlay-node/test-bus
-/usb@fe900000: Failed to get clk index: 0 ret: -517
+rk808 0-001b: Looking up vcc1-supply from device tree
 ### dt-test ### EXPECT / : OF: overlay: overlay changeset pre-remove notifier error -18, target: /testcase-data/overlay-node/test-bus
+vdd_center: unable to resolve supply early: -EPROBE_DEFER
 ### dt-test ### pass of_unittest_overlay_notify():2900
+rk808 0-001b: failed to register 0 regulator
 ### dt-test ### pass of_unittest_overlay_notify():2908
+rk808-regulator rk808-regulator: Driver rk808-regulator requests probe deferral
+device: 'testcase-data:overlay-node:test-bus:test-unittest19': device_add
+platform rk808-regulator: Added to deferred list
+bus: 'platform': add device testcase-data:overlay-node:test-bus:test-unittest19
+devices_kset: Moving sdio-pwrseq to end of list
+PM: Adding info for platform:testcase-data:overlay-node:test-bus:test-unittest19
+PM: Moving platform:sdio-pwrseq to end of list
+platform sdio-pwrseq: Retrying from deferred list
+bus: 'platform': __driver_probe_device: matched device testcase-data:overlay-node:test-bus:test-unittest19 with driver unittest
+bus: 'platform': __driver_probe_device: matched device sdio-pwrseq with driver pwrseq_simple
+bus: 'platform': really_probe: probing driver unittest with device testcase-data:overlay-node:test-bus:test-unittest19
+bus: 'platform': really_probe: probing driver pwrseq_simple with device sdio-pwrseq
+unittest testcase-data:overlay-node:test-bus:test-unittest19: no pinctrl handle
+pwrseq_simple sdio-pwrseq: no init pinctrl state
+driver: 'unittest': driver_bound: bound to device 'testcase-data:overlay-node:test-bus:test-unittest19'
+pwrseq_simple sdio-pwrseq: no sleep pinctrl state
+bus: 'platform': really_probe: bound device testcase-data:overlay-node:test-bus:test-unittest19 to driver unittest
+pwrseq_simple sdio-pwrseq: no idle pinctrl state
 ### dt-test ### pass of_unittest_overlay_notify():2912
+pwrseq_simple sdio-pwrseq: Driver pwrseq_simple requests probe deferral
 ### dt-test ### pass of_unittest_overlay_notify():2915
-/usb@fe800000: Failed to get clk index: 0 ret: -517
+platform sdio-pwrseq: Added to deferred list
 ### dt-test ### EXPECT \ : OF: overlay: overlay changeset post-remove notifier error -19, target: /testcase-data/overlay-node/test-bus
-/usb@fe900000: Failed to get clk index: 0 ret: -517
+devices_kset: Moving sdmmc-pwrseq to end of list
+bus: 'platform': remove device testcase-data:overlay-node:test-bus:test-unittest19
+PM: Moving platform:sdmmc-pwrseq to end of list
+PM: Removing info for platform:testcase-data:overlay-node:test-bus:test-unittest19
+platform sdmmc-pwrseq: Retrying from deferred list
 OF: overlay: overlay changeset post-remove notifier error -19, target: /testcase-data/overlay-node/test-bus
+bus: 'platform': __driver_probe_device: matched device sdmmc-pwrseq with driver pwrseq_simple
 ### dt-test ### EXPECT / : OF: overlay: overlay changeset post-remove notifier error -19, target: /testcase-data/overlay-node/test-bus
+bus: 'platform': really_probe: probing driver pwrseq_simple with device sdmmc-pwrseq
 ### dt-test ### pass of_unittest_overlay_notify():2922
+pwrseq_simple sdmmc-pwrseq: no init pinctrl state
 ### dt-test ### pass of_unittest_overlay_notify():2929
+pwrseq_simple sdmmc-pwrseq: no sleep pinctrl state
+device: 'testcase-data:overlay-node:test-bus:test-unittest20': device_add
+pwrseq_simple sdmmc-pwrseq: no idle pinctrl state
+bus: 'platform': add device testcase-data:overlay-node:test-bus:test-unittest20
+pwrseq_simple sdmmc-pwrseq: Driver pwrseq_simple requests probe deferral
+PM: Adding info for platform:testcase-data:overlay-node:test-bus:test-unittest20
+platform sdmmc-pwrseq: Added to deferred list
+bus: 'platform': __driver_probe_device: matched device testcase-data:overlay-node:test-bus:test-unittest20 with driver unittest
+devices_kset: Moving fe300000.ethernet to end of list
+bus: 'platform': really_probe: probing driver unittest with device testcase-data:overlay-node:test-bus:test-unittest20
+PM: Moving platform:fe300000.ethernet to end of list
+unittest testcase-data:overlay-node:test-bus:test-unittest20: no pinctrl handle
+platform fe300000.ethernet: Retrying from deferred list
+driver: 'unittest': driver_bound: bound to device 'testcase-data:overlay-node:test-bus:test-unittest20'
+bus: 'platform': __driver_probe_device: matched device fe300000.ethernet with driver rk_gmac-dwmac
+bus: 'platform': really_probe: bound device testcase-data:overlay-node:test-bus:test-unittest20 to driver unittest
+bus: 'platform': really_probe: probing driver rk_gmac-dwmac with device fe300000.ethernet
 ### dt-test ### pass of_unittest_overlay_notify():2934
-/usb@fe800000: Failed to get clk index: 0 ret: -517
+rk_gmac-dwmac fe300000.ethernet: no init pinctrl state
+bus: 'platform': remove device testcase-data:overlay-node:test-bus:test-unittest20
+rk_gmac-dwmac fe300000.ethernet: no sleep pinctrl state
+PM: Removing info for platform:testcase-data:overlay-node:test-bus:test-unittest20
+rk_gmac-dwmac fe300000.ethernet: no idle pinctrl state
 ### dt-test ### pass of_unittest_overlay_notify():2946
-/usb@fe900000: Failed to get clk index: 0 ret: -517
+rk_gmac-dwmac fe300000.ethernet: adding to PM domain gmac
 ### dt-test ### pass of_unittest_check_tree_linkage():269
+rk_gmac-dwmac fe300000.ethernet: genpd_add_device()
 ### dt-test ### pass of_unittest_check_tree_linkage():270
+rk_gmac-dwmac fe300000.ethernet: Clock clk_gmac con_id (null) managed by runtime PM.
 ### dt-test ### EXPECT \ : OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data-2/substation@100/status
 ### dt-test ### EXPECT \ : OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data-2/fairway-1/status
+rk_gmac-dwmac fe300000.ethernet: Clock clk_rmii_rx con_id (null) managed by runtime PM.
 ### dt-test ### EXPECT \ : OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data-2/fairway-1/ride@100/track@30/incline-up
+rk_gmac-dwmac fe300000.ethernet: Clock clk_rmii_tx con_id (null) managed by runtime PM.
 ### dt-test ### EXPECT \ : OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data-2/fairway-1/ride@100/track@40/incline-up
+rk_gmac-dwmac fe300000.ethernet: Clock clk_mac_ref con_id (null) managed by runtime PM.
 ### dt-test ### EXPECT \ : OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data-2/lights@40000/status
+rk_gmac-dwmac fe300000.ethernet: Clock clk_mac_refout con_id (null) managed by runtime PM.
 ### dt-test ### EXPECT \ : OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data-2/lights@40000/color
+rk_gmac-dwmac fe300000.ethernet: Clock aclk_gmac con_id (null) managed by runtime PM.
 ### dt-test ### EXPECT \ : OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data-2/lights@40000/rate
+rk_gmac-dwmac fe300000.ethernet: Clock pclk_gmac con_id (null) managed by runtime PM.
 ### dt-test ### EXPECT \ : OF: overlay: WARNING: memory leak will occur if overlay removed, property: /__symbols__/hvac_2
+rk_gmac-dwmac fe300000.ethernet: IRQ eth_wake_irq not found
 ### dt-test ### EXPECT \ : OF: overlay: WARNING: memory leak will occur if overlay removed, property: /__symbols__/ride_200
+rk_gmac-dwmac fe300000.ethernet: IRQ eth_lpi not found
 ### dt-test ### EXPECT \ : OF: overlay: WARNING: memory leak will occur if overlay removed, property: /__symbols__/ride_200_left
+rk_gmac-dwmac fe300000.ethernet: PTP uses main clock
 ### dt-test ### EXPECT \ : OF: overlay: WARNING: memory leak will occur if overlay removed, property: /__symbols__/ride_200_right
+rk_gmac-dwmac fe300000.ethernet: Looking up phy-supply from device tree
 OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data-2/substation@100/status
+rk_gmac-dwmac fe300000.ethernet: error -EPROBE_DEFER: failed to get phy regulator
 OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data-2/fairway-1/status
+rk_gmac-dwmac fe300000.ethernet: removing from PM domain gmac
 OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data-2/fairway-1/ride@100/track@30/incline-up
+rk_gmac-dwmac fe300000.ethernet: genpd_remove_device()
 OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data-2/fairway-1/ride@100/track@40/incline-up
+rk_gmac-dwmac fe300000.ethernet: Driver rk_gmac-dwmac requests probe deferral
 OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data-2/lights@40000/status
+platform fe300000.ethernet: Added to deferred list
 OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data-2/lights@40000/color
+devices_kset: Moving fe800000.usb to end of list
 OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data-2/lights@40000/rate
+PM: Moving platform:fe800000.usb to end of list
 OF: overlay: WARNING: memory leak will occur if overlay removed, property: /__symbols__/hvac_2
+platform fe800000.usb: Retrying from deferred list
 OF: overlay: WARNING: memory leak will occur if overlay removed, property: /__symbols__/ride_200
+bus: 'platform': __driver_probe_device: matched device fe800000.usb with driver dwc3
 OF: overlay: WARNING: memory leak will occur if overlay removed, property: /__symbols__/ride_200_left
+platform fe800000.usb: error -EPROBE_DEFER: wait for supplier usb3-port
 OF: overlay: WARNING: memory leak will occur if overlay removed, property: /__symbols__/ride_200_right
+platform fe800000.usb: Added to deferred list
+devices_kset: Moving fe900000.usb to end of list
+PM: Moving platform:fe900000.usb to end of list
+platform fe900000.usb: Retrying from deferred list
+bus: 'platform': __driver_probe_device: matched device fe900000.usb with driver dwc3
 ### dt-test ### EXPECT / : OF: overlay: WARNING: memory leak will occur if overlay removed, property: /__symbols__/ride_200_right
 ### dt-test ### EXPECT / : OF: overlay: WARNING: memory leak will occur if overlay removed, property: /__symbols__/ride_200_left
+platform fe900000.usb: error -EPROBE_DEFER: wait for supplier usb3-port
 ### dt-test ### EXPECT / : OF: overlay: WARNING: memory leak will occur if overlay removed, property: /__symbols__/ride_200
+platform fe900000.usb: Added to deferred list
 ### dt-test ### EXPECT / : OF: overlay: WARNING: memory leak will occur if overlay removed, property: /__symbols__/hvac_2
+devices_kset: Moving fe320000.mmc to end of list
 ### dt-test ### EXPECT / : OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data-2/lights@40000/rate
+PM: Moving platform:fe320000.mmc to end of list
 ### dt-test ### EXPECT / : OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data-2/lights@40000/color
+platform fe320000.mmc: Retrying from deferred list
 ### dt-test ### EXPECT / : OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data-2/lights@40000/status
+platform fe320000.mmc: scheduling asynchronous probe
 ### dt-test ### EXPECT / : OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data-2/fairway-1/ride@100/track@40/incline-up
+devices_kset: Moving fe310000.mmc to end of list
+bus: 'platform': __driver_probe_device: matched device fe320000.mmc with driver dwmmc_rockchip
+bus: 'platform': really_probe: probing driver dwmmc_rockchip with device fe320000.mmc
+dwmmc_rockchip fe320000.mmc: no init pinctrl state
+dwmmc_rockchip fe320000.mmc: no sleep pinctrl state
 ### dt-test ### EXPECT / : OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data-2/fairway-1/ride@100/track@30/incline-up
+dwmmc_rockchip fe320000.mmc: no idle pinctrl state
+dwmmc_rockchip fe320000.mmc: adding to PM domain sd
+dwmmc_rockchip fe320000.mmc: genpd_add_device()
+dwmmc_rockchip fe320000.mmc: Clock hclk_sdmmc con_id (null) managed by runtime PM.
+dwmmc_rockchip fe320000.mmc: Clock clk_sdmmc con_id (null) managed by runtime PM.
+dwmmc_rockchip fe320000.mmc: Clock sdmmc_drv con_id (null) managed by runtime PM.
+dwmmc_rockchip fe320000.mmc: Clock sdmmc_sample con_id (null) managed by runtime PM.
+dwmmc_rockchip fe320000.mmc: No normal pinctrl state
+dwmmc_rockchip fe320000.mmc: No idle pinctrl state
+PM: Moving platform:fe310000.mmc to end of list
 ### dt-test ### EXPECT / : OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data-2/fairway-1/status
+platform fe310000.mmc: Retrying from deferred list
 ### dt-test ### EXPECT / : OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data-2/substation@100/status
+platform fe310000.mmc: scheduling asynchronous probe
 ### dt-test ### pass of_unittest_overlay_high_level():3431
+dwmmc_rockchip fe320000.mmc: IDMAC supports 32-bit address mode.
+dwmmc_rockchip fe320000.mmc: Using internal DMA controller.
+dwmmc_rockchip fe320000.mmc: Version ID is 270a
+dwmmc_rockchip fe320000.mmc: DW MMC controller at irq 56,32 bit host data width,256 deep fifo
+device: 'wakeup1': device_add
+dwmmc_rockchip fe320000.mmc: Looking up vmmc-supply from device tree
+dwmmc_rockchip fe320000.mmc: Looking up vqmmc-supply from device tree
+device: 'wakeup1': device_unregister
+dwmmc_rockchip fe320000.mmc: removing from PM domain sd
+dwmmc_rockchip fe320000.mmc: genpd_remove_device()
+dwmmc_rockchip fe320000.mmc: Driver dwmmc_rockchip requests probe deferral
+platform fe320000.mmc: Added to deferred list
+platform fe320000.mmc: async probe completed
+devices_kset: Moving 0-0040 to end of list
+bus: 'platform': __driver_probe_device: matched device fe310000.mmc with driver dwmmc_rockchip
+bus: 'platform': really_probe: probing driver dwmmc_rockchip with device fe310000.mmc
+dwmmc_rockchip fe310000.mmc: no init pinctrl state
+dwmmc_rockchip fe310000.mmc: no sleep pinctrl state
+dwmmc_rockchip fe310000.mmc: no idle pinctrl state
+dwmmc_rockchip fe310000.mmc: adding to PM domain sdioaudio
+dwmmc_rockchip fe310000.mmc: genpd_add_device()
+dwmmc_rockchip fe310000.mmc: Clock hclk_sdio con_id (null) managed by runtime PM.
 ### dt-test ### EXPECT \ : OF: overlay: ERROR: multiple fragments add and/or delete node /testcase-data-2/substation@100/motor-1/controller
+dwmmc_rockchip fe310000.mmc: Clock clk_sdio con_id (null) managed by runtime PM.
+dwmmc_rockchip fe310000.mmc: Clock sdio_drv con_id (null) managed by runtime PM.
+dwmmc_rockchip fe310000.mmc: Clock sdio_sample con_id (null) managed by runtime PM.
+dwmmc_rockchip fe310000.mmc: No normal pinctrl state
+dwmmc_rockchip fe310000.mmc: No idle pinctrl state
+PM: Moving i2c:0-0040 to end of list
 ### dt-test ### EXPECT \ : OF: overlay: ERROR: multiple fragments add, update, and/or delete property /testcase-data-2/substation@100/motor-1/controller/name
+i2c 0-0040: Retrying from deferred list
 OF: overlay: ERROR: multiple fragments add and/or delete node /testcase-data-2/substation@100/motor-1/controller
+bus: 'i2c': __driver_probe_device: matched device 0-0040 with driver fan53555-regulator
+dwmmc_rockchip fe310000.mmc: IDMAC supports 32-bit address mode.
+dwmmc_rockchip fe310000.mmc: Using internal DMA controller.
+dwmmc_rockchip fe310000.mmc: Version ID is 270a
+dwmmc_rockchip fe310000.mmc: DW MMC controller at irq 55,32 bit host data width,256 deep fifo
 OF: overlay: ERROR: multiple fragments add, update, and/or delete property /testcase-data-2/substation@100/motor-1/controller/name
+bus: 'i2c': really_probe: probing driver fan53555-regulator with device 0-0040
 ### dt-test ### pass of_unittest_overlay_high_level():3438
+device: 'wakeup1': device_add
+dwmmc_rockchip fe310000.mmc: Looking up vmmc-supply from device tree
+dwmmc_rockchip fe310000.mmc: Looking up vqmmc-supply from device tree
+device: 'wakeup1': device_unregister
+dwmmc_rockchip fe310000.mmc: removing from PM domain sdioaudio
+dwmmc_rockchip fe310000.mmc: genpd_remove_device()
+dwmmc_rockchip fe310000.mmc: Driver dwmmc_rockchip requests probe deferral
+fan53555-regulator 0-0040: no default pinctrl state
+platform fe310000.mmc: Added to deferred list
+platform fe310000.mmc: async probe completed
 ### dt-test ### EXPECT / : OF: overlay: ERROR: multiple fragments add, update, and/or delete property /testcase-data-2/substation@100/motor-1/controller/name
+fan53555-regulator 0-0040: probe
 ### dt-test ### EXPECT / : OF: overlay: ERROR: multiple fragments add and/or delete node /testcase-data-2/substation@100/motor-1/controller
+rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x40
 ### dt-test ### EXPECT \ : OF: overlay: ERROR: multiple fragments add and/or delete node /testcase-data-2/substation@100/motor-1/electric
+rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
 ### dt-test ### EXPECT \ : OF: overlay: ERROR: multiple fragments add, update, and/or delete property /testcase-data-2/substation@100/motor-1/electric/rpm_avail
 ### dt-test ### EXPECT \ : OF: overlay: ERROR: multiple fragments add, update, and/or delete property /testcase-data-2/substation@100/motor-1/electric/name
+rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
 OF: overlay: ERROR: multiple fragments add and/or delete node /testcase-data-2/substation@100/motor-1/electric
+rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x40
 OF: overlay: ERROR: multiple fragments add, update, and/or delete property /testcase-data-2/substation@100/motor-1/electric/rpm_avail
+rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
 OF: overlay: ERROR: multiple fragments add, update, and/or delete property /testcase-data-2/substation@100/motor-1/electric/name
+rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
 ### dt-test ### pass of_unittest_overlay_high_level():3453
+fan53555-regulator 0-0040: FAN53555 Option[8] Rev[1] Detected!
 ### dt-test ### EXPECT / : OF: overlay: ERROR: multiple fragments add, update, and/or delete property /testcase-data-2/substation@100/motor-1/electric/name
+fan53555-regulator 0-0040: Looking up vin-supply from device tree
 ### dt-test ### EXPECT / : OF: overlay: ERROR: multiple fragments add, update, and/or delete property /testcase-data-2/substation@100/motor-1/electric/rpm_avail
+vdd_cpu_b: unable to resolve supply early: -EPROBE_DEFER
 ### dt-test ### EXPECT / : OF: overlay: ERROR: multiple fragments add and/or delete node /testcase-data-2/substation@100/motor-1/electric
+rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x40
 ### dt-test ### pass of_unittest_overlay_high_level():3463
+rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
 ### dt-test ### pass of_unittest_overlay_high_level():3466
+rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
 ### dt-test ### end of unittest - 273 passed, 0 failed
+rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x40
 clk: Disabling unused clocks
-Warning: unable to open an initial console.
+rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
+rockchip-pm-domain ff310000.power-management:power-controller: Looking up vopb-supply from device tree
+rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
+rockchip-pm-domain ff310000.power-management:power-controller: Looking up vopb-supply property in node /power-management@ff310000/power-controller failed
+rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x40
+rockchip-pm-domain ff310000.power-management:power-controller: Looking up vopl-supply from device tree
+rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
+rockchip-pm-domain ff310000.power-management:power-controller: Looking up vopl-supply property in node /power-management@ff310000/power-controller failed
+rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
+rockchip-pm-domain ff310000.power-management:power-controller: Looking up vo-supply from device tree
+fan53555-regulator 0-0040: Failed to register regulator!
+rockchip-pm-domain ff310000.power-management:power-controller: Looking up vo-supply property in node /power-management@ff310000/power-controller failed
+fan53555-regulator 0-0040: Driver fan53555-regulator requests probe deferral
+rockchip-pm-domain ff310000.power-management:power-controller: Looking up hdcp-supply from device tree
+i2c 0-0040: Added to deferred list
+rockchip-pm-domain ff310000.power-management:power-controller: Looking up hdcp-supply property in node /power-management@ff310000/power-controller failed
+devices_kset: Moving 0-0041 to end of list
+rockchip-pm-domain ff310000.power-management:power-controller: Looking up usb3-supply from device tree
+PM: Moving i2c:0-0041 to end of list
+rockchip-pm-domain ff310000.power-management:power-controller: Looking up usb3-supply property in node /power-management@ff310000/power-controller failed
+devices_kset: Moving ff9a0000.gpu to end of list
+rockchip-pm-domain ff310000.power-management:power-controller: Looking up vio-supply from device tree
+PM: Moving platform:ff9a0000.gpu to end of list
+rockchip-pm-domain ff310000.power-management:power-controller: Looking up vio-supply property in node /power-management@ff310000/power-controller failed
+i2c 0-0041: Retrying from deferred list
+rockchip-pm-domain ff310000.power-management:power-controller: Looking up tcpd1-supply from device tree
+bus: 'i2c': __driver_probe_device: matched device 0-0041 with driver fan53555-regulator
+rockchip-pm-domain ff310000.power-management:power-controller: Looking up tcpd1-supply property in node /power-management@ff310000/power-controller failed
+bus: 'i2c': really_probe: probing driver fan53555-regulator with device 0-0041
+rockchip-pm-domain ff310000.power-management:power-controller: Looking up edp-supply from device tree
+fan53555-regulator 0-0041: no default pinctrl state
+rockchip-pm-domain ff310000.power-management:power-controller: Looking up edp-supply property in node /power-management@ff310000/power-controller failed
+fan53555-regulator 0-0041: probe
+rockchip-pm-domain ff310000.power-management:power-controller: Looking up gpu-supply from device tree
+rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x41
+rockchip-pm-domain ff310000.power-management:power-controller: Looking up gpu-supply property in node /power-management@ff310000/power-controller failed
+rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
+rockchip-pm-domain ff310000.power-management:power-controller: Looking up rga-supply from device tree
+rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
+rockchip-pm-domain ff310000.power-management:power-controller: Looking up rga-supply property in node /power-management@ff310000/power-controller failed
+rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x41
+rockchip-pm-domain ff310000.power-management:power-controller: Looking up tcpd0-supply from device tree
+rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
+rockchip-pm-domain ff310000.power-management:power-controller: Looking up tcpd0-supply property in node /power-management@ff310000/power-controller failed
+rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
+fan53555-regulator 0-0041: FAN53555 Option[8] Rev[1] Detected!
+fan53555-regulator 0-0041: Looking up vin-supply from device tree
+vdd_gpu: unable to resolve supply early: -EPROBE_DEFER
+dw-apb-uart ff1a0000.serial: forbid DMA for kernel console
+rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x41
+rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
+rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
+rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x41
+rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
+rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
+rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x41
+rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
+rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
+fan53555-regulator 0-0041: Failed to register regulator!
+fan53555-regulator 0-0041: Driver fan53555-regulator requests probe deferral
+i2c 0-0041: Added to deferred list
+devices_kset: Moving rk808-regulator to end of list
+PM: Moving platform:rk808-regulator to end of list
+platform rk808-regulator: Retrying from deferred list
+bus: 'platform': __driver_probe_device: matched device rk808-regulator with driver rk808-regulator
+bus: 'platform': really_probe: probing driver rk808-regulator with device rk808-regulator
+rk808-regulator rk808-regulator: no default pinctrl state
+rk808-regulator rk808-regulator: there is no dvs0 gpio
+rk808-regulator rk808-regulator: there is no dvs1 gpio
+rk808 0-001b: Looking up vcc1-supply from device tree
+vdd_center: unable to resolve supply early: -EPROBE_DEFER
+rk808 0-001b: failed to register 0 regulator
+rk808-regulator rk808-regulator: Driver rk808-regulator requests probe deferral
+platform rk808-regulator: Added to deferred list
+devices_kset: Moving sdio-pwrseq to end of list
+PM: Moving platform:sdio-pwrseq to end of list
+platform sdio-pwrseq: Retrying from deferred list
+bus: 'platform': __driver_probe_device: matched device sdio-pwrseq with driver pwrseq_simple
+bus: 'platform': really_probe: probing driver pwrseq_simple with device sdio-pwrseq
+pwrseq_simple sdio-pwrseq: no init pinctrl state
+pwrseq_simple sdio-pwrseq: no sleep pinctrl state
+pwrseq_simple sdio-pwrseq: no idle pinctrl state
+pwrseq_simple sdio-pwrseq: Driver pwrseq_simple requests probe deferral
+platform sdio-pwrseq: Added to deferred list
+devices_kset: Moving sdmmc-pwrseq to end of list
+PM: Moving platform:sdmmc-pwrseq to end of list
+platform sdmmc-pwrseq: Retrying from deferred list
+bus: 'platform': __driver_probe_device: matched device sdmmc-pwrseq with driver pwrseq_simple
+bus: 'platform': really_probe: probing driver pwrseq_simple with device sdmmc-pwrseq
+pwrseq_simple sdmmc-pwrseq: no init pinctrl state
+pwrseq_simple sdmmc-pwrseq: no sleep pinctrl state
+pwrseq_simple sdmmc-pwrseq: no idle pinctrl state
+pwrseq_simple sdmmc-pwrseq: Driver pwrseq_simple requests probe deferral
+platform sdmmc-pwrseq: Added to deferred list
+devices_kset: Moving fe300000.ethernet to end of list
+PM: Moving platform:fe300000.ethernet to end of list
+platform fe300000.ethernet: Retrying from deferred list
+bus: 'platform': __driver_probe_device: matched device fe300000.ethernet with driver rk_gmac-dwmac
+bus: 'platform': really_probe: probing driver rk_gmac-dwmac with device fe300000.ethernet
+rk_gmac-dwmac fe300000.ethernet: no init pinctrl state
+rk_gmac-dwmac fe300000.ethernet: no sleep pinctrl state
+rk_gmac-dwmac fe300000.ethernet: no idle pinctrl state
+rk_gmac-dwmac fe300000.ethernet: adding to PM domain gmac
+rk_gmac-dwmac fe300000.ethernet: genpd_add_device()
+rk_gmac-dwmac fe300000.ethernet: Clock clk_gmac con_id (null) managed by runtime PM.
+rk_gmac-dwmac fe300000.ethernet: Clock clk_rmii_rx con_id (null) managed by runtime PM.
+rk_gmac-dwmac fe300000.ethernet: Clock clk_rmii_tx con_id (null) managed by runtime PM.
+rk_gmac-dwmac fe300000.ethernet: Clock clk_mac_ref con_id (null) managed by runtime PM.
+rk_gmac-dwmac fe300000.ethernet: Clock clk_mac_refout con_id (null) managed by runtime PM.
+rk_gmac-dwmac fe300000.ethernet: Clock aclk_gmac con_id (null) managed by runtime PM.
+rk_gmac-dwmac fe300000.ethernet: Clock pclk_gmac con_id (null) managed by runtime PM.
+rk_gmac-dwmac fe300000.ethernet: IRQ eth_wake_irq not found
+rk_gmac-dwmac fe300000.ethernet: IRQ eth_lpi not found
+rk_gmac-dwmac fe300000.ethernet: PTP uses main clock
+rk_gmac-dwmac fe300000.ethernet: Looking up phy-supply from device tree
+rk_gmac-dwmac fe300000.ethernet: error -EPROBE_DEFER: failed to get phy regulator
+rk_gmac-dwmac fe300000.ethernet: removing from PM domain gmac
+rk_gmac-dwmac fe300000.ethernet: genpd_remove_device()
+rk_gmac-dwmac fe300000.ethernet: Driver rk_gmac-dwmac requests probe deferral
+platform fe300000.ethernet: Added to deferred list
 Waiting for root device /dev/mmcblk0p4...
+driver_probe_done: probe_count = 0
+driver_probe_done: probe_count = 0
+driver_probe_done: probe_count = 0
+driver_probe_done: probe_count = 0
+driver_probe_done: probe_count = 0
+driver_probe_done: probe_count = 0
+driver_probe_done: probe_count = 0
+driver_probe_done: probe_count = 0
+driver_probe_done: probe_count = 0
+driver_probe_done: probe_count = 0
+driver_probe_done: probe_count = 0
+driver_probe_done: probe_count = 0
+driver_probe_done: probe_count = 0
+driver_probe_done: probe_count = 0
+driver_probe_done: probe_count = 0
+driver_probe_done: probe_count = 0
+driver_probe_done: probe_count = 0
+driver_probe_done: probe_count = 0
+driver_probe_done: probe_count = 0
+driver_probe_done: probe_count = 0
+driver_probe_done: probe_count = 0
+driver_probe_done: probe_count = 0
+driver_probe_done: probe_count = 0
+driver_probe_done: probe_count = 0
+driver_probe_done: probe_count = 0
+driver_probe_done: probe_count = 0
+driver_probe_done: probe_count = 0
+driver_probe_done: probe_count = 0
+driver_probe_done: probe_count = 0
+driver_probe_done: probe_count = 0
+driver_probe_done: probe_count = 0
+driver_probe_done: probe_count = 0
+driver_probe_done: probe_count = 0
+driver_probe_done: probe_count = 0
+driver_probe_done: probe_count = 0
+driver_probe_done: probe_count = 0
+driver_probe_done: probe_count = 0
+driver_probe_done: probe_count = 0
+driver_probe_done: probe_count = 0
+driver_probe_done: probe_count = 0
+driver_probe_done: probe_count = 0
+driver_probe_done: probe_count = 0

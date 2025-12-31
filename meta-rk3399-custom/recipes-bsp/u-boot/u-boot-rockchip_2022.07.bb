@@ -60,38 +60,74 @@ do_configure:prepend() {
             sed -i 's/^CONFIG_BAUDRATE=.*/CONFIG_BAUDRATE=1500000/' ${S}/configs/${UBOOT_MACHINE}
         fi
         
-        # Enable Yocto standard distro boot for proper bootargs generation
-        # This allows Yocto to dynamically generate correct bootargs
-        sed -i 's/^# CONFIG_DISTRO_DEFAULTS is not set/CONFIG_DISTRO_DEFAULTS=y/' ${S}/configs/${UBOOT_MACHINE}
+        # Disable distro boot - use simple fixed bootcmd instead
+        # This keeps boot logic in boot.scr only, not scattered across env/distro/scripts
+        sed -i 's/^CONFIG_DISTRO_DEFAULTS=y/# CONFIG_DISTRO_DEFAULTS is not set/' ${S}/configs/${UBOOT_MACHINE} || true
         
-        # Use Yocto standard bootcmd - let distro boot handle everything
-        # Remove any existing CONFIG_BOOTCOMMAND to use Yocto default
+        # Set fixed bootcmd: load boot.scr from root partition /boot directory and execute it
+        # GPT partition 3 (root ext4) = U-Boot mmc 0:4 (Linux mmcblk0p4)
+        # boot.scr is installed to root filesystem /boot/boot.scr
+        # Try direct commands instead of script to avoid format issues
         sed -i '/^CONFIG_BOOTCOMMAND=/d' ${S}/configs/${UBOOT_MACHINE} || true
+        echo 'CONFIG_BOOTCOMMAND="echo \"=== U-Boot Debug: Direct boot mode ===\"; mmc dev 0; mmc rescan; echo \"=== U-Boot Debug: MMC Info ===\"; mmc info; echo \"=== U-Boot Debug: Partition Table ===\"; part list mmc 0; echo \"=== U-Boot Debug: Filesystem Check ===\"; ext4ls mmc 0:4 /boot && echo \"Boot directory accessible\" || echo \"ERROR: Cannot access boot directory\"; echo \"=== U-Boot Debug: Loading kernel ===\"; ext4load mmc 0:4 0x00280000 /boot/Image-6.1.115 && echo \"=== U-Boot Debug: Kernel loaded (size: \${filesize} bytes) ===\" && ext4load mmc 0:4 0x03000000 /boot/rk3399-firefly-aio.dtb && echo \"=== U-Boot Debug: Device tree loaded (size: \${filesize} bytes) ===\" && setenv bootargs \"root=/dev/mmcblk0p4 rootwait rootfstype=ext4 console=ttyS2,1500000 earlycon=uart8250,mmio32,0xff1a0000,1500000n8 loglevel=7 debug initcall=1\" && echo \"=== U-Boot Debug: Boot args set ===\"; echo \"=== U-Boot Debug: Booting kernel ===\"; booti 0x00280000 - 0x03000000 || echo \"=== U-Boot Debug: Direct boot failed ===\""' >> ${S}/configs/${UBOOT_MACHINE}
         
-        # Let Yocto handle all environment variables automatically
-        # Remove CONFIG_EXTRA_ENV_SETTINGS to use Yocto defaults
-        sed -i '/^CONFIG_EXTRA_ENV_SETTINGS=/d' ${S}/configs/${UBOOT_MACHINE} || true
+        # Force environment reset on first boot to ensure our bootcmd is used
+        echo 'CONFIG_ENV_IS_NOWHERE=y' >> ${S}/configs/${UBOOT_MACHINE}
+        echo '# CONFIG_ENV_IS_IN_MMC is not set' >> ${S}/configs/${UBOOT_MACHINE}
         
-        # Set RK3399 specific boot device configuration for Yocto distro boot
-        # This tells Yocto to use correct root partition mapping
-        echo 'CONFIG_BOOTDEV="0"' >> ${S}/configs/${UBOOT_MACHINE}
-        echo 'CONFIG_BOOTPART="3"' >> ${S}/configs/${UBOOT_MACHINE}
+        # Override environment variables to ensure bootcmd is used
+        # Create uboot.env with correct bootcmd that loads boot.scr
+        echo 'bootcmd=mmc dev 0; mmc rescan; ext4load mmc 0:3 0x00500000 /boot/boot.scr; source 0x00500000' > ${WORKDIR}/uboot.env.txt
+        echo 'bootargs=earlycon=uart8250,mmio32,0xff1a0000,1500000n8 root=/dev/mmcblk0p4 rootwait rootfstype=ext4 console=ttyS2,1500000 consoleblank=0 loglevel=7' >> ${WORKDIR}/uboot.env.txt
         
-        # Set proper load addresses for RK3399 (2GB RAM)
-        echo 'CONFIG_LOADADDR="0x00280000"' >> ${S}/configs/${UBOOT_MACHINE}
-        echo 'CONFIG_FDTADDR="0x03000000"' >> ${S}/configs/${UBOOT_MACHINE}
-        echo 'CONFIG_RAMDISKADDR="0x28000000"' >> ${S}/configs/${UBOOT_MACHINE}
-        
-        # Set kernel and DTB file names for Yocto boot system
-        echo 'CONFIG_BOOTFILES="Image rk3399-firefly-aio.dtb"' >> ${S}/configs/${UBOOT_MACHINE}
-        
-        # Enable proper bootargs generation for RK3399
-        # Yocto will automatically generate: root=/dev/mmcblk0p4
-        echo 'CONFIG_CMDLINE="root=/dev/mmcblk0p4 rootwait rootfstype=ext4 console=ttyS2,1500000n8 consoleblank=0 loglevel=8 debug initcall_debug mmc.debug=1 mmc.block=1 driver_debug.initcall_debug driver_debug.probe=1 clk.debug=1 regulator.debug=1 pm_debug=1"' >> ${S}/configs/${UBOOT_MACHINE}
+        # Enable script support and legacy image format
+        # Use direct CONFIG defines instead of relying on CONFIG_IS_ENABLED
+        if ! grep -q "^CONFIG_BOOT_SCRIPT=y" ${S}/configs/${UBOOT_MACHINE}; then
+            echo "CONFIG_BOOT_SCRIPT=y" >> ${S}/configs/${UBOOT_MACHINE}
+        fi
+        if ! grep -q "^CONFIG_CMD_SOURCE=y" ${S}/configs/${UBOOT_MACHINE}; then
+            echo "CONFIG_CMD_SOURCE=y" >> ${S}/configs/${UBOOT_MACHINE}
+        fi
+        if ! grep -q "^CONFIG_LEGACY_IMAGE_FORMAT=y" ${S}/configs/${UBOOT_MACHINE}; then
+            echo "CONFIG_LEGACY_IMAGE_FORMAT=y" >> ${S}/configs/${UBOOT_MACHINE}
+        fi
+        if ! grep -q "^CONFIG_IMAGE_FORMAT_LEGACY=y" ${S}/configs/${UBOOT_MACHINE}; then
+            echo "CONFIG_IMAGE_FORMAT_LEGACY=y" >> ${S}/configs/${UBOOT_MACHINE}
+        fi
+        if ! grep -q "^CONFIG_FIT=y" ${S}/configs/${UBOOT_MACHINE}; then
+            echo "# CONFIG_FIT is not set" >> ${S}/configs/${UBOOT_MACHINE}
+        fi
         
         # Copy Firefly device tree file to U-Boot source tree
         install -d ${S}/arch/arm/dts
         install -m 0644 ${WORKDIR}/rk3399-firefly.dts ${S}/arch/arm/dts/
+    fi
+}
+
+do_compile:append() {
+    # Skip env generation here - will be done in do_install
+}
+
+do_install:append() {
+    # Install uboot.env to deploy directory for image creation
+    install -d ${DEPLOYDIR}
+    
+    # Generate uboot.env binary using mkenvimage tool from host tools
+    if [ -f "${WORKDIR}/uboot.env.txt" ]; then
+        bbnote "Found uboot.env.txt, generating uboot.env binary"
+        # Try to use mkenvimage from u-boot-tools-native or build tools
+        mkenvimage -s ${UBOOT_ENV_SIZE} -o ${WORKDIR}/uboot.env ${WORKDIR}/uboot.env.txt 2>/dev/null || \
+        ${S}/build/tools/mkenvimage -s ${UBOOT_ENV_SIZE} -o ${WORKDIR}/uboot.env ${WORKDIR}/uboot.env.txt 2>/dev/null || \
+        cp ${WORKDIR}/uboot.env.txt ${WORKDIR}/uboot.env
+    else
+        bbfatal "uboot.env.txt not found in ${WORKDIR}"
+    fi
+    
+    if [ -f "${WORKDIR}/uboot.env" ]; then
+        install -m 0644 ${WORKDIR}/uboot.env ${DEPLOYDIR}/uboot.env
+        bbnote "Installed uboot.env to ${DEPLOYDIR}/uboot.env"
+    else
+        bbfatal "uboot.env not found in ${WORKDIR} after generation"
     fi
 }
 

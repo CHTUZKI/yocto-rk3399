@@ -3,6 +3,9 @@ DESCRIPTION = "Linux kernel from Armbian for RK3399 platform"
 
 require recipes-kernel/linux/linux-yocto.inc
 
+# Use defconfig as the complete configuration
+KERNEL_CONFIG_FRAGMENTS = ""
+
 LICENSE = "GPL-2.0-only"
 LIC_FILES_CHKSUM = "file://COPYING;md5=6bc538ed5bd9a7fc9398086aedcd7e46"
 
@@ -24,12 +27,14 @@ SRC_URI = "git://github.com/armbian/linux-rockchip.git;branch=${KBRANCH};protoco
            file://rk3399-firefly-core.dtsi \
            file://0001-Fix-RK3399-earlycon-uartclk-initialization.patch \
            file://0002-Fix-RK3399-earlycon-Force-uartclk-to-24MHz.patch \
+           file://0003-Remove-rockpi-mcu-driver.patch \
            "
 
 S = "${WORKDIR}/git"
 B = "${WORKDIR}/build"
 
-KERNEL_CONFIG_FRAGMENTS += "${WORKDIR}/defconfig"
+# Use defconfig as the complete configuration
+KERNEL_CONFIG_FRAGMENTS = ""
 
 # Armbian kernel doesn't use Yocto kernel features system
 # Remove KERNEL_FEATURES to avoid errors
@@ -55,9 +60,8 @@ do_configure:prepend() {
     install -m 0644 ${WORKDIR}/rk3399-firefly-core.dtsi ${S}/arch/arm64/boot/dts/rockchip/
 }
 
-KERNEL_EXTRA_ARGS += " \
-    LOADADDR=0x00200000 \
-"
+# Enable additional filesystem and debugging support
+KERNEL_CONFIG_COMMAND:append = " --config ${THISDIR}/kernel-fragment.cfg"
 
 # Module signing (optional)
 KERNEL_MODULE_SIGNING_ENABLE ?= "0"

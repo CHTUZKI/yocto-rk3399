@@ -146,6 +146,7 @@
 		regulator-boot-on;
 		regulator-min-microvolt = <3300000>;
 		regulator-max-microvolt = <3300000>;
+		status = "okay";
 	};
 
 	vcc5v0_host: vcc5v0-host-regulator {
@@ -165,8 +166,20 @@
 		regulator-boot-on;
 		regulator-min-microvolt = <5000000>;
 		regulator-max-microvolt = <5000000>;
+		status = "okay";
 	};
 
+	vcc1_supply: vcc1-supply {
+		compatible = "regulator-fixed";
+		regulator-name = "vcc1-supply";
+		regulator-always-on;
+		regulator-boot-on;
+		regulator-min-microvolt = <3300000>;
+		regulator-max-microvolt = <3300000>;
+		status = "okay";
+	};
+
+	
 	vcc_sd: vcc-sd {
 		compatible = "regulator-fixed";
 		enable-active-high;
@@ -349,7 +362,7 @@
 		#clock-cells = <1>;
 		clock-output-names = "xin32k", "rk808-clkout2";
 
-		vcc1-supply = <&vcc3v3_sys>;
+		vcc1-supply = <&vcc1_supply>;
 		vcc2-supply = <&vcc3v3_sys>;
 		vcc3-supply = <&vcc3v3_sys>;
 		vcc4-supply = <&vcc3v3_sys>;
