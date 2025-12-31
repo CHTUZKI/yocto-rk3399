@@ -110,7 +110,7 @@ mmc0:cmd55,20
 mmc0:cmd1,20
 NeedKHz=200KHz, Clock=12000KHz
 SdmmcInit=0 1
-StorageInit ok = 84617
+StorageInit ok = 84550
 SecureMode = 0
 SecureInit read PBA: 0x4
 SecureInit read PBA: 0x404
@@ -133,8 +133,8 @@ No find bl30.bin
 No find bl32.bin
 Load uboot, ReadLba = 4000
 Load OK, addr=0x200000, size=0xbeea0
-RunBL31 0x40000 @ 117244 us
-NOTICE:  BL31: v1.3(release):8f40012ab
+RunBL31 0x40000 @ 116676 us
+NOTICE:  BL31: v1.3(release):8f40012ab
 NOTICE:  BL31: Built : 14:20:53, Feb 16 2023
 NOTICE:  BL31: Rockchip release version: v1.1
 INFO:    GICv3 with legacy support detected. ARM GICV3 driver initialized in EL3
@@ -167,13 +167,13 @@ Net:   eth0: ethernet@fe300000
 Hit any key to stop autoboot:  2  1  0 
 switch to partitions #0, OK
 mmc0(part 0) is current device
-9295880 bytes read in 866 ms (10.2 MiB/s)
-110785 bytes read in 26 ms (4.1 MiB/s)
-Moving Image from 0x280000 to 0x400000, end=d40000
+9429000 bytes read in 879 ms (10.2 MiB/s)
+110789 bytes read in 26 ms (4.1 MiB/s)
+Moving Image from 0x280000 to 0x400000, end=d60000
 ## Flattened Device Tree blob at 03000000
    Booting using the fdt blob at 0x3000000
 ERROR: reserving fdt memory region failed (addr=0 size=0 flags=0)
-   Loading Device Tree to 000000007defb000, end 000000007df190c0 ... OK
+   Loading Device Tree to 000000007defb000, end 000000007df190c4 ... OK
 
 Starting kernel ...
 
@@ -206,7 +206,7 @@ Kernel command line: earlycon=uart8250,mmio32,0xff1a0000,1500000n8 root=/dev/mmc
 Dentry cache hash table entries: 262144 (order: 9, 2097152 bytes, linear)
 Inode-cache hash table entries: 131072 (order: 8, 1048576 bytes, linear)
 mem auto-init: stack:off, heap alloc:off, heap free:off
-Memory: 2044688K/2095104K available (6144K kernel code, 758K rwdata, 1124K rodata, 896K init, 366K bss, 50416K reserved, 0K cma-reserved)
+Memory: 2044516K/2095104K available (6208K kernel code, 760K rwdata, 1164K rodata, 960K init, 373K bss, 50588K reserved, 0K cma-reserved)
 SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=6, Nodes=1
 rcu: Hierarchical RCU implementation.
 rcu: 	RCU restricting CPUs from NR_CPUS=256 to nr_cpu_ids=6.
@@ -277,6 +277,7 @@ CPU features: detected: 32-bit EL0 Support
 CPU features: detected: CRC32 instructions
 CPU: All CPU(s) started at EL2
 alternatives: applying system-wide alternatives
+devtmpfs: initialized
 clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 7645041785100000 ns
 futex hash table entries: 2048 (order: 5, 131072 bytes, linear)
 pinctrl core: initialized pinctrl subsystem
@@ -286,8 +287,6 @@ DMA: preallocated 256 KiB GFP_KERNEL|GFP_DMA pool for atomic allocations
 DMA: preallocated 256 KiB GFP_KERNEL|GFP_DMA32 pool for atomic allocations
 ASID allocator initialised with 65536 entries
 platform ff770000.syscon:mipi-dphy-rx0: Fixed dependency cycle(s) with /i2c@ff110000/ov13850@36
-platform fe330000.mmc: Fixed dependency cycle(s) with /syscon@ff770000/phy@f780
-platform ff770000.syscon:phy@f780: Fixed dependency cycle(s) with /mmc@fe330000
 platform ff770000.syscon:mipi-dphy-rx0: Fixed dependency cycle(s) with /rkisp1@ff910000
 platform ff910000.rkisp1: Fixed dependency cycle(s) with /syscon@ff770000/mipi-dphy-rx0
 platform ff900000.vop: Fixed dependency cycle(s) with /hdmi@ff940000
@@ -340,6 +339,470 @@ rk_iommu ff914000.iommu: ignoring dependency for device, assuming no driver
 rk_iommu ff924000.iommu: ignoring dependency for device, assuming no driver
 /usb@fe800000: Failed to get clk index: 0 ret: -517
 /usb@fe900000: Failed to get clk index: 0 ret: -517
+### dt-test ### start of unittest - you will see error messages
+### dt-test ### EXPECT \ : Duplicate name in testcase-data, renamed to "duplicate-name#1"
+Duplicate name in testcase-data, renamed to "duplicate-name#1"
+### dt-test ### EXPECT / : Duplicate name in testcase-data, renamed to "duplicate-name#1"
+### dt-test ### pass of_unittest_check_tree_linkage():269
+### dt-test ### pass of_unittest_check_tree_linkage():270
+### dt-test ### pass of_unittest_check_phandles():378
+### dt-test ### pass of_unittest_find_node_by_name():79
+### dt-test ### pass of_unittest_find_node_by_name():86
+### dt-test ### pass of_unittest_find_node_by_name():90
+### dt-test ### pass of_unittest_find_node_by_name():97
+### dt-test ### pass of_unittest_find_node_by_name():104
+### dt-test ### pass of_unittest_find_node_by_name():108
+### dt-test ### pass of_unittest_find_node_by_name():114
+### dt-test ### pass of_unittest_find_node_by_name():118
+### dt-test ### pass of_unittest_find_node_by_name():122
+### dt-test ### pass of_unittest_find_node_by_name():126
+### dt-test ### pass of_unittest_find_node_by_name():131
+### dt-test ### pass of_unittest_find_node_by_name():136
+### dt-test ### pass of_unittest_find_node_by_name():141
+### dt-test ### pass of_unittest_find_node_by_name():146
+### dt-test ### pass of_unittest_find_node_by_name():152
+### dt-test ### pass of_unittest_find_node_by_name():157
+### dt-test ### pass of_unittest_find_node_by_name():162
+### dt-test ### pass of_unittest_find_node_by_name():167
+### dt-test ### pass of_unittest_dynamic():193
+### dt-test ### pass of_unittest_dynamic():200
+### dt-test ### pass of_unittest_dynamic():206
+### dt-test ### pass of_unittest_dynamic():214
+### dt-test ### pass of_unittest_dynamic():218
+### dt-test ### pass of_unittest_dynamic():226
+### dt-test ### pass of_unittest_dynamic():228
+### dt-test ### pass of_unittest_parse_phandle_with_args():401
+### dt-test ### pass of_unittest_parse_phandle_with_args():455
+### dt-test ### pass of_unittest_parse_phandle_with_args():455
+### dt-test ### pass of_unittest_parse_phandle_with_args():455
+### dt-test ### pass of_unittest_parse_phandle_with_args():455
+### dt-test ### pass of_unittest_parse_phandle_with_args():455
+### dt-test ### pass of_unittest_parse_phandle_with_args():455
+### dt-test ### pass of_unittest_parse_phandle_with_args():455
+### dt-test ### pass of_unittest_parse_phandle_with_args():455
+### dt-test ### pass of_unittest_parse_phandle_with_args():466
+### dt-test ### pass of_unittest_parse_phandle_with_args():469
+### dt-test ### EXPECT \ : OF: /testcase-data/phandle-tests/consumer-a: could not get #phandle-cells-missing for /testcase-data/phandle-tests/provider1
+OF: /testcase-data/phandle-tests/consumer-a: could not get #phandle-cells-missing for /testcase-data/phandle-tests/provider1
+### dt-test ### EXPECT / : OF: /testcase-data/phandle-tests/consumer-a: could not get #phandle-cells-missing for /testcase-data/phandle-tests/provider1
+### dt-test ### pass of_unittest_parse_phandle_with_args():483
+### dt-test ### EXPECT \ : OF: /testcase-data/phandle-tests/consumer-a: could not get #phandle-cells-missing for /testcase-data/phandle-tests/provider1
+OF: /testcase-data/phandle-tests/consumer-a: could not get #phandle-cells-missing for /testcase-data/phandle-tests/provider1
+### dt-test ### EXPECT / : OF: /testcase-data/phandle-tests/consumer-a: could not get #phandle-cells-missing for /testcase-data/phandle-tests/provider1
+### dt-test ### pass of_unittest_parse_phandle_with_args():494
+### dt-test ### EXPECT \ : OF: /testcase-data/phandle-tests/consumer-a: could not find phandle
+OF: /testcase-data/phandle-tests/consumer-a: could not find phandle 12345678
+### dt-test ### EXPECT / : OF: /testcase-data/phandle-tests/consumer-a: could not find phandle
+### dt-test ### pass of_unittest_parse_phandle_with_args():508
+### dt-test ### EXPECT \ : OF: /testcase-data/phandle-tests/consumer-a: could not find phandle
+OF: /testcase-data/phandle-tests/consumer-a: could not find phandle 12345678
+### dt-test ### EXPECT / : OF: /testcase-data/phandle-tests/consumer-a: could not find phandle
+### dt-test ### pass of_unittest_parse_phandle_with_args():519
+### dt-test ### EXPECT \ : OF: /testcase-data/phandle-tests/consumer-a: #phandle-cells = 3 found 1
+OF: /testcase-data/phandle-tests/consumer-a: #phandle-cells = 3 found 1
+### dt-test ### EXPECT / : OF: /testcase-data/phandle-tests/consumer-a: #phandle-cells = 3 found 1
+### dt-test ### pass of_unittest_parse_phandle_with_args():533
+### dt-test ### EXPECT \ : OF: /testcase-data/phandle-tests/consumer-a: #phandle-cells = 3 found 1
+OF: /testcase-data/phandle-tests/consumer-a: #phandle-cells = 3 found 1
+### dt-test ### EXPECT / : OF: /testcase-data/phandle-tests/consumer-a: #phandle-cells = 3 found 1
+### dt-test ### pass of_unittest_parse_phandle_with_args():544
+### dt-test ### pass of_unittest_parse_phandle_with_args_map():575
+### dt-test ### pass of_unittest_parse_phandle_with_args_map():641
+### dt-test ### pass of_unittest_parse_phandle_with_args_map():641
+### dt-test ### pass of_unittest_parse_phandle_with_args_map():641
+### dt-test ### pass of_unittest_parse_phandle_with_args_map():641
+### dt-test ### pass of_unittest_parse_phandle_with_args_map():641
+### dt-test ### pass of_unittest_parse_phandle_with_args_map():641
+### dt-test ### pass of_unittest_parse_phandle_with_args_map():641
+### dt-test ### pass of_unittest_parse_phandle_with_args_map():641
+### dt-test ### pass of_unittest_parse_phandle_with_args_map():641
+### dt-test ### pass of_unittest_parse_phandle_with_args_map():652
+### dt-test ### EXPECT \ : OF: /testcase-data/phandle-tests/consumer-b: could not get #phandle-missing-cells for /testcase-data/phandle-tests/provider1
+OF: /testcase-data/phandle-tests/consumer-b: could not get #phandle-missing-cells for /testcase-data/phandle-tests/provider1
+### dt-test ### EXPECT / : OF: /testcase-data/phandle-tests/consumer-b: could not get #phandle-missing-cells for /testcase-data/phandle-tests/provider1
+### dt-test ### pass of_unittest_parse_phandle_with_args_map():665
+### dt-test ### EXPECT \ : OF: /testcase-data/phandle-tests/consumer-b: could not find phandle 12345678
+OF: /testcase-data/phandle-tests/consumer-b: could not find phandle 12345678
+### dt-test ### EXPECT / : OF: /testcase-data/phandle-tests/consumer-b: could not find phandle 12345678
+### dt-test ### pass of_unittest_parse_phandle_with_args_map():678
+### dt-test ### EXPECT \ : OF: /testcase-data/phandle-tests/consumer-b: #phandle-cells = 2 found 1
+OF: /testcase-data/phandle-tests/consumer-b: #phandle-cells = 2 found 1
+### dt-test ### EXPECT / : OF: /testcase-data/phandle-tests/consumer-b: #phandle-cells = 2 found 1
+### dt-test ### pass of_unittest_parse_phandle_with_args_map():691
+### dt-test ### pass of_unittest_parse_phandle_with_args_map():694
+### dt-test ### pass of_unittest_parse_phandle_with_args_map():694
+### dt-test ### pass of_unittest_parse_phandle_with_args_map():694
+### dt-test ### pass of_unittest_parse_phandle_with_args_map():694
+### dt-test ### pass of_unittest_parse_phandle_with_args_map():694
+### dt-test ### pass of_unittest_parse_phandle_with_args_map():694
+### dt-test ### pass of_unittest_printf_one():293
+### dt-test ### pass of_unittest_printf_one():303
+### dt-test ### pass of_unittest_printf_one():303
+### dt-test ### pass of_unittest_printf_one():293
+### dt-test ### pass of_unittest_printf_one():303
+### dt-test ### pass of_unittest_printf_one():303
+### dt-test ### pass of_unittest_printf_one():293
+### dt-test ### pass of_unittest_printf_one():303
+### dt-test ### pass of_unittest_printf_one():303
+### dt-test ### pass of_unittest_printf_one():293
+### dt-test ### pass of_unittest_printf_one():303
+### dt-test ### pass of_unittest_printf_one():303
+### dt-test ### pass of_unittest_printf_one():293
+### dt-test ### pass of_unittest_printf_one():303
+### dt-test ### pass of_unittest_printf_one():303
+### dt-test ### pass of_unittest_printf_one():293
+### dt-test ### pass of_unittest_printf_one():303
+### dt-test ### pass of_unittest_printf_one():303
+### dt-test ### pass of_unittest_printf_one():293
+### dt-test ### pass of_unittest_printf_one():303
+### dt-test ### pass of_unittest_printf_one():303
+### dt-test ### pass of_unittest_printf_one():293
+### dt-test ### pass of_unittest_printf_one():303
+### dt-test ### pass of_unittest_printf_one():303
+### dt-test ### pass of_unittest_printf_one():293
+### dt-test ### pass of_unittest_printf_one():303
+### dt-test ### pass of_unittest_printf_one():303
+### dt-test ### pass of_unittest_printf_one():293
+### dt-test ### pass of_unittest_printf_one():303
+### dt-test ### pass of_unittest_printf_one():303
+### dt-test ### pass of_unittest_printf_one():293
+### dt-test ### pass of_unittest_printf_one():303
+### dt-test ### pass of_unittest_printf_one():303
+### dt-test ### pass of_unittest_printf_one():293
+### dt-test ### pass of_unittest_printf_one():303
+### dt-test ### pass of_unittest_printf_one():303
+### dt-test ### pass of_unittest_printf_one():293
+### dt-test ### pass of_unittest_printf_one():303
+### dt-test ### pass of_unittest_printf_one():303
+### dt-test ### pass of_unittest_printf_one():293
+### dt-test ### pass of_unittest_printf_one():303
+### dt-test ### pass of_unittest_printf_one():303
+### dt-test ### pass of_unittest_printf_one():293
+### dt-test ### pass of_unittest_printf_one():303
+### dt-test ### pass of_unittest_printf_one():303
+### dt-test ### pass of_unittest_printf_one():293
+### dt-test ### pass of_unittest_printf_one():303
+### dt-test ### pass of_unittest_printf_one():303
+### dt-test ### pass of_unittest_printf_one():293
+### dt-test ### pass of_unittest_printf_one():303
+### dt-test ### pass of_unittest_printf_one():303
+### dt-test ### pass of_unittest_property_string():714
+### dt-test ### pass of_unittest_property_string():716
+### dt-test ### pass of_unittest_property_string():718
+### dt-test ### pass of_unittest_property_string():720
+### dt-test ### pass of_unittest_property_string():722
+### dt-test ### pass of_unittest_property_string():724
+### dt-test ### pass of_unittest_property_string():726
+### dt-test ### pass of_unittest_property_string():730
+### dt-test ### pass of_unittest_property_string():732
+### dt-test ### pass of_unittest_property_string():734
+### dt-test ### pass of_unittest_property_string():736
+### dt-test ### pass of_unittest_property_string():740
+### dt-test ### pass of_unittest_property_string():743
+### dt-test ### pass of_unittest_property_string():745
+### dt-test ### pass of_unittest_property_string():747
+### dt-test ### pass of_unittest_property_string():749
+### dt-test ### pass of_unittest_property_string():752
+### dt-test ### pass of_unittest_property_string():755
+### dt-test ### pass of_unittest_property_string():757
+### dt-test ### pass of_unittest_property_string():760
+### dt-test ### pass of_unittest_property_string():765
+### dt-test ### pass of_unittest_property_string():767
+### dt-test ### pass of_unittest_property_string():769
+### dt-test ### pass of_unittest_property_string():772
+### dt-test ### pass of_unittest_property_string():776
+### dt-test ### pass of_unittest_property_string():779
+### dt-test ### pass of_unittest_property_copy():794
+### dt-test ### pass of_unittest_property_copy():800
+### dt-test ### pass of_unittest_changeset():820
+### dt-test ### pass of_unittest_changeset():823
+### dt-test ### pass of_unittest_changeset():826
+### dt-test ### pass of_unittest_changeset():830
+### dt-test ### pass of_unittest_changeset():833
+### dt-test ### pass of_unittest_changeset():836
+### dt-test ### pass of_unittest_changeset():839
+### dt-test ### pass of_unittest_changeset():842
+### dt-test ### pass of_unittest_changeset():845
+### dt-test ### pass of_unittest_changeset():853
+### dt-test ### pass of_unittest_changeset():857
+### dt-test ### pass of_unittest_changeset():858
+### dt-test ### pass of_unittest_changeset():860
+### dt-test ### pass of_unittest_changeset():861
+### dt-test ### pass of_unittest_changeset():863
+### dt-test ### pass of_unittest_changeset():864
+### dt-test ### pass of_unittest_changeset():866
+### dt-test ### pass of_unittest_changeset():868
+### dt-test ### pass of_unittest_changeset():869
+### dt-test ### pass of_unittest_changeset():870
+### dt-test ### pass of_unittest_changeset():872
+### dt-test ### pass of_unittest_changeset():877
+### dt-test ### pass of_unittest_changeset():881
+### dt-test ### pass of_unittest_parse_interrupts():1047
+### dt-test ### pass of_unittest_parse_interrupts():1047
+### dt-test ### pass of_unittest_parse_interrupts():1047
+### dt-test ### pass of_unittest_parse_interrupts():1047
+### dt-test ### pass of_unittest_parse_interrupts():1093
+### dt-test ### pass of_unittest_parse_interrupts():1093
+### dt-test ### pass of_unittest_parse_interrupts():1093
+### dt-test ### pass of_unittest_parse_interrupts():1093
+### dt-test ### pass of_unittest_parse_interrupts_extended():1173
+### dt-test ### pass of_unittest_parse_interrupts_extended():1173
+### dt-test ### pass of_unittest_parse_interrupts_extended():1173
+### dt-test ### pass of_unittest_parse_interrupts_extended():1173
+### dt-test ### pass of_unittest_parse_interrupts_extended():1173
+### dt-test ### pass of_unittest_parse_interrupts_extended():1173
+### dt-test ### pass of_unittest_parse_interrupts_extended():1173
+### dt-test ### pass of_unittest_dma_get_max_cpu_address():906
+### dt-test ### pass of_unittest_dma_ranges_one():927
+### dt-test ### pass of_unittest_dma_ranges_one():945
+### dt-test ### pass of_unittest_dma_ranges_one():948
+### dt-test ### pass of_unittest_dma_ranges_one():927
+### dt-test ### pass of_unittest_dma_ranges_one():945
+### dt-test ### pass of_unittest_dma_ranges_one():948
+### dt-test ### pass of_unittest_dma_ranges_one():927
+### dt-test ### pass of_unittest_dma_ranges_one():945
+### dt-test ### pass of_unittest_dma_ranges_one():948
+### dt-test ### pass of_unittest_match_node():1241
+### dt-test ### pass of_unittest_match_node():1241
+### dt-test ### pass of_unittest_match_node():1241
+### dt-test ### pass of_unittest_match_node():1241
+### dt-test ### pass of_unittest_match_node():1241
+### dt-test ### pass of_unittest_match_node():1241
+### dt-test ### pass of_unittest_match_node():1241
+### dt-test ### pass of_unittest_match_node():1241
+### dt-test ### pass of_unittest_match_node():1241
+### dt-test ### pass of_unittest_match_node():1241
+### dt-test ### pass of_unittest_match_node():1241
+### dt-test ### pass of_unittest_match_node():1241
+### dt-test ### pass of_unittest_platform_populate():1265
+### dt-test ### pass of_unittest_platform_populate():1269
+### dt-test ### pass of_unittest_platform_populate():1275
+### dt-test ### EXPECT \ : platform testcase-data:testcase-device2: error -ENXIO: IRQ index 0 not found
+platform testcase-data:testcase-device2: error -ENXIO: IRQ index 0 not found
+### dt-test ### EXPECT / : platform testcase-data:testcase-device2: error -ENXIO: IRQ index 0 not found
+### dt-test ### pass of_unittest_platform_populate():1285
+### dt-test ### pass of_unittest_platform_populate():1290
+### dt-test ### pass of_unittest_platform_populate():1296
+### dt-test ### pass of_unittest_platform_populate():1316
+### dt-test ### pass of_unittest_platform_populate():1316
+### dt-test ### pass of_unittest_platform_populate():1326
+### dt-test ### pass of_unittest_platform_populate():1326
+/usb@fe800000: Failed to get clk index: 0 ret: -517
+### dt-test ### pass of_unittest_overlay():2982
+/usb@fe900000: Failed to get clk index: 0 ret: -517
+### dt-test ### EXPECT \ : OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data/overlay-node/test-bus/test-unittest0/status
+OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data/overlay-node/test-bus/test-unittest0/status
+/usb@fe800000: Failed to get clk index: 0 ret: -517
+### dt-test ### EXPECT / : OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data/overlay-node/test-bus/test-unittest0/status
+/usb@fe900000: Failed to get clk index: 0 ret: -517
+### dt-test ### pass of_unittest_overlay_0():2111
+/usb@fe800000: Failed to get clk index: 0 ret: -517
+### dt-test ### EXPECT \ : OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data/overlay-node/test-bus/test-unittest1/status
+OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data/overlay-node/test-bus/test-unittest1/status
+### dt-test ### EXPECT / : OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data/overlay-node/test-bus/test-unittest1/status
+### dt-test ### pass of_unittest_overlay_1():2131
+### dt-test ### EXPECT \ : OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data/overlay-node/test-bus/test-unittest2/status
+OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data/overlay-node/test-bus/test-unittest2/status
+### dt-test ### EXPECT / : OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data/overlay-node/test-bus/test-unittest2/status
+### dt-test ### pass of_unittest_overlay_2():2151
+/usb@fe900000: Failed to get clk index: 0 ret: -517
+### dt-test ### EXPECT \ : OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data/overlay-node/test-bus/test-unittest3/status
+OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data/overlay-node/test-bus/test-unittest3/status
+/usb@fe800000: Failed to get clk index: 0 ret: -517
+### dt-test ### EXPECT / : OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data/overlay-node/test-bus/test-unittest3/status
+### dt-test ### pass of_unittest_overlay_3():2171
+### dt-test ### pass of_unittest_overlay_4():2181
+/usb@fe900000: Failed to get clk index: 0 ret: -517
+### dt-test ### EXPECT \ : OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data/overlay-node/test-bus/test-unittest5/status
+OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data/overlay-node/test-bus/test-unittest5/status
+/usb@fe800000: Failed to get clk index: 0 ret: -517
+### dt-test ### EXPECT / : OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data/overlay-node/test-bus/test-unittest5/status
+/usb@fe900000: Failed to get clk index: 0 ret: -517
+### dt-test ### pass of_unittest_overlay_5():2201
+/usb@fe800000: Failed to get clk index: 0 ret: -517
+### dt-test ### EXPECT \ : OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data/overlay-node/test-bus/test-unittest6/status
+OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data/overlay-node/test-bus/test-unittest6/status
+### dt-test ### EXPECT / : OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data/overlay-node/test-bus/test-unittest6/status
+### dt-test ### EXPECT \ : OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data/overlay-node/test-bus/test-unittest7/status
+/usb@fe900000: Failed to get clk index: 0 ret: -517
+OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data/overlay-node/test-bus/test-unittest7/status
+/usb@fe800000: Failed to get clk index: 0 ret: -517
+### dt-test ### EXPECT / : OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data/overlay-node/test-bus/test-unittest7/status
+/usb@fe900000: Failed to get clk index: 0 ret: -517
+### dt-test ### pass of_unittest_overlay_6():2302
+/usb@fe800000: Failed to get clk index: 0 ret: -517
+### dt-test ### EXPECT \ : OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data/overlay-node/test-bus/test-unittest8/status
+OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data/overlay-node/test-bus/test-unittest8/status
+### dt-test ### EXPECT / : OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data/overlay-node/test-bus/test-unittest8/status
+### dt-test ### EXPECT \ : OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data/overlay-node/test-bus/test-unittest8/property-foo
+/usb@fe900000: Failed to get clk index: 0 ret: -517
+OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data/overlay-node/test-bus/test-unittest8/property-foo
+/usb@fe800000: Failed to get clk index: 0 ret: -517
+### dt-test ### EXPECT / : OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data/overlay-node/test-bus/test-unittest8/property-foo
+### dt-test ### EXPECT \ : OF: overlay: node_overlaps_later_cs: #6 overlaps with #7 @/testcase-data/overlay-node/test-bus/test-unittest8
+### dt-test ### EXPECT \ : OF: overlay: overlay #6 is not topmost
+OF: overlay: node_overlaps_later_cs: #6 overlaps with #7 @/testcase-data/overlay-node/test-bus/test-unittest8
+OF: overlay: overlay #6 is not topmost
+### dt-test ### EXPECT / : OF: overlay: overlay #6 is not topmost
+### dt-test ### EXPECT / : OF: overlay: node_overlaps_later_cs: #6 overlaps with #7 @/testcase-data/overlay-node/test-bus/test-unittest8
+### dt-test ### pass of_unittest_overlay_8():2395
+/usb@fe900000: Failed to get clk index: 0 ret: -517
+### dt-test ### pass of_unittest_overlay_10():2407
+### dt-test ### pass of_unittest_overlay_10():2413
+/usb@fe800000: Failed to get clk index: 0 ret: -517
+### dt-test ### pass of_unittest_overlay_10():2419
+/usb@fe900000: Failed to get clk index: 0 ret: -517
+### dt-test ### pass of_unittest_overlay_11():2431
+### dt-test ### pass of_unittest_overlay_i2c_init():2654
+/usb@fe800000: Failed to get clk index: 0 ret: -517
+### dt-test ### pass of_unittest_overlay_i2c_init():2660
+/usb@fe900000: Failed to get clk index: 0 ret: -517
+### dt-test ### pass of_unittest_overlay():2998
+### dt-test ### EXPECT \ : OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data/overlay-node/test-bus/i2c-test-bus/test-unittest12/status
+OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data/overlay-node/test-bus/i2c-test-bus/test-unittest12/status
+/usb@fe800000: Failed to get clk index: 0 ret: -517
+### dt-test ### EXPECT / : OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data/overlay-node/test-bus/i2c-test-bus/test-unittest12/status
+/usb@fe900000: Failed to get clk index: 0 ret: -517
+### dt-test ### pass of_unittest_overlay_i2c_12():2707
+/usb@fe800000: Failed to get clk index: 0 ret: -517
+### dt-test ### EXPECT \ : OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data/overlay-node/test-bus/i2c-test-bus/test-unittest13/status
+OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data/overlay-node/test-bus/i2c-test-bus/test-unittest13/status
+### dt-test ### EXPECT / : OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data/overlay-node/test-bus/i2c-test-bus/test-unittest13/status
+### dt-test ### pass of_unittest_overlay_i2c_13():2727
+### dt-test ### EXPECT \ : i2c i2c-1: Added multiplexed i2c bus 3
+### dt-test ### EXPECT / : i2c i2c-1: Added multiplexed i2c bus 3
+### dt-test ### pass of_unittest_overlay_i2c_15():2751
+### dt-test ### pass of_unittest_overlay_gpio():1710
+### dt-test ### pass of_unittest_overlay_gpio():1713
+### dt-test ### pass of_unittest_overlay_gpio():1716
+### dt-test ### EXPECT \ : gpio-<<int>> (line-B-input): hogged as input
+### dt-test ### EXPECT \ : gpio-<<int>> (line-A-input): hogged as input
+gpio-509 (line-B-input): hogged as input
+### dt-test ### pass unittest_gpio_probe():1633
+gpio-503 (line-A-input): hogged as input
+/usb@fe900000: Failed to get clk index: 0 ret: -517
+### dt-test ### pass unittest_gpio_probe():1633
+### dt-test ### pass of_unittest_overlay_gpio():1731
+/usb@fe800000: Failed to get clk index: 0 ret: -517
+### dt-test ### EXPECT / : gpio-<<int>> (line-A-input): hogged as input
+/usb@fe900000: Failed to get clk index: 0 ret: -517
+### dt-test ### EXPECT / : gpio-<<int>> (line-B-input): hogged as input
+### dt-test ### pass of_unittest_overlay_gpio():1739
+### dt-test ### pass of_unittest_overlay_gpio():1742
+### dt-test ### EXPECT \ : gpio-<<int>> (line-D-input): hogged as input
+gpio-501 (line-D-input): hogged as input
+### dt-test ### pass unittest_gpio_probe():1633
+### dt-test ### pass of_unittest_overlay_gpio():1768
+/usb@fe800000: Failed to get clk index: 0 ret: -517
+### dt-test ### EXPECT / : gpio-<<int>> (line-D-input): hogged as input
+/usb@fe900000: Failed to get clk index: 0 ret: -517
+### dt-test ### pass of_unittest_overlay_gpio():1774
+### dt-test ### pass of_unittest_overlay_gpio():1777
+### dt-test ### pass unittest_gpio_probe():1633
+### dt-test ### pass of_unittest_overlay_gpio():1795
+### dt-test ### pass of_unittest_overlay_gpio():1798
+/usb@fe800000: Failed to get clk index: 0 ret: -517
+### dt-test ### EXPECT \ : gpio-<<int>> (line-C-input): hogged as input
+/usb@fe900000: Failed to get clk index: 0 ret: -517
+gpio-495 (line-C-input): hogged as input
+### dt-test ### pass of_unittest_overlay_gpio():1815
+### dt-test ### EXPECT / : gpio-<<int>> (line-C-input): hogged as input
+### dt-test ### pass of_unittest_overlay_gpio():1821
+/usb@fe800000: Failed to get clk index: 0 ret: -517
+### dt-test ### pass of_unittest_overlay_notify():2839
+/usb@fe900000: Failed to get clk index: 0 ret: -517
+### dt-test ### EXPECT \ : OF: overlay: overlay changeset pre-apply notifier error -16, target: /testcase-data/overlay-node/test-bus
+OF: overlay: overlay changeset pre-apply notifier error -16, target: /testcase-data/overlay-node/test-bus
+/usb@fe800000: Failed to get clk index: 0 ret: -517
+### dt-test ### pass of_unittest_overlay_notify():2860
+### dt-test ### EXPECT / : OF: overlay: overlay changeset pre-apply notifier error -16, target: /testcase-data/overlay-node/test-bus
+### dt-test ### pass of_unittest_overlay_notify():2865
+### dt-test ### EXPECT \ : OF: overlay: overlay changeset post-apply notifier error -17, target: /testcase-data/overlay-node/test-bus
+OF: overlay: overlay changeset post-apply notifier error -17, target: /testcase-data/overlay-node/test-bus
+/usb@fe900000: Failed to get clk index: 0 ret: -517
+### dt-test ### pass of_unittest_overlay_notify():2871
+/usb@fe800000: Failed to get clk index: 0 ret: -517
+### dt-test ### EXPECT / : OF: overlay: overlay changeset post-apply notifier error -17, target: /testcase-data/overlay-node/test-bus
+### dt-test ### pass of_unittest_overlay_notify():2876
+### dt-test ### pass of_unittest_overlay_notify():2880
+### dt-test ### pass of_unittest_overlay_notify():2886
+/usb@fe900000: Failed to get clk index: 0 ret: -517
+### dt-test ### pass of_unittest_overlay_notify():2889
+### dt-test ### EXPECT \ : OF: overlay: overlay changeset pre-remove notifier error -18, target: /testcase-data/overlay-node/test-bus
+OF: overlay: overlay changeset pre-remove notifier error -18, target: /testcase-data/overlay-node/test-bus
+/usb@fe800000: Failed to get clk index: 0 ret: -517
+### dt-test ### EXPECT / : OF: overlay: overlay changeset pre-remove notifier error -18, target: /testcase-data/overlay-node/test-bus
+### dt-test ### pass of_unittest_overlay_notify():2900
+### dt-test ### pass of_unittest_overlay_notify():2908
+### dt-test ### pass of_unittest_overlay_notify():2912
+/usb@fe900000: Failed to get clk index: 0 ret: -517
+### dt-test ### pass of_unittest_overlay_notify():2915
+### dt-test ### EXPECT \ : OF: overlay: overlay changeset post-remove notifier error -19, target: /testcase-data/overlay-node/test-bus
+/usb@fe800000: Failed to get clk index: 0 ret: -517
+OF: overlay: overlay changeset post-remove notifier error -19, target: /testcase-data/overlay-node/test-bus
+### dt-test ### EXPECT / : OF: overlay: overlay changeset post-remove notifier error -19, target: /testcase-data/overlay-node/test-bus
+### dt-test ### pass of_unittest_overlay_notify():2922
+### dt-test ### pass of_unittest_overlay_notify():2929
+### dt-test ### pass of_unittest_overlay_notify():2934
+/usb@fe900000: Failed to get clk index: 0 ret: -517
+### dt-test ### pass of_unittest_overlay_notify():2946
+/usb@fe800000: Failed to get clk index: 0 ret: -517
+### dt-test ### pass of_unittest_check_tree_linkage():269
+### dt-test ### pass of_unittest_check_tree_linkage():270
+### dt-test ### EXPECT \ : OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data-2/substation@100/status
+### dt-test ### EXPECT \ : OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data-2/fairway-1/status
+### dt-test ### EXPECT \ : OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data-2/fairway-1/ride@100/track@30/incline-up
+### dt-test ### EXPECT \ : OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data-2/fairway-1/ride@100/track@40/incline-up
+### dt-test ### EXPECT \ : OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data-2/lights@40000/status
+### dt-test ### EXPECT \ : OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data-2/lights@40000/color
+### dt-test ### EXPECT \ : OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data-2/lights@40000/rate
+### dt-test ### EXPECT \ : OF: overlay: WARNING: memory leak will occur if overlay removed, property: /__symbols__/hvac_2
+### dt-test ### EXPECT \ : OF: overlay: WARNING: memory leak will occur if overlay removed, property: /__symbols__/ride_200
+### dt-test ### EXPECT \ : OF: overlay: WARNING: memory leak will occur if overlay removed, property: /__symbols__/ride_200_left
+### dt-test ### EXPECT \ : OF: overlay: WARNING: memory leak will occur if overlay removed, property: /__symbols__/ride_200_right
+OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data-2/substation@100/status
+OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data-2/fairway-1/status
+OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data-2/fairway-1/ride@100/track@30/incline-up
+OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data-2/fairway-1/ride@100/track@40/incline-up
+OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data-2/lights@40000/status
+OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data-2/lights@40000/color
+OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data-2/lights@40000/rate
+OF: overlay: WARNING: memory leak will occur if overlay removed, property: /__symbols__/hvac_2
+OF: overlay: WARNING: memory leak will occur if overlay removed, property: /__symbols__/ride_200
+OF: overlay: WARNING: memory leak will occur if overlay removed, property: /__symbols__/ride_200_left
+OF: overlay: WARNING: memory leak will occur if overlay removed, property: /__symbols__/ride_200_right
+### dt-test ### EXPECT / : OF: overlay: WARNING: memory leak will occur if overlay removed, property: /__symbols__/ride_200_right
+### dt-test ### EXPECT / : OF: overlay: WARNING: memory leak will occur if overlay removed, property: /__symbols__/ride_200_left
+### dt-test ### EXPECT / : OF: overlay: WARNING: memory leak will occur if overlay removed, property: /__symbols__/ride_200
+### dt-test ### EXPECT / : OF: overlay: WARNING: memory leak will occur if overlay removed, property: /__symbols__/hvac_2
+### dt-test ### EXPECT / : OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data-2/lights@40000/rate
+### dt-test ### EXPECT / : OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data-2/lights@40000/color
+### dt-test ### EXPECT / : OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data-2/lights@40000/status
+### dt-test ### EXPECT / : OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data-2/fairway-1/ride@100/track@40/incline-up
+### dt-test ### EXPECT / : OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data-2/fairway-1/ride@100/track@30/incline-up
+### dt-test ### EXPECT / : OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data-2/fairway-1/status
+### dt-test ### EXPECT / : OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data-2/substation@100/status
+### dt-test ### pass of_unittest_overlay_high_level():3431
+### dt-test ### EXPECT \ : OF: overlay: ERROR: multiple fragments add and/or delete node /testcase-data-2/substation@100/motor-1/controller
+### dt-test ### EXPECT \ : OF: overlay: ERROR: multiple fragments add, update, and/or delete property /testcase-data-2/substation@100/motor-1/controller/name
+OF: overlay: ERROR: multiple fragments add and/or delete node /testcase-data-2/substation@100/motor-1/controller
+OF: overlay: ERROR: multiple fragments add, update, and/or delete property /testcase-data-2/substation@100/motor-1/controller/name
+### dt-test ### pass of_unittest_overlay_high_level():3438
+### dt-test ### EXPECT / : OF: overlay: ERROR: multiple fragments add, update, and/or delete property /testcase-data-2/substation@100/motor-1/controller/name
+### dt-test ### EXPECT / : OF: overlay: ERROR: multiple fragments add and/or delete node /testcase-data-2/substation@100/motor-1/controller
+### dt-test ### EXPECT \ : OF: overlay: ERROR: multiple fragments add and/or delete node /testcase-data-2/substation@100/motor-1/electric
+### dt-test ### EXPECT \ : OF: overlay: ERROR: multiple fragments add, update, and/or delete property /testcase-data-2/substation@100/motor-1/electric/rpm_avail
+### dt-test ### EXPECT \ : OF: overlay: ERROR: multiple fragments add, update, and/or delete property /testcase-data-2/substation@100/motor-1/electric/name
+OF: overlay: ERROR: multiple fragments add and/or delete node /testcase-data-2/substation@100/motor-1/electric
+OF: overlay: ERROR: multiple fragments add, update, and/or delete property /testcase-data-2/substation@100/motor-1/electric/rpm_avail
+OF: overlay: ERROR: multiple fragments add, update, and/or delete property /testcase-data-2/substation@100/motor-1/electric/name
+### dt-test ### pass of_unittest_overlay_high_level():3453
+### dt-test ### EXPECT / : OF: overlay: ERROR: multiple fragments add, update, and/or delete property /testcase-data-2/substation@100/motor-1/electric/name
+### dt-test ### EXPECT / : OF: overlay: ERROR: multiple fragments add, update, and/or delete property /testcase-data-2/substation@100/motor-1/electric/rpm_avail
+### dt-test ### EXPECT / : OF: overlay: ERROR: multiple fragments add and/or delete node /testcase-data-2/substation@100/motor-1/electric
+### dt-test ### pass of_unittest_overlay_high_level():3463
+### dt-test ### pass of_unittest_overlay_high_level():3466
+### dt-test ### end of unittest - 273 passed, 0 failed
 clk: Disabling unused clocks
 Warning: unable to open an initial console.
 Waiting for root device /dev/mmcblk0p4...

@@ -254,6 +254,8 @@
 
 &emmc_phy {
 	status = "okay";
+	clocks = <&cru SCLK_EMMC>;
+	clock-names = "emmcclk";
 };
 
 &gmac {
