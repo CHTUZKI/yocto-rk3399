@@ -1,11 +1,11 @@
 
-[19:59:04.581]收←◆\0
-[19:59:05.013]收←◆DDR Version 1.30 20230417
+[21:11:35.525]收←◆\0
+[21:11:35.957]收←◆DDR Version 1.30 20230417
 In
 soft reset
 SRX
 
-[19:59:05.057]收←◆channel 0
+[21:11:36.002]收←◆channel 0
 CS = 0
 MR0=0x18
 MR4=0x2
@@ -64,9 +64,9 @@ MR25=0x0
 channel 0 training pass!
 channel 1 training pass!
 
-[19:59:05.408]收←◆channel 0, cs 0, advanced training done
+[21:11:36.354]收←◆channel 0, cs 0, advanced training done
 
-[19:59:05.762]收←◆channel 1, cs 0, advanced training done
+[21:11:36.704]收←◆channel 1, cs 0, advanced training done
 change freq to 856MHz 1,0
 ch 0 ddrconfig = 0x101, ddrsize = 0x20
 ch 1 ddrconfig = 0x101, ddrsize = 0x20
@@ -75,21 +75,21 @@ ddr_set_rate to 328MHZ
 ddr_set_rate to 666MHZ
 ddr_set_rate to 928MHZ
 
-[19:59:06.098]收←◆channel 0, cs 0, advanced training done
+[21:11:37.041]收←◆channel 0, cs 0, advanced training done
 
-[19:59:06.446]收←◆channel 1, cs 0, advanced training done
+[21:11:37.387]收←◆channel 1, cs 0, advanced training done
 ddr_set_rate to 416MHZ, ctl_index 0
 ddr_set_rate to 856MHZ, ctl_index 1
 support 416 856 328 666 928 MHz, current 856MHz
 OUT
 
-[19:59:06.736]收←◆Boot1 Release Time: May 26 2022 18:14:35, version: 1.30
+[21:11:37.678]收←◆Boot1 Release Time: May 26 2022 18:14:35, version: 1.30
 CPUId = 0x0
-ChipType = 0x10, 404
+ChipType = 0x10, 402
 mmc_set_bus_width: 1
 EmmcClk: 375KHZ
 
-[19:59:06.832]收←◆mmc_switch index:183, value:0x2
+[21:11:37.773]收←◆mmc_switch index:183, value:0x2
 mmc_switch index:185, value:0x2
 EmmcClk: 375KHZ
 mmc_set_bus_width: 8
@@ -119,7 +119,7 @@ mmc0:cmd55,20
 mmc0:cmd1,20
 NeedKHz=200KHz, Clock=12000KHz
 SdmmcInit=0 1
-StorageInit ok = 85058
+StorageInit ok = 85030
 SecureMode = 0
 SecureInit read PBA: 0x4
 SecureInit read PBA: 0x404
@@ -141,10 +141,10 @@ LoadTrust Addr:0x6000
 No find bl30.bin
 No find bl32.bin
 Load uboot, ReadLba = 4000
-Load OK, addr=0x200000, size=0xbe9b0
-RunBL31 0x40000 @ 117658 us
-
-[19:59:06.861]收←◆NOTICE:  BL31: v1.3(release):8f40012ab
+Load OK, addr=0x200000, size=0xbe960
+RunBL31 0x40000 @ 117654 us
+
+[21:11:37.804]收←◆NOTICE:  BL31: v1.3(release):8f40012ab
 NOTICE:  BL31: Built : 14:20:53, Feb 16 2023
 NOTICE:  BL31: Rockchip release version: v1.1
 INFO:    GICv3 with legacy support detected. ARM GICV3 driver initialized in EL3
@@ -158,7 +158,7 @@ INFO:    BL31: Preparing for EL3 exit to normal world
 INFO:    Entry point address = 0x200000
 INFO:    SPSR = 0x3c9
 
-[19:59:08.312]收←◆
+[21:11:39.252]收←◆
 
 U-Boot 2022.07-rk3399 (Jul 11 2022 - 13:42:58 +0000)
 
@@ -167,26 +167,28 @@ Reset cause: RST
 Model: Firefly-RK3399 Board
 DRAM:  2 GiB
 
-[19:59:08.423]收←◆PMIC:  RK808 
+[21:11:39.365]收←◆PMIC:  RK808 
 
-[19:59:09.288]收←◆Core:  259 devices, 27 uclasses, devicetree: separate
+[21:11:40.227]收←◆Core:  259 devices, 27 uclasses, devicetree: separate
 MMC:   mmc@fe330000: 0
-Loading Environment from nowhere... OK
+Loading Environment from nowhere... 
+[21:11:40.248]收←◆OK
 In:    serial@ff1a0000
 Out:   serial@ff1a0000
 Err:   serial@ff1a0000
 Model: Firefly-RK3399 Board
 Net:   
-[19:59:09.994]收←◆eth0: ethernet@fe300000
+[21:11:40.935]收←◆eth0: ethernet@fe300000
 Hit any key to stop autoboot:  2 
-[19:59:11.002]收←◆ 1 
-[19:59:12.009]收←◆ 0 
+[21:11:41.943]收←◆ 1 
+[21:11:42.951]收←◆ 0 
 === U-Boot Debug: Direct boot mode ===
 
-[19:59:12.761]收←◆switch to partitions #0, OK
+[21:11:43.702]收←◆switch to partitions #0, OK
 mmc0(part 0) is current device
 
-[19:59:12.861]收←◆=== U-Boot Debug: MMC Info ===
+[21:11:43.767]收←◆=== U-Boot Debug:
+[21:11:43.803]收←◆ MMC Info ===
 Device: mmc@fe330000
 Manufacturer ID: 9b
 OEM: 0
@@ -215,57 +217,58 @@ Part	Start LBA	End LBA		Name
 	Partition GUID
   1	0x00004000	0x00005fff	"uboot"
 	attrs:	0x0000000000000000
-	type:	427d0000-0000-4029-8000-23060000487d
-	guid:	35720000-0000-4f1d-8000-7e1a0000125c
+	type:	1d0d0000-0000-4060-8000-6be700001257
+	guid:	0a210000-0000-4710-8000-72940000617a
   2	0x00006000	0x00007fff	"trust"
 	attrs:	0x0000000000000000
-	type:	14010000-0000-4d5e-8000-2816000013e0
-	guid:	276e0000-0000-4544-8000-01e3000036c1
+	type:	88480000-0000-4b53-8000-5a5c00002a09
+	guid:	79610000-0000-4a5e-8000-61be00006ad6
   3	0x00008000	0x000a3fff	"boot"
 	attrs:	0x0000000000000000
-	type:	f8460000-0000-4e22-8000-59a900000cf8
-	guid:	4f300000-0000-411d-8000-42d300001ebe
+	type:	fc7b0000-0000-472c-8000-597b00004ef0
+	guid:	74230000-0000-434b-8000-019600007ba9
   4	0x000a4000	0x0033d997	"root"
 	attrs:	0x0000000000000000
-	type:	35400000-0000-4874-8000-62090000398d
-	guid:	f4400000-0000-4d58-8000-40330000421d
+	type:	82370000-0000-4f30-8000-4b4e00006593
+	guid:	06370000-0000-4b00-8000-342600001b7e
 === U-Boot Debug: Filesystem Check ===
 
-[19:59:12.897]收←◆<DIR>       4096 .
+[21:11:43.839]收←◆<DIR>       4096 .
 <DIR>       4096 ..
 <SYM>         13 Image
-        11309064 Image-6.1.115
+        11175944 Image-6.1.115
 <DIR>       4096 dtb
-          111417 rk3399-firefly-aio.dtb
-          780720 u-boot-dtb-rk3399-firefly-2022.07-r0.img
+          111489 rk3399-firefly-aio.dtb
+          780640 u-boot-dtb-rk3399-firefly-2022.07-r0.img
 <SYM>         40 u-boot-dtb.bin
 Boot directory accessible
 === U-Boot Debug: Loading kernel ===
 
-[19:59:13.973]收←◆11309064 bytes read in 1058 ms (10.2 MiB/s)
-=== U-Boot Debug: Kernel loaded (size: ac9008 bytes) ===
+[21:11:44.908]收←◆11175944 bytes read in 1052 ms (10.1 MiB/s)
+=== U-Boot Debug: Kernel loaded (size: aa8808 bytes) ===
 
-[19:59:14.005]收←◆111417 bytes read in 26 ms (4.1 MiB/s)
-=== U-Boot Debug: Device tree loaded (size: 1b339 bytes) ===
+[21:11:44.957]收←◆111489 bytes read in 25 ms (4.3 MiB/s)
+=== U-Boot Debug: Device tree loaded (size: 1b381 bytes) ===
 === U-Boot Debug: Boot args set ===
 === U-Boot Debug: Booting kernel ===
-Moving Image from 0x280000 to 0x400000, end=f30000
+Moving Image from 0x280000 to 0x400000, end=f10000
 
-[19:59:14.186]收←◆## Flattened Device Tree blob at 03000000
+[21:11:45.119]收←◆## Flattened Device Tree blob at 03000000
    Booting using the fdt blob at 0x3000000
 ERROR: reserving fdt memory region failed (addr=0 size=0 flags=0)
-   Loading Device Tree to 000000007dee4000, end 000000007df02338 ... OK
+   Loading Device Tree to 000000007dee4000, end 000000007df02380 ... OK
 
 Starting kernel ...
 
-Booting Linux on physical CPU 0x0000000000 [0x410fd034]
+
+[21:11:45.142]收←◆Booting Linux on physical CPU 0x0000000000 [0x410fd034]
 Linux version 6.1.115 (oe-user@oe-host) (aarch64-poky-linux-gcc (GCC) 11.5.0, GNU ld (GNU Binutils) 2.38.20220708) #1 SMP Wed Dec 24 10:54:39 UTC 2025
 Machine model: AIO-3399J Board (Linux Opensource)
 earlycon: uart8250 at MMIO32 0x00000000ff1a0000 (options '1500000n8')
 printk: bootconsole [uart8250] enabled
 OF: fdt: Reserved memory: failed to reserve memory for node 'drm-logo@0': base 0x0000000000000000, size 0 MiB
 
-[19:59:14.295]收←◆Zone ranges:
+[21:11:45.228]收←◆Zone ranges:
   DMA      [mem 0x0000000000200000-0x000000007fffffff]
   DMA32    empty
   Normal   empty
@@ -274,7 +277,7 @@ Early memory node ranges
   node   0: [mem 0x0000000000200000-0x000000007fffffff]
 Initmem setup node 0 [mem 0x0000000000200000-0x000000007fffffff]
 
-[19:59:14.328]收←◆On node 0, zone DMA: 512 pages in unavailable ranges
+[21:11:45.258]收←◆On node 0, zone DMA: 512 pages in unavailable ranges
 psci: probing for conduit method from DT.
 psci: PSCIv1.0 detected in firmware.
 psci: Using standard PSCI v0.2 function IDs
@@ -287,14 +290,12 @@ Detected VIPT I-cache on CPU0
 CPU features: detected: GIC system register CPU interface
 alternatives: applying boot alternatives
 Built 1 zonelists, mobility grouping on.  Total pages: 515592
-Kernel command line: root=/dev/mmcblk0p4 rootwait rootfstype=ext4 console=ttyS2,1500000 earlycon=uart8250,mmio32,0xff1a0000,1500000n8 loglevel=7 debug initcall=1 rcu_nocbs=4,5 rcutree.kthread_prio=20 nohz_full=4,5 deferred_probe_timeout=30 driver_async_probe=1
-Housekeeping: nohz unsupported. Build with CONFIG_NO_HZ_FULL
-Unknown kernel command line parameters "initcall=1 rcu_nocbs=4,5 nohz_full=4,5", will be passed to user space.
+Kernel command line: root=/dev/mmcblk0p4 rootwait rootfstype=ext4 console=ttyS2,1500000 earlycon=uart8250,mmio32,0xff1a0000,1500000n8 loglevel=7 debug deferred_probe_timeout=30
 Dentry cache hash table entries: 262144 (order: 9, 2097152 bytes, linear)
 Inode-cache hash table entries: 131072 (order: 8, 1048576 bytes, linear)
 mem auto-init: stack:off, heap alloc:off, heap free:off
 
-[19:59:14.386]收←◆Memory: 2042656K/2095104K available (6976K kernel code, 868K rwdata, 1636K rodata, 1408K init, 375K bss, 52448K reserved, 0K cma-reserved)
+[21:11:45.317]收←◆Memory: 2042796K/2095104K available (6976K kernel code, 866K rwdata, 1600K rodata, 1344K init, 368K bss, 52308K reserved, 0K cma-reserved)
 SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=6, Nodes=1
 rcu: Hierarchical RCU implementation.
 rcu: 	RCU event tracing is enabled.
@@ -318,10 +319,10 @@ GICv3: GIC: PPI partition interrupt-partition-0[0] { /cpus/cpu@0[0] /cpus/cpu@1[
 GICv3: GIC: PPI partition interrupt-partition-1[1] { /cpus/cpu@100[4] /cpus/cpu@101[5] }
 rcu: srcu_init: Setting srcu_struct sizes based on contention.
 
-[19:59:14.570]收←◆rockchip_clk_register_frac_branch: could not find dclk_vop0_frac as parent of dclk_vop0, rate changes may not work
+[21:11:45.502]收←◆rockchip_clk_register_frac_branch: could not find dclk_vop0_frac as parent of dclk_vop0, rate changes may not work
 rockchip_clk_register_frac_branch: could not find dclk_vop1_frac as parent of dclk_vop1, rate changes may not work
 
-[19:59:14.713]收←◆arch_timer: cp15 timer(s) running at 24.00MHz (phys).
+[21:11:45.644]收←◆arch_timer: cp15 timer(s) running at 24.00MHz (phys).
 clocksource: arch_sys_counter: mask: 0xffffffffffffff max_cycles: 0x588fe9dc0, max_idle_ns: 440795202592 ns
 sched_clock: 56 bits at 24MHz, resolution 41ns, wraps every 4398046511097ns
 Console: colour dummy device 80x25
@@ -403,7 +404,7 @@ bus: 'gpio': add driver gpio_stub_drv
 device class 'regulator': registering
 Registering platform device 'reg-dummy'. Parent at platform
 device: 'reg-
-[19:59:14.748]收←◆dummy': device_add
+[21:11:45.679]收←◆dummy': device_add
 bus: 'platform': add device reg-dummy
 PM: Adding info for platform:reg-dummy
 bus: 'platform': add driver reg-dummy
@@ -484,7 +485,7 @@ platform fe330000.mmc: Not linking /clock-controller@ff760000 - might never beco
 mmc@fe330000 Dropping the fwnode link to clock-controller@ff760000
 platform fe330000.mmc: Not linking /interrupt-controller@fee00000 - might never become dev
 mmc@fe330000
-[19:59:14.780]收←◆ Dropping the fwnode link to interrupt-controller@fee00000
+[21:11:45.711]收←◆ Dropping the fwnode link to interrupt-controller@fee00000
 device: 'fe430000.debug': device_add
 bus: 'amba': add device fe430000.debug
 PM: Adding info for amba:fe430000.debug
@@ -550,7 +551,7 @@ tsadc@ff260000 Linked as a fwnode consumer to clock-controller@ff760000
 tsadc@ff260000 Linked as a fwnode consumer to otp-pin
 tsadc@ff260000 Linked as a fwnode consumer to otp-out
 platform ff260000.tsadc: Not 
-[19:59:14.814]收←◆linking /clock-controller@ff760000 - might never become dev
+[21:11:45.745]收←◆linking /clock-controller@ff760000 - might never become dev
 tsadc@ff260000 Dropping the fwnode link to clock-controller@ff760000
 platform ff260000.tsadc: Not linking /interrupt-controller@fee00000 - might never become dev
 tsadc@ff260000 Dropping the fwnode link to interrupt-controller@fee00000
@@ -638,7 +639,8 @@ power-domain@31 Linked as a fwnode consumer to clock-controller@ff760000
 power-domain@32 Linked as a fwnode consumer to clock-controller@ff760000
 power-domain@35 Linked as a fwnode consumer to clock-controller@ff760000
 power-domain@25 Linked as a fwnode consumer to clock-controller@ff760000
-power-domain@23 Linked as a fwnode consumer to clock-controller@ff760000
+power-domain@23 Linked as a fwnode consu
+[21:11:45.776]收←◆mer to clock-controller@ff760000
 power-domain@22 Linked as a fwnode consumer to clock-controller@ff760000
 power-domain@14 Linked as a fwnode consumer to clock-controller@ff760000
 power-domain@27 Linked as a fwnode consumer to clock-controller@ff760000
@@ -682,7 +684,8 @@ platform ff310000.power-management:power-controller: Not linking /clock-controll
 platform ff310000.power-management:power-controller: Not linking /clock-controller@ff760000 - might never become dev
 platform ff310000.power-management:power-controller: Not linking /clock-controller@ff760000 - might never become dev
 platform ff310000.power-management:power-controller: Not linking /clock-controller@ff760000 - might never become dev
-platform ff310000.power-management:power-controller: Not linking /clock-controller@ff760000 - might never become dev
+platform ff310000.power-management:power-controller: Not linking /clock-controller@ff760000 - might
+[21:11:45.810]收←◆ never become dev
 platform ff310000.power-management:power-controller: Not linking /clock-controller@ff760000 - might never become dev
 platform ff310000.power-management:power-controller: Not linking /clock-controller@ff760000 - might never become dev
 platform ff310000.power-management:power-controller: Not linking /clock-controller@ff760000 - might never become dev
@@ -734,7 +737,7 @@ pmic@1b Linked as a fwnode consumer to vcc1-supply
 pmic@1b Linked as a fwnode consumer to vcc3v3-sys
 platform ff3c0000.i2c: Not linking /interrupt-controller@fee00000 - might never become dev
 i2c@ff3c0000 Dropping the fwnode link to interrupt-control
-[19:59:14.911]收←◆ler@fee00000
+[21:11:45.842]收←◆ler@fee00000
 platform ff3c0000.i2c: Not linking /clock-controller@ff750000 - might never become dev
 i2c@ff3c0000 Dropping the fwnode link to clock-controller@ff750000
 device: 'ff3d0000.i2c': device_add
@@ -796,7 +799,7 @@ vepu@ff650000 Dropping the fwnode link to power-controller
 platform ff650000.vepu: Not linking /clock-controller@ff760000 - might never become dev
 vepu@ff650000 Dropping the fwnode link to clock-controller@ff760000
 platform ff650000.vepu: Not linking
-[19:59:14.943]收←◆ /interrupt-controller@fee00000 - might never become dev
+[21:11:45.874]收←◆ /interrupt-controller@fee00000 - might never become dev
 vepu@ff650000 Dropping the fwnode link to interrupt-controller@fee00000
 device: 'ff650400.vdpu': device_add
 bus: 'platform': add device ff650400.vdpu
@@ -854,7 +857,8 @@ devices_kset: Moving ff660480.iommu to end of list
 PM: Moving platform:ff660480.iommu to end of list
 platform ff660480.iommu: Linked as a consumer to ff310000.power-management:power-controller
 iommu@ff660480 Dropping the fwnode link to power-controller
-platform ff660480.iommu: Not linking /clock-controller@ff760000 - might never become dev
+platform ff660480.iommu: Not linking /clock-controller@ff7600
+[21:11:45.906]收←◆00 - might never become dev
 iommu@ff660480 Dropping the fwnode link to clock-controller@ff760000
 platform ff660480.iommu: Not linking /interrupt-controller@fee00000 - might never become dev
 iommu@ff660480 Dropping the fwnode link to interrupt-controller@fee00000
@@ -914,7 +918,8 @@ bus: 'amba': add device ff6d0000.dma-controller
 PM: Adding info for amba:ff6d0000.dma-controller
 dma-controller@ff6d0000 Linked as a fwnode consumer to interrupt-controller@fee00000
 dma-controller@ff6d0000 Linked as a fwnode consumer to clock-controller@ff760000
-amba ff6d0000.dma-controller: Not linking /clock-controller@ff760000 - might never become dev
+amba ff6d
+[21:11:45.937]收←◆0000.dma-controller: Not linking /clock-controller@ff760000 - might never become dev
 dma-controller@ff6d0000 Dropping the fwnode link to clock-controller@ff760000
 amba ff6d0000.dma-controller: Not linking /interrupt-controller@fee00000 - might never become dev
 dma-controller@ff6d0000 Dropping the fwnode link to interrupt-controller@fee00000
@@ -972,7 +977,8 @@ platform ff770000.syscon:pvtm: Not linking /clock-controller@ff760000 - might ne
 platform ff770000.syscon:pvtm: Not linking /clock-controller@ff760000 - might never become dev
 platform ff770000.syscon:pvtm: Not linking /clock-controller@ff760000 - might never become dev
 device: 'ff800000.phy': device_add
-bus: 'platform': add device ff800000.phy
+
+[21:11:45.969]收←◆bus: 'platform': add device ff800000.phy
 PM: Adding info for platform:ff800000.phy
 phy@ff800000 Linked as a fwnode consumer to clock-controller@ff760000
 phy@ff800000 Linked as a fwnode consumer to power-controller
@@ -1032,7 +1038,7 @@ platform ff880000.i2s: Linked as a consumer to ff310000.power-management:power-c
 i2s@ff880000 Dropping the fwnode link to power-controller
 platform ff880000.i2s: Not linking /clock-controller@ff760000 - might never become dev
 i2s@ff880000 Dropp
-[19:59:15.070]收←◆ing the fwnode link to clock-controller@ff760000
+[21:11:46.001]收←◆ing the fwnode link to clock-controller@ff760000
 platform ff880000.i2s: Not linking /interrupt-controller@fee00000 - might never become dev
 i2s@ff880000 Dropping the fwnode link to interrupt-controller@fee00000
 device: 'ff890000.i2s': device_add
@@ -1093,7 +1099,7 @@ devices_kset: Moving ff8f3f00.iommu to end of list
 PM: Moving platform:ff8f3f00.iommu to end of list
 platform ff8f3f00.iommu: Linked as a consumer to ff310000.power-management:power-controller
 iommu@ff8f3f
-[19:59:15.102]收←◆00 Dropping the fwnode link to power-controller
+[21:11:46.033]收←◆00 Dropping the fwnode link to power-controller
 platform ff8f3f00.iommu: Not linking /clock-controller@ff760000 - might never become dev
 iommu@ff8f3f00 Dropping the fwnode link to clock-controller@ff760000
 platform ff8f3f00.iommu: Not linking /interrupt-controller@fee00000 - might never become dev
@@ -1154,7 +1160,7 @@ device: 'platform:ff900000.vop--platform:ff940000.hdmi': device_add
 platform ff940000.hdmi: Linked as a sync state only consumer to ff900000.vop
 hdmi@ff940000 Dropping the fwnode link to vop@ff900000
 device: 'platform:ff310000.power-management:power-controller--platform:ff9
-[19:59:15.134]收←◆40000.hdmi': device_add
+[21:11:46.065]收←◆40000.hdmi': device_add
 devices_kset: Moving ff940000.hdmi to end of list
 PM: Moving platform:ff940000.hdmi to end of list
 devices_kset: Moving ff8f0000.vop to end of list
@@ -1225,7 +1231,7 @@ bus: 'platform': add device ffa8f800.nocp-vio1-msch1
 PM: Adding info for platform:ffa8f800.nocp-vio1-msch1
 device: 'rockchip-system-monitor': device_add
 b
-[19:59:15.172]收←◆us: 'platform': add device rockchip-system-monitor
+[21:11:46.102]收←◆us: 'platform': add device rockchip-system-monitor
 PM: Adding info for platform:rockchip-system-monitor
 device: 'pinctrl': device_add
 bus: 'platform': add device pinctrl
@@ -1285,7 +1291,7 @@ rockchip-gpio ff730000.gpio: no pinctrl handle
 Note: Use default GPIO_TYPE_V1!
 device: 'gpiochip1': device_add
 bus: 'gpio': add devi
-[19:59:15.203]收←◆ce gpiochip1
+[21:11:46.135]收←◆ce gpiochip1
 PM: Adding info for gpio:gpiochip1
 rockchip-gpio ff730000.gpio: probed /pinctrl/gpio@ff730000
 driver: 'rockchip-gpio': driver_bound: bound to device 'ff730000.gpio'
@@ -1353,7 +1359,7 @@ i2s@ff880000 Dropping the fwnode link to i2s0-8ch-bus-bclk-off
 i2s@ff890000 Linked as a fwnode consumer to pinctrl
 i2s@ff890000 Dropping the fwnode link to i2s1-2ch-bus
 spdif@ff8
-[19:59:15.235]收←◆70000 Linked as a fwnode consumer to pinctrl
+[21:11:46.166]收←◆70000 Linked as a fwnode consumer to pinctrl
 spdif@ff870000 Dropping the fwnode link to spdif-bus-1
 tsadc@ff260000 Linked as a fwnode consumer to pinctrl
 tsadc@ff260000 Dropping the fwnode link to otp-pin
@@ -1426,7 +1432,8 @@ PM: Moving platform:ff3d0000.i2c to end of list
 platform ff3d0000.i2c: Linked as a consumer to pinctrl
 i2c@ff3d0000 Dropping the fwnode link to pinctrl
 devices_kset: Moving ff3c0000.i2c to end of list
-PM: Moving platform:ff3c0000.i2c to end of list
+PM: Moving platform:ff3c0000.i2c to e
+[21:11:46.199]收←◆nd of list
 platform ff3c0000.i2c: Linked as a consumer to pinctrl
 i2c@ff3c0000 Dropping the fwnode link to pinctrl
 bus: 'platform': really_probe: bound device pinctrl to driver rockchip-pinctrl
@@ -1498,7 +1505,8 @@ device: 'vcc1-supply': device_add
 bus: 'platform': add device vcc1-supply
 PM: Adding info for platform:vcc1-supply
 device: 'platform:vcc1-supply--platform:ff3c0000.i2c': device_add
-platform ff3c0000.i2c: Linked as a sync state only consumer to vcc1-supply
+platform ff3c0000.i2c: Linked as a sync state only consumer to vcc1-
+[21:11:46.231]收←◆supply
 device: 'vdd-log': device_add
 bus: 'platform': add device vdd-log
 PM: Adding info for platform:vdd-log
@@ -1573,7 +1581,8 @@ platform leds: Linked as a sync state only consumer to pinctrl
 device: 'platform:ff780000.gpio--platform:leds': device_add
 platform leds: Linked as a sync state only consumer to ff780000.gpio
 device: 'usb-phy-supply': device_add
-bus: 'platform': add device usb-phy-supply
+bu
+[21:11:46.267]收←◆s: 'platform': add device usb-phy-supply
 PM: Adding info for platform:usb-phy-supply
 device: 'sdmmc-pwrseq': device_add
 bus: 'platform': add device sdmmc-pwrseq
@@ -1650,7 +1659,7 @@ vcc-phy-regulator: 3300 mV, enabled
 device: 'regulator.4': device_add
 PM: Adding info for No Bus:regulator.4
 reg-fixed-voltage vcc-phy-regulator: vcc-phy-regulator supplying 
-[19:59:15.369]收←◆3300000uV
+[21:11:46.300]收←◆3300000uV
 driver: 'reg-fixed-voltage': driver_bound: bound to device 'vcc-phy-regulator'
 bus: 'platform': really_probe: bound device vcc-phy-regulator to driver reg-fixed-voltage
 bus: 'platform': __driver_probe_device: matched device vcc1-supply with driver reg-fixed-voltage
@@ -1718,7 +1727,7 @@ bus: 'mdio_bus': add driver Generic Clause 45 PHY
 bus: 'mdio_bus': add driver Generic PHY
 bus: 'usb': registered
 bus: 'usb': a
-[19:59:15.405]收←◆dd driver usbfs
+[21:11:46.336]收←◆dd driver usbfs
 usbcore: registered new interface driver usbfs
 bus: 'usb': add driver hub
 usbcore: registered new interface driver hub
@@ -1841,7 +1850,7 @@ device: 'tty28': device_add
 PM: Adding info for No Bus:tty28
 device: 'tty29': device_add
 PM:
-[19:59:15.443]收←◆ Adding info for No Bus:tty29
+[21:11:46.374]收←◆ Adding info for No Bus:tty29
 device: 'tty30': device_add
 PM: Adding info for No Bus:tty30
 device: 'tty31': device_add
@@ -1949,7 +1958,7 @@ PM: Adding info for clockevents:clockevent4
 device: 'clockevent5': device_add
 bus: 'clockevents': add device clockevent5
 PM: Adding info for clockevents:clockevent
-[19:59:15.480]收←◆5
+[21:11:46.410]收←◆5
 device: 'broadcast': device_add
 bus: 'clockevents': add device broadcast
 PM: Adding info for clockevents:broadcast
@@ -2007,7 +2016,7 @@ driver: 'rockchip-pcie-phy': driver_bound: bound to device 'ff770000.syscon:pcie
 bus: 'platform': really_probe: bound device ff770000.syscon:pcie-phy to driver rockchip-pcie-phy
 bus: 'platform': add driver rockchip-typec-phy
 bus: 'platfor
-[19:59:15.516]收←◆m': __driver_probe_device: matched device ff800000.phy with driver rockchip-typec-phy
+[21:11:46.446]收←◆m': __driver_probe_device: matched device ff800000.phy with driver rockchip-typec-phy
 bus: 'platform': really_probe: probing driver rockchip-typec-phy with device ff800000.phy
 rockchip-typec-phy ff800000.phy: no pinctrl handle
 rockchip-typec-phy ff800000.phy: adding to PM domain tcpd1
@@ -2101,7 +2110,7 @@ device: 'ptyqb': device_add
 PM: Adding info for No Bus:ptyqb
 device: 'ptyqc': device_add
 PM: Addin
-[19:59:15.553]收←◆g info for No Bus:ptyqc
+[21:11:46.483]收←◆g info for No Bus:ptyqc
 device: 'ptyqd': device_add
 PM: Adding info for No Bus:ptyqd
 device: 'ptyqe': device_add
@@ -2228,7 +2237,7 @@ device: 'ptyua': device_add
 PM: Adding info for No Bus:ptyua
 device: 'ptyub': device_add
 PM: Addi
-[19:59:15.588]收←◆ng info for No Bus:ptyub
+[21:11:46.519]收←◆ng info for No Bus:ptyub
 device: 'ptyuc': device_add
 PM: Adding info for No Bus:ptyuc
 device: 'ptyud': device_add
@@ -2355,7 +2364,7 @@ device: 'ptyy9': device_add
 PM: Adding info for No Bus:ptyy9
 device: 'ptyya': device_add
 PM: Add
-[19:59:15.624]收←◆ing info for No Bus:ptyya
+[21:11:46.556]收←◆ing info for No Bus:ptyya
 device: 'ptyyb': device_add
 PM: Adding info for No Bus:ptyyb
 device: 'ptyyc': device_add
@@ -2482,7 +2491,7 @@ device: 'ptyc8': device_add
 PM: Adding info for No Bus:ptyc8
 device: 'ptyc9': device_add
 PM: Ad
-[19:59:15.661]收←◆ding info for No Bus:ptyc9
+[21:11:46.592]收←◆ding info for No Bus:ptyc9
 device: 'ptyca': device_add
 PM: Adding info for No Bus:ptyca
 device: 'ptycb': device_add
@@ -2609,7 +2618,7 @@ device: 'ttyq7': device_add
 PM: Adding info for No Bus:ttyq7
 device: 'ttyq8': device_add
 PM: A
-[19:59:15.698]收←◆dding info for No Bus:ttyq8
+[21:11:46.628]收←◆dding info for No Bus:ttyq8
 device: 'ttyq9': device_add
 PM: Adding info for No Bus:ttyq9
 device: 'ttyqa': device_add
@@ -2736,7 +2745,7 @@ device: 'ttyu6': device_add
 PM: Adding info for No Bus:ttyu6
 device: 'ttyu7': device_add
 PM: 
-[19:59:15.734]收←◆Adding info for No Bus:ttyu7
+[21:11:46.663]收←◆Adding info for No Bus:ttyu7
 device: 'ttyu8': device_add
 PM: Adding info for No Bus:ttyu8
 device: 'ttyu9': device_add
@@ -2862,7 +2871,8 @@ PM: Adding info for No Bus:ttyy4
 device: 'ttyy5': device_add
 PM: Adding info for No Bus:ttyy5
 device: 'ttyy6': device_add
-PM: Adding info for No Bus:ttyy6
+PM:
+[21:11:46.700]收←◆ Adding info for No Bus:ttyy6
 device: 'ttyy7': device_add
 PM: Adding info for No Bus:ttyy7
 device: 'ttyy8': device_add
@@ -2988,7 +2998,8 @@ PM: Adding info for No Bus:ttyc3
 device: 'ttyc4': device_add
 PM: Adding info for No Bus:ttyc4
 device: 'ttyc5': device_add
-PM: Adding info for No Bus:ttyc5
+PM
+[21:11:46.735]收←◆: Adding info for No Bus:ttyc5
 device: 'ttyc6': device_add
 PM: Adding info for No Bus:ttyc6
 device: 'ttyc7': device_add
@@ -3095,7 +3106,8 @@ dw-apb-uart ff180000.serial: no idle pinctrl state
 ff180000.serial: ttyS0 at MMIO 0xff180000 (irq = 31, base_baud = 1500000) is a 16550A
 device: 'ttyS0': device_add
 PM: Adding info for No Bus:ttyS0
-driver: 'dw-apb-uart': driver_bound: bound to device 'ff180000.serial'
+driver: 'dw-apb-uart': driver_bound: bound to device 'ff1800
+[21:11:46.769]收←◆00.serial'
 bus: 'platform': really_probe: bound device ff180000.serial to driver dw-apb-uart
 bus: 'platform': add driver smccc_trng
 led_vk2c21_init
@@ -3151,10 +3163,10 @@ rk_iommu ff8f3f00.iommu: Clock hclk_vop1 con_id (null) managed by runtime PM.
 device: 'ff8f3f00.iommu': device_add
 PM: Adding info for No Bus:ff8f3f00.iommu
 driver: 'rk_iommu': driver_bound: bound to device 'ff8f3f00.iommu'
-bus: 'platform': really_probe: bound device ff8f3f
-[19:59:15.856]收←◆00.iommu to driver rk_iommu
+bus: 'platform': really_probe: bound device ff8f3f00.iommu to driver rk_iommu
 bus: 'platform': __driver_probe_device: matched device ff903f00.iommu with driver rk_iommu
-bus: 'platform': really_probe: probing driver rk_iommu with device ff903f00.iommu
+bus: 'platform': r
+[21:11:46.803]收←◆eally_probe: probing driver rk_iommu with device ff903f00.iommu
 rk_iommu ff903f00.iommu: no pinctrl handle
 rk_iommu ff903f00.iommu: adding to PM domain vopb
 rk_iommu ff903f00.iommu: genpd_add_device()
@@ -3238,7 +3250,8 @@ bus: 'i2c': __driver_probe_device: matched device 0-0040 with driver fan53555-re
 bus: 'i2c': really_probe: probing driver fan53555-regulator with device 0-0040
 fan53555-regulator 0-0040: no default pinctrl state
 fan53555-regulator 0-0040: probe
-rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x40
+rk3x-i2c f
+[21:11:46.841]收←◆f3c0000.i2c: Combined write/read from addr 0x40
 rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
 rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
 rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x40
@@ -3318,7 +3331,7 @@ fan53555-regulator 0-0041: no default pinctrl state
 fan53555-regulator 0-0041: probe
 rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x41
 r
-[19:59:15.950]收←◆k3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
+[21:11:46.879]收←◆k3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
 rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
 rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x41
 rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
@@ -3399,7 +3412,7 @@ PM: Moving i2c:0-001b to end of list
 devices_kset: Moving sdmmc-pwrseq to end of list
 PM: Moving platform:sdmmc-pwrseq to end of list
 devices_kset: Moving sdio-pwrseq t
-[19:59:15.991]收←◆o end of list
+[21:11:46.921]收←◆o end of list
 PM: Moving platform:sdio-pwrseq to end of list
 i2c 0-001b: Linked as a consumer to vcc1-supply
 pmic@1b Dropping the fwnode link to vcc1-supply
@@ -3481,7 +3494,7 @@ bus: 'platform': __driver_probe_device: matched device rk808-clkout with driver 
 bus: 'platform': really_probe: probing driver rk808-clkout with device rk808-clkout
 rk808-clkout rk808-clkout: no default pinctrl state
 driver: 'rk8
-[19:59:16.035]收←◆08-clkout': driver_bound: bound to device 'rk808-clkout'
+[21:11:46.962]收←◆08-clkout': driver_bound: bound to device 'rk808-clkout'
 bus: 'platform': really_probe: bound device rk808-clkout to driver rk808-clkout
 Registering platform device 'rk808-regulator'. Parent at 0-001b
 device: 'rk808-regulator': device_add
@@ -3562,7 +3575,7 @@ rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
 rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
 vcc1v8_dvp: 1800 mV, enabled
 device: 're
-[19:59:16.075]收←◆gulator.16': device_add
+[21:11:47.001]收←◆gulator.16': device_add
 PM: Adding info for No Bus:regulator.16
 rk808 0-001b: Looking up vcc6-supply from device tree
 vcc2v8_dvp: supplied by vcc3v3-sys
@@ -3650,7 +3663,7 @@ io-domains Dropping the fwnode link to LDO_REG7
 io-domains Dropping the fwnode link to LDO_REG8
 io-domains Linked as a fwnode consumer to pmic@1b
 io-domains Dropping the fwnode link to LDO_REG8
-[19:59:16.108]收←◆
+[21:11:47.035]收←◆
 device: 'i2c:0-001b--platform:ff320000.syscon:io-domains': device_add
 devices_kset: Moving ff320000.syscon:io-domains to end of list
 PM: Moving platform:ff320000.syscon:io-domains to end of list
@@ -3719,7 +3732,8 @@ bus: 'platform': __driver_probe_device: matched device sdmmc-pwrseq with driver 
 bus: 'platform': really_probe: probing driver pwrseq_simple with device sdmmc-pwrseq
 pwrseq_simple sdmmc-pwrseq: no init pinctrl state
 pwrseq_simple sdmmc-pwrseq: no sleep pinctrl state
-pwrseq_simple sdmmc-pwrseq: no idle pinctrl state
+pwrseq_simple sdmmc-pwrseq: no i
+[21:11:47.074]收←◆dle pinctrl state
 driver: 'pwrseq_simple': driver_bound: bound to device 'sdmmc-pwrseq'
 bus: 'platform': really_probe: bound device sdmmc-pwrseq to driver pwrseq_simple
 bus: 'platform': add driver pwrseq_emmc
@@ -3769,808 +3783,20 @@ devices_kset: Moving fe330000.mmc to end of list
 PM: Moving platform:fe330000.mmc to end of list
 Segment Routing with IPv6
 sdhci-arasan fe330000.mmc: Linked as a consumer to regulator.1
-sdhci-arasan fe330000.mmc: Looking up vqmmc-supply from device tree
 In-situ OAM (IOAM) with IPv6
-device: 'regulator:regulator.15--platform:fe330000.mmc': device_add
+sdhci-arasan fe330000.mmc: Looking up vqmmc-supply from device tree
 sit: IPv6, IPv4 and MPLS over IPv4 tunneling driver
-devices_kset: Moving fe330000.mmc to end of list
+device: 'regulator:regulator.15--platform:fe330000.mmc': device_add
 device: 'sit0': device_add
-PM: Moving platform:fe330000.mmc to end of list
+devices_kset: Moving fe330000.mmc to end of list
 PM: Adding info for No Bus:sit0
+PM: Moving platform:fe330000.mmc to end of list
 sdhci-arasan fe330000.mmc: Linked as a consumer to regulator.15
 device: 'mmc0': device_add
 PM: Adding info for No Bus:mmc0
 
-[19:59:16.187]收←◆platform ff8f0000.vop: Relaxing link with ff940000.hdmi
+[21:11:47.097]收←◆platform ff8f0000.vop: Relaxing link with ff940000.hdmi
 platform vdd-log: Relaxing link with ff420020.pwm
 mmc0: SDHCI controller on fe330000.mmc [fe330000.mmc] using ADMA
-### dt-test ### start of unittest - you will see error messages
-device: 'wakeup2': device_add
-driver: 'sdhci-arasan': driver_bound: bound to device 'fe330000.mmc'
-### dt-test ### EXPECT \ : Duplicate name in testcase-data, renamed to "duplicate-name#1"
-bus: 'platform': really_probe: bound device fe330000.mmc to driver sdhci-arasan
-Duplicate name in testcase-data, renamed to "duplicate-name#1"
-sdhci-arasan fe330000.mmc: driver sdhci-arasan async attach completed: 0
-### dt-test ### EXPECT / : Duplicate name in testcase-data, renamed to "duplicate-name#1"
-### dt-test ### pass of_unittest_check_tree_linkage():269
-### dt-test ### pass of_unittest_check_tree_linkage():270
-### dt-test ### pass of_unittest_check_phandles():378
-### dt-test ### pass of_unittest_find_node_by_name():79
-### dt-test ### pass of_unittest_find_node_by_name():86
-### dt-test ### pass of_unittest_find_node_by_name():90
-### dt-test ### pass of_unittest_find_node_by_name():97
-### dt-test ### pass of_unittest_find_node_by_name():104
-### dt-test ### pass of_unittest_find_node_by_name():108
-### dt-test ### pass of_unittest_find_node_by_name():114
-### dt-test ### pass of_unittest_find_node_by_name():118
-### dt-test ### pass of_unittest_find_node_by_name():122
-### dt-test ### pass of_unittest_find_node_by_name():126
-### dt-test ### pass of_unittest_find_node_by_name():131
-### dt-test ### pass of_unittest_find_node_by_name():136
-### dt-test ### pass of_unittest_find_node_by_name():141
-### dt-test ### pass of_unittest_find_node_by_name():146
-### dt-test ### pass of_unittest_find_node_by_name():152
-### dt-test ### pass of_unittest_find_node_by_name():157
-### dt-test ### pass of_unittest_find_node_by_name():162
-### dt-test ### pass of_unittest_find_node_by_name():167
-### dt-test ### pass of_unittest_dynamic():193
-### dt-test ### pass of_unittest_dynamic():200
-### dt-test ### pass of_unittest_dynamic():206
-### dt-test ### pass of_unittest_dynamic():214
-### dt-test ### pass of_unittest_dynamic():218
-### dt-test ### pass of_unittest_dynamic():226
-### dt-test ### pass of_unittest_dynamic():228
-### dt-test ### pass of_unittest_parse_phandle_with_args():401
-### dt-test ### pass of_unittest_parse_phandle_with_args():455
-### dt-test ### pass of_unittest_parse_phandle_with_args():455
-### dt-test ### pass of_unittest_parse_phandle_with_args():455
-### dt-test ### pass of_unittest_parse_phandle_with_args():455
-### dt-test ### pass of_unittest_parse_phandle_with_args():455
-### dt-test ### pass of_unittest_parse_phandle_with_args():455
-### dt-test ### pass of_unittest_parse_phandle_with_args():455
-### dt-test ### pass of_unittest_parse_phandle_with_args():455
-### dt-test ### pass of_unittest_parse_phandle_with_args():466
-### dt-test ### pass of_unittest_parse_phandle_with_args():469
-### dt-test ### EXPECT \ : OF: /testcase-data/phandle-tests/consumer-a: could not get #phandle-cells-missing for /testcase-data/phandle-tests/provider1
-OF: /testcase-data/phandle-tests/consumer-a: could not get #phandle-cells-missing for /testcase-data/phandle-tests/provider1
-### dt-test ### EXPECT / : OF: /testcase-data/phandle-tests/consumer-a: could not get #phandle-cells-missing for /testcase-data/phandle-tests/provider1
-### dt-test ### pass of_unittest_parse_phandle_with_args():483
-### dt-test ### EXPECT \ : OF: /testcase-data/phandle-tests/consumer-a: could not get #phandle-cells-missing for /testcase-data/phandle-tests/provider1
-OF: /testcase-data/phandle-tests/consumer-a: could not get #phandle-cells-missing for /testcase-data/phandle-tests/provider1
-### dt-test ### EXPECT / : OF: /testcase-data/phandle-tests/consumer-a: could not get #phandle-cells-missing for /testcase-data/phandle-tests/provider1
-### dt-test ### pass of_unittest_parse_phandle
-[19:59:16.219]收←◆_with_args():494
-### dt-test ### EXPECT \ : OF: /testcase-data/phandle-tests/consumer-a: could not find phandle
-OF: /testcase-data/phandle-tests/consumer-a: could not find phandle 12345678
-### dt-test ### EXPECT / : OF: /testcase-data/phandle-tests/consumer-a: could not find phandle
-### dt-test ### pass of_unittest_parse_phandle_with_args():508
-### dt-test ### EXPECT \ : OF: /testcase-data/phandle-tests/consumer-a: could not find phandle
-OF: /testcase-data/phandle-tests/consumer-a: could not find phandle 12345678
-### dt-test ### EXPECT / : OF: /testcase-data/phandle-tests/consumer-a: could not find phandle
-### dt-test ### pass of_unittest_parse_phandle_with_args():519
-### dt-test ### EXPECT \ : OF: /testcase-data/phandle-tests/consumer-a: #phandle-cells = 3 found 1
-OF: /testcase-data/phandle-tests/consumer-a: #phandle-cells = 3 found 1
-### dt-test ### EXPECT / : OF: /testcase-data/phandle-tests/consumer-a: #phandle-cells = 3 found 1
-### dt-test ### pass of_unittest_parse_phandle_with_args():533
-### dt-test ### EXPECT \ : OF: /testcase-data/phandle-tests/consumer-a: #phandle-cells = 3 found 1
-OF: /testcase-data/phandle-tests/consumer-a: #phandle-cells = 3 found 1
-### dt-test ### EXPECT / : OF: /testcase-data/phandle-tests/consumer-a: #phandle-cells = 3 found 1
-### dt-test ### pass of_unittest_parse_phandle_with_args():544
-### dt-test ### pass of_unittest_parse_phandle_with_args_map():575
-### dt-test ### pass of_unittest_parse_phandle_with_args_map():641
-### dt-test ### pass of_unittest_parse_phandle_with_args_map():641
-### dt-test ### pass of_unittest_parse_phandle_with_args_map():641
-### dt-test ### pass of_unittest_parse_phandle_with_args_map():641
-### dt-test ### pass of_unittest_parse_phandle_with_args_map():641
-### dt-test ### pass of_unittest_parse_phandle_with_args_map():641
-### dt-test ### pass of_unittest_parse_phandle_with_args_map():641
-### dt-test ### pass of_unittest_parse_phandle_with_args_map():641
-### dt-test ### pass of_unittest_parse_phandle_with_args_map():641
-### dt-test ### pass of_unittest_parse_phandle_with_args_map():652
-### dt-test ### EXPECT \ : OF: /testcase-data/phandle-tests/consumer-b: could not get #phandle-missing-cells for /testcase-data/phandle-tests/provider1
-OF: /testcase-data/phandle-tests/consumer-b: could not get #phandle-missing-cells for /testcase-data/phandle-tests/provider1
-### dt-test ### EXPECT / : OF: /testcase-data/phandle-tests/consumer-b: could not get #phandle-missing-cells for /testcase-data/phandle-tests/provider1
-### dt-test ### pass of_unittest_parse_phandle_with_args_map():665
-### dt-test ### EXPECT \ : OF: /testcase-data/phandle-tests/consumer-b: could not find phandle 12345678
-OF: /testcase-data/phandle-tests/consumer-b: could not find phandle 12345678
-### dt-test ### EXPECT / : OF: /testcase-data/phandle-tests/consumer-b: could not find phandle 12345678
-### dt-test ### pass of_unittest_parse_phandle_with_args_map():678
-### dt-test ### EXPECT \ : OF: /testcase-data/phandle-tests/consumer-b: #phandle-cells = 2 found 1
-OF: /testcase-data/phandle-tests/consumer-b: #phandle-cells = 2 found 1
-### dt-test ### EXPECT / : OF: /testcase-data/phandle-tests/consumer-b: #phandle-cells = 2 found 1
-### dt-test ### pass of_unittest_parse_phandle_with_args_map():691
-### dt-test ### pass of_unittest_parse_phandle_with_args_map():694
-### dt-test ### pass of_unittest_parse_phandle_with_args_map():694
-### dt-test ### pass of_unittest_parse_phandle_with_args_map():694
-### dt-test ### pass of_unittest_parse_phandle_with_args_map():694
-### dt-test ### pass of_unittest_parse_phandle_with_args_map():694
-### dt-test ### pass of_unittest_parse_phandle_with_args_map():694
-### dt-test ### pass of_unittest_printf_one():293
-### dt-test ### pass of_unittest_printf_one():303
-### dt-test ### pass of_unittest_printf_one():303
-### dt-test ### pass of_unittest_printf_one():293
-### dt-test ### pass of_unittest_printf_one():303
-
-[19:59:16.250]收←◆### dt-test ### pass of_unittest_printf_one():303
-### dt-test ### pass of_unittest_printf_one():293
-### dt-test ### pass of_unittest_printf_one():303
-### dt-test ### pass of_unittest_printf_one():303
-### dt-test ### pass of_unittest_printf_one():293
-### dt-test ### pass of_unittest_printf_one():303
-### dt-test ### pass of_unittest_printf_one():303
-### dt-test ### pass of_unittest_printf_one():293
-### dt-test ### pass of_unittest_printf_one():303
-### dt-test ### pass of_unittest_printf_one():303
-### dt-test ### pass of_unittest_printf_one():293
-### dt-test ### pass of_unittest_printf_one():303
-### dt-test ### pass of_unittest_printf_one():303
-### dt-test ### pass of_unittest_printf_one():293
-### dt-test ### pass of_unittest_printf_one():303
-### dt-test ### pass of_unittest_printf_one():303
-### dt-test ### pass of_unittest_printf_one():293
-### dt-test ### pass of_unittest_printf_one():303
-### dt-test ### pass of_unittest_printf_one():303
-### dt-test ### pass of_unittest_printf_one():293
-### dt-test ### pass of_unittest_printf_one():303
-### dt-test ### pass of_unittest_printf_one():303
-### dt-test ### pass of_unittest_printf_one():293
-### dt-test ### pass of_unittest_printf_one():303
-### dt-test ### pass of_unittest_printf_one():303
-### dt-test ### pass of_unittest_printf_one():293
-### dt-test ### pass of_unittest_printf_one():303
-### dt-test ### pass of_unittest_printf_one():303
-### dt-test ### pass of_unittest_printf_one():293
-### dt-test ### pass of_unittest_printf_one():303
-### dt-test ### pass of_unittest_printf_one():303
-### dt-test ### pass of_unittest_printf_one():293
-### dt-test ### pass of_unittest_printf_one():303
-### dt-test ### pass of_unittest_printf_one():303
-### dt-test ### pass of_unittest_printf_one():293
-### dt-test ### pass of_unittest_printf_one():303
-### dt-test ### pass of_unittest_printf_one():303
-### dt-test ### pass of_unittest_printf_one():293
-### dt-test ### pass of_unittest_printf_one():303
-### dt-test ### pass of_unittest_printf_one():303
-### dt-test ### pass of_unittest_printf_one():293
-### dt-test ### pass of_unittest_printf_one():303
-### dt-test ### pass of_unittest_printf_one():303
-### dt-test ### pass of_unittest_printf_one():293
-### dt-test ### pass of_unittest_printf_one():303
-### dt-test ### pass of_unittest_printf_one():303
-### dt-test ### pass of_unittest_property_string():714
-### dt-test ### pass of_unittest_property_string():716
-### dt-test ### pass of_unittest_property_string():718
-### dt-test ### pass of_unittest_property_string():720
-### dt-test ### pass of_unittest_property_string():722
-### dt-test ### pass of_unittest_property_string():724
-### dt-test ### pass of_unittest_property_string():726
-### dt-test ### pass of_unittest_property_string():730
-### dt-test ### pass of_unittest_property_string():732
-### dt-test ### pass of_unittest_property_string():734
-### dt-test ### pass of_unittest_property_string():736
-### dt-test ### pass of_unittest_property_string():740
-### dt-test ### pass of_unittest_property_string():743
-### dt-test ### pass of_unittest_property_string():745
-### dt-test ### pass of_unittest_property_string():747
-### dt-test ### pass of_unittest_property_string():749
-### dt-test ### pass of_unittest_property_string():752
-### dt-test ### pass of_unittest_property_string():755
-### dt-test ### pass of_unittest_property_string():757
-### dt-test ### pass of_unittest_property_string():760
-### dt-test ### pass of_unittest_property_string():765
-### dt-test ### pass of_unittest_property_string():767
-### dt-test ### pass of_unittest_property_string():769
-### dt-test ### pass of_unittest_property_string():772
-### dt-test ### pass of_unittest_property_string():776
-### dt-test ### pass of_unittest_property_string():779
-### dt-test ### pass of_unittest_property_copy():794
-### dt-test ### pass of_unittest_property_copy():800
-### dt-test ### pass of_unittest_changeset():820
-### dt-t
-[19:59:16.282]收←◆est ### pass of_unittest_changeset():823
-### dt-test ### pass of_unittest_changeset():826
-### dt-test ### pass of_unittest_changeset():830
-### dt-test ### pass of_unittest_changeset():833
-### dt-test ### pass of_unittest_changeset():836
-### dt-test ### pass of_unittest_changeset():839
-### dt-test ### pass of_unittest_changeset():842
-### dt-test ### pass of_unittest_changeset():845
-### dt-test ### pass of_unittest_changeset():853
-### dt-test ### pass of_unittest_changeset():857
-### dt-test ### pass of_unittest_changeset():858
-### dt-test ### pass of_unittest_changeset():860
-### dt-test ### pass of_unittest_changeset():861
-### dt-test ### pass of_unittest_changeset():863
-### dt-test ### pass of_unittest_changeset():864
-### dt-test ### pass of_unittest_changeset():866
-### dt-test ### pass of_unittest_changeset():868
-### dt-test ### pass of_unittest_changeset():869
-### dt-test ### pass of_unittest_changeset():870
-### dt-test ### pass of_unittest_changeset():872
-### dt-test ### pass of_unittest_changeset():877
-### dt-test ### pass of_unittest_changeset():881
-### dt-test ### pass of_unittest_parse_interrupts():1047
-### dt-test ### pass of_unittest_parse_interrupts():1047
-### dt-test ### pass of_unittest_parse_interrupts():1047
-### dt-test ### pass of_unittest_parse_interrupts():1047
-### dt-test ### pass of_unittest_parse_interrupts():1093
-### dt-test ### pass of_unittest_parse_interrupts():1093
-### dt-test ### pass of_unittest_parse_interrupts():1093
-### dt-test ### pass of_unittest_parse_interrupts():1093
-### dt-test ### pass of_unittest_parse_interrupts_extended():1173
-### dt-test ### pass of_unittest_parse_interrupts_extended():1173
-### dt-test ### pass of_unittest_parse_interrupts_extended():1173
-### dt-test ### pass of_unittest_parse_interrupts_extended():1173
-### dt-test ### pass of_unittest_parse_interrupts_extended():1173
-### dt-test ### pass of_unittest_parse_interrupts_extended():1173
-### dt-test ### pass of_unittest_parse_interrupts_extended():1173
-### dt-test ### pass of_unittest_dma_get_max_cpu_address():906
-### dt-test ### pass of_unittest_dma_ranges_one():927
-### dt-test ### pass of_unittest_dma_ranges_one():945
-### dt-test ### pass of_unittest_dma_ranges_one():948
-### dt-test ### pass of_unittest_dma_ranges_one():927
-### dt-test ### pass of_unittest_dma_ranges_one():945
-### dt-test ### pass of_unittest_dma_ranges_one():948
-### dt-test ### pass of_unittest_dma_ranges_one():927
-### dt-test ### pass of_unittest_dma_ranges_one():945
-### dt-test ### pass of_unittest_dma_ranges_one():948
-### dt-test ### pass of_unittest_match_node():1241
-### dt-test ### pass of_unittest_match_node():1241
-### dt-test ### pass of_unittest_match_node():1241
-### dt-test ### pass of_unittest_match_node():1241
-### dt-test ### pass of_unittest_match_node():1241
-### dt-test ### pass of_unittest_match_node():1241
-### dt-test ### pass of_unittest_match_node():1241
-### dt-test ### pass of_unittest_match_node():1241
-### dt-test ### pass of_unittest_match_node():1241
-### dt-test ### pass of_unittest_match_node():1241
-### dt-test ### pass of_unittest_match_node():1241
-### dt-test ### pass of_unittest_match_node():1241
-device: 'testcase-data:testcase-device2': device_add
-bus: 'platform': add device testcase-data:testcase-device2
-PM: Adding info for platform:testcase-data:testcase-device2
-testcase-device2 Linked as a fwnode consumer to intc2
-device: 'testcase-data:testcase-device1': device_add
-bus: 'platform': add device testcase-data:testcase-device1
-PM: Adding info for platform:testcase-data:testcase-device1
-testcase-device1 Linked as a fwnode consumer to intc0
-### dt-test ### pass of_unittest_platform_populate():1265
-platform testcase-data:testcase-device1: error -EPROBE_DEFER: IRQ index 0 not found
-### dt-test ### pass of_unittest_platform_populate():1269
-### dt-test ### pass of_unittest_platform_populate():1275
-### dt-test ### EXPECT \ : platform te
-[19:59:16.315]收←◆stcase-data:testcase-device2: error -ENXIO: IRQ index 0 not found
-platform testcase-data:testcase-device2: error -ENXIO: IRQ index 0 not found
-### dt-test ### EXPECT / : platform testcase-data:testcase-device2: error -ENXIO: IRQ index 0 not found
-### dt-test ### pass of_unittest_platform_populate():1285
-### dt-test ### pass of_unittest_platform_populate():1290
-Registering platform device 'unittest-bus.0'. Parent at platform
-device: 'unittest-bus.0': device_add
-bus: 'platform': add device unittest-bus.0
-PM: Adding info for platform:unittest-bus.0
-### dt-test ### pass of_unittest_platform_populate():1296
-device: 'testcase-data:platform-tests:test-device@1': device_add
-bus: 'platform': add device testcase-data:platform-tests:test-device@1
-PM: Adding info for platform:testcase-data:platform-tests:test-device@1
-device: 'testcase-data:platform-tests:test-device@1:dev@100': device_add
-bus: 'platform': add device testcase-data:platform-tests:test-device@1:dev@100
-PM: Adding info for platform:testcase-data:platform-tests:test-device@1:dev@100
-device: 'testcase-data:platform-tests:test-device@0': device_add
-bus: 'platform': add device testcase-data:platform-tests:test-device@0
-PM: Adding info for platform:testcase-data:platform-tests:test-device@0
-device: 'testcase-data:platform-tests:test-device@0:dev@100': device_add
-bus: 'platform': add device testcase-data:platform-tests:test-device@0:dev@100
-PM: Adding info for platform:testcase-data:platform-tests:test-device@0:dev@100
-### dt-test ### pass of_unittest_platform_populate():1316
-### dt-test ### pass of_unittest_platform_populate():1316
-bus: 'platform': remove device testcase-data:platform-tests:test-device@0:dev@100
-PM: Removing info for platform:testcase-data:platform-tests:test-device@0:dev@100
-bus: 'platform': remove device testcase-data:platform-tests:test-device@0
-PM: Removing info for platform:testcase-data:platform-tests:test-device@0
-bus: 'platform': remove device testcase-data:platform-tests:test-device@1:dev@100
-PM: Removing info for platform:testcase-data:platform-tests:test-device@1:dev@100
-bus: 'platform': remove device testcase-data:platform-tests:test-device@1
-PM: Removing info for platform:testcase-data:platform-tests:test-device@1
-### dt-test ### pass of_unittest_platform_populate():1326
-### dt-test ### pass of_unittest_platform_populate():1326
-bus: 'platform': remove device unittest-bus.0
-PM: Removing info for platform:unittest-bus.0
-bus: 'platform': add driver unittest
-Extended deferred probe timeout by 30 secs
-device: 'testcase-data:overlay-node:test-bus:i2c-test-bus': device_add
-bus: 'platform': add device testcase-data:overlay-node:test-bus:i2c-test-bus
-PM: Adding info for platform:testcase-data:overlay-node:test-bus:i2c-test-bus
-device: 'testcase-data:overlay-node:test-bus:test-unittest3': device_add
-bus: 'platform': add device testcase-data:overlay-node:test-bus:test-unittest3
-PM: Adding info for platform:testcase-data:overlay-node:test-bus:test-unittest3
-bus: 'platform': __driver_probe_device: matched device testcase-data:overlay-node:test-bus:test-unittest3 with driver unittest
-bus: 'platform': really_probe: probing driver unittest with device testcase-data:overlay-node:test-bus:test-unittest3
-unittest testcase-data:overlay-node:test-bus:test-unittest3: no pinctrl handle
-driver: 'unittest': driver_bound: bound to device 'testcase-data:overlay-node:test-bus:test-unittest3'
-bus: 'platform': really_probe: bound device testcase-data:overlay-node:test-bus:test-unittest3 to driver unittest
-device: 'testcase-data:overlay-node:test-bus:test-unittest1': device_add
-bus: 'platform': add device testcase-data:overlay-node:test-bus:test-unittest1
-PM: Adding info for platform:testcase-data:overlay-node:test-bus:test-unittest1
-bus: 'platform': __driver_probe_device: matched device testcase-data:overlay-node:test-bus:test-unittest1 with driver unittest
-bus: 'platform': really_probe: probing 
-[19:59:16.347]收←◆driver unittest with device testcase-data:overlay-node:test-bus:test-unittest1
-unittest testcase-data:overlay-node:test-bus:test-unittest1: no pinctrl handle
-driver: 'unittest': driver_bound: bound to device 'testcase-data:overlay-node:test-bus:test-unittest1'
-bus: 'platform': really_probe: bound device testcase-data:overlay-node:test-bus:test-unittest1 to driver unittest
-device: 'testcase-data:overlay-node:test-bus:test-unittest100': device_add
-bus: 'platform': add device testcase-data:overlay-node:test-bus:test-unittest100
-PM: Adding info for platform:testcase-data:overlay-node:test-bus:test-unittest100
-bus: 'platform': __driver_probe_device: matched device testcase-data:overlay-node:test-bus:test-unittest100 with driver unittest
-bus: 'platform': really_probe: probing driver unittest with device testcase-data:overlay-node:test-bus:test-unittest100
-unittest testcase-data:overlay-node:test-bus:test-unittest100: no pinctrl handle
-driver: 'unittest': driver_bound: bound to device 'testcase-data:overlay-node:test-bus:test-unittest100'
-bus: 'platform': really_probe: bound device testcase-data:overlay-node:test-bus:test-unittest100 to driver unittest
-### dt-test ### pass of_unittest_overlay():2982
-### dt-test ### EXPECT \ : OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data/overlay-node/test-bus/test-unittest0/status
-OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data/overlay-node/test-bus/test-unittest0/status
-device: 'testcase-data:overlay-node:test-bus:test-unittest0': device_add
-bus: 'platform': add device testcase-data:overlay-node:test-bus:test-unittest0
-PM: Adding info for platform:testcase-data:overlay-node:test-bus:test-unittest0
-bus: 'platform': __driver_probe_device: matched device testcase-data:overlay-node:test-bus:test-unittest0 with driver unittest
-bus: 'platform': really_probe: probing driver unittest with device testcase-data:overlay-node:test-bus:test-unittest0
-unittest testcase-data:overlay-node:test-bus:test-unittest0: no pinctrl handle
-driver: 'unittest': driver_bound: bound to device 'testcase-data:overlay-node:test-bus:test-unittest0'
-bus: 'platform': really_probe: bound device testcase-data:overlay-node:test-bus:test-unittest0 to driver unittest
-### dt-test ### EXPECT / : OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data/overlay-node/test-bus/test-unittest0/status
-### dt-test ### pass of_unittest_overlay_0():2111
-### dt-test ### EXPECT \ : OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data/overlay-node/test-bus/test-unittest1/status
-OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data/overlay-node/test-bus/test-unittest1/status
-bus: 'platform': remove device testcase-data:overlay-node:test-bus:test-unittest1
-PM: Removing info for platform:testcase-data:overlay-node:test-bus:test-unittest1
-### dt-test ### EXPECT / : OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data/overlay-node/test-bus/test-unittest1/status
-### dt-test ### pass of_unittest_overlay_1():2131
-### dt-test ### EXPECT \ : OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data/overlay-node/test-bus/test-unittest2/status
-OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data/overlay-node/test-bus/test-unittest2/status
-device: 'testcase-data:overlay-node:test-bus:test-unittest2': device_add
-bus: 'platform': add device testcase-data:overlay-node:test-bus:test-unittest2
-PM: Adding info for platform:testcase-data:overlay-node:test-bus:test-unittest2
-bus: 'platform': __driver_probe_device: matched device testcase-data:overlay-node:test-bus:test-unittest2 with driver unittest
-bus: 'platform': really_probe: probing driver unittest with device testcase-data:overlay-node:test-bus:test-unittest2
-unittest testcase-data:overlay-node:test-bus:test-unittest2: no pinctrl handle
-driver: 'unittest': driver_bound: bound to device 'testcase-data:overlay-node:test-bus:test-unittest2'
-bus: 'platform': really_probe: bound device testcase-data:overlay-node:test-bus:test-unittest2 to driver unittest
-### dt-test ### EXPECT / : OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data/overlay-node/test-bus/test-unittest2/status
-### dt-test ### pass of_unittest_overlay_2():2151
-### dt-test ### EXPECT \ : OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data/overlay-node/test-bus/test-unittest3/status
-OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data/overlay-node/test-bus/test-unittest3/status
-bus: 'platform': remove device testcase-data:overlay-node:test-bus:test-unittest3
-PM: Removing info for platform:testcase-data:overlay-node:test-bus:test-unittest3
-### dt-test ### EXPECT / : OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data/overlay-node/test-bus/test-unittest3/status
-### dt-test ### pass of_unittest_overlay_3():2171
-device: 'testcase-data:overlay-node:test-bus:test-unittest4': device_add
-bus: 'platform': add device testcase-data:overlay-node:test-bus:test-unittest4
-PM: Adding info for platform:testcase-data:overlay-node:test-bus:test-unittest4
-bus: 'platform': __driver_probe_device: matched device testcase-data:overlay-node:test-bus:test-unittest4 with driver unittest
-bus: 'platform': really_probe: probing driver unittest with device testcase-data:overlay-node:test-bus:test-unittest4
-unittest testcase-data:overlay-node:test-bus:test-unittest4: no pinctrl handle
-driver: 'unittest': driver_bound: bound to device 'testcase-data:overlay-node:test-bus:test-unittest4'
-bus: 'platform': really_probe: bound device testcase-data:overlay-node:test-bus:test-unittest4 to driver unittest
-### dt-test ### pass of_unittest_overlay_4():2181
-### dt-test ### EXPECT \ : OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data/overlay-node/test-bus/test-unittest5/status
-OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data/overlay-node/test-bus/test-unittest5/status
-device: 'testcase-data:overlay-node:test-bus:test-unittest5': device_add
-bus: 'platform': add device testcase-data:overlay-node:test-bus:test-unittest5
-PM: Adding info for platform:testcase-data:overlay-node:test-bus:test-unittest5
-bus: 'platform': __driver_probe_device: matched device testcase-data:overlay-node:test-bus:test-unittest5 with driver unittest
-bus: 'platform': really_probe: probing driver unittest with device testcase-data:overlay-node:test-bus:test-unittest5
-unittest testcase-data:overlay-node:test-bus:test-unittest5: no pinctrl handle
-driver: 'unittest': driver_bound: bound to device 'testcase-data:overlay-node:test-bus:test-unittest5'
-bus: 'platform': really_probe: bound device testcase-data:overlay-node:test-bus:test-unittest5 to driver unittest
-bus: 'platform': remove device testcase-data:overlay-node:test-bus:test-unittest5
-PM: Removing info for platform:testcase-data:overlay-node:test-bus:test-unittest5
-### dt-test ### EXPECT / : OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data/overlay-node/test-bus/test-unittest5/status
-### dt-test ### pass of_unittest_overlay_5():2201
-### dt-test ### EXPECT \ : OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data/overlay-node/test-bus/test-unittest6/status
-OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data/overlay-node/test-bus/test-unittest6/status
-device: 'testcase-data:overlay-node:test-bus:test-unittest6': device_add
-bus: 'platform': add device testcase-data:overlay-node:test-bus:test-unittest6
-PM: Adding info for platform:testcase-data:overlay-node:test-bus:test-unittest6
-bus: 'platform': __driver_probe_device: matched device testcase-data:overlay-node:test-bus:test-unittest6 with driver unittest
-bus: 'platform': really_probe: probing driver unittest with device testcase-data:overlay-node:test-bus:test-unittest6
-unittest testcase-data:overlay-node:test-bus:test-unittest6: no pinctrl handle
-driver: 'unittest': driver_bound: bound to device 'testcase-data:overlay-node:test-bus:test-unittest6'
-bus: 'platform': really_probe: bound device testcase-data:overlay-node:test-bus:test-unittest6 to driver unittest
-### dt-test ### EXPECT / : OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data/overlay-node/test-bus/test-unittest6/status
-### dt-test ### EXPECT \ : OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data/overlay-node/test-bus/test-unittest7/status
-OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data/overlay-node/test-bus/test-unittest7/status
-device: 'testcase-data:overlay-node:test-bus:test-unittest7': device_add
-bus: 'platform': add device testcase-data:overlay-node:test-bus:test-unittest7
-PM: Adding info for platform:testcase-data:overlay-node:test-bus:test-unittest7
-bus: 'platform': __driver_probe_device: matched device testcase-data:overlay-node:test-bus:test-unittest7 with driver unittest
-bus: 'platform': really_probe: probing driver unittest with device testcase-data:overlay-node:test-bus:test-unittest7
-unittest testcase-data:overlay-node:test-bus:test-unittest7: no pinctrl handle
-driver: 'unittest': driver_bound: bound to device 'testcase-data:overlay-node:test-bus:test-unittest7'
-bus: 'platform': really_probe: bound device testcase-data:overlay-node:test-bus:test-unittest7 to driver unittest
-### dt-test ### EXPECT / : OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data/overlay-node/test-bus/test-unittest7/status
-bus: 'platform': remove device testcase-data:overlay-node:test-bus:test-unittest7
-PM: Removing info for platform:testcase-data:overlay-node:test-bus:test-unittest7
-bus: 'platform': remove device testcase-data:overlay-node:test-bus:test-unittest6
-PM: Removing info for platform:testcase-data:overlay-node:test-bus:test-unittest6
-### dt-test ### pass of_unittest_overlay_6():2302
-### dt-test ### EXPECT \ : OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data/overlay-node/test-bus/test-unittest8/status
-OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data/overlay-node/test-bus/test-unittest8/status
-device: 'testcase-data:overlay-node:test-bus:test-unittest8': device_add
-bus: 'platform': add device testcase-data:overlay-node:test-bus:test-unittest8
-PM: Adding info for platform:testcase-data:overlay-node:test-bus:test-unittest8
-bus: 'platform': __driver_probe_device: matched device testcase-data:overlay-node:test-bus:test-unittest8 with driver unittest
-bus: 'platform': really_probe: probing driver unittest with device testcase-data:overlay-node:test-bus:test-unittest8
-unittest testcase-data:overlay-node:test-bus:test-unittest8: no pinctrl handle
-driver: 'unittest': driver_bound: bound to device 'testcase-data:overlay-node:test-bus:test-unittest8'
-bus: 'platform': really_probe: bound device testcase-data:overlay-node:test-bus:test-unittest8 to driver unittest
-### dt-test ### EXPECT / : OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data/overlay-node/test-bus/test-unittest8/status
-### dt-test ### EXPECT \ : OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data/overlay-node/test-bus/test-unittest8/property-foo
-OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data/overlay-node/test-bus/test-unittest8/property-foo
-### dt-test ### EXPECT / : OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data/overlay-node/test-bus/test-unittest8/property-foo
-### dt-test ### EXPECT \ : OF: overlay: node_overlaps_later_cs: #6 overlaps with #7 @/testcase-data/overlay-node/test-bus/test-unittest8
-### dt-test ### EXPECT \ : OF: overlay: overlay #6 is not topmost
-OF: overlay: node_overlaps_later_cs: #6 overlaps with #7 @/testcase-data/overlay-node/test-bus/test-unittest8
-OF: overlay: overlay #6 is not topmost
-### dt-test ### EXPECT / : OF: overlay: overlay #6 is not topmost
-### dt-test ### EXPECT / : OF: overlay: node_overlaps_later_cs: #6 overlaps with #7 @/testcase-data/overlay-node/test-bus/test-unittest8
-bus: 'platform': remove device testcase-data:overlay-node:test-bus:test-unittest8
-PM: Removing info for platform:testcase-data:overlay-node:test-bus:test-unittest8
-### dt-test ### pass of_unittest_overlay_8():2395
-device: 'testcase-data:overlay-node:test-bus:test-unittest10': device_add
-bus: 'platform': add device testcase-data:overlay-node:test-bus:test-unittest10
-PM: Adding info for platform:testcase-data:overlay-node:test-bus:test-unittest10
-bus: 'platform': __driver_probe_device: matched device testcase-data:overlay-node:test-bus:test-unittest10 with driver unittest
-bus: 'platform': really_probe: probing driver unittest with device testcase-data:overlay-node:test-bus:test-unittest10
-unittest testcase-data:overlay-node:test-bus:test-unittest10: no pinctrl handle
-device: 'testcase-data:overlay-node:test-bus:test-unittest10:test-unittest101': device_add
-bus: 'platform': add device testcase-data:overlay-node:test-bus:test-unittest10:test-unittest101
-PM: Adding info for platform:testcase-data:overlay-node:test-bus:test-unittest10:test-unittest101
-bus: 'platform': __driver_probe_device: matched device testcase-data:overlay-node:test-bus:test-unittest10:test-unittest101 with driver unittest
-bus: 'platform': really_probe: probing driver unittest with device testcase-data:overlay-node:test-bus:test-unittest10:test-unittest101
-unittest testcase-data:overlay-node:test-bus:test-unittest10:test-unittest101: no pinctrl handle
-driver: 'unittest': driver_bound: bound to device 'testcase-data:overlay-node:test-bus:test-unittest10:test-unittest101'
-bus: 'platform': really_probe: bound device testcase-data:overlay-node:test-bus:test-unittest10:test-unittest101 to driver unittest
-driver: 'unittest': driver_bound: bound to device 'testcase-data:overlay-node:test-bus:test-unittest10'
-bus: 'platform': really_probe: bound device testcase-data:overlay-node:test-bus:test-unittest10 to driver unittest
-### dt-test ### pass of_unittest_overlay_10():2407
-### dt-test ### pass of_unittest_overlay_10():2413
-### dt-test ### pass of_unittest_overlay_10():2419
-device: 'testcase-data:overlay-node:test-bus:test-unittest11': device_add
-bus: 'platform': add device testcase-data:overlay-node:test-bus:test-unittest11
-PM: Adding info for platform:testcase-data:overlay-node:test-bus:test-unittest11
-bus: 'platform': __driver_probe_device: matched device testcase-data:overlay-node:test-bus:test-unittest11 with driver unittest
-bus: 'platform': really_probe: probing driver unittest with device testcase-data:overlay-node:test-bus:test-unittest11
-unittest testcase-data:overlay-node:test-bus:test-unittest11: no pinctrl handle
-device: 'testcase-data:overlay-node:test-bus:test-unittest11:test-unittest111': device_add
-bus: 'platform': add device testcase-data:overlay-node:test-bus:test-unittest11:test-unittest111
-PM: Adding info for platform:testcase-data:overlay-node:test-bus:test-unittest11:test-unittest111
-bus: 'platform': __driver_probe_device: matched device testcase-data:overlay-node:test-bus:test-unittest11:test-unittest111 with driver unittest
-bus: 'platform': really_probe: probing driver unittest with device testcase-data:overlay-node:test-bus:test-unittest11:test-unittest111
-unittest testcase-data:overlay-node:test-bus:test-unittest11:test-unittest111: no pinctrl handle
-driver: 'unittest': driver_bound: bound to device 'testcase-data:overlay-node:test-bus:test-unittest11:test-unittest111'
-bus: 'platform': really_probe: bound device testcase-data:overlay-node:test-bus:test-unittest11:test-unittest111 to driver unittest
-driver: 'unittest': driver_bound: bound to device 'testcase-data:overlay-node:test-bus:test-unittest11'
-bus: 'platform': really_probe: bound device testcase-data:overlay-node:test-bus:test-unittest11 to driver unittest
-bus: 'platform': remove device testcase-data:overlay-node:test-bus:test-unittest11:test-unittest111
-PM: Removing info for platform:testcase-data:overlay-node:test-bus:test-unittest11:test-unittest111
-bus: 'platform': remove device testcase-data:overlay-node:test-bus:test-unittest11
-PM: Removing info for platform:testcase-data:overlay-node:test-bus:test-unittest11
-### dt-test ### pass of_unittest_overlay_11():2431
-bus: 'i2c': add driver unittest-i2c-dev
-Extended deferred probe timeout by 30 secs
-i2c-core: driver [unittest-i2c-dev] registered
-### dt-test ### pass of_unittest_overlay_i2c_init():2654
-bus: 'platform': add driver unittest-i2c-bus
-bus: 'platform': __driver_probe_device: matched device testcase-data:overlay-node:test-bus:i2c-test-bus with driver unittest-i2c-bus
-bus: 'platform': really_probe: probing driver unittest-i2c-bus with device testcase-data:overlay-node:test-bus:i2c-test-bus
-unittest-i2c-bus testcase-data:overlay-node:test-bus:i2c-test-bus: no pinctrl handle
-device: 'i2c-9': device_add
-bus: 'i2c': add device i2c-9
-PM: Adding info for i2c:i2c-9
-device: 'i2c-9': device_add
-PM: Adding info for No Bus:i2c-9
-i2c_dev: adapter [testcase-data:overlay-node:test-bus:i2c-test-bu] registered as minor 9
-i2c i2c-9: adapter [testcase-data:overlay-node:test-bus:i2c-test-bu] registered
-i2c i2c-9: of_i2c: walking child nodes
-i2c i2c-9: of_i2c: register /testcase-data/overlay-node/test-bus/i2c-test-bus/test-unittest14
-device: '9-000a': device_add
-bus: 'i2c': add device 9-000a
-PM: Adding info for i2c:9-000a
-i2c i2c-9: client [unittest-i2c-mux] registered with bus id 9-000a
-i2c i2c-9: of_i2c: register /testcase-data/overlay-node/test-bus/i2c-test-bus/test-unittest13
-device: '9-0009': device_add
-bus: 'i2c': add device 9-0009
-PM: Adding info for i2c:9-0009
-bus: 'i2c': __driver_probe_device: matched device 9-0009 with driver unittest-i2c-dev
-bus: 'i2c': really_probe: probing driver unittest-i2c-dev with device 9-0009
-unittest-i2c-dev 9-0009: no pinctrl handle
-unittest-i2c-dev 9-0009: probe
-driver: 'unittest-i2c-dev': driver_bound: bound to device '9-0009'
-bus: 'i2c': really_probe: bound device 9-0009 to driver unittest-i2c-dev
-i2c i2c-9: client [unittest-i2c-dev] registered with bus id 9-0009
-driver: 'unittest-i2c-bus': driver_bound: bound to device 'testcase-data:overlay-node:test-bus:i2c-test-bus'
-bus: 'platform': really_probe: bound device testcase-data:overlay-node:test-bus:i2c-test-bus to driver unittest-i2c-bus
-Extended deferred probe timeout by 30 secs
-### dt-test ### pass of_unittest_overlay_i2c_init():2660
-### dt-test ### pass of_unittest_overlay():2998
-### dt-test ### EXPECT \ : OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data/overlay-node/test-bus/i2c-test-bus/test-unittest12/status
-OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data/overlay-node/test-bus/i2c-test-bus/test-unittest12/status
-i2c i2c-9: of_i2c: register /testcase-data/overlay-node/test-bus/i2c-test-bus/test-unittest12
-device: '9-0008': device_add
-bus: 'i2c': add device 9-0008
-PM: Adding info for i2c:9-0008
-bus: 'i2c': __driver_probe_device: matched device 9-0008 with driver unittest-i2c-dev
-bus: 'i2c': really_probe: probing driver unittest-i2c-dev with device 9-0008
-unittest-i2c-dev 9-0008: no pinctrl handle
-unittest-i2c-dev 9-0008: probe
-driver: 'unittest-i2c-dev': driver_bound: bound to 
-[19:59:16.517]收←◆device '9-0008'
-bus: 'i2c': really_probe: bound device 9-0008 to driver unittest-i2c-dev
-i2c i2c-9: client [unittest-i2c-dev] registered with bus id 9-0008
-### dt-test ### EXPECT / : OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data/overlay-node/test-bus/i2c-test-bus/test-unittest12/status
-### dt-test ### pass of_unittest_overlay_i2c_12():2707
-### dt-test ### EXPECT \ : OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data/overlay-node/test-bus/i2c-test-bus/test-unittest13/status
-OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data/overlay-node/test-bus/i2c-test-bus/test-unittest13/status
-device: '9-0009': device_unregister
-bus: 'i2c': remove device 9-0009
-unittest-i2c-dev 9-0009: remove
-PM: Removing info for i2c:9-0009
-### dt-test ### EXPECT / : OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data/overlay-node/test-bus/i2c-test-bus/test-unittest13/status
-### dt-test ### pass of_unittest_overlay_i2c_13():2727
-### dt-test ### EXPECT \ : i2c i2c-1: Added multiplexed i2c bus 3
-i2c i2c-9: of_i2c: register /testcase-data/overlay-node/test-bus/i2c-test-bus/test-unittest15
-device: '9-000b': device_add
-bus: 'i2c': add device 9-000b
-PM: Adding info for i2c:9-000b
-i2c i2c-9: client [unittest-i2c-mux] registered with bus id 9-000b
-### dt-test ### EXPECT / : i2c i2c-1: Added multiplexed i2c bus 3
-### dt-test ### pass of_unittest_overlay_i2c_15():2751
-bus: 'platform': remove driver unittest-i2c-bus
-device: '9-000a': device_unregister
-bus: 'i2c': remove device 9-000a
-PM: Removing info for i2c:9-000a
-device: '9-0008': device_unregister
-bus: 'i2c': remove device 9-0008
-unittest-i2c-dev 9-0008: remove
-PM: Removing info for i2c:9-0008
-device: '9-000b': device_unregister
-bus: 'i2c': remove device 9-000b
-PM: Removing info for i2c:9-000b
-i2c i2c-9: adapter [testcase-data:overlay-node:test-bus:i2c-test-bu] unregistered
-device: 'i2c-9': device_unregister
-PM: Removing info for No Bus:i2c-9
-i2c_dev: adapter [testcase-data:overlay-node:test-bus:i2c-test-bu] unregistered
-bus: 'i2c': remove device i2c-9
-PM: Removing info for i2c:i2c-9
-driver: 'unittest-i2c-bus': driver_release
-bus: 'i2c': remove driver unittest-i2c-dev
-driver: 'unittest-i2c-dev': driver_release
-i2c-core: driver [unittest-i2c-dev] unregistered
-device: 'testcase-data:overlay-node:test-bus:gpio@0': device_add
-bus: 'platform': add device testcase-data:overlay-node:test-bus:gpio@0
-PM: Adding info for platform:testcase-data:overlay-node:test-bus:gpio@0
-### dt-test ### pass of_unittest_overlay_gpio():1710
-device: 'testcase-data:overlay-node:test-bus:gpio@2': device_add
-bus: 'platform': add device testcase-data:overlay-node:test-bus:gpio@2
-PM: Adding info for platform:testcase-data:overlay-node:test-bus:gpio@2
-### dt-test ### pass of_unittest_overlay_gpio():1713
-### dt-test ### pass of_unittest_overlay_gpio():1716
-### dt-test ### EXPECT \ : gpio-<<int>> (line-B-input): hogged as input
-### dt-test ### EXPECT \ : gpio-<<int>> (line-A-input): hogged as input
-bus: 'platform': add driver unittest-gpio
-bus: 'platform': __driver_probe_device: matched device testcase-data:overlay-node:test-bus:gpio@0 with driver unittest-gpio
-bus: 'platform': really_probe: probing driver unittest-gpio with device testcase-data:overlay-node:test-bus:gpio@0
-unittest-gpio testcase-data:overlay-node:test-bus:gpio@0: no pinctrl handle
-gpio-509 (line-B-input): hogged as input
-device: 'gpiochip5': device_add
-bus: 'gpio': add device gpiochip5
-PM: Adding info for gpio:gpiochip5
-### dt-test ### pass unittest_gpio_probe():1633
-driver: 'unittest-gpio': driver_bound: bound to device 'testcase-data:overlay-node:test-bus:gpio@0'
-bus: 'platform': really_probe: bound device testcase-data:overlay-node:test-bus:gpio@0 to driver unittest-gpio
-bus: 'platform': __driver_probe_device: matched device t
-[19:59:16.555]收←◆estcase-data:overlay-node:test-bus:gpio@2 with driver unittest-gpio
-bus: 'platform': really_probe: probing driver unittest-gpio with device testcase-data:overlay-node:test-bus:gpio@2
-unittest-gpio testcase-data:overlay-node:test-bus:gpio@2: no pinctrl handle
-gpio-503 (line-A-input): hogged as input
-device: 'gpiochip6': device_add
-bus: 'gpio': add device gpiochip6
-PM: Adding info for gpio:gpiochip6
-### dt-test ### pass unittest_gpio_probe():1633
-driver: 'unittest-gpio': driver_bound: bound to device 'testcase-data:overlay-node:test-bus:gpio@2'
-bus: 'platform': really_probe: bound device testcase-data:overlay-node:test-bus:gpio@2 to driver unittest-gpio
-Extended deferred probe timeout by 30 secs
-### dt-test ### pass of_unittest_overlay_gpio():1731
-### dt-test ### EXPECT / : gpio-<<int>> (line-A-input): hogged as input
-### dt-test ### EXPECT / : gpio-<<int>> (line-B-input): hogged as input
-### dt-test ### pass of_unittest_overlay_gpio():1739
-### dt-test ### pass of_unittest_overlay_gpio():1742
-### dt-test ### EXPECT \ : gpio-<<int>> (line-D-input): hogged as input
-device: 'testcase-data:overlay-node:test-bus:gpio@3': device_add
-bus: 'platform': add device testcase-data:overlay-node:test-bus:gpio@3
-PM: Adding info for platform:testcase-data:overlay-node:test-bus:gpio@3
-bus: 'platform': __driver_probe_device: matched device testcase-data:overlay-node:test-bus:gpio@3 with driver unittest-gpio
-bus: 'platform': really_probe: probing driver unittest-gpio with device testcase-data:overlay-node:test-bus:gpio@3
-unittest-gpio testcase-data:overlay-node:test-bus:gpio@3: no pinctrl handle
-gpio-501 (line-D-input): hogged as input
-device: 'gpiochip7': device_add
-bus: 'gpio': add device gpiochip7
-PM: Adding info for gpio:gpiochip7
-### dt-test ### pass unittest_gpio_probe():1633
-driver: 'unittest-gpio': driver_bound: bound to device 'testcase-data:overlay-node:test-bus:gpio@3'
-bus: 'platform': really_probe: bound device testcase-data:overlay-node:test-bus:gpio@3 to driver unittest-gpio
-### dt-test ### pass of_unittest_overlay_gpio():1768
-### dt-test ### EXPECT / : gpio-<<int>> (line-D-input): hogged as input
-### dt-test ### pass of_unittest_overlay_gpio():1774
-### dt-test ### pass of_unittest_overlay_gpio():1777
-device: 'testcase-data:overlay-node:test-bus:gpio@4': device_add
-bus: 'platform': add device testcase-data:overlay-node:test-bus:gpio@4
-PM: Adding info for platform:testcase-data:overlay-node:test-bus:gpio@4
-bus: 'platform': __driver_probe_device: matched device testcase-data:overlay-node:test-bus:gpio@4 with driver unittest-gpio
-bus: 'platform': really_probe: probing driver unittest-gpio with device testcase-data:overlay-node:test-bus:gpio@4
-unittest-gpio testcase-data:overlay-node:test-bus:gpio@4: no pinctrl handle
-device: 'gpiochip8': device_add
-bus: 'gpio': add device gpiochip8
-PM: Adding info for gpio:gpiochip8
-### dt-test ### pass unittest_gpio_probe():1633
-driver: 'unittest-gpio': driver_bound: bound to device 'testcase-data:overlay-node:test-bus:gpio@4'
-bus: 'platform': really_probe: bound device testcase-data:overlay-node:test-bus:gpio@4 to driver unittest-gpio
-### dt-test ### pass of_unittest_overlay_gpio():1795
-### dt-test ### pass of_unittest_overlay_gpio():1798
-### dt-test ### EXPECT \ : gpio-<<int>> (line-C-input): hogged as input
-gpio-495 (line-C-input): hogged as input
-### dt-test ### pass of_unittest_overlay_gpio():1815
-### dt-test ### EXPECT / : gpio-<<int>> (line-C-input): hogged as input
-### dt-test ### pass of_unittest_overlay_gpio():1821
-bus: 'platform': remove device testcase-data:overlay-node:test-bus:test-unittest10:test-unittest101
-PM: Removing info for platform:testcase-data:overlay-node:test-bus:test-unittest10:test-unittest101
-bus: 'platform': remove device testcase-data:overlay-node:test-bus:test-unittest10
-PM: Removing info for platform:testcase-data:overlay-node:test-bus:test-unittest10
-bus: 'platform': remove device t
-[19:59:16.588]收←◆estcase-data:overlay-node:test-bus:test-unittest4
-PM: Removing info for platform:testcase-data:overlay-node:test-bus:test-unittest4
-device: 'testcase-data:overlay-node:test-bus:test-unittest3': device_add
-bus: 'platform': add device testcase-data:overlay-node:test-bus:test-unittest3
-PM: Adding info for platform:testcase-data:overlay-node:test-bus:test-unittest3
-bus: 'platform': __driver_probe_device: matched device testcase-data:overlay-node:test-bus:test-unittest3 with driver unittest
-bus: 'platform': really_probe: probing driver unittest with device testcase-data:overlay-node:test-bus:test-unittest3
-unittest testcase-data:overlay-node:test-bus:test-unittest3: no pinctrl handle
-driver: 'unittest': driver_bound: bound to device 'testcase-data:overlay-node:test-bus:test-unittest3'
-bus: 'platform': really_probe: bound device testcase-data:overlay-node:test-bus:test-unittest3 to driver unittest
-bus: 'platform': remove device testcase-data:overlay-node:test-bus:test-unittest2
-PM: Removing info for platform:testcase-data:overlay-node:test-bus:test-unittest2
-device: 'testcase-data:overlay-node:test-bus:test-unittest1': device_add
-bus: 'platform': add device testcase-data:overlay-node:test-bus:test-unittest1
-PM: Adding info for platform:testcase-data:overlay-node:test-bus:test-unittest1
-bus: 'platform': __driver_probe_device: matched device testcase-data:overlay-node:test-bus:test-unittest1 with driver unittest
-bus: 'platform': really_probe: probing driver unittest with device testcase-data:overlay-node:test-bus:test-unittest1
-unittest testcase-data:overlay-node:test-bus:test-unittest1: no pinctrl handle
-driver: 'unittest': driver_bound: bound to device 'testcase-data:overlay-node:test-bus:test-unittest1'
-bus: 'platform': really_probe: bound device testcase-data:overlay-node:test-bus:test-unittest1 to driver unittest
-bus: 'platform': remove device testcase-data:overlay-node:test-bus:test-unittest0
-PM: Removing info for platform:testcase-data:overlay-node:test-bus:test-unittest0
-### dt-test ### pass of_unittest_overlay_notify():2839
-### dt-test ### EXPECT \ : OF: overlay: overlay changeset pre-apply notifier error -16, target: /testcase-data/overlay-node/test-bus
-OF: overlay: overlay changeset pre-apply notifier error -16, target: /testcase-data/overlay-node/test-bus
-### dt-test ### pass of_unittest_overlay_notify():2860
-### dt-test ### EXPECT / : OF: overlay: overlay changeset pre-apply notifier error -16, target: /testcase-data/overlay-node/test-bus
-### dt-test ### pass of_unittest_overlay_notify():2865
-### dt-test ### EXPECT \ : OF: overlay: overlay changeset post-apply notifier error -17, target: /testcase-data/overlay-node/test-bus
-device: 'testcase-data:overlay-node:test-bus:test-unittest17': device_add
-bus: 'platform': add device testcase-data:overlay-node:test-bus:test-unittest17
-PM: Adding info for platform:testcase-data:overlay-node:test-bus:test-unittest17
-bus: 'platform': __driver_probe_device: matched device testcase-data:overlay-node:test-bus:test-unittest17 with driver unittest
-bus: 'platform': really_probe: probing driver unittest with device testcase-data:overlay-node:test-bus:test-unittest17
-unittest testcase-data:overlay-node:test-bus:test-unittest17: no pinctrl handle
-driver: 'unittest': driver_bound: bound to device 'testcase-data:overlay-node:test-bus:test-unittest17'
-bus: 'platform': really_probe: bound device testcase-data:overlay-node:test-bus:test-unittest17 to driver unittest
-OF: overlay: overlay changeset post-apply notifier error -17, target: /testcase-data/overlay-node/test-bus
-### dt-test ### pass of_unittest_overlay_notify():2871
-### dt-test ### EXPECT / : OF: overlay: overlay changeset post-apply notifier error -17, target: /testcase-data/overlay-node/test-bus
-### dt-test ### pass of_unittest_overlay_notify():2876
-bus: 'platform': remove device testcase-data:overlay-node:test-bus:test-unittest17
-PM: Removing info for platform:tes
-[19:59:16.620]收←◆tcase-data:overlay-node:test-bus:test-unittest17
-### dt-test ### pass of_unittest_overlay_notify():2880
-device: 'testcase-data:overlay-node:test-bus:test-unittest18': device_add
-bus: 'platform': add device testcase-data:overlay-node:test-bus:test-unittest18
-PM: Adding info for platform:testcase-data:overlay-node:test-bus:test-unittest18
-bus: 'platform': __driver_probe_device: matched device testcase-data:overlay-node:test-bus:test-unittest18 with driver unittest
-bus: 'platform': really_probe: probing driver unittest with device testcase-data:overlay-node:test-bus:test-unittest18
-unittest testcase-data:overlay-node:test-bus:test-unittest18: no pinctrl handle
-driver: 'unittest': driver_bound: bound to device 'testcase-data:overlay-node:test-bus:test-unittest18'
-bus: 'platform': really_probe: bound device testcase-data:overlay-node:test-bus:test-unittest18 to driver unittest
-### dt-test ### pass of_unittest_overlay_notify():2886
-### dt-test ### pass of_unittest_overlay_notify():2889
-### dt-test ### EXPECT \ : OF: overlay: overlay changeset pre-remove notifier error -18, target: /testcase-data/overlay-node/test-bus
-OF: overlay: overlay changeset pre-remove notifier error -18, target: /testcase-data/overlay-node/test-bus
-### dt-test ### EXPECT / : OF: overlay: overlay changeset pre-remove notifier error -18, target: /testcase-data/overlay-node/test-bus
-### dt-test ### pass of_unittest_overlay_notify():2900
-### dt-test ### pass of_unittest_overlay_notify():2908
-device: 'testcase-data:overlay-node:test-bus:test-unittest19': device_add
-bus: 'platform': add device testcase-data:overlay-node:test-bus:test-unittest19
-PM: Adding info for platform:testcase-data:overlay-node:test-bus:test-unittest19
-bus: 'platform': __driver_probe_device: matched device testcase-data:overlay-node:test-bus:test-unittest19 with driver unittest
-bus: 'platform': really_probe: probing driver unittest with device testcase-data:overlay-node:test-bus:test-unittest19
-unittest testcase-data:overlay-node:test-bus:test-unittest19: no pinctrl handle
-driver: 'unittest': driver_bound: bound to device 'testcase-data:overlay-node:test-bus:test-unittest19'
-bus: 'platform': really_probe: bound device testcase-data:overlay-node:test-bus:test-unittest19 to driver unittest
-### dt-test ### pass of_unittest_overlay_notify():2912
-### dt-test ### pass of_unittest_overlay_notify():2915
-### dt-test ### EXPECT \ : OF: overlay: overlay changeset post-remove notifier error -19, target: /testcase-data/overlay-node/test-bus
-bus: 'platform': remove device testcase-data:overlay-node:test-bus:test-unittest19
-PM: Removing info for platform:testcase-data:overlay-node:test-bus:test-unittest19
-OF: overlay: overlay changeset post-remove notifier error -19, target: /testcase-data/overlay-node/test-bus
-### dt-test ### EXPECT / : OF: overlay: overlay changeset post-remove notifier error -19, target: /testcase-data/overlay-node/test-bus
-### dt-test ### pass of_unittest_overlay_notify():2922
-### dt-test ### pass of_unittest_overlay_notify():2929
-device: 'testcase-data:overlay-node:test-bus:test-unittest20': device_add
-bus: 'platform': add device testcase-data:overlay-node:test-bus:test-unittest20
-PM: Adding info for platform:testcase-data:overlay-node:test-bus:test-unittest20
-bus: 'platform': __driver_probe_device: matched device testcase-data:overlay-node:test-bus:test-unittest20 with driver unittest
-bus: 'platform': really_probe: probing driver unittest with device testcase-data:overlay-node:test-bus:test-unittest20
-unittest testcase-data:overlay-node:test-bus:test-unittest20: no pinctrl handle
-driver: 'unittest': driver_bound: bound to device 'testcase-data:overlay-node:test-bus:test-unittest20'
-bus: 'platform': really_probe: bound device testcase-data:overlay-node:test-bus:test-unittest20 to driver unittest
-### dt-test ### pass of_unittest_overlay_notify():2934
-bus: 'platform': remove device testcase-data:overlay-node:test-b
-[19:59:16.657]收←◆us:test-unittest20
-PM: Removing info for platform:testcase-data:overlay-node:test-bus:test-unittest20
-### dt-test ### pass of_unittest_overlay_notify():2946
-### dt-test ### pass of_unittest_check_tree_linkage():269
-### dt-test ### pass of_unittest_check_tree_linkage():270
-### dt-test ### EXPECT \ : OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data-2/substation@100/status
-### dt-test ### EXPECT \ : OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data-2/fairway-1/status
-### dt-test ### EXPECT \ : OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data-2/fairway-1/ride@100/track@30/incline-up
-### dt-test ### EXPECT \ : OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data-2/fairway-1/ride@100/track@40/incline-up
-### dt-test ### EXPECT \ : OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data-2/lights@40000/status
-### dt-test ### EXPECT \ : OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data-2/lights@40000/color
-### dt-test ### EXPECT \ : OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data-2/lights@40000/rate
-### dt-test ### EXPECT \ : OF: overlay: WARNING: memory leak will occur if overlay removed, property: /__symbols__/hvac_2
-### dt-test ### EXPECT \ : OF: overlay: WARNING: memory leak will occur if overlay removed, property: /__symbols__/ride_200
-### dt-test ### EXPECT \ : OF: overlay: WARNING: memory leak will occur if overlay removed, property: /__symbols__/ride_200_left
-### dt-test ### EXPECT \ : OF: overlay: WARNING: memory leak will occur if overlay removed, property: /__symbols__/ride_200_right
-OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data-2/substation@100/status
-OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data-2/fairway-1/status
-OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data-2/fairway-1/ride@100/track@30/incline-up
-OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data-2/fairway-1/ride@100/track@40/incline-up
-OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data-2/lights@40000/status
-OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data-2/lights@40000/color
-OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data-2/lights@40000/rate
-OF: overlay: WARNING: memory leak will occur if overlay removed, property: /__symbols__/hvac_2
-OF: overlay: WARNING: memory leak will occur if overlay removed, property: /__symbols__/ride_200
-OF: overlay: WARNING: memory leak will occur if overlay removed, property: /__symbols__/ride_200_left
-OF: overlay: WARNING: memory leak will occur if overlay removed, property: /__symbols__/ride_200_right
-### dt-test ### EXPECT / : OF: overlay: WARNING: memory leak will occur if overlay removed, property: /__symbols__/ride_200_right
-### dt-test ### EXPECT / : OF: overlay: WARNING: memory leak will occur if overlay removed, property: /__symbols__/ride_200_left
-### dt-test ### EXPECT / : OF: overlay: WARNING: memory leak will occur if overlay removed, property: /__symbols__/ride_200
-### dt-test ### EXPECT / : OF: overlay: WARNING: memory leak will occur if overlay removed, property: /__symbols__/hvac_2
-### dt-test ### EXPECT / : OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data-2/lights@40000/rate
-### dt-test ### EXPECT / : OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data-2/lights@40000/color
-### dt-test ### EXPECT / : OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data-2/lights@40000/status
-### dt-test ###
-[19:59:16.697]收←◆ EXPECT / : OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data-2/fairway-1/ride@100/track@40/incline-up
-### dt-test ### EXPECT / : OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data-2/fairway-1/ride@100/track@30/incline-up
-### dt-test ### EXPECT / : OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data-2/fairway-1/status
-### dt-test ### EXPECT / : OF: overlay: WARNING: memory leak will occur if overlay removed, property: /testcase-data-2/substation@100/status
-### dt-test ### pass of_unittest_overlay_high_level():3431
-### dt-test ### EXPECT \ : OF: overlay: ERROR: multiple fragments add and/or delete node /testcase-data-2/substation@100/motor-1/controller
-### dt-test ### EXPECT \ : OF: overlay: ERROR: multiple fragments add, update, and/or delete property /testcase-data-2/substation@100/motor-1/controller/name
-OF: overlay: ERROR: multiple fragments add and/or delete node /testcase-data-2/substation@100/motor-1/controller
-OF: overlay: ERROR: multiple fragments add, update, and/or delete property /testcase-data-2/substation@100/motor-1/controller/name
-### dt-test ### pass of_unittest_overlay_high_level():3438
-### dt-test ### EXPECT / : OF: overlay: ERROR: multiple fragments add, update, and/or delete property /testcase-data-2/substation@100/motor-1/controller/name
-### dt-test ### EXPECT / : OF: overlay: ERROR: multiple fragments add and/or delete node /testcase-data-2/substation@100/motor-1/controller
-### dt-test ### EXPECT \ : OF: overlay: ERROR: multiple fragments add and/or delete node /testcase-data-2/substation@100/motor-1/electric
-### dt-test ### EXPECT \ : OF: overlay: ERROR: multiple fragments add, update, and/or delete property /testcase-data-2/substation@100/motor-1/electric/rpm_avail
-### dt-test ### EXPECT \ : OF: overlay: ERROR: multiple fragments add, update, and/or delete property /testcase-data-2/substation@100/motor-1/electric/name
-OF: overlay: ERROR: multiple fragments add and/or delete node /testcase-data-2/substation@100/motor-1/electric
-OF: overlay: ERROR: multiple fragments add, update, and/or delete property /testcase-data-2/substation@100/motor-1/electric/rpm_avail
-OF: overlay: ERROR: multiple fragments add, update, and/or delete property /testcase-data-2/substation@100/motor-1/electric/name
-### dt-test ### pass of_unittest_overlay_high_level():3453
-### dt-test ### EXPECT / : OF: overlay: ERROR: multiple fragments add, update, and/or delete property /testcase-data-2/substation@100/motor-1/electric/name
-### dt-test ### EXPECT / : OF: overlay: ERROR: multiple fragments add, update, and/or delete property /testcase-data-2/substation@100/motor-1/electric/rpm_avail
-### dt-test ### EXPECT / : OF: overlay: ERROR: multiple fragments add and/or delete node /testcase-data-2/substation@100/motor-1/electric
-### dt-test ### pass of_unittest_overlay_high_level():3463
-### dt-test ### pass of_unittest_overlay_high_level():3466
-### dt-test ### end of unittest - 273 passed, 0 failed
 clk: Disabling unused clocks
+device: 'wakeup2': device_add
