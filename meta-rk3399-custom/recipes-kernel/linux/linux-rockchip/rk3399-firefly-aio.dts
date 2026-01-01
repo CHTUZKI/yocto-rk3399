@@ -49,6 +49,18 @@
 		bootargs = "earlycon=uart8250,mmio32,0xff1a0000,1500000n8 console=ttyFIQ0 rootwait coherent_pool=1m";
 	};
 
+	/* 添加USB PHY供应器解决依赖问题 */
+	usb_phy_supply: usb-phy-supply {
+		compatible = "regulator-fixed";
+		regulator-name = "usb-phy-supply";
+		regulator-always-on;
+		regulator-boot-on;
+		regulator-min-microvolt = <5000000>;
+		regulator-max-microvolt = <5000000>;
+	};
+
+	/* 以太网PHY供应器已在rk3399-firefly-core.dtsi中定义，此处删除重复定义 */
+
 	test-power {
 		status = "okay";
 	};
@@ -106,7 +118,7 @@
 
 
 &i2c1 {
-	status = "okay";
+	status = "disabled";
 	i2c-scl-rising-time-ns = <300>;
 	i2c-scl-falling-time-ns = <15>;
 	clock-frequency = <100000>;
@@ -172,43 +184,43 @@
 
 
 &vcc_mipi {
-	status = "okay";
+	status = "disabled";
 };
 
 &dvdd_1v2 {
-	status = "okay";
+	status = "disabled";
 };
 
 &ov13850 {
-	status = "okay";
+	status = "disabled";
 };
 
 &ov13850_1 {
-	status = "okay";
+	status = "disabled";
 };
 
 &rkisp1_0 {
-	status = "okay";
+	status = "disabled";
 };
 
 &mipi_dphy_rx0 {
-	status = "okay";
+	status = "disabled";
 };
 
 &isp0_mmu {
-	status = "okay";
+	status = "disabled";
 };
 
 &rkisp1_1 {
-	status = "okay";
+	status = "disabled";
 };
 
 &mipi_dphy_tx1rx1 {
-	status = "okay";
+	status = "disabled";
 };
 
 &isp1_mmu {
-	status = "okay";
+	status = "disabled";
 };
 
 
@@ -220,7 +232,7 @@
 };
 
 &hdmi_dp_sound {
-	status = "okay";
+	status = "disabled";
 };
 
 &rt5640 {
@@ -238,7 +250,7 @@
 	pinctrl-0 = <&sdmmc_clk &sdmmc_cmd &sdmmc_bus4>;
 	vmmc-supply = <&vcc3v3_sys>;
 	vqmmc-supply = <&vcc_1v8>;
-	status = "okay";
+	status = "disabled";
 };
 
 &sdio0 {
@@ -257,15 +269,15 @@
 	sd-uhs-sdr104;
 	vmmc-supply = <&vcc3v3_sys>;
 	vqmmc-supply = <&vcc_1v8>;
-	status = "okay";
+	status = "disabled";
 };
 
 &spi1 {
-    status = "okay";
+    status = "disabled";
 };
 
 &spi_wk2xxx {
-    status = "okay";
+    status = "disabled";
 };
 
 &fusb0 {
@@ -273,28 +285,29 @@
 };
 
 &tcphy0 {
-    status = "okay";
+    status = "disabled";
     /delete-property/ extcon;
 };
 
 &u2phy0 {
-    status = "okay";
+    status = "disabled";
+    phy-supply = <&usb_phy_supply>;  /* 添加PHY供应器 */
     /delete-property/ extcon;
 
     u2phy0_otg: otg-port {
         rockchip,vbus-always-on;
         vbus-5v-gpios = <&gpio1 3 GPIO_ACTIVE_HIGH>;
-        status = "okay";
+        status = "disabled";
     };
 };
 
 &usbdrd3_0 {
-    status = "okay";
+    status = "disabled";
     /delete-property/ extcon;
 };
 
 &usbdrd_dwc3_0 {
-	status = "okay";
+	status = "disabled";
 	dr_mode = "host";
 };
 
@@ -313,7 +326,7 @@
 &uart2 {
 	pinctrl-names = "default";
 	pinctrl-0 = <&uart2c_xfer>;
-	status = "okay";
+	status = "disabled";
 	/* Set clock frequency to 24MHz for proper 1500000 baud rate calculation */
 	clock-frequency = <24000000>;
 };

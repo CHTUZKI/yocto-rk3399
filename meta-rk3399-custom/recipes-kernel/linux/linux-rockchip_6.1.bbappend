@@ -6,8 +6,7 @@ FILESEXTRAPATHS:prepend := "${THISDIR}/linux-rockchip:"
 # 内核配置已直接整合到defconfig中
 # 设备树修复已直接整合到rk3399-firefly-core.dtsi中
 
-# 添加I2C调试支持
-PACKAGECONFIG:append = " i2c-debug"
+# I2C调试支持已通过设备树配置实现，无需PACKAGECONFIG
 
 # 增强内核配置
 KERNEL_EXTRA_FEATURES += " \
