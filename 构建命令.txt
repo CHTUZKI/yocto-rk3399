@@ -130,3 +130,10 @@ bitbake linux-rockchip -c cleansstate
 bitbake linux-rockchip
 bitbake rk3399-image-minimal -c cleanall
 bitbake rk3399-image-minimal
+
+cd /home/xuning/yocto-rk3399
+source poky/oe-init-build-env build
+bitbake linux-rockchip -c cleansstate
+bitbake linux-rockchip
+bitbake rk3399-image-minimal -c cleanall
+bitbake rk3399-image-minimal

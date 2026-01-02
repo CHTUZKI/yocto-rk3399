@@ -38,12 +38,12 @@ KERNEL_CONFIG_FRAGMENTS = ""
 KERNEL_FEATURES = ""
 KERNEL_DANGLING_FEATURES_WARN_ONLY = "1"
 
-# Device tree - use the standard rk3399-firefly.dts from kernel source
-KERNEL_DEVICETREE = "rockchip/rk3399-firefly.dtb"
+# Device tree - use rk3399-evb.dts (evaluation board, minimal configuration)
+KERNEL_DEVICETREE = "rockchip/rk3399-evb.dtb"
 
 COMPATIBLE_MACHINE = "rk3399-.*"
 
-# Configure kernel - rk3399-firefly.dts is already in kernel source
+# Configure kernel - rk3399-evb.dts is already in kernel source
 do_configure:prepend() {
     # Use defconfig if provided
     if [ -f "${WORKDIR}/defconfig" ]; then
@@ -86,7 +86,7 @@ do_install() {
     
     # Install device tree
     install -d ${D}/boot/dtb/rockchip
-    install -m 0644 ${B}/arch/${ARCH}/boot/dts/rockchip/rk3399-firefly.dtb ${D}/boot/dtb/rockchip/
+    install -m 0644 ${B}/arch/${ARCH}/boot/dts/rockchip/rk3399-evb.dtb ${D}/boot/dtb/rockchip/
     
     install -d ${D}${sysconfdir}/modules-load.d
     install -d ${D}${sysconfdir}/modprobe.d
@@ -96,10 +96,10 @@ do_install() {
 do_deploy:append() {
     install -d ${DEPLOY_DIR_IMAGE}
     install -m 0644 ${B}/arch/${ARCH}/boot/${KERNEL_IMAGETYPE} ${DEPLOY_DIR_IMAGE}/${KERNEL_IMAGETYPE}-${KERNEL_VERSION}
-    if [ -e ${B}/arch/${ARCH}/boot/dts/rockchip/rk3399-firefly.dtb ]; then
+    if [ -e ${B}/arch/${ARCH}/boot/dts/rockchip/rk3399-evb.dtb ]; then
         # Use deploy mechanism to avoid conflicts
-        install -m 0644 ${B}/arch/${ARCH}/boot/dts/rockchip/rk3399-firefly.dtb ${DEPLOY_DIR_IMAGE}/rk3399-firefly--${KERNEL_VERSION}-${MACHINE}.dtb
-        ln -sf rk3399-firefly--${KERNEL_VERSION}-${MACHINE}.dtb ${DEPLOY_DIR_IMAGE}/rk3399-firefly.dtb
+        install -m 0644 ${B}/arch/${ARCH}/boot/dts/rockchip/rk3399-evb.dtb ${DEPLOY_DIR_IMAGE}/rk3399-evb--${KERNEL_VERSION}-${MACHINE}.dtb
+        ln -sf rk3399-evb--${KERNEL_VERSION}-${MACHINE}.dtb ${DEPLOY_DIR_IMAGE}/rk3399-evb.dtb
     fi
 }
 

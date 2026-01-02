@@ -48,7 +48,7 @@ do_create_boot_script() {
     # This is where U-Boot bootcmd will load them from
     install -d ${IMAGE_ROOTFS}/boot
     install -m 0644 ${DEPLOY_DIR_IMAGE}/${kernel_file} ${IMAGE_ROOTFS}/boot/Image-6.1.115
-    install -m 0644 ${DEPLOY_DIR_IMAGE}/rk3399-firefly.dtb ${IMAGE_ROOTFS}/boot/rk3399-firefly.dtb
+    install -m 0644 ${DEPLOY_DIR_IMAGE}/rk3399-evb.dtb ${IMAGE_ROOTFS}/boot/rk3399-evb.dtb
     bbnote "Installed kernel and DTB to ${IMAGE_ROOTFS}/boot/ for direct U-Boot bootcmd"
 }
 
