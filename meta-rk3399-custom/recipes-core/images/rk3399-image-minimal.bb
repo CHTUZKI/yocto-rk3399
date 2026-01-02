@@ -97,7 +97,7 @@ BOOT_PARTITION_SIZE = "240"
 # Note: kernel and DTB are actually in root filesystem /boot directory
 # boot.scr is also in root filesystem /boot directory, loaded by U-Boot bootcmd
 # Boot partition may be empty or used for compatibility
-IMAGE_BOOT_FILES = "Image rk3399-firefly-aio.dtb"
+IMAGE_BOOT_FILES = "Image rk3399-firefly.dtb"
 
 # Create .img file from .wic file (compatible with Armbian naming)
 # This creates a .img file by copying the .wic file after all images are built

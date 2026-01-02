@@ -22,9 +22,6 @@ SRCREV = "b908c7339f51eddcfe8402cd15d1e1f8f4e67c29"
 
 SRC_URI = "git://github.com/armbian/linux-rockchip.git;branch=${KBRANCH};protocol=https \
            file://defconfig \
-           file://rk3399-firefly-aio.dts \
-           file://rk3399-firefly-port.dtsi \
-           file://rk3399-firefly-core.dtsi \
            file://0001-Fix-RK3399-earlycon-uartclk-initialization.patch \
            file://0002-Fix-RK3399-earlycon-Force-uartclk-to-24MHz.patch \
            file://0003-Remove-rockpi-mcu-driver.patch \
@@ -41,23 +38,17 @@ KERNEL_CONFIG_FRAGMENTS = ""
 KERNEL_FEATURES = ""
 KERNEL_DANGLING_FEATURES_WARN_ONLY = "1"
 
-# Device tree
-KERNEL_DEVICETREE = "rockchip/rk3399-firefly-aio.dtb"
+# Device tree - use the standard rk3399-firefly.dts from kernel source
+KERNEL_DEVICETREE = "rockchip/rk3399-firefly.dtb"
 
 COMPATIBLE_MACHINE = "rk3399-.*"
 
-# Copy device tree files to kernel source
+# Configure kernel - rk3399-firefly.dts is already in kernel source
 do_configure:prepend() {
     # Use defconfig if provided
     if [ -f "${WORKDIR}/defconfig" ]; then
         cp ${WORKDIR}/defconfig ${B}/.config
     fi
-    
-    # Copy device tree files to kernel source tree
-    install -d ${S}/arch/arm64/boot/dts/rockchip
-    install -m 0644 ${WORKDIR}/rk3399-firefly-aio.dts ${S}/arch/arm64/boot/dts/rockchip/
-    install -m 0644 ${WORKDIR}/rk3399-firefly-port.dtsi ${S}/arch/arm64/boot/dts/rockchip/
-    install -m 0644 ${WORKDIR}/rk3399-firefly-core.dtsi ${S}/arch/arm64/boot/dts/rockchip/
 }
 
 # Enable additional filesystem and debugging support
@@ -95,7 +86,7 @@ do_install() {
     
     # Install device tree
     install -d ${D}/boot/dtb/rockchip
-    install -m 0644 ${B}/arch/${ARCH}/boot/dts/rockchip/rk3399-firefly-aio.dtb ${D}/boot/dtb/rockchip/
+    install -m 0644 ${B}/arch/${ARCH}/boot/dts/rockchip/rk3399-firefly.dtb ${D}/boot/dtb/rockchip/
     
     install -d ${D}${sysconfdir}/modules-load.d
     install -d ${D}${sysconfdir}/modprobe.d
@@ -105,10 +96,10 @@ do_install() {
 do_deploy:append() {
     install -d ${DEPLOY_DIR_IMAGE}
     install -m 0644 ${B}/arch/${ARCH}/boot/${KERNEL_IMAGETYPE} ${DEPLOY_DIR_IMAGE}/${KERNEL_IMAGETYPE}-${KERNEL_VERSION}
-    if [ -e ${B}/arch/${ARCH}/boot/dts/rockchip/rk3399-firefly-aio.dtb ]; then
+    if [ -e ${B}/arch/${ARCH}/boot/dts/rockchip/rk3399-firefly.dtb ]; then
         # Use deploy mechanism to avoid conflicts
-        install -m 0644 ${B}/arch/${ARCH}/boot/dts/rockchip/rk3399-firefly-aio.dtb ${DEPLOY_DIR_IMAGE}/rk3399-firefly-aio--${KERNEL_VERSION}-${MACHINE}.dtb
-        ln -sf rk3399-firefly-aio--${KERNEL_VERSION}-${MACHINE}.dtb ${DEPLOY_DIR_IMAGE}/rk3399-firefly-aio.dtb
+        install -m 0644 ${B}/arch/${ARCH}/boot/dts/rockchip/rk3399-firefly.dtb ${DEPLOY_DIR_IMAGE}/rk3399-firefly--${KERNEL_VERSION}-${MACHINE}.dtb
+        ln -sf rk3399-firefly--${KERNEL_VERSION}-${MACHINE}.dtb ${DEPLOY_DIR_IMAGE}/rk3399-firefly.dtb
     fi
 }
 
