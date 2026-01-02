@@ -4,6 +4,7 @@ DESCRIPTION = "Minimal system image for RK3399 platform with essential packages 
 inherit core-image
 inherit rockchip-image
 inherit bootimg-rockchip
+inherit rootfs_deb
 
 # Base packages - minimal set
 IMAGE_INSTALL = " \
@@ -11,6 +12,7 @@ IMAGE_INSTALL = " \
     kernel-modules \
     kernel-image \
     kernel-devicetree \
+    htop \
     ${CORE_IMAGE_EXTRA_INSTALL} \
 "
 
