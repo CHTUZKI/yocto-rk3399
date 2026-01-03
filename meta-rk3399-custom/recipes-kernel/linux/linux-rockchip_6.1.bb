@@ -22,6 +22,7 @@ SRCREV = "b908c7339f51eddcfe8402cd15d1e1f8f4e67c29"
 
 SRC_URI = "git://github.com/armbian/linux-rockchip.git;branch=${KBRANCH};protocol=https \
            file://defconfig \
+           file://rk3399-evb.dts \
            file://0001-Fix-RK3399-earlycon-uartclk-initialization.patch \
            file://0002-Fix-RK3399-earlycon-Force-uartclk-to-24MHz.patch \
            file://0003-Remove-rockpi-mcu-driver.patch \
@@ -43,11 +44,17 @@ KERNEL_DEVICETREE = "rockchip/rk3399-evb.dtb"
 
 COMPATIBLE_MACHINE = "rk3399-.*"
 
-# Configure kernel - rk3399-evb.dts is already in kernel source
+# Configure kernel - use our custom device tree
 do_configure:prepend() {
     # Use defconfig if provided
     if [ -f "${WORKDIR}/defconfig" ]; then
         cp ${WORKDIR}/defconfig ${B}/.config
+    fi
+    
+    # Copy our custom device tree to kernel source
+    if [ -f "${WORKDIR}/rk3399-evb.dts" ]; then
+        install -d ${S}/arch/arm64/boot/dts/rockchip
+        install -m 0644 ${WORKDIR}/rk3399-evb.dts ${S}/arch/arm64/boot/dts/rockchip/rk3399-evb.dts
     fi
 }
 
