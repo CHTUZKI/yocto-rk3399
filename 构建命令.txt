@@ -113,7 +113,6 @@ ls -lh tmp/deploy/images/rk3399-firefly/
 # sudo dd if=tmp/deploy/images/rk3399-firefly/rk3399-image-minimal-rk3399-firefly.wic of=/dev/sdX bs=4M status=progress
 
 
-
 cd /home/xuning/yocto-rk3399
 source poky/oe-init-build-env build
 bitbake u-boot-rockchip -c cleansstate
