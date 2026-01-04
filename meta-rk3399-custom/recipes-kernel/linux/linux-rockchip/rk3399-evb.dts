@@ -18,6 +18,7 @@
 
 	backlight: backlight {
 		compatible = "pwm-backlight";
+		status = "disabled";
 		brightness-levels = <
 			  0   1   2   3   4   5   6   7
 			  8   9  10  11  12  13  14  15
@@ -57,6 +58,7 @@
 
 	edp_panel: edp-panel {
 		compatible = "lg,lp079qx1-sp0v";
+		status = "disabled";
 		backlight = <&backlight>;
 		enable-gpios = <&gpio1 RK_PB5 GPIO_ACTIVE_HIGH>;
 		power-supply = <&vcc3v3_s0>;
@@ -121,17 +123,10 @@
 		regulator-boot-on;
 	};
 
-	vcc_phy: vcc-phy-regulator {
-		compatible = "regulator-fixed";
-		regulator-name = "vcc_phy";
-		regulator-always-on;
-		regulator-boot-on;
-	};
-
 };
 
 &edp {
-	status = "okay";
+	status = "disabled";
 	force-hpd;
 
 	ports {
@@ -254,10 +249,10 @@
 				};
 			};
 
-			vcc3v0_tp: LDO_REG2 {
-				regulator-name = "vcc3v0_tp";
-				regulator-min-microvolt = <3000000>;
-				regulator-max-microvolt = <3000000>;
+			vcca1v8_hdmi: LDO_REG2 {
+				regulator-name = "vcca1v8_hdmi";
+				regulator-min-microvolt = <1800000>;
+				regulator-max-microvolt = <1800000>;
 				regulator-always-on;
 				regulator-boot-on;
 				regulator-state-mem {
@@ -312,10 +307,10 @@
 				};
 			};
 
-			vcca1v8_codec: LDO_REG7 {
-				regulator-name = "vcca1v8_codec";
-				regulator-min-microvolt = <1800000>;
-				regulator-max-microvolt = <1800000>;
+			vcca0v9_hdmi: LDO_REG7 {
+				regulator-name = "vcca0v9_hdmi";
+				regulator-min-microvolt = <900000>;
+				regulator-max-microvolt = <900000>;
 				regulator-always-on;
 				regulator-boot-on;
 				regulator-state-mem {
@@ -431,12 +426,20 @@
 	status = "okay";
 };
 
+&u2phy0_otg {
+	status = "okay";
+};
+
 &u2phy1 {
 	status = "okay";
 };
 
 &u2phy1_host {
 	phy-supply = <&vcc5v0_host>;
+	status = "okay";
+};
+
+&u2phy1_otg {
 	status = "okay";
 };
 
@@ -460,6 +463,52 @@
 	status = "okay";
 };
 
+/* USB3.0 (DWC3) Configuration */
+&usbdrd3_0 {
+	status = "okay";
+};
+
+&usbdrd_dwc3_0 {
+	dr_mode = "host";
+	phy_type = "utmi_wide";
+	snps,dis_enblslpm_quirk;
+	snps,dis-u2-freeclk-exists-quirk;
+	snps,dis_u2_susphy_quirk;
+	snps,dis-del-phy-power-chg-quirk;
+	snps,tx-ipgap-linecheck-dis-quirk;
+	snps,xhci-slow-suspend-quirk;
+	snps,xhci-trb-ent-quirk;
+	snps,usb3-warm-reset-on-resume-quirk;
+	status = "okay";
+};
+
+&usbdrd3_1 {
+	status = "okay";
+};
+
+&usbdrd_dwc3_1 {
+	dr_mode = "host";
+	phy_type = "utmi_wide";
+	snps,dis_enblslpm_quirk;
+	snps,dis-u2-freeclk-exists-quirk;
+	snps,dis_u2_susphy_quirk;
+	snps,dis-del-phy-power-chg-quirk;
+	snps,tx-ipgap-linecheck-dis-quirk;
+	snps,xhci-slow-suspend-quirk;
+	snps,xhci-trb-ent-quirk;
+	snps,usb3-warm-reset-on-resume-quirk;
+	status = "okay";
+};
+
+/* USB3.0 Type-C PHY */
+&tcphy0 {
+	status = "okay";
+};
+
+&tcphy1 {
+	status = "okay";
+};
+
 &pinctrl {
 	pmic {
 		pmic_int_l: pmic-int-l {
@@ -472,6 +521,19 @@
 		vcc5v0_host_en: vcc5v0-host-en {
 			rockchip,pins =
 				<4 RK_PD1 RK_FUNC_GPIO &pcfg_pull_none>;
+		};
+	};
+
+	hdmi {
+		hdmi_i2c_xfer: hdmi-i2c-xfer {
+			rockchip,pins =
+				<4 17 3 &pcfg_pull_none>,
+				<4 16 3 &pcfg_pull_none>;
+		};
+
+		hdmi_cec: hdmi-cec {
+			rockchip,pins =
+				<4 23 1 &pcfg_pull_none>;
 		};
 	};
 };
@@ -494,10 +556,16 @@
 
 /* Enable HDMI output */
 &hdmi {
+	pinctrl-names = "default";
+	pinctrl-0 = <&hdmi_i2c_xfer &hdmi_cec>;
 	status = "okay";
+	avdd-0v9-supply = <&vcca0v9_hdmi>;
+	avdd-1v8-supply = <&vcca1v8_hdmi>;
 	#address-cells = <1>;
 	#size-cells = <0>;
 	#sound-dai-cells = <0>;
+	ddc-i2c-scl-high-time-ns = <9625>;
+	ddc-i2c-scl-low-time-ns = <10000>;
 };
 
 /* Connect HDMI input to VOPB output */
@@ -514,4 +582,23 @@
 &route_hdmi {
 	status = "okay";
 	connect = <&vopb_out_hdmi>;
+	overscan,bottom_margin = <100>;
+	overscan,top_margin = <100>;
+	overscan,right_margin = <100>;
+	overscan,left_margin = <100>;
+	video,flags = <5>;
+	video,vrefresh = <60>;
+	video,crtc_vsync_end = <1089>;
+	video,crtc_hsync_end = <2052>;
+	video,vdisplay = <1080>;
+	video,hdisplay = <1920>;
+	logo,ymirror = <0>;
+	logo,bpp = <16>;
+	logo,height = <501>;
+	logo,width = <500>;
+	logo,offset = <0x20000>;
+	logo,uboot = "logo.bmp";
+	logo,kernel = "logo_kernel.bmp";
+	logo,mode = "center";
+	charge_logo,mode = "center";
 };
