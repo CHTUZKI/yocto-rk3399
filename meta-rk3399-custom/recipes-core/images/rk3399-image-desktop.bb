@@ -83,6 +83,7 @@ IMAGE_FEATURES += " \
     ssh-server-openssh \
     x11-base \
     x11-sato \
+    package-management \
 "
 
 

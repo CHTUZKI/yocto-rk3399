@@ -1,5 +1,5 @@
 SUMMARY = "Disable display power management and screen blanking"
-DESCRIPTION = "This package disables DPMS and screen blanking to prevent VNC connection issues"
+DESCRIPTION = "This package disables DPMS and screen blanking to prevent screen going blank during inactivity"
 
 LICENSE = "MIT"
 LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/MIT;md5=0835ade698e0bcf8506ecda2f7b4f302"
@@ -20,6 +20,7 @@ Section "ServerFlags"
 EndSection
 
 Section "Monitor"
+    Identifier "DefaultMonitor"
     Option "DPMS" "false"
 EndSection
 EOF

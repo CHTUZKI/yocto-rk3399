@@ -79,6 +79,7 @@ do_deploy_bootloader() {
 IMAGE_FEATURES += " \
     debug-tweaks \
     ssh-server-openssh \
+    package-management \
 "
 
 # Root filesystem size (in KB, 0 = auto)

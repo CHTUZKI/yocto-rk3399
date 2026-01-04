@@ -108,9 +108,8 @@ RDEPENDS:${PN} += " \
     evince \
 "
 
-# Remote Desktop Access (VNC)
+# Display power management
 RDEPENDS:${PN} += " \
-    x11vnc \
     packagegroup-display-power-management \
 "
 
