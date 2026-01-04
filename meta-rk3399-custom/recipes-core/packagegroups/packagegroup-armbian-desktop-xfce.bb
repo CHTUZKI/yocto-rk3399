@@ -80,6 +80,7 @@ RDEPENDS:${PN} += " \
     ${@bb.utils.contains('DISTRO_FEATURES', 'polkit', 'polkit', '', d)} \
     ${@bb.utils.contains('DISTRO_FEATURES', 'polkit', 'polkit-group-rule-datetime', '', d)} \
     ${@bb.utils.contains('DISTRO_FEATURES', 'polkit', 'polkit-group-rule-network', '', d)} \
+    ${@bb.utils.contains('DISTRO_FEATURES', 'polkit', 'xfce-polkit', '', d)} \
     gvfs \
     dbus-x11 \
     xdg-user-dirs \
@@ -105,6 +106,12 @@ RDEPENDS:${PN} += " \
 # Note: xfce4-terminal is already in packagegroup-xfce-base
 RDEPENDS:${PN} += " \
     evince \
+"
+
+# Remote Desktop Access (VNC)
+RDEPENDS:${PN} += " \
+    x11vnc \
+    packagegroup-display-power-management \
 "
 
 # XFCE Panel Plugins

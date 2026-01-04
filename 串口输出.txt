@@ -1,9 +1,11 @@
 
-[22:09:39.715]收←◆\0\0\0
-[22:09:41.169]收←◆DDR Version 1.30 20230417
+[20:42:25.621]收←◆\0
+[20:42:26.068]收←◆DDR Version 1.30 20230417
 In
+soft reset
+SRX
 
-[22:09:41.230]收←◆channel 0
+[20:42:26.101]收←◆channel 0
 CS = 0
 MR0=0x18
 MR4=0x2
@@ -62,9 +64,9 @@ MR25=0x0
 channel 0 training pass!
 channel 1 training pass!
 
-[22:09:41.518]收←◆channel 0, cs 0, advanced training done
+[20:42:26.453]收←◆channel 0, cs 0, advanced training done
 
-[22:09:41.828]收←◆channel 1, cs 0, advanced training done
+[20:42:26.808]收←◆channel 1, cs 0, advanced training done
 change freq to 856MHz 1,0
 ch 0 ddrconfig = 0x101, ddrsize = 0x20
 ch 1 ddrconfig = 0x101, ddrsize = 0x20
@@ -73,21 +75,21 @@ ddr_set_rate to 328MHZ
 ddr_set_rate to 666MHZ
 ddr_set_rate to 928MHZ
 
-[22:09:42.099]收←◆channel 0, cs 0, advanced training done
+[20:42:27.161]收←◆channel 0, cs 0, advanced training done
 
-[22:09:42.356]收←◆channel 1, cs 0, advanced training done
+[20:42:27.495]收←◆channel 1, cs 0, advanced training done
 ddr_set_rate to 416MHZ, ctl_index 0
 ddr_set_rate to 856MHZ, ctl_index 1
 support 416 856 328 666 928 MHz, current 856MHz
 OUT
 
-[22:09:42.602]收←◆Boot1 Release Time: May 26 2022 18:14:35, version: 1.30
+[20:42:27.785]收←◆Boot1 Release Time: May 26 2022 18:14:35, version: 1.30
 CPUId = 0x0
-ChipType = 0x10, 320
+ChipType = 0x10, 404
 mmc_set_bus_width: 1
 EmmcClk: 375KHZ
 
-[22:09:42.695]收←◆mmc_switch index:183, value:0x2
+[20:42:27.881]收←◆mmc_switch index:183, value:0x2
 mmc_switch index:185, value:0x2
 EmmcClk: 375KHZ
 mmc_set_bus_width: 8
@@ -117,7 +119,7 @@ mmc0:cmd55,20
 mmc0:cmd1,20
 NeedKHz=200KHz, Clock=12000KHz
 SdmmcInit=0 1
-StorageInit ok = 83490
+StorageInit ok = 84989
 SecureMode = 0
 SecureInit read PBA: 0x4
 SecureInit read PBA: 0x404
@@ -132,17 +134,17 @@ atags_set_bootdev: ret:(0)
 GPT part:  0, name:            uboot, start:0x4000, size:0x2000
 GPT part:  1, name:            trust, start:0x6000, size:0x2000
 GPT part:  2, name:             boot, start:0x8000, size:0x9c000
-GPT part:  3, name:             root, start:0xa4000, size:0x299998
+GPT part:  3, name:             root, start:0xa4000, size:0x7ccccc
 find part:uboot OK. first_lba:0x4000.
 find part:trust OK. first_lba:0x6000.
 LoadTrust Addr:0x6000
 No find bl30.bin
 No find bl32.bin
 Load uboot, ReadLba = 4000
-Load OK, addr=0x200000, size=0xbe958
-RunBL31 0x40000 @ 113946 us
-
-[22:09:42.721]收←◆NOTICE:  BL31: v1.3(release):8f40012ab
+Load OK, addr=0x200000, size=0xbe938
+RunBL31 0x40000 @ 117051 us
+
+[20:42:27.909]收←◆NOTICE:  BL31: v1.3(release):8f40012ab
 NOTICE:  BL31: Built : 14:20:53, Feb 16 2023
 NOTICE:  BL31: Rockchip release version: v1.1
 INFO:    GICv3 with legacy support detected. ARM GICV3 driver initialized in EL3
@@ -156,35 +158,36 @@ INFO:    BL31: Preparing for EL3 exit to normal world
 INFO:    Entry point address = 0x200000
 INFO:    SPSR = 0x3c9
 
-[22:09:43.862]收←◆
+[20:42:29.359]收←◆
 
 U-Boot 2022.07-rk3399 (Jul 11 2022 - 13:42:58 +0000)
 
 SoC: Rockchip rk3399
-Reset cause: POR
+Reset cause: RST
 Model: Firefly-RK3399 Board
 DRAM:  2 GiB
 
-[22:09:43.975]收←◆PMIC:  RK808 
+[20:42:29.470]收←◆PMIC:  RK808 
 
-[22:09:44.840]收←◆Core:  259 devices, 27 uclasses, devicetree: separate
+[20:42:30.336]收←◆Core:  259 devices, 27 uclasses, devicetree: separate
 MMC:   mmc@fe330000: 0
-Loading Environment from nowhere... OK
+Loading Environment from nowhere... 
+[20:42:30.355]收←◆OK
 In:    serial@ff1a0000
 Out:   serial@ff1a0000
 Err:   serial@ff1a0000
 Model: Firefly-RK3399 Board
 Net:   
-[22:09:45.547]收←◆eth0: ethernet@fe300000
+[20:42:31.042]收←◆eth0: ethernet@fe300000
 Hit any key to stop autoboot:  2 
-[22:09:46.555]收←◆ 1 
-[22:09:47.562]收←◆ 0 
+[20:42:32.049]收←◆ 1 
+[20:42:33.057]收←◆ 0 
 === U-Boot Debug: Direct boot mode ===
 
-[22:09:48.314]收←◆switch to partitions #0, OK
+[20:42:33.808]收←◆switch to partitions #0, OK
 mmc0(part 0) is current device
 
-[22:09:48.418]收←◆=== U-Boot Debug: MMC Info ===
+[20:42:33.909]收←◆=== U-Boot Debug: MMC Info ===
 Device: mmc@fe330000
 Manufacturer ID: 9b
 OEM: 0
@@ -213,47 +216,47 @@ Part	Start LBA	End LBA		Name
 	Partition GUID
   1	0x00004000	0x00005fff	"uboot"
 	attrs:	0x0000000000000000
-	type:	f66f0000-0000-4973-8000-14be00001888
-	guid:	f2630000-0000-4375-8000-75030000402e
+	type:	7d000000-0000-4333-8000-2b8d00003ec2
+	guid:	69030000-0000-4976-8000-7ab000000a08
   2	0x00006000	0x00007fff	"trust"
 	attrs:	0x0000000000000000
-	type:	675b0000-0000-4e2f-8000-681500006d6f
-	guid:	0a440000-0000-4e54-8000-59c6000004af
+	type:	675e0000-0000-4644-8000-6d740000056b
+	guid:	24380000-0000-4714-8000-5ba600003aca
   3	0x00008000	0x000a3fff	"boot"
 	attrs:	0x0000000000000000
-	type:	cf0c0000-0000-483f-8000-422d00001c94
-	guid:	ed3b0000-0000-4206-8000-399f00000d03
-  4	0x000a4000	0x0033d997	"root"
+	type:	8d7c0000-0000-4a2a-8000-265200004341
+	guid:	d0660000-0000-4c1c-8000-49c600005b2c
+  4	0x000a4000	0x00870ccb	"root"
 	attrs:	0x0000000000000000
-	type:	d77a0000-0000-4f07-8000-00af00000120
-	guid:	432a0000-0000-467b-8000-193400000151
+	type:	59170000-0000-496a-8000-6d8f00006b2a
+	guid:	d5210000-0000-4e0b-8000-757a00001b17
 === U-Boot Debug: Filesystem Check ===
 
-[22:09:48.454]收←◆<DIR>       4096 .
+[20:42:33.946]收←◆<DIR>       4096 .
 <DIR>       4096 ..
 <SYM>         13 Image
-        11175944 Image-6.1.115
+        12785672 Image-6.1.115
 <DIR>       4096 dtb
-           85763 rk3399-evb.dtb
-          780632 u-boot-dtb-rk3399-firefly-2022.07-r0.img
+           92014 rk3399-evb.dtb
+          780600 u-boot-dtb-rk3399-firefly-2022.07-r0.img
 <SYM>         40 u-boot-dtb.bin
 Boot directory accessible
 === U-Boot Debug: Loading kernel ===
 
-[22:09:49.524]收←◆11175944 bytes read in 1052 ms (10.1 MiB/s)
-=== U-Boot Debug: Kernel loaded (size: aa8808 bytes) ===
+[20:42:35.168]收←◆12785672 bytes read in 1205 ms (10.1 MiB/s)
+=== U-Boot Debug: Kernel loaded (size: c31808 bytes) ===
 
-[22:09:49.569]收←◆85763 bytes read in 24 ms (3.4 MiB/s)
-=== U-Boot Debug: Device tree loaded (size: 14f03 bytes) ===
+[20:42:35.214]收←◆92014 bytes read in 24 ms (3.7 MiB/s)
+=== U-Boot Debug: Device tree loaded (size: 1676e bytes) ===
 === U-Boot Debug: Boot args set ===
 === U-Boot Debug: Booting kernel ===
-Moving Image from 0x280000 to 0x400000, end=f10000
+Moving Image from 0x280000 to 0x400000, end=10a0000
 
-[22:09:49.695]收←◆## Flattened Device Tree blob at 03000000
+[20:42:35.387]收←◆## Flattened Device Tree blob at 03000000
    Booting using the fdt blob at 0x3000000
-   Loading Device Tree to 000000007deea000, end 000000007df01f02 ... OK
+ERROR: reserving fdt memory region failed (addr=0 size=0 flags=0)
+   Loading Device Tree to 000000007dee8000, end 000000007df0176d ... OK
 
-[22:09:49.727]收←◆
 Starting kernel ...
 
 Booting Linux on physical CPU 0x0000000000 [0x410fd034]
@@ -261,8 +264,9 @@ Linux version 6.1.115 (oe-user@oe-host) (aarch64-poky-linux-gcc (GCC) 11.5.0, GN
 Machine model: Rockchip RK3399 Evaluation Board
 earlycon: uart8250 at MMIO32 0x00000000ff1a0000 (options '1500000n8')
 printk: bootconsole [uart8250] enabled
+OF: fdt: Reserved memory: failed to reserve memory for node 'drm-logo@0': base 0x0000000000000000, size 0 MiB
 
-[22:09:49.809]收←◆Zone ranges:
+[20:42:35.492]收←◆Zone ranges:
   DMA      [mem 0x0000000000200000-0x000000007fffffff]
   DMA32    empty
   Normal   empty
@@ -271,14 +275,14 @@ Early memory node ranges
   node   0: [mem 0x0000000000200000-0x000000007fffffff]
 Initmem setup node 0 [mem 0x0000000000200000-0x000000007fffffff]
 
-[22:09:49.839]收←◆On node 0, zone DMA: 512 pages in unavailable ranges
+[20:42:35.522]收←◆On node 0, zone DMA: 512 pages in unavailable ranges
 psci: probing for conduit method from DT.
 psci: PSCIv1.0 detected in firmware.
 psci: Using standard PSCI v0.2 function IDs
 psci: MIGRATE_INFO_TYPE not supported.
 psci: SMC Calling Convention v1.0
-percpu: Embedded 14 pages/cpu s25000 r0 d32344 u57344
-pcpu-alloc: s25000 r0 d32344 u57344 alloc=14*4096
+percpu: Embedded 14 pages/cpu s25384 r0 d31960 u57344
+pcpu-alloc: s25384 r0 d31960 u57344 alloc=14*4096
 pcpu-alloc: [0] 0 [0] 1 [0] 2 [0] 3 [0] 4 [0] 5 
 Detected VIPT I-cache on CPU0
 CPU features: detected: GIC system register CPU interface
@@ -289,7 +293,7 @@ Dentry cache hash table entries: 262144 (order: 9, 2097152 bytes, linear)
 Inode-cache hash table entries: 131072 (order: 8, 1048576 bytes, linear)
 mem auto-init: stack:off, heap alloc:off, heap free:off
 
-[22:09:49.897]收←◆Memory: 2042948K/2095104K available (6976K kernel code, 866K rwdata, 1600K rodata, 1344K init, 368K bss, 52156K reserved, 0K cma-reserved)
+[20:42:35.579]收←◆Memory: 2041316K/2095104K available (8000K kernel code, 902K rwdata, 1980K rodata, 1472K init, 384K bss, 53788K reserved, 0K cma-reserved)
 SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=6, Nodes=1
 rcu: Hierarchical RCU implementation.
 rcu: 	RCU event tracing is enabled.
@@ -313,10 +317,10 @@ GICv3: GIC: PPI partition interrupt-partition-0[0] { /cpus/cpu@0[0] /cpus/cpu@1[
 GICv3: GIC: PPI partition interrupt-partition-1[1] { /cpus/cpu@100[4] /cpus/cpu@101[5] }
 rcu: srcu_init: Setting srcu_struct sizes based on contention.
 
-[22:09:50.082]收←◆rockchip_clk_register_frac_branch: could not find dclk_vop0_frac as parent of dclk_vop0, rate changes may not work
+[20:42:35.764]收←◆rockchip_clk_register_frac_branch: could not find dclk_vop0_frac as parent of dclk_vop0, rate changes may not work
 rockchip_clk_register_frac_branch: could not find dclk_vop1_frac as parent of dclk_vop1, rate changes may not work
 
-[22:09:50.223]收←◆arch_timer: cp15 timer(s) running at 24.00MHz (phys).
+[20:42:35.905]收←◆arch_timer: cp15 timer(s) running at 24.00MHz (phys).
 clocksource: arch_sys_counter: mask: 0xffffffffffffff max_cycles: 0x588fe9dc0, max_idle_ns: 440795202592 ns
 sched_clock: 56 bits at 24MHz, resolution 41ns, wraps every 4398046511097ns
 Console: colour dummy device 80x25
@@ -330,7 +334,7 @@ cpu_capacity: /cpus/cpu@2 cpu_capacity=485 (raw)
 cpu_capacity: /cpus/cpu@3 cpu_capacity=485 (raw)
 cpu_capacity: /cpus/cpu@100 cpu_capacity=1024 (raw)
 cpu_capacity: /cpus/cpu@101 cpu_capacity=1024 (raw)
-cpu_capacity: capacity_scale=614400000
+cpu_capacity: capacity_scale=835584000
 cpu_capacity: CPU0 cpu_capacity=485
 cpu_capacity: CPU1 cpu_capacity=485
 cpu_capacity: CPU2 cpu_capacity=485
@@ -398,7 +402,7 @@ bus: 'gpio': add driver gpio_stub_drv
 device class 'regulator': registering
 Registering platform device 'reg-dummy'. Parent at platform
 device: 'reg-
-[22:09:50.260]收←◆dummy': device_add
+[20:42:35.940]收←◆dummy': device_add
 bus: 'platform': add device reg-dummy
 PM: Adding info for platform:reg-dummy
 bus: 'platform': add driver reg-dummy
@@ -419,6 +423,7 @@ DMA: preallocated 256 KiB GFP_KERNEL|GFP_DMA32 pool for atomic allocations
 device class 'bdi': registering
 bus: 'platform': add driver rockchip-pinctrl
 bus: 'platform': add driver rockchip-gpio
+device class 'backlight': registering
 bus: 'amba': registered
 bus: 'platform': add driver rockchip-pm-domain
 device class 'tty': registering
@@ -426,6 +431,7 @@ device class 'vtconsole': registering
 device: 'vtcon0': device_add
 PM: Adding info for No Bus:vtcon0
 device class 'iommu': registering
+bus: 'mipi-dsi': registered
 device class 'devlink': registering
 device class 'wakeup': registering
 bus: 'platform': add driver syscon
@@ -433,6 +439,9 @@ bus: 'i2c': registered
 bus: 'i2c': add driver dummy
 i2c-core: driver [dummy] registered
 ASID allocator initialised with 65536 entries
+device: 'ramoops': device_add
+bus: 'platform': add device ramoops
+PM: Adding info for platform:ramoops
 device: 'ddr_timing': device_add
 bus: 'platform': add device ddr_timing
 PM: Adding info for platform:ddr_timing
@@ -473,10 +482,10 @@ ethernet@fe300000 Linked as a fwnode consumer to vcc-phy-regulator
 ethernet@fe300000 Linked as a fwnode consumer to rgmii-pins
 ethernet@fe300000 Linked as a fwnode consumer to gpio@ff788000
 platform fe300000.ethernet: Not linking /clock-controller@ff760000 - might never become dev
-ethernet@fe300000 Dropping the fwnode link to clock-controller@ff760000
+ethernet@fe300000 Dropping the fwnode lin
+[20:42:35.972]收←◆k to clock-controller@ff760000
 platform fe300000.ethernet: Not linking /interrupt-controller@fee00000 - might never become dev
-ethernet@fe300000 Dropping the fwnode link to
-[22:09:50.294]收←◆ interrupt-controller@fee00000
+ethernet@fe300000 Dropping the fwnode link to interrupt-controller@fee00000
 device: 'fe330000.mmc': device_add
 bus: 'platform': add device fe330000.mmc
 PM: Adding info for platform:fe330000.mmc
@@ -536,11 +545,11 @@ platform fe3e0000.usb: Not linking /clock-controller@ff760000 - might never beco
 usb@fe3e0000 Dropping the fwnode link to clock-controller@ff760000
 platform fe3e0000.usb: Not linking /interrupt-controller@fee00000 - might never become dev
 usb@fe3e0000 Dropping the fwnode link to interrupt-controller@fee00000
-device: 'fe430000.debug': device_add
+device: 'fe
+[20:42:36.004]收←◆430000.debug': device_add
 bus: 'amba': add device fe430000.debug
 PM: Adding info for amba:fe430000.debug
-debug@fe430000 Linked as a fwnode consumer to clock-controller@ff7
-[22:09:50.329]收←◆60000
+debug@fe430000 Linked as a fwnode consumer to clock-controller@ff760000
 amba fe430000.debug: Not linking /clock-controller@ff760000 - might never become dev
 debug@fe430000 Dropping the fwnode link to clock-controller@ff760000
 device: 'fe432000.debug': device_add
@@ -573,10 +582,37 @@ PM: Adding info for amba:fe710000.debug
 debug@fe710000 Linked as a fwnode consumer to clock-controller@ff760000
 amba fe710000.debug: Not linking /clock-controller@ff760000 - might never become dev
 debug@fe710000 Dropping the fwnode link to clock-controller@ff760000
+device: 'usb@fe800000': device_add
+bus: 'platform': add device usb@fe800000
+PM: Adding info for platform:usb@fe800000
+usb@fe800000 Linked as a fwnode consumer to clock-controller@ff760000
+usb@fe800000 Linked as a fwnode consumer to interrupt-controller@fee00000
+usb@fe800000 Linked as a fwnode consumer to clock-controller@ff760000
+usb@fe800000 Linked as a fwnode consumer to otg-port
+usb@fe800000 Linked as a fwnode consumer to usb3-port
+usb@fe800000 Linked as a fwnode consumer to power-controller
+platform usb@fe800000: Not linking /clock-controller@ff760000 - might never become dev
+usb@fe800000 Dropping the fwnode link to clock-controller@ff760000
+platform usb@fe800000: Not linking /clock-controller@ff760000 - might never become dev
+platform usb@fe800000: Not linking /interrupt-controller@fee00000 - might never become dev
+device: 'usb@fe900000': device_add
+bus: 'platform': add device usb@fe900000
+PM: Adding info for platform:usb@fe900000
+usb@fe900000 Linked as a fwnode consumer to clock-controller@ff760000
+usb@fe900000 Linked as a fwnode consumer to interrupt-controller@fee00000
+usb@fe900000 Linked as a fwnode consumer to clock-controller@ff760000
+usb@fe900000 Linked as a fwnode consumer to otg-port
+usb@fe900000 Linked as a fwnode consumer to usb3-port
+usb@fe900000 Linked as a fwnode consumer to power-controller
+platform usb@fe900000: Not linking /clock-controller@ff760000 - might never become dev
+usb@fe900000 Dropping the fwnode link to clock-controller@ff760000
+platform usb@fe900000: Not linking /clock-controller@ff760000 - might never become dev
+platform usb@fe900000: Not linking /interrupt-controller@fee00000 - might never become dev
 device: 'ff1a0000.serial': device_add
 bus: 'platform': add device ff1a0000.serial
 PM: Adding info for platform:ff1a0000.serial
-serial@ff1a0000 Linked as a fwnode consumer to clock-controller@ff760000
+serial@ff1a0000 Linked as a fwnode consumer to clock-controller@ff76000
+[20:42:36.037]收←◆0
 serial@ff1a0000 Linked as a fwnode consumer to interrupt-controller@fee00000
 serial@ff1a0000 Linked as a fwnode consumer to uart2c-xfer
 platform ff1a0000.serial: Not linking /interrupt-controller@fee00000 - might never become dev
@@ -617,8 +653,7 @@ device: 'ffa98000.qos': device_add
 bus: 'platform': add device ffa98000.qos
 PM: Adding info for platform:ffa98000.qos
 device: 'ffaa0000.qos': device_add
-bus: 'platform': add dev
-[22:09:50.364]收←◆ice ffaa0000.qos
+bus: 'platform': add device ffaa0000.qos
 PM: Adding info for platform:ffaa0000.qos
 device: 'ffaa0080.qos': device_add
 bus: 'platform': add device ffaa0080.qos
@@ -666,7 +701,8 @@ power-domain@34 Linked as a fwnode consumer to clock-controller@ff760000
 power-domain@33 Linked as a fwnode consumer to clock-controller@ff760000
 power-domain@31 Linked as a fwnode consumer to clock-controller@ff760000
 power-domain@32 Linked as a fwnode consumer to clock-controller@ff760000
-power-domain@35 Linked as a fwnode consumer to clock-controller@ff760000
+power-domain@3
+[20:42:36.069]收←◆5 Linked as a fwnode consumer to clock-controller@ff760000
 power-domain@25 Linked as a fwnode consumer to clock-controller@ff760000
 power-domain@23 Linked as a fwnode consumer to clock-controller@ff760000
 power-domain@22 Linked as a fwnode consumer to clock-controller@ff760000
@@ -688,8 +724,7 @@ platform ff310000.power-management: Not linking /clock-controller@ff760000 - mig
 platform ff310000.power-management: Not linking /clock-controller@ff760000 - might never become dev
 platform ff310000.power-management: Not linking /clock-controller@ff760000 - might never become dev
 platform ff310000.power-management: Not linking /clock-controller@ff760000 - might never become dev
-platform ff310000.power-management: Not linking /clock-controll
-[22:09:50.397]收←◆er@ff760000 - might never become dev
+platform ff310000.power-management: Not linking /clock-controller@ff760000 - might never become dev
 platform ff310000.power-management: Not linking /clock-controller@ff760000 - might never become dev
 platform ff310000.power-management: Not linking /clock-controller@ff760000 - might never become dev
 platform ff310000.power-management: Not linking /clock-controller@ff760000 - might never become dev
@@ -704,11 +739,16 @@ platform ff310000.power-management: Not linking /clock-controller@ff760000 - mig
 device: 'ff310000.power-management:power-controller': device_add
 bus: 'platform': add device ff310000.power-management:power-controller
 PM: Adding info for platform:ff310000.power-management:power-controller
+device: 'platform:ff310000.power-management:power-controller--platform:usb@fe900000': device_add
+platform usb@fe900000: Linked as a sync state only consumer to ff310000.power-management:power-controller
+device: 'platform:ff310000.power-management:power-controller--platform:usb@fe800000': device_add
+platform usb@fe800000: Linked as a sync state only consumer to ff310000.power-management:power-controller
 device: 'platform:ff310000.power-management:power-controller--platform:fe3e0000.usb': device_add
 devices_kset: Moving fe3e0000.usb to end of list
 PM: Moving platform:fe3e0000.usb to end of list
 platform fe3e0000.usb: Linked as a consumer to ff310000.power-management:power-controller
-usb@fe3e0000 Dropping the fwnode link to power-controller
+usb@fe3e0000 Dropping the fwnode link to power
+[20:42:36.100]收←◆-controller
 device: 'platform:ff310000.power-management:power-controller--platform:fe3c0000.usb': device_add
 devices_kset: Moving fe3c0000.usb to end of list
 PM: Moving platform:fe3c0000.usb to end of list
@@ -738,8 +778,7 @@ platform ff310000.power-management:power-controller: Not linking /clock-controll
 platform ff310000.power-management:power-controller: Not linking /clock-controller@ff760000 - might never become dev
 platform ff310000.power-management:power-controller: Not linking /clock-controller@ff760000 - might never become dev
 platform ff310000.power-management:power-controller: Not linking /clock-controller@ff760000 - might never become dev
-platform ff310000.power-manag
-[22:09:50.433]收←◆ement:power-controller: Not linking /clock-controller@ff760000 - might never become dev
+platform ff310000.power-management:power-controller: Not linking /clock-controller@ff760000 - might never become dev
 platform ff310000.power-management:power-controller: Not linking /clock-controller@ff760000 - might never become dev
 platform ff310000.power-management:power-controller: Not linking /clock-controller@ff760000 - might never become dev
 platform ff310000.power-management:power-controller: Not linking /clock-controller@ff760000 - might never become dev
@@ -788,8 +827,7 @@ PM: Adding info for platform:ff420000.pwm
 pwm@ff420000 Linked as a fwnode consumer to pwm0-pin
 pwm@ff420000 Linked as a fwnode consumer to clock-controller@ff750000
 platform ff420000.pwm: Not linking /clock-controller@ff750000 - might never become dev
-pwm@ff
-[22:09:50.468]收←◆420000 Dropping the fwnode link to clock-controller@ff750000
+pwm@ff420000 Dropping the fwnode link to clock-controller@ff750000
 device: 'ff420020.pwm': device_add
 bus: 'platform': add device ff420020.pwm
 PM: Adding info for platform:ff420020.pwm
@@ -804,6 +842,116 @@ pwm@ff420030 Linked as a fwnode consumer to pwm3a-pin
 pwm@ff420030 Linked as a fwnode consumer to clock-controller@ff750000
 platform ff420030.pwm: Not linking /clock-controller@ff750000 - might never become dev
 pwm@ff420030 Dropping the fwnode link to clock-controller@ff750000
+device: 'mpp-srv': device_add
+bus: 'platform': add device mpp-srv
+PM: Adding info for platform:mpp-srv
+device: 'ff650000.vepu': device_add
+bus: 'platform': add device ff650000.vepu
+PM: Adding info for platform:ff650000.vepu
+vepu@ff650000 Linked as a fwnode consumer to interrupt-controller@fee00000
+vepu@ff650000 Linked as a fwnode consumer to clock-controller@ff760000
+vepu@ff650000 Linked as a fwnode consumer to power-controller
+device: 'platform:ff310000.power-management:power-controller--platform:ff650000.vepu': device_add
+devices_kset: Moving ff650000.vepu to end of list
+PM: Moving platform:ff650000.vepu to end of list
+platform ff650000.vepu: Linked as a consumer to ff310000.power-management:power-controller
+vepu@ff650000 Dropping the fwnode link to power-controller
+platform ff650000.vepu: Not linkin
+[20:42:36.166]收←◆g /clock-controller@ff760000 - might never become dev
+vepu@ff650000 Dropping the fwnode link to clock-controller@ff760000
+platform ff650000.vepu: Not linking /interrupt-controller@fee00000 - might never become dev
+vepu@ff650000 Dropping the fwnode link to interrupt-controller@fee00000
+device: 'ff650400.vdpu': device_add
+bus: 'platform': add device ff650400.vdpu
+PM: Adding info for platform:ff650400.vdpu
+vdpu@ff650400 Linked as a fwnode consumer to interrupt-controller@fee00000
+vdpu@ff650400 Linked as a fwnode consumer to clock-controller@ff760000
+vdpu@ff650400 Linked as a fwnode consumer to power-controller
+device: 'platform:ff310000.power-management:power-controller--platform:ff650400.vdpu': device_add
+devices_kset: Moving ff650400.vdpu to end of list
+PM: Moving platform:ff650400.vdpu to end of list
+platform ff650400.vdpu: Linked as a consumer to ff310000.power-management:power-controller
+vdpu@ff650400 Dropping the fwnode link to power-controller
+platform ff650400.vdpu: Not linking /clock-controller@ff760000 - might never become dev
+vdpu@ff650400 Dropping the fwnode link to clock-controller@ff760000
+platform ff650400.vdpu: Not linking /interrupt-controller@fee00000 - might never become dev
+vdpu@ff650400 Dropping the fwnode link to interrupt-controller@fee00000
+device: 'ff650800.iommu': device_add
+bus: 'platform': add device ff650800.iommu
+PM: Adding info for platform:ff650800.iommu
+iommu@ff650800 Linked as a fwnode consumer to interrupt-controller@fee00000
+iommu@ff650800 Linked as a fwnode consumer to clock-controller@ff760000
+iommu@ff650800 Linked as a fwnode consumer to power-controller
+device: 'platform:ff310000.power-management:power-controller--platform:ff650800.iommu': device_add
+devices_kset: Moving ff650800.iommu to end of list
+PM: Moving platform:ff650800.iommu to end of list
+platform ff650800.iommu: Linked as a consumer to ff310000.power-management:power-controller
+iommu@ff650800 Dropping the fwnode link to power-controller
+platform ff650800.iommu: Not linking /clock-controller@ff760000 - might never become dev
+iommu@ff650800 Dropping the fwnode link to clock-controller@ff760000
+platform ff650800.iommu: Not linking /interrupt-controller@fee00000 - might never become dev
+iommu@ff650800 Dropping the fwnode link to interrupt-controller@fee00000
+device: 'ff660000.rkvdec': device_add
+bus: 'platform': add device ff660000.rkvdec
+PM: Adding info for platform:ff660000.rkvdec
+rkvdec@ff660000 Linked as a fwnode consumer to interrupt-controller@fee00000
+rkvdec@ff660000 Linked as a fwnode consumer to clock-controller@ff760000
+rkvdec@ff660000 Linked as a fwnode consumer to power-controller
+device: 'platform:ff310000.power-management:power-controller--platform:ff660000.rkvdec': device_add
+devices_kset: Moving ff660000.rkvdec to end of list
+PM: Moving platform:ff660000.rkvdec to end of list
+platform ff660000.rkvdec: Linked as a consumer to ff310000.power-management:power-controller
+rkvdec@ff660000 Dropping the fwnode link to power-controller
+platform ff660000.rkvdec: Not linking /clock-controller@ff760000 - might never become dev
+rkvdec@ff660000 Dropping the fwnode link to clock-controller@ff760000
+platform ff660000.rkvdec: Not linking /interrupt-controller@fee00000 - might never become dev
+rkvdec@ff660000 Dropping the fwnode link to interrupt-controller@fee00000
+device: 'ff660480.iommu': device_add
+bus: 'platform': add device ff660480.iommu
+PM: Adding info for platform:ff660480.iommu
+iommu@ff660480 Linked as a fwnode consumer to interrupt-controller@fee00000
+iommu@ff660480 Linked as a fwnode consumer to clock-controller@ff760000
+iommu@ff660480 Linked as a fwnode consumer to power-controller
+device: 'platform:ff310000.power-management:power-controller--platform:ff660480.iommu': device_add
+devices_kset: Moving ff660480.iommu to end of list
+PM: Moving platform:ff660480.iommu to end of list
+platform ff660480.iommu: Linked as a consumer to ff31000
+[20:42:36.198]收←◆0.power-management:power-controller
+iommu@ff660480 Dropping the fwnode link to power-controller
+platform ff660480.iommu: Not linking /clock-controller@ff760000 - might never become dev
+iommu@ff660480 Dropping the fwnode link to clock-controller@ff760000
+platform ff660480.iommu: Not linking /interrupt-controller@fee00000 - might never become dev
+iommu@ff660480 Dropping the fwnode link to interrupt-controller@fee00000
+device: 'ff670000.iep': device_add
+bus: 'platform': add device ff670000.iep
+PM: Adding info for platform:ff670000.iep
+iep@ff670000 Linked as a fwnode consumer to interrupt-controller@fee00000
+iep@ff670000 Linked as a fwnode consumer to clock-controller@ff760000
+iep@ff670000 Linked as a fwnode consumer to power-controller
+device: 'platform:ff310000.power-management:power-controller--platform:ff670000.iep': device_add
+devices_kset: Moving ff670000.iep to end of list
+PM: Moving platform:ff670000.iep to end of list
+platform ff670000.iep: Linked as a consumer to ff310000.power-management:power-controller
+iep@ff670000 Dropping the fwnode link to power-controller
+platform ff670000.iep: Not linking /clock-controller@ff760000 - might never become dev
+iep@ff670000 Dropping the fwnode link to clock-controller@ff760000
+platform ff670000.iep: Not linking /interrupt-controller@fee00000 - might never become dev
+iep@ff670000 Dropping the fwnode link to interrupt-controller@fee00000
+device: 'ff670800.iommu': device_add
+bus: 'platform': add device ff670800.iommu
+PM: Adding info for platform:ff670800.iommu
+iommu@ff670800 Linked as a fwnode consumer to interrupt-controller@fee00000
+iommu@ff670800 Linked as a fwnode consumer to clock-controller@ff760000
+iommu@ff670800 Linked as a fwnode consumer to power-controller
+device: 'platform:ff310000.power-management:power-controller--platform:ff670800.iommu': device_add
+devices_kset: Moving ff670800.iommu to end of list
+PM: Moving platform:ff670800.iommu to end of list
+platform ff670800.iommu: Linked as a consumer to ff310000.power-management:power-controller
+iommu@ff670800 Dropping the fwnode link to power-controller
+platform ff670800.iommu: Not linking /clock-controller@ff760000 - might never become dev
+iommu@ff670800 Dropping the fwnode link to clock-controller@ff760000
+platform ff670800.iommu: Not linking /interrupt-controller@fee00000 - might never become dev
+iommu@ff670800 Dropping the fwnode link to interrupt-controller@fee00000
 device: 'ff680000.rga': device_add
 bus: 'platform': add device ff680000.rga
 PM: Adding info for platform:ff680000.rga
@@ -828,7 +976,8 @@ efuse@ff690000 Dropping the fwnode link to clock-controller@ff760000
 device: 'ff6d0000.dma-controller': device_add
 bus: 'amba': add device ff6d0000.dma-controller
 PM: Adding info for amba:ff6d0000.dma-controller
-dma-controller@ff6d0000 Linked as a fwnode consumer to interrupt-controller@fee00000
+dma-controller@ff6
+[20:42:36.230]收←◆d0000 Linked as a fwnode consumer to interrupt-controller@fee00000
 dma-controller@ff6d0000 Linked as a fwnode consumer to clock-controller@ff760000
 amba ff6d0000.dma-controller: Not linking /clock-controller@ff760000 - might never become dev
 dma-controller@ff6d0000 Dropping the fwnode link to clock-controller@ff760000
@@ -849,17 +998,28 @@ PM: Adding info for platform:ff770000.syscon
 usb2phy@e450 Linked as a fwnode consumer to clock-controller@ff760000
 host-port Linked as a fwnode consumer to interrupt-controller@fee00000
 host-port Linked as a fwnode consumer to vcc5v0-host-regulator
-usb2phy@e460 Linked as a fwnode consumer to clock-controller@ff76000
-[22:09:50.502]收←◆0
+otg-port Linked as a fwnode consumer to interrupt-controller@fee00000
+usb2phy@e460 Linked as a fwnode consumer to clock-controller@ff760000
 host-port Linked as a fwnode consumer to interrupt-controller@fee00000
 host-port Linked as a fwnode consumer to vcc5v0-host-regulator
+otg-port Linked as a fwnode consumer to interrupt-controller@fee00000
 phy@f780 Linked as a fwnode consumer to mmc@fe330000
+pvtm@0 Linked as a fwnode consumer to clock-controller@ff760000
+pvtm@1 Linked as a fwnode consumer to clock-controller@ff760000
+pvtm@2 Linked as a fwnode consumer to clock-controller@ff760000
+pvtm@3 Linked as a fwnode consumer to clock-controller@ff760000
 platform ff770000.syscon: Not linking /clock-controller@ff760000 - might never become dev
 platform ff770000.syscon: Not linking /interrupt-controller@fee00000 - might never become dev
+platform ff770000.syscon: Not linking /interrupt-controller@fee00000 - might never become dev
 platform ff770000.syscon: Not linking /clock-controller@ff760000 - might never become dev
+platform ff770000.syscon: Not linking /interrupt-controller@fee00000 - might never become dev
 platform ff770000.syscon: Not linking /interrupt-controller@fee00000 - might never become dev
 device: 'platform:fe330000.mmc--platform:ff770000.syscon': device_add
 platform ff770000.syscon: Linked as a sync state only consumer to fe330000.mmc
+platform ff770000.syscon: Not linking /clock-controller@ff760000 - might never become dev
+platform ff770000.syscon: Not linking /clock-controller@ff760000 - might never become dev
+platform ff770000.syscon: Not linking /clock-controller@ff760000 - might never become dev
+platform ff770000.syscon: Not linking /clock-controller@ff760000 - might never become dev
 device: 'ff770000.syscon:usb2phy@e450': device_add
 bus: 'platform': add device ff770000.syscon:usb2phy@e450
 PM: Adding info for platform:ff770000.syscon:usb2phy@e450
@@ -871,10 +1031,12 @@ usb@fe3a0000 Dropping the fwnode link to usb2phy@e450
 device: 'platform:ff770000.syscon:usb2phy@e450--platform:fe380000.usb': device_add
 devices_kset: Moving fe380000.usb to end of list
 PM: Moving platform:fe380000.usb to end of list
-platform fe380000.usb: Linked as a consumer to ff770000.syscon:usb2phy@e450
+platform fe380000.usb: Linked as a consumer to f
+[20:42:36.262]收←◆f770000.syscon:usb2phy@e450
 usb@fe380000 Dropping the fwnode link to usb2phy@e450
 platform ff770000.syscon:usb2phy@e450: Not linking /clock-controller@ff760000 - might never become dev
 usb2phy@e450 Dropping the fwnode link to clock-controller@ff760000
+platform ff770000.syscon:usb2phy@e450: Not linking /interrupt-controller@fee00000 - might never become dev
 platform ff770000.syscon:usb2phy@e450: Not linking /interrupt-controller@fee00000 - might never become dev
 device: 'ff770000.syscon:usb2phy@e460': device_add
 bus: 'platform': add device ff770000.syscon:usb2phy@e460
@@ -892,6 +1054,7 @@ usb@fe3c0000 Dropping the fwnode link to usb2phy@e460
 platform ff770000.syscon:usb2phy@e460: Not linking /clock-controller@ff760000 - might never become dev
 usb2phy@e460 Dropping the fwnode link to clock-controller@ff760000
 platform ff770000.syscon:usb2phy@e460: Not linking /interrupt-controller@fee00000 - might never become dev
+platform ff770000.syscon:usb2phy@e460: Not linking /interrupt-controller@fee00000 - might never become dev
 device: 'ff770000.syscon:phy@f780': device_add
 bus: 'platform': add device ff770000.syscon:phy@f780
 PM: Adding info for platform:ff770000.syscon:phy@f780
@@ -906,11 +1069,42 @@ platform ff770000.syscon:phy@f780: Fixed dependency cycle(s) with /mmc@fe330000
 device: 'platform:fe330000.mmc--platform:ff770000.syscon:phy@f780': device_add
 platform ff770000.syscon:phy@f780: Linked as a sync state only consumer to fe330000.mmc
 phy@f780 Dropping the fwnode link to mmc@fe330000
+device: 'ff770000.syscon:pvtm': device_add
+bus: 'platform': add device ff770000.syscon:pvtm
+PM: Adding info for platform:ff770000.syscon:pvtm
+platform ff770000.syscon:pvtm: Not linking /clock-controller@ff760000 - might never become dev
+platform ff770000.syscon:pvtm: Not linking /clock-controller@ff760000 - might never become dev
+platform ff770000.syscon:pvtm: Not linking /clock-controller@ff760000 - might never become dev
+platform ff770000.syscon:pvtm: Not linking /clock-controller@ff760000 - might never become dev
+device: 'ff7c0000.phy': device_add
+bus: 'platform': add device ff7c0000.phy
+PM: Adding info for platform:ff7c0000.phy
+phy@ff7c0000 Linked as a fwnode consumer to clock-controller@ff760000
+phy@ff7c0000 Linked as a fwnode consumer to power-controller
+device: 'platform:ff310000.power-management:power-controller--platform:ff7c0000.phy': device_add
+devices_kset: Moving ff7c0000.phy to end of list
+PM: Moving platform:ff7c0000.phy to end of list
+platform ff7c0000.phy: Linked as a consumer to ff310000.power-management:power-controller
+phy@ff7c0000 Dropping the fwnode link to power-controller
+platform ff7c0000.phy: Not linking /clock-controller@ff760000 - might never become dev
+phy@ff7c0000 Dropping the fwnode link to clock-controller@ff760000
+device: 'ff800000.phy': device_add
+bus: 'platform': add device ff800000.phy
+PM:
+[20:42:36.294]收←◆ Adding info for platform:ff800000.phy
+phy@ff800000 Linked as a fwnode consumer to clock-controller@ff760000
+phy@ff800000 Linked as a fwnode consumer to power-controller
+device: 'platform:ff310000.power-management:power-controller--platform:ff800000.phy': device_add
+devices_kset: Moving ff800000.phy to end of list
+PM: Moving platform:ff800000.phy to end of list
+platform ff800000.phy: Linked as a consumer to ff310000.power-management:power-controller
+phy@ff800000 Dropping the fwnode link to power-controller
+platform ff800000.phy: Not linking /clock-controller@ff760000 - might never become dev
+phy@ff800000 Dropping the fwnode link to clock-controller@ff760000
 device: 'ff848000.watchdog': device_add
 bus: 'platform': add device ff848000.watchdog
 PM: Adding info for platform:ff848000.watchdog
-watchdog@ff84800
-[22:09:50.536]收←◆0 Linked as a fwnode consumer to clock-controller@ff760000
+watchdog@ff848000 Linked as a fwnode consumer to clock-controller@ff760000
 watchdog@ff848000 Linked as a fwnode consumer to interrupt-controller@fee00000
 platform ff848000.watchdog: Not linking /interrupt-controller@fee00000 - might never become dev
 watchdog@ff848000 Dropping the fwnode link to interrupt-controller@fee00000
@@ -925,13 +1119,45 @@ platform ff850000.rktimer: Not linking /clock-controller@ff760000 - might never 
 rktimer@ff850000 Dropping the fwnode link to clock-controller@ff760000
 platform ff850000.rktimer: Not linking /interrupt-controller@fee00000 - might never become dev
 rktimer@ff850000 Dropping the fwnode link to interrupt-controller@fee00000
+device: 'ff8f0000.vop': device_add
+bus: 'platform': add device ff8f0000.vop
+PM: Adding info for platform:ff8f0000.vop
+vop@ff8f0000 Linked as a fwnode consumer to interrupt-controller@fee00000
+vop@ff8f0000 Linked as a fwnode consumer to clock-controller@ff760000
+vop@ff8f0000 Linked as a fwnode consumer to power-controller
+vop@ff8f0000 Linked as a fwnode consumer to hdmi@ff940000
+device: 'platform:ff310000.power-management:power-controller--platform:ff8f0000.vop': device_add
+devices_kset: Moving ff8f0000.vop to end of list
+PM: Moving platform:ff8f0000.vop to end of list
+platform ff8f0000.vop: Linked as a consumer to ff310000.power-management:power-controller
+vop@ff8f0000 Dropping the fwnode link to power-controller
+platform ff8f0000.vop: Not linking /clock-controller@ff760000 - might never become dev
+vop@ff8f0000 Dropping the fwnode link to clock-controller@ff760000
+platform ff8f0000.vop: Not linking /interrupt-controller@fee00000 - might never become dev
+vop@ff8f0000 Dropping the fwnode link to interrupt-controller@fee00000
+device: 'ff8f3f00.iommu': device_add
+bus: 'platform': add device ff8f3f00.iommu
+PM: Adding info for platform:ff8f3f00.iommu
+iommu@ff8f3f00 Linked as a fwnode consumer to interrupt-controller@fee00000
+iommu@ff8f3f00 Linked as a fwnode consumer to clock-controller@ff760000
+iommu@ff8f3f00 Linked as a fwnode consumer to power-controller
+device: 'platform:ff310000.power-management:power-controller--platform:ff8f3f00.iommu': device_add
+devices_kset: Moving ff8f3f00.iommu to end of list
+PM: Moving platform:ff8f3f00.iommu to end of list
+platform ff8f3f00.iommu: Linked as a consumer to ff310000.power-management:power-controller
+iommu@ff8f3f00 Dropping the fwnode link to power-controller
+platform ff8f3f00.iommu: Not linking /clock-controller@ff760000 - might never become dev
+iommu@ff8f3f00 Dropping the fwnode link to clock-controller@ff760000
+platform ff8f3f00.iommu: Not linking /interrupt-controller@fee00000 - might never become dev
+iommu@ff8f3f00 Dropping the fw
+[20:42:36.326]收←◆node link to interrupt-controller@fee00000
 device: 'ff900000.vop': device_add
 bus: 'platform': add device ff900000.vop
 PM: Adding info for platform:ff900000.vop
 vop@ff900000 Linked as a fwnode consumer to interrupt-controller@fee00000
 vop@ff900000 Linked as a fwnode consumer to clock-controller@ff760000
 vop@ff900000 Linked as a fwnode consumer to power-controller
-vop@ff900000 Linked as a fwnode consumer to edp@ff970000
+vop@ff900000 Linked as a fwnode consumer to hdmi@ff940000
 device: 'platform:ff310000.power-management:power-controller--platform:ff900000.vop': device_add
 devices_kset: Moving ff900000.vop to end of list
 PM: Moving platform:ff900000.vop to end of list
@@ -956,36 +1182,48 @@ platform ff903f00.iommu: Not linking /clock-controller@ff760000 - might never be
 iommu@ff903f00 Dropping the fwnode link to clock-controller@ff760000
 platform ff903f00.iommu: Not linking /interrupt-controller@fee00000 - might never become dev
 iommu@ff903f00 Dropping the fwnode link to interrupt-controller@fee00000
-device: 'ff970000.edp': device_add
-bus: 'platform': add device ff970000.edp
-PM: Adding info for platform:ff970000.edp
-edp@ff970000 Linked as a fwnode consumer to interrupt-controller@fee00000
-edp@ff970000 Linked as a fwnode consumer to clock-controller@ff760000
-edp@ff970000 Linked as a fwnode consumer to edp-hpd
-edp@ff970000 Linked as a fwnode consumer to power-controller
-edp@ff970000 Linked as a fwnode consumer to vop@ff900000
-edp@ff970000 Linked as a fwnode consumer to edp-panel
-/edp@ff970000: Relaxing link with /vop@ff900000
-/vop@ff900000: Relaxing link with /edp@ff970000
-platform ff900000.vop: Fixed dependency cycle(s) with /edp@ff970000
-device: 'platform:ff970000.edp--platform:ff900000.vop': device_add
-platform ff900000.vop: Linked as a sync state only cons
-[22:09:50.570]收←◆umer to ff970000.edp
-vop@ff900000 Dropping the fwnode link to edp@ff970000
-/edp@ff970000: Relaxing link with /vop@ff900000
-platform ff970000.edp: Fixed dependency cycle(s) with /vop@ff900000
-device: 'platform:ff900000.vop--platform:ff970000.edp': device_add
-platform ff970000.edp: Linked as a sync state only consumer to ff900000.vop
-edp@ff970000 Dropping the fwnode link to vop@ff900000
-device: 'platform:ff310000.power-management:power-controller--platform:ff970000.edp': device_add
-devices_kset: Moving ff970000.edp to end of list
-PM: Moving platform:ff970000.edp to end of list
-platform ff970000.edp: Linked as a consumer to ff310000.power-management:power-controller
-edp@ff970000 Dropping the fwnode link to power-controller
-platform ff970000.edp: Not linking /clock-controller@ff760000 - might never become dev
-edp@ff970000 Dropping the fwnode link to clock-controller@ff760000
-platform ff970000.edp: Not linking /interrupt-controller@fee00000 - might never become dev
-edp@ff970000 Dropping the fwnode link to interrupt-controller@fee00000
+device: 'ff940000.hdmi': device_add
+bus: 'platform': add device ff940000.hdmi
+PM: Adding info for platform:ff940000.hdmi
+hdmi@ff940000 Linked as a fwnode consumer to interrupt-controller@fee00000
+hdmi@ff940000 Linked as a fwnode consumer to clock-controller@ff760000
+hdmi@ff940000 Linked as a fwnode consumer to power-controller
+hdmi@ff940000 Linked as a fwnode consumer to hdmi-i2c-xfer
+hdmi@ff940000 Linked as a fwnode consumer to hdmi-cec
+hdmi@ff940000 Linked as a fwnode consumer to vop@ff900000
+hdmi@ff940000 Linked as a fwnode consumer to vop@ff8f0000
+/hdmi@ff940000: Relaxing link with /vop@ff900000
+/vop@ff900000: Relaxing link with /hdmi@ff940000
+platform ff900000.vop: Fixed dependency cycle(s) with /hdmi@ff940000
+device: 'platform:ff940000.hdmi--platform:ff900000.vop': device_add
+platform ff900000.vop: Linked as a sync state only consumer to ff940000.hdmi
+vop@ff900000 Dropping the fwnode link to hdmi@ff940000
+/hdmi@ff940000: Relaxing link with /vop@ff8f0000
+/vop@ff8f0000: Relaxing link with /hdmi@ff940000
+platform ff8f0000.vop: Fixed dependency cycle(s) with /hdmi@ff940000
+device: 'platform:ff940000.hdmi--platform:ff8f0000.vop': device_add
+platform ff8f0000.vop: Linked as a sync state only consumer to ff940000.hdmi
+vop@ff8f0000 Dropping the fwnode link to hdmi@ff940000
+/hdmi@ff940000: Relaxing link with /vop@ff8f0000
+platform ff940000.hdmi: Fixed dependency cycle(s) with /vop@ff8f0000
+device: 'platform:ff8f0000.vop--platform:ff940000.hdmi': device_add
+platform ff940000.hdmi: Linked as a sync state only consumer to ff8f0000.vop
+hdmi@ff940000 Dropping the fwnode link to vop@ff8f0000
+/hdmi@ff940000: Relaxing link with /vop@ff900000
+platform ff940000.hdmi: Fixed dependency cycle(s) with /vop@ff900000
+device: 'platform:ff900000.vop--platform:ff940000.hdmi': device_add
+platform ff940000
+[20:42:36.360]收←◆.hdmi: Linked as a sync state only consumer to ff900000.vop
+hdmi@ff940000 Dropping the fwnode link to vop@ff900000
+device: 'platform:ff310000.power-management:power-controller--platform:ff940000.hdmi': device_add
+devices_kset: Moving ff940000.hdmi to end of list
+PM: Moving platform:ff940000.hdmi to end of list
+platform ff940000.hdmi: Linked as a consumer to ff310000.power-management:power-controller
+hdmi@ff940000 Dropping the fwnode link to power-controller
+platform ff940000.hdmi: Not linking /clock-controller@ff760000 - might never become dev
+hdmi@ff940000 Dropping the fwnode link to clock-controller@ff760000
+platform ff940000.hdmi: Not linking /interrupt-controller@fee00000 - might never become dev
+hdmi@ff940000 Dropping the fwnode link to interrupt-controller@fee00000
 device: 'ffa86000.nocp-cci-msch0': device_add
 bus: 'platform': add device ffa86000.nocp-cci-msch0
 PM: Adding info for platform:ffa86000.nocp-cci-msch0
@@ -1040,12 +1278,12 @@ gpio@ff730000 Linked as a fwnode consumer to clock-controller@ff750000
 gpio@ff730000 Linked as a fwnode consumer to interrupt-controller@fee00000
 gpio@ff780000 Linked as a fwnode consumer to clock-controller@ff760000
 gpio@ff780000 Linked as a fwnode consumer to interrupt-controller@fee00000
-gpio@ff788000 Linked as a fwnode c
-[22:09:50.609]收←◆onsumer to clock-controller@ff760000
+gpio@ff788000 Linked as a fwnode consumer to clock-controller@ff760000
 gpio@ff788000 Linked as a fwnode consumer to interrupt-controller@fee00000
 gpio@ff790000 Linked as a fwnode consumer to clock-controller@ff760000
 gpio@ff790000 Linked as a fwnode consumer to interrupt-controller@fee00000
-platform pinctrl: Not linking /interrupt-controller@fee00000 - might never become dev
+platfor
+[20:42:36.394]收←◆m pinctrl: Not linking /interrupt-controller@fee00000 - might never become dev
 platform pinctrl: Not linking /clock-controller@ff750000 - might never become dev
 platform pinctrl: Not linking /interrupt-controller@fee00000 - might never become dev
 platform pinctrl: Not linking /clock-controller@ff750000 - might never become dev
@@ -1100,12 +1338,12 @@ PM: Adding info for platform:ff780000.gpio
 platform ff780000.gpio: Not linking /interrupt-controller@fee00000 - might never become dev
 gpio@ff780000 Dropping the fwnode link to interrupt-controller@fee00000
 platform ff780000.gpio: Not linking /clock-controller@ff760000 - might never become dev
-gpio@ff780000 Dropping the fwnode link to cloc
-[22:09:50.644]收←◆k-controller@ff760000
+gpio@ff780000 Dropping the fwnode link to clock-controller@ff760000
 bus: 'platform': __driver_probe_device: matched device ff780000.gpio with driver rockchip-gpio
 bus: 'platform': really_probe: probing driver rockchip-gpio with device ff780000.gpio
 rockchip-gpio ff780000.gpio: no pinctrl handle
-Note: Use default GPIO_TYPE_V1!
+Note: Use defau
+[20:42:36.427]收←◆lt GPIO_TYPE_V1!
 device: 'gpiochip2': device_add
 bus: 'gpio': add device gpiochip2
 PM: Adding info for gpio:gpiochip2
@@ -1153,8 +1391,6 @@ driver: 'rockchip-gpio': driver_bound: bound to device 'ff790000.gpio'
 bus: 'platform': really_probe: bound device ff790000.gpio to driver rockchip-gpio
 rockchip-pinctrl pinctrl: probed pinctrl
 driver: 'rockchip-pinctrl': driver_bound: bound to device 'pinctrl'
-edp@ff970000 Linked as a fwnode consumer to pinctrl
-edp@ff970000 Dropping the fwnode link to edp-hpd
 ethernet@fe300000 Linked as a fwnode consumer to pinctrl
 ethernet@fe300000 Dropping the fwnode link to rgmii-pins
 i2c@ff3c0000 Linked as a fwnode consumer to pinctrl
@@ -1167,11 +1403,19 @@ pwm@ff420020 Linked as a fwnode consumer to pinctrl
 pwm@ff420020 Dropping the fwnode link to pwm2-pin
 pwm@ff420030 Linked as a fwnode consumer to pinctrl
 pwm@ff420030 Dropping the fwnode link to pwm3a-pin
+hdmi@ff940000 Linked as a fwnode consumer to pinctrl
+hdmi@ff940000 Dropping the fwnode link to hdmi-i2c-xfer
+hdmi@ff940000 Dropping the fwnode link to hdmi-cec
 pmic@1b Linked as a fwnode consumer to pinctrl
 pmic@1b Dropping the fwnode link to pmic-int-l
-device: 'platform:pinctrl--platf
-[22:09:50.678]收←◆orm:ff3c0000.i2c': device_add
+device: 'platform:pinctrl--platform:ff3c0000.i2c': device_add
 platform ff3c0000.i2c: Linked as a sync state only consumer to pinctrl
+device: 'platform:pinctrl--platform:ff940000.hdmi': device_add
+devices_kset: Moving ff940000.hdmi to end 
+[20:42:36.458]收←◆of list
+PM: Moving platform:ff940000.hdmi to end of list
+platform ff940000.hdmi: Linked as a consumer to pinctrl
+hdmi@ff940000 Dropping the fwnode link to pinctrl
 device: 'platform:pinctrl--platform:ff420030.pwm': device_add
 devices_kset: Moving ff420030.pwm to end of list
 PM: Moving platform:ff420030.pwm to end of list
@@ -1201,50 +1445,19 @@ devices_kset: Moving fe300000.ethernet to end of list
 PM: Moving platform:fe300000.ethernet to end of list
 platform fe300000.ethernet: Linked as a consumer to pinctrl
 ethernet@fe300000 Dropping the fwnode link to pinctrl
-device: 'platform:pinctrl--platform:ff970000.edp': device_add
-devices_kset: Moving ff970000.edp to end of list
-PM: Moving platform:ff970000.edp to end of list
-platform ff970000.edp: Linked as a consumer to pinctrl
-edp@ff970000 Dropping the fwnode link to pinctrl
 bus: 'platform': really_probe: bound device pinctrl to driver rockchip-pinctrl
-device: 'backlight': device_add
-bus: 'platform': add device backlight
-PM: Adding info for platform:backlight
-backlight Linked as a fwnode consumer to pwm@ff420000
-device: 'platform:ff420000.pwm--platform:backlight': device_add
-devices_kset: Moving backlight to end of list
-PM: Moving platform:backlight to end of list
-platform backlight: Linked as a consumer to ff420000.pwm
-backlight Dropping the fwnode link to pwm@ff420000
-device: 'edp-panel': device_add
-bus: 'platform': add device edp-panel
-PM: Adding info for platform:edp-panel
-edp-panel Linked as a fwnode consumer to backlight
-edp-panel Linked as a fwnode consumer to gpio@ff730000
-edp-panel Linked as a fwnode consumer to SWITCH_REG2
-edp-panel Linked as a fwnode consumer to edp@ff970000
-/edp-panel: Relaxing link with /edp@ff970000
-/edp@ff970000: Relaxing link with /edp-panel
-platform ff970000.edp: Fixed dependency cycle(s) with /edp-panel
-device: 'platform:edp-panel--platform:ff970000.edp': device_add
-platform ff970000.edp: Linked as a sync state only consumer to edp-panel
-edp@ff970000 Dropping the fwnode link to edp-panel
-/edp-panel: Relaxing link with /edp@ff970000
-platform edp-panel: Fixed dependency cycle(s) with /edp@ff970000
-device: 'platform:ff970000.edp--platform:edp-panel': device_add
-platform edp-panel: Linked as a sync state only consumer to ff970000.edp
-edp-panel Dropping the fwnode link to edp@ff970000
-device: 'platform:ff730000.gpio--platform:edp-panel': device_add
-devices_kset: Moving edp-panel to end of list
-PM: Moving platform:edp-panel to end of list
-platform edp-panel: Linked as a consumer to ff730000.gpio
-edp-panel Dropping the fwnode link to gpio@ff730000
-device: 'platform:backlight--platform:edp-panel': device_add
-devices_kset: Moving edp-panel to end of list
-PM: Moving platform:edp-panel to end of list
-platform edp-panel: Linked as a consumer to backlight
-edp-panel Dropping the fwnode link 
-[22:09:50.717]收←◆to backlight
+device: 'fiq-debugger': device_add
+bus: 'platform': add device fiq-debugger
+PM: Adding info for platform:fiq-debugger
+fiq-debugger Linked as a fwnode consumer to interrupt-controller@fee00000
+fiq-debugger Linked as a fwnode consumer to uart2c-xfer
+device: 'platform:pinctrl--platform:fiq-debugger': device_add
+devices_kset: Moving fiq-debugger to end of list
+PM: Moving platform:fiq-debugger to end of list
+platform fiq-debugger: Linked as a consumer to pinctrl
+fiq-debugger Dropping the fwnode link to uart2c-xfer
+platform fiq-debugger: Not linking /interrupt-controller@fee00000 - might never become dev
+fiq-debugger Dropping the fwnode link to interrupt-controller@fee00000
 device: 'vdd-center': device_add
 bus: 'platform': add device vdd-center
 PM: Adding info for platform:vdd-center
@@ -1271,7 +1484,8 @@ vcc5v0-host-regulator Linked as a fwnode consumer to gpio@ff790000
 vcc5v0-host-regulator Linked as a fwnode consumer to vcc5v0-host-en
 vcc5v0-host-regulator Linked as a fwnode consumer to vcc5v0-sys
 device: 'platform:vcc5v0-host-regulator--platform:ff770000.syscon:usb2phy@e460': device_add
-platform ff770000.syscon:usb2phy@e460: Linked as a sync state only consumer to vcc5v0-host-regulator
+platform ff770000.syscon:usb2phy@e460: Linked as
+[20:42:36.495]收←◆ a sync state only consumer to vcc5v0-host-regulator
 device: 'platform:vcc5v0-host-regulator--platform:ff770000.syscon:usb2phy@e450': device_add
 platform ff770000.syscon:usb2phy@e450: Linked as a sync state only consumer to vcc5v0-host-regulator
 device: 'platform:vcc5v0-sys--platform:vcc5v0-host-regulator': device_add
@@ -1319,10 +1533,12 @@ device: 'writeback': device_add
 bus: 'workqueue': add device writeback
 PM: Adding info for workqueue:writeback
 device class 'block': registering
+device class 'graphics': registering
+device: 'fbcon': device_add
+PM: Adding info for No Bus:fbcon
 bus: 'platform': add driver reg-fixed-voltage
 bus: 'platform': __driver_probe_device: matched device vcc3v3-sys with driver reg-fixed-voltage
-bus: 'platf
-[22:09:50.752]收←◆orm': really_probe: probing driver reg-fixed-voltage with device vcc3v3-sys
+bus: 'platform': really_probe: probing driver reg-fixed-voltage with device vcc3v3-sys
 reg-fixed-voltage vcc3v3-sys: no pinctrl handle
 vcc3v3_sys: 3300 mV, enabled
 device: 'regulator.1': device_add
@@ -1343,7 +1559,8 @@ bus: 'platform': __driver_probe_device: matched device vcc5v0-host-regulator wit
 bus: 'platform': really_probe: probing driver reg-fixed-voltage with device vcc5v0-host-regulator
 reg-fixed-voltage vcc5v0-host-regulator: no init pinctrl state
 reg-fixed-voltage vcc5v0-host-regulator: no sleep pinctrl state
-reg-fixed-voltage vcc5v0-host-regulator: no idle pinctrl state
+reg-fixed-voltag
+[20:42:36.529]收←◆e vcc5v0-host-regulator: no idle pinctrl state
 vcc5v0_host: no parameters, disabled
 device: 'regulator.3': device_add
 PM: Adding info for No Bus:regulator.3
@@ -1367,6 +1584,7 @@ bus: 'platform': add driver gpio-regulator
 device class 'misc': registering
 iommu: Default domain type: Translated 
 iommu: DMA domain TLB invalidation policy: strict mode 
+bus: 'dp-aux': registered
 device class 'scsi_host': registering
 bus: 'scsi': registered
 device class 'scsi_device': registering
@@ -1400,10 +1618,10 @@ device class 'ptp': registering
 PTP clock support registered
 device class 'power_supply': registering
 device class 'hwmon': registering
-bus: 'mmc':
-[22:09:50.792]收←◆ registered
+bus: 'mmc': registered
 device class 'mmc_host': registering
 bus: 'sdio': registered
+device class 'devfreq': registering
 device class 'net': registering
 device: 'lo': device_add
 PM: Adding info for No Bus:lo
@@ -1442,7 +1660,8 @@ device: 'vcsu1': device_add
 PM: Adding info for No Bus:vcsu1
 device: 'vcsa1': device_add
 PM: Adding info for No Bus:vcsa1
-device: 'tty1': device_add
+device: 'tty1': devi
+[20:42:36.566]收←◆ce_add
 PM: Adding info for No Bus:tty1
 device: 'tty2': device_add
 PM: Adding info for No Bus:tty2
@@ -1528,8 +1747,7 @@ device: 'tty42': device_add
 PM: Adding info for No Bus:tty42
 device: 'tty43': device_add
 PM: Adding info for No Bus:tty43
-d
-[22:09:50.838]收←◆evice: 'tty44': device_add
+device: 'tty44': device_add
 PM: Adding info for No Bus:tty44
 device: 'tty45': device_add
 PM: Adding info for No Bus:tty45
@@ -1570,7 +1788,8 @@ PM: Adding info for No Bus:tty62
 device: 'tty63': device_add
 PM: Adding info for No Bus:tty63
 device: 'hw_random': device_add
-PM: Adding info for No Bus:hw_random
+PM: 
+[20:42:36.605]收←◆Adding info for No Bus:hw_random
 NET: Registered PF_INET protocol family
 IP idents hash table entries: 32768 (order: 6, 262144 bytes, linear)
 tcp_listen_portaddr_hash hash table entries: 1024 (order: 2, 16384 bytes, linear)
@@ -1580,6 +1799,7 @@ TCP bind hash table entries: 16384 (order: 7, 524288 bytes, linear)
 TCP: Hash tables configured (established 16384 bind 16384)
 UDP hash table entries: 1024 (order: 3, 32768 bytes, linear)
 UDP-Lite hash table entries: 1024 (order: 3, 32768 bytes, linear)
+NET: Registered PF_UNIX/PF_LOCAL protocol family
 bus: 'clocksource': registered
 device: 'clocksource': device_add
 PM: Adding info for No Bus:clocksource
@@ -1622,8 +1842,7 @@ bus: 'platform': really_probe: probing driver simple-pm-bus with device ff310000
 simple-pm-bus ff310000.power-management: no pinctrl handle
 simple-pm-bus: probe of ff310000.power-management rejects match -19
 bus: 'platform': __driver_probe_device: matched device ff320000.syscon with driver simple-pm-bus
-bus: 'platform': really_probe: probing driver simple-pm-bus with device ff320000.sysco
-[22:09:50.874]收←◆n
+bus: 'platform': really_probe: probing driver simple-pm-bus with device ff320000.syscon
 simple-pm-bus ff320000.syscon: no pinctrl handle
 simple-pm-bus: probe of ff320000.syscon rejects match -19
 bus: 'platform': __driver_probe_device: matched device ff770000.syscon with driver simple-pm-bus
@@ -1641,7 +1860,8 @@ device: 'phy-ff770000.syscon:phy@f780.0': device_add
 PM: Adding info for No Bus:phy-ff770000.syscon:phy@f780.0
 driver: 'rockchip-emmc-phy': driver_bound: bound to device 'ff770000.syscon:phy@f780'
 rockchip-emmc-phy ff770000.syscon:phy@f780: Dropping the link to fe330000.mmc
-device: 'platform:fe330000.mmc--platform:ff770000.syscon:phy@f780': device_unregister
+device: 'platform:
+[20:42:36.639]收←◆fe330000.mmc--platform:ff770000.syscon:phy@f780': device_unregister
 bus: 'platform': really_probe: bound device ff770000.syscon:phy@f780 to driver rockchip-emmc-phy
 bus: 'platform': add driver rockchip-usb2phy
 bus: 'platform': __driver_probe_device: matched device ff770000.syscon:usb2phy@e450 with driver rockchip-usb2phy
@@ -1657,11 +1877,21 @@ device: 'regulator:regulator.3--phy:phy-ff770000.syscon:usb2phy@e450.1': device_
 phy phy-ff770000.syscon:usb2phy@e450.1: Linked as a consumer to regulator.3
 device: 'phy-ff770000.syscon:usb2phy@e450.1': device_add
 PM: Adding info for No Bus:phy-ff770000.syscon:usb2phy@e450.1
+phy phy-ff770000.syscon:usb2phy@e450.2: Looking up phy-supply from device tree
+phy phy-ff770000.syscon:usb2phy@e450.2: Looking up phy-supply property in node /syscon@ff770000/usb2phy@e450/otg-port failed
+device: 'phy-ff770000.syscon:usb2phy@e450.2': device_add
+PM: Adding info for No Bus:phy-ff770000.syscon:usb2phy@e450.2
+phy phy-ff770000.syscon:usb2phy@e450.2: Looking up vbus-supply from device tree
+phy phy-ff770000.syscon:usb2phy@e450.2: Looking up vbus-supply property in node /syscon@ff770000/usb2phy@e450/otg-port failed
 driver: 'rockchip-usb2phy': driver_bound: bound to device 'ff770000.syscon:usb2phy@e450'
 usb@fe3a0000 Linked as a fwnode consumer to usb2phy@e450
 usb@fe3a0000 Dropping the fwnode link to host-port
 usb@fe380000 Linked as a fwnode consumer to usb2phy@e450
 usb@fe380000 Dropping the fwnode link to host-port
+usb@fe800000 Linked as a fwnode consumer to usb2phy@e450
+usb@fe800000 Dropping the fwnode link to otg-port
+device: 'platform:ff770000.syscon:usb2phy@e450--platform:usb@fe800000': device_add
+platform usb@fe800000: Linked as a sync state only consumer to ff770000.syscon:usb2phy@e450
 usb@fe380000 Dropping the fwnode link to usb2phy@e450
 usb@fe3a0000 Dropping the fwnode link to usb2phy@e450
 rockchip-usb2phy ff770000.syscon:usb2phy@e450: Dropping the link to vcc5v0-host-regulator
@@ -1673,18 +1903,28 @@ rockchip-usb2phy ff770000.syscon:usb2phy@e460: no pinctrl handle
 rockchip-usb2phy ff770000.syscon:usb2phy@e460: error -ENXIO: IRQ index 0 not found
 device: 'extcon1': device_add
 PM: Adding info for No Bus:extcon1
-phy phy-ff770000.syscon:usb2phy@e460.2: Looking up phy-supply from device tree
-vcc5v0_host: could not add device link phy-ff770000.syscon:usb2phy@e460.2: -ENOENT
-device: 'regulator:regulator.3--phy:phy-ff770000.syscon:usb2phy@e460.2': device_add
-phy phy-ff770000.syscon:usb2phy@e460.2: Linked as a consumer to regulator.3
-device: 'phy-ff770000.syscon:usb2phy@e460.2': device_add
-PM: Adding info for No Bus:phy-ff770000.syscon:usb2phy@e46
-[22:09:50.914]收←◆0.2
+phy phy-ff770000.syscon:usb2phy@e460.3: Looking up phy-supply from device tree
+vcc5v0_host: could not add device link phy-ff770000.syscon:usb2phy@e460.3: -ENOENT
+device: 'regulator:regulator.3--phy:phy-ff770000.syscon:usb2phy@e460.3': device_add
+phy phy-ff770000.syscon:usb2phy@e460.3: Linked as a consumer to regulator.3
+device: 'phy-ff770000.syscon:usb2phy@e460.3': device_add
+PM: Adding info for No Bus:phy-ff770000.syscon:usb2phy@e460.3
+phy phy-ff770000.syscon:usb2phy@e460.4: Looking up phy-supply from device tree
+phy phy-ff770000.syscon:usb2phy@e460.4: Looking up phy-supply property in node /syscon@ff770000/usb2phy@e460/otg-port failed
+device: 'phy-ff770000.syscon:usb2phy@e460.4': device_add
+PM: Adding info for No Bus:phy-ff770000.syscon:usb2phy@e460.4
+phy phy-ff770000.syscon:usb2phy@e460.4: Looking up vbus-supply from device tree
+phy phy-ff77
+[20:42:36.672]收←◆0000.syscon:usb2phy@e460.4: Looking up vbus-supply property in node /syscon@ff770000/usb2phy@e460/otg-port failed
 driver: 'rockchip-usb2phy': driver_bound: bound to device 'ff770000.syscon:usb2phy@e460'
 usb@fe3e0000 Linked as a fwnode consumer to usb2phy@e460
 usb@fe3e0000 Dropping the fwnode link to host-port
 usb@fe3c0000 Linked as a fwnode consumer to usb2phy@e460
 usb@fe3c0000 Dropping the fwnode link to host-port
+usb@fe900000 Linked as a fwnode consumer to usb2phy@e460
+usb@fe900000 Dropping the fwnode link to otg-port
+device: 'platform:ff770000.syscon:usb2phy@e460--platform:usb@fe900000': device_add
+platform usb@fe900000: Linked as a sync state only consumer to ff770000.syscon:usb2phy@e460
 usb@fe3c0000 Dropping the fwnode link to usb2phy@e460
 usb@fe3e0000 Dropping the fwnode link to usb2phy@e460
 rockchip-usb2phy ff770000.syscon:usb2phy@e460: Dropping the link to vcc5v0-host-regulator
@@ -1692,6 +1932,53 @@ device: 'platform:vcc5v0-host-regulator--platform:ff770000.syscon:usb2phy@e460':
 bus: 'platform': really_probe: bound device ff770000.syscon:usb2phy@e460 to driver rockchip-usb2phy
 bus: 'platform': add driver rockchip-pcie-phy
 bus: 'platform': add driver rockchip-typec-phy
+bus: 'platform': __driver_probe_device: matched device ff7c0000.phy with driver rockchip-typec-phy
+bus: 'platform': really_probe: probing driver rockchip-typec-phy with device ff7c0000.phy
+rockchip-typec-phy ff7c0000.phy: no pinctrl handle
+rockchip-typec-phy ff7c0000.phy: adding to PM domain tcpd0
+rockchip-typec-phy ff7c0000.phy: genpd_add_device()
+rockchip-typec-phy ff7c0000.phy: Clock clk_uphy0_tcpdcore con_id (null) managed by runtime PM.
+rockchip-typec-phy ff7c0000.phy: Clock clk_uphy0_tcpdphy_ref con_id (null) managed by runtime PM.
+phy phy-ff7c0000.phy.5: Looking up phy-supply from device tree
+phy phy-ff7c0000.phy.5: Looking up phy-supply property in node /phy@ff7c0000/dp-port failed
+device: 'phy-ff7c0000.phy.5': device_add
+PM: Adding info for No Bus:phy-ff7c0000.phy.5
+phy phy-ff7c0000.phy.6: Looking up phy-supply from device tree
+phy phy-ff7c0000.phy.6: Looking up phy-supply property in node /phy@ff7c0000/usb3-port failed
+device: 'phy-ff7c0000.phy.6': device_add
+PM: Adding info for No Bus:phy-ff7c0000.phy.6
+driver: 'rockchip-typec-phy': driver_bound: bound to device 'ff7c0000.phy'
+rockchip-pm-domain ff310000.power-management:power-controller: Looking up tcpd0-supply from device tree
+rockchip-pm-domain ff310000.power-management:power-controller: Looking up tcpd0-supply property in node /power-management@ff310000/power-controller failed
+usb@fe800000 Linked as a fwnode consumer to phy@ff7c0000
+usb@fe800000 Dropping the fwnode link to usb3-port
+device: 'platform:ff7c0000.phy--platform:usb@fe800000': device_add
+platform usb@fe800000: Linked as a sync state only consumer to ff7c0000.phy
+bus: 'platform': really_probe: bound device ff7c0000.phy to driver rockchip-typec-phy
+bus: 'platform': __driver_probe_device: matched device ff800000.phy with driver rockchip-typec-phy
+bus: 'platform': really_probe: probing driver rockchip-typec-phy with device ff800000.phy
+rockchip-typec-phy ff800000.phy: no pinctrl handle
+rockchip-typec-phy ff800000.phy: adding to PM domain tcpd1
+rockchip-typec-phy ff800000.phy: genpd_add_device()
+rockchip-typec-phy ff800000.phy: Clock clk_uphy1_tcpdcore con_id (null) managed by runtime PM.
+rockchip-typec-phy ff800000.phy: Clock clk_uphy1_tcpdphy_ref con_id (null) managed by runtime PM.
+phy phy-ff800000.phy.7: Looking up phy-supply from device tree
+phy phy-ff800000.phy.7: Looking up phy-supply property in node /phy@ff800000/dp-port failed
+device: 'phy-ff800000.phy.7': device_add
+PM: Adding info for No Bus:phy-ff800000.phy.7
+phy phy-ff800000.phy.8: Looking up phy-supply from device tree
+phy phy-ff800000.phy.8: Looking up phy-supply property in node /phy@ff800000/usb3-port failed
+device: 'phy-ff800000.phy.8': device_add
+PM: Adding info for No Bus:phy-ff80000
+[20:42:36.708]收←◆0.phy.8
+driver: 'rockchip-typec-phy': driver_bound: bound to device 'ff800000.phy'
+rockchip-pm-domain ff310000.power-management:power-controller: Looking up tcpd1-supply from device tree
+rockchip-pm-domain ff310000.power-management:power-controller: Looking up tcpd1-supply property in node /power-management@ff310000/power-controller failed
+usb@fe900000 Linked as a fwnode consumer to phy@ff800000
+usb@fe900000 Dropping the fwnode link to usb3-port
+device: 'platform:ff800000.phy--platform:usb@fe900000': device_add
+platform usb@fe900000: Linked as a sync state only consumer to ff800000.phy
+bus: 'platform': really_probe: bound device ff800000.phy to driver rockchip-typec-phy
 bus: 'platform': add driver basic-mmio-gpio
 bus: 'platform': add driver of_fixed_factor_clk
 bus: 'platform': add driver of_fixed_clk
@@ -1786,12 +2073,12 @@ PM: Adding info for No Bus:ptyr4
 device: 'ptyr5': device_add
 PM: Adding info for No Bus:ptyr5
 device: 'ptyr6': device_add
-PM: Adding info for No 
-[22:09:50.954]收←◆Bus:ptyr6
+PM: Adding info for No Bus:ptyr6
 device: 'ptyr7': device_add
 PM: Adding info for No Bus:ptyr7
 device: 'ptyr8': device_add
-PM: Adding info for No Bus:ptyr8
+PM: Adding info for N
+[20:42:36.744]收←◆o Bus:ptyr8
 device: 'ptyr9': device_add
 PM: Adding info for No Bus:ptyr9
 device: 'ptyra': device_add
@@ -1913,12 +2200,12 @@ PM: Adding info for No Bus:ptyv3
 device: 'ptyv4': device_add
 PM: Adding info for No Bus:ptyv4
 device: 'ptyv5': device_add
-PM: Adding info for No
-[22:09:50.994]收←◆ Bus:ptyv5
+PM: Adding info for No Bus:ptyv5
 device: 'ptyv6': device_add
 PM: Adding info for No Bus:ptyv6
 device: 'ptyv7': device_add
-PM: Adding info for No Bus:ptyv7
+PM: Adding info for 
+[20:42:36.781]收←◆No Bus:ptyv7
 device: 'ptyv8': device_add
 PM: Adding info for No Bus:ptyv8
 device: 'ptyv9': device_add
@@ -2040,12 +2327,12 @@ PM: Adding info for No Bus:ptyz2
 device: 'ptyz3': device_add
 PM: Adding info for No Bus:ptyz3
 device: 'ptyz4': device_add
-PM: Adding info for N
-[22:09:51.034]收←◆o Bus:ptyz4
+PM: Adding info for No Bus:ptyz4
 device: 'ptyz5': device_add
 PM: Adding info for No Bus:ptyz5
 device: 'ptyz6': device_add
-PM: Adding info for No Bus:ptyz6
+PM: Adding info for
+[20:42:36.818]收←◆ No Bus:ptyz6
 device: 'ptyz7': device_add
 PM: Adding info for No Bus:ptyz7
 device: 'ptyz8': device_add
@@ -2167,12 +2454,12 @@ PM: Adding info for No Bus:ptyd1
 device: 'ptyd2': device_add
 PM: Adding info for No Bus:ptyd2
 device: 'ptyd3': device_add
-PM: Adding info for 
-[22:09:51.074]收←◆No Bus:ptyd3
+PM: Adding info for No Bus:ptyd3
 device: 'ptyd4': device_add
 PM: Adding info for No Bus:ptyd4
 device: 'ptyd5': device_add
-PM: Adding info for No Bus:ptyd5
+PM: Adding info fo
+[20:42:36.854]收←◆r No Bus:ptyd5
 device: 'ptyd6': device_add
 PM: Adding info for No Bus:ptyd6
 device: 'ptyd7': device_add
@@ -2294,12 +2581,12 @@ PM: Adding info for No Bus:ttyr0
 device: 'ttyr1': device_add
 PM: Adding info for No Bus:ttyr1
 device: 'ttyr2': device_add
-PM: Adding info for
-[22:09:51.114]收←◆ No Bus:ttyr2
+PM: Adding info for No Bus:ttyr2
 device: 'ttyr3': device_add
 PM: Adding info for No Bus:ttyr3
 device: 'ttyr4': device_add
-PM: Adding info for No Bus:ttyr4
+PM: Adding info f
+[20:42:36.891]收←◆or No Bus:ttyr4
 device: 'ttyr5': device_add
 PM: Adding info for No Bus:ttyr5
 device: 'ttyr6': device_add
@@ -2421,12 +2708,12 @@ PM: Adding info for No Bus:ttyuf
 device: 'ttyv0': device_add
 PM: Adding info for No Bus:ttyv0
 device: 'ttyv1': device_add
-PM: Adding info fo
-[22:09:51.154]收←◆r No Bus:ttyv1
+PM: Adding info for No Bus:ttyv1
 device: 'ttyv2': device_add
 PM: Adding info for No Bus:ttyv2
 device: 'ttyv3': device_add
-PM: Adding info for No Bus:ttyv3
+PM: Adding info 
+[20:42:36.927]收←◆for No Bus:ttyv3
 device: 'ttyv4': device_add
 PM: Adding info for No Bus:ttyv4
 device: 'ttyv5': device_add
@@ -2548,12 +2835,12 @@ PM: Adding info for No Bus:ttyye
 device: 'ttyyf': device_add
 PM: Adding info for No Bus:ttyyf
 device: 'ttyz0': device_add
-PM: Adding info f
-[22:09:51.194]收←◆or No Bus:ttyz0
+PM: Adding info for No Bus:ttyz0
 device: 'ttyz1': device_add
 PM: Adding info for No Bus:ttyz1
 device: 'ttyz2': device_add
-PM: Adding info for No Bus:ttyz2
+PM: Adding info
+[20:42:36.963]收←◆ for No Bus:ttyz2
 device: 'ttyz3': device_add
 PM: Adding info for No Bus:ttyz3
 device: 'ttyz4': device_add
@@ -2675,12 +2962,12 @@ PM: Adding info for No Bus:ttycd
 device: 'ttyce': device_add
 PM: Adding info for No Bus:ttyce
 device: 'ttycf': device_add
-PM: Adding info 
-[22:09:51.232]收←◆for No Bus:ttycf
+PM: Adding info for No Bus:ttycf
 device: 'ttyd0': device_add
 PM: Adding info for No Bus:ttyd0
 device: 'ttyd1': device_add
-PM: Adding info for No Bus:ttyd1
+PM: Adding inf
+[20:42:36.998]收←◆o for No Bus:ttyd1
 device: 'ttyd2': device_add
 PM: Adding info for No Bus:ttyd2
 device: 'ttyd3': device_add
@@ -2760,7 +3047,7 @@ bus: 'platform': really_probe: probing driver dw-apb-uart with device ff1a0000.s
 dw-apb-uart ff1a0000.serial: no init pinctrl state
 dw-apb-uart ff1a0000.serial: no sleep pinctrl state
 dw-apb-uart ff1a0000.serial: no idle pinctrl state
-ff1a0000.serial: ttyS2 at MMIO 0xff1a0000 (irq = 33, base_baud = 1500000) is a 16550A
+ff1a0000.serial: ttyS2 at MMIO 0xff1a0000 (irq = 35, base_baud = 1500000) is a 16550A
 printk: console [ttyS2] enabled
 printk: console [ttyS2] enabled
 printk: bootconsole [uart8250] disabled
@@ -2774,11 +3061,61 @@ led_vk2c21_init
 =============================================
 bus: 'platform': add driver lcd_vk2c21
 bus: 'platform': add driver rk_iommu
+bus: 'platform': __driver_probe_device: matched device ff650800.iommu with driver rk_iommu
+bus: 'platform': really_probe: probing driver rk_iommu with device ff650800.iommu
+rk_iommu ff650800.iommu: no pinctrl handle
+rk_iommu ff650800.iommu: adding to PM domain vcodec
+rk_iommu ff650800.iommu: genpd_add_device()
+rk_iommu ff650800.iommu: C
+[20:42:37.031]收←◆lock aclk_vcodec con_id (null) managed by runtime PM.
+rk_iommu ff650800.iommu: Clock hclk_vcodec con_id (null) managed by runtime PM.
+device: 'ff650800.iommu': device_add
+PM: Adding info for No Bus:ff650800.iommu
+driver: 'rk_iommu': driver_bound: bound to device 'ff650800.iommu'
+rockchip-pm-domain ff310000.power-management:power-controller: Looking up vcodec-supply from device tree
+rockchip-pm-domain ff310000.power-management:power-controller: Looking up vcodec-supply property in node /power-management@ff310000/power-controller failed
+bus: 'platform': really_probe: bound device ff650800.iommu to driver rk_iommu
+bus: 'platform': __driver_probe_device: matched device ff660480.iommu with driver rk_iommu
+bus: 'platform': really_probe: probing driver rk_iommu with device ff660480.iommu
+rk_iommu ff660480.iommu: no pinctrl handle
+rk_iommu ff660480.iommu: adding to PM domain vdu
+rk_iommu ff660480.iommu: genpd_add_device()
+rk_iommu ff660480.iommu: Clock aclk_vdu con_id (null) managed by runtime PM.
+rk_iommu ff660480.iommu: Clock hclk_vdu con_id (null) managed by runtime PM.
+device: 'ff660480.iommu': device_add
+PM: Adding info for No Bus:ff660480.iommu
+driver: 'rk_iommu': driver_bound: bound to device 'ff660480.iommu'
+rockchip-pm-domain ff310000.power-management:power-controller: Looking up vdu-supply from device tree
+rockchip-pm-domain ff310000.power-management:power-controller: Looking up vdu-supply property in node /power-management@ff310000/power-controller failed
+bus: 'platform': really_probe: bound device ff660480.iommu to driver rk_iommu
+bus: 'platform': __driver_probe_device: matched device ff670800.iommu with driver rk_iommu
+bus: 'platform': really_probe: probing driver rk_iommu with device ff670800.iommu
+rk_iommu ff670800.iommu: no pinctrl handle
+rk_iommu ff670800.iommu: adding to PM domain iep
+rk_iommu ff670800.iommu: genpd_add_device()
+rk_iommu ff670800.iommu: Clock aclk_iep con_id (null) managed by runtime PM.
+rk_iommu ff670800.iommu: Clock hclk_iep con_id (null) managed by runtime PM.
+device: 'ff670800.iommu': device_add
+PM: Adding info for No Bus:ff670800.iommu
+driver: 'rk_iommu': driver_bound: bound to device 'ff670800.iommu'
+rockchip-pm-domain ff310000.power-management:power-controller: Looking up iep-supply from device tree
+rockchip-pm-domain ff310000.power-management:power-controller: Looking up iep-supply property in node /power-management@ff310000/power-controller failed
+bus: 'platform': really_probe: bound device ff670800.iommu to driver rk_iommu
+bus: 'platform': __driver_probe_device: matched device ff8f3f00.iommu with driver rk_iommu
+bus: 'platform': really_probe: probing driver rk_iommu with device ff8f3f00.iommu
+rk_iommu ff8f3f00.iommu: no pinctrl handle
+rk_iommu ff8f3f00.iommu: adding to PM domain vopl
+rk_iommu ff8f3f00.iommu: genpd_add_device()
+rk_iommu ff8f3f00.iommu: Clock aclk_vop1 con_id (null) managed by runtime PM.
+rk_iommu ff8f3f00.iommu: Clock hclk_vop1 con_id (null) managed by runtime PM.
+device: 'ff8f3f00.iommu': device_add
+PM: Adding info for No Bus:ff8f3f00.iommu
+driver: 'rk_iommu': driver_bound: bound to device 'ff8f3f00.iommu'
+bus: 'platform': really_probe: bound device ff8f3f00.iommu to driver rk_iommu
 bus: 'platform': __driver_probe_device: matched device ff903f00.iommu with driver rk_iommu
 bus: 'platform': really_probe: probing driver rk_iommu with device ff903f00.iommu
 rk_iommu ff903f00.iommu: no pinctrl handle
-
-[22:09:51.280]收←◆rk_iommu ff903f00.iommu: adding to PM domain vopb
+rk_iommu ff903f00.iommu: adding to PM domain vopb
 rk_iommu ff903f00.iommu: genpd_add_device()
 rk_iommu ff903f00.iommu: Clock aclk_vop0 con_id (null) managed by runtime PM.
 rk_iommu ff903f00.iommu: Clock hclk_vop0 con_id (null) managed by runtime PM.
@@ -2786,7 +3123,183 @@ device: 'ff903f00.iommu': device_add
 PM: Adding info for No Bus:ff903f00.iommu
 driver: 'rk_iommu': driver_bound: bound to device 'ff903f00.iommu'
 bus: 'platform': really_probe: bound device ff903f00.iommu to driver rk_iommu
+device class 'drm': registeri
+[20:42:37.065]收←◆ng
+device class 'drm_dp_aux_dev': registering
+registering platform driver 0xffffffc008bed430
+bus: 'platform': add driver rockchip-vop
+bus: 'platform': __driver_probe_device: matched device ff8f0000.vop with driver rockchip-vop
+bus: 'platform': really_probe: probing driver rockchip-vop with device ff8f0000.vop
+rockchip-vop ff8f0000.vop: no pinctrl handle
+device: 'platform:ff8f3f00.iommu--platform:ff8f0000.vop': device_add
+devices_kset: Moving ff8f0000.vop to end of list
+PM: Moving platform:ff8f0000.vop to end of list
+rockchip-vop ff8f0000.vop: Linked as a consumer to ff8f3f00.iommu
+rockchip-vop ff8f0000.vop: Adding to iommu group 3
+rockchip-vop ff8f0000.vop: adding to PM domain vopl
+rockchip-vop ff8f0000.vop: genpd_add_device()
+rockchip-vop ff8f0000.vop: Clock aclk_vop1 con_id (null) managed by runtime PM.
+rockchip-vop ff8f0000.vop: Clock dclk_vop1 con_id (null) managed by runtime PM.
+rockchip-vop ff8f0000.vop: Clock hclk_vop1 con_id (null) managed by runtime PM.
+rockchip-vop ff8f0000.vop: Clock dclk_vop1_div con_id (null) managed by runtime PM.
+rockchip-vop ff8f0000.vop: adding component (ops 0xffffffc00883a2d8)
+driver: 'rockchip-vop': driver_bound: bound to device 'ff8f0000.vop'
+rockchip-vop ff8f0000.vop: Dropping the link to ff940000.hdmi
+device: 'platform:ff940000.hdmi--platform:ff8f0000.vop': device_unregister
+bus: 'platform': really_probe: bound device ff8f0000.vop to driver rockchip-vop
+bus: 'platform': __driver_probe_device: matched device ff900000.vop with driver rockchip-vop
+bus: 'platform': really_probe: probing driver rockchip-vop with device ff900000.vop
+rockchip-vop ff900000.vop: no pinctrl handle
+device: 'platform:ff903f00.iommu--platform:ff900000.vop': device_add
+devices_kset: Moving ff900000.vop to end of list
+PM: Moving platform:ff900000.vop to end of list
+rockchip-vop ff900000.vop: Linked as a consumer to ff903f00.iommu
+rockchip-vop ff900000.vop: Adding to iommu group 4
+rockchip-vop ff900000.vop: adding to PM domain vopb
+rockchip-vop ff900000.vop: genpd_add_device()
+rockchip-vop ff900000.vop: Clock aclk_vop0 con_id (null) managed by runtime PM.
+rockchip-vop ff900000.vop: Clock dclk_vop0 con_id (null) managed by runtime PM.
+rockchip-vop ff900000.vop: Clock hclk_vop0 con_id (null) managed by runtime PM.
+rockchip-vop ff900000.vop: Clock dclk_vop0_div con_id (null) managed by runtime PM.
+rockchip-vop ff900000.vop: adding component (ops 0xffffffc00883a2d8)
+driver: 'rockchip-vop': driver_bound: bound to device 'ff900000.vop'
+rockchip-vop ff900000.vop: Dropping the link to ff940000.hdmi
+device: 'platform:ff940000.hdmi--platform:ff900000.vop': device_unregister
+bus: 'platform': really_probe: bound device ff900000.vop to driver rockchip-vop
+registering platform driver 0xffffffc008bee058
+bus: 'platform': add driver rockchip-lvds
+registering platform driver 0xffffffc008bed580
+bus: 'platform': add driver rockchip-dp
+registering platform driver 0xffffffc008bed6a0
+bus: 'platform': add driver cdn-dp
+registering platform driver 0xffffffc008bedc98
+bus: 'platform': add driver dwhdmi-rockchip
+bus: 'platform': __driver_probe_device: matched device ff940000.hdmi with driver dwhdmi-rockchip
+bus: 'platform': really_probe: probing driver dwhdmi-rockchip with device ff940000.hdmi
+dwhdmi-rockchip ff940000.hdmi: no init pinctrl state
+dwhdmi-rockchip ff940000.hdmi: no sleep pinctrl state
+dwhdmi-rockchip ff940000.hdmi: no idle pinctrl state
+dwhdmi-rockchip ff940000.hdmi: adding to PM domain hdcp
+dwhdmi-rockchip ff940000.hdmi: genpd_add_device()
+dwhdmi-rockchip ff940000.hdmi: Clock pclk_hdmi_ctrl con_id (null) managed by runtime PM.
+dwhdmi-rockchip ff940000.hdmi: Clock clk_hdmi_sfr con_id (null) managed by runtime PM.
+dwhdmi-rockchip ff940000.hdmi: Clock clk_hdmi_cec con_id (null) managed by runtime PM.
+dwhdmi-rockchip ff940000.hdmi: Clock pclk_vio_grf con_id (null) managed by runtime PM.
+dwhdmi-rockchip ff940000.hdmi: Clock vpll con_id (null) man
+[20:42:37.099]收←◆aged by runtime PM.
+dwhdmi-rockchip ff940000.hdmi: genpd_runtime_resume()
+dwhdmi-rockchip ff940000.hdmi: adding component (ops 0xffffffc00883c9b0)
+driver: 'dwhdmi-rockchip': driver_bound: bound to device 'ff940000.hdmi'
+dwhdmi-rockchip ff940000.hdmi: Dropping the link to ff8f0000.vop
+device: 'platform:ff8f0000.vop--platform:ff940000.hdmi': device_unregister
+dwhdmi-rockchip ff940000.hdmi: Dropping the link to ff900000.vop
+device: 'platform:ff900000.vop--platform:ff940000.hdmi': device_unregister
+bus: 'platform': really_probe: bound device ff940000.hdmi to driver dwhdmi-rockchip
+registering platform driver 0xffffffc008bede68
+bus: 'platform': add driver dw-mipi-dsi-rockchip
+registering platform driver 0xffffffc008bedf88
+bus: 'platform': add driver dw-mipi-dsi2
+registering platform driver 0xffffffc008bee128
+bus: 'platform': add driver rockchip-rgb
+bus: 'platform': add driver rockchip-drm
+bus: 'platform': __driver_probe_device: matched device display-subsystem with driver rockchip-drm
+bus: 'platform': really_probe: probing driver rockchip-drm with device display-subsystem
+rockchip-drm display-subsystem: no pinctrl handle
+device: 'platform:ff8f0000.vop--platform:display-subsystem': device_add
+devices_kset: Moving display-subsystem to end of list
+PM: Moving platform:display-subsystem to end of list
+rockchip-drm display-subsystem: Linked as a consumer to ff8f0000.vop
+device: 'platform:ff900000.vop--platform:display-subsystem': device_add
+devices_kset: Moving display-subsystem to end of list
+PM: Moving platform:display-subsystem to end of list
+rockchip-drm display-subsystem: Linked as a consumer to ff900000.vop
+device: 'platform:ff940000.hdmi--platform:display-subsystem': device_add
+devices_kset: Moving display-subsystem to end of list
+PM: Moving platform:display-subsystem to end of list
+rockchip-drm display-subsystem: Linked as a consumer to ff940000.hdmi
+rockchip-drm display-subsystem: trying to bring up adev
+rockchip-drm display-subsystem: Looking for component 0
+rockchip-drm display-subsystem: found component ff8f0000.vop, duplicate 0
+rockchip-drm display-subsystem: Looking for component 1
+rockchip-drm display-subsystem: found component ff900000.vop, duplicate 0
+rockchip-drm display-subsystem: Looking for component 2
+rockchip-drm display-subsystem: found component ff940000.hdmi, duplicate 0
+rockchip-drm display-subsystem: binding ff8f0000.vop (ops 0xffffffc00883a2d8)
+rockchip-drm display-subsystem: bound ff8f0000.vop (ops 0xffffffc00883a2d8)
+rockchip-drm display-subsystem: binding ff900000.vop (ops 0xffffffc00883a2d8)
+[drm] unsupported AFBC format[3231564e]
+rockchip-drm display-subsystem: bound ff900000.vop (ops 0xffffffc00883a2d8)
+rockchip-drm display-subsystem: binding ff940000.hdmi (ops 0xffffffc00883c9b0)
+dwhdmi-rockchip ff940000.hdmi: Looking up avdd-0v9-supply from device tree
+dwhdmi-rockchip ff940000.hdmi: Looking up avdd-0v9-supply property in node /hdmi@ff940000 failed
+dwhdmi-rockchip ff940000.hdmi: Looking up avdd-1v8-supply from device tree
+dwhdmi-rockchip ff940000.hdmi: Looking up avdd-1v8-supply property in node /hdmi@ff940000 failed
+dwhdmi-rockchip ff940000.hdmi: Detected HDMI TX controller v2.11a with HDCP (DWC HDMI 2.0 TX PHY)
+device: 'i2c-9': device_add
+bus: 'i2c': add device i2c-9
+PM: Adding info for i2c:i2c-9
+i2c i2c-9: adapter [DesignWare HDMI] registered
+dwhdmi-rockchip ff940000.hdmi: registered DesignWare HDMI I2C bus driver
+Registering platform device 'dw-hdmi-i2s-audio.0.auto'. Parent at ff940000.hdmi
+device: 'dw-hdmi-i2s-audio.0.auto': device_add
+bus: 'platform': add device dw-hdmi-i2s-audio.0.auto
+PM: Adding info for platform:dw-hdmi-i2s-audio.0.auto
+dwhdmi-rockchip ff940000.hdmi: error -ENXIO: IRQ index 1 not found
+Registering platform device 'dw-hdmi-cec.1.auto'. Parent at ff940000.hdmi
+device: 'dw-hdmi-cec.1.auto': device_add
+bus: 'platform': add device dw-hdmi-cec.1.auto
+PM: Adding info for platform:dw-hdmi-ce
+[20:42:37.121]收←◆c.1.auto
+device: 'extcon2': device_add
+PM: Adding info for No Bus:extcon2
+Registering platform device 'dw-hdmi-hdcp.2.auto'. Parent at ff940000.hdmi
+device: 'dw-hdmi-hdcp.2.auto': device_add
+bus: 'platform': add device dw-hdmi-hdcp.2.auto
+PM: Adding info for platform:dw-hdmi-hdcp.2.auto
+rockchip-drm display-subsystem: bound ff940000.hdmi (ops 0xffffffc00883c9b0)
+device: 'renderD128': device_add
+PM: Adding info for No Bus:renderD128
+device: 'card0': device_add
+PM: Adding info for No Bus:card0
+device: 'card0-HDMI-A-1': device_add
+PM: Adding info for No Bus:card0-HDMI-A-1
+[drm] Initialized rockchip 4.0.0 20140818 for display-subsystem on minor 0
+rockchip-drm display-subsystem: failed to parse loader memory
+
+[20:42:37.536]收←◆device: 'fb0': device_add
+PM: Adding info for No Bus:fb0
+
+[20:42:38.237]收←◆device: 'vtcon1': device_add
+PM: Adding info for No Bus:vtcon1
+rockchip-vop ff8f0000.vop: [drm:vop_crtc_atomic_enable] Update mode to 1920x1080p60, type: 11
+rk_iommu ff8f3f00.iommu: genpd_runtime_resume()
+rockchip-vop ff8f0000.vop: genpd_runtime_resume()
+dwhdmi-rockchip ff940000.hdmi: PHY PLL failed to lock
+Console: switching to colour frame buffer device 240x67
+rockchip-drm display-subsystem: [drm] fb0: rockchipdrmfb frame buffer device
+device: 'crtc-0': device_add
+PM: Adding info for No Bus:crtc-0
+device: 'crtc-1': device_add
+PM: Adding info for No Bus:crtc-1
+rockchip-drm display-subsystem: [drm] run display error_event monitor
+driver: 'rockchip-drm': driver_bound: bound to device 'display-subsystem'
+bus: 'platform': really_probe: bound device display-subsystem to driver rockchip-drm
+bus: 'platform': add driver panel-simple
+bus: 'mipi-dsi': add driver panel-simple-dsi
+bus: 'platform': add driver panel-edp
+bus: 'dp-aux': add driver panel-simple-dp-aux
+bus: 'platform': add driver dw-hdmi-hdcp
+bus: 'platform': __driver_probe_device: matched device dw-hdmi-hdcp.2.auto with driver dw-hdmi-hdcp
+bus: 'platform': really_probe: probing driver dw-hdmi-hdcp with device dw-hdmi-hdcp.2.auto
+dw-hdmi-hdcp dw-hdmi-hdcp.2.auto: no default pinctrl state
+device: 'hdmi_hdcp1x': device_add
+PM: Adding info for No Bus:hdmi_hdcp1x
+driver: 'dw-hdmi-hdcp': driver_bound: bound to device 'dw-hdmi-hdcp.2.auto'
+bus: 'platform': really_probe: bound device dw-hdmi-hdcp.2.auto to driver dw-hdmi-hdcp
+bus: 'platform': add driver dw-hdmi-qp-hdcp
+bus: 'platform': add driver panfrost
 cacheinfo: Unable to detect cache hierarchy for CPU 0
+device class 'devcoredump': registering
 bus: 'i2c': add driver rk808
 i2c-core: driver [rk808] registered
 device class 'scsi_disk': registering
@@ -2824,7 +3337,8 @@ rk_gmac-dwmac fe300000.ethernet: Linked as a consumer to regulator.4
 rk_gmac-dwmac fe300000.ethernet: clock input or output? (input).
 rk_gmac-dwmac fe300000.ethernet: TX delay(0x28).
 rk_gmac-dwmac fe300000.ethernet: RX delay(0x11).
-rk_gmac-dwmac fe300000.ethernet: integrated PHY? (no).
+rk_gmac-dwmac fe
+[20:42:38.261]收←◆300000.ethernet: integrated PHY? (no).
 rk_gmac-dwmac fe300000.ethernet: cannot get clock clk_mac_speed
 rk_gmac-dwmac fe300000.ethernet: clock input from PHY
 rk_gmac-dwmac fe300000.ethernet: init for RGMII
@@ -2841,15 +3355,14 @@ rk_gmac-dwmac fe300000.ethernet: Enable RX Mitigation via HW Watchdog Timer
 device: 'stmmac-0': device_add
 PM: Adding info for No Bus:stmmac-0
 
-[22:09:51.375]收←◆device: 'stmmac-0:00': device_add
+[20:42:38.355]收←◆device: 'stmmac-0:00': device_add
 bus: 'mdio_bus': add device stmmac-0:00
 PM: Adding info for mdio_bus:stmmac-0:00
 device: 'stmmac-0:01': device_add
 bus: 'mdio_bus': add device stmmac-0:01
 PM: Adding info for mdio_bus:stmmac-0:01
 
-[22:09:51.599]收←◆mdio_bus stmmac-0:00: attache
-[22:09:51.631]收←◆d PHY driver [unbound] (mii_bus:phy_addr=stmmac-0:00, irq=POLL)
+[20:42:38.624]收←◆mdio_bus stmmac-0:00: attached PHY driver [unbound] (mii_bus:phy_addr=stmmac-0:00, irq=POLL)
 mdio_bus stmmac-0:01: attached PHY driver [unbound] (mii_bus:phy_addr=stmmac-0:01, irq=POLL)
 device: 'eth0': device_add
 PM: Adding info for No Bus:eth0
@@ -2858,6 +3371,123 @@ bus: 'platform': really_probe: bound device fe300000.ethernet to driver rk_gmac-
 bus: 'platform': add driver stmmaceth
 bus: 'platform': add driver dwc3
 bus: 'platform': add driver dwc3-of-simple
+bus: 'platform': __driver_probe_device: matched device usb@fe800000 with driver dwc3-of-simple
+bus: 'platform': really_probe: probing driver dwc3-of-simple with device usb@fe800000
+dwc3-of-simple usb@fe800000: no pinctrl handle
+device: 'fe800000.usb': device_add
+bus: 'platform': add device fe800000.usb
+PM: Adding info for platform:fe800000.usb
+device: 'platform:ff7c0000.phy--platform:fe800000.usb': device_add
+devices_kset: Moving fe800000.usb to end of list
+PM: Moving platform:fe800000.usb to end of list
+platform fe800000.usb: Linked as a consumer to ff7c0000.phy
+usb@fe800000 Dropping the fwnode link to phy@ff7c0000
+device: 'platform:ff770000.syscon:usb2phy@e450--platform:fe800000.usb': device_add
+devices_kset: Moving fe800000.usb to end of list
+PM: Moving platform:fe800000.usb to end of list
+platform fe800000.usb: Linked as a consumer to ff770000.syscon:usb2phy@e450
+usb@fe800000 Dropping the fwnode link to usb2phy@e450
+device: 'platform:ff310000.power-management:power-controller--platform:fe800000.usb': device_add
+devices_kset: Moving fe800000.usb to end of list
+PM: Moving platform:fe800000.usb to end of list
+platform fe800000.usb: Linked as a consumer to ff310000.power-management:power-controller
+usb@fe800000 Dropping the fwnode link to power-controller
+platform fe800000.usb: Not linking /clock-controller@ff760000 - might never become dev
+usb@fe800000 Dropping the fwnode link to clock-controller@ff760000
+platform fe800000.usb: Not linking /interrupt-controller@fee00000 - might never become dev
+usb@fe800000 Dropping the fwnode link to interrupt-controller@fee00000
+bus: 'platform': __driver_probe_device: matched device fe800000.usb with driver dwc3
+bus: 'platform': really_probe: probing driver dwc3 with device fe800000.usb
+dwc3 fe800000.usb: no pinctrl handle
+dwc3 fe800000.usb: adding to PM domain usb3
+dwc3 fe800000.usb: genpd_add_device()
+dwc3 fe800000.usb: Clock clk_usb3otg0_ref con_id (null) managed by runtime PM.
+dwc3 fe800000.usb: Clock aclk_usb3otg0 con_id (null) managed by runtime PM.
+dwc3 fe800000.usb: Clock clk_usb3otg0_suspend con_id (null) managed by runtime PM.
+device: 'phy:phy-ff770000.syscon:usb2phy@e450.2--platform:fe800000.usb': device_add
+devices_kset: Moving fe800000.usb to end of list
+PM: Moving platform:fe800000.usb to end of list
+dwc3 fe800000.usb: Linked as a consumer to phy-ff770000.syscon:usb2phy@e450.2
+device: 'phy:phy-ff7c0000.phy.6--platform:fe800000.usb': device_add
+devices_kset: Moving fe800000.usb to end of list
+PM: Moving platform:fe800000.usb to end of list
+dwc3 fe800000.usb: Linked as a consumer to phy-ff7c0000.phy.6
+rockchip-typec-phy ff7c0000.phy: genpd_runtime_resume()
+rockchip-typec-phy ff7c0000.phy: genpd_runtime_suspend()
+rockchip-typec-phy ff7c0000.phy: genpd_runtime_resume()
+Registering platform device 'xhci-hcd.3.auto'. Parent at fe800000.usb
+device: 'xhci-hcd.3.auto': device_add
+bus: 'platform': add device xhci-hcd.3.auto
+PM: Adding info for platform:xhci-hcd.3.auto
+driver: 'dwc3': driver_bound: bound to device 'fe800000.usb'
+bus: 'platform': really_probe: bound device fe800000.usb to driver dwc3
+driver: 'dwc3-of-simple': driver_bound: bound to device 'usb@fe800000'
+dwc3-of-simple usb@fe800000: Dropping the link to ff310000.power-management:power-controller
+device: 'platform:ff310000.power-management:power-controller--platform:usb@fe800000': device_unregister
+dwc3-of-simple usb@fe80
+[20:42:38.665]收←◆0000: Dropping the link to ff770000.syscon:usb2phy@e450
+device: 'platform:ff770000.syscon:usb2phy@e450--platform:usb@fe800000': device_unregister
+dwc3-of-simple usb@fe800000: Dropping the link to ff7c0000.phy
+device: 'platform:ff7c0000.phy--platform:usb@fe800000': device_unregister
+bus: 'platform': really_probe: bound device usb@fe800000 to driver dwc3-of-simple
+bus: 'platform': __driver_probe_device: matched device usb@fe900000 with driver dwc3-of-simple
+bus: 'platform': really_probe: probing driver dwc3-of-simple with device usb@fe900000
+dwc3-of-simple usb@fe900000: no pinctrl handle
+device: 'fe900000.usb': device_add
+bus: 'platform': add device fe900000.usb
+PM: Adding info for platform:fe900000.usb
+device: 'platform:ff800000.phy--platform:fe900000.usb': device_add
+devices_kset: Moving fe900000.usb to end of list
+PM: Moving platform:fe900000.usb to end of list
+platform fe900000.usb: Linked as a consumer to ff800000.phy
+usb@fe900000 Dropping the fwnode link to phy@ff800000
+device: 'platform:ff770000.syscon:usb2phy@e460--platform:fe900000.usb': device_add
+devices_kset: Moving fe900000.usb to end of list
+PM: Moving platform:fe900000.usb to end of list
+platform fe900000.usb: Linked as a consumer to ff770000.syscon:usb2phy@e460
+usb@fe900000 Dropping the fwnode link to usb2phy@e460
+device: 'platform:ff310000.power-management:power-controller--platform:fe900000.usb': device_add
+devices_kset: Moving fe900000.usb to end of list
+PM: Moving platform:fe900000.usb to end of list
+platform fe900000.usb: Linked as a consumer to ff310000.power-management:power-controller
+usb@fe900000 Dropping the fwnode link to power-controller
+platform fe900000.usb: Not linking /clock-controller@ff760000 - might never become dev
+usb@fe900000 Dropping the fwnode link to clock-controller@ff760000
+platform fe900000.usb: Not linking /interrupt-controller@fee00000 - might never become dev
+usb@fe900000 Dropping the fwnode link to interrupt-controller@fee00000
+bus: 'platform': __driver_probe_device: matched device fe900000.usb with driver dwc3
+bus: 'platform': really_probe: probing driver dwc3 with device fe900000.usb
+dwc3 fe900000.usb: no pinctrl handle
+dwc3 fe900000.usb: adding to PM domain usb3
+dwc3 fe900000.usb: genpd_add_device()
+dwc3 fe900000.usb: Clock clk_usb3otg1_ref con_id (null) managed by runtime PM.
+dwc3 fe900000.usb: Clock aclk_usb3otg1 con_id (null) managed by runtime PM.
+dwc3 fe900000.usb: Clock clk_usb3otg1_suspend con_id (null) managed by runtime PM.
+device: 'phy:phy-ff770000.syscon:usb2phy@e460.4--platform:fe900000.usb': device_add
+devices_kset: Moving fe900000.usb to end of list
+PM: Moving platform:fe900000.usb to end of list
+dwc3 fe900000.usb: Linked as a consumer to phy-ff770000.syscon:usb2phy@e460.4
+device: 'phy:phy-ff800000.phy.8--platform:fe900000.usb': device_add
+devices_kset: Moving fe900000.usb to end of list
+PM: Moving platform:fe900000.usb to end of list
+dwc3 fe900000.usb: Linked as a consumer to phy-ff800000.phy.8
+rockchip-typec-phy ff800000.phy: genpd_runtime_resume()
+rockchip-typec-phy ff800000.phy: genpd_runtime_suspend()
+rockchip-typec-phy ff800000.phy: genpd_runtime_resume()
+Registering platform device 'xhci-hcd.4.auto'. Parent at fe900000.usb
+device: 'xhci-hcd.4.auto': device_add
+bus: 'platform': add device xhci-hcd.4.auto
+PM: Adding info for platform:xhci-hcd.4.auto
+driver: 'dwc3': driver_bound: bound to device 'fe900000.usb'
+bus: 'platform': really_probe: bound device fe900000.usb to driver dwc3
+driver: 'dwc3-of-simple': driver_bound: bound to device 'usb@fe900000'
+dwc3-of-simple usb@fe900000: Dropping the link to ff310000.power-management:power-controller
+device: 'platform:ff310000.power-management:power-controller--platform:usb@fe900000': device_unregister
+dwc3-of-simple usb@fe900000: Dropping the link to ff770000.syscon:usb2phy@e460
+device: 'platform:ff770000.syscon:usb2phy@e460--platform:usb@fe900000': device_unregister
+dwc3-of-simple usb@fe900000: Dropping the link to ff800000.phy
+device: 'platform:ff800000.phy--platform:usb@fe900000': device_unregister
+bus: 'platform': really_probe: bound device usb@fe900000 to driver dwc3-of-simple
 device class 'usbmon': registering
 device: 'usbmon0': device_add
 PM: Adding info for No Bus:usbmon0
@@ -2872,316 +3502,394 @@ platform fe3e0000.usb: probing driver ohci-platform asynchronously
 bus: 'platform': __driver_probe_device: matched device fe3a0000.usb with driver ohci-platform
 bus: 'platform': really_probe: probing driver ohci-platform with device fe3a0000.usb
 ohci-platform fe3a0000.usb: no pinctrl handle
+bus: 'platform': __driver_probe_device: matched device fe3e0000.usb with driver ohci-platform
+bus: 'platform': really_probe: probing driver ohci-platform with device fe3e0000.usb
+ohci-platform fe3e0000.usb: no pinctrl handle
+bus: 'platform': add driver xhci-hcd
 ohci-platform fe3a0000.usb: adding to PM domain perihp
 ohci-platform fe3a0000.usb: genpd_add_device()
 ohci-platform fe3a0000.usb: Clock hclk_host0 con_id (null) managed by runtime PM.
 ohci-platform fe3a0000.usb: Clock hclk_host0_arb con_id (null) managed by runtime PM.
-bus: 'platform': add driver xhci-hcd
 ohci-platform fe3a0000.usb: Clock clk_usbphy0_480m con_id (null) managed by runtime PM.
-bus: 'platform': __driver_probe_device: matched device fe3e0000.usb with driver ohci-platform
-bus: 'platform': really_probe: probing driver ohci-platform with device fe3e0000.usb
-ohci-platform fe3e0000.usb: no pinctrl handle
 ohci-platform fe3e0000.usb: adding to PM domain perihp
 ohci-platform fe3e0000.usb: genpd_add_device()
-bus: 'usb': add driver usb-storage
+bus: 'platform': __driver_probe_device: matched device xhci-hcd.3.auto with driver xhci-hcd
+bus: 'platform': really_probe: probing driver xhci-hcd with device xhci-hcd.3.auto
 ohci-platform fe3e0000.usb: Clock hclk_host1 con_id (null) managed by runtime PM.
-usbcore: registered new interface driver usb-storage
-bus: 'serio': add driver atkbd
+xhci-hcd xhci-hcd.3.auto: no default pinctrl state
 ohci-platform fe3e0000.usb: Clock hclk_host1_arb con_id (null) managed by runtime PM.
 ohci-platform fe3e0000.usb: Clock clk_usbphy1_480m con_id (null) managed by runtime PM.
+phy phy-ff770000.syscon:usb2phy@e450.2: illegal mode
+xhci-hcd xhci-hcd.3.auto: xHCI Host Controller
 device: 'phy:phy-ff770000.syscon:usb2phy@e450.1--platform:fe3a0000.usb': device_add
-bus: 'serio': add driver psmouse
+device: 'usbmon1': device_add
+PM: Adding info for No Bus:usbmon1
 devices_kset: Moving fe3a0000.usb to end of list
 PM: Moving platform:fe3a0000.usb to end of list
 ohci-platform fe3a0000.usb: Linked as a consumer to phy-ff770000.syscon:usb2phy@e450.1
+device: 'phy:phy-ff770000.syscon:usb2phy@e460.3--platform:fe3e0000.usb': device_add
+xhci-hcd xhci-hcd.3.auto: new USB bus registered, assigned bus number 1
+devices_kset: Moving fe3e0000.usb to end of list
+xhci-hcd xhci-hcd.3.auto: hcc params 0x0220fe64 hci version 0x110 quirks 0x0000008002010010
+PM: Moving platform:fe3e0000.usb to end of list
+xhci-hcd xhci-hcd.3.auto: irq 43, io mem 0xfe800000
+ohci-platform fe3e0000.usb: Linked as a consumer to phy-ff770000.syscon:usb2phy@e460.3
+xhci-hcd xhci-hcd.3.auto: xHCI Host Controller
+bus: 'platform': really_probe: probing driver ehci-platform with device fe3c0000.usb
 bus: 'platform': really_probe: probing driver ehci-platform with device fe380000.usb
 ehci-platform fe380000.usb: no pinctrl handle
 ehci-platform fe380000.usb: adding to PM domain perihp
 ehci-platform fe380000.usb: genpd_add_device()
 ehci-platform fe380000.usb: Clock hclk_host0 con_id (null) managed by runtime PM.
 ehci-platform fe380000.usb: Clock hclk_host0_arb con_id (null) managed by runtime PM.
+ohci-platform fe3a0000.usb: Generic Platform OHCI controller
 ehci-platform fe380000.usb: Clock clk_usbphy0_480m con_id (null) managed by runtime PM.
-device: 'phy:phy-ff770000.syscon:usb2phy@e460.2--platform:fe3e0000.usb': device_add
-devices_kset: Moving fe3e0000.usb to end of list
-PM: Moving platform:fe3e0000.usb to end of list
-ohci-platform fe3e0000.usb: Linked as a consumer to phy-ff770000.syscon:usb2phy@e460.2
+device: 'usbmon2': device_add
+PM: Adding info for No Bus:usbmon2
+ohci-platform fe3a0000.usb: new USB bus registered, assigned bus number 2
 device: 'phy:phy-ff770000.syscon:usb2phy@e450.1--platform:fe380000.usb': device_add
+ohci-platform fe3a0000.usb: irq 45, io mem 0xfe3a0000
+device: 'usbmon3': device_add
+PM: Adding info for No Bus:usbmon3
 devices_kset: Moving fe380000.usb to end of list
 PM: Moving platform:fe380000.usb to end of list
 ehci-platform fe380000.usb: Linked as a consumer to phy-ff770000.syscon:usb2phy@e450.1
-bus: 'platform': really_probe: probing driver ehci-platform with device fe3c0000.usb
-i2c_dev: i2c /dev entries driver
-ehci-plat
-[22:09:51.662]收←◆form fe3c0000.usb: no pinctrl handle
-device class 'i2c-dev': registering
-ohci-platform fe3e0000.usb: Generic Platform OHCI controller
-ohci-platform fe3a0000.usb: Generic Platform OHCI controller
-ehci-platform fe3c0000.usb: adding to PM domain perihp
 ehci-platform fe380000.usb: EHCI Host Controller
+xhci-hcd xhci-hcd.3.auto: new USB bus registered, assigned bus number 3
+device: 'usbmon4': device_add
+xhci-hcd xhci-hcd.3.auto: Host supports USB 3.0 SuperSpeed
+PM: Adding info for No Bus:usbmon4
+device: 'usb1': device_add
+ehci-platform fe380000.usb: new USB bus registered, assigned bus number 4
+bus: 'usb': add device usb1
+PM: Adding info for usb:usb1
+ehci-platform fe380000.usb: irq 47, io mem 0xfe380000
+bus: 'usb': __driver_probe_device: matched device usb1 with driver usb
+bus: 'usb': really_probe: probing driver usb with device usb1
+device: '1-0:1.0': device_add
+bus: 'usb': add device 1-0:1.0
+ehci-platform fe3c0000.usb: no pinctrl handle
+ehci-platform fe3c0000.usb: adding to PM domain perihp
 ehci-platform fe3c0000.usb: genpd_add_device()
 ehci-platform fe3c0000.usb: Clock hclk_host1 con_id (null) managed by runtime PM.
 ehci-platform fe3c0000.usb: Clock hclk_host1_arb con_id (null) managed by runtime PM.
-device: 'usbmon1': device_add
 ehci-platform fe3c0000.usb: Clock clk_usbphy1_480m con_id (null) managed by runtime PM.
-device: 'usbmon2': device_add
-PM: Adding info for No Bus:usbmon1
-PM: Adding info for No Bus:usbmon2
-ohci-platform fe3a0000.usb: new USB bus registered, assigned bus number 1
-device: 'phy:phy-ff770000.syscon:usb2phy@e460.2--platform:fe3c0000.usb': device_add
-ohci-platform fe3a0000.usb: irq 36, io mem 0xfe3a0000
-ehci-platform fe380000.usb: new USB bus registered, assigned bus number 2
+device: 'phy:phy-ff770000.syscon:usb2phy@e460.3--platform:fe3c0000.usb': device_add
 devices_kset: Moving fe3c0000.usb to end of list
 PM: Moving platform:fe3c0000.usb to end of list
-ehci-platform fe3c0000.usb: Linked as a consumer to phy-ff770000.syscon:usb2phy@e460.2
+ehci-platform fe3c0000.usb: Linked as a consumer to phy-ff770000.syscon:usb2phy@e460.3
+ohci-platform fe3e0000.usb: Generic Platform OHCI controller
 ehci-platform fe3c0000.usb: EHCI Host Controller
-device: 'usbmon3': device_add
-ehci-platform fe380000.usb: irq 38, io mem 0xfe380000
-PM: Adding info for No Bus:usbmon3
-bus: 'platform': add driver rk3x-i2c
-bus: 'platform': __driver_probe_device: matched device ff3c0000.i2c with driver rk3x-i2c
-bus: 'platform': really_probe: probing driver rk3x-i2c with device ff3c0000.i2c
-rk3x-i2c ff3c0000.i2c: no init pinctrl state
-rk3x-i2c ff3c0000.i2c: no sleep pinctrl state
-rk3x-i2c ff3c0000.i2c: no idle pinctrl state
-rk3x-i2c ff3c0000.i2c: clock-frequency: 100000
-device: 'usbmon4': device_add
-PM: Adding info for No Bus:usbmon4
-ohci-platform fe3e0000.usb: new USB bus registered, assigned bus number 4
-ohci-platform fe3e0000.usb: irq 37, io mem 0xfe3e0000
-ehci-platform fe3c0000.usb: new USB bus registered, assigned bus number 3
-rk3x-i2c ff3c0000.i2c: i2c-scl-rising-time-ns: 1000
-ehci-platform fe3c0000.usb: irq 39, io mem 0xfe3c0000
-rk3x-i2c ff3c0000.i2c: i2c-scl-falling-time-ns: 300
+PM: Adding info for usb:1-0:1.0
+bus: 'usb': __driver_probe_device: matched device 1-0:1.0 with driver hub
 ehci-platform fe380000.usb: USB 2.0 started, EHCI 1.00
-rk3x-i2c ff3c0000.i2c: i2c-scl-internal-delay-ns: 0
-device: 'usb2': device_add
-bus: 'usb': add device usb2
-rk3x-i2c ff3c0000.i2c: i2c-sda-falling-time-ns: 300
-PM: Adding info for usb:usb2
-rk3x-i2c ff3c0000.i2c: i2c-sda-hold-time-ns: 0
-bus: 'usb': __driver_probe_device: matched device usb2 with driver usb
-rk3x-i2c ff3c0000.i2c: i2c-digital-filter-width-ns: 0
-bus: 'usb': really_probe: probing driver usb with device usb2
-rk3x-i2c ff3c0000.i2c: i2c-analog-filter-cutoff-frequency: 0
-device: '2-0:1.0': device_add
-rk3x-i2c ff3c0000.i2c: CLK 169000khz, Req 10000ns, Act low 5017ns high 5017ns
-bus: 'usb': add device 2-0:1.0
-device: 'i2c-0': device_add
-PM: Adding info for usb:2-0:1.0
-bus: 'i2c': add device i2c-0
-bus: 'usb': __driver_probe_device: matched device 2-0:1.0 with driver hub
-PM: Adding info for i2c:i2c-0
-bus: 'usb': really_probe: probing driver hub with device 2-0:1.0
-device: 'i2c-0': device_add
-hub 2-0:1.0: USB hub found
-PM: Adding info for No Bus:i2c-0
-hub 2-0:1.0: 1 port detected
-i2c_dev: adapter [rk3x-i2c] registered as minor 0
-device: 'usb2-port1': device_add
-i2c i2c-0: adapter [rk3x-i2c] registered
-PM: Adding info for No Bus:usb2-port1
-i2c i2c-0: of_i2c: walking child nodes
-usb usb2-port1: adding component (ops 0xffffffc00873b4a0)
-i2c i2c-0: of_i2c: register /i2c@ff3c0000/pmic@1b
-driver: 'hub': driver_bound: bound to device '2-0:1.0'
-device: '0-001b': device_add
-bus: 'usb': really_probe: bound device 2-0:1.0 to driver hub
-bus: 'i2c': add device 0-001b
+bus: 'usb': really_probe: probing driver hub with device 1-0:1.0
+hub 1-0:1.0: USB hub found
+hub 1-0:1.0: 1 port detected
+device: 'usb1-port1': device_add
+PM: Adding info for No Bus:usb1-port1
+usb usb1-port1: adding component (ops 0xffffffc008869c38)
+driver: 'hub': driver_bound: bound to device '1-0:1.0'
+bus: 'usb': really_probe: bound device 1-0:1.0 to driver hub
 device: 'ep_81': device_add
-PM: Adding info for i2c:0-001b
 PM: Adding info for No Bus:ep_81
-device: 'platform:pinctrl--i2c:0-001b': device_add
-ehci-platform fe3c0000.usb
-[22:09:51.692]收←◆: USB 2.0 started, EHCI 1.00
-devices_kset: Moving 0-001b to end of list
-PM: Moving i2c:0-001b to end of list
-i2c 0-001b: Linked as a consumer to pinctrl
-pmic@1b Dropping the fwnode link to pinctrl
-driver: 'usb': driver_bound: bound to device 'usb2'
-/i2c@ff3c0000/pmic@1b: Relaxing link with /i2c@ff3c0000/pmic@1b/regulators/LDO_REG3
-i2c 0-001b: Fixed dependency cycle(s) with /i2c@ff3c0000/pmic@1b/regulators/LDO_REG3
-device: 'platform:vcc3v3-sys--i2c:0-001b': device_add
-bus: 'usb': really_probe: bound device usb2 to driver usb
-devices_kset: Moving 0-001b to end of list
+driver: 'usb': driver_bound: bound to device 'usb1'
+bus: 'usb': really_probe: bound device usb1 to driver usb
 device: 'ep_00': device_add
-PM: Moving i2c:0-001b to end of list
 PM: Adding info for No Bus:ep_00
-i2c 0-001b: Linked as a consumer to vcc3v3-sys
-pmic@1b Dropping the fwnode link to vcc3v3-sys
-device: 'platform:ff730000.gpio--i2c:0-001b': device_add
-driver: 'ehci-platform': driver_bound: bound to device 'fe380000.usb'
-devices_kset: Moving 0-001b to end of list
+usb usb3: We don't know the algorithms for LPM for this host, disabling LPM.
 device: 'usb3': device_add
 bus: 'usb': add device usb3
 PM: Adding info for usb:usb3
-PM: Moving i2c:0-001b to end of list
-i2c 0-001b: Linked as a consumer to ff730000.gpio
-pmic@1b Dropping the fwnode link to gpio@ff730000
 bus: 'usb': __driver_probe_device: matched device usb3 with driver usb
-bus: 'i2c': __driver_probe_device: matched device 0-001b with driver rk808
-bus: 'platform': really_probe: bound device fe380000.usb to driver ehci-platform
-ehci-platform fe380000.usb: driver ehci-platform async attach completed: 0
 bus: 'usb': really_probe: probing driver usb with device usb3
-bus: 'i2c': really_probe: probing driver rk808 with device 0-001b
 device: '3-0:1.0': device_add
-rk808 0-001b: no init pinctrl state
 bus: 'usb': add device 3-0:1.0
-rk808 0-001b: no sleep pinctrl state
 PM: Adding info for usb:3-0:1.0
-rk808 0-001b: no idle pinctrl state
 bus: 'usb': __driver_probe_device: matched device 3-0:1.0 with driver hub
-device: 'wakeup0': device_add
 bus: 'usb': really_probe: probing driver hub with device 3-0:1.0
-rk808 0-001b: probe
 hub 3-0:1.0: USB hub found
-rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x1b
 hub 3-0:1.0: 1 port detected
-rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
 device: 'usb3-port1': device_add
-rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
 PM: Adding info for No Bus:usb3-port1
-rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x1b
-usb usb3-port1: adding component (ops 0xffffffc00873b4a0)
-rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
+usb usb3-port1: adding component (ops 0xffffffc008869c38)
 driver: 'hub': driver_bound: bound to device '3-0:1.0'
-rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
 bus: 'usb': really_probe: bound device 3-0:1.0 to driver hub
-rk808 0-001b: chip id: 0x0
 device: 'ep_81': device_add
-rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x1b
 PM: Adding info for No Bus:ep_81
-rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
 driver: 'usb': driver_bound: bound to device 'usb3'
-rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
 bus: 'usb': really_probe: bound device usb3 to driver usb
-rk3x-i2c ff3c0000.i2c: IRQ: state 2, ipd: 15
 device: 'ep_00': device_add
-rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 31
 PM: Adding info for No Bus:ep_00
-rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x1b
-driver: 'ehci-platform': driver_bound: bound to device 'fe3c0000.usb'
-device: 'usb1': device_add
-bus: 'usb': add device usb1
-rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
-bus: 'platform': really_probe: bound device fe3c0000.usb to driver ehci-platform
-rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
-ehci-platform fe3c0000.usb: driver ehci-platform async attach completed: 0
-PM: Adding info for usb:usb1
-rk3x-i2c ff3c0000.i2c: IRQ: state 2, ipd: 15
-rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 31
-rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x1b
-bus: 'usb': __driver_probe_device: matched device usb1 with driver usb
-rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
-rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
-rk3x-i2c ff3c0000.i2c: Combined write/read from a
-[22:09:51.723]收←◆ddr 0x1b
-bus: 'usb': really_probe: probing driver usb with device usb1
-rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
-rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
-rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x1b
-device: '1-0:1.0': device_add
-rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
-rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
-rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x1b
-bus: 'usb': add device 1-0:1.0
-rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
-rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
-rk3x-i2c ff3c0000.i2c: IRQ: state 2, ipd: 15
-rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 31
-rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x1b
-PM: Adding info for usb:1-0:1.0
-rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
-rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
-rk3x-i2c ff3c0000.i2c: IRQ: state 2, ipd: 15
-rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 31
-rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x1b
-bus: 'usb': __driver_probe_device: matched device 1-0:1.0 with driver hub
-rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
-rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
-rk3x-i2c ff3c0000.i2c: IRQ: state 2, ipd: 15
-rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 31
-rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x1b
-bus: 'usb': really_probe: probing driver hub with device 1-0:1.0
-rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
-rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
-rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x1b
-hub 1-0:1.0: USB hub found
-rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
-rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
-rk3x-i2c ff3c0000.i2c: IRQ: state 2, ipd: 15
-rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 31
-rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x1b
-hub 1-0:1.0: 1 port detected
-rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
-rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
-rk3x-i2c ff3c0000.i2c: IRQ: state 2, ipd: 15
-rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 31
-Registering platform device 'rk808-clkout'. Parent at 0-001b
-device: 'usb1-port1': device_add
-device: 'rk808-clkout': device_add
-PM: Adding info for No Bus:usb1-port1
-bus: 'platform': add device rk808-clkout
-usb usb1-port1: adding component (ops 0xffffffc00873b4a0)
-PM: Adding info for platform:rk808-clkout
-driver: 'hub': driver_bound: bound to device '1-0:1.0'
-bus: 'platform': __driver_probe_device: matched device rk808-clkout with driver rk808-clkout
-bus: 'usb': really_probe: bound device 1-0:1.0 to driver hub
-bus: 'platform': really_probe: probing driver rk808-clkout with device rk808-clkout
-device: 'ep_81': device_add
-rk808-clkout rk808-clkout: no default pinctrl state
-PM: Adding info for No Bus:ep_81
-driver: 'usb': driver_bound: bound to device 'usb1'
-driver: 'rk808-clkout': driver_bound: bound to device 'rk808-clkout'
-bus: 'usb': really_probe: bound device usb1 to driver usb
-bus: 'platform': really_probe: bound device rk808-clkout to driver rk808-clkout
-device: 'ep_00': device_add
-Registering platform device 'rk808-regulator'. Parent at 0-001b
-PM: Adding info for No Bus:ep_00
-device: 'rk808-regulator': device_add
-driver: 'ohci-platform': driver_bound: bound to device 'fe3a0000.usb'
-bus: 'platform': add device rk808-regulator
+driver: 'xhci-hcd': driver_bound: bound to device 'xhci-hcd.3.auto'
+device: 'usbmon5': device_add
+device: 'usbmon6': device_add
+PM: Adding info 
+[20:42:38.760]收←◆for No Bus:usbmon5
+ehci-platform fe3c0000.usb: new USB bus registered, assigned bus number 5
 device: 'usb4': device_add
 bus: 'usb': add device usb4
+ehci-platform fe3c0000.usb: irq 48, io mem 0xfe3c0000
 PM: Adding info for usb:usb4
+bus: 'platform': really_probe: bound device xhci-hcd.3.auto to driver xhci-hcd
 bus: 'usb': __driver_probe_device: matched device usb4 with driver usb
 bus: 'usb': really_probe: probing driver usb with device usb4
-ohci-platform fe3a0000.usb: genpd_runtime_suspend()
 device: '4-0:1.0': device_add
 bus: 'usb': add device 4-0:1.0
 PM: Adding info for usb:4-0:1.0
 bus: 'usb': __driver_probe_device: matched device 4-0:1.0 with driver hub
 bus: 'usb': really_probe: probing driver hub with device 4-0:1.0
+PM: Adding info for No Bus:usbmon6
+ohci-platform fe3e0000.usb: new USB bus registered, assigned bus number 6
+bus: 'platform': __driver_probe_device: matched device xhci-hcd.4.auto with driver xhci-hcd
+ohci-platform fe3e0000.usb: irq 46, io mem 0xfe3e0000
 hub 4-0:1.0: USB hub found
+bus: 'platform': really_probe: probing driver xhci-hcd with device xhci-hcd.4.auto
 hub 4-0:1.0: 1 port detected
-PM: Adding info for platform:rk808-regulator
+xhci-hcd xhci-hcd.4.auto: no default pinctrl state
 device: 'usb4-port1': device_add
+phy phy-ff770000.syscon:usb2phy@e460.4: illegal mode
 PM: Adding info for No Bus:usb4-port1
-bus: 'platform': really_prob
-[22:09:51.760]收←◆e: bound device fe3a0000.usb to driver ohci-platform
-ohci-platform fe3a0000.usb: driver ohci-platform async attach completed: 0
-usb usb4-port1: adding component (ops 0xffffffc00873b4a0)
+xhci-hcd xhci-hcd.4.auto: xHCI Host Controller
+usb usb4-port1: adding component (ops 0xffffffc008869c38)
 driver: 'hub': driver_bound: bound to device '4-0:1.0'
 bus: 'usb': really_probe: bound device 4-0:1.0 to driver hub
-bus: 'platform': __driver_probe_device: matched device rk808-regulator with driver rk808-regulator
+ehci-platform fe3c0000.usb: USB 2.0 started, EHCI 1.00
 device: 'ep_81': device_add
-bus: 'platform': really_probe: probing driver rk808-regulator with device rk808-regulator
 PM: Adding info for No Bus:ep_81
-rk808-regulator rk808-regulator: no default pinctrl state
 driver: 'usb': driver_bound: bound to device 'usb4'
-rk808-regulator rk808-regulator: there is no dvs0 gpio
 bus: 'usb': really_probe: bound device usb4 to driver usb
-rk808-regulator rk808-regulator: there is no dvs1 gpio
 device: 'ep_00': device_add
-rk808 0-001b: Looking up vcc1-supply from device tree
 PM: Adding info for No Bus:ep_00
-vdd_log: supplied by vcc3v3_sys
+driver: 'ehci-platform': driver_bound: bound to device 'fe380000.usb'
+device: 'usb5': device_add
+bus: 'platform': really_probe: bound device fe380000.usb to driver ehci-platform
+bus: 'usb': add device usb5
+ehci-platform fe380000.usb: driver ehci-platform async attach completed: 0
+PM: Adding info for usb:usb5
+bus: 'usb': __driver_probe_device: matched device usb5 with driver usb
+bus: 'usb': really_probe: probing driver usb with device usb5
+device: '5-0:1.0': device_add
+bus: 'usb': add device 5-0:1.0
+PM: Adding info for usb:5-0:1.0
+bus: 'usb': __driver_probe_device: matched device 5-0:1.0 with driver hub
+bus: 'usb': really_probe: probing driver hub with device 5-0:1.0
+hub 5-0:1.0: USB hub found
+hub 5-0:1.0: 1 port detected
+device: 'usb5-port1': device_add
+PM: Adding info for No Bus:usb5-port1
+usb usb5-port1: adding component (ops 0xffffffc008869c38)
+driver: 'hub': driver_bound: bound to device '5-0:1.0'
+bus: 'usb': really_probe: bound device 5-0:1.0 to driver hub
+device: 'ep_81': device_add
+PM: Adding info for No Bus:ep_81
+driver: 'usb': driver_bound: bound to device 'usb5'
+bus: 'usb': really_probe: bound device usb5 to driver usb
+device: 'ep_00': device_add
+PM: Adding info for No Bus:ep_00
+driver: 'ehci-platform': driver_bound: bound to device 'fe3c0000.usb'
+device: 'usbmon7': device_add
+bus: 'platform': really_probe: bound device fe3c0000.usb to driver ehci-platform
+PM: Adding info for No Bus:usbmon7
+ehci-platform fe3c0000.usb: driver ehci-platform async attach completed: 0
+xhci-hcd xhci-hcd.4.auto: new USB bus registered, assigned bus number 7
+xhci-hcd xhci-hcd.4.auto: hcc params 0x0220fe64 hci version 0x110 quirks 0x0000008002010010
+xhci-hcd xhci-hcd.4.auto: irq 44, io mem 0xfe900000
+xhci-hcd xhci-hcd.4.auto: xHCI Host Controller
+device: 'usbmon8': device_add
+PM: Adding info for No Bus:usbmon8
+xhci-hcd xhci-hcd.4.auto: new USB bus registered, assigned bus number 8
+xhci-hcd xhci-hcd.4.auto: Host supports USB 3.0 SuperSpeed
+device: 'usb7': device_add
+bus: 'usb': add device usb7
+PM: Adding info for usb:usb7
+bus: 'usb': __driver_probe_device: matched device usb7 with driver usb
+bus: 'usb': really_probe: probing driver usb with device usb7
+device: '7-0:1.0': device_add
+bus: 'usb': add device 7-0:1.0
+PM: Adding info for usb:7-0:1.0
+bus: 'usb': __driver_probe_device: matched device 7-0:1.0 with driver hub
+bus: 'usb': really_probe: probing driver hub with device 7-0:1.0
+hub 7-0:1.0: USB hub found
+hub 7-0:1.0: 1 port detected
+device: 'usb7-port1': device_add
+PM: Adding info for No Bus:usb7-port1
+usb usb7-port1: adding component (ops 0xffffffc008869c38)
+driver: 'hub': driver_bound: bound to device '7-0:1.0'
+bus: 'usb': really_probe: bound device 7-0:1.0 to driver hub
+device: 'ep_81': device_add
+PM: Adding info for No Bus:ep_81
+driver: 'usb': driver_bound: bound to device 'usb7'
+bus: 'usb': really_probe: bound device usb7 to driver usb
+device: 'ep_00': device_add
+PM: Adding info for No Bus:ep_00
+usb usb8: We don't know the algorithms for LPM for this host, disabling LPM.
+device: 'usb8': device_add
+bus: 'usb': add device usb8
+PM: Adding info for usb:usb8
+bus: 'usb': __driver_probe_device: matched device usb8 with driver usb
+bus: 'usb': really_probe: probing driver usb with device usb8
+device: '8-0:1.0': device_add
+bus: 'usb': add device 8-0:1.0
+PM: Adding info for usb:8-0:1.0
+bus: 'usb': __driver_probe_device: matched device 8-0:1.0 with driver hub
+bus: 'usb': really_probe: probing driver hub with device 8-0:1.0
+hub 8-0:1.0: USB hub found
+hub 8-0:1.0: 1 port detected
+device: 'usb8-port1': device_add
+PM: Adding info for No Bus:usb8-port1
+usb usb8-port1: adding component (ops 0xffffffc008869c38)
+driver: 'hub': driver_bound: bound to device '8-0:1.0'
+bus: 'usb': really_probe: bound device 8-0:1.0 to driver hub
+device: 'ep_81': device_add
+PM: Adding info for No Bus:ep_81
+driver: 'usb': driver_bound: bound to device 'usb8'
+bus: 'usb': really_probe: bound device usb8 to driver usb
+device: 'ep_00': device_add
+PM: Adding info for No Bus:ep_00
+driver: 'xhci-hcd': driver_bound: bound to device 'xhci-hcd.4.auto'
+device: 'usb2': device_add
+bus: 'platform': really_probe: bound device xhci-hcd.4.auto to driver xhci-hcd
+bus: 'usb': add device usb2
+bus: 'usb': add driver usb-storage
+PM: Adding info for usb:usb2
+usbcore: registered new interface driver usb-storage
+bus: 'usb': __driver_probe_device: matched device usb2 with driver usb
+bus: 'serio': add driver atkbd
+bus: 'usb': really_probe: probing driver usb with device usb2
+bus: 'serio': add driver psmouse
+device: '2-0:1.0': device_add
+i2c_dev: i2c /dev entries driver
+bus: 'usb': add device 2-0:1.0
+device class 'i2c-dev': registering
+PM: Adding info for usb:2-0:1.0
+device: 'i2c-9': device_add
+bus: 'usb': __driver_probe_device: matched device 2-0:1.0 with driver hub
+PM: Adding info for No Bus:i2c-9
+bus: 'usb': really_probe: probing driver hub with device 2-0:1.0
+i2c_dev: adapter [DesignWare HDMI] registered as minor 9
+hub 2-0:1.0: USB hub found
+bus: 'platform': add driver rk3x-i2c
+hub 2-0:1.0: 1 port detected
+bus: 'platform': __driver_probe_device: matched device ff3c0000.i2c with driver rk3x-i2c
+device: 'usb2-port1': device_add
+bus: 'platform': really_probe: probing driver rk3x-i2c with device ff3c0000.i2c
+PM: Adding info for No Bus:usb2-port1
+rk3x-i2c ff3c0000.i2c: no init pinctrl state
+usb usb2-port1: adding component (ops 0xffffffc008869c38)
+rk3x-i2c ff3c0000.i2c: no sleep pinctrl state
+driver: 'hub': driver_bound: bound to device '2-0:1.0'
+rk3x-i2c ff3c0000.i2c: no idle pinctrl state
+bus: 'usb': really_probe: bound device 2-0:1.0 to driver hub
+rk3x-i2c ff3c0000.i2c: clock-frequency: 100000
+device: 'ep_81': device_add
+rk3x-i2c ff3c0000.i2c: i2c-scl-rising-time-ns: 1000
+PM: Adding info for No Bus:ep_81
+rk3x-i2c ff3c0000.i2c: i2c-scl-falling-time-ns: 300
+driver: 'usb': driver_bound: bound to device 'usb2'
+rk3x-i2c ff3c0000.i2c: i2c-scl-internal-delay-ns: 0
+bus: 'usb': really_probe: bound device usb2 to driver usb
+rk3x-i2c ff3c0000.i2c: i2c-sda-falling-time-ns: 300
+device: 'ep_00':
+[20:42:38.825]收←◆ device_add
+rk3x-i2c ff3c0000.i2c: i2c-sda-hold-time-ns: 0
+PM: Adding info for No Bus:ep_00
+rk3x-i2c ff3c0000.i2c: i2c-digital-filter-width-ns: 0
+driver: 'ohci-platform': driver_bound: bound to device 'fe3a0000.usb'
+rk3x-i2c ff3c0000.i2c: i2c-analog-filter-cutoff-frequency: 0
+ohci-platform fe3a0000.usb: genpd_runtime_suspend()
+rk3x-i2c ff3c0000.i2c: CLK 169000khz, Req 10000ns, Act low 5017ns high 5017ns
+bus: 'platform': really_probe: bound device fe3a0000.usb to driver ohci-platform
+device: 'i2c-0': device_add
+device: 'usb6': device_add
+bus: 'usb': add device usb6
+PM: Adding info for usb:usb6
+ohci-platform fe3a0000.usb: driver ohci-platform async attach completed: 0
+bus: 'usb': __driver_probe_device: matched device usb6 with driver usb
+bus: 'usb': really_probe: probing driver usb with device usb6
+device: '6-0:1.0': device_add
+bus: 'usb': add device 6-0:1.0
+PM: Adding info for usb:6-0:1.0
+bus: 'usb': __driver_probe_device: matched device 6-0:1.0 with driver hub
+bus: 'usb': really_probe: probing driver hub with device 6-0:1.0
+hub 6-0:1.0: USB hub found
+bus: 'i2c': add device i2c-0
+hub 6-0:1.0: 1 port detected
+device: 'usb6-port1': device_add
+PM: Adding info for No Bus:usb6-port1
+usb usb6-port1: adding component (ops 0xffffffc008869c38)
+driver: 'hub': driver_bound: bound to device '6-0:1.0'
+bus: 'usb': really_probe: bound device 6-0:1.0 to driver hub
+PM: Adding info for i2c:i2c-0
+device: 'ep_81': device_add
+device: 'i2c-0': device_add
+PM: Adding info for No Bus:ep_81
+PM: Adding info for No Bus:i2c-0
+driver: 'usb': driver_bound: bound to device 'usb6'
+i2c_dev: adapter [rk3x-i2c] registered as minor 0
+bus: 'usb': really_probe: bound device usb6 to driver usb
+i2c i2c-0: adapter [rk3x-i2c] registered
+device: 'ep_00': device_add
+i2c i2c-0: of_i2c: walking child nodes
+PM: Adding info for No Bus:ep_00
+i2c i2c-0: of_i2c: register /i2c@ff3c0000/pmic@1b
 driver: 'ohci-platform': driver_bound: bound to device 'fe3e0000.usb'
-vcc3v3_sys: could not add device link regulator.5: -ENOENT
-ohci-platform fe3e0000.usb: genpd_runtime_suspend()
-rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x1b
+device: '0-001b': device_add
 bus: 'platform': really_probe: bound device fe3e0000.usb to driver ohci-platform
-rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
+bus: 'i2c': add device 0-001b
 ohci-platform fe3e0000.usb: driver ohci-platform async attach completed: 0
+PM: Adding info for i2c:0-001b
+ohci-platform fe3e0000.usb: genpd_runtime_suspend()
+device: 'platform:pinctrl--i2c:0-001b': device_add
+devices_kset: Moving 0-001b to end of list
+PM: Moving i2c:0-001b to end of list
+i2c 0-001b: Linked as a consumer to pinctrl
+pmic@1b Dropping the fwnode link to pinctrl
+/i2c@ff3c0000/pmic@1b: Relaxing link with /i2c@ff3c0000/pmic@1b/regulators/LDO_REG3
+i2c 0-001b: Fixed dependency cycle(s) with /i2c@ff3c0000/pmic@1b/regulators/LDO_REG3
+device: 'platform:vcc3v3-sys--i2c:0-001b': device_add
+devices_kset: Moving 0-001b to end of list
+PM: Moving i2c:0-001b to end of list
+i2c 0-001b: Linked as a consumer to vcc3v3-sys
+pmic@1b Dropping the fwnode link to vcc3v3-sys
+device: 'platform:ff730000.gpio--i2c:0-001b': device_add
+devices_kset: Moving 0-001b to end of list
+PM: Moving i2c:0-001b to end of list
+i2c 0-001b: Linked as a consumer to ff730000.gpio
+pmic@1b Dropping the fwnode link to gpio@ff730000
+bus: 'i2c': __driver_probe_device: matched device 0-001b with driver rk808
+bus: 'i2c': really_probe: probing driver rk808 with device 0-001b
+rk808 0-001b: no init pinctrl state
+rk808 0-001b: no sleep pinctrl state
+rk808 0-001b: no idle pinctrl state
+device: 'wakeup0': device_add
+rk808 0-001b: probe
+rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x1b
+rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
+rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
+rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x1b
+rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
+rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
+rk808 0-001b: chip id: 0x0
+rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x1b
+rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
+rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
+rk3x-i2c ff3c0000.i2
+[20:42:38.865]收←◆c: IRQ: state 2, ipd: 15
+rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 31
+rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x1b
+rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
+rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
+rk3x-i2c ff3c0000.i2c: IRQ: state 2, ipd: 15
+rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 31
+rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x1b
+rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
+rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
+rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x1b
+rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
+rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
+rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x1b
+rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
 rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
 rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x1b
 rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
@@ -3192,6 +3900,59 @@ rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x1b
 rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
 rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
 rk3x-i2c ff3c0000.i2c: IRQ: state 2, ipd: 15
+rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 31
+rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x1b
+rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
+rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
+rk3x-i2c ff3c0000.i2c: IRQ: state 2, ipd: 15
+rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 31
+rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x1b
+rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
+rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
+rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x1b
+rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
+rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
+rk3x-i2c ff3c0000.i2c: IRQ: state 2, ipd: 15
+rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 31
+rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x1b
+rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
+rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
+rk3x-i2c ff3c0000.i2c: IRQ: state 2, ipd: 15
+rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 31
+Registering platform device 'rk808-clkout'. Parent at 0-001b
+device: 'rk808-clkout': device_add
+bus: 'platform': add device rk808-clkout
+PM: Adding info for platform:rk808-clkout
+bus: 'platform': __driver_probe_device: matched device rk808-clkout with driver rk808-clkout
+bus: 'platform': really_probe: probing driver rk808-clkout with device rk808-clkout
+rk808-clkout rk808-clkout: no default pinctrl state
+driver: 'rk808-clkout': driver_bound: bound to device 'rk808-clkout'
+bus: 'platform': really_probe: bound device rk808-clkout to driver rk808-clkout
+Registering platform device 'rk808-regulator'. Parent at 0-001b
+device: 'rk808-regulator': device_add
+bus: 'platform': add device rk808-regulator
+PM: Adding info for platform:rk808-regulator
+bus: 'platform': __driver_probe_device: matched device rk808-regulator with driver rk808-regulator
+bus: 'platform': really_probe: probing driver rk808-regulator with device rk808-regulator
+rk808-regulator rk808-regulator: no default pinctrl state
+rk808-regulator rk808-regulator: there is no dvs0 gpio
+rk808-regulator rk808-regulator: there is no dvs1 gpio
+rk808 0-001b: Looking up vcc1-supply from device tree
+vdd_log: supplied by vcc3v3_sys
+vcc3v3_sys: could not add device link regulator.5: -ENOENT
+rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x1b
+rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
+rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
+rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x1b
+rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
+rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
+rk3x-i2c ff3c0000.i2c: IRQ: state 2, ipd: 15
+rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 31
+rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x1b
+rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
+rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
+rk3x-i2c ff3c0000.
+[20:42:38.916]收←◆i2c: IRQ: state 2, ipd: 15
 rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 31
 rk3x-i2c ff3c0000.i2c: IRQ: state 2, ipd: 15
 rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 31
@@ -3236,8 +3997,7 @@ vcc3v3_sys: could not add device link regulator.9: -ENOENT
 rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x1b
 rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
 rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
-rk3x-i2
-[22:09:51.824]收←◆c ff3c0000.i2c: Combined write/read from addr 0x1b
+rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x1b
 rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
 rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
 rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x1b
@@ -3278,6 +4038,7 @@ rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
 rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
 vcc_sd: 1800 <--> 3000 mV at 3000 mV, enabled
 device: 'regulator.12': device_add
+[20:42:38.965]收←◆
 PM: Adding info for No Bus:regulator.12
 rk808 0-001b: Looking up vcc9-supply from device tree
 vcca3v0_codec: supplied by vcc3v3_sys
@@ -3322,8 +4083,7 @@ vcc_3v0: 3000 mV, enabled
 device: 'regulator.16': device_add
 PM: Adding info for No Bus:regulator.16
 rk808 0-001b: Looking up vcc8-supply from device tree
-vcc3v3_s3: supplied by vcc
-[22:09:51.861]收←◆3v3_sys
+vcc3v3_s3: supplied by vcc3v3_sys
 vcc3v3_sys: could not add device link regulator.17: -ENOENT
 rk3x-i2c ff3c0000.i2c: IRQ: state 2, ipd: 15
 rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 31
@@ -3344,13 +4104,6 @@ bus: 'platform': add device rk808-rtc
 PM: Adding info for platform:rk808-rtc
 driver: 'rk808': driver_bound: bound to device '0-001b'
 pmic@1b Dropping the fwnode link to LDO_REG3
-edp-panel Linked as a fwnode consumer to pmic@1b
-edp-panel Dropping the fwnode link to SWITCH_REG2
-device: 'i2c:0-001b--platform:edp-panel': device_add
-devices_kset: Moving edp-panel to end of list
-PM: Moving platform:edp-panel to end of list
-platform edp-panel: Linked as a consumer to 0-001b
-edp-panel Dropping the fwnode link to pmic@1b
 bus: 'i2c': really_probe: bound device 0-001b to driver rk808
 i2c i2c-0: client [rk808] registered with bus id 0-001b
 i2c i2c-0: of_i2c: register /i2c@ff3c0000/regulator@40
@@ -3369,7 +4122,8 @@ fan53555-regulator 0-0040: probe
 rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x40
 rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
 rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
-rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x40
+rk3x-i2c ff3c0000.i2c: C
+[20:42:39.004]收←◆ombined write/read from addr 0x40
 rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
 rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
 fan53555-regulator 0-0040: FAN53555 Option[8] Rev[1] Detected!
@@ -3447,7 +4201,8 @@ rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
 rk3x-i2c ff3c0000.i2c: IRQ: state 2, ipd: 15
 rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 31
 rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x41
-rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
+rk3x-i2c ff3c0000.i2c: IRQ: state
+[20:42:39.039]收←◆ 1, ipd: 1b
 rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
 rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x41
 rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
@@ -3479,8 +4234,7 @@ bus: 'platform': add driver syscon-reboot
 bus: 'i2c': add driver sbs-battery
 i2c-core: driver [sbs-battery] registered
 bus: 'i2c': add driver bq27xxx-battery
-i2c-core: driver [bq27xxx-batter
-[22:09:51.935]收←◆y] registered
+i2c-core: driver [bq27xxx-battery] registered
 bus: 'platform': add driver pwrseq_simple
 bus: 'platform': add driver pwrseq_emmc
 bus: 'mmc_rpmb': registered
@@ -3500,105 +4254,84 @@ bus: 'hid': add driver hid-generic
 sdhci-arasan fe330000.mmc: no pinctrl handle
 bus: 'hid': add driver a4tech
 sdhci-arasan fe330000.mmc: adding to PM domain emmc
-sdhci-arasan fe330000.mmc: genpd_add_device()
 bus: 'hid': add driver belkin
-sdhci-arasan fe330000.mmc: Clock clk_emmc con_id (null) managed by runtime PM.
+sdhci-arasan fe330000.mmc: genpd_add_device()
 bus: 'hid': add driver cherry
-sdhci-arasan fe330000.mmc: Clock aclk_emmc con_id (null) managed by runtime PM.
+sdhci-arasan fe330000.mmc: Clock clk_emmc con_id (null) managed by runtime PM.
 bus: 'hid': add driver chicony
-device: 'wakeup1': device_add
+sdhci-arasan fe330000.mmc: Clock aclk_emmc con_id (null) managed by runtime PM.
 bus: 'hid': add driver cypress
+device: 'wakeup1': device_add
 bus: 'hid': add driver ezkey
 bus: 'hid': add driver itetech
 bus: 'hid': add driver kensington
 bus: 'hid': add driver microsoft
-device: 'phy:phy-ff770000.syscon:phy@f780.0--platform:fe330000.mmc': device_add
 bus: 'hid': add driver monterey
-devices_kset: Moving fe330000.mmc to end of list
+device: 'phy:phy-ff770000.syscon:phy@f780.0--platform:fe330000.mmc': device_add
 bus: 'hid': add driver redragon
-PM: Moving platform:fe330000.mmc to end of list
+devices_kset: Moving fe330000.mmc to end of list
 bus: 'usb': add driver usbhid
-sdhci-arasan fe330000.mmc: Linked as a consumer to phy-ff770000.syscon:phy@f780.0
+PM: Moving platform:fe330000.mmc to end of list
 usbcore: registered new interface driver usbhid
-sdhci-arasan fe330000.mmc: Looking up vmmc-supply from device tree
+sdhci-arasan fe330000.mmc: Linked as a consumer to phy-ff770000.syscon:phy@f780.0
 usbhid: USB HID core driver
-sdhci-arasan fe330000.mmc: Looking up vmmc-supply property in node /mmc@fe330000 failed
+sdhci-arasan fe330000.mmc: Looking up vmmc-supply from device tree
 NET: Registered PF_INET6 protocol family
+sdhci-arasan fe330000.mmc: Looking up vmmc-supply property in node /mmc@fe330000 failed
 sdhci-arasan fe330000.mmc: Looking up vqmmc-supply from device tree
-sdhci-arasan fe330000.mmc: Looking up vqmmc-supply property in node /mmc@fe330000 failed
 Segment Routing with IPv6
+sdhci-arasan fe330000.mmc: Looking up vqmmc-supply property in node /mmc@fe330000 failed
 In-situ OAM (IOAM) with IPv6
 sit: IPv6, IPv4 and MPLS over IPv4 tunneling driver
 device: 'mmc0': device_add
 device: 'sit0': device_add
 PM: Adding info for No Bus:mmc0
 PM: Adding info for No Bus:sit0
+NET: Registered PF_PACKET protocol family
 
-[22:09:51.979]收←◆mmc0: SDHCI controller on fe330000.mmc [fe330000.mmc] using ADMA
+[20:42:39.101]收←◆platform vdd-center: Relaxing link with ff420030.pwm
+mmc0: SDHCI controller on fe330000.mmc [fe330000.mmc] using ADMA
 device: 'wakeup2': device_add
-driver: 'sdhci-arasan': driver_bound: bound to device 'fe330000.mmc'
-sdhci-arasan fe330000.mmc: Dropping the link to ff770000.syscon:phy@f780
-device: 'platform:ff770000.syscon:phy@f780--platform:fe330000.mmc': device_unregister
-bus: 'platform': really_probe: bound device fe330000.mmc to driver sdhci-arasan
-sdhci-arasan fe330000.mmc: driver sdhci-arasan async attach completed: 0
-platform backlight: Relaxing link with ff420000.pwm
-platform edp-panel: Relaxing link with backlight
-platform vdd-center: Relaxing link with ff420030.pwm
 clk: Disabling unused clocks
+driver: 'sdhci-arasan': driver_bound: bound to device 'fe330000.mmc'
 rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x1b
+sdhci-arasan fe330000.mmc: Dropping the link to ff770000.syscon:phy@f780
 rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
 rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
 rockchip-pm-domain ff310000.power-management:power-controller: Looking up vopb-supply from device tree
+device: 'platform:ff770000.syscon:phy@f780--platform:fe330000.mmc': device_unregister
 rockchip-pm-domain ff310000.power-management:power-controller: Looking up vopb-supply property in node /power-management@ff310000/power-controller failed
+bus: 'platform': really_probe: bound device fe330000.mmc to driver sdhci-arasan
+rockchip-pm-domain ff310000.power-management:power-controller: Looking up edp-supply from device tree
+sdhci-arasan fe330000.mmc: driver sdhci-arasan async attach completed: 0
+rockchip-pm-domain ff310000.power-management:power-controller: Looking up edp-supply property in node /power-management@ff310000/power-controller failed
 rockchip-pm-domain ff310000.power-management:power-controller: Looking up isp1-supply from device tree
 rockchip-pm-domain ff310000.power-management:power-controller: Looking up isp1-supply property in node /power-management@ff310000/power-controller failed
-rockchip-pm-domain ff310000.power-management:power-controller: Looking up vopl-supply from device tree
-rockchip-pm-domain ff310000.power-management:power-controller: Looking up vopl-supply property in node /power-management@ff310000/power-controller failed
-dw-apb-uart ff1a0000.serial: forbid DMA for kernel console
-rockchip-pm-domain ff310000.power-management:power-controller: Looking up vo-supply from device tree
-rockchip-pm-domain ff310000.power-management:power-controller: Looking up vo-supply property in node /power-management@ff310000/power-controller failed
-Waiting for root device /dev/mmcblk0p4...
 rockchip-pm-domain ff310000.power-management:power-controller: Looking up isp0-supply from device tree
-driver_probe_done: probe_count = 0
 rockchip-pm-domain ff310000.power-management:power-controller: Looking up isp0-supply property in node /power-management@ff310000/power-controller failed
-rockchip-pm-domain ff310000.power-management:power-controller: Looking up hdcp-supply from device tree
-rockchip-pm-domain ff310000.power-management:power-controller: Looking up hdcp-supply property in node /power-management@ff310000/power-controller failed
-rockchip-pm-domain ff310000.power-management:power-controller: Looking up usb3-supply from device tree
-rockchip-pm-domain ff310000.power-management:power-controller: Looking up usb3-supply property in node /power-management@ff310000/power-controller failed
-rockchip-pm-domain ff310000.power-management:power-controller: Looking up vio-supply from device tree
-rockchip-pm-domain ff310000.power-management:power-controller: Looking up vio-supply property in node /power-management@ff310000/power-controller failed
-rockchip-pm-domain ff310000.power-management:power-controller: Looking up edp-supply from device tree
-rockchip-pm-domain ff310000.power-management:power-controller: Looking up edp-supply property in node /power-management@ff310000/power-controller failed
-rockchip-pm-domain ff310000.power-management:power-controller: Looking up tcpd1-supply from device tree
-rockchip-pm-domain ff310000.power-management:power-controller: Looking up tcpd1-supply property in node /power-management@ff310000/power-controller failed
-rockchip-pm-domain ff310000.power-management:power-controller: Looking up tcpd0-supply from device tree
-rockchip-pm-domain ff310000.power-management:power-controller: Looking up tcpd0-supply property in node /power-management@ff310000/power-controller failed
 rockchip-pm-domain ff310000.power-management:power-controller: Looking up sdioaudio-supply from device tree
+dw-apb-uart ff1a0000.serial: forbid DMA for kernel console
 rockchip-pm-domain ff310000.power-management:power-controller: Looking up sdioaudio-supply property in node /power-management@ff310000/power-controller failed
 rockchip-pm-domain ff310000.power-management:power-controller: Looking up sd-supply from device tree
+Waiting for root device /dev/mmcblk0p4...
 rockchip-pm-domain ff310000.power-management:power-controller: Looking up sd-supply property in node /power-management@ff310000/power-controller failed
-rockchip-pm-domain ff310000.power-management:power-controller: Looking up gpu-supply from device tree
 driver_probe_done: probe_count = 0
+rockchip-pm-domain ff310000.power-management:power-controller: Looking up gpu-supply from device tree
 rockchip-pm-domain ff310000.power-management:power-controller: Looking up gpu-supply property in node /power-management@ff310000/power-controller failed
-rockchip-pm-domain ff310000.power-management:power-controller: Looking up vdu-supply from device tree
-rockchip-pm-domain ff310000.power-management:power-controller: Looking up vdu-supply property in node /power-management@ff310000/power-controller failed
-rockchip-pm-domain ff310000.power-management:power-controller: Looking up vcodec-supply from device tree
-rockchip-pm-domain ff310000.power-management:power-controller: Looking up vcodec-supply property in node /power-management@ff310000/power-controller failed
 rockchip-pm-domain ff310000.power-management:power-controller: Looking up rga-supply from device tree
 rockchip-pm-domain ff310000.power-management:power-controller: Looking up rga-supply property in node /power-management@ff310000/power-controller failed
-rockchip-pm-domain ff310000.power-management:power-controller: Looking up iep-supply from device tree
-rockchip-pm-domain ff310000.power-management:power-controller: Looking up iep-supply property in node /power-management@ff310000/power-controller failed
+driver_probe_done: probe_count = 0
 driver_probe_done: probe_count = 0
 
-[22:09:52.075]收←◆mmc0: new HS400 Enhanced strobe MMC card at address 0001
+[20:42:39.185]收←◆mmc0: new HS400 Enhanced strobe MMC card at address 0001
 device: 'mmc0:0001': device_add
 bus: 'mmc': add device mmc0:0001
 PM: Adding info for mmc:mmc0:0001
+driver_probe_done: probe_count = 0
 bus: 'mmc': __driver_probe_device: matched device mmc0:0001 with driver mmcblk
 bus: 'mmc': really_probe: probing driver mmcblk with device mmc0:0001
 mmcblk mmc0:0001: no default pinctrl state
 mmcblk0: mmc0:0001 Y2P032 29.1 GiB 
-driver_probe_done: probe_count = 1
 device: 'mmcblk0': device_add
 PM: Adding info for No Bus:mmcblk0
 device: '179:0': device_add
@@ -3613,11 +4346,11 @@ PM: Adding info for No Bus:mmcblk0p3
 device: 'mmcblk0p4': device_add
 PM: Adding info for No Bus:mmcblk0p4
 mmcblk0boot0: mmc0:0001 Y2P032 4.00 MiB 
+driver_probe_done: probe_count = 1
 device: 'mmcblk0boot0': device_add
 PM: Adding info for No Bus:mmcblk0boot0
 device: '179:32': device_add
 PM: Adding info for No Bus:179:32
-driver_probe_done: probe_count = 1
 mmcblk0boot1: mmc0:0001 Y2P032 4.00 MiB 
 device: 'mmcblk0boot1': device_add
 PM: Adding info for No Bus:mmcblk0boot1
@@ -3626,18 +4359,14 @@ PM: Adding info for No Bus:179:64
 device: 'mmcblk0rpmb': device_add
 bus: 'mmc_rpmb': add device mmcblk0rpmb
 PM: Adding info for mmc_rpmb:mmcblk0rpmb
-mmcblk0rpmb: mmc0:0001 Y2P032 16.0 MiB, chardev (249:0)
+mmcblk0rpmb: mmc0:0001 Y2P032 16.0 MiB, chardev (248:0)
 driver: 'mmcblk': driver_bound: bound to device 'mmc0:0001'
 bus: 'mmc': really_probe: bound device mmc0:0001 to driver mmcblk
 driver_probe_done: probe_count = 0
-EXT4-fs (mmcblk0p4): INFO: recovery required on readonly filesystem
-EXT4-fs (mmcblk0p4): write access will be enabled during recovery
-
-[22:09:52.224]收←◆EXT4-fs (mmcblk0p4): recovery complete
 EXT4-fs (mmcblk0p4): mounted filesystem with ordered data mode. Quota mode: disabled.
 VFS: Mounted root (ext4 filesystem) readonly on device 179:4.
 devtmpfs: mounted
-Freeing unused kernel memory: 1344K
+Freeing unused kernel memory: 1472K
 Run /sbin/init as init process
   with arguments:
     /sbin/init
@@ -3646,44 +4375,234 @@ Run /sbin/init as init process
     TERM=linux
 INIT: version 3.01 booting
 
-[22:09:52.383]收←◆Starting udev
+[20:42:39.362]收←◆Starting udev
 
-[22:09:52.459]收←◆Failed to create socket: Address family not supported by protocol
-Failed to initialize udev control socket: Address family not supported by protocol
-Failed to create manager: Address family not supported by protocol
-Failed to create socket: Address family not supported by protocol
-Failed to initialize udev control: Address family not supported by protocol
+[20:42:39.426]收←◆Starting version 250.14+
 
-[22:09:52.840]收←◆Failed to create socket: Address family not supported by protocol
-EXT4-fs (mmcblk0p4): re-mounted. Quota mode: disabled.
+[20:42:40.177]收←◆EXT4-fs (mmcblk0p4): re-mounted. Quota mode: disabled.
 
-[22:09:52.943]收←◆hwclock: can't open '/dev/misc/rtc': No such file or directory
+[20:42:40.285]收←◆hwclock: can't open '/dev/misc/rtc': No such file or directory
 Fri Mar  9 12:34:56 UTC 2018
+hwclock: can't open '/dev/misc/rtc': No such file or directory
 
-[22:09:52.964]收←◆hwclock: can't open '/dev/misc/rtc': No such file or directory
+[20:42:49.148]收←◆random: crng init done
 
-[22:09:59.969]收←◆random: crng init done
-
-[22:10:00.001]收←◆INIT: Entering runlevel: 5
+[20:42:49.179]收←◆INIT: Entering runlevel: 5
 Configuring network interfaces... 
-[22:10:00.094]收←◆rk_gmac-dwmac fe300000.ethernet eth0: Register MEM_TYPE_PAGE_POOL RxQ-0
+[20:42:49.282]收←◆rk_gmac-dwmac fe300000.ethernet eth0: Register MEM_TYPE_PAGE_POOL RxQ-0
 driver: 'Generic PHY': driver_bound: bound to device 'stmmac-0:00'
 phy_rtl8211e_led_fixup in
 phy_rtl8211e_led_fixup in  val=0xc915
 
-[22:10:00.142]收←◆rk_gmac-dwmac fe300000.ethernet eth0: PHY [stmmac-0:00] driver [Generic PHY] (irq=POLL)
+[20:42:49.331]收←◆rk_gmac-dwmac fe300000.ethernet eth0: PHY [stmmac-0:00] driver [Generic PHY] (irq=POLL)
 rk_gmac-dwmac fe300000.ethernet eth0: No Safety Features support found
 rk_gmac-dwmac fe300000.ethernet eth0: PTP not supported by HW
 rk_gmac-dwmac fe300000.ethernet eth0: configuring for phy/rgmii link mode
 udhcpc: started, v1.35.0
-udhcpc: socket: Address family not supported by protocol
 
-[22:10:00.185]收←◆hwclock: can't open '/dev/misc/rtc': No such file or directory
+[20:42:49.379]收←◆udhcpc: broadcasting discover
+
+[20:42:51.484]收←◆rk_gmac-dwmac fe300000.ethernet eth0: Link is Up - 100Mbps/Full - flow control rx/tx
+IPv6: ADDRCONF(NETDEV_CHANGE): eth0: link becomes ready
+
+[20:42:52.427]收←◆udhcpc: broadcasting discover
+
+[20:42:54.498]收←◆udhcpc: broadcasting select for 192.168.0.7, server 192.168.0.1
+
+[20:42:54.611]收←◆udhcpc: lease of 192.168.0.7 obtained from 192.168.0.1, lease time 86400
+/etc/udhcpc.d/50default: Adding DNS 192.168.0.1
+done.
+
+[20:42:54.676]收←◆Starting system message bus: 
+[20:42:54.707]收←◆dbus.
+
+[20:42:54.771]收←◆Starting OpenBSD Secure Shell server: sshd
+  generating ssh RSA host key...
+
+[20:43:08.349]收←◆  generating ssh ECDSA host key...
+
+[20:43:08.397]收←◆  generating ssh ED25519 host key...
+
+[20:43:08.509]收←◆done.
+Starting Xserver
+
+[20:43:08.588]收←◆Starting bluetooth: 
+bluetoothd.
+
+[20:43:08.604]收←◆starting DNS forwarder and DHCP server: dnsmasq... 
+[20:43:08.666]收←◆done.
+hwclock: can't open '/dev/misc/rtc': No such file or directory
+Starting network connection manager NetworkManager
+X.Org X Server 1.21.1.8
+X Protocol Version 11, Revision 0
+Current Operating System: Linux rk3399-firefly 6.1.115 #1 SMP Wed Dec 24 10:54:39 UTC 2025 aarch64
+Kernel command line: root=/dev/mmcblk0p4 rootwait rootfstype=ext4 console=ttyS2,1500000 earlycon=uart8250,mmio32,0xff1a0000,1500000n8 loglevel=7 debug deferred_probe_timeout=30
+ 
+Current version of pixman: 0.40.0
+	Before reporting problems, check http://wiki.x.org
+	to make sure that you have the latest version.
+Markers: (--) probed, (**) from config file, (==) default setting,
+	(++) from command line, (!!) notice, (II) informational,
+	(WW) warning, (EE) error, (NI) not implemented, (??) unknown.
+(==) Log file: "/var/log/Xorg.0.log", Time: Fri Mar  9 12:35:24 2018
+(==) Using system config directory "/usr/share/X11/xorg.conf.d"
+
+[20:43:08.757]收←◆device: 'vcs2': device_add
+PM: Adding info for No Bus:vcs2
+device: 'vcsu2': device_add
+PM: Adding info for No Bus:vcsu2
+device: 'vcsa2': device_add
+PM: Adding info for No Bus:vcsa2
+[1;34m[[1;32m  OK  [1;34m][0;39m
 Starting syslogd/klogd: done
 
-[22:10:00.351]收←◆
+[20:43:08.815]收←◆rockchip-vop ff8f0000.vop: genpd_runtime_suspend()
+rk_iommu ff8f3f00.iommu: genpd_runtime_suspend()
+rockchip-pm-domain ff310000.power-management:power-controller: Looking up vopl-supply from device tree
+rockchip-pm-domain ff310000.power-management:power-controller: Looking up vopl-supply property in node /power-management@ff310000/power-controller failed
+rockchip-pm-domain ff310000.power-management:power-controller: Looking up vo-supply from device tree
+rockchip-pm-domain ff310000.power-management:power-controller: Looking up vo-supply property in node /power-management@ff310000/power-controller failed
+
+[20:43:08.919]收←◆rockchip-vop ff8f0000.vop: [drm:vop_crtc_atomic_enable] Update mode to 1920x1080p60, type: 11
+rk_iommu ff8f3f00.iommu: genpd_runtime_resume()
+rockchip-vop ff8f0000.vop: genpd_runtime_resume()
+dwhdmi-rockchip ff940000.hdmi: PHY PLL failed to lock
+
+[20:43:09.031]收←◆
 Poky (Yocto Project Reference Distro) 4.0.32 rk3399-firefly /dev/ttyS2
 
 rk3399-firefly login: 
-[22:10:02.246]收←◆rk_gmac-dwmac fe300000.ethernet eth0: Link is Up - 100Mbps/Full - flow control rx/tx
-IPv6: ADDRCONF(NETDEV_CHANGE): eth0: link becomes ready
+[20:43:09.079]收←◆The XKEYBOARD keymap compiler (xkbcomp) reports:
+> Warning:          Could not resolve keysym XF86EmojiPicker
+Errors from xkbcomp are not fatal to the X server
+
+[20:43:09.421]收←◆D-BUS per-session daemon address is: unix:path=/tmp/dbus-cKGsdzDFva,guid=c66cd418f817ff158e528ba45aa27f8d
+
+[20:43:09.687]收←◆/etc/X11/Xsession.d/89xdgautostart.sh: line 5: xscreensaver: command not found
+Error: No calibratable devices found.
+
+[20:43:09.942]收←◆
+** (xfce-polkit:1330): [1;35mCRITICAL[0m **: [34m12:35:25.635[0m: polkit_agent_listener_register_with_options: assertion 'POLKIT_IS_SUBJECT (subject)' failed
+
+[20:43:09.972]收←◆dbus-daemon[1378]: Activating service name='org.a11y.atspi.Registry' requested by ':1.2' (uid=0 pid=1360 comm="xfsettingsd")
+
+[20:43:10.039]收←◆xfsettingsd-[1;32mMessage[0m: [34m12:35:25.706[0m: Skipping screen 0, it already has an xsettings manager...
+[settings daemon] Forking. run with -n to prevent fork
+dbus-daemon[1378]: Successfully activated service 'org.a11y.atspi.Registry'
+SpiRegistry daemon is running with well-known name - org.a11y.atspi.Registry
+
+[20:43:10.076]收←◆
+** (xfce4-power-manager:1352): [1;33mWARNING[0m **: [34m12:35:25.750[0m: Failed to get name owner: GDBus.Error:org.freedesktop.DBus.Error.NameHasNoOwner: Could not get owner of name 'org.freedesktop.PowerManagement': no such name
+
+
+** (xfce4-power-manager:1352): [1;33mWARNING[0m **: [34m12:35:25.780[0m: Failed to get name owner: GDBus.Error:org.freedesktop.DBus.Error.NameHasNoOwner: Could not get owner of name 'org.xfce.PowerManager': no such name
+
+
+(xfce4-power-manager:1352): xfce4-power-manager-[1;33mWARNING[0m **: [34m12:35:25.781[0m: Unable to connect to session manager : Failed to connect to the session manager: SESSION_MANAGER environment variable not defined
+
+[20:43:10.245]收←◆
+(xfsettingsd:1360): GLib-GObject-[1;35mCRITICAL[0m **: [34m12:35:25.950[0m: g_value_get_string: assertion 'G_VALUE_HOLDS_STRING (value)' failed
+
+[20:43:10.269]收←◆
+(xfsettingsd:1360): GLib-GObject-[1;35mCRITICAL[0m **: [34m12:35:25.975[0m: g_value_get_string: assertion 'G_VALUE_HOLDS_STRING (value)' failed
+
+[20:43:10.312]收←◆
+(xfsettingsd:1360): GLib-GObject-[1;35mCRITICAL[0m **: [34m12:35:26.018[0m: g_value_get_string: assertion 'G_VALUE_HOLDS_STRING (value)' failed
+
+[20:43:10.345]收←◆
+** (xfce4-clipman:1335): [1;33mWARNING[0m **: [34m12:35:26.046[0m: Unable to register GApplication: An object is already exported for the interface org.gtk.Application at /org/xfce/clipman
+
+(xfce4-clipman:1335): GLib-GIO-[1;35mCRITICAL[0m **: [34m12:35:26.048[0m: g_application_get_is_remote: assertion 'application->priv->is_registered' failed
+
+(xfce4-clipman:1335): GLib-[1;33mWARNING[0m **: [34m12:35:26.048[0m: g_set_application_name() called multiple times
+
+[20:43:10.372]收←◆
+(xfce4-power-manager:1352): libnotify-[1;33mWARNING[0m **: [34m12:35:26.077[0m: Failed to connect to proxy
+
+[20:43:10.452]收←◆/usr/bin/iceauth:  creating new authority file /tmp/ICEauthority
+
+[20:43:10.513]收←◆xfce4-session: No GPG agent found
+xfce4-session: No SSH authentication agent found
+Failed to connect to session manager: Failed to connect to the session manager: SESSION_MANAGER environment variable not defined
+
+[20:43:10.662]收←◆
+(xfce4-power-manager:1352): xfce4-power-manager-[1;33mWARNING[0m **: [34m12:35:26.365[0m: 'CanStop' method failed : GDBus.Error:org.freedesktop.DBus.Error.ServiceUnknown: The name org.freedesktop.ConsoleKit was not provided by any .service files
+
+(xfce4-power-manager:1352): xfce4-power-manager-[1;33mWARNING[0m **: [34m12:35:26.367[0m: 'CanRestart' method failed : GDBus.Error:org.freedesktop.DBus.Error.ServiceUnknown: The name org.freedesktop.ConsoleKit was not provided by any .service files
+
+[20:43:10.815]收←◆
+(xfce4-power-manager:1352): GLib-GObject-[1;33mWARNING[0m **: [34m12:35:26.520[0m: ../glib-2.72.3/gobject/gsignal.c:2613: signal 'Changed' is invalid for instance '0x55934d09d0' of type 'GDBusProxy'
+
+[20:43:10.935]收←◆
+** (xfce4-clipman:1335): [1;33mWARNING[0m **: [34m12:35:26.641[0m: Clipboard manager is already running.
+
+[20:43:11.068]收←◆
+(xfce4-power-manager:1352): xfce4-power-manager-[1;33mWARNING[0m **: [34m12:35:26.769[0m: could not map keysym 1008ffa8 to keycode
+
+
+** (xfce4-power-manager:1352): [1;33mWARNING[0m **: [34m12:35:26.774[0m: No outputs have backlight property
+
+[20:43:11.089]收←◆
+(xfce4-power-manager:1352): xfce4-power-manager-[1;33mWARNING[0m **: [34m12:35:26.791[0m: Failed to get keyboard max brightness level : GDBus.Error:org.freedesktop.DBus.Error.UnknownMethod: Object does not exist at path ?/org/freedesktop/UPower/KbdBacklight?
+
+[20:43:11.302]收←◆
+(xfsettingsd:1360): xfsettingsd-[1;33mWARNING[0m **: [34m12:35:27.006[0m: Failed to get the _NET_NUMBER_OF_DESKTOPS property.
+
+[20:43:12.807]收←◆blueman-applet 12.35.28 ERROR    PluginManager:90 load_plugin: Unable to load plugin module KillSwitch
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/blueman/main/PluginManager.py", line 88, in load_plugin
+    importlib.import_module(self.module_path.__name__ + f".{plugin}")
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/usr/lib/python3.10/site-packages/blueman/plugins/applet/KillSwitch.py", line 24, in <module>
+    raise ImportError('Hardware kill switch not found')
+ImportError: Hardware kill switch not found
+
+[20:43:14.088]收←◆blueman-applet 12.35.29 WARNING  PluginManager:147 __load_plugin: Not loading DhcpClient because its conflict has higher priority
+
+(xfwm4:1469): xfwm4-[1;33mWARNING[0m **: [34m12:35:29.792[0m: Another compositing manager is running on screen 0
+blueman-applet 12.35.29 WARNING  PluginManager:147 __load_plugin: Not loading PPPSupport because its conflict has higher priority
+
+[20:43:14.375]收←◆blueman-applet 12.35.30 WARNING  DiscvManager:119 update_menuitems: warning: Adapter is None
+
+[20:43:16.040]收←◆xfce4-panel-[1;32mMessage[0m: [34m12:35:31.744[0m: Plugin "(null)-7" was not found and has been removed from the configuration
+
+[20:43:18.017]收←◆
+** (wrapper-2.0:1554): [1;33mWARNING[0m **: [34m12:35:33.721[0m: No outputs have backlight property
+
+[20:43:18.170]收←◆
+(wrapper-2.0:1555): GLib-GIO-[1;35mCRITICAL[0m **: [34m12:35:33.870[0m: g_file_new_for_path: assertion 'path != NULL' failed
+
+(wrapper-2.0:1555): GLib-GIO-[1;35mCRITICAL[0m **: [34m12:35:33.871[0m: g_file_monitor_file: assertion 'G_IS_FILE (file)' failed
+
+(wrapper-2.0:1555): GLib-GObject-[1;33mWARNING[0m **: [34m12:35:33.871[0m: invalid (NULL) pointer instance
+
+(wrapper-2.0:1555): GLib-GObject-[1;35mCRITICAL[0m **: [34m12:35:33.872[0m: g_signal_connect_data: assertion 'G_TYPE_CHECK_INSTANCE (instance)' failed
+
+(wrapper-2.0:1555): Gtk-[1;33mWARNING[0m **: [34m12:35:33.872[0m: Attempting to add a widget with type GtkToggleButton to a container of type XfcePanelPlugin, but the widget is already inside a container of type XfcePanelPlugin, please remove the widget from its existing container first.
+
+[20:43:18.272]收←◆
+(wrapper-2.0:1554): Gtk-[1;35mCRITICAL[0m **: [34m12:35:33.959[0m: gtk_icon_theme_has_icon: assertion 'icon_name != NULL' failed
+
+(wrapper-2.0:1554): xfce4-power-manager-plugin-[1;33mWARNING[0m **: [34m12:35:33.964[0m: Xfce4-power-manager: The panel plugin is present, so the tray icon gets disabled.
+
+(wrapper-2.0:1554): Gtk-[1;35mCRITICAL[0m **: [34m12:35:33.977[0m: gtk_icon_theme_has_icon: assertion 'icon_name != NULL' failed
+
+(wrapper-2.0:1554): Gtk-[1;35mCRITICAL[0m **: [34m12:35:33.978[0m: gtk_icon_theme_has_icon: assertion 'icon_name != NULL' failed
+
+[20:43:18.396]收←◆
+(wrapper-2.0:1553): Gtk-[1;33mWARNING[0m **: [34m12:35:34.102[0m: Negative content width -3 (allocation 1, extents 2x2) while allocating gadget (node button, owner PulseaudioButton)
+
+[20:43:18.459]收←◆
+(wrapper-2.0:1554): Gtk-[1;35mCRITICAL[0m **: [34m12:35:34.152[0m: gtk_icon_theme_has_icon: assertion 'icon_name != NULL' failed
+
+(wrapper-2.0:1555): Gtk-[1;33mWARNING[0m **: [34m12:35:34.165[0m: Negative content width -3 (allocation 1, extents 2x2) while allocating gadget (node button, owner GtkToggleButton)
+
+[20:43:18.504]收←◆
+(wrapper-2.0:1554): Gtk-[1;33mWARNING[0m **: [34m12:35:34.210[0m: Negative content width -3 (allocation 1, extents 2x2) while allocating gadget (node button, owner PowerManagerButton)

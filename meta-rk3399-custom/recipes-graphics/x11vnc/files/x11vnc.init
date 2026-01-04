@@ -1,0 +1,163 @@
+#!/bin/sh
+#
+# x11vnc        x11vnc VNC server
+#
+# chkconfig: 2345 98 02
+# description: x11vnc VNC server for X display
+
+### BEGIN INIT INFO
+# Provides:          x11vnc
+# Required-Start:    $local_fs $network $remote_fs
+# Required-Stop:     $local_fs $network $remote_fs
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: Start x11vnc VNC server
+# Description:       Start x11vnc VNC server for X display :0
+### END INIT INFO
+
+DAEMON=/usr/bin/x11vnc
+DAEMON_OPTS="-display :0 -nopw -forever -shared -rfbport 5900"
+PIDFILE=/var/run/x11vnc.pid
+LOGFILE=/var/log/x11vnc.log
+NAME=x11vnc
+
+[ -x "$DAEMON" ] || exit 0
+
+start() {
+    echo -n "Starting $NAME: "
+    
+    # Check if already running
+    if [ -f "$PIDFILE" ]; then
+        PID=$(cat "$PIDFILE")
+        if ps -p "$PID" > /dev/null 2>&1; then
+            echo "already running (PID $PID)"
+            return 0
+        else
+            rm -f "$PIDFILE"
+        fi
+    fi
+    
+    # Wait for X server to be ready
+    for i in 1 2 3 4 5 6 7 8 9 10; do
+        if [ -S /tmp/.X11-unix/X0 ]; then
+            break
+        fi
+        sleep 1
+    done
+    
+    export DISPLAY=:0
+    # Start x11vnc in background using nohup (since -bg seems to cause issues)
+    nohup $DAEMON $DAEMON_OPTS -o "$LOGFILE" > /dev/null 2>&1 &
+    START_PID=$!
+    sleep 3
+    
+    # Find PID by process name - exclude grep, sh, and this script itself
+    PID=$(ps aux | grep x11vnc | grep -v grep | grep -v "sh.*x11vnc" | grep "/usr/bin/x11vnc" | awk '{print $2}' | head -1)
+    
+    # Fallback: use the PID from nohup if process search fails
+    if [ -z "$PID" ] && ps -p "$START_PID" > /dev/null 2>&1; then
+        PID=$START_PID
+    fi
+    
+    if [ -n "$PID" ] && ps -p "$PID" > /dev/null 2>&1; then
+        echo "$PID" > "$PIDFILE"
+        # Verify port is listening
+        PORT_LISTENING=false
+        if cat /proc/net/tcp 2>/dev/null | grep -q ':170C'; then
+            PORT_LISTENING=true
+        elif ss -tln 2>&1 | grep -q ':5900'; then
+            PORT_LISTENING=true
+        elif netstat -tln 2>&1 | grep -q ':5900'; then
+            PORT_LISTENING=true
+        fi
+        
+        if [ "$PORT_LISTENING" = "true" ]; then
+            echo "OK (PID: $PID, port 5900 listening)"
+        else
+            echo "OK (PID: $PID, started - port may still be initializing)"
+        fi
+        touch /var/lock/subsys/$NAME
+        return 0
+    else
+        echo "FAILED (process not running after start)"
+        if [ -f "$LOGFILE" ]; then
+            echo "Last log entries:"
+            tail -10 "$LOGFILE"
+        fi
+        rm -f "$PIDFILE"
+        return 1
+    fi
+}
+
+stop() {
+    echo -n "Shutting down $NAME: "
+    
+    if [ ! -f "$PIDFILE" ]; then
+        echo "not running"
+        return 0
+    fi
+    
+    PID=$(cat "$PIDFILE")
+    if ! ps -p "$PID" > /dev/null 2>&1; then
+        echo "not running"
+        rm -f "$PIDFILE"
+        rm -f /var/lock/subsys/$NAME
+        return 0
+    fi
+    
+    kill "$PID" 2>/dev/null
+    sleep 1
+    
+    if ! ps -p "$PID" > /dev/null 2>&1; then
+        echo "OK"
+        rm -f "$PIDFILE"
+        rm -f /var/lock/subsys/$NAME
+        return 0
+    else
+        echo "FAILED"
+        return 1
+    fi
+}
+
+restart() {
+    stop
+    start
+}
+
+status() {
+    if [ -f "$PIDFILE" ]; then
+        PID=$(cat "$PIDFILE")
+        if ps -p "$PID" > /dev/null 2>&1; then
+            echo "$NAME is running (PID $PID)"
+            return 0
+        else
+            echo "$NAME is not running (stale PID file)"
+            return 1
+        fi
+    else
+        echo "$NAME is not running"
+        return 1
+    fi
+}
+
+case "$1" in
+    start)
+        start
+        ;;
+    stop)
+        stop
+        ;;
+    status)
+        status
+        ;;
+    restart)
+        restart
+        ;;
+    *)
+        echo "Usage: $0 {start|stop|status|restart}"
+        exit 1
+        ;;
+esac
+
+exit $?
+

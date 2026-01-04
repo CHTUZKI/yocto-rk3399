@@ -64,6 +64,9 @@ do_configure:prepend() {
         # This keeps boot logic in boot.scr only, not scattered across env/distro/scripts
         sed -i 's/^CONFIG_DISTRO_DEFAULTS=y/# CONFIG_DISTRO_DEFAULTS is not set/' ${S}/configs/${UBOOT_MACHINE} || true
         
+        # Clear default FDT file name to avoid conflicts with bootcmd
+        sed -i '/^CONFIG_DEFAULT_FDT_FILE=/d' ${S}/configs/${UBOOT_MACHINE} || true
+        
         # Set fixed bootcmd: load boot.scr from root partition /boot directory and execute it
         # GPT partition 3 (root ext4) = U-Boot mmc 0:4 (Linux mmcblk0p4)
         # boot.scr is installed to root filesystem /boot/boot.scr
