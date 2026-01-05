@@ -35,8 +35,9 @@ if [ ! -f /etc/init.d/nxserver ]; then
     echo "Warning: NoMachine init script not found"
 else
     # 确保开机启动已配置（SysV init）
-    if [ ! -L /etc/rc2.d/S99nxserver ] && [ ! -L /etc/rc3.d/S99nxserver ]; then
-        update-rc.d nxserver defaults >/dev/null 2>&1 || true
+    # Use priority 99 to start after network services but before other services
+    if [ ! -L /etc/rc2.d/S99nxserver ] && [ ! -L /etc/rc3.d/S99nxserver ] && [ ! -L /etc/rc5.d/S99nxserver ]; then
+        update-rc.d nxserver defaults 99 >/dev/null 2>&1 || true
     fi
 fi
 

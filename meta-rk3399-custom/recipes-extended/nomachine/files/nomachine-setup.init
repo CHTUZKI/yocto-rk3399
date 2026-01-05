@@ -7,6 +7,7 @@
 # Default-Stop:
 # Short-Description: NoMachine first boot setup
 # Description:       Configure NoMachine on first boot
+# X-Start-Before:    nxserver
 ### END INIT INFO
 
 # This script runs nomachine-setup.sh on first boot

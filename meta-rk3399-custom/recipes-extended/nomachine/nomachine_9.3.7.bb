@@ -247,11 +247,13 @@ pkg_postinst:${PN}() {
             fi
         else
             # For SysV init, enable the setup script to run on first boot
+            # Set priority to 98 to ensure it runs before nxserver (which is 99)
             if [ -f /etc/init.d/nomachine-setup ]; then
-                update-rc.d nomachine-setup defaults 99 2 3 4 5 . || true
+                update-rc.d nomachine-setup defaults 98 2 3 4 5 . || true
             fi
+            # Enable nxserver with priority 99 (after setup script)
             if [ -f /etc/init.d/nxserver ]; then
-                update-rc.d nxserver defaults || true
+                update-rc.d nxserver defaults 99 || true
             fi
         fi
     fi

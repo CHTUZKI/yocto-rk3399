@@ -61,6 +61,12 @@ EOF
         sed -i '/^timeout=0/a session=/usr/bin/startxfce4' ${D}${sysconfdir}/lxdm/lxdm.conf || \
         sed -i '/^autologin=root/a session=/usr/bin/startxfce4' ${D}${sysconfdir}/lxdm/lxdm.conf
     fi
+    
+    # Fix PAM configuration: Remove pam_systemd.so since we're using sysvinit
+    if [ -f "${D}${sysconfdir}/pam.d/lxdm" ]; then
+        sed -i '/pam_systemd\.so/d' ${D}${sysconfdir}/pam.d/lxdm
+        bbnote "Removed pam_systemd.so from lxdm PAM configuration (sysvinit system)"
+    fi
 }
 
 # Enable lxdm service to start on boot (default is already "enable", but explicit is better)
