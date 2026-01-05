@@ -1,0 +1,29 @@
+[Unit]
+Description=NoMachine Remote Desktop Server
+Documentation=https://www.nomachine.com/
+After=network.target syslog.target
+Wants=network.target
+
+[Service]
+Type=forking
+ExecStart=/usr/NX/bin/nxserver --startup
+ExecStop=/usr/NX/bin/nxserver --shutdown
+ExecReload=/usr/NX/bin/nxserver --restart
+Restart=on-failure
+RestartSec=10
+TimeoutStartSec=60
+TimeoutStopSec=30
+
+# Security settings
+PrivateTmp=yes
+# ProtectSystem=strict would prevent writing to /usr/NX, so use partial instead
+ProtectSystem=false
+ReadWritePaths=/usr/NX /var/NX /etc/nxserver /home
+ProtectHome=no
+
+# Environment
+Environment="NX_ROOT=/usr/NX"
+
+[Install]
+WantedBy=multi-user.target
+

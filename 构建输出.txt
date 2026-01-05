@@ -1,64 +1,18 @@
-meta-xfce
-meta-gnome           = "kirkstone:97d4be2839754dadfc326c21948472c2fc2985ce"
-
 Initialising tasks: 100% |#####################################################################| Time: 0:00:06
-Sstate summary: Wanted 10 Local 0 Mirrors 0 Missed 10 Current 3905 (0% match, 99% complete)
-Removing 3 stale sstate objects for arch armv8a: 100% |########################################| Time: 0:00:00
-Removing 4 stale sstate objects for arch rk3399_firefly: 100% |################################| Time: 0:00:00
+Sstate summary: Wanted 10 Local 0 Mirrors 0 Missed 10 Current 3925 (0% match, 99% complete)
+Removing 6 stale sstate objects for arch armv8a: 100% |########################################| Time: 0:00:00
+Removing 1 stale sstate objects for arch rk3399_firefly: 100% |################################| Time: 0:00:00
 NOTE: Executing Tasks
-ERROR: x11vnc-0.9.16+gitAUTOINC+87cd0530f4-r0 do_install: ExecutionError('/home/xuning/yocto-rk3399/build/tmp/work/armv8a-poky-linux/x11vnc/0.9.16+gitAUTOINC+87cd0530f4-r0/temp/run.do_install.1718898', 1, None, None)
-ERROR: Logfile of failure stored in: /home/xuning/yocto-rk3399/build/tmp/work/armv8a-poky-linux/x11vnc/0.9.16+gitAUTOINC+87cd0530f4-r0/temp/log.do_install.1718898
+ERROR: nomachine-9.3.7-r0 do_unpack: ExecutionError('/home/xuning/yocto-rk3399/build/tmp/work/armv8a-poky-linux/nomachine/9.3.7-r0/temp/run.do_unpack.438113', 127, None, None)
+ERROR: Logfile of failure stored in: /home/xuning/yocto-rk3399/build/tmp/work/armv8a-poky-linux/nomachine/9.3.7-r0/temp/log.do_unpack.438113
 Log data follows:
-| DEBUG: Executing python function extend_recipe_sysroot
-| NOTE: Direct dependencies are ['/home/xuning/yocto-rk3399/meta-openembedded/meta-oe/recipes-graphics/libvncserver/libvncserver_0.9.13.bb:do_populate_sysroot', '/home/xuning/yocto-rk3399/poky/meta/recipes-connectivity/avahi/avahi_0.8.bb:do_populate_sysroot', '/home/xuning/yocto-rk3399/poky/meta/recipes-connectivity/openssl/openssl_3.0.18.bb:do_populate_sysroot', '/home/xuning/yocto-rk3399/poky/meta/recipes-core/glibc/glibc_2.35.bb:do_populate_sysroot', '/home/xuning/yocto-rk3399/poky/meta/recipes-core/systemd/systemd-systemctl-native.bb:do_populate_sysroot', '/home/xuning/yocto-rk3399/poky/meta/recipes-core/zlib/zlib_1.2.11.bb:do_populate_sysroot', '/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/gcc/gcc-cross_11.5.bb:do_populate_sysroot', '/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/gcc/gcc-runtime_11.5.bb:do_populate_sysroot', '/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/libtool/libtool-cross_2.4.7.bb:do_populate_sysroot', '/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/libtool/libtool-native_2.4.7.bb:do_populate_sysroot', '/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/quilt/quilt-native_0.67.bb:do_populate_sysroot', '/home/xuning/yocto-rk3399/poky/meta/recipes-graphics/jpeg/libjpeg-turbo_2.1.5.1.bb:do_populate_sysroot', '/home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libx11_1.7.3.1.bb:do_populate_sysroot', '/home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libxdamage_1.1.5.bb:do_populate_sysroot', '/home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libxext_1.3.4.bb:do_populate_sysroot', '/home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libxfixes_6.0.0.bb:do_populate_sysroot', '/home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libxrandr_1.5.2.bb:do_populate_sysroot', '/home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libxtst_1.2.3.bb:do_populate_sysroot', '/home/xuning/yocto-rk3399/poky/meta/recipes-support/gnutls/libtasn1_4.20.0.bb:do_populate_sysroot', '/home/xuning/yocto-rk3399/poky/meta/recipes-support/p11-kit/p11-kit_0.24.1.bb:do_populate_sysroot', 'virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/autoconf/autoconf_2.71.bb:do_populate_sysroot', 'virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/automake/automake_1.16.5.bb:do_populate_sysroot', 'virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/patch/patch_2.7.6.bb:do_populate_sysroot', 'virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/pkgconfig/pkgconfig_git.bb:do_populate_sysroot', 'virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/pseudo/pseudo_git.bb:do_populate_sysroot']
-| NOTE: Installed into sysroot: []
-| NOTE: Skipping as already exists in sysroot: ['libvncserver', 'avahi', 'openssl', 'glibc', 'systemd-systemctl-native', 'zlib', 'gcc-cross-aarch64', 'gcc-runtime', 'libtool-cross', 'libtool-native', 'quilt-native', 'libjpeg-turbo', 'libx11', 'libxdamage', 'libxext', 'libxfixes', 'libxrandr', 'libxtst', 'libtasn1', 'p11-kit', 'autoconf-native', 'automake-native', 'patch-native', 'pkgconfig-native', 'pseudo-native', 'gnu-config-native', 'binutils-cross-aarch64', 'linux-libc-headers', 'mpfr-native', 'texinfo-dummy-native', 'zlib-native', 'flex-native', 'zstd-native', 'gmp-native', 'xz-native', 'libmpc-native', 'opkg-utils', 'libgcc', 'attr-native', 'gobject-introspection', 'libcap', 'base-passwd', 'base-files', 'glib-2.0', 'update-rc.d', 'shadow-native', 'initscripts', 'dbus', 'shadow', 'expat', 'shadow-sysroot', 'libdaemon', 'util-macros', 'xorgproto', 'libxi', 'bash-completion', 'libffi', 'm4-native', 'autoconf-archive', 'libxcb', 'xtrans', 'libpng', 'libgcrypt', 'lzo', 'libsdl2', 'gnutls', 'systemd', 'libxrender', 'gettext-minimal-native', 'python3', 'libpam', 'util-linux', 'libpcre', 'libsm', 'attr', 'libxcrypt', 'libxdmcp', 'libpthread-stubs', 'libxau', 'xcb-proto', 'libgpg-error', 'pulseaudio', 'libxkbcommon', 'wayland', 'mesa', 'wayland-protocols', 'alsa-lib', 'nettle', 'libseccomp', 'libunistring', 'gmp', 'libidn2', 'zstd', 'acl', 'kmod', 'gdbm', 'readline', 'util-linux-libuuid', 'sqlite3', 'xz', 'ncurses', 'bzip2', 'libnsl2', 'libtirpc', 'cracklib', 'flex', 'libcap-ng', 'libice', 'sbc', 'libtool', 'speexdsp', 'ofono', 'bluez5', 'libsndfile1', 'libatomic-ops', 'libxml2', 'xkeyboard-config', 'libxshmfence', 'libdrm', 'libxxf86vm', 'xrandr', 'mobile-broadband-provider-info', 'ell', 'libical', 'libogg', 'libvorbis', 'flac', 'libpciaccess', 'icu', 'vala']
-| DEBUG: Python function extend_recipe_sysroot finished
-| DEBUG: Executing python function autotools_aclocals
-| DEBUG: SITE files ['endian-little', 'bit-64', 'arm-common', 'arm-64', 'common-linux', 'common-glibc', 'aarch64-linux', 'common']
-| DEBUG: Python function autotools_aclocals finished
-| DEBUG: Executing shell function do_install
-| NOTE: make -j 12 DESTDIR=/home/xuning/yocto-rk3399/build/tmp/work/armv8a-poky-linux/x11vnc/0.9.16+gitAUTOINC+87cd0530f4-r0/image install
-| Making install in src
-| make[1]: Entering directory '/home/xuning/yocto-rk3399/build/tmp/work/armv8a-poky-linux/x11vnc/0.9.16+gitAUTOINC+87cd0530f4-r0/build/src'
-| make[2]: Entering directory '/home/xuning/yocto-rk3399/build/tmp/work/armv8a-poky-linux/x11vnc/0.9.16+gitAUTOINC+87cd0530f4-r0/build/src'
-| make[2]: Nothing to be done for 'install-data-am'.
-|  /home/xuning/yocto-rk3399/build/tmp/hosttools/mkdir -p '/home/xuning/yocto-rk3399/build/tmp/work/armv8a-poky-linux/x11vnc/0.9.16+gitAUTOINC+87cd0530f4-r0/image/usr/bin'
-|   /home/xuning/yocto-rk3399/build/tmp/hosttools/install -c x11vnc '/home/xuning/yocto-rk3399/build/tmp/work/armv8a-poky-linux/x11vnc/0.9.16+gitAUTOINC+87cd0530f4-r0/image/usr/bin'
-| make[2]: Leaving directory '/home/xuning/yocto-rk3399/build/tmp/work/armv8a-poky-linux/x11vnc/0.9.16+gitAUTOINC+87cd0530f4-r0/build/src'
-| make[1]: Leaving directory '/home/xuning/yocto-rk3399/build/tmp/work/armv8a-poky-linux/x11vnc/0.9.16+gitAUTOINC+87cd0530f4-r0/build/src'
-| Making install in misc
-| make[1]: Entering directory '/home/xuning/yocto-rk3399/build/tmp/work/armv8a-poky-linux/x11vnc/0.9.16+gitAUTOINC+87cd0530f4-r0/build/misc'
-| Making install in turbovnc
-| make[2]: Entering directory '/home/xuning/yocto-rk3399/build/tmp/work/armv8a-poky-linux/x11vnc/0.9.16+gitAUTOINC+87cd0530f4-r0/build/misc/turbovnc'
-| make[3]: Entering directory '/home/xuning/yocto-rk3399/build/tmp/work/armv8a-poky-linux/x11vnc/0.9.16+gitAUTOINC+87cd0530f4-r0/build/misc/turbovnc'
-| make[3]: Nothing to be done for 'install-exec-am'.
-| make[3]: Nothing to be done for 'install-data-am'.
-| make[3]: Leaving directory '/home/xuning/yocto-rk3399/build/tmp/work/armv8a-poky-linux/x11vnc/0.9.16+gitAUTOINC+87cd0530f4-r0/build/misc/turbovnc'
-| make[2]: Leaving directory '/home/xuning/yocto-rk3399/build/tmp/work/armv8a-poky-linux/x11vnc/0.9.16+gitAUTOINC+87cd0530f4-r0/build/misc/turbovnc'
-| make[2]: Entering directory '/home/xuning/yocto-rk3399/build/tmp/work/armv8a-poky-linux/x11vnc/0.9.16+gitAUTOINC+87cd0530f4-r0/build/misc'
-| make[3]: Entering directory '/home/xuning/yocto-rk3399/build/tmp/work/armv8a-poky-linux/x11vnc/0.9.16+gitAUTOINC+87cd0530f4-r0/build/misc'
-| make[3]: Nothing to be done for 'install-data-am'.
-|  /home/xuning/yocto-rk3399/build/tmp/hosttools/mkdir -p '/home/xuning/yocto-rk3399/build/tmp/work/armv8a-poky-linux/x11vnc/0.9.16+gitAUTOINC+87cd0530f4-r0/image/usr/bin'
-|  /home/xuning/yocto-rk3399/build/tmp/hosttools/install -c Xdummy '/home/xuning/yocto-rk3399/build/tmp/work/armv8a-poky-linux/x11vnc/0.9.16+gitAUTOINC+87cd0530f4-r0/image/usr/bin'
-| make[3]: Leaving directory '/home/xuning/yocto-rk3399/build/tmp/work/armv8a-poky-linux/x11vnc/0.9.16+gitAUTOINC+87cd0530f4-r0/build/misc'
-| make[2]: Leaving directory '/home/xuning/yocto-rk3399/build/tmp/work/armv8a-poky-linux/x11vnc/0.9.16+gitAUTOINC+87cd0530f4-r0/build/misc'
-| make[1]: Leaving directory '/home/xuning/yocto-rk3399/build/tmp/work/armv8a-poky-linux/x11vnc/0.9.16+gitAUTOINC+87cd0530f4-r0/build/misc'
-| make[1]: Entering directory '/home/xuning/yocto-rk3399/build/tmp/work/armv8a-poky-linux/x11vnc/0.9.16+gitAUTOINC+87cd0530f4-r0/build'
-| make[2]: Entering directory '/home/xuning/yocto-rk3399/build/tmp/work/armv8a-poky-linux/x11vnc/0.9.16+gitAUTOINC+87cd0530f4-r0/build'
-| make[2]: Nothing to be done for 'install-exec-am'.
-|  /home/xuning/yocto-rk3399/build/tmp/hosttools/mkdir -p '/home/xuning/yocto-rk3399/build/tmp/work/armv8a-poky-linux/x11vnc/0.9.16+gitAUTOINC+87cd0530f4-r0/image/usr/share/applications'
-|  /home/xuning/yocto-rk3399/build/tmp/hosttools/mkdir -p '/home/xuning/yocto-rk3399/build/tmp/work/armv8a-poky-linux/x11vnc/0.9.16+gitAUTOINC+87cd0530f4-r0/image/usr/share/man/man1'
-|  /home/xuning/yocto-rk3399/build/tmp/hosttools/install -c -m 644 ../git/x11vnc.desktop '/home/xuning/yocto-rk3399/build/tmp/work/armv8a-poky-linux/x11vnc/0.9.16+gitAUTOINC+87cd0530f4-r0/image/usr/share/applications'
-|  /home/xuning/yocto-rk3399/build/tmp/hosttools/install -c -m 644 ../git/x11vnc.1 '/home/xuning/yocto-rk3399/build/tmp/work/armv8a-poky-linux/x11vnc/0.9.16+gitAUTOINC+87cd0530f4-r0/image/usr/share/man/man1'
-| make[2]: Leaving directory '/home/xuning/yocto-rk3399/build/tmp/work/armv8a-poky-linux/x11vnc/0.9.16+gitAUTOINC+87cd0530f4-r0/build'
-| make[1]: Leaving directory '/home/xuning/yocto-rk3399/build/tmp/work/armv8a-poky-linux/x11vnc/0.9.16+gitAUTOINC+87cd0530f4-r0/build'
-| install: cannot stat '/home/xuning/yocto-rk3399/meta-openembedded/meta-oe/recipes-graphics/x11vnc/files/x11vnc.service': No such file or directory
-| WARNING: exit code 1 from a shell command.
-ERROR: Task (/home/xuning/yocto-rk3399/meta-openembedded/meta-oe/recipes-graphics/x11vnc/x11vnc_0.9.16.bb:do_install) failed with exit code '1'
-NOTE: Tasks Summary: Attempted 9127 tasks of which 9114 didn't need to be rerun and 1 failed.
+| DEBUG: Executing shell function do_unpack
+| WARNING: exit code 127 from a shell command.
+| /home/xuning/yocto-rk3399/build/tmp/work/armv8a-poky-linux/nomachine/9.3.7-r0/temp/run.do_unpack.438113: 143: base_do_unpack: not found
+ERROR: Task (/home/xuning/yocto-rk3399/meta-rk3399-custom/recipes-extended/nomachine/nomachine_9.3.7.bb:do_unpack) failed with exit code '1'
+NOTE: Tasks Summary: Attempted 9155 tasks of which 9145 didn't need to be rerun and 1 failed.
 
 Summary: 1 task failed:
-  /home/xuning/yocto-rk3399/meta-openembedded/meta-oe/recipes-graphics/x11vnc/x11vnc_0.9.16.bb:do_install
+  /home/xuning/yocto-rk3399/meta-rk3399-custom/recipes-extended/nomachine/nomachine_9.3.7.bb:do_unpack
 Summary: There was 1 ERROR message, returning a non-zero exit code.
 xuning@DESKTOP-2PRECMT:~/yocto-rk3399/build$

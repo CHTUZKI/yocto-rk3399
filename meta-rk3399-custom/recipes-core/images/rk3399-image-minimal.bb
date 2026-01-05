@@ -5,6 +5,13 @@ inherit core-image
 inherit rockchip-image
 inherit bootimg-rockchip
 inherit rootfs_deb
+inherit extrausers
+
+# Set root password to "root"
+# Password hash generated with: crypt.crypt('root', '$6$rootpwd123456')
+# This hash represents password "root"
+ROOT_PASSWORD_HASH = "\$6\$rootpwd123456\$A897rl/91mY42MpTZmGo25dgs60Gplk6u4BQ0Ux.i3h6IpkiI7.9q3y1nq50xTxVewytxtpo1kscJ03k/7HvA/"
+EXTRA_USERS_PARAMS = "usermod -p '${ROOT_PASSWORD_HASH}' root;"
 
 # Base packages - minimal set
 IMAGE_INSTALL = " \
@@ -14,6 +21,11 @@ IMAGE_INSTALL = " \
     kernel-devicetree \
     htop \
     ${CORE_IMAGE_EXTRA_INSTALL} \
+"
+
+# Remote Desktop - NoMachine
+IMAGE_INSTALL += " \
+    nomachine \
 "
 
 # Bootloader
