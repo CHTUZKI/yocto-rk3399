@@ -40,6 +40,14 @@ IMAGE_INSTALL += " \
     nomachine \
 "
 
+# LinuxCNC - CNC Machine Controller
+# LinuxCNC is a free, open source CNC controller that can drive milling machines,
+# lathes, 3D printers, laser cutters, plasma cutters, robot arms, and more.
+# Requires PREEMPT_RT real-time kernel for proper operation.
+IMAGE_INSTALL += " \
+    packagegroup-linuxcnc \
+"
+
 # Ensure bootloader components are built before image generation
 do_image[depends] += " \
     u-boot-rockchip:do_deploy \
