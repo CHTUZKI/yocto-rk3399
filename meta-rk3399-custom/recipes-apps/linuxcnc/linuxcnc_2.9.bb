@@ -23,7 +23,7 @@ PV = "2.9+git${SRCPV}"
 
 S = "${WORKDIR}/git"
 
-inherit pkgconfig python3native python3-dir gettext
+inherit pkgconfig python3native python3-dir gettext features_check
 
 # Ensure configure can find ps via hosttools
 HOSTTOOLS += "ps"
@@ -61,6 +61,7 @@ DEPENDS = " \
 # Runtime dependencies
 RDEPENDS:${PN} = " \
     python3 \
+    python3-core \
     python3-tkinter \
     python3-numpy \
     python3-pycairo \
@@ -68,6 +69,8 @@ RDEPENDS:${PN} = " \
     gtk+ \
     tcl \
     tk \
+    tk-lib \
+    bash \
     mesa-demos \
     procps \
     psmisc \
@@ -92,6 +95,8 @@ B = "${S}/src"
 
 # Export necessary environment variables
 export PYTHON = "${PYTHON3}"
+
+BOOST_PYTHON_LIBNAME = "boost_python${@d.getVar('PYTHON_BASEVERSION').replace('.', '')}"
 
 do_configure() {
     cd ${S}/src
@@ -145,12 +150,29 @@ do_compile() {
     cd ${S}/src
     oe_runmake \
         "ULFLAGS=${ULFLAGS} -I${RECIPE_SYSROOT}/usr/include/tcl8.6 -I${RECIPE_SYSROOT}/usr/include" \
-        "RTFLAGS=${RTFLAGS} -I${S}/src/rtapi -I${S}/src/hal"
+        "RTFLAGS=${RTFLAGS} -I${S}/src/rtapi -I${S}/src/hal" \
+        "BOOST_PYTHON_LIB=-l${BOOST_PYTHON_LIBNAME}"
 }
 
 do_install() {
     cd ${S}/src
     oe_runmake DESTDIR=${D} install
+
+     if [ -d ${D}${prefix}/etc/linuxcnc ]; then
+         install -d ${D}${sysconfdir}
+         mv ${D}${prefix}/etc/linuxcnc ${D}${sysconfdir}/ || true
+         rmdir --ignore-fail-on-non-empty ${D}${prefix}/etc || true
+         rmdir --ignore-fail-on-non-empty ${D}${prefix} || true
+     fi
+ 
+     if [ -d ${D}/lib/linuxcnc ]; then
+        install -d ${D}${libdir}
+        if [ ! -e ${D}${libdir}/linuxcnc ]; then
+            mv ${D}/lib/linuxcnc ${D}${libdir}/
+        fi
+        rmdir --ignore-fail-on-non-empty ${D}/lib/linuxcnc || true
+        rmdir --ignore-fail-on-non-empty ${D}/lib || true
+    fi
     
     # Install configuration file
     install -d ${D}${sysconfdir}/linuxcnc
@@ -169,10 +191,18 @@ do_install() {
     if [ -d ${S}/nc_files ]; then
         cp -r ${S}/nc_files/* ${D}${datadir}/linuxcnc/nc_files/ || true
     fi
+
+    if [ -n "${RECIPE_SYSROOT_NATIVE}" ]; then
+        for f in $(grep -RIl "^#!" ${D} 2>/dev/null); do
+            sed -i -E \
+                -e '1{s|^#!.*python3-native/python3[^[:space:]]*.*$|#!/usr/bin/python3|;}' \
+                "$f" || true
+        done
+    fi
 }
 
 # Define packages
-PACKAGES = "${PN} ${PN}-dev ${PN}-doc ${PN}-configs ${PN}-dbg"
+PACKAGES = "${PN} ${PN}-dev ${PN}-staticdev ${PN}-doc ${PN}-configs ${PN}-dbg"
 
 FILES:${PN} = " \
     ${bindir}/* \
@@ -180,7 +210,20 @@ FILES:${PN} = " \
     ${libdir}/linuxcnc/* \
     ${libdir}/python*/* \
     ${libdir}/tcltk/* \
-    ${datadir}/linuxcnc/*.* \
+    ${datadir}/linuxcnc \
+    ${datadir}/linuxcnc/** \
+    ${datadir}/gmoccapy \
+    ${datadir}/gmoccapy/** \
+    ${datadir}/axis \
+    ${datadir}/axis/** \
+    ${datadir}/gscreen \
+    ${datadir}/gscreen/** \
+    ${datadir}/glade \
+    ${datadir}/glade/** \
+    ${datadir}/gtksourceview-4 \
+    ${datadir}/gtksourceview-4/** \
+    ${datadir}/qtvcp \
+    ${datadir}/qtvcp/** \
     ${datadir}/linuxcnc/hallib \
     ${datadir}/applications/* \
     ${datadir}/desktop-directories/* \
@@ -188,6 +231,7 @@ FILES:${PN} = " \
     ${datadir}/menus/* \
     ${datadir}/locale/* \
     ${sysconfdir}/linuxcnc/* \
+    ${sysconfdir}/X11/app-defaults/TkLinuxCNC \
 "
 
 FILES:${PN}-configs = " \
@@ -197,6 +241,12 @@ FILES:${PN}-configs = " \
 
 FILES:${PN}-doc = " \
     ${datadir}/doc/linuxcnc \
+    ${mandir} \
+    ${mandir}/** \
+"
+
+FILES:${PN}-staticdev = " \
+    ${libdir}/liblinuxcnc.a \
 "
 
 # Skip certain QA checks
