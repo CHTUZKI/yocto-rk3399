@@ -425,11 +425,14 @@
 
 &u2phy0_host {
 	phy-supply = <&vcc5v0_host>;
+	vbus-supply = <&vcc5v0_host>;
 	status = "okay";
 };
 
 &u2phy0_otg {
 	status = "okay";
+	rockchip,vbus-always-on;
+	vbus-5v-gpios = <&gpio1 RK_PA3 GPIO_ACTIVE_HIGH>;
 };
 
 &u2phy1 {
@@ -438,6 +441,7 @@
 
 &u2phy1_host {
 	phy-supply = <&vcc5v0_host>;
+	vbus-supply = <&vcc5v0_host>;
 	status = "okay";
 };
 
@@ -473,6 +477,7 @@
 &usbdrd_dwc3_0 {
 	dr_mode = "host";
 	phy_type = "utmi_wide";
+	vbus-supply = <&vcc5v0_host>;
 	snps,dis_enblslpm_quirk;
 	snps,dis-u2-freeclk-exists-quirk;
 	snps,dis_u2_susphy_quirk;
@@ -491,6 +496,7 @@
 &usbdrd_dwc3_1 {
 	dr_mode = "host";
 	phy_type = "utmi_wide";
+	vbus-supply = <&vcc5v0_host>;
 	snps,dis_enblslpm_quirk;
 	snps,dis-u2-freeclk-exists-quirk;
 	snps,dis_u2_susphy_quirk;

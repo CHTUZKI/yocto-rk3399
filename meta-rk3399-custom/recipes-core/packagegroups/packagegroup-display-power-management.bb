@@ -45,6 +45,39 @@ Section "Files"
 EndSection
 EOF
 
+    # Provide XFCE desktop default to use uniform solid background
+    cat > ${D}${sysconfdir}/xdg/xfce4/xfconf/xfce-perchannel-xml/xfce4-desktop.xml << 'EOF'
+<?xml version="1.0" encoding="UTF-8"?>
+<channel name="xfce4-desktop" version="1.0">
+  <property name="backdrop" type="empty">
+    <property name="screen0" type="empty">
+      <property name="monitor0" type="empty">
+        <property name="workspace0" type="empty">
+          <property name="color-style" type="int" value="1"/>
+          <property name="color1" type="string" value="#003366"/>
+          <property name="image-style" type="int" value="0"/>
+        </property>
+        <property name="workspace1" type="empty">
+          <property name="color-style" type="int" value="1"/>
+          <property name="color1" type="string" value="#003366"/>
+          <property name="image-style" type="int" value="0"/>
+        </property>
+        <property name="workspace2" type="empty">
+          <property name="color-style" type="int" value="1"/>
+          <property name="color1" type="string" value="#003366"/>
+          <property name="image-style" type="int" value="0"/>
+        </property>
+        <property name="workspace3" type="empty">
+          <property name="color-style" type="int" value="1"/>
+          <property name="color1" type="string" value="#003366"/>
+          <property name="image-style" type="int" value="0"/>
+        </property>
+      </property>
+    </property>
+  </property>
+</channel>
+EOF
+
     # Create X session startup script to disable DPMS
     install -d ${D}${sysconfdir}/X11/Xsession.d
     cat > ${D}${sysconfdir}/X11/Xsession.d/99-disable-dpms << 'EOF'
@@ -56,6 +89,17 @@ xset s off
 xset s noblank
 EOF
     chmod +x ${D}${sysconfdir}/X11/Xsession.d/99-disable-dpms
+
+    # Prevent xfce4-screensaver from starting automatically
+    install -d ${D}${sysconfdir}/xdg/autostart
+    cat > ${D}${sysconfdir}/xdg/autostart/xfce4-screensaver.desktop << 'EOF'
+[Desktop Entry]
+Type=Application
+Name=XFCE Screensaver
+Exec=xfce4-screensaver
+OnlyShowIn=XFCE;
+Hidden=true
+EOF
 
     # Create XFCE power manager default configuration
     install -d ${D}${sysconfdir}/xdg/xfce4/xfconf/xfce-perchannel-xml
@@ -102,5 +146,6 @@ FILES:${PN} += " \
     ${sysconfdir}/X11/Xsession.d/99-disable-dpms \
     ${sysconfdir}/X11/Xsession.d/98-fix-notification-area \
     ${sysconfdir}/xdg/xfce4/xfconf/xfce-perchannel-xml/xfce4-power-manager.xml \
+    ${sysconfdir}/xdg/xfce4/xfconf/xfce-perchannel-xml/xfce4-desktop.xml \
 "
 
