@@ -1,0 +1,35 @@
+--- a/src/hal/drivers/mesa-hostmot2/hm2_eth.c
++++ b/src/hal/drivers/mesa-hostmot2/hm2_eth.c
+@@ -30,6 +30,8 @@
+ #include <spawn.h>
+ #include <sys/types.h>
+ #include <sys/wait.h>
++
++extern char **environ;
+ 
+ #include <rtapi_slab.h>
+ #include <rtapi_ctype.h>
+ #include <rtapi_list.h>
+ 
+--- a/src/hal/drivers/mesa-hostmot2/hm2_rpspi.c
++++ b/src/hal/drivers/mesa-hostmot2/hm2_rpspi.c
+@@ -33,6 +33,8 @@
+ #include <stdio.h>
+ #include <stdlib.h>
+ 
++extern char **environ;
+ 
+ #include <hal.h>
+ #include <rtapi.h>
+ #include <rtapi_app.h>
+ 
+--- a/src/hal/drivers/mesa-hostmot2/eshellf.c
++++ b/src/hal/drivers/mesa-hostmot2/eshellf.c
+@@ -24,6 +24,8 @@
+ #include <stdarg.h>
+ #include <errno.h>
+ #include <sys/wait.h>
+ 
++extern char **environ;
+
+ #include <rtapi.h>

@@ -1,9 +1,3 @@
-PACKAGECONFIG:append:pn-python3-native = " tk"
-
-python __anonymous() {
-    if (d.getVar('PN') or '') == 'python3-native':
-        d.setVarFlag('PACKAGECONFIG', 'tk', ',,tk-native')
-}
-
-DEPENDS:remove:pn-python3-native = "tk"
-DEPENDS:append:pn-python3-native = " tk-native"
+# 对 python3-native 禁用 tk，打破 tk <-> python3-native 循环依赖
+# （target 的 Python 仍可通过默认 PACKAGECONFIG 保留 tk，供 LinuxCNC 等使用）
+PACKAGECONFIG:remove:pn-python3-native = "tk"

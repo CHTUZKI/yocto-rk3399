@@ -15,10 +15,11 @@ SRC_URI[sha256sum] = "7ec9d18fb283d1f84a3a3eff3b7a72b09a10c9c006597b3fbabbb59584
 
 S = "${WORKDIR}/gtksourceview-${PV}"
 
+# 4.8.x meson does not have -Dintrospection; use -Dgir=false to disable GObject introspection
 EXTRA_OEMESON = " \
     -Dinstall_tests=false \
     -Dgtk_doc=false \
-    -Dintrospection=false \
+    -Dgir=false \
 "
 
 FILES:${PN} += " \

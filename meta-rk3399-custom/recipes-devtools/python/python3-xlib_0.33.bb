@@ -10,6 +10,9 @@ inherit pypi setuptools3
 
 PYPI_PACKAGE = "python-xlib"
 
+# setup_requires setuptools-scm; provide it so setuptools does not try to use pip at build time
+DEPENDS += "python3-setuptools-scm-native"
+
 RDEPENDS:${PN} = " \
     python3-six \
     python3-xml \

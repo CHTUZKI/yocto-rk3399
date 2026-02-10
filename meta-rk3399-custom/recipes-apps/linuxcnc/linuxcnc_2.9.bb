@@ -12,6 +12,9 @@ SECTION = "misc"
 # LinuxCNC source from GitHub - using 2.9 branch for stability
 SRC_URI = "git://github.com/LinuxCNC/linuxcnc.git;branch=2.9;protocol=https \
            file://linuxcnc.conf \
+           file://linuxcnc-rtapi-ioperm-return-int.patch \
+           file://linuxcnc-hm2-eth-sockaddr-cast.patch \
+           file://linuxcnc-fix-environ-decl.patch \
            "
 
 # Use AUTOREV for development, pin to specific commit for production
@@ -30,6 +33,9 @@ DEPENDS = " \
     autoconf-native \
     automake-native \
     intltool-native \
+    asciidoc-native \
+    docbook-xsl-stylesheets-native \
+    libxslt-native \
     boost \
     gtk+3 \
     gtk+ \
@@ -89,7 +95,21 @@ export PYTHON = "${PYTHON3}"
 
 do_configure() {
     cd ${S}/src
-    
+
+    if [ -f ${S}/src/configure.ac ]; then
+        if ! grep -q "skipped (cross-compile)" ${S}/src/configure.ac; then
+            perl -0777 -pi -e 's/(AC_MSG_CHECKING\(\[match between tk and Tkinter versions\]\)\n)/$1if test "\$cross_compiling" = yes; then\n    AC_MSG_RESULT([skipped (cross-compile), using Tcl \$TCL_VERSION \/ Tk \$TK_VERSION])\nelse\n\n/s; s/(AC_MSG_RESULT\(\[\$PYTHON_TK_VERSION\]\)\n)/$1\nfi\n/s' ${S}/src/configure.ac
+        fi
+    fi
+
+    if [ -f ${S}/docs/src/Submakefile ]; then
+        sed -i \
+            -e 's/^manpages: .*/manpages:/' \
+            -e '/^TARGETS \+= manpages$/d' \
+            -e '/^\$(DOC_DIR)\/man\/%: \$(DOC_DIR)\/src\/man\/%\.adoc$/,/^\t\$</c\$(DOC_DIR)\/man\/%: \$(DOC_DIR)\/src\/man\/%\.adoc\n\t@:' \
+            ${S}/docs/src/Submakefile
+    fi
+     
     # Run autogen to generate configure script
     ./autogen.sh
     
@@ -105,11 +125,27 @@ do_configure() {
         --host=${HOST_SYS} \
         --build=${BUILD_SYS} \
         PYTHON=${PYTHON}
+
+    if [ -f ${S}/src/Makefile.inc ]; then
+        sed -i \
+            -e "/^TCL_CFLAGS=/ s|-I/usr/include/tcl8\\.6|-I${RECIPE_SYSROOT}/usr/include/tcl8.6|g" \
+            -e "/^TCL_CFLAGS=/ s|-I/usr/include\b|-I${RECIPE_SYSROOT}/usr/include|g" \
+            -e "/^TCL_LIBS=/ s|-L/usr/lib\b|-L${RECIPE_SYSROOT}/usr/lib|g" \
+            ${S}/src/Makefile.inc
+    fi
+
+    if [ -f ${S}/src/Makefile ]; then
+        sed -i \
+            -e 's/\$(Q)ld -d -r/\$(Q)\$(LD) -d -r/' \
+            ${S}/src/Makefile
+    fi
 }
 
 do_compile() {
     cd ${S}/src
-    oe_runmake
+    oe_runmake \
+        "ULFLAGS=${ULFLAGS} -I${RECIPE_SYSROOT}/usr/include/tcl8.6 -I${RECIPE_SYSROOT}/usr/include" \
+        "RTFLAGS=${RTFLAGS} -I${S}/src/rtapi -I${S}/src/hal"
 }
 
 do_install() {

@@ -1,0 +1,21 @@
+--- a/src/hal/drivers/mesa-hostmot2/hm2_eth.c
++++ b/src/hal/drivers/mesa-hostmot2/hm2_eth.c
+@@ -531,4 +531,4 @@ static char* fetch_ifname(int sockfd, char *buf, size_t n) {
+ 
+     socklen_t addrlen = sizeof(srcaddr);
+-    int res = getsockname(sockfd, &srcaddr, &addrlen);
++    int res = getsockname(sockfd, (struct sockaddr *)&srcaddr, &addrlen);
+     if(res < 0) return NULL;
+@@ -593,11 +593,11 @@ static int install_iptables_board(int sockfd) {
+     struct sockaddr_in srcaddr, dstaddr;
+     char srchost[16], dsthost[16]; // enough for 255.255.255.255\0
+ 
+     socklen_t addrlen = sizeof(srcaddr);
+-    int res = getsockname(sockfd, &srcaddr, &addrlen);
++    int res = getsockname(sockfd, (struct sockaddr *)&srcaddr, &addrlen);
+     if(res < 0) return -errno;
+ 
+     addrlen = sizeof(dstaddr);
+-    res = getpeername(sockfd, &dstaddr, &addrlen);
++    res = getpeername(sockfd, (struct sockaddr *)&dstaddr, &addrlen);
+     if(res < 0) return -errno;

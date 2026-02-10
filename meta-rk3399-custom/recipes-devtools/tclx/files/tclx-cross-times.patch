@@ -1,0 +1,11 @@
+--- a/configure.in
++++ b/configure.in
+@@ -206,7 +206,7 @@
+ ], [AC_MSG_RESULT(elapsed real time)],
+        [AC_MSG_RESULT(a status)
+     	AC_DEFINE(TIMES_RETS_STATUS)],
+-       [AC_MSG_ERROR(cross-compiling not supported)])
++       [AC_MSG_RESULT(elapsed real time)])
+     
+     #-------------------------------------------------------------------------
+     # Check for missing typedefs.
