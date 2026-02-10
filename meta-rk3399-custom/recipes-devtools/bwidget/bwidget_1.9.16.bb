@@ -3,17 +3,13 @@ DESCRIPTION = "BWidget is a set of native Tk widgets using Tk 8.x built-in \
 megawidget support. This includes new widgets like: ComboBox, NoteBook, \
 Tree, ListBox, PagesManager, etc."
 HOMEPAGE = "https://sourceforge.net/projects/tcllib/"
-LICENSE = "Tcl"
-LIC_FILES_CHKSUM = "file://LICENSE.txt;md5=fc3c33c5602cb7e66d08f6a41d2869eb"
+LICENSE = "CLOSED"
+LIC_FILES_CHKSUM = "file://LICENSE.txt;md5=217cb59420bb59460ca5e3c8508fb361"
 
-SRC_URI = "${SOURCEFORGE_MIRROR}/tcllib/bwidget-${PV}.tar.gz"
-SRC_URI[sha256sum] = "bwidget-${PV}.tar.gz"
+SRC_URI = "file://bwidget-1.9.16.tar.gz"
+SRC_URI[sha256sum] = "2e4ff62090674df620d634cfff11846deefdb2867cdac5f2e7417e28a06ddffa"
 
-# Fallback to GitHub mirror if SourceForge is unavailable
-SRC_URI = "https://github.com/tcltk/bwidget/archive/refs/tags/bwidget-${PV}.tar.gz"
-SRC_URI[sha256sum] = "skip"
-
-S = "${WORKDIR}/bwidget-bwidget-${PV}"
+S = "${WORKDIR}/bwidget"
 
 DEPENDS = "tcl tk"
 RDEPENDS:${PN} = "tcl tk"
@@ -29,6 +25,7 @@ do_compile() {
 do_install() {
     install -d ${D}${libdir}/tcltk/bwidget${PV}
     cp -r ${S}/* ${D}${libdir}/tcltk/bwidget${PV}/
+    rm -rf ${D}${libdir}/tcltk/bwidget${PV}/demo
     # Create pkgIndex.tcl if not exists
     if [ ! -f ${D}${libdir}/tcltk/bwidget${PV}/pkgIndex.tcl ]; then
         echo "package ifneeded BWidget ${PV} [list source [file join \$dir bwidget.tcl]]" > ${D}${libdir}/tcltk/bwidget${PV}/pkgIndex.tcl

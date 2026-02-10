@@ -35,11 +35,6 @@ IMAGE_INSTALL += " \
     packagegroup-armbian-desktop-xfce \
 "
 
-# Remote Desktop - NoMachine
-IMAGE_INSTALL += " \
-    nomachine \
-"
-
 # LinuxCNC - CNC Machine Controller
 # LinuxCNC is a free, open source CNC controller that can drive milling machines,
 # lathes, 3D printers, laser cutters, plasma cutters, robot arms, and more.

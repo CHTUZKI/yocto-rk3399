@@ -23,11 +23,6 @@ IMAGE_INSTALL = " \
     ${CORE_IMAGE_EXTRA_INSTALL} \
 "
 
-# Remote Desktop - NoMachine
-IMAGE_INSTALL += " \
-    nomachine \
-"
-
 # Bootloader
 IMAGE_INSTALL += " \
     u-boot-rockchip \

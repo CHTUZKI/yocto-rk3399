@@ -8,16 +8,17 @@ LIC_FILES_CHKSUM = "file://COPYING;md5=fbc093901857fcd118f065f900982c24"
 
 DEPENDS = "gtk+3 libxml2 glib-2.0 pango cairo"
 
-inherit gnomebase gettext gobject-introspection meson pkgconfig
+inherit gnomebase gettext meson pkgconfig
 
 SRC_URI = "https://download.gnome.org/sources/gtksourceview/4.8/gtksourceview-${PV}.tar.xz"
-SRC_URI[sha256sum] = "7ec9d18fb283d1f84a3a3eff3b7a72b09a10c9c006597b3fbabbb5958420a3d3"
+SRC_URI[sha256sum] = "7ec9d18fb283d1f84a3a3eff3b7a72b09a10c9c006597b3fbabbb5958420a87d"
 
 S = "${WORKDIR}/gtksourceview-${PV}"
 
 EXTRA_OEMESON = " \
     -Dinstall_tests=false \
     -Dgtk_doc=false \
+    -Dintrospection=false \
 "
 
 FILES:${PN} += " \

@@ -1,18 +1,699 @@
-Initialising tasks: 100% |#####################################################################| Time: 0:00:06
-Sstate summary: Wanted 10 Local 0 Mirrors 0 Missed 10 Current 3925 (0% match, 99% complete)
-Removing 6 stale sstate objects for arch armv8a: 100% |########################################| Time: 0:00:00
-Removing 1 stale sstate objects for arch rk3399_firefly: 100% |################################| Time: 0:00:00
-NOTE: Executing Tasks
-ERROR: nomachine-9.3.7-r0 do_unpack: ExecutionError('/home/xuning/yocto-rk3399/build/tmp/work/armv8a-poky-linux/nomachine/9.3.7-r0/temp/run.do_unpack.438113', 127, None, None)
-ERROR: Logfile of failure stored in: /home/xuning/yocto-rk3399/build/tmp/work/armv8a-poky-linux/nomachine/9.3.7-r0/temp/log.do_unpack.438113
-Log data follows:
-| DEBUG: Executing shell function do_unpack
-| WARNING: exit code 127 from a shell command.
-| /home/xuning/yocto-rk3399/build/tmp/work/armv8a-poky-linux/nomachine/9.3.7-r0/temp/run.do_unpack.438113: 143: base_do_unpack: not found
-ERROR: Task (/home/xuning/yocto-rk3399/meta-rk3399-custom/recipes-extended/nomachine/nomachine_9.3.7.bb:do_unpack) failed with exit code '1'
-NOTE: Tasks Summary: Attempted 9155 tasks of which 9145 didn't need to be rerun and 1 failed.
+xuning@DESKTOP-176A4AI:~$ cd /home/xuning/yocto-rk3399
+source poky/oe-init-build-env build
+bitbake --kill-server || true
 
-Summary: 1 task failed:
-  /home/xuning/yocto-rk3399/meta-rk3399-custom/recipes-extended/nomachine/nomachine_9.3.7.bb:do_unpack
-Summary: There was 1 ERROR message, returning a non-zero exit code.
-xuning@DESKTOP-2PRECMT:~/yocto-rk3399/build$
+### Shell environment set up for builds. ###
+
+You can now run 'bitbake <target>'
+
+Common targets are:
+    core-image-minimal
+    core-image-full-cmdline
+    core-image-sato
+    core-image-weston
+    meta-toolchain
+    meta-ide-support
+
+You can also run generated qemu images with a command like 'runqemu qemux86'
+
+Other commonly useful commands are:
+ - 'devtool' and 'recipetool' handle common recipe tasks
+ - 'bitbake-layers' handles common layer tasks
+ - 'oe-pkgdata-util' handles common target package tasks
+NOTE: bitbake server is not running.
+xuning@DESKTOP-176A4AI:~/yocto-rk3399/build$ bitbake tk-native -c cleansstate
+bitbake tk-native -c configure -f -v
+Loading cache: 100% |########################################################| Time: 0:00:00
+Loaded 4129 entries from dependency cache.
+Parsing recipes: 100% |######################################################| Time: 0:00:01
+Parsing of 2704 .bb files complete (2703 cached, 1 parsed). 4130 targets, 109 skipped, 0 masked, 0 errors.
+NOTE: Resolving any missing task queue dependencies
+
+Build Configuration:
+BB_VERSION           = "2.0.0"
+BUILD_SYS            = "x86_64-linux"
+NATIVELSBSTRING      = "universal"
+TARGET_SYS           = "aarch64-poky-linux"
+MACHINE              = "rk3399-firefly"
+DISTRO               = "poky"
+DISTRO_VERSION       = "4.0.32"
+TUNE_FEATURES        = "aarch64"
+TARGET_FPU           = ""
+meta
+meta-poky
+meta-yocto-bsp       = "HEAD:2c05660b21c7cc1082aeac8b75d8a2d82e249f63"
+meta-rk3399-custom   = "LinuxCNC:cba85e1086d58b4c3eb00f9de7413c747db6ebb3"
+meta-oe
+meta-python
+meta-networking
+meta-multimedia
+meta-xfce
+meta-gnome           = "HEAD:97d4be2839754dadfc326c21948472c2fc2985ce"
+
+Initialising tasks: 100% |###################################################| Time: 0:00:01
+Sstate summary: Wanted 0 Local 0 Mirrors 0 Missed 0 Current 0 (0% match, 0% complete)
+NOTE: No setscene tasks
+NOTE: Executing Tasks
+NOTE: Tasks Summary: Attempted 2 tasks of which 0 didn't need to be rerun and all succeeded.
+Loading cache: 100% |########################################################| Time: 0:00:00
+Loaded 4129 entries from dependency cache.
+Parsing recipes: 100% |######################################################| Time: 0:00:01
+Parsing of 2704 .bb files complete (2703 cached, 1 parsed). 4130 targets, 109 skipped, 0 masked, 0 errors.
+NOTE: Resolving any missing task queue dependencies
+NOTE: selecting pkgconfig-native to satisfy pkgconfig-native due to PREFERRED_PROVIDERS
+NOTE: selecting openssl-native to satisfy openssl-native due to PREFERRED_PROVIDERS
+NOTE: selecting binutils-cross-aarch64 to satisfy virtual/aarch64-poky-linux-binutils due to PREFERRED_PROVIDERS
+NOTE: selecting pseudo-native to satisfy virtual/fakeroot-native due to PREFERRED_PROVIDERS
+NOTE: selecting glibc to satisfy virtual/libc due to PREFERRED_PROVIDERS
+NOTE: selecting gcc-cross-aarch64 to satisfy virtual/aarch64-poky-linux-gcc due to PREFERRED_PROVIDERS
+NOTE: selecting libx11 to satisfy virtual/libx11 due to PREFERRED_PROVIDERS
+NOTE: selecting gcc-runtime to satisfy virtual/aarch64-poky-linux-compilerlibs due to PREFERRED_PROVIDERS
+NOTE: selecting libgcc to satisfy runtime libgcc due to PREFERRED_PROVIDER_libgcc = libgcc
+NOTE: selecting linux-libc-headers to satisfy runtime linux-libc-headers-dev due to PREFERRED_PROVIDER_linux-libc-headers = linux-libc-headers
+NOTE: selecting glibc to satisfy runtime ldconfig due to PREFERRED_PROVIDER_virtual/libc = glibc
+NOTE: selecting glibc to satisfy runtime glibc-dev due to PREFERRED_PROVIDER_virtual/libc = glibc
+NOTE: selecting glibc to satisfy runtime glibc-utils due to PREFERRED_PROVIDER_virtual/libc = glibc
+NOTE: selecting libx11 to satisfy runtime libx11 due to PREFERRED_PROVIDER_virtual/libx11 = libx11
+NOTE: selecting libx11 to satisfy runtime libx11-dev due to PREFERRED_PROVIDER_virtual/libx11 = libx11
+NOTE: selecting make to satisfy runtime make due to PREFERRED_PROVIDER_virtual/make = make
+NOTE: selecting opkg-utils-native to satisfy virtual/update-alternatives-native due to PREFERRED_PROVIDERS
+NOTE: selecting linux-libc-headers to satisfy linux-libc-headers due to PREFERRED_PROVIDERS
+NOTE: selecting gcc-cross-aarch64 to satisfy virtual/aarch64-poky-linux-g++ due to PREFERRED_PROVIDERS
+NOTE: selecting libgcc to satisfy libgcc due to PREFERRED_PROVIDERS
+NOTE: selecting make to satisfy runtime make-dev due to PREFERRED_PROVIDER_virtual/make = make
+NOTE: selecting linux-rockchip to satisfy runtime kernel-module-sd-mod due to PREFERRED_PROVIDER_virtual/kernel = linux-rockchip
+NOTE: selecting linux-rockchip to satisfy runtime kernel-module-loop due to PREFERRED_PROVIDER_virtual/kernel = linux-rockchip
+NOTE: selecting linux-rockchip to satisfy runtime kernel-module-scsi-debug due to PREFERRED_PROVIDER_virtual/kernel = linux-rockchip
+NOTE: selecting opkg-utils to satisfy virtual/update-alternatives due to PREFERRED_PROVIDERS
+NOTE: selecting libxcrypt to satisfy virtual/crypt due to PREFERRED_PROVIDERS
+NOTE: selecting glibc to satisfy virtual/libintl due to PREFERRED_PROVIDERS
+NOTE: selecting pigz-native to satisfy gzip-native due to PREFERRED_PROVIDERS
+NOTE: selecting linux-rockchip to satisfy virtual/kernel due to PREFERRED_PROVIDERS
+NOTE: selecting systemd to satisfy udev due to PREFERRED_PROVIDERS
+NOTE: selecting openssl to satisfy openssl due to PREFERRED_PROVIDERS
+NOTE: selecting glibc to satisfy virtual/libiconv due to PREFERRED_PROVIDERS
+NOTE: selecting linux-rockchip to satisfy runtime kernel-image-image due to PREFERRED_PROVIDER_virtual/kernel = linux-rockchip
+NOTE: selecting linux-rockchip to satisfy runtime kernel-base due to PREFERRED_PROVIDER_virtual/kernel = linux-rockchip
+NOTE: selecting linux-rockchip to satisfy runtime kernel-module-raid10 due to PREFERRED_PROVIDER_virtual/kernel = linux-rockchip
+NOTE: selecting linux-rockchip to satisfy runtime kernel-module-linear due to PREFERRED_PROVIDER_virtual/kernel = linux-rockchip
+NOTE: selecting linux-rockchip to satisfy runtime kernel-module-raid1 due to PREFERRED_PROVIDER_virtual/kernel = linux-rockchip
+NOTE: selecting linux-rockchip to satisfy runtime kernel-module-raid0 due to PREFERRED_PROVIDER_virtual/kernel = linux-rockchip
+NOTE: selecting linux-rockchip to satisfy runtime kernel-module-raid456 due to PREFERRED_PROVIDER_virtual/kernel = linux-rockchip
+NOTE: selecting glibc-locale to satisfy runtime glibc-gconv-big5hkscs due to PREFERRED_PROVIDER_virtual/libc-locale = glibc-locale
+NOTE: selecting glibc-locale to satisfy runtime locale-base-zh-hk.big5-hkscs due to PREFERRED_PROVIDER_virtual/libc-locale = glibc-locale
+NOTE: selecting glibc-locale to satisfy runtime glibc-gconv-iso8859-1 due to PREFERRED_PROVIDER_virtual/libc-locale = glibc-locale
+NOTE: selecting glibc-locale to satisfy runtime locale-base-fr-fr.iso-8859-1 due to PREFERRED_PROVIDER_virtual/libc-locale = glibc-locale
+NOTE: selecting glibc-locale to satisfy runtime locale-base-de-de due to PREFERRED_PROVIDER_virtual/libc-locale = glibc-locale
+NOTE: selecting glibc-locale to satisfy runtime locale-base-fr-fr due to PREFERRED_PROVIDER_virtual/libc-locale = glibc-locale
+NOTE: selecting glibc-locale to satisfy runtime locale-base-en-us due to PREFERRED_PROVIDER_virtual/libc-locale = glibc-locale
+NOTE: selecting glibc-locale to satisfy runtime locale-base-el-gr.iso-8859-7 due to PREFERRED_PROVIDER_virtual/libc-locale = glibc-locale
+NOTE: selecting glibc-locale to satisfy runtime locale-base-ru-ru due to PREFERRED_PROVIDER_virtual/libc-locale = glibc-locale
+NOTE: selecting opkg-utils to satisfy runtime update-alternatives-opkg due to PREFERRED_PROVIDER_virtual/update-alternatives = opkg-utils
+NOTE: selecting libxcrypt to satisfy runtime libxcrypt-dev due to PREFERRED_PROVIDER_virtual/crypt = libxcrypt
+NOTE: selecting libxcrypt to satisfy runtime libxcrypt due to PREFERRED_PROVIDER_virtual/crypt = libxcrypt
+NOTE: selecting glibc-locale to satisfy runtime glibc-charmap-iso-8859-1 due to PREFERRED_PROVIDER_virtual/libc-locale = glibc-locale
+NOTE: selecting glibc-locale to satisfy runtime glibc-gconv-koi8-r due to PREFERRED_PROVIDER_virtual/libc-locale = glibc-locale
+NOTE: selecting glibc-locale to satisfy runtime glibc-charmap-iso-8859-9 due to PREFERRED_PROVIDER_virtual/libc-locale = glibc-locale
+NOTE: selecting glibc-locale to satisfy runtime glibc-gconv-iso8859-9 due to PREFERRED_PROVIDER_virtual/libc-locale = glibc-locale
+NOTE: selecting gettext to satisfy runtime gettext-dev due to PREFERRED_PROVIDER_virtual/gettext = gettext
+NOTE: selecting glibc-locale to satisfy runtime glibc-gconv-cp1251 due to PREFERRED_PROVIDER_virtual/libc-locale = glibc-locale
+NOTE: selecting glibc-locale to satisfy runtime glibc-gconv-euc-kr due to PREFERRED_PROVIDER_virtual/libc-locale = glibc-locale
+NOTE: selecting glibc-locale to satisfy runtime glibc-charmap-iso-8859-2 due to PREFERRED_PROVIDER_virtual/libc-locale = glibc-locale
+NOTE: selecting gettext to satisfy runtime gettext due to PREFERRED_PROVIDER_virtual/gettext = gettext
+NOTE: selecting glibc-locale to satisfy runtime glibc-charmap-koi8-r due to PREFERRED_PROVIDER_virtual/libc-locale = glibc-locale
+NOTE: selecting glibc-locale to satisfy runtime locale-base-de-de.iso-8859-1 due to PREFERRED_PROVIDER_virtual/libc-locale = glibc-locale
+NOTE: selecting glibc-locale to satisfy runtime glibc-gconv-euc-jp due to PREFERRED_PROVIDER_virtual/libc-locale = glibc-locale
+NOTE: selecting glibc-locale to satisfy runtime glibc-charmap-cp1251 due to PREFERRED_PROVIDER_virtual/libc-locale = glibc-locale
+NOTE: selecting glibc-locale to satisfy runtime glibc-gconv-iso8859-2 due to PREFERRED_PROVIDER_virtual/libc-locale = glibc-locale
+NOTE: selecting glibc-locale to satisfy runtime glibc-gconv-big5 due to PREFERRED_PROVIDER_virtual/libc-locale = glibc-locale
+NOTE: selecting glibc-locale to satisfy runtime glibc-charmap-big5 due to PREFERRED_PROVIDER_virtual/libc-locale = glibc-locale
+NOTE: selecting glibc-locale to satisfy runtime glibc-charmap-euc-kr due to PREFERRED_PROVIDER_virtual/libc-locale = glibc-locale
+NOTE: selecting glibc-locale to satisfy runtime glibc-charmap-euc-jp due to PREFERRED_PROVIDER_virtual/libc-locale = glibc-locale
+NOTE: selecting glibc-locale to satisfy runtime locale-base-tr-tr.iso-8859-9 due to PREFERRED_PROVIDER_virtual/libc-locale = glibc-locale
+NOTE: selecting openssl to satisfy runtime openssl due to PREFERRED_PROVIDER_openssl = openssl
+NOTE: selecting systemd to satisfy runtime systemd-journal-remote due to PREFERRED_PROVIDER_udev = systemd
+NOTE: selecting linux-rockchip to satisfy runtime kernel-module-dm-mod due to PREFERRED_PROVIDER_virtual/kernel = linux-rockchip
+NOTE: selecting systemd to satisfy runtime systemd-extra-utils due to PREFERRED_PROVIDER_udev = systemd
+NOTE: selecting linux-rockchip to satisfy runtime kernel-module-unix due to PREFERRED_PROVIDER_virtual/kernel = linux-rockchip
+NOTE: selecting linux-rockchip to satisfy runtime kernel-module-tun due to PREFERRED_PROVIDER_virtual/kernel = linux-rockchip
+NOTE: selecting systemd to satisfy runtime systemd due to PREFERRED_PROVIDER_udev = systemd
+NOTE: selecting systemd to satisfy runtime systemd-journal-upload due to PREFERRED_PROVIDER_udev = systemd
+NOTE: selecting linux-rockchip to satisfy runtime kernel-module-binfmt-misc due to PREFERRED_PROVIDER_virtual/kernel = linux-rockchip
+NOTE: selecting systemd to satisfy runtime systemd-udev-rules due to PREFERRED_PROVIDER_udev = systemd
+NOTE: selecting systemd to satisfy runtime udev due to PREFERRED_PROVIDER_udev = systemd
+NOTE: selecting systemd to satisfy runtime systemd-vconsole-setup due to PREFERRED_PROVIDER_udev = systemd
+NOTE: selecting systemd to satisfy runtime libnss-myhostname due to PREFERRED_PROVIDER_udev = systemd
+NOTE: selecting linux-rockchip to satisfy runtime kernel-module-ipv6 due to PREFERRED_PROVIDER_virtual/kernel = linux-rockchip
+NOTE: selecting linux-rockchip to satisfy runtime kernel-module-autofs4 due to PREFERRED_PROVIDER_virtual/kernel = linux-rockchip
+NOTE: selecting systemd to satisfy runtime systemd-dev due to PREFERRED_PROVIDER_udev = systemd
+NOTE: selecting systemd to satisfy runtime systemd-journal-gatewayd due to PREFERRED_PROVIDER_udev = systemd
+NOTE: selecting systemd to satisfy runtime udev-hwdb due to PREFERRED_PROVIDER_udev = systemd
+NOTE: selecting linux-rockchip to satisfy runtime kernel-module-sch-fq-codel due to PREFERRED_PROVIDER_virtual/kernel = linux-rockchip
+NOTE: selecting glibc to satisfy runtime glibc-dbg due to PREFERRED_PROVIDER_virtual/libc = glibc
+NOTE: selecting libgcc to satisfy runtime libgcc-dev due to PREFERRED_PROVIDER_libgcc = libgcc
+NOTE: selecting linux-rockchip to satisfy runtime kernel-module-nf-nat due to PREFERRED_PROVIDER_virtual/kernel = linux-rockchip
+NOTE: selecting linux-rockchip to satisfy runtime kernel-module-ipt-masquerade due to PREFERRED_PROVIDER_virtual/kernel = linux-rockchip
+NOTE: selecting linux-rockchip to satisfy runtime kernel-module-ip6table-filter due to PREFERRED_PROVIDER_virtual/kernel = linux-rockchip
+NOTE: selecting linux-rockchip to satisfy runtime kernel-module-ip6-tables due to PREFERRED_PROVIDER_virtual/kernel = linux-rockchip
+NOTE: selecting linux-rockchip to satisfy runtime kernel-module-nf-conntrack-ipv4 due to PREFERRED_PROVIDER_virtual/kernel = linux-rockchip
+NOTE: selecting linux-rockchip to satisfy runtime kernel-module-nf-conntrack due to PREFERRED_PROVIDER_virtual/kernel = linux-rockchip
+NOTE: selecting linux-rockchip to satisfy runtime kernel-module-iptable-filter due to PREFERRED_PROVIDER_virtual/kernel = linux-rockchip
+NOTE: selecting linux-rockchip to satisfy runtime kernel-module-x-tables due to PREFERRED_PROVIDER_virtual/kernel = linux-rockchip
+NOTE: selecting linux-rockchip to satisfy runtime kernel-module-iptable-nat due to PREFERRED_PROVIDER_virtual/kernel = linux-rockchip
+NOTE: selecting linux-rockchip to satisfy runtime kernel-module-ip-tables due to PREFERRED_PROVIDER_virtual/kernel = linux-rockchip
+NOTE: selecting linux-rockchip to satisfy runtime kernel-module-nf-defrag-ipv4 due to PREFERRED_PROVIDER_virtual/kernel = linux-rockchip
+NOTE: selecting openssl to satisfy runtime openssl-conf due to PREFERRED_PROVIDER_openssl = openssl
+NOTE: selecting openssl to satisfy runtime openssl-bin due to PREFERRED_PROVIDER_openssl = openssl
+NOTE: selecting openssl to satisfy runtime openssl-ossl-module-legacy due to PREFERRED_PROVIDER_openssl = openssl
+NOTE: selecting openssl to satisfy runtime openssl-dev due to PREFERRED_PROVIDER_openssl = openssl
+NOTE: selecting glibc-locale to satisfy runtime locale-base-en-us.iso-8859-1 due to PREFERRED_PROVIDER_virtual/libc-locale = glibc-locale
+NOTE: selecting gcc-runtime to satisfy runtime libg2c due to PREFERRED_PROVIDER_virtual/aarch64-poky-linux-compilerlibs = gcc-runtime
+NOTE: selecting gcc-runtime to satisfy runtime libatomic-dev due to PREFERRED_PROVIDER_virtual/aarch64-poky-linux-compilerlibs = gcc-runtime
+NOTE: selecting gcc-runtime to satisfy runtime libstdc++ due to PREFERRED_PROVIDER_virtual/aarch64-poky-linux-compilerlibs = gcc-runtime
+NOTE: selecting gcc-runtime to satisfy runtime libssp due to PREFERRED_PROVIDER_virtual/aarch64-poky-linux-compilerlibs = gcc-runtime
+NOTE: selecting gcc-runtime to satisfy runtime libg2c-dev due to PREFERRED_PROVIDER_virtual/aarch64-poky-linux-compilerlibs = gcc-runtime
+NOTE: selecting gcc-runtime to satisfy runtime libquadmath due to PREFERRED_PROVIDER_virtual/aarch64-poky-linux-compilerlibs = gcc-runtime
+NOTE: selecting gcc-runtime to satisfy runtime libssp-dev due to PREFERRED_PROVIDER_virtual/aarch64-poky-linux-compilerlibs = gcc-runtime
+NOTE: selecting gcc-runtime to satisfy runtime libatomic due to PREFERRED_PROVIDER_virtual/aarch64-poky-linux-compilerlibs = gcc-runtime
+NOTE: selecting gcc-runtime to satisfy runtime libquadmath-dev due to PREFERRED_PROVIDER_virtual/aarch64-poky-linux-compilerlibs = gcc-runtime
+NOTE: selecting gcc-runtime to satisfy runtime libstdc++-dev due to PREFERRED_PROVIDER_virtual/aarch64-poky-linux-compilerlibs = gcc-runtime
+NOTE: selecting glibc-locale to satisfy runtime glibc-charmap-utf-8 due to PREFERRED_PROVIDER_virtual/libc-locale = glibc-locale
+NOTE: selecting glibc-locale to satisfy runtime glibc-gconv-cp1255 due to PREFERRED_PROVIDER_virtual/libc-locale = glibc-locale
+NOTE: selecting glibc-locale to satisfy runtime locale-base-es-es due to PREFERRED_PROVIDER_virtual/libc-locale = glibc-locale
+NOTE: selecting glibc-locale to satisfy runtime glibc-charmap-invariant due to PREFERRED_PROVIDER_virtual/libc-locale = glibc-locale
+NOTE: selecting glibc-locale to satisfy runtime locale-base-fa-ir due to PREFERRED_PROVIDER_virtual/libc-locale = glibc-locale
+NOTE: selecting glibc-locale to satisfy runtime glibc-localedata-translit-cjk-variants due to PREFERRED_PROVIDER_virtual/libc-locale = glibc-locale
+NOTE: selecting glibc-locale to satisfy runtime glibc-gconv-utf-16 due to PREFERRED_PROVIDER_virtual/libc-locale = glibc-locale
+NOTE: selecting glibc-locale to satisfy runtime glibc-gconv-utf-32 due to PREFERRED_PROVIDER_virtual/libc-locale = glibc-locale
+NOTE: selecting glibc-locale to satisfy runtime locale-base-pl-pl due to PREFERRED_PROVIDER_virtual/libc-locale = glibc-locale
+NOTE: selecting glibc-locale to satisfy runtime glibc-gconv-utf-7 due to PREFERRED_PROVIDER_virtual/libc-locale = glibc-locale
+NOTE: selecting glibc-locale to satisfy runtime locale-base-ja-jp.euc-jp due to PREFERRED_PROVIDER_virtual/libc-locale = glibc-locale
+NOTE: selecting glibc-locale to satisfy runtime locale-base-tr-tr due to PREFERRED_PROVIDER_virtual/libc-locale = glibc-locale
+NOTE: selecting glibc-locale to satisfy runtime locale-base-lt-lt due to PREFERRED_PROVIDER_virtual/libc-locale = glibc-locale
+NOTE: selecting glibc-locale to satisfy runtime glibc-charmap-cp1255 due to PREFERRED_PROVIDER_virtual/libc-locale = glibc-locale
+NOTE: selecting glibc-locale to satisfy runtime locale-base-en-gb due to PREFERRED_PROVIDER_virtual/libc-locale = glibc-locale
+NOTE: selecting glibc-locale to satisfy runtime glibc-gconv-iso8859-15 due to PREFERRED_PROVIDER_virtual/libc-locale = glibc-locale
+NOTE: selecting glibc-locale to satisfy runtime locale-base-el-gr due to PREFERRED_PROVIDER_virtual/libc-locale = glibc-locale
+NOTE: selecting glibc-locale to satisfy runtime locale-base-pl-pl.iso-8859-2 due to PREFERRED_PROVIDER_virtual/libc-locale = glibc-locale
+NOTE: selecting glibc-locale to satisfy runtime locale-base-hr-hr due to PREFERRED_PROVIDER_virtual/libc-locale = glibc-locale
+NOTE: selecting glibc-locale to satisfy runtime glibc-gconv-ibm1141 due to PREFERRED_PROVIDER_virtual/libc-locale = glibc-locale
+NOTE: selecting glibc-locale to satisfy runtime glibc-gconv-ebcdic-us due to PREFERRED_PROVIDER_virtual/libc-locale = glibc-locale
+NOTE: selecting glibc-locale to satisfy runtime glibc-gconv-iso8859-5 due to PREFERRED_PROVIDER_virtual/libc-locale = glibc-locale
+NOTE: selecting initscripts to satisfy initd-functions due to PREFERRED_RPROVIDER
+NOTE: selecting libx11 to satisfy runtime libx11-locale due to PREFERRED_PROVIDER_virtual/libx11 = libx11
+NOTE: selecting mesa to satisfy virtual/libgl due to PREFERRED_PROVIDERS
+NOTE: selecting mesa to satisfy runtime libgles2-mesa-dev due to PREFERRED_PROVIDER_virtual/libgl = mesa
+NOTE: selecting mesa to satisfy runtime mesa-dev due to PREFERRED_PROVIDER_virtual/libgl = mesa
+NOTE: selecting mesa to satisfy runtime mesa-megadriver due to PREFERRED_PROVIDER_virtual/libgl = mesa
+NOTE: selecting mesa to satisfy runtime libgles3-mesa due to PREFERRED_PROVIDER_virtual/libgl = mesa
+
+Build Configuration:
+BB_VERSION           = "2.0.0"
+BUILD_SYS            = "x86_64-linux"
+NATIVELSBSTRING      = "universal"
+TARGET_SYS           = "aarch64-poky-linux"
+MACHINE              = "rk3399-firefly"
+DISTRO               = "poky"
+DISTRO_VERSION       = "4.0.32"
+TUNE_FEATURES        = "aarch64"
+TARGET_FPU           = ""
+meta
+meta-poky
+meta-yocto-bsp       = "HEAD:2c05660b21c7cc1082aeac8b75d8a2d82e249f63"
+meta-rk3399-custom   = "LinuxCNC:cba85e1086d58b4c3eb00f9de7413c747db6ebb3"
+meta-oe
+meta-python
+meta-networking
+meta-multimedia
+meta-xfce
+meta-gnome           = "HEAD:97d4be2839754dadfc326c21948472c2fc2985ce"
+
+NOTE: Marking Active Tasks#####################                              | ETA:  0:00:00
+NOTE: Pruned 6704 inactive tasks, 1118 left####                              | ETA:  0:00:00
+NOTE: Assign Weightings
+NOTE: Compute totals (have 0 endpoint(s))######                              | ETA:  0:00:00
+ERROR: 1118 unbuildable tasks were found.######                              | ETA:  0:00:00
+These are usually caused by circular dependencies and any circular dependency chains found will be printed below. Increase the debug level to see a list of unbuildable tasks.
+
+Identifying dependency loops (this may take a short while)...
+
+ERROR:
+Dependency loop #1 found:
+  Task /home/xuning/yocto-rk3399/meta-openembedded/meta-oe/recipes-devtools/tcltk/tk_8.6.10.bb:do_compile (dependent Tasks ['tk_8.6.10.bb:do_configure'])
+  Task /home/xuning/yocto-rk3399/meta-openembedded/meta-oe/recipes-devtools/tcltk/tk_8.6.10.bb:do_install (dependent Tasks ['tk_8.6.10.bb:do_compile', 'pseudo_git.bb:do_populate_sysroot'])
+  Task /home/xuning/yocto-rk3399/meta-openembedded/meta-oe/recipes-devtools/tcltk/tk_8.6.10.bb:do_populate_sysroot (dependent Tasks ['binutils-cross_2.38.bb:do_populate_sysroot', 'tk_8.6.10.bb:do_install'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/python/python3_3.10.19.bb:do_populate_sysroot (dependent Tasks ['tk_8.6.10.bb:do_populate_sysroot', 'tcl_8.6.11.bb:do_populate_sysroot', 'python3_3.10.19.bb:do_install'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/python/python3-installer_0.5.1.bb:do_prepare_recipe_sysroot (dependent Tasks ['python3-flit-core_3.7.1.bb:do_populate_sysroot', 'python3_3.10.19.bb:do_populate_sysroot', 'python3-installer_0.5.1.bb:do_fetch', 'unzip_6.0.bb:do_populate_sysroot'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/python/python3-installer_0.5.1.bb:do_configure (dependent Tasks ['python3-installer_0.5.1.bb:do_patch', 'python3-installer_0.5.1.bb:do_deploy_source_date_epoch', 'python3-installer_0.5.1.bb:do_prepare_recipe_sysroot'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/python/python3-installer_0.5.1.bb:do_compile (dependent Tasks ['python3-installer_0.5.1.bb:do_configure'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/python/python3-installer_0.5.1.bb:do_install (dependent Tasks ['python3-installer_0.5.1.bb:do_compile'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/python/python3-installer_0.5.1.bb:do_populate_sysroot (dependent Tasks ['python3-installer_0.5.1.bb:do_install'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/python/python3-wheel_0.37.1.bb:do_prepare_recipe_sysroot (dependent Tasks ['python3-flit-core_3.7.1.bb:do_populate_sysroot', 'python3-installer_0.5.1.bb:do_populate_sysroot', 'python3_3.10.19.bb:do_populate_sysroot', 'python3-wheel_0.37.1.bb:do_fetch'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/python/python3-wheel_0.37.1.bb:do_configure (dependent Tasks ['python3-wheel_0.37.1.bb:do_prepare_recipe_sysroot', 'python3-wheel_0.37.1.bb:do_deploy_source_date_epoch', 'python3-wheel_0.37.1.bb:do_patch'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/python/python3-wheel_0.37.1.bb:do_compile (dependent Tasks ['python3-wheel_0.37.1.bb:do_configure'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/python/python3-wheel_0.37.1.bb:do_install (dependent Tasks ['python3-wheel_0.37.1.bb:do_compile'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/python/python3-wheel_0.37.1.bb:do_populate_sysroot (dependent Tasks ['python3-wheel_0.37.1.bb:do_install'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/meson/meson_0.61.3.bb:do_prepare_recipe_sysroot (dependent Tasks ['python3_3.10.19.bb:do_populate_sysroot', 'meson_0.61.3.bb:do_fetch', 'python3-installer_0.5.1.bb:do_populate_sysroot', 'python3-setuptools_59.5.0.bb:do_populate_sysroot', 'python3-wheel_0.37.1.bb:do_populate_sysroot'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/meson/meson_0.61.3.bb:do_configure (dependent Tasks ['meson_0.61.3.bb:do_deploy_source_date_epoch', 'meson_0.61.3.bb:do_patch', 'meson_0.61.3.bb:do_prepare_recipe_sysroot'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/meson/meson_0.61.3.bb:do_compile (dependent Tasks ['meson_0.61.3.bb:do_configure'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/meson/meson_0.61.3.bb:do_install (dependent Tasks ['meson_0.61.3.bb:do_compile'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/meson/meson_0.61.3.bb:do_populate_sysroot (dependent Tasks ['meson_0.61.3.bb:do_install', 'ninja_1.10.2.bb:do_populate_sysroot', 'python3-setuptools_59.5.0.bb:do_populate_sysroot', 'python3_3.10.19.bb:do_populate_sysroot'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-proto/xorgproto_2021.5.bb:do_prepare_recipe_sysroot (dependent Tasks ['glibc_2.35.bb:do_populate_sysroot', 'python3_3.10.19.bb:do_populate_sysroot', 'gcc-runtime_11.5.bb:do_populate_sysroot', 'qemu-native_6.2.0.bb:do_populate_sysroot', 'meson_0.61.3.bb:do_populate_sysroot', 'xorgproto_2021.5.bb:do_fetch', 'gcc-cross_11.5.bb:do_populate_sysroot', 'ninja_1.10.2.bb:do_populate_sysroot', 'pseudo_git.bb:do_populate_sysroot'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-proto/xorgproto_2021.5.bb:do_configure (dependent Tasks ['xorgproto_2021.5.bb:do_prepare_recipe_sysroot', 'xorgproto_2021.5.bb:do_deploy_source_date_epoch', 'xorgproto_2021.5.bb:do_write_config', 'xorgproto_2021.5.bb:do_patch'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-proto/xorgproto_2021.5.bb:do_compile (dependent Tasks ['xorgproto_2021.5.bb:do_configure'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-proto/xorgproto_2021.5.bb:do_install (dependent Tasks ['xorgproto_2021.5.bb:do_compile', 'pseudo_git.bb:do_populate_sysroot'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-proto/xorgproto_2021.5.bb:do_populate_sysroot (dependent Tasks ['binutils-cross_2.38.bb:do_populate_sysroot', 'xorgproto_2021.5.bb:do_install'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libsm_1.2.3.bb:do_prepare_recipe_sysroot (dependent Tasks ['glibc_2.35.bb:do_populate_sysroot', 'libtool-native_2.4.7.bb:do_populate_sysroot', 'xorgproto_2021.5.bb:do_populate_sysroot', 'xtrans_1.4.0.bb:do_populate_sysroot', 'libsm_1.2.3.bb:do_fetch', 'pseudo_git.bb:do_populate_sysroot', 'gcc-runtime_11.5.bb:do_populate_sysroot', 'automake_1.16.5.bb:do_populate_sysroot', 'autoconf_2.71.bb:do_populate_sysroot', 'util-macros_1.19.3.bb:do_populate_sysroot', 'libtool-cross_2.4.7.bb:do_populate_sysroot', 'pkgconfig_git.bb:do_populate_sysroot', 'gcc-cross_11.5.bb:do_populate_sysroot', 'libice_1.0.10.bb:do_populate_sysroot'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libsm_1.2.3.bb:do_configure (dependent Tasks ['libsm_1.2.3.bb:do_patch', 'libsm_1.2.3.bb:do_deploy_source_date_epoch', 'libsm_1.2.3.bb:do_prepare_recipe_sysroot'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libsm_1.2.3.bb:do_compile (dependent Tasks ['libsm_1.2.3.bb:do_configure'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libsm_1.2.3.bb:do_install (dependent Tasks ['libsm_1.2.3.bb:do_compile', 'pseudo_git.bb:do_populate_sysroot'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libsm_1.2.3.bb:do_populate_sysroot (dependent Tasks ['binutils-cross_2.38.bb:do_populate_sysroot', 'libsm_1.2.3.bb:do_install'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libxt_1.2.1.bb:do_prepare_recipe_sysroot (dependent Tasks ['glibc_2.35.bb:do_populate_sysroot', 'libtool-native_2.4.7.bb:do_populate_sysroot', 'xorgproto_2021.5.bb:do_populate_sysroot', 'util-linux_2.37.4.bb:do_populate_sysroot', 'libxt_1.2.1.bb:do_fetch', 'libxdmcp_1.1.3.bb:do_populate_sysroot', 'libxcb_1.14.bb:do_populate_sysroot', 'gcc-runtime_11.5.bb:do_populate_sysroot', 'automake_1.16.5.bb:do_populate_sysroot', 'libsm_1.2.3.bb:do_populate_sysroot', 'autoconf_2.71.bb:do_populate_sysroot', 'util-macros_1.19.3.bb:do_populate_sysroot', 'libtool-cross_2.4.7.bb:do_populate_sysroot', 'pkgconfig_git.bb:do_populate_sysroot', 'gcc-cross_11.5.bb:do_populate_sysroot', 'libx11_1.7.3.1.bb:do_populate_sysroot', 'pseudo_git.bb:do_populate_sysroot'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libxt_1.2.1.bb:do_configure (dependent Tasks ['libxt_1.2.1.bb:do_deploy_source_date_epoch', 'libxt_1.2.1.bb:do_prepare_recipe_sysroot', 'libxt_1.2.1.bb:do_patch'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libxt_1.2.1.bb:do_compile (dependent Tasks ['libxt_1.2.1.bb:do_configure'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libxt_1.2.1.bb:do_install (dependent Tasks ['libxt_1.2.1.bb:do_compile', 'pseudo_git.bb:do_populate_sysroot'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libxt_1.2.1.bb:do_populate_sysroot (dependent Tasks ['binutils-cross_2.38.bb:do_populate_sysroot', 'libxt_1.2.1.bb:do_install'])
+  Task /home/xuning/yocto-rk3399/meta-openembedded/meta-oe/recipes-devtools/tcltk/tk_8.6.10.bb:do_prepare_recipe_sysroot (dependent Tasks ['glibc_2.35.bb:do_populate_sysroot', 'tk_8.6.10.bb:do_fetch', 'libxft_2.3.4.bb:do_populate_sysroot', 'libtool-native_2.4.7.bb:do_populate_sysroot', 'gcc-runtime_11.5.bb:do_populate_sysroot', 'automake_1.16.5.bb:do_populate_sysroot', 'libxt_1.2.1.bb:do_populate_sysroot', 'autoconf_2.71.bb:do_populate_sysroot', 'tcl_8.6.11.bb:do_populate_sysroot', 'libtool-cross_2.4.7.bb:do_populate_sysroot', 'pkgconfig_git.bb:do_populate_sysroot', 'gcc-cross_11.5.bb:do_populate_sysroot', 'libx11_1.7.3.1.bb:do_populate_sysroot', 'pseudo_git.bb:do_populate_sysroot'])
+  Task /home/xuning/yocto-rk3399/meta-openembedded/meta-oe/recipes-devtools/tcltk/tk_8.6.10.bb:do_configure (dependent Tasks ['tk_8.6.10.bb:do_patch', 'tk_8.6.10.bb:do_prepare_recipe_sysroot', 'tk_8.6.10.bb:do_deploy_source_date_epoch'])
+
+Dependency loop #2 found:
+  Task /home/xuning/yocto-rk3399/meta-openembedded/meta-oe/recipes-devtools/tcltk/tk_8.6.10.bb:do_compile (dependent Tasks ['tk_8.6.10.bb:do_configure'])
+  Task /home/xuning/yocto-rk3399/meta-openembedded/meta-oe/recipes-devtools/tcltk/tk_8.6.10.bb:do_install (dependent Tasks ['tk_8.6.10.bb:do_compile', 'pseudo_git.bb:do_populate_sysroot'])
+  Task /home/xuning/yocto-rk3399/meta-openembedded/meta-oe/recipes-devtools/tcltk/tk_8.6.10.bb:do_populate_sysroot (dependent Tasks ['binutils-cross_2.38.bb:do_populate_sysroot', 'tk_8.6.10.bb:do_install'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/python/python3_3.10.19.bb:do_populate_sysroot (dependent Tasks ['tk_8.6.10.bb:do_populate_sysroot', 'tcl_8.6.11.bb:do_populate_sysroot', 'python3_3.10.19.bb:do_install'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/python/python3-installer_0.5.1.bb:do_prepare_recipe_sysroot (dependent Tasks ['python3-flit-core_3.7.1.bb:do_populate_sysroot', 'python3_3.10.19.bb:do_populate_sysroot', 'python3-installer_0.5.1.bb:do_fetch', 'unzip_6.0.bb:do_populate_sysroot'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/python/python3-installer_0.5.1.bb:do_configure (dependent Tasks ['python3-installer_0.5.1.bb:do_patch', 'python3-installer_0.5.1.bb:do_deploy_source_date_epoch', 'python3-installer_0.5.1.bb:do_prepare_recipe_sysroot'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/python/python3-installer_0.5.1.bb:do_compile (dependent Tasks ['python3-installer_0.5.1.bb:do_configure'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/python/python3-installer_0.5.1.bb:do_install (dependent Tasks ['python3-installer_0.5.1.bb:do_compile'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/python/python3-installer_0.5.1.bb:do_populate_sysroot (dependent Tasks ['python3-installer_0.5.1.bb:do_install'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/python/python3-wheel_0.37.1.bb:do_prepare_recipe_sysroot (dependent Tasks ['python3-flit-core_3.7.1.bb:do_populate_sysroot', 'python3-installer_0.5.1.bb:do_populate_sysroot', 'python3_3.10.19.bb:do_populate_sysroot', 'python3-wheel_0.37.1.bb:do_fetch'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/python/python3-wheel_0.37.1.bb:do_configure (dependent Tasks ['python3-wheel_0.37.1.bb:do_prepare_recipe_sysroot', 'python3-wheel_0.37.1.bb:do_deploy_source_date_epoch', 'python3-wheel_0.37.1.bb:do_patch'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/python/python3-wheel_0.37.1.bb:do_compile (dependent Tasks ['python3-wheel_0.37.1.bb:do_configure'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/python/python3-wheel_0.37.1.bb:do_install (dependent Tasks ['python3-wheel_0.37.1.bb:do_compile'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/python/python3-wheel_0.37.1.bb:do_populate_sysroot (dependent Tasks ['python3-wheel_0.37.1.bb:do_install'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/meson/meson_0.61.3.bb:do_prepare_recipe_sysroot (dependent Tasks ['python3_3.10.19.bb:do_populate_sysroot', 'meson_0.61.3.bb:do_fetch', 'python3-installer_0.5.1.bb:do_populate_sysroot', 'python3-setuptools_59.5.0.bb:do_populate_sysroot', 'python3-wheel_0.37.1.bb:do_populate_sysroot'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/meson/meson_0.61.3.bb:do_configure (dependent Tasks ['meson_0.61.3.bb:do_deploy_source_date_epoch', 'meson_0.61.3.bb:do_patch', 'meson_0.61.3.bb:do_prepare_recipe_sysroot'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/meson/meson_0.61.3.bb:do_compile (dependent Tasks ['meson_0.61.3.bb:do_configure'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/meson/meson_0.61.3.bb:do_install (dependent Tasks ['meson_0.61.3.bb:do_compile'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/meson/meson_0.61.3.bb:do_populate_sysroot (dependent Tasks ['meson_0.61.3.bb:do_install', 'ninja_1.10.2.bb:do_populate_sysroot', 'python3-setuptools_59.5.0.bb:do_populate_sysroot', 'python3_3.10.19.bb:do_populate_sysroot'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-proto/xorgproto_2021.5.bb:do_prepare_recipe_sysroot (dependent Tasks ['glibc_2.35.bb:do_populate_sysroot', 'python3_3.10.19.bb:do_populate_sysroot', 'gcc-runtime_11.5.bb:do_populate_sysroot', 'qemu-native_6.2.0.bb:do_populate_sysroot', 'meson_0.61.3.bb:do_populate_sysroot', 'xorgproto_2021.5.bb:do_fetch', 'gcc-cross_11.5.bb:do_populate_sysroot', 'ninja_1.10.2.bb:do_populate_sysroot', 'pseudo_git.bb:do_populate_sysroot'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-proto/xorgproto_2021.5.bb:do_configure (dependent Tasks ['xorgproto_2021.5.bb:do_prepare_recipe_sysroot', 'xorgproto_2021.5.bb:do_deploy_source_date_epoch', 'xorgproto_2021.5.bb:do_write_config', 'xorgproto_2021.5.bb:do_patch'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-proto/xorgproto_2021.5.bb:do_compile (dependent Tasks ['xorgproto_2021.5.bb:do_configure'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-proto/xorgproto_2021.5.bb:do_install (dependent Tasks ['xorgproto_2021.5.bb:do_compile', 'pseudo_git.bb:do_populate_sysroot'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-proto/xorgproto_2021.5.bb:do_populate_sysroot (dependent Tasks ['binutils-cross_2.38.bb:do_populate_sysroot', 'xorgproto_2021.5.bb:do_install'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libice_1.0.10.bb:do_prepare_recipe_sysroot (dependent Tasks ['glibc_2.35.bb:do_populate_sysroot', 'libtool-native_2.4.7.bb:do_populate_sysroot', 'xorgproto_2021.5.bb:do_populate_sysroot', 'libice_1.0.10.bb:do_fetch', 'xtrans_1.4.0.bb:do_populate_sysroot', 'gcc-runtime_11.5.bb:do_populate_sysroot', 'automake_1.16.5.bb:do_populate_sysroot', 'autoconf_2.71.bb:do_populate_sysroot', 'util-macros_1.19.3.bb:do_populate_sysroot', 'libtool-cross_2.4.7.bb:do_populate_sysroot', 'pkgconfig_git.bb:do_populate_sysroot', 'gcc-cross_11.5.bb:do_populate_sysroot', 'pseudo_git.bb:do_populate_sysroot'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libice_1.0.10.bb:do_configure (dependent Tasks ['libice_1.0.10.bb:do_prepare_recipe_sysroot', 'libice_1.0.10.bb:do_patch', 'libice_1.0.10.bb:do_deploy_source_date_epoch'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libice_1.0.10.bb:do_compile (dependent Tasks ['libice_1.0.10.bb:do_configure'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libice_1.0.10.bb:do_install (dependent Tasks ['libice_1.0.10.bb:do_compile', 'pseudo_git.bb:do_populate_sysroot'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libice_1.0.10.bb:do_populate_sysroot (dependent Tasks ['libice_1.0.10.bb:do_install', 'binutils-cross_2.38.bb:do_populate_sysroot'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libsm_1.2.3.bb:do_prepare_recipe_sysroot (dependent Tasks ['glibc_2.35.bb:do_populate_sysroot', 'libtool-native_2.4.7.bb:do_populate_sysroot', 'xorgproto_2021.5.bb:do_populate_sysroot', 'xtrans_1.4.0.bb:do_populate_sysroot', 'libsm_1.2.3.bb:do_fetch', 'pseudo_git.bb:do_populate_sysroot', 'gcc-runtime_11.5.bb:do_populate_sysroot', 'automake_1.16.5.bb:do_populate_sysroot', 'autoconf_2.71.bb:do_populate_sysroot', 'util-macros_1.19.3.bb:do_populate_sysroot', 'libtool-cross_2.4.7.bb:do_populate_sysroot', 'pkgconfig_git.bb:do_populate_sysroot', 'gcc-cross_11.5.bb:do_populate_sysroot', 'libice_1.0.10.bb:do_populate_sysroot'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libsm_1.2.3.bb:do_configure (dependent Tasks ['libsm_1.2.3.bb:do_patch', 'libsm_1.2.3.bb:do_deploy_source_date_epoch', 'libsm_1.2.3.bb:do_prepare_recipe_sysroot'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libsm_1.2.3.bb:do_compile (dependent Tasks ['libsm_1.2.3.bb:do_configure'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libsm_1.2.3.bb:do_install (dependent Tasks ['libsm_1.2.3.bb:do_compile', 'pseudo_git.bb:do_populate_sysroot'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libsm_1.2.3.bb:do_populate_sysroot (dependent Tasks ['binutils-cross_2.38.bb:do_populate_sysroot', 'libsm_1.2.3.bb:do_install'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libxt_1.2.1.bb:do_prepare_recipe_sysroot (dependent Tasks ['glibc_2.35.bb:do_populate_sysroot', 'libtool-native_2.4.7.bb:do_populate_sysroot', 'xorgproto_2021.5.bb:do_populate_sysroot', 'util-linux_2.37.4.bb:do_populate_sysroot', 'libxt_1.2.1.bb:do_fetch', 'libxdmcp_1.1.3.bb:do_populate_sysroot', 'libxcb_1.14.bb:do_populate_sysroot', 'gcc-runtime_11.5.bb:do_populate_sysroot', 'automake_1.16.5.bb:do_populate_sysroot', 'libsm_1.2.3.bb:do_populate_sysroot', 'autoconf_2.71.bb:do_populate_sysroot', 'util-macros_1.19.3.bb:do_populate_sysroot', 'libtool-cross_2.4.7.bb:do_populate_sysroot', 'pkgconfig_git.bb:do_populate_sysroot', 'gcc-cross_11.5.bb:do_populate_sysroot', 'libx11_1.7.3.1.bb:do_populate_sysroot', 'pseudo_git.bb:do_populate_sysroot'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libxt_1.2.1.bb:do_configure (dependent Tasks ['libxt_1.2.1.bb:do_deploy_source_date_epoch', 'libxt_1.2.1.bb:do_prepare_recipe_sysroot', 'libxt_1.2.1.bb:do_patch'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libxt_1.2.1.bb:do_compile (dependent Tasks ['libxt_1.2.1.bb:do_configure'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libxt_1.2.1.bb:do_install (dependent Tasks ['libxt_1.2.1.bb:do_compile', 'pseudo_git.bb:do_populate_sysroot'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libxt_1.2.1.bb:do_populate_sysroot (dependent Tasks ['binutils-cross_2.38.bb:do_populate_sysroot', 'libxt_1.2.1.bb:do_install'])
+  Task /home/xuning/yocto-rk3399/meta-openembedded/meta-oe/recipes-devtools/tcltk/tk_8.6.10.bb:do_prepare_recipe_sysroot (dependent Tasks ['glibc_2.35.bb:do_populate_sysroot', 'tk_8.6.10.bb:do_fetch', 'libxft_2.3.4.bb:do_populate_sysroot', 'libtool-native_2.4.7.bb:do_populate_sysroot', 'gcc-runtime_11.5.bb:do_populate_sysroot', 'automake_1.16.5.bb:do_populate_sysroot', 'libxt_1.2.1.bb:do_populate_sysroot', 'autoconf_2.71.bb:do_populate_sysroot', 'tcl_8.6.11.bb:do_populate_sysroot', 'libtool-cross_2.4.7.bb:do_populate_sysroot', 'pkgconfig_git.bb:do_populate_sysroot', 'gcc-cross_11.5.bb:do_populate_sysroot', 'libx11_1.7.3.1.bb:do_populate_sysroot', 'pseudo_git.bb:do_populate_sysroot'])
+  Task /home/xuning/yocto-rk3399/meta-openembedded/meta-oe/recipes-devtools/tcltk/tk_8.6.10.bb:do_configure (dependent Tasks ['tk_8.6.10.bb:do_patch', 'tk_8.6.10.bb:do_prepare_recipe_sysroot', 'tk_8.6.10.bb:do_deploy_source_date_epoch'])
+
+Dependency loop #3 found:
+  Task /home/xuning/yocto-rk3399/meta-openembedded/meta-oe/recipes-devtools/tcltk/tk_8.6.10.bb:do_compile (dependent Tasks ['tk_8.6.10.bb:do_configure'])
+  Task /home/xuning/yocto-rk3399/meta-openembedded/meta-oe/recipes-devtools/tcltk/tk_8.6.10.bb:do_install (dependent Tasks ['tk_8.6.10.bb:do_compile', 'pseudo_git.bb:do_populate_sysroot'])
+  Task /home/xuning/yocto-rk3399/meta-openembedded/meta-oe/recipes-devtools/tcltk/tk_8.6.10.bb:do_populate_sysroot (dependent Tasks ['binutils-cross_2.38.bb:do_populate_sysroot', 'tk_8.6.10.bb:do_install'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/python/python3_3.10.19.bb:do_populate_sysroot (dependent Tasks ['tk_8.6.10.bb:do_populate_sysroot', 'tcl_8.6.11.bb:do_populate_sysroot', 'python3_3.10.19.bb:do_install'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/python/python3-installer_0.5.1.bb:do_prepare_recipe_sysroot (dependent Tasks ['python3-flit-core_3.7.1.bb:do_populate_sysroot', 'python3_3.10.19.bb:do_populate_sysroot', 'python3-installer_0.5.1.bb:do_fetch', 'unzip_6.0.bb:do_populate_sysroot'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/python/python3-installer_0.5.1.bb:do_configure (dependent Tasks ['python3-installer_0.5.1.bb:do_patch', 'python3-installer_0.5.1.bb:do_deploy_source_date_epoch', 'python3-installer_0.5.1.bb:do_prepare_recipe_sysroot'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/python/python3-installer_0.5.1.bb:do_compile (dependent Tasks ['python3-installer_0.5.1.bb:do_configure'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/python/python3-installer_0.5.1.bb:do_install (dependent Tasks ['python3-installer_0.5.1.bb:do_compile'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/python/python3-installer_0.5.1.bb:do_populate_sysroot (dependent Tasks ['python3-installer_0.5.1.bb:do_install'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/python/python3-wheel_0.37.1.bb:do_prepare_recipe_sysroot (dependent Tasks ['python3-flit-core_3.7.1.bb:do_populate_sysroot', 'python3-installer_0.5.1.bb:do_populate_sysroot', 'python3_3.10.19.bb:do_populate_sysroot', 'python3-wheel_0.37.1.bb:do_fetch'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/python/python3-wheel_0.37.1.bb:do_configure (dependent Tasks ['python3-wheel_0.37.1.bb:do_prepare_recipe_sysroot', 'python3-wheel_0.37.1.bb:do_deploy_source_date_epoch', 'python3-wheel_0.37.1.bb:do_patch'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/python/python3-wheel_0.37.1.bb:do_compile (dependent Tasks ['python3-wheel_0.37.1.bb:do_configure'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/python/python3-wheel_0.37.1.bb:do_install (dependent Tasks ['python3-wheel_0.37.1.bb:do_compile'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/python/python3-wheel_0.37.1.bb:do_populate_sysroot (dependent Tasks ['python3-wheel_0.37.1.bb:do_install'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/meson/meson_0.61.3.bb:do_prepare_recipe_sysroot (dependent Tasks ['python3_3.10.19.bb:do_populate_sysroot', 'meson_0.61.3.bb:do_fetch', 'python3-installer_0.5.1.bb:do_populate_sysroot', 'python3-setuptools_59.5.0.bb:do_populate_sysroot', 'python3-wheel_0.37.1.bb:do_populate_sysroot'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/meson/meson_0.61.3.bb:do_configure (dependent Tasks ['meson_0.61.3.bb:do_deploy_source_date_epoch', 'meson_0.61.3.bb:do_patch', 'meson_0.61.3.bb:do_prepare_recipe_sysroot'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/meson/meson_0.61.3.bb:do_compile (dependent Tasks ['meson_0.61.3.bb:do_configure'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/meson/meson_0.61.3.bb:do_install (dependent Tasks ['meson_0.61.3.bb:do_compile'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/meson/meson_0.61.3.bb:do_populate_sysroot (dependent Tasks ['meson_0.61.3.bb:do_install', 'ninja_1.10.2.bb:do_populate_sysroot', 'python3-setuptools_59.5.0.bb:do_populate_sysroot', 'python3_3.10.19.bb:do_populate_sysroot'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-proto/xorgproto_2021.5.bb:do_prepare_recipe_sysroot (dependent Tasks ['glibc_2.35.bb:do_populate_sysroot', 'python3_3.10.19.bb:do_populate_sysroot', 'gcc-runtime_11.5.bb:do_populate_sysroot', 'qemu-native_6.2.0.bb:do_populate_sysroot', 'meson_0.61.3.bb:do_populate_sysroot', 'xorgproto_2021.5.bb:do_fetch', 'gcc-cross_11.5.bb:do_populate_sysroot', 'ninja_1.10.2.bb:do_populate_sysroot', 'pseudo_git.bb:do_populate_sysroot'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-proto/xorgproto_2021.5.bb:do_configure (dependent Tasks ['xorgproto_2021.5.bb:do_prepare_recipe_sysroot', 'xorgproto_2021.5.bb:do_deploy_source_date_epoch', 'xorgproto_2021.5.bb:do_write_config', 'xorgproto_2021.5.bb:do_patch'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-proto/xorgproto_2021.5.bb:do_compile (dependent Tasks ['xorgproto_2021.5.bb:do_configure'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-proto/xorgproto_2021.5.bb:do_install (dependent Tasks ['xorgproto_2021.5.bb:do_compile', 'pseudo_git.bb:do_populate_sysroot'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-proto/xorgproto_2021.5.bb:do_populate_sysroot (dependent Tasks ['binutils-cross_2.38.bb:do_populate_sysroot', 'xorgproto_2021.5.bb:do_install'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libxrender_0.9.10.bb:do_prepare_recipe_sysroot (dependent Tasks ['glibc_2.35.bb:do_populate_sysroot', 'libtool-native_2.4.7.bb:do_populate_sysroot', 'xorgproto_2021.5.bb:do_populate_sysroot', 'gcc-runtime_11.5.bb:do_populate_sysroot', 'automake_1.16.5.bb:do_populate_sysroot', 'autoconf_2.71.bb:do_populate_sysroot', 'util-macros_1.19.3.bb:do_populate_sysroot', 'libtool-cross_2.4.7.bb:do_populate_sysroot', 'pkgconfig_git.bb:do_populate_sysroot', 'gcc-cross_11.5.bb:do_populate_sysroot', 'libxrender_0.9.10.bb:do_fetch', 'libx11_1.7.3.1.bb:do_populate_sysroot', 'pseudo_git.bb:do_populate_sysroot'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libxrender_0.9.10.bb:do_configure (dependent Tasks ['libxrender_0.9.10.bb:do_deploy_source_date_epoch', 'libxrender_0.9.10.bb:do_prepare_recipe_sysroot', 'libxrender_0.9.10.bb:do_patch'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libxrender_0.9.10.bb:do_compile (dependent Tasks ['libxrender_0.9.10.bb:do_configure'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libxrender_0.9.10.bb:do_install (dependent Tasks ['libxrender_0.9.10.bb:do_compile', 'pseudo_git.bb:do_populate_sysroot'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libxrender_0.9.10.bb:do_populate_sysroot (dependent Tasks ['libxrender_0.9.10.bb:do_install', 'binutils-cross_2.38.bb:do_populate_sysroot'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libxft_2.3.4.bb:do_prepare_recipe_sysroot (dependent Tasks ['glibc_2.35.bb:do_populate_sysroot', 'libtool-native_2.4.7.bb:do_populate_sysroot', 'libxft_2.3.4.bb:do_fetch', 'pseudo_git.bb:do_populate_sysroot', 'gcc-runtime_11.5.bb:do_populate_sysroot', 'automake_1.16.5.bb:do_populate_sysroot', 'fontconfig_2.13.1.bb:do_populate_sysroot', 'libxrender_0.9.10.bb:do_populate_sysroot', 'autoconf_2.71.bb:do_populate_sysroot', 'util-macros_1.19.3.bb:do_populate_sysroot', 'libtool-cross_2.4.7.bb:do_populate_sysroot', 'pkgconfig_git.bb:do_populate_sysroot', 'gcc-cross_11.5.bb:do_populate_sysroot', 'libx11_1.7.3.1.bb:do_populate_sysroot', 'freetype_2.11.1.bb:do_populate_sysroot'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libxft_2.3.4.bb:do_configure (dependent Tasks ['libxft_2.3.4.bb:do_patch', 'libxft_2.3.4.bb:do_prepare_recipe_sysroot', 'libxft_2.3.4.bb:do_deploy_source_date_epoch'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libxft_2.3.4.bb:do_compile (dependent Tasks ['libxft_2.3.4.bb:do_configure'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libxft_2.3.4.bb:do_install (dependent Tasks ['libxft_2.3.4.bb:do_compile', 'pseudo_git.bb:do_populate_sysroot'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libxft_2.3.4.bb:do_populate_sysroot (dependent Tasks ['libxft_2.3.4.bb:do_install', 'binutils-cross_2.38.bb:do_populate_sysroot'])
+  Task /home/xuning/yocto-rk3399/meta-openembedded/meta-oe/recipes-devtools/tcltk/tk_8.6.10.bb:do_prepare_recipe_sysroot (dependent Tasks ['glibc_2.35.bb:do_populate_sysroot', 'tk_8.6.10.bb:do_fetch', 'libxft_2.3.4.bb:do_populate_sysroot', 'libtool-native_2.4.7.bb:do_populate_sysroot', 'gcc-runtime_11.5.bb:do_populate_sysroot', 'automake_1.16.5.bb:do_populate_sysroot', 'libxt_1.2.1.bb:do_populate_sysroot', 'autoconf_2.71.bb:do_populate_sysroot', 'tcl_8.6.11.bb:do_populate_sysroot', 'libtool-cross_2.4.7.bb:do_populate_sysroot', 'pkgconfig_git.bb:do_populate_sysroot', 'gcc-cross_11.5.bb:do_populate_sysroot', 'libx11_1.7.3.1.bb:do_populate_sysroot', 'pseudo_git.bb:do_populate_sysroot'])
+  Task /home/xuning/yocto-rk3399/meta-openembedded/meta-oe/recipes-devtools/tcltk/tk_8.6.10.bb:do_configure (dependent Tasks ['tk_8.6.10.bb:do_patch', 'tk_8.6.10.bb:do_prepare_recipe_sysroot', 'tk_8.6.10.bb:do_deploy_source_date_epoch'])
+
+Dependency loop #4 found:
+  Task /home/xuning/yocto-rk3399/meta-openembedded/meta-oe/recipes-devtools/tcltk/tk_8.6.10.bb:do_compile (dependent Tasks ['tk_8.6.10.bb:do_configure'])
+  Task /home/xuning/yocto-rk3399/meta-openembedded/meta-oe/recipes-devtools/tcltk/tk_8.6.10.bb:do_install (dependent Tasks ['tk_8.6.10.bb:do_compile', 'pseudo_git.bb:do_populate_sysroot'])
+  Task /home/xuning/yocto-rk3399/meta-openembedded/meta-oe/recipes-devtools/tcltk/tk_8.6.10.bb:do_populate_sysroot (dependent Tasks ['binutils-cross_2.38.bb:do_populate_sysroot', 'tk_8.6.10.bb:do_install'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/python/python3_3.10.19.bb:do_populate_sysroot (dependent Tasks ['tk_8.6.10.bb:do_populate_sysroot', 'tcl_8.6.11.bb:do_populate_sysroot', 'python3_3.10.19.bb:do_install'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/python/python3-installer_0.5.1.bb:do_prepare_recipe_sysroot (dependent Tasks ['python3-flit-core_3.7.1.bb:do_populate_sysroot', 'python3_3.10.19.bb:do_populate_sysroot', 'python3-installer_0.5.1.bb:do_fetch', 'unzip_6.0.bb:do_populate_sysroot'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/python/python3-installer_0.5.1.bb:do_configure (dependent Tasks ['python3-installer_0.5.1.bb:do_patch', 'python3-installer_0.5.1.bb:do_deploy_source_date_epoch', 'python3-installer_0.5.1.bb:do_prepare_recipe_sysroot'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/python/python3-installer_0.5.1.bb:do_compile (dependent Tasks ['python3-installer_0.5.1.bb:do_configure'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/python/python3-installer_0.5.1.bb:do_install (dependent Tasks ['python3-installer_0.5.1.bb:do_compile'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/python/python3-installer_0.5.1.bb:do_populate_sysroot (dependent Tasks ['python3-installer_0.5.1.bb:do_install'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/python/python3-wheel_0.37.1.bb:do_prepare_recipe_sysroot (dependent Tasks ['python3-flit-core_3.7.1.bb:do_populate_sysroot', 'python3-installer_0.5.1.bb:do_populate_sysroot', 'python3_3.10.19.bb:do_populate_sysroot', 'python3-wheel_0.37.1.bb:do_fetch'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/python/python3-wheel_0.37.1.bb:do_configure (dependent Tasks ['python3-wheel_0.37.1.bb:do_prepare_recipe_sysroot', 'python3-wheel_0.37.1.bb:do_deploy_source_date_epoch', 'python3-wheel_0.37.1.bb:do_patch'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/python/python3-wheel_0.37.1.bb:do_compile (dependent Tasks ['python3-wheel_0.37.1.bb:do_configure'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/python/python3-wheel_0.37.1.bb:do_install (dependent Tasks ['python3-wheel_0.37.1.bb:do_compile'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/python/python3-wheel_0.37.1.bb:do_populate_sysroot (dependent Tasks ['python3-wheel_0.37.1.bb:do_install'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/meson/meson_0.61.3.bb:do_prepare_recipe_sysroot (dependent Tasks ['python3_3.10.19.bb:do_populate_sysroot', 'meson_0.61.3.bb:do_fetch', 'python3-installer_0.5.1.bb:do_populate_sysroot', 'python3-setuptools_59.5.0.bb:do_populate_sysroot', 'python3-wheel_0.37.1.bb:do_populate_sysroot'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/meson/meson_0.61.3.bb:do_configure (dependent Tasks ['meson_0.61.3.bb:do_deploy_source_date_epoch', 'meson_0.61.3.bb:do_patch', 'meson_0.61.3.bb:do_prepare_recipe_sysroot'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/meson/meson_0.61.3.bb:do_compile (dependent Tasks ['meson_0.61.3.bb:do_configure'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/meson/meson_0.61.3.bb:do_install (dependent Tasks ['meson_0.61.3.bb:do_compile'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/meson/meson_0.61.3.bb:do_populate_sysroot (dependent Tasks ['meson_0.61.3.bb:do_install', 'ninja_1.10.2.bb:do_populate_sysroot', 'python3-setuptools_59.5.0.bb:do_populate_sysroot', 'python3_3.10.19.bb:do_populate_sysroot'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-proto/xorgproto_2021.5.bb:do_prepare_recipe_sysroot (dependent Tasks ['glibc_2.35.bb:do_populate_sysroot', 'python3_3.10.19.bb:do_populate_sysroot', 'gcc-runtime_11.5.bb:do_populate_sysroot', 'qemu-native_6.2.0.bb:do_populate_sysroot', 'meson_0.61.3.bb:do_populate_sysroot', 'xorgproto_2021.5.bb:do_fetch', 'gcc-cross_11.5.bb:do_populate_sysroot', 'ninja_1.10.2.bb:do_populate_sysroot', 'pseudo_git.bb:do_populate_sysroot'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-proto/xorgproto_2021.5.bb:do_configure (dependent Tasks ['xorgproto_2021.5.bb:do_prepare_recipe_sysroot', 'xorgproto_2021.5.bb:do_deploy_source_date_epoch', 'xorgproto_2021.5.bb:do_write_config', 'xorgproto_2021.5.bb:do_patch'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-proto/xorgproto_2021.5.bb:do_compile (dependent Tasks ['xorgproto_2021.5.bb:do_configure'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-proto/xorgproto_2021.5.bb:do_install (dependent Tasks ['xorgproto_2021.5.bb:do_compile', 'pseudo_git.bb:do_populate_sysroot'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-proto/xorgproto_2021.5.bb:do_populate_sysroot (dependent Tasks ['binutils-cross_2.38.bb:do_populate_sysroot', 'xorgproto_2021.5.bb:do_install'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libx11_1.7.3.1.bb:do_prepare_recipe_sysroot (dependent Tasks ['glibc_2.35.bb:do_populate_sysroot', 'libtool-native_2.4.7.bb:do_populate_sysroot', 'xorgproto_2021.5.bb:do_populate_sysroot', 'xtrans_1.4.0.bb:do_populate_sysroot', 'xorgproto_2021.5.bb:do_populate_sysroot', 'libxcb_1.14.bb:do_populate_sysroot', 'pseudo_git.bb:do_populate_sysroot', 'gcc-runtime_11.5.bb:do_populate_sysroot', 'automake_1.16.5.bb:do_populate_sysroot', 'autoconf-archive_2022.02.11.bb:do_populate_sysroot', 'autoconf_2.71.bb:do_populate_sysroot', 'util-macros_1.19.3.bb:do_populate_sysroot', 'libtool-cross_2.4.7.bb:do_populate_sysroot', 'pkgconfig_git.bb:do_populate_sysroot', 'gcc-cross_11.5.bb:do_populate_sysroot', 'libx11_1.7.3.1.bb:do_fetch', 'gettext_0.21.bb:do_populate_sysroot'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libx11_1.7.3.1.bb:do_configure (dependent Tasks ['libx11_1.7.3.1.bb:do_patch', 'libx11_1.7.3.1.bb:do_prepare_recipe_sysroot', 'libx11_1.7.3.1.bb:do_deploy_source_date_epoch'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libx11_1.7.3.1.bb:do_compile (dependent Tasks ['libx11_1.7.3.1.bb:do_configure'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libx11_1.7.3.1.bb:do_install (dependent Tasks ['libx11_1.7.3.1.bb:do_compile', 'pseudo_git.bb:do_populate_sysroot'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libx11_1.7.3.1.bb:do_populate_sysroot (dependent Tasks ['libx11_1.7.3.1.bb:do_install', 'binutils-cross_2.38.bb:do_populate_sysroot'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libxrender_0.9.10.bb:do_prepare_recipe_sysroot (dependent Tasks ['glibc_2.35.bb:do_populate_sysroot', 'libtool-native_2.4.7.bb:do_populate_sysroot', 'xorgproto_2021.5.bb:do_populate_sysroot', 'gcc-runtime_11.5.bb:do_populate_sysroot', 'automake_1.16.5.bb:do_populate_sysroot', 'autoconf_2.71.bb:do_populate_sysroot', 'util-macros_1.19.3.bb:do_populate_sysroot', 'libtool-cross_2.4.7.bb:do_populate_sysroot', 'pkgconfig_git.bb:do_populate_sysroot', 'gcc-cross_11.5.bb:do_populate_sysroot', 'libxrender_0.9.10.bb:do_fetch', 'libx11_1.7.3.1.bb:do_populate_sysroot', 'pseudo_git.bb:do_populate_sysroot'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libxrender_0.9.10.bb:do_configure (dependent Tasks ['libxrender_0.9.10.bb:do_deploy_source_date_epoch', 'libxrender_0.9.10.bb:do_prepare_recipe_sysroot', 'libxrender_0.9.10.bb:do_patch'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libxrender_0.9.10.bb:do_compile (dependent Tasks ['libxrender_0.9.10.bb:do_configure'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libxrender_0.9.10.bb:do_install (dependent Tasks ['libxrender_0.9.10.bb:do_compile', 'pseudo_git.bb:do_populate_sysroot'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libxrender_0.9.10.bb:do_populate_sysroot (dependent Tasks ['libxrender_0.9.10.bb:do_install', 'binutils-cross_2.38.bb:do_populate_sysroot'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libxft_2.3.4.bb:do_prepare_recipe_sysroot (dependent Tasks ['glibc_2.35.bb:do_populate_sysroot', 'libtool-native_2.4.7.bb:do_populate_sysroot', 'libxft_2.3.4.bb:do_fetch', 'pseudo_git.bb:do_populate_sysroot', 'gcc-runtime_11.5.bb:do_populate_sysroot', 'automake_1.16.5.bb:do_populate_sysroot', 'fontconfig_2.13.1.bb:do_populate_sysroot', 'libxrender_0.9.10.bb:do_populate_sysroot', 'autoconf_2.71.bb:do_populate_sysroot', 'util-macros_1.19.3.bb:do_populate_sysroot', 'libtool-cross_2.4.7.bb:do_populate_sysroot', 'pkgconfig_git.bb:do_populate_sysroot', 'gcc-cross_11.5.bb:do_populate_sysroot', 'libx11_1.7.3.1.bb:do_populate_sysroot', 'freetype_2.11.1.bb:do_populate_sysroot'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libxft_2.3.4.bb:do_configure (dependent Tasks ['libxft_2.3.4.bb:do_patch', 'libxft_2.3.4.bb:do_prepare_recipe_sysroot', 'libxft_2.3.4.bb:do_deploy_source_date_epoch'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libxft_2.3.4.bb:do_compile (dependent Tasks ['libxft_2.3.4.bb:do_configure'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libxft_2.3.4.bb:do_install (dependent Tasks ['libxft_2.3.4.bb:do_compile', 'pseudo_git.bb:do_populate_sysroot'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libxft_2.3.4.bb:do_populate_sysroot (dependent Tasks ['libxft_2.3.4.bb:do_install', 'binutils-cross_2.38.bb:do_populate_sysroot'])
+  Task /home/xuning/yocto-rk3399/meta-openembedded/meta-oe/recipes-devtools/tcltk/tk_8.6.10.bb:do_prepare_recipe_sysroot (dependent Tasks ['glibc_2.35.bb:do_populate_sysroot', 'tk_8.6.10.bb:do_fetch', 'libxft_2.3.4.bb:do_populate_sysroot', 'libtool-native_2.4.7.bb:do_populate_sysroot', 'gcc-runtime_11.5.bb:do_populate_sysroot', 'automake_1.16.5.bb:do_populate_sysroot', 'libxt_1.2.1.bb:do_populate_sysroot', 'autoconf_2.71.bb:do_populate_sysroot', 'tcl_8.6.11.bb:do_populate_sysroot', 'libtool-cross_2.4.7.bb:do_populate_sysroot', 'pkgconfig_git.bb:do_populate_sysroot', 'gcc-cross_11.5.bb:do_populate_sysroot', 'libx11_1.7.3.1.bb:do_populate_sysroot', 'pseudo_git.bb:do_populate_sysroot'])
+  Task /home/xuning/yocto-rk3399/meta-openembedded/meta-oe/recipes-devtools/tcltk/tk_8.6.10.bb:do_configure (dependent Tasks ['tk_8.6.10.bb:do_patch', 'tk_8.6.10.bb:do_prepare_recipe_sysroot', 'tk_8.6.10.bb:do_deploy_source_date_epoch'])
+
+Dependency loop #5 found:
+  Task /home/xuning/yocto-rk3399/meta-openembedded/meta-oe/recipes-devtools/tcltk/tk_8.6.10.bb:do_compile (dependent Tasks ['tk_8.6.10.bb:do_configure'])
+  Task /home/xuning/yocto-rk3399/meta-openembedded/meta-oe/recipes-devtools/tcltk/tk_8.6.10.bb:do_install (dependent Tasks ['tk_8.6.10.bb:do_compile', 'pseudo_git.bb:do_populate_sysroot'])
+  Task /home/xuning/yocto-rk3399/meta-openembedded/meta-oe/recipes-devtools/tcltk/tk_8.6.10.bb:do_populate_sysroot (dependent Tasks ['binutils-cross_2.38.bb:do_populate_sysroot', 'tk_8.6.10.bb:do_install'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/python/python3_3.10.19.bb:do_populate_sysroot (dependent Tasks ['tk_8.6.10.bb:do_populate_sysroot', 'tcl_8.6.11.bb:do_populate_sysroot', 'python3_3.10.19.bb:do_install'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/python/python3-installer_0.5.1.bb:do_prepare_recipe_sysroot (dependent Tasks ['python3-flit-core_3.7.1.bb:do_populate_sysroot', 'python3_3.10.19.bb:do_populate_sysroot', 'python3-installer_0.5.1.bb:do_fetch', 'unzip_6.0.bb:do_populate_sysroot'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/python/python3-installer_0.5.1.bb:do_configure (dependent Tasks ['python3-installer_0.5.1.bb:do_patch', 'python3-installer_0.5.1.bb:do_deploy_source_date_epoch', 'python3-installer_0.5.1.bb:do_prepare_recipe_sysroot'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/python/python3-installer_0.5.1.bb:do_compile (dependent Tasks ['python3-installer_0.5.1.bb:do_configure'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/python/python3-installer_0.5.1.bb:do_install (dependent Tasks ['python3-installer_0.5.1.bb:do_compile'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/python/python3-installer_0.5.1.bb:do_populate_sysroot (dependent Tasks ['python3-installer_0.5.1.bb:do_install'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/python/python3-wheel_0.37.1.bb:do_prepare_recipe_sysroot (dependent Tasks ['python3-flit-core_3.7.1.bb:do_populate_sysroot', 'python3-installer_0.5.1.bb:do_populate_sysroot', 'python3_3.10.19.bb:do_populate_sysroot', 'python3-wheel_0.37.1.bb:do_fetch'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/python/python3-wheel_0.37.1.bb:do_configure (dependent Tasks ['python3-wheel_0.37.1.bb:do_prepare_recipe_sysroot', 'python3-wheel_0.37.1.bb:do_deploy_source_date_epoch', 'python3-wheel_0.37.1.bb:do_patch'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/python/python3-wheel_0.37.1.bb:do_compile (dependent Tasks ['python3-wheel_0.37.1.bb:do_configure'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/python/python3-wheel_0.37.1.bb:do_install (dependent Tasks ['python3-wheel_0.37.1.bb:do_compile'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/python/python3-wheel_0.37.1.bb:do_populate_sysroot (dependent Tasks ['python3-wheel_0.37.1.bb:do_install'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/meson/meson_0.61.3.bb:do_prepare_recipe_sysroot (dependent Tasks ['python3_3.10.19.bb:do_populate_sysroot', 'meson_0.61.3.bb:do_fetch', 'python3-installer_0.5.1.bb:do_populate_sysroot', 'python3-setuptools_59.5.0.bb:do_populate_sysroot', 'python3-wheel_0.37.1.bb:do_populate_sysroot'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/meson/meson_0.61.3.bb:do_configure (dependent Tasks ['meson_0.61.3.bb:do_deploy_source_date_epoch', 'meson_0.61.3.bb:do_patch', 'meson_0.61.3.bb:do_prepare_recipe_sysroot'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/meson/meson_0.61.3.bb:do_compile (dependent Tasks ['meson_0.61.3.bb:do_configure'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/meson/meson_0.61.3.bb:do_install (dependent Tasks ['meson_0.61.3.bb:do_compile'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/meson/meson_0.61.3.bb:do_populate_sysroot (dependent Tasks ['meson_0.61.3.bb:do_install', 'ninja_1.10.2.bb:do_populate_sysroot', 'python3-setuptools_59.5.0.bb:do_populate_sysroot', 'python3_3.10.19.bb:do_populate_sysroot'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-proto/xorgproto_2021.5.bb:do_prepare_recipe_sysroot (dependent Tasks ['glibc_2.35.bb:do_populate_sysroot', 'python3_3.10.19.bb:do_populate_sysroot', 'gcc-runtime_11.5.bb:do_populate_sysroot', 'qemu-native_6.2.0.bb:do_populate_sysroot', 'meson_0.61.3.bb:do_populate_sysroot', 'xorgproto_2021.5.bb:do_fetch', 'gcc-cross_11.5.bb:do_populate_sysroot', 'ninja_1.10.2.bb:do_populate_sysroot', 'pseudo_git.bb:do_populate_sysroot'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-proto/xorgproto_2021.5.bb:do_configure (dependent Tasks ['xorgproto_2021.5.bb:do_prepare_recipe_sysroot', 'xorgproto_2021.5.bb:do_deploy_source_date_epoch', 'xorgproto_2021.5.bb:do_write_config', 'xorgproto_2021.5.bb:do_patch'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-proto/xorgproto_2021.5.bb:do_compile (dependent Tasks ['xorgproto_2021.5.bb:do_configure'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-proto/xorgproto_2021.5.bb:do_install (dependent Tasks ['xorgproto_2021.5.bb:do_compile', 'pseudo_git.bb:do_populate_sysroot'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-proto/xorgproto_2021.5.bb:do_populate_sysroot (dependent Tasks ['binutils-cross_2.38.bb:do_populate_sysroot', 'xorgproto_2021.5.bb:do_install'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libx11_1.7.3.1.bb:do_prepare_recipe_sysroot (dependent Tasks ['glibc_2.35.bb:do_populate_sysroot', 'libtool-native_2.4.7.bb:do_populate_sysroot', 'xorgproto_2021.5.bb:do_populate_sysroot', 'xtrans_1.4.0.bb:do_populate_sysroot', 'xorgproto_2021.5.bb:do_populate_sysroot', 'libxcb_1.14.bb:do_populate_sysroot', 'pseudo_git.bb:do_populate_sysroot', 'gcc-runtime_11.5.bb:do_populate_sysroot', 'automake_1.16.5.bb:do_populate_sysroot', 'autoconf-archive_2022.02.11.bb:do_populate_sysroot', 'autoconf_2.71.bb:do_populate_sysroot', 'util-macros_1.19.3.bb:do_populate_sysroot', 'libtool-cross_2.4.7.bb:do_populate_sysroot', 'pkgconfig_git.bb:do_populate_sysroot', 'gcc-cross_11.5.bb:do_populate_sysroot', 'libx11_1.7.3.1.bb:do_fetch', 'gettext_0.21.bb:do_populate_sysroot'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libx11_1.7.3.1.bb:do_configure (dependent Tasks ['libx11_1.7.3.1.bb:do_patch', 'libx11_1.7.3.1.bb:do_prepare_recipe_sysroot', 'libx11_1.7.3.1.bb:do_deploy_source_date_epoch'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libx11_1.7.3.1.bb:do_compile (dependent Tasks ['libx11_1.7.3.1.bb:do_configure'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libx11_1.7.3.1.bb:do_install (dependent Tasks ['libx11_1.7.3.1.bb:do_compile', 'pseudo_git.bb:do_populate_sysroot'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libx11_1.7.3.1.bb:do_populate_sysroot (dependent Tasks ['libx11_1.7.3.1.bb:do_install', 'binutils-cross_2.38.bb:do_populate_sysroot'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libxt_1.2.1.bb:do_prepare_recipe_sysroot (dependent Tasks ['glibc_2.35.bb:do_populate_sysroot', 'libtool-native_2.4.7.bb:do_populate_sysroot', 'xorgproto_2021.5.bb:do_populate_sysroot', 'util-linux_2.37.4.bb:do_populate_sysroot', 'libxt_1.2.1.bb:do_fetch', 'libxdmcp_1.1.3.bb:do_populate_sysroot', 'libxcb_1.14.bb:do_populate_sysroot', 'gcc-runtime_11.5.bb:do_populate_sysroot', 'automake_1.16.5.bb:do_populate_sysroot', 'libsm_1.2.3.bb:do_populate_sysroot', 'autoconf_2.71.bb:do_populate_sysroot', 'util-macros_1.19.3.bb:do_populate_sysroot', 'libtool-cross_2.4.7.bb:do_populate_sysroot', 'pkgconfig_git.bb:do_populate_sysroot', 'gcc-cross_11.5.bb:do_populate_sysroot', 'libx11_1.7.3.1.bb:do_populate_sysroot', 'pseudo_git.bb:do_populate_sysroot'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libxt_1.2.1.bb:do_configure (dependent Tasks ['libxt_1.2.1.bb:do_deploy_source_date_epoch', 'libxt_1.2.1.bb:do_prepare_recipe_sysroot', 'libxt_1.2.1.bb:do_patch'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libxt_1.2.1.bb:do_compile (dependent Tasks ['libxt_1.2.1.bb:do_configure'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libxt_1.2.1.bb:do_install (dependent Tasks ['libxt_1.2.1.bb:do_compile', 'pseudo_git.bb:do_populate_sysroot'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libxt_1.2.1.bb:do_populate_sysroot (dependent Tasks ['binutils-cross_2.38.bb:do_populate_sysroot', 'libxt_1.2.1.bb:do_install'])
+  Task /home/xuning/yocto-rk3399/meta-openembedded/meta-oe/recipes-devtools/tcltk/tk_8.6.10.bb:do_prepare_recipe_sysroot (dependent Tasks ['glibc_2.35.bb:do_populate_sysroot', 'tk_8.6.10.bb:do_fetch', 'libxft_2.3.4.bb:do_populate_sysroot', 'libtool-native_2.4.7.bb:do_populate_sysroot', 'gcc-runtime_11.5.bb:do_populate_sysroot', 'automake_1.16.5.bb:do_populate_sysroot', 'libxt_1.2.1.bb:do_populate_sysroot', 'autoconf_2.71.bb:do_populate_sysroot', 'tcl_8.6.11.bb:do_populate_sysroot', 'libtool-cross_2.4.7.bb:do_populate_sysroot', 'pkgconfig_git.bb:do_populate_sysroot', 'gcc-cross_11.5.bb:do_populate_sysroot', 'libx11_1.7.3.1.bb:do_populate_sysroot', 'pseudo_git.bb:do_populate_sysroot'])
+  Task /home/xuning/yocto-rk3399/meta-openembedded/meta-oe/recipes-devtools/tcltk/tk_8.6.10.bb:do_configure (dependent Tasks ['tk_8.6.10.bb:do_patch', 'tk_8.6.10.bb:do_prepare_recipe_sysroot', 'tk_8.6.10.bb:do_deploy_source_date_epoch'])
+
+Dependency loop #6 found:
+  Task /home/xuning/yocto-rk3399/meta-openembedded/meta-oe/recipes-devtools/tcltk/tk_8.6.10.bb:do_compile (dependent Tasks ['tk_8.6.10.bb:do_configure'])
+  Task /home/xuning/yocto-rk3399/meta-openembedded/meta-oe/recipes-devtools/tcltk/tk_8.6.10.bb:do_install (dependent Tasks ['tk_8.6.10.bb:do_compile', 'pseudo_git.bb:do_populate_sysroot'])
+  Task /home/xuning/yocto-rk3399/meta-openembedded/meta-oe/recipes-devtools/tcltk/tk_8.6.10.bb:do_populate_sysroot (dependent Tasks ['binutils-cross_2.38.bb:do_populate_sysroot', 'tk_8.6.10.bb:do_install'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/python/python3_3.10.19.bb:do_populate_sysroot (dependent Tasks ['tk_8.6.10.bb:do_populate_sysroot', 'tcl_8.6.11.bb:do_populate_sysroot', 'python3_3.10.19.bb:do_install'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/python/python3-installer_0.5.1.bb:do_prepare_recipe_sysroot (dependent Tasks ['python3-flit-core_3.7.1.bb:do_populate_sysroot', 'python3_3.10.19.bb:do_populate_sysroot', 'python3-installer_0.5.1.bb:do_fetch', 'unzip_6.0.bb:do_populate_sysroot'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/python/python3-installer_0.5.1.bb:do_configure (dependent Tasks ['python3-installer_0.5.1.bb:do_patch', 'python3-installer_0.5.1.bb:do_deploy_source_date_epoch', 'python3-installer_0.5.1.bb:do_prepare_recipe_sysroot'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/python/python3-installer_0.5.1.bb:do_compile (dependent Tasks ['python3-installer_0.5.1.bb:do_configure'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/python/python3-installer_0.5.1.bb:do_install (dependent Tasks ['python3-installer_0.5.1.bb:do_compile'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/python/python3-installer_0.5.1.bb:do_populate_sysroot (dependent Tasks ['python3-installer_0.5.1.bb:do_install'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/python/python3-wheel_0.37.1.bb:do_prepare_recipe_sysroot (dependent Tasks ['python3-flit-core_3.7.1.bb:do_populate_sysroot', 'python3-installer_0.5.1.bb:do_populate_sysroot', 'python3_3.10.19.bb:do_populate_sysroot', 'python3-wheel_0.37.1.bb:do_fetch'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/python/python3-wheel_0.37.1.bb:do_configure (dependent Tasks ['python3-wheel_0.37.1.bb:do_prepare_recipe_sysroot', 'python3-wheel_0.37.1.bb:do_deploy_source_date_epoch', 'python3-wheel_0.37.1.bb:do_patch'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/python/python3-wheel_0.37.1.bb:do_compile (dependent Tasks ['python3-wheel_0.37.1.bb:do_configure'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/python/python3-wheel_0.37.1.bb:do_install (dependent Tasks ['python3-wheel_0.37.1.bb:do_compile'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/python/python3-wheel_0.37.1.bb:do_populate_sysroot (dependent Tasks ['python3-wheel_0.37.1.bb:do_install'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/meson/meson_0.61.3.bb:do_prepare_recipe_sysroot (dependent Tasks ['python3_3.10.19.bb:do_populate_sysroot', 'meson_0.61.3.bb:do_fetch', 'python3-installer_0.5.1.bb:do_populate_sysroot', 'python3-setuptools_59.5.0.bb:do_populate_sysroot', 'python3-wheel_0.37.1.bb:do_populate_sysroot'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/meson/meson_0.61.3.bb:do_configure (dependent Tasks ['meson_0.61.3.bb:do_deploy_source_date_epoch', 'meson_0.61.3.bb:do_patch', 'meson_0.61.3.bb:do_prepare_recipe_sysroot'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/meson/meson_0.61.3.bb:do_compile (dependent Tasks ['meson_0.61.3.bb:do_configure'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/meson/meson_0.61.3.bb:do_install (dependent Tasks ['meson_0.61.3.bb:do_compile'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/meson/meson_0.61.3.bb:do_populate_sysroot (dependent Tasks ['meson_0.61.3.bb:do_install', 'ninja_1.10.2.bb:do_populate_sysroot', 'python3-setuptools_59.5.0.bb:do_populate_sysroot', 'python3_3.10.19.bb:do_populate_sysroot'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-proto/xorgproto_2021.5.bb:do_prepare_recipe_sysroot (dependent Tasks ['glibc_2.35.bb:do_populate_sysroot', 'python3_3.10.19.bb:do_populate_sysroot', 'gcc-runtime_11.5.bb:do_populate_sysroot', 'qemu-native_6.2.0.bb:do_populate_sysroot', 'meson_0.61.3.bb:do_populate_sysroot', 'xorgproto_2021.5.bb:do_fetch', 'gcc-cross_11.5.bb:do_populate_sysroot', 'ninja_1.10.2.bb:do_populate_sysroot', 'pseudo_git.bb:do_populate_sysroot'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-proto/xorgproto_2021.5.bb:do_configure (dependent Tasks ['xorgproto_2021.5.bb:do_prepare_recipe_sysroot', 'xorgproto_2021.5.bb:do_deploy_source_date_epoch', 'xorgproto_2021.5.bb:do_write_config', 'xorgproto_2021.5.bb:do_patch'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-proto/xorgproto_2021.5.bb:do_compile (dependent Tasks ['xorgproto_2021.5.bb:do_configure'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-proto/xorgproto_2021.5.bb:do_install (dependent Tasks ['xorgproto_2021.5.bb:do_compile', 'pseudo_git.bb:do_populate_sysroot'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-proto/xorgproto_2021.5.bb:do_populate_sysroot (dependent Tasks ['binutils-cross_2.38.bb:do_populate_sysroot', 'xorgproto_2021.5.bb:do_install'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libx11_1.7.3.1.bb:do_prepare_recipe_sysroot (dependent Tasks ['glibc_2.35.bb:do_populate_sysroot', 'libtool-native_2.4.7.bb:do_populate_sysroot', 'xorgproto_2021.5.bb:do_populate_sysroot', 'xtrans_1.4.0.bb:do_populate_sysroot', 'xorgproto_2021.5.bb:do_populate_sysroot', 'libxcb_1.14.bb:do_populate_sysroot', 'pseudo_git.bb:do_populate_sysroot', 'gcc-runtime_11.5.bb:do_populate_sysroot', 'automake_1.16.5.bb:do_populate_sysroot', 'autoconf-archive_2022.02.11.bb:do_populate_sysroot', 'autoconf_2.71.bb:do_populate_sysroot', 'util-macros_1.19.3.bb:do_populate_sysroot', 'libtool-cross_2.4.7.bb:do_populate_sysroot', 'pkgconfig_git.bb:do_populate_sysroot', 'gcc-cross_11.5.bb:do_populate_sysroot', 'libx11_1.7.3.1.bb:do_fetch', 'gettext_0.21.bb:do_populate_sysroot'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libx11_1.7.3.1.bb:do_configure (dependent Tasks ['libx11_1.7.3.1.bb:do_patch', 'libx11_1.7.3.1.bb:do_prepare_recipe_sysroot', 'libx11_1.7.3.1.bb:do_deploy_source_date_epoch'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libx11_1.7.3.1.bb:do_compile (dependent Tasks ['libx11_1.7.3.1.bb:do_configure'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libx11_1.7.3.1.bb:do_install (dependent Tasks ['libx11_1.7.3.1.bb:do_compile', 'pseudo_git.bb:do_populate_sysroot'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libx11_1.7.3.1.bb:do_populate_sysroot (dependent Tasks ['libx11_1.7.3.1.bb:do_install', 'binutils-cross_2.38.bb:do_populate_sysroot'])
+  Task /home/xuning/yocto-rk3399/meta-openembedded/meta-oe/recipes-devtools/tcltk/tk_8.6.10.bb:do_prepare_recipe_sysroot (dependent Tasks ['glibc_2.35.bb:do_populate_sysroot', 'tk_8.6.10.bb:do_fetch', 'libxft_2.3.4.bb:do_populate_sysroot', 'libtool-native_2.4.7.bb:do_populate_sysroot', 'gcc-runtime_11.5.bb:do_populate_sysroot', 'automake_1.16.5.bb:do_populate_sysroot', 'libxt_1.2.1.bb:do_populate_sysroot', 'autoconf_2.71.bb:do_populate_sysroot', 'tcl_8.6.11.bb:do_populate_sysroot', 'libtool-cross_2.4.7.bb:do_populate_sysroot', 'pkgconfig_git.bb:do_populate_sysroot', 'gcc-cross_11.5.bb:do_populate_sysroot', 'libx11_1.7.3.1.bb:do_populate_sysroot', 'pseudo_git.bb:do_populate_sysroot'])
+  Task /home/xuning/yocto-rk3399/meta-openembedded/meta-oe/recipes-devtools/tcltk/tk_8.6.10.bb:do_configure (dependent Tasks ['tk_8.6.10.bb:do_patch', 'tk_8.6.10.bb:do_prepare_recipe_sysroot', 'tk_8.6.10.bb:do_deploy_source_date_epoch'])
+
+Dependency loop #7 found:
+  Task /home/xuning/yocto-rk3399/meta-openembedded/meta-oe/recipes-devtools/tcltk/tk_8.6.10.bb:do_compile (dependent Tasks ['tk_8.6.10.bb:do_configure'])
+  Task /home/xuning/yocto-rk3399/meta-openembedded/meta-oe/recipes-devtools/tcltk/tk_8.6.10.bb:do_install (dependent Tasks ['tk_8.6.10.bb:do_compile', 'pseudo_git.bb:do_populate_sysroot'])
+  Task /home/xuning/yocto-rk3399/meta-openembedded/meta-oe/recipes-devtools/tcltk/tk_8.6.10.bb:do_populate_sysroot (dependent Tasks ['binutils-cross_2.38.bb:do_populate_sysroot', 'tk_8.6.10.bb:do_install'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/python/python3_3.10.19.bb:do_populate_sysroot (dependent Tasks ['tk_8.6.10.bb:do_populate_sysroot', 'tcl_8.6.11.bb:do_populate_sysroot', 'python3_3.10.19.bb:do_install'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/python/python3-installer_0.5.1.bb:do_prepare_recipe_sysroot (dependent Tasks ['python3-flit-core_3.7.1.bb:do_populate_sysroot', 'python3_3.10.19.bb:do_populate_sysroot', 'python3-installer_0.5.1.bb:do_fetch', 'unzip_6.0.bb:do_populate_sysroot'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/python/python3-installer_0.5.1.bb:do_configure (dependent Tasks ['python3-installer_0.5.1.bb:do_patch', 'python3-installer_0.5.1.bb:do_deploy_source_date_epoch', 'python3-installer_0.5.1.bb:do_prepare_recipe_sysroot'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/python/python3-installer_0.5.1.bb:do_compile (dependent Tasks ['python3-installer_0.5.1.bb:do_configure'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/python/python3-installer_0.5.1.bb:do_install (dependent Tasks ['python3-installer_0.5.1.bb:do_compile'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/python/python3-installer_0.5.1.bb:do_populate_sysroot (dependent Tasks ['python3-installer_0.5.1.bb:do_install'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/python/python3-wheel_0.37.1.bb:do_prepare_recipe_sysroot (dependent Tasks ['python3-flit-core_3.7.1.bb:do_populate_sysroot', 'python3-installer_0.5.1.bb:do_populate_sysroot', 'python3_3.10.19.bb:do_populate_sysroot', 'python3-wheel_0.37.1.bb:do_fetch'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/python/python3-wheel_0.37.1.bb:do_configure (dependent Tasks ['python3-wheel_0.37.1.bb:do_prepare_recipe_sysroot', 'python3-wheel_0.37.1.bb:do_deploy_source_date_epoch', 'python3-wheel_0.37.1.bb:do_patch'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/python/python3-wheel_0.37.1.bb:do_compile (dependent Tasks ['python3-wheel_0.37.1.bb:do_configure'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/python/python3-wheel_0.37.1.bb:do_install (dependent Tasks ['python3-wheel_0.37.1.bb:do_compile'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/python/python3-wheel_0.37.1.bb:do_populate_sysroot (dependent Tasks ['python3-wheel_0.37.1.bb:do_install'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/meson/meson_0.61.3.bb:do_prepare_recipe_sysroot (dependent Tasks ['python3_3.10.19.bb:do_populate_sysroot', 'meson_0.61.3.bb:do_fetch', 'python3-installer_0.5.1.bb:do_populate_sysroot', 'python3-setuptools_59.5.0.bb:do_populate_sysroot', 'python3-wheel_0.37.1.bb:do_populate_sysroot'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/meson/meson_0.61.3.bb:do_configure (dependent Tasks ['meson_0.61.3.bb:do_deploy_source_date_epoch', 'meson_0.61.3.bb:do_patch', 'meson_0.61.3.bb:do_prepare_recipe_sysroot'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/meson/meson_0.61.3.bb:do_compile (dependent Tasks ['meson_0.61.3.bb:do_configure'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/meson/meson_0.61.3.bb:do_install (dependent Tasks ['meson_0.61.3.bb:do_compile'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/meson/meson_0.61.3.bb:do_populate_sysroot (dependent Tasks ['meson_0.61.3.bb:do_install', 'ninja_1.10.2.bb:do_populate_sysroot', 'python3-setuptools_59.5.0.bb:do_populate_sysroot', 'python3_3.10.19.bb:do_populate_sysroot'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-proto/xorgproto_2021.5.bb:do_prepare_recipe_sysroot (dependent Tasks ['glibc_2.35.bb:do_populate_sysroot', 'python3_3.10.19.bb:do_populate_sysroot', 'gcc-runtime_11.5.bb:do_populate_sysroot', 'qemu-native_6.2.0.bb:do_populate_sysroot', 'meson_0.61.3.bb:do_populate_sysroot', 'xorgproto_2021.5.bb:do_fetch', 'gcc-cross_11.5.bb:do_populate_sysroot', 'ninja_1.10.2.bb:do_populate_sysroot', 'pseudo_git.bb:do_populate_sysroot'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-proto/xorgproto_2021.5.bb:do_configure (dependent Tasks ['xorgproto_2021.5.bb:do_prepare_recipe_sysroot', 'xorgproto_2021.5.bb:do_deploy_source_date_epoch', 'xorgproto_2021.5.bb:do_write_config', 'xorgproto_2021.5.bb:do_patch'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-proto/xorgproto_2021.5.bb:do_compile (dependent Tasks ['xorgproto_2021.5.bb:do_configure'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-proto/xorgproto_2021.5.bb:do_install (dependent Tasks ['xorgproto_2021.5.bb:do_compile', 'pseudo_git.bb:do_populate_sysroot'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-proto/xorgproto_2021.5.bb:do_populate_sysroot (dependent Tasks ['binutils-cross_2.38.bb:do_populate_sysroot', 'xorgproto_2021.5.bb:do_install'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libx11_1.7.3.1.bb:do_prepare_recipe_sysroot (dependent Tasks ['glibc_2.35.bb:do_populate_sysroot', 'libtool-native_2.4.7.bb:do_populate_sysroot', 'xorgproto_2021.5.bb:do_populate_sysroot', 'xtrans_1.4.0.bb:do_populate_sysroot', 'xorgproto_2021.5.bb:do_populate_sysroot', 'libxcb_1.14.bb:do_populate_sysroot', 'pseudo_git.bb:do_populate_sysroot', 'gcc-runtime_11.5.bb:do_populate_sysroot', 'automake_1.16.5.bb:do_populate_sysroot', 'autoconf-archive_2022.02.11.bb:do_populate_sysroot', 'autoconf_2.71.bb:do_populate_sysroot', 'util-macros_1.19.3.bb:do_populate_sysroot', 'libtool-cross_2.4.7.bb:do_populate_sysroot', 'pkgconfig_git.bb:do_populate_sysroot', 'gcc-cross_11.5.bb:do_populate_sysroot', 'libx11_1.7.3.1.bb:do_fetch', 'gettext_0.21.bb:do_populate_sysroot'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libx11_1.7.3.1.bb:do_configure (dependent Tasks ['libx11_1.7.3.1.bb:do_patch', 'libx11_1.7.3.1.bb:do_prepare_recipe_sysroot', 'libx11_1.7.3.1.bb:do_deploy_source_date_epoch'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libx11_1.7.3.1.bb:do_compile (dependent Tasks ['libx11_1.7.3.1.bb:do_configure'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libx11_1.7.3.1.bb:do_install (dependent Tasks ['libx11_1.7.3.1.bb:do_compile', 'pseudo_git.bb:do_populate_sysroot'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libx11_1.7.3.1.bb:do_populate_sysroot (dependent Tasks ['libx11_1.7.3.1.bb:do_install', 'binutils-cross_2.38.bb:do_populate_sysroot'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libxft_2.3.4.bb:do_prepare_recipe_sysroot (dependent Tasks ['glibc_2.35.bb:do_populate_sysroot', 'libtool-native_2.4.7.bb:do_populate_sysroot', 'libxft_2.3.4.bb:do_fetch', 'pseudo_git.bb:do_populate_sysroot', 'gcc-runtime_11.5.bb:do_populate_sysroot', 'automake_1.16.5.bb:do_populate_sysroot', 'fontconfig_2.13.1.bb:do_populate_sysroot', 'libxrender_0.9.10.bb:do_populate_sysroot', 'autoconf_2.71.bb:do_populate_sysroot', 'util-macros_1.19.3.bb:do_populate_sysroot', 'libtool-cross_2.4.7.bb:do_populate_sysroot', 'pkgconfig_git.bb:do_populate_sysroot', 'gcc-cross_11.5.bb:do_populate_sysroot', 'libx11_1.7.3.1.bb:do_populate_sysroot', 'freetype_2.11.1.bb:do_populate_sysroot'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libxft_2.3.4.bb:do_configure (dependent Tasks ['libxft_2.3.4.bb:do_patch', 'libxft_2.3.4.bb:do_prepare_recipe_sysroot', 'libxft_2.3.4.bb:do_deploy_source_date_epoch'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libxft_2.3.4.bb:do_compile (dependent Tasks ['libxft_2.3.4.bb:do_configure'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libxft_2.3.4.bb:do_install (dependent Tasks ['libxft_2.3.4.bb:do_compile', 'pseudo_git.bb:do_populate_sysroot'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libxft_2.3.4.bb:do_populate_sysroot (dependent Tasks ['libxft_2.3.4.bb:do_install', 'binutils-cross_2.38.bb:do_populate_sysroot'])
+  Task /home/xuning/yocto-rk3399/meta-openembedded/meta-oe/recipes-devtools/tcltk/tk_8.6.10.bb:do_prepare_recipe_sysroot (dependent Tasks ['glibc_2.35.bb:do_populate_sysroot', 'tk_8.6.10.bb:do_fetch', 'libxft_2.3.4.bb:do_populate_sysroot', 'libtool-native_2.4.7.bb:do_populate_sysroot', 'gcc-runtime_11.5.bb:do_populate_sysroot', 'automake_1.16.5.bb:do_populate_sysroot', 'libxt_1.2.1.bb:do_populate_sysroot', 'autoconf_2.71.bb:do_populate_sysroot', 'tcl_8.6.11.bb:do_populate_sysroot', 'libtool-cross_2.4.7.bb:do_populate_sysroot', 'pkgconfig_git.bb:do_populate_sysroot', 'gcc-cross_11.5.bb:do_populate_sysroot', 'libx11_1.7.3.1.bb:do_populate_sysroot', 'pseudo_git.bb:do_populate_sysroot'])
+  Task /home/xuning/yocto-rk3399/meta-openembedded/meta-oe/recipes-devtools/tcltk/tk_8.6.10.bb:do_configure (dependent Tasks ['tk_8.6.10.bb:do_patch', 'tk_8.6.10.bb:do_prepare_recipe_sysroot', 'tk_8.6.10.bb:do_deploy_source_date_epoch'])
+
+Dependency loop #8 found:
+  Task /home/xuning/yocto-rk3399/meta-openembedded/meta-oe/recipes-devtools/tcltk/tk_8.6.10.bb:do_compile (dependent Tasks ['tk_8.6.10.bb:do_configure'])
+  Task /home/xuning/yocto-rk3399/meta-openembedded/meta-oe/recipes-devtools/tcltk/tk_8.6.10.bb:do_install (dependent Tasks ['tk_8.6.10.bb:do_compile', 'pseudo_git.bb:do_populate_sysroot'])
+  Task /home/xuning/yocto-rk3399/meta-openembedded/meta-oe/recipes-devtools/tcltk/tk_8.6.10.bb:do_populate_sysroot (dependent Tasks ['binutils-cross_2.38.bb:do_populate_sysroot', 'tk_8.6.10.bb:do_install'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/python/python3_3.10.19.bb:do_populate_sysroot (dependent Tasks ['tk_8.6.10.bb:do_populate_sysroot', 'tcl_8.6.11.bb:do_populate_sysroot', 'python3_3.10.19.bb:do_install'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/python/python3-installer_0.5.1.bb:do_prepare_recipe_sysroot (dependent Tasks ['python3-flit-core_3.7.1.bb:do_populate_sysroot', 'python3_3.10.19.bb:do_populate_sysroot', 'python3-installer_0.5.1.bb:do_fetch', 'unzip_6.0.bb:do_populate_sysroot'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/python/python3-installer_0.5.1.bb:do_configure (dependent Tasks ['python3-installer_0.5.1.bb:do_patch', 'python3-installer_0.5.1.bb:do_deploy_source_date_epoch', 'python3-installer_0.5.1.bb:do_prepare_recipe_sysroot'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/python/python3-installer_0.5.1.bb:do_compile (dependent Tasks ['python3-installer_0.5.1.bb:do_configure'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/python/python3-installer_0.5.1.bb:do_install (dependent Tasks ['python3-installer_0.5.1.bb:do_compile'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/python/python3-installer_0.5.1.bb:do_populate_sysroot (dependent Tasks ['python3-installer_0.5.1.bb:do_install'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/python/python3-wheel_0.37.1.bb:do_prepare_recipe_sysroot (dependent Tasks ['python3-flit-core_3.7.1.bb:do_populate_sysroot', 'python3-installer_0.5.1.bb:do_populate_sysroot', 'python3_3.10.19.bb:do_populate_sysroot', 'python3-wheel_0.37.1.bb:do_fetch'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/python/python3-wheel_0.37.1.bb:do_configure (dependent Tasks ['python3-wheel_0.37.1.bb:do_prepare_recipe_sysroot', 'python3-wheel_0.37.1.bb:do_deploy_source_date_epoch', 'python3-wheel_0.37.1.bb:do_patch'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/python/python3-wheel_0.37.1.bb:do_compile (dependent Tasks ['python3-wheel_0.37.1.bb:do_configure'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/python/python3-wheel_0.37.1.bb:do_install (dependent Tasks ['python3-wheel_0.37.1.bb:do_compile'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/python/python3-wheel_0.37.1.bb:do_populate_sysroot (dependent Tasks ['python3-wheel_0.37.1.bb:do_install'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/meson/meson_0.61.3.bb:do_prepare_recipe_sysroot (dependent Tasks ['python3_3.10.19.bb:do_populate_sysroot', 'meson_0.61.3.bb:do_fetch', 'python3-installer_0.5.1.bb:do_populate_sysroot', 'python3-setuptools_59.5.0.bb:do_populate_sysroot', 'python3-wheel_0.37.1.bb:do_populate_sysroot'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/meson/meson_0.61.3.bb:do_configure (dependent Tasks ['meson_0.61.3.bb:do_deploy_source_date_epoch', 'meson_0.61.3.bb:do_patch', 'meson_0.61.3.bb:do_prepare_recipe_sysroot'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/meson/meson_0.61.3.bb:do_compile (dependent Tasks ['meson_0.61.3.bb:do_configure'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/meson/meson_0.61.3.bb:do_install (dependent Tasks ['meson_0.61.3.bb:do_compile'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/meson/meson_0.61.3.bb:do_populate_sysroot (dependent Tasks ['meson_0.61.3.bb:do_install', 'ninja_1.10.2.bb:do_populate_sysroot', 'python3-setuptools_59.5.0.bb:do_populate_sysroot', 'python3_3.10.19.bb:do_populate_sysroot'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-proto/xorgproto_2021.5.bb:do_prepare_recipe_sysroot (dependent Tasks ['glibc_2.35.bb:do_populate_sysroot', 'python3_3.10.19.bb:do_populate_sysroot', 'gcc-runtime_11.5.bb:do_populate_sysroot', 'qemu-native_6.2.0.bb:do_populate_sysroot', 'meson_0.61.3.bb:do_populate_sysroot', 'xorgproto_2021.5.bb:do_fetch', 'gcc-cross_11.5.bb:do_populate_sysroot', 'ninja_1.10.2.bb:do_populate_sysroot', 'pseudo_git.bb:do_populate_sysroot'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-proto/xorgproto_2021.5.bb:do_configure (dependent Tasks ['xorgproto_2021.5.bb:do_prepare_recipe_sysroot', 'xorgproto_2021.5.bb:do_deploy_source_date_epoch', 'xorgproto_2021.5.bb:do_write_config', 'xorgproto_2021.5.bb:do_patch'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-proto/xorgproto_2021.5.bb:do_compile (dependent Tasks ['xorgproto_2021.5.bb:do_configure'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-proto/xorgproto_2021.5.bb:do_install (dependent Tasks ['xorgproto_2021.5.bb:do_compile', 'pseudo_git.bb:do_populate_sysroot'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-proto/xorgproto_2021.5.bb:do_populate_sysroot (dependent Tasks ['binutils-cross_2.38.bb:do_populate_sysroot', 'xorgproto_2021.5.bb:do_install'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libxdmcp_1.1.3.bb:do_prepare_recipe_sysroot (dependent Tasks ['glibc_2.35.bb:do_populate_sysroot', 'libtool-native_2.4.7.bb:do_populate_sysroot', 'xorgproto_2021.5.bb:do_populate_sysroot', 'pseudo_git.bb:do_populate_sysroot', 'gcc-runtime_11.5.bb:do_populate_sysroot', 'automake_1.16.5.bb:do_populate_sysroot', 'libxdmcp_1.1.3.bb:do_fetch', 'autoconf_2.71.bb:do_populate_sysroot', 'util-macros_1.19.3.bb:do_populate_sysroot', 'libtool-cross_2.4.7.bb:do_populate_sysroot', 'pkgconfig_git.bb:do_populate_sysroot', 'gcc-cross_11.5.bb:do_populate_sysroot', 'gettext_0.21.bb:do_populate_sysroot'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libxdmcp_1.1.3.bb:do_configure (dependent Tasks ['libxdmcp_1.1.3.bb:do_prepare_recipe_sysroot', 'libxdmcp_1.1.3.bb:do_patch', 'libxdmcp_1.1.3.bb:do_deploy_source_date_epoch'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libxdmcp_1.1.3.bb:do_compile (dependent Tasks ['libxdmcp_1.1.3.bb:do_configure'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libxdmcp_1.1.3.bb:do_install (dependent Tasks ['libxdmcp_1.1.3.bb:do_compile', 'pseudo_git.bb:do_populate_sysroot'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libxdmcp_1.1.3.bb:do_populate_sysroot (dependent Tasks ['binutils-cross_2.38.bb:do_populate_sysroot', 'libxdmcp_1.1.3.bb:do_install'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libxt_1.2.1.bb:do_prepare_recipe_sysroot (dependent Tasks ['glibc_2.35.bb:do_populate_sysroot', 'libtool-native_2.4.7.bb:do_populate_sysroot', 'xorgproto_2021.5.bb:do_populate_sysroot', 'util-linux_2.37.4.bb:do_populate_sysroot', 'libxt_1.2.1.bb:do_fetch', 'libxdmcp_1.1.3.bb:do_populate_sysroot', 'libxcb_1.14.bb:do_populate_sysroot', 'gcc-runtime_11.5.bb:do_populate_sysroot', 'automake_1.16.5.bb:do_populate_sysroot', 'libsm_1.2.3.bb:do_populate_sysroot', 'autoconf_2.71.bb:do_populate_sysroot', 'util-macros_1.19.3.bb:do_populate_sysroot', 'libtool-cross_2.4.7.bb:do_populate_sysroot', 'pkgconfig_git.bb:do_populate_sysroot', 'gcc-cross_11.5.bb:do_populate_sysroot', 'libx11_1.7.3.1.bb:do_populate_sysroot', 'pseudo_git.bb:do_populate_sysroot'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libxt_1.2.1.bb:do_configure (dependent Tasks ['libxt_1.2.1.bb:do_deploy_source_date_epoch', 'libxt_1.2.1.bb:do_prepare_recipe_sysroot', 'libxt_1.2.1.bb:do_patch'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libxt_1.2.1.bb:do_compile (dependent Tasks ['libxt_1.2.1.bb:do_configure'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libxt_1.2.1.bb:do_install (dependent Tasks ['libxt_1.2.1.bb:do_compile', 'pseudo_git.bb:do_populate_sysroot'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libxt_1.2.1.bb:do_populate_sysroot (dependent Tasks ['binutils-cross_2.38.bb:do_populate_sysroot', 'libxt_1.2.1.bb:do_install'])
+  Task /home/xuning/yocto-rk3399/meta-openembedded/meta-oe/recipes-devtools/tcltk/tk_8.6.10.bb:do_prepare_recipe_sysroot (dependent Tasks ['glibc_2.35.bb:do_populate_sysroot', 'tk_8.6.10.bb:do_fetch', 'libxft_2.3.4.bb:do_populate_sysroot', 'libtool-native_2.4.7.bb:do_populate_sysroot', 'gcc-runtime_11.5.bb:do_populate_sysroot', 'automake_1.16.5.bb:do_populate_sysroot', 'libxt_1.2.1.bb:do_populate_sysroot', 'autoconf_2.71.bb:do_populate_sysroot', 'tcl_8.6.11.bb:do_populate_sysroot', 'libtool-cross_2.4.7.bb:do_populate_sysroot', 'pkgconfig_git.bb:do_populate_sysroot', 'gcc-cross_11.5.bb:do_populate_sysroot', 'libx11_1.7.3.1.bb:do_populate_sysroot', 'pseudo_git.bb:do_populate_sysroot'])
+  Task /home/xuning/yocto-rk3399/meta-openembedded/meta-oe/recipes-devtools/tcltk/tk_8.6.10.bb:do_configure (dependent Tasks ['tk_8.6.10.bb:do_patch', 'tk_8.6.10.bb:do_prepare_recipe_sysroot', 'tk_8.6.10.bb:do_deploy_source_date_epoch'])
+
+Dependency loop #9 found:
+  Task /home/xuning/yocto-rk3399/meta-openembedded/meta-oe/recipes-devtools/tcltk/tk_8.6.10.bb:do_compile (dependent Tasks ['tk_8.6.10.bb:do_configure'])
+  Task /home/xuning/yocto-rk3399/meta-openembedded/meta-oe/recipes-devtools/tcltk/tk_8.6.10.bb:do_install (dependent Tasks ['tk_8.6.10.bb:do_compile', 'pseudo_git.bb:do_populate_sysroot'])
+  Task /home/xuning/yocto-rk3399/meta-openembedded/meta-oe/recipes-devtools/tcltk/tk_8.6.10.bb:do_populate_sysroot (dependent Tasks ['binutils-cross_2.38.bb:do_populate_sysroot', 'tk_8.6.10.bb:do_install'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/python/python3_3.10.19.bb:do_populate_sysroot (dependent Tasks ['tk_8.6.10.bb:do_populate_sysroot', 'tcl_8.6.11.bb:do_populate_sysroot', 'python3_3.10.19.bb:do_install'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/python/python3-installer_0.5.1.bb:do_prepare_recipe_sysroot (dependent Tasks ['python3-flit-core_3.7.1.bb:do_populate_sysroot', 'python3_3.10.19.bb:do_populate_sysroot', 'python3-installer_0.5.1.bb:do_fetch', 'unzip_6.0.bb:do_populate_sysroot'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/python/python3-installer_0.5.1.bb:do_configure (dependent Tasks ['python3-installer_0.5.1.bb:do_patch', 'python3-installer_0.5.1.bb:do_deploy_source_date_epoch', 'python3-installer_0.5.1.bb:do_prepare_recipe_sysroot'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/python/python3-installer_0.5.1.bb:do_compile (dependent Tasks ['python3-installer_0.5.1.bb:do_configure'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/python/python3-installer_0.5.1.bb:do_install (dependent Tasks ['python3-installer_0.5.1.bb:do_compile'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/python/python3-installer_0.5.1.bb:do_populate_sysroot (dependent Tasks ['python3-installer_0.5.1.bb:do_install'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/python/python3-wheel_0.37.1.bb:do_prepare_recipe_sysroot (dependent Tasks ['python3-flit-core_3.7.1.bb:do_populate_sysroot', 'python3-installer_0.5.1.bb:do_populate_sysroot', 'python3_3.10.19.bb:do_populate_sysroot', 'python3-wheel_0.37.1.bb:do_fetch'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/python/python3-wheel_0.37.1.bb:do_configure (dependent Tasks ['python3-wheel_0.37.1.bb:do_prepare_recipe_sysroot', 'python3-wheel_0.37.1.bb:do_deploy_source_date_epoch', 'python3-wheel_0.37.1.bb:do_patch'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/python/python3-wheel_0.37.1.bb:do_compile (dependent Tasks ['python3-wheel_0.37.1.bb:do_configure'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/python/python3-wheel_0.37.1.bb:do_install (dependent Tasks ['python3-wheel_0.37.1.bb:do_compile'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/python/python3-wheel_0.37.1.bb:do_populate_sysroot (dependent Tasks ['python3-wheel_0.37.1.bb:do_install'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/meson/meson_0.61.3.bb:do_prepare_recipe_sysroot (dependent Tasks ['python3_3.10.19.bb:do_populate_sysroot', 'meson_0.61.3.bb:do_fetch', 'python3-installer_0.5.1.bb:do_populate_sysroot', 'python3-setuptools_59.5.0.bb:do_populate_sysroot', 'python3-wheel_0.37.1.bb:do_populate_sysroot'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/meson/meson_0.61.3.bb:do_configure (dependent Tasks ['meson_0.61.3.bb:do_deploy_source_date_epoch', 'meson_0.61.3.bb:do_patch', 'meson_0.61.3.bb:do_prepare_recipe_sysroot'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/meson/meson_0.61.3.bb:do_compile (dependent Tasks ['meson_0.61.3.bb:do_configure'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/meson/meson_0.61.3.bb:do_install (dependent Tasks ['meson_0.61.3.bb:do_compile'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/meson/meson_0.61.3.bb:do_populate_sysroot (dependent Tasks ['meson_0.61.3.bb:do_install', 'ninja_1.10.2.bb:do_populate_sysroot', 'python3-setuptools_59.5.0.bb:do_populate_sysroot', 'python3_3.10.19.bb:do_populate_sysroot'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-proto/xorgproto_2021.5.bb:do_prepare_recipe_sysroot (dependent Tasks ['glibc_2.35.bb:do_populate_sysroot', 'python3_3.10.19.bb:do_populate_sysroot', 'gcc-runtime_11.5.bb:do_populate_sysroot', 'qemu-native_6.2.0.bb:do_populate_sysroot', 'meson_0.61.3.bb:do_populate_sysroot', 'xorgproto_2021.5.bb:do_fetch', 'gcc-cross_11.5.bb:do_populate_sysroot', 'ninja_1.10.2.bb:do_populate_sysroot', 'pseudo_git.bb:do_populate_sysroot'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-proto/xorgproto_2021.5.bb:do_configure (dependent Tasks ['xorgproto_2021.5.bb:do_prepare_recipe_sysroot', 'xorgproto_2021.5.bb:do_deploy_source_date_epoch', 'xorgproto_2021.5.bb:do_write_config', 'xorgproto_2021.5.bb:do_patch'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-proto/xorgproto_2021.5.bb:do_compile (dependent Tasks ['xorgproto_2021.5.bb:do_configure'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-proto/xorgproto_2021.5.bb:do_install (dependent Tasks ['xorgproto_2021.5.bb:do_compile', 'pseudo_git.bb:do_populate_sysroot'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-proto/xorgproto_2021.5.bb:do_populate_sysroot (dependent Tasks ['binutils-cross_2.38.bb:do_populate_sysroot', 'xorgproto_2021.5.bb:do_install'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libxdmcp_1.1.3.bb:do_prepare_recipe_sysroot (dependent Tasks ['glibc_2.35.bb:do_populate_sysroot', 'libtool-native_2.4.7.bb:do_populate_sysroot', 'xorgproto_2021.5.bb:do_populate_sysroot', 'pseudo_git.bb:do_populate_sysroot', 'gcc-runtime_11.5.bb:do_populate_sysroot', 'automake_1.16.5.bb:do_populate_sysroot', 'libxdmcp_1.1.3.bb:do_fetch', 'autoconf_2.71.bb:do_populate_sysroot', 'util-macros_1.19.3.bb:do_populate_sysroot', 'libtool-cross_2.4.7.bb:do_populate_sysroot', 'pkgconfig_git.bb:do_populate_sysroot', 'gcc-cross_11.5.bb:do_populate_sysroot', 'gettext_0.21.bb:do_populate_sysroot'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libxdmcp_1.1.3.bb:do_configure (dependent Tasks ['libxdmcp_1.1.3.bb:do_prepare_recipe_sysroot', 'libxdmcp_1.1.3.bb:do_patch', 'libxdmcp_1.1.3.bb:do_deploy_source_date_epoch'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libxdmcp_1.1.3.bb:do_compile (dependent Tasks ['libxdmcp_1.1.3.bb:do_configure'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libxdmcp_1.1.3.bb:do_install (dependent Tasks ['libxdmcp_1.1.3.bb:do_compile', 'pseudo_git.bb:do_populate_sysroot'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libxdmcp_1.1.3.bb:do_populate_sysroot (dependent Tasks ['binutils-cross_2.38.bb:do_populate_sysroot', 'libxdmcp_1.1.3.bb:do_install'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libxcb_1.14.bb:do_prepare_recipe_sysroot (dependent Tasks ['glibc_2.35.bb:do_populate_sysroot', 'libtool-native_2.4.7.bb:do_populate_sysroot', 'xorgproto_2021.5.bb:do_populate_sysroot', 'libxdmcp_1.1.3.bb:do_populate_sysroot', 'libpthread-stubs_0.4.bb:do_populate_sysroot', 'gcc-cross_11.5.bb:do_populate_sysroot', 'gcc-runtime_11.5.bb:do_populate_sysroot', 'automake_1.16.5.bb:do_populate_sysroot', 'xcb-proto_1.14.1.bb:do_populate_sysroot', 'libxau_1.0.9.bb:do_populate_sysroot', 'autoconf_2.71.bb:do_populate_sysroot', 'libtool-cross_2.4.7.bb:do_populate_sysroot', 'pkgconfig_git.bb:do_populate_sysroot', 'libxcb_1.14.bb:do_fetch', 'pseudo_git.bb:do_populate_sysroot'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libxcb_1.14.bb:do_configure (dependent Tasks ['libxcb_1.14.bb:do_deploy_source_date_epoch', 'libxcb_1.14.bb:do_patch', 'libxcb_1.14.bb:do_prepare_recipe_sysroot'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libxcb_1.14.bb:do_compile (dependent Tasks ['libxcb_1.14.bb:do_configure'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libxcb_1.14.bb:do_install (dependent Tasks ['libxcb_1.14.bb:do_compile', 'pseudo_git.bb:do_populate_sysroot'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libxcb_1.14.bb:do_populate_sysroot (dependent Tasks ['binutils-cross_2.38.bb:do_populate_sysroot', 'libxcb_1.14.bb:do_install'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libxt_1.2.1.bb:do_prepare_recipe_sysroot (dependent Tasks ['glibc_2.35.bb:do_populate_sysroot', 'libtool-native_2.4.7.bb:do_populate_sysroot', 'xorgproto_2021.5.bb:do_populate_sysroot', 'util-linux_2.37.4.bb:do_populate_sysroot', 'libxt_1.2.1.bb:do_fetch', 'libxdmcp_1.1.3.bb:do_populate_sysroot', 'libxcb_1.14.bb:do_populate_sysroot', 'gcc-runtime_11.5.bb:do_populate_sysroot', 'automake_1.16.5.bb:do_populate_sysroot', 'libsm_1.2.3.bb:do_populate_sysroot', 'autoconf_2.71.bb:do_populate_sysroot', 'util-macros_1.19.3.bb:do_populate_sysroot', 'libtool-cross_2.4.7.bb:do_populate_sysroot', 'pkgconfig_git.bb:do_populate_sysroot', 'gcc-cross_11.5.bb:do_populate_sysroot', 'libx11_1.7.3.1.bb:do_populate_sysroot', 'pseudo_git.bb:do_populate_sysroot'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libxt_1.2.1.bb:do_configure (dependent Tasks ['libxt_1.2.1.bb:do_deploy_source_date_epoch', 'libxt_1.2.1.bb:do_prepare_recipe_sysroot', 'libxt_1.2.1.bb:do_patch'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libxt_1.2.1.bb:do_compile (dependent Tasks ['libxt_1.2.1.bb:do_configure'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libxt_1.2.1.bb:do_install (dependent Tasks ['libxt_1.2.1.bb:do_compile', 'pseudo_git.bb:do_populate_sysroot'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libxt_1.2.1.bb:do_populate_sysroot (dependent Tasks ['binutils-cross_2.38.bb:do_populate_sysroot', 'libxt_1.2.1.bb:do_install'])
+  Task /home/xuning/yocto-rk3399/meta-openembedded/meta-oe/recipes-devtools/tcltk/tk_8.6.10.bb:do_prepare_recipe_sysroot (dependent Tasks ['glibc_2.35.bb:do_populate_sysroot', 'tk_8.6.10.bb:do_fetch', 'libxft_2.3.4.bb:do_populate_sysroot', 'libtool-native_2.4.7.bb:do_populate_sysroot', 'gcc-runtime_11.5.bb:do_populate_sysroot', 'automake_1.16.5.bb:do_populate_sysroot', 'libxt_1.2.1.bb:do_populate_sysroot', 'autoconf_2.71.bb:do_populate_sysroot', 'tcl_8.6.11.bb:do_populate_sysroot', 'libtool-cross_2.4.7.bb:do_populate_sysroot', 'pkgconfig_git.bb:do_populate_sysroot', 'gcc-cross_11.5.bb:do_populate_sysroot', 'libx11_1.7.3.1.bb:do_populate_sysroot', 'pseudo_git.bb:do_populate_sysroot'])
+  Task /home/xuning/yocto-rk3399/meta-openembedded/meta-oe/recipes-devtools/tcltk/tk_8.6.10.bb:do_configure (dependent Tasks ['tk_8.6.10.bb:do_patch', 'tk_8.6.10.bb:do_prepare_recipe_sysroot', 'tk_8.6.10.bb:do_deploy_source_date_epoch'])
+
+Dependency loop #10 found:
+  Task /home/xuning/yocto-rk3399/meta-openembedded/meta-oe/recipes-devtools/tcltk/tk_8.6.10.bb:do_compile (dependent Tasks ['tk_8.6.10.bb:do_configure'])
+  Task /home/xuning/yocto-rk3399/meta-openembedded/meta-oe/recipes-devtools/tcltk/tk_8.6.10.bb:do_install (dependent Tasks ['tk_8.6.10.bb:do_compile', 'pseudo_git.bb:do_populate_sysroot'])
+  Task /home/xuning/yocto-rk3399/meta-openembedded/meta-oe/recipes-devtools/tcltk/tk_8.6.10.bb:do_populate_sysroot (dependent Tasks ['binutils-cross_2.38.bb:do_populate_sysroot', 'tk_8.6.10.bb:do_install'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/python/python3_3.10.19.bb:do_populate_sysroot (dependent Tasks ['tk_8.6.10.bb:do_populate_sysroot', 'tcl_8.6.11.bb:do_populate_sysroot', 'python3_3.10.19.bb:do_install'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/python/python3-installer_0.5.1.bb:do_prepare_recipe_sysroot (dependent Tasks ['python3-flit-core_3.7.1.bb:do_populate_sysroot', 'python3_3.10.19.bb:do_populate_sysroot', 'python3-installer_0.5.1.bb:do_fetch', 'unzip_6.0.bb:do_populate_sysroot'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/python/python3-installer_0.5.1.bb:do_configure (dependent Tasks ['python3-installer_0.5.1.bb:do_patch', 'python3-installer_0.5.1.bb:do_deploy_source_date_epoch', 'python3-installer_0.5.1.bb:do_prepare_recipe_sysroot'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/python/python3-installer_0.5.1.bb:do_compile (dependent Tasks ['python3-installer_0.5.1.bb:do_configure'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/python/python3-installer_0.5.1.bb:do_install (dependent Tasks ['python3-installer_0.5.1.bb:do_compile'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/python/python3-installer_0.5.1.bb:do_populate_sysroot (dependent Tasks ['python3-installer_0.5.1.bb:do_install'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/python/python3-wheel_0.37.1.bb:do_prepare_recipe_sysroot (dependent Tasks ['python3-flit-core_3.7.1.bb:do_populate_sysroot', 'python3-installer_0.5.1.bb:do_populate_sysroot', 'python3_3.10.19.bb:do_populate_sysroot', 'python3-wheel_0.37.1.bb:do_fetch'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/python/python3-wheel_0.37.1.bb:do_configure (dependent Tasks ['python3-wheel_0.37.1.bb:do_prepare_recipe_sysroot', 'python3-wheel_0.37.1.bb:do_deploy_source_date_epoch', 'python3-wheel_0.37.1.bb:do_patch'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/python/python3-wheel_0.37.1.bb:do_compile (dependent Tasks ['python3-wheel_0.37.1.bb:do_configure'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/python/python3-wheel_0.37.1.bb:do_install (dependent Tasks ['python3-wheel_0.37.1.bb:do_compile'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/python/python3-wheel_0.37.1.bb:do_populate_sysroot (dependent Tasks ['python3-wheel_0.37.1.bb:do_install'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/meson/meson_0.61.3.bb:do_prepare_recipe_sysroot (dependent Tasks ['python3_3.10.19.bb:do_populate_sysroot', 'meson_0.61.3.bb:do_fetch', 'python3-installer_0.5.1.bb:do_populate_sysroot', 'python3-setuptools_59.5.0.bb:do_populate_sysroot', 'python3-wheel_0.37.1.bb:do_populate_sysroot'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/meson/meson_0.61.3.bb:do_configure (dependent Tasks ['meson_0.61.3.bb:do_deploy_source_date_epoch', 'meson_0.61.3.bb:do_patch', 'meson_0.61.3.bb:do_prepare_recipe_sysroot'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/meson/meson_0.61.3.bb:do_compile (dependent Tasks ['meson_0.61.3.bb:do_configure'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/meson/meson_0.61.3.bb:do_install (dependent Tasks ['meson_0.61.3.bb:do_compile'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/meson/meson_0.61.3.bb:do_populate_sysroot (dependent Tasks ['meson_0.61.3.bb:do_install', 'ninja_1.10.2.bb:do_populate_sysroot', 'python3-setuptools_59.5.0.bb:do_populate_sysroot', 'python3_3.10.19.bb:do_populate_sysroot'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-proto/xorgproto_2021.5.bb:do_prepare_recipe_sysroot (dependent Tasks ['glibc_2.35.bb:do_populate_sysroot', 'python3_3.10.19.bb:do_populate_sysroot', 'gcc-runtime_11.5.bb:do_populate_sysroot', 'qemu-native_6.2.0.bb:do_populate_sysroot', 'meson_0.61.3.bb:do_populate_sysroot', 'xorgproto_2021.5.bb:do_fetch', 'gcc-cross_11.5.bb:do_populate_sysroot', 'ninja_1.10.2.bb:do_populate_sysroot', 'pseudo_git.bb:do_populate_sysroot'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-proto/xorgproto_2021.5.bb:do_configure (dependent Tasks ['xorgproto_2021.5.bb:do_prepare_recipe_sysroot', 'xorgproto_2021.5.bb:do_deploy_source_date_epoch', 'xorgproto_2021.5.bb:do_write_config', 'xorgproto_2021.5.bb:do_patch'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-proto/xorgproto_2021.5.bb:do_compile (dependent Tasks ['xorgproto_2021.5.bb:do_configure'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-proto/xorgproto_2021.5.bb:do_install (dependent Tasks ['xorgproto_2021.5.bb:do_compile', 'pseudo_git.bb:do_populate_sysroot'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-proto/xorgproto_2021.5.bb:do_populate_sysroot (dependent Tasks ['binutils-cross_2.38.bb:do_populate_sysroot', 'xorgproto_2021.5.bb:do_install'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libxdmcp_1.1.3.bb:do_prepare_recipe_sysroot (dependent Tasks ['glibc_2.35.bb:do_populate_sysroot', 'libtool-native_2.4.7.bb:do_populate_sysroot', 'xorgproto_2021.5.bb:do_populate_sysroot', 'pseudo_git.bb:do_populate_sysroot', 'gcc-runtime_11.5.bb:do_populate_sysroot', 'automake_1.16.5.bb:do_populate_sysroot', 'libxdmcp_1.1.3.bb:do_fetch', 'autoconf_2.71.bb:do_populate_sysroot', 'util-macros_1.19.3.bb:do_populate_sysroot', 'libtool-cross_2.4.7.bb:do_populate_sysroot', 'pkgconfig_git.bb:do_populate_sysroot', 'gcc-cross_11.5.bb:do_populate_sysroot', 'gettext_0.21.bb:do_populate_sysroot'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libxdmcp_1.1.3.bb:do_configure (dependent Tasks ['libxdmcp_1.1.3.bb:do_prepare_recipe_sysroot', 'libxdmcp_1.1.3.bb:do_patch', 'libxdmcp_1.1.3.bb:do_deploy_source_date_epoch'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libxdmcp_1.1.3.bb:do_compile (dependent Tasks ['libxdmcp_1.1.3.bb:do_configure'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libxdmcp_1.1.3.bb:do_install (dependent Tasks ['libxdmcp_1.1.3.bb:do_compile', 'pseudo_git.bb:do_populate_sysroot'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libxdmcp_1.1.3.bb:do_populate_sysroot (dependent Tasks ['binutils-cross_2.38.bb:do_populate_sysroot', 'libxdmcp_1.1.3.bb:do_install'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libxcb_1.14.bb:do_prepare_recipe_sysroot (dependent Tasks ['glibc_2.35.bb:do_populate_sysroot', 'libtool-native_2.4.7.bb:do_populate_sysroot', 'xorgproto_2021.5.bb:do_populate_sysroot', 'libxdmcp_1.1.3.bb:do_populate_sysroot', 'libpthread-stubs_0.4.bb:do_populate_sysroot', 'gcc-cross_11.5.bb:do_populate_sysroot', 'gcc-runtime_11.5.bb:do_populate_sysroot', 'automake_1.16.5.bb:do_populate_sysroot', 'xcb-proto_1.14.1.bb:do_populate_sysroot', 'libxau_1.0.9.bb:do_populate_sysroot', 'autoconf_2.71.bb:do_populate_sysroot', 'libtool-cross_2.4.7.bb:do_populate_sysroot', 'pkgconfig_git.bb:do_populate_sysroot', 'libxcb_1.14.bb:do_fetch', 'pseudo_git.bb:do_populate_sysroot'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libxcb_1.14.bb:do_configure (dependent Tasks ['libxcb_1.14.bb:do_deploy_source_date_epoch', 'libxcb_1.14.bb:do_patch', 'libxcb_1.14.bb:do_prepare_recipe_sysroot'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libxcb_1.14.bb:do_compile (dependent Tasks ['libxcb_1.14.bb:do_configure'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libxcb_1.14.bb:do_install (dependent Tasks ['libxcb_1.14.bb:do_compile', 'pseudo_git.bb:do_populate_sysroot'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libxcb_1.14.bb:do_populate_sysroot (dependent Tasks ['binutils-cross_2.38.bb:do_populate_sysroot', 'libxcb_1.14.bb:do_install'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libx11_1.7.3.1.bb:do_prepare_recipe_sysroot (dependent Tasks ['glibc_2.35.bb:do_populate_sysroot', 'libtool-native_2.4.7.bb:do_populate_sysroot', 'xorgproto_2021.5.bb:do_populate_sysroot', 'xtrans_1.4.0.bb:do_populate_sysroot', 'xorgproto_2021.5.bb:do_populate_sysroot', 'libxcb_1.14.bb:do_populate_sysroot', 'pseudo_git.bb:do_populate_sysroot', 'gcc-runtime_11.5.bb:do_populate_sysroot', 'automake_1.16.5.bb:do_populate_sysroot', 'autoconf-archive_2022.02.11.bb:do_populate_sysroot', 'autoconf_2.71.bb:do_populate_sysroot', 'util-macros_1.19.3.bb:do_populate_sysroot', 'libtool-cross_2.4.7.bb:do_populate_sysroot', 'pkgconfig_git.bb:do_populate_sysroot', 'gcc-cross_11.5.bb:do_populate_sysroot', 'libx11_1.7.3.1.bb:do_fetch', 'gettext_0.21.bb:do_populate_sysroot'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libx11_1.7.3.1.bb:do_configure (dependent Tasks ['libx11_1.7.3.1.bb:do_patch', 'libx11_1.7.3.1.bb:do_prepare_recipe_sysroot', 'libx11_1.7.3.1.bb:do_deploy_source_date_epoch'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libx11_1.7.3.1.bb:do_compile (dependent Tasks ['libx11_1.7.3.1.bb:do_configure'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libx11_1.7.3.1.bb:do_install (dependent Tasks ['libx11_1.7.3.1.bb:do_compile', 'pseudo_git.bb:do_populate_sysroot'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libx11_1.7.3.1.bb:do_populate_sysroot (dependent Tasks ['libx11_1.7.3.1.bb:do_install', 'binutils-cross_2.38.bb:do_populate_sysroot'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libxrender_0.9.10.bb:do_prepare_recipe_sysroot (dependent Tasks ['glibc_2.35.bb:do_populate_sysroot', 'libtool-native_2.4.7.bb:do_populate_sysroot', 'xorgproto_2021.5.bb:do_populate_sysroot', 'gcc-runtime_11.5.bb:do_populate_sysroot', 'automake_1.16.5.bb:do_populate_sysroot', 'autoconf_2.71.bb:do_populate_sysroot', 'util-macros_1.19.3.bb:do_populate_sysroot', 'libtool-cross_2.4.7.bb:do_populate_sysroot', 'pkgconfig_git.bb:do_populate_sysroot', 'gcc-cross_11.5.bb:do_populate_sysroot', 'libxrender_0.9.10.bb:do_fetch', 'libx11_1.7.3.1.bb:do_populate_sysroot', 'pseudo_git.bb:do_populate_sysroot'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libxrender_0.9.10.bb:do_configure (dependent Tasks ['libxrender_0.9.10.bb:do_deploy_source_date_epoch', 'libxrender_0.9.10.bb:do_prepare_recipe_sysroot', 'libxrender_0.9.10.bb:do_patch'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libxrender_0.9.10.bb:do_compile (dependent Tasks ['libxrender_0.9.10.bb:do_configure'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libxrender_0.9.10.bb:do_install (dependent Tasks ['libxrender_0.9.10.bb:do_compile', 'pseudo_git.bb:do_populate_sysroot'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libxrender_0.9.10.bb:do_populate_sysroot (dependent Tasks ['libxrender_0.9.10.bb:do_install', 'binutils-cross_2.38.bb:do_populate_sysroot'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libxft_2.3.4.bb:do_prepare_recipe_sysroot (dependent Tasks ['glibc_2.35.bb:do_populate_sysroot', 'libtool-native_2.4.7.bb:do_populate_sysroot', 'libxft_2.3.4.bb:do_fetch', 'pseudo_git.bb:do_populate_sysroot', 'gcc-runtime_11.5.bb:do_populate_sysroot', 'automake_1.16.5.bb:do_populate_sysroot', 'fontconfig_2.13.1.bb:do_populate_sysroot', 'libxrender_0.9.10.bb:do_populate_sysroot', 'autoconf_2.71.bb:do_populate_sysroot', 'util-macros_1.19.3.bb:do_populate_sysroot', 'libtool-cross_2.4.7.bb:do_populate_sysroot', 'pkgconfig_git.bb:do_populate_sysroot', 'gcc-cross_11.5.bb:do_populate_sysroot', 'libx11_1.7.3.1.bb:do_populate_sysroot', 'freetype_2.11.1.bb:do_populate_sysroot'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libxft_2.3.4.bb:do_configure (dependent Tasks ['libxft_2.3.4.bb:do_patch', 'libxft_2.3.4.bb:do_prepare_recipe_sysroot', 'libxft_2.3.4.bb:do_deploy_source_date_epoch'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libxft_2.3.4.bb:do_compile (dependent Tasks ['libxft_2.3.4.bb:do_configure'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libxft_2.3.4.bb:do_install (dependent Tasks ['libxft_2.3.4.bb:do_compile', 'pseudo_git.bb:do_populate_sysroot'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libxft_2.3.4.bb:do_populate_sysroot (dependent Tasks ['libxft_2.3.4.bb:do_install', 'binutils-cross_2.38.bb:do_populate_sysroot'])
+  Task /home/xuning/yocto-rk3399/meta-openembedded/meta-oe/recipes-devtools/tcltk/tk_8.6.10.bb:do_prepare_recipe_sysroot (dependent Tasks ['glibc_2.35.bb:do_populate_sysroot', 'tk_8.6.10.bb:do_fetch', 'libxft_2.3.4.bb:do_populate_sysroot', 'libtool-native_2.4.7.bb:do_populate_sysroot', 'gcc-runtime_11.5.bb:do_populate_sysroot', 'automake_1.16.5.bb:do_populate_sysroot', 'libxt_1.2.1.bb:do_populate_sysroot', 'autoconf_2.71.bb:do_populate_sysroot', 'tcl_8.6.11.bb:do_populate_sysroot', 'libtool-cross_2.4.7.bb:do_populate_sysroot', 'pkgconfig_git.bb:do_populate_sysroot', 'gcc-cross_11.5.bb:do_populate_sysroot', 'libx11_1.7.3.1.bb:do_populate_sysroot', 'pseudo_git.bb:do_populate_sysroot'])
+  Task /home/xuning/yocto-rk3399/meta-openembedded/meta-oe/recipes-devtools/tcltk/tk_8.6.10.bb:do_configure (dependent Tasks ['tk_8.6.10.bb:do_patch', 'tk_8.6.10.bb:do_prepare_recipe_sysroot', 'tk_8.6.10.bb:do_deploy_source_date_epoch'])
+
+Dependency loop #11 found:
+  Task /home/xuning/yocto-rk3399/meta-openembedded/meta-oe/recipes-devtools/tcltk/tk_8.6.10.bb:do_compile (dependent Tasks ['tk_8.6.10.bb:do_configure'])
+  Task /home/xuning/yocto-rk3399/meta-openembedded/meta-oe/recipes-devtools/tcltk/tk_8.6.10.bb:do_install (dependent Tasks ['tk_8.6.10.bb:do_compile', 'pseudo_git.bb:do_populate_sysroot'])
+  Task /home/xuning/yocto-rk3399/meta-openembedded/meta-oe/recipes-devtools/tcltk/tk_8.6.10.bb:do_populate_sysroot (dependent Tasks ['binutils-cross_2.38.bb:do_populate_sysroot', 'tk_8.6.10.bb:do_install'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/python/python3_3.10.19.bb:do_populate_sysroot (dependent Tasks ['tk_8.6.10.bb:do_populate_sysroot', 'tcl_8.6.11.bb:do_populate_sysroot', 'python3_3.10.19.bb:do_install'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/python/python3-installer_0.5.1.bb:do_prepare_recipe_sysroot (dependent Tasks ['python3-flit-core_3.7.1.bb:do_populate_sysroot', 'python3_3.10.19.bb:do_populate_sysroot', 'python3-installer_0.5.1.bb:do_fetch', 'unzip_6.0.bb:do_populate_sysroot'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/python/python3-installer_0.5.1.bb:do_configure (dependent Tasks ['python3-installer_0.5.1.bb:do_patch', 'python3-installer_0.5.1.bb:do_deploy_source_date_epoch', 'python3-installer_0.5.1.bb:do_prepare_recipe_sysroot'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/python/python3-installer_0.5.1.bb:do_compile (dependent Tasks ['python3-installer_0.5.1.bb:do_configure'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/python/python3-installer_0.5.1.bb:do_install (dependent Tasks ['python3-installer_0.5.1.bb:do_compile'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/python/python3-installer_0.5.1.bb:do_populate_sysroot (dependent Tasks ['python3-installer_0.5.1.bb:do_install'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/python/python3-wheel_0.37.1.bb:do_prepare_recipe_sysroot (dependent Tasks ['python3-flit-core_3.7.1.bb:do_populate_sysroot', 'python3-installer_0.5.1.bb:do_populate_sysroot', 'python3_3.10.19.bb:do_populate_sysroot', 'python3-wheel_0.37.1.bb:do_fetch'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/python/python3-wheel_0.37.1.bb:do_configure (dependent Tasks ['python3-wheel_0.37.1.bb:do_prepare_recipe_sysroot', 'python3-wheel_0.37.1.bb:do_deploy_source_date_epoch', 'python3-wheel_0.37.1.bb:do_patch'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/python/python3-wheel_0.37.1.bb:do_compile (dependent Tasks ['python3-wheel_0.37.1.bb:do_configure'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/python/python3-wheel_0.37.1.bb:do_install (dependent Tasks ['python3-wheel_0.37.1.bb:do_compile'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/python/python3-wheel_0.37.1.bb:do_populate_sysroot (dependent Tasks ['python3-wheel_0.37.1.bb:do_install'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/meson/meson_0.61.3.bb:do_prepare_recipe_sysroot (dependent Tasks ['python3_3.10.19.bb:do_populate_sysroot', 'meson_0.61.3.bb:do_fetch', 'python3-installer_0.5.1.bb:do_populate_sysroot', 'python3-setuptools_59.5.0.bb:do_populate_sysroot', 'python3-wheel_0.37.1.bb:do_populate_sysroot'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/meson/meson_0.61.3.bb:do_configure (dependent Tasks ['meson_0.61.3.bb:do_deploy_source_date_epoch', 'meson_0.61.3.bb:do_patch', 'meson_0.61.3.bb:do_prepare_recipe_sysroot'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/meson/meson_0.61.3.bb:do_compile (dependent Tasks ['meson_0.61.3.bb:do_configure'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/meson/meson_0.61.3.bb:do_install (dependent Tasks ['meson_0.61.3.bb:do_compile'])
+  Task virtual:native:/home/xuning/yocto-rk3399/poky/meta/recipes-devtools/meson/meson_0.61.3.bb:do_populate_sysroot (dependent Tasks ['meson_0.61.3.bb:do_install', 'ninja_1.10.2.bb:do_populate_sysroot', 'python3-setuptools_59.5.0.bb:do_populate_sysroot', 'python3_3.10.19.bb:do_populate_sysroot'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-proto/xorgproto_2021.5.bb:do_prepare_recipe_sysroot (dependent Tasks ['glibc_2.35.bb:do_populate_sysroot', 'python3_3.10.19.bb:do_populate_sysroot', 'gcc-runtime_11.5.bb:do_populate_sysroot', 'qemu-native_6.2.0.bb:do_populate_sysroot', 'meson_0.61.3.bb:do_populate_sysroot', 'xorgproto_2021.5.bb:do_fetch', 'gcc-cross_11.5.bb:do_populate_sysroot', 'ninja_1.10.2.bb:do_populate_sysroot', 'pseudo_git.bb:do_populate_sysroot'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-proto/xorgproto_2021.5.bb:do_configure (dependent Tasks ['xorgproto_2021.5.bb:do_prepare_recipe_sysroot', 'xorgproto_2021.5.bb:do_deploy_source_date_epoch', 'xorgproto_2021.5.bb:do_write_config', 'xorgproto_2021.5.bb:do_patch'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-proto/xorgproto_2021.5.bb:do_compile (dependent Tasks ['xorgproto_2021.5.bb:do_configure'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-proto/xorgproto_2021.5.bb:do_install (dependent Tasks ['xorgproto_2021.5.bb:do_compile', 'pseudo_git.bb:do_populate_sysroot'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-proto/xorgproto_2021.5.bb:do_populate_sysroot (dependent Tasks ['binutils-cross_2.38.bb:do_populate_sysroot', 'xorgproto_2021.5.bb:do_install'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libxdmcp_1.1.3.bb:do_prepare_recipe_sysroot (dependent Tasks ['glibc_2.35.bb:do_populate_sysroot', 'libtool-native_2.4.7.bb:do_populate_sysroot', 'xorgproto_2021.5.bb:do_populate_sysroot', 'pseudo_git.bb:do_populate_sysroot', 'gcc-runtime_11.5.bb:do_populate_sysroot', 'automake_1.16.5.bb:do_populate_sysroot', 'libxdmcp_1.1.3.bb:do_fetch', 'autoconf_2.71.bb:do_populate_sysroot', 'util-macros_1.19.3.bb:do_populate_sysroot', 'libtool-cross_2.4.7.bb:do_populate_sysroot', 'pkgconfig_git.bb:do_populate_sysroot', 'gcc-cross_11.5.bb:do_populate_sysroot', 'gettext_0.21.bb:do_populate_sysroot'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libxdmcp_1.1.3.bb:do_configure (dependent Tasks ['libxdmcp_1.1.3.bb:do_prepare_recipe_sysroot', 'libxdmcp_1.1.3.bb:do_patch', 'libxdmcp_1.1.3.bb:do_deploy_source_date_epoch'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libxdmcp_1.1.3.bb:do_compile (dependent Tasks ['libxdmcp_1.1.3.bb:do_configure'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libxdmcp_1.1.3.bb:do_install (dependent Tasks ['libxdmcp_1.1.3.bb:do_compile', 'pseudo_git.bb:do_populate_sysroot'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libxdmcp_1.1.3.bb:do_populate_sysroot (dependent Tasks ['binutils-cross_2.38.bb:do_populate_sysroot', 'libxdmcp_1.1.3.bb:do_install'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libxcb_1.14.bb:do_prepare_recipe_sysroot (dependent Tasks ['glibc_2.35.bb:do_populate_sysroot', 'libtool-native_2.4.7.bb:do_populate_sysroot', 'xorgproto_2021.5.bb:do_populate_sysroot', 'libxdmcp_1.1.3.bb:do_populate_sysroot', 'libpthread-stubs_0.4.bb:do_populate_sysroot', 'gcc-cross_11.5.bb:do_populate_sysroot', 'gcc-runtime_11.5.bb:do_populate_sysroot', 'automake_1.16.5.bb:do_populate_sysroot', 'xcb-proto_1.14.1.bb:do_populate_sysroot', 'libxau_1.0.9.bb:do_populate_sysroot', 'autoconf_2.71.bb:do_populate_sysroot', 'libtool-cross_2.4.7.bb:do_populate_sysroot', 'pkgconfig_git.bb:do_populate_sysroot', 'libxcb_1.14.bb:do_fetch', 'pseudo_git.bb:do_populate_sysroot'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libxcb_1.14.bb:do_configure (dependent Tasks ['libxcb_1.14.bb:do_deploy_source_date_epoch', 'libxcb_1.14.bb:do_patch', 'libxcb_1.14.bb:do_prepare_recipe_sysroot'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libxcb_1.14.bb:do_compile (dependent Tasks ['libxcb_1.14.bb:do_configure'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libxcb_1.14.bb:do_install (dependent Tasks ['libxcb_1.14.bb:do_compile', 'pseudo_git.bb:do_populate_sysroot'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libxcb_1.14.bb:do_populate_sysroot (dependent Tasks ['binutils-cross_2.38.bb:do_populate_sysroot', 'libxcb_1.14.bb:do_install'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libx11_1.7.3.1.bb:do_prepare_recipe_sysroot (dependent Tasks ['glibc_2.35.bb:do_populate_sysroot', 'libtool-native_2.4.7.bb:do_populate_sysroot', 'xorgproto_2021.5.bb:do_populate_sysroot', 'xtrans_1.4.0.bb:do_populate_sysroot', 'xorgproto_2021.5.bb:do_populate_sysroot', 'libxcb_1.14.bb:do_populate_sysroot', 'pseudo_git.bb:do_populate_sysroot', 'gcc-runtime_11.5.bb:do_populate_sysroot', 'automake_1.16.5.bb:do_populate_sysroot', 'autoconf-archive_2022.02.11.bb:do_populate_sysroot', 'autoconf_2.71.bb:do_populate_sysroot', 'util-macros_1.19.3.bb:do_populate_sysroot', 'libtool-cross_2.4.7.bb:do_populate_sysroot', 'pkgconfig_git.bb:do_populate_sysroot', 'gcc-cross_11.5.bb:do_populate_sysroot', 'libx11_1.7.3.1.bb:do_fetch', 'gettext_0.21.bb:do_populate_sysroot'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libx11_1.7.3.1.bb:do_configure (dependent Tasks ['libx11_1.7.3.1.bb:do_patch', 'libx11_1.7.3.1.bb:do_prepare_recipe_sysroot', 'libx11_1.7.3.1.bb:do_deploy_source_date_epoch'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libx11_1.7.3.1.bb:do_compile (dependent Tasks ['libx11_1.7.3.1.bb:do_configure'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libx11_1.7.3.1.bb:do_install (dependent Tasks ['libx11_1.7.3.1.bb:do_compile', 'pseudo_git.bb:do_populate_sysroot'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libx11_1.7.3.1.bb:do_populate_sysroot (dependent Tasks ['libx11_1.7.3.1.bb:do_install', 'binutils-cross_2.38.bb:do_populate_sysroot'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libxt_1.2.1.bb:do_prepare_recipe_sysroot (dependent Tasks ['glibc_2.35.bb:do_populate_sysroot', 'libtool-native_2.4.7.bb:do_populate_sysroot', 'xorgproto_2021.5.bb:do_populate_sysroot', 'util-linux_2.37.4.bb:do_populate_sysroot', 'libxt_1.2.1.bb:do_fetch', 'libxdmcp_1.1.3.bb:do_populate_sysroot', 'libxcb_1.14.bb:do_populate_sysroot', 'gcc-runtime_11.5.bb:do_populate_sysroot', 'automake_1.16.5.bb:do_populate_sysroot', 'libsm_1.2.3.bb:do_populate_sysroot', 'autoconf_2.71.bb:do_populate_sysroot', 'util-macros_1.19.3.bb:do_populate_sysroot', 'libtool-cross_2.4.7.bb:do_populate_sysroot', 'pkgconfig_git.bb:do_populate_sysroot', 'gcc-cross_11.5.bb:do_populate_sysroot', 'libx11_1.7.3.1.bb:do_populate_sysroot', 'pseudo_git.bb:do_populate_sysroot'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libxt_1.2.1.bb:do_configure (dependent Tasks ['libxt_1.2.1.bb:do_deploy_source_date_epoch', 'libxt_1.2.1.bb:do_prepare_recipe_sysroot', 'libxt_1.2.1.bb:do_patch'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libxt_1.2.1.bb:do_compile (dependent Tasks ['libxt_1.2.1.bb:do_configure'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libxt_1.2.1.bb:do_install (dependent Tasks ['libxt_1.2.1.bb:do_compile', 'pseudo_git.bb:do_populate_sysroot'])
+  Task /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/xorg-lib/libxt_1.2.1.bb:do_populate_sysroot (dependent Tasks ['binutils-cross_2.38.bb:do_populate_sysroot', 'libxt_1.2.1.bb:do_install'])
+  Task /home/xuning/yocto-rk3399/meta-openembedded/meta-oe/recipes-devtools/tcltk/tk_8.6.10.bb:do_prepare_recipe_sysroot (dependent Tasks ['glibc_2.35.bb:do_populate_sysroot', 'tk_8.6.10.bb:do_fetch', 'libxft_2.3.4.bb:do_populate_sysroot', 'libtool-native_2.4.7.bb:do_populate_sysroot', 'gcc-runtime_11.5.bb:do_populate_sysroot', 'automake_1.16.5.bb:do_populate_sysroot', 'libxt_1.2.1.bb:do_populate_sysroot', 'autoconf_2.71.bb:do_populate_sysroot', 'tcl_8.6.11.bb:do_populate_sysroot', 'libtool-cross_2.4.7.bb:do_populate_sysroot', 'pkgconfig_git.bb:do_populate_sysroot', 'gcc-cross_11.5.bb:do_populate_sysroot', 'libx11_1.7.3.1.bb:do_populate_sysroot', 'pseudo_git.bb:do_populate_sysroot'])
+  Task /home/xuning/yocto-rk3399/meta-openembedded/meta-oe/recipes-devtools/tcltk/tk_8.6.10.bb:do_configure (dependent Tasks ['tk_8.6.10.bb:do_patch', 'tk_8.6.10.bb:do_prepare_recipe_sysroot', 'tk_8.6.10.bb:do_deploy_source_date_epoch'])
+
+Halted dependency loops search after 10 matches.
+
+ERROR: Command execution failed: 1
+
+Summary: There were 3 ERROR messages, returning a non-zero exit code.
+xuning@DESKTOP-176A4AI:~/yocto-rk3399/build$

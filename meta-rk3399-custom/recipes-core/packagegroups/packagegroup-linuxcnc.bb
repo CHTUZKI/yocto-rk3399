@@ -22,7 +22,7 @@ RDEPENDS:${PN} += " \
     python3-core \
     python3-tkinter \
     python3-numpy \
-    python3-cairo \
+    python3-pycairo \
     python3-pygobject \
     python3-xml \
     python3-netclient \
@@ -38,10 +38,11 @@ RDEPENDS:${PN} += " \
 
 # Graphics and display dependencies
 RDEPENDS:${PN} += " \
-    mesa-utils \
+    mesa-demos \
     gtk+3 \
+    gtk+ \
     libepoxy \
-    glu \
+    libglu \
 "
 
 # System utilities required by LinuxCNC

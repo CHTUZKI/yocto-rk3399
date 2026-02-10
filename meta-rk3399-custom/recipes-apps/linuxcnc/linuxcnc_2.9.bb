@@ -5,7 +5,7 @@ cutters, robot arms, hexapods, and more. \
 LinuxCNC relies on a realtime kernel (PREEMPT_RT) to support real-time motion control."
 HOMEPAGE = "https://linuxcnc.org/"
 LICENSE = "GPL-2.0-only"
-LIC_FILES_CHKSUM = "file://COPYING;md5=59530bdf33659b29e73d4adb9f9f6552"
+LIC_FILES_CHKSUM = "file://COPYING;md5=b234ee4d69f5fce4486a80fdaf4a4263"
 
 SECTION = "misc"
 
@@ -22,6 +22,9 @@ S = "${WORKDIR}/git"
 
 inherit pkgconfig python3native python3-dir gettext
 
+# Ensure configure can find ps via hosttools
+HOSTTOOLS += "ps"
+
 # Build dependencies
 DEPENDS = " \
     autoconf-native \
@@ -29,6 +32,7 @@ DEPENDS = " \
     intltool-native \
     boost \
     gtk+3 \
+    gtk+ \
     libmodbus \
     libgpiod \
     readline \
@@ -37,9 +41,10 @@ DEPENDS = " \
     libxmu \
     libepoxy \
     mesa \
-    glu \
+    libglu \
     python3 \
     python3-native \
+    yapps2-native \
     tcl \
     tk \
     libxinerama \
@@ -52,11 +57,12 @@ RDEPENDS:${PN} = " \
     python3 \
     python3-tkinter \
     python3-numpy \
-    python3-cairo \
+    python3-pycairo \
     python3-pygobject \
+    gtk+ \
     tcl \
     tk \
-    mesa-utils \
+    mesa-demos \
     procps \
     psmisc \
     udev \
@@ -79,7 +85,7 @@ RRECOMMENDS:${PN} = " \
 B = "${S}/src"
 
 # Export necessary environment variables
-export PYTHON = "${PYTHON}"
+export PYTHON = "${PYTHON3}"
 
 do_configure() {
     cd ${S}/src
@@ -94,6 +100,8 @@ do_configure() {
         --disable-build-documentation \
         --disable-check-runtime-deps \
         --enable-non-distributable \
+        --with-tclConfig=${STAGING_LIBDIR}/tclConfig.sh \
+        --with-tkConfig=${STAGING_LIBDIR}/tkConfig.sh \
         --host=${HOST_SYS} \
         --build=${BUILD_SYS} \
         PYTHON=${PYTHON}
