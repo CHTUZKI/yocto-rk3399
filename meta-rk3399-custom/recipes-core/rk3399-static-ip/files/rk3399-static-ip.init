@@ -1,0 +1,35 @@
+#!/bin/sh
+### BEGIN INIT INFO
+# Provides:          rk3399-static-ip
+# Required-Start:    $network
+# Required-Stop:
+# Default-Start:     2 3 4 5
+# Default-Stop:
+# Short-Description: Configure static IP 10.10.10.1/24 on eth0
+### END INIT INFO
+
+DAEMON=/usr/sbin/rk3399-static-ip.sh
+
+case "$1" in
+  start)
+    if [ -x "$DAEMON" ]; then
+      echo "Setting static IP 10.10.10.1/24 on eth0"
+      "$DAEMON"
+    fi
+    ;;
+  stop)
+    # nothing
+    ;;
+  restart|reload|force-reload)
+    if [ -x "$DAEMON" ]; then
+      "$DAEMON"
+    fi
+    ;;
+  *)
+    echo "Usage: $0 {start|stop|restart}" >&2
+    exit 3
+    ;;
+esac
+
+exit 0
+

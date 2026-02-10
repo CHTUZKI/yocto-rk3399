@@ -1,0 +1,13 @@
+[Unit]
+Description=Configure static IPv4 10.10.10.1/24 on RJ45 Ethernet
+After=network.target
+Wants=network.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/sbin/rk3399-static-ip.sh
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
+

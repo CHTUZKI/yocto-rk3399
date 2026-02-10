@@ -1,5 +1,5 @@
-SUMMARY = "Desktop system image for RK3399 with Armbian-style XFCE desktop"
-DESCRIPTION = "Desktop system image for RK3399 platform with Armbian-style XFCE desktop environment"
+SUMMARY = "Desktop system image for RK3399 with XFCE desktop"
+DESCRIPTION = "Desktop system image for RK3399 platform with standard XFCE desktop environment"
 
 inherit core-image
 inherit rockchip-image
@@ -30,9 +30,15 @@ IMAGE_INSTALL += " \
     arm-trusted-firmware-rk3399 \
 "
 
-# Desktop Environment
+# Desktop Environment (standard XFCE)
 IMAGE_INSTALL += " \
-    packagegroup-armbian-desktop-xfce \
+    packagegroup-xfce-base \
+    packagegroup-xfce-extended \
+"
+
+# Static IP helper for RJ45 Ethernet (eth0 -> 10.10.10.1/24)
+IMAGE_INSTALL += " \
+    rk3399-static-ip \
 "
 
 # LinuxCNC - CNC Machine Controller
