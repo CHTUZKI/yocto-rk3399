@@ -234,10 +234,10 @@ FILES:${PN} = " \
     ${sysconfdir}/X11/app-defaults/TkLinuxCNC \
 "
 
-FILES:${PN}-configs = " \
-    ${datadir}/linuxcnc/configs \
-    ${datadir}/linuxcnc/nc_files \
-"
+FILES:${PN}-configs = ""
+
+ALLOW_EMPTY:${PN}-configs = "1"
+RDEPENDS:${PN}-configs = "${PN}"
 
 FILES:${PN}-doc = " \
     ${datadir}/doc/linuxcnc \
