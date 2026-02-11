@@ -45,7 +45,10 @@ Section "Files"
 EndSection
 EOF
 
-    # Provide XFCE desktop default to use uniform solid background
+    # Provide XFCE desktop default: uniform solid background (no gradient)
+    # color-style 1 = solid; set color1 and color2 same to avoid half-deep/half-light
+    # Ensure target directory exists before writing xfce4-desktop.xml
+    install -d ${D}${sysconfdir}/xdg/xfce4/xfconf/xfce-perchannel-xml
     cat > ${D}${sysconfdir}/xdg/xfce4/xfconf/xfce-perchannel-xml/xfce4-desktop.xml << 'EOF'
 <?xml version="1.0" encoding="UTF-8"?>
 <channel name="xfce4-desktop" version="1.0">
@@ -55,21 +58,51 @@ EOF
         <property name="workspace0" type="empty">
           <property name="color-style" type="int" value="1"/>
           <property name="color1" type="string" value="#003366"/>
+          <property name="color2" type="string" value="#003366"/>
           <property name="image-style" type="int" value="0"/>
         </property>
         <property name="workspace1" type="empty">
           <property name="color-style" type="int" value="1"/>
           <property name="color1" type="string" value="#003366"/>
+          <property name="color2" type="string" value="#003366"/>
           <property name="image-style" type="int" value="0"/>
         </property>
         <property name="workspace2" type="empty">
           <property name="color-style" type="int" value="1"/>
           <property name="color1" type="string" value="#003366"/>
+          <property name="color2" type="string" value="#003366"/>
           <property name="image-style" type="int" value="0"/>
         </property>
         <property name="workspace3" type="empty">
           <property name="color-style" type="int" value="1"/>
           <property name="color1" type="string" value="#003366"/>
+          <property name="color2" type="string" value="#003366"/>
+          <property name="image-style" type="int" value="0"/>
+        </property>
+      </property>
+      <property name="monitor1" type="empty">
+        <property name="workspace0" type="empty">
+          <property name="color-style" type="int" value="1"/>
+          <property name="color1" type="string" value="#003366"/>
+          <property name="color2" type="string" value="#003366"/>
+          <property name="image-style" type="int" value="0"/>
+        </property>
+        <property name="workspace1" type="empty">
+          <property name="color-style" type="int" value="1"/>
+          <property name="color1" type="string" value="#003366"/>
+          <property name="color2" type="string" value="#003366"/>
+          <property name="image-style" type="int" value="0"/>
+        </property>
+        <property name="workspace2" type="empty">
+          <property name="color-style" type="int" value="1"/>
+          <property name="color1" type="string" value="#003366"/>
+          <property name="color2" type="string" value="#003366"/>
+          <property name="image-style" type="int" value="0"/>
+        </property>
+        <property name="workspace3" type="empty">
+          <property name="color-style" type="int" value="1"/>
+          <property name="color1" type="string" value="#003366"/>
+          <property name="color2" type="string" value="#003366"/>
           <property name="image-style" type="int" value="0"/>
         </property>
       </property>

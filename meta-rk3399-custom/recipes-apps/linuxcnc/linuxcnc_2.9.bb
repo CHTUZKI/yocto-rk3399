@@ -17,8 +17,8 @@ SRC_URI = "git://github.com/LinuxCNC/linuxcnc.git;branch=2.9;protocol=https \
            file://linuxcnc-fix-environ-decl.patch \
            "
 
-# Use AUTOREV for development, pin to specific commit for production
-SRCREV = "${AUTOREV}"
+# Pin to specific commit (2.9 branch) for reproducible builds, no network at parse time
+SRCREV = "6bf62870da5866a237bdd8531e28f33644255164"
 PV = "2.9+git${SRCPV}"
 
 S = "${WORKDIR}/git"

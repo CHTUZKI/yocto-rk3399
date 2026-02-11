@@ -1,0 +1,3180 @@
+0.749907] vcc5v0-host-regulator Dropping the fwnode link to vcc5v0-host-en
+[    0.750544] device: 'platform:ff730000.gpio--platform:vcc5v0-host-regulator': device_add
+[    0.751298] devices_kset: Moving vcc5v0-host-regulator to end of list
+[    0.751874] PM: Moving platform:vcc5v0-host-regulator to end of list
+[    0.752447] platform vcc5v0-host-regulator: Linked as a consumer to ff730000.gpio
+[    0.753116] vcc5v0-host-regulator Dropping the fwnode link to gpio@ff730000
+[    0.753759] device: 'vcc-phy-regulator': device_add
+[    0.754208] bus: 'platform': add device vcc-phy-regulator
+[    0.754706] PM: Adding info for platform:vcc-phy-regulator
+[    0.755242] device: 'platform:vcc-phy-regulator--platform:fe300000.ethernet': device_add
+[    0.755998] devices_kset: Moving fe300000.ethernet to end of list
+[    0.756549] PM: Moving platform:fe300000.ethernet to end of list
+[    0.757088] platform fe300000.ethernet: Linked as a consumer to vcc-phy-regulator
+[    0.757760] ethernet@fe300000 Dropping the fwnode link to vcc-phy-regulator
+[    0.758474] device: 'cpu0': device_add
+[    0.758827] bus: 'cpu': add device cpu0
+[    0.759189] PM: Adding info for cpu:cpu0
+[    0.759586] device: 'cpu1': device_add
+[    0.759937] bus: 'cpu': add device cpu1
+[    0.760293] PM: Adding info for cpu:cpu1
+[    0.760684] device: 'cpu2': device_add
+[    0.761033] bus: 'cpu': add device cpu2
+[    0.761389] PM: Adding info for cpu:cpu2
+[    0.761782] device: 'cpu3': device_add
+[    0.762135] bus: 'cpu': add device cpu3
+[    0.762491] PM: Adding info for cpu:cpu3
+[    0.762886] device: 'cpu4': device_add
+[    0.763236] bus: 'cpu': add device cpu4
+[    0.763592] PM: Adding info for cpu:cpu4
+[    0.763986] device: 'cpu5': device_add
+[    0.764335] bus: 'cpu': add device cpu5
+[    0.764694] PM: Adding info for cpu:cpu5
+[    0.768614] device: 'writeback': device_add
+[    0.769001] bus: 'workqueue': add device writeback
+[    0.769463] PM: Adding info for workqueue:writeback
+[    0.770166] device class 'block': registering
+[    0.770739] device class 'pwm': registering
+[    0.771139] device class 'graphics': registering
+[    0.771578] device: 'fbcon': device_add
+[    0.771604] PM: Adding info for No Bus:fbcon
+[    0.772346] bus: 'platform': add driver reg-fixed-voltage
+[    0.773040] bus: 'platform': __driver_probe_device: matched device vcc3v3-sys with driver reg-fixed-voltage
+[    0.773919] bus: 'platform': really_probe: probing driver reg-fixed-voltage with device vcc3v3-sys
+[    0.774730] reg-fixed-voltage vcc3v3-sys: no pinctrl handle
+[    0.775321] vcc3v3_sys: 3300 mV, enabled
+[    0.775678] device: 'regulator.1': device_add
+[    0.776112] PM: Adding info for No Bus:regulator.1
+[    0.776642] reg-fixed-voltage vcc3v3-sys: vcc3v3_sys supplying 3300000uV
+[    0.777246] driver: 'reg-fixed-voltage': driver_bound: bound to device 'vcc3v3-sys'
+[    0.777964] bus: 'platform': really_probe: bound device vcc3v3-sys to driver reg-fixed-voltage
+[    0.778739] bus: 'platform': __driver_probe_device: matched device vcc5v0-sys with driver reg-fixed-voltage
+[    0.779615] bus: 'platform': really_probe: probing driver reg-fixed-voltage with device vcc5v0-sys
+[    0.780420] reg-fixed-voltage vcc5v0-sys: no pinctrl handle
+[    0.780986] vcc5v0_sys: 5000 mV, enabled
+[    0.781343] device: 'regulator.2': device_add
+[    0.781769] PM: Adding info for No Bus:regulator.2
+[    0.782260] reg-fixed-voltage vcc5v0-sys: vcc5v0_sys supplying 5000000uV
+[    0.782863] driver: 'reg-fixed-voltage': driver_bound: bound to device 'vcc5v0-sys'
+[    0.783575] bus: 'platform': really_probe: bound device vcc5v0-sys to driver reg-fixed-voltage
+[    0.784350] bus: 'platform': __driver_probe_device: matched device vcc5v0-host-regulator with driver reg-fixed-voltage
+[    0.785310] bus: 'platform': really_probe: probing driver reg-fixed-voltage with device vcc5v0-host-regulator
+[    0.786252] reg-fixed-voltage vcc5v0-host-regulator: no init pinctrl state
+[    0.786883] reg-fixed-voltage vcc5v0-host-regulator: no sleep pinctrl state
+[    0.787507] reg-fixed-voltage vcc5v0-host-regulator: no idle pinctrl state
+[    0.788217] reg-fixed-voltage vcc5v0-host-regulator: Looking up vin-supply from device tree
+[    0.788970] vcc5v0_host: supplied by vcc5v0_sys
+[    0.789384] vcc5v0_sys: could not add device link regulator.3: -ENOENT
+[    0.789996] vcc5v0_host: at 5000 mV, enabled
+[    0.790386] device: 'regulator.3': device_add
+[    0.790818] PM: Adding info for No Bus:regulator.3
+[    0.791324] reg-fixed-voltage vcc5v0-host-regulator: vcc5v0_host supplying 0uV
+[    0.791977] driver: 'reg-fixed-voltage': driver_bound: bound to device 'vcc5v0-host-regulator'
+[    0.792775] bus: 'platform': really_probe: bound device vcc5v0-host-regulator to driver reg-fixed-voltage
+[    0.793639] bus: 'platform': __driver_probe_device: matched device vcc-phy-regulator with driver reg-fixed-voltage
+[    0.794565] bus: 'platform': really_probe: probing driver reg-fixed-voltage with device vcc-phy-regulator
+[    0.795428] reg-fixed-voltage vcc-phy-regulator: no pinctrl handle
+[    0.796039] vcc_phy: no parameters, enabled
+[    0.796418] device: 'regulator.4': device_add
+[    0.796851] PM: Adding info for No Bus:regulator.4
+[    0.797342] reg-fixed-voltage vcc-phy-regulator: vcc_phy supplying 0uV
+[    0.797934] driver: 'reg-fixed-voltage': driver_bound: bound to device 'vcc-phy-regulator'
+[    0.798693] bus: 'platform': really_probe: bound device vcc-phy-regulator to driver reg-fixed-voltage
+[    0.799544] bus: 'i2c': add driver ad5398
+[    0.799920] i2c-core: driver [ad5398] registered
+[    0.800338] bus: 'platform': add driver gpio-regulator
+[    0.800917] device class 'misc': registering
+[    0.801313] iommu: Default domain type: Translated 
+[    0.801751] iommu: DMA domain TLB invalidation policy: strict mode 
+[    0.802338] bus: 'dp-aux': registered
+[    0.802697] bus: 'parport': registered
+[    0.803175] device class 'scsi_host': registering
+[    0.803635] bus: 'scsi': registered
+[    0.803950] device class 'scsi_device': registering
+[    0.804395] SCSI subsystem initialized
+[    0.804737] device class 'mdio_bus': registering
+[    0.805173] bus: 'mdio_bus': registered
+[    0.805522] bus: 'mdio_bus': add driver Generic Clause 45 PHY
+[    0.806056] bus: 'mdio_bus': add driver Generic PHY
+[    0.806533] bus: 'usb': registered
+[    0.806846] bus: 'usb': add driver usbfs
+[    0.807219] usbcore: registered new interface driver usbfs
+[    0.807714] bus: 'usb': add driver hub
+[    0.808066] usbcore: registered new interface driver hub
+[    0.808558] bus: 'usb': add driver usb
+[    0.808908] usbcore: registered new device driver usb
+[    0.809363] device class 'udc': registering
+[    0.809766] bus: 'gadget': registered
+[    0.810113] bus: 'typec': registered
+[    0.810436] device class 'typec_mux': registering
+[    0.810869] device class 'retimer': registering
+[    0.811284] device class 'typec': registering
+[    0.811683] device class 'usb_power_delivery': registering
+[    0.812187] device class 'usb_role': registering
+[    0.812626] bus: 'serio': registered
+[    0.812951] device class 'input': registering
+[    0.813365] bus: 'platform': add driver i2c_designware
+[    0.813953] device class 'pps': registering
+[    0.814338] pps_core: LinuxPPS API ver. 1 registered
+[    0.814788] pps_core: Software ver. 5.3.6 - Copyright 2005-2007 Rodolfo Giometti <giometti@linux.it>
+[    0.815602] device class 'ptp': registering
+[    0.815989] PTP clock support registered
+[    0.816342] device class 'power_supply': registering
+[    0.816808] device class 'hwmon': registering
+[    0.817227] bus: 'mmc': registered
+[    0.817534] device class 'mmc_host': registering
+[    0.817972] bus: 'sdio': registered
+[    0.818292] device class 'devfreq': registering
+[    0.818827] bus: 'iio': registered
+[    0.819153] device class 'net': registering
+[    0.819569] device: 'lo': device_add
+[    0.819991] PM: Adding info for No Bus:lo
+[    0.820631] clocksource: Switched to clocksource arch_sys_counter
+[    0.821364] device class 'mem': registering
+[    0.821773] device: 'mem': device_add
+[    0.822125] PM: Adding info for No Bus:mem
+[    0.822565] device: 'null': device_add
+[    0.822929] PM: Adding info for No Bus:null
+[    0.823373] device: 'zero': device_add
+[    0.823744] PM: Adding info for No Bus:zero
+[    0.824185] device: 'full': device_add
+[    0.824539] PM: Adding info for No Bus:full
+[    0.824991] device: 'random': device_add
+[    0.825361] PM: Adding info for No Bus:random
+[    0.825827] device: 'urandom': device_add
+[    0.826207] PM: Adding info for No Bus:urandom
+[    0.826680] device: 'kmsg': device_add
+[    0.827034] PM: Adding info for No Bus:kmsg
+[    0.827479] device: 'tty': device_add
+[    0.827839] PM: Adding info for No Bus:tty
+[    0.828273] device: 'console': device_add
+[    0.828664] PM: Adding info for No Bus:console
+[    0.829125] device: 'tty0': device_add
+[    0.829480] PM: Adding info for No Bus:tty0
+[    0.829933] device class 'vc': registering
+[    0.830316] device: 'vcs': device_add
+[    0.830678] PM: Adding info for No Bus:vcs
+[    0.831108] device: 'vcsu': device_add
+[    0.831462] PM: Adding info for No Bus:vcsu
+[    0.831911] device: 'vcsa': device_add
+[    0.832264] PM: Adding info for No Bus:vcsa
+[    0.832720] device: 'vcs1': device_add
+[    0.833075] PM: Adding info for No Bus:vcs1
+[    0.833510] device: 'vcsu1': device_add
+[    0.833883] PM: Adding info for No Bus:vcsu1
+[    0.834329] device: 'vcsa1': device_add
+[    0.834705] PM: Adding info for No Bus:vcsa1
+[    0.835155] device: 'tty1': device_add
+[    0.835509] PM: Adding info for No Bus:tty1
+[    0.835965] device: 'tty2': device_add
+[    0.836318] PM: Adding info for No Bus:tty2
+[    0.836789] device: 'tty3': device_add
+[    0.837145] PM: Adding info for No Bus:tty3
+[    0.837583] device: 'tty4': device_add
+[    0.837948] PM: Adding info for No Bus:tty4
+[    0.838387] device: 'tty5': device_add
+[    0.838752] PM: Adding info for No Bus:tty5
+[    0.839193] device: 'tty6': device_add
+[    0.839546] PM: Adding info for No Bus:tty6
+[    0.839997] device: 'tty7': device_add
+[    0.840350] PM: Adding info for No Bus:tty7
+[    0.840803] device: 'tty8': device_add
+[    0.841159] PM: Adding info for No Bus:tty8
+[    0.841596] device: 'tty9': device_add
+[    0.841960] PM: Adding info for No Bus:tty9
+[    0.842399] device: 'tty10': device_add
+[    0.842771] PM: Adding info for No Bus:tty10
+[    0.843218] device: 'tty11': device_add
+[    0.843582] PM: Adding info for No Bus:tty11
+[    0.844040] device: 'tty12': device_add
+[    0.844402] PM: Adding info for No Bus:tty12
+[    0.844863] device: 'tty13': device_add
+[    0.845226] PM: Adding info for No Bus:tty13
+[    0.845690] device: 'tty14': device_add
+[    0.846052] PM: Adding info for No Bus:tty14
+[    0.846495] device: 'tty15': device_add
+[    0.846867] PM: Adding info for No Bus:tty15
+[    0.847312] device: 'tty16': device_add
+[    0.847687] PM: Adding info for No Bus:tty16
+[    0.848133] device: 'tty17': device_add
+[    0.848495] PM: Adding info for No Bus:tty17
+[    0.848954] device: 'tty18': device_add
+[    0.849315] PM: Adding info for No Bus:tty18
+[    0.849777] device: 'tty19': device_add
+[    0.850141] PM: Adding info for No Bus:tty19
+[    0.850585] device: 'tty20': device_add
+[    0.850959] PM: Adding info for No Bus:tty20
+[    0.851405] device: 'tty21': device_add
+[    0.851777] PM: Adding info for No Bus:tty21
+[    0.852240] device: 'tty22': device_add
+[    0.852602] PM: Adding info for No Bus:tty22
+[    0.853064] device: 'tty23': device_add
+[    0.853426] PM: Adding info for No Bus:tty23
+[    0.853888] device: 'tty24': device_add
+[    0.854253] PM: Adding info for No Bus:tty24
+[    0.854727] device: 'tty25': device_add
+[    0.855089] PM: Adding info for No Bus:tty25
+[    0.855532] device: 'tty26': device_add
+[    0.855906] PM: Adding info for No Bus:tty26
+[    0.856352] device: 'tty27': device_add
+[    0.856728] PM: Adding info for No Bus:tty27
+[    0.857174] device: 'tty28': device_add
+[    0.857535] PM: Adding info for No Bus:tty28
+[    0.857995] device: 'tty29': device_add
+[    0.858358] PM: Adding info for No Bus:tty29
+[    0.858820] device: 'tty30': device_add
+[    0.859182] PM: Adding info for No Bus:tty30
+[    0.859637] device: 'tty31': device_add
+[    0.859999] PM: Adding info for No Bus:tty31
+[    0.860444] device: 'tty32': device_add
+[    0.860820] PM: Adding info for No Bus:tty32
+[    0.861266] device: 'tty33': device_add
+[    0.861639] PM: Adding info for No Bus:tty33
+[    0.862085] device: 'tty34': device_add
+[    0.862446] PM: Adding info for No Bus:tty34
+[    0.862908] device: 'tty35': device_add
+[    0.863273] PM: Adding info for No Bus:tty35
+[    0.863731] device: 'tty36': device_add
+[    0.864093] PM: Adding info for No Bus:tty36
+[    0.864536] device: 'tty37': device_add
+[    0.864909] PM: Adding info for No Bus:tty37
+[    0.865356] device: 'tty38': device_add
+[    0.865728] PM: Adding info for No Bus:tty38
+[    0.866173] device: 'tty39': device_add
+[    0.866535] PM: Adding info for No Bus:tty39
+[    0.866996] device: 'tty40': device_add
+[    0.867360] PM: Adding info for No Bus:tty40
+[    0.867819] device: 'tty41': device_add
+[    0.868180] PM: Adding info for No Bus:tty41
+[    0.868634] device: 'tty42': device_add
+[    0.868996] PM: Adding info for No Bus:tty42
+[    0.869442] device: 'tty43': device_add
+[    0.869817] PM: Adding info for No Bus:tty43
+[    0.870265] device: 'tty44': device_add
+[    0.870639] PM: Adding info for No Bus:tty44
+[    0.871087] device: 'tty45': device_add
+[    0.871450] PM: Adding info for No Bus:tty45
+[    0.871913] device: 'tty46': device_add
+[    0.872275] PM: Adding info for No Bus:tty46
+[    0.872747] device: 'tty47': device_add
+[    0.873109] PM: Adding info for No Bus:tty47
+[    0.873553] device: 'tty48': device_add
+[    0.873929] PM: Adding info for No Bus:tty48
+[    0.874375] device: 'tty49': device_add
+[    0.874747] PM: Adding info for No Bus:tty49
+[    0.875194] device: 'tty50': device_add
+[    0.875554] PM: Adding info for No Bus:tty50
+[    0.876016] device: 'tty51': device_add
+[    0.876380] PM: Adding info for No Bus:tty51
+[    0.876837] device: 'tty52': device_add
+[    0.877199] PM: Adding info for No Bus:tty52
+[    0.877662] device: 'tty53': device_add
+[    0.878023] PM: Adding info for No Bus:tty53
+[    0.878470] device: 'tty54': device_add
+[    0.878844] PM: Adding info for No Bus:tty54
+[    0.879290] device: 'tty55': device_add
+[    0.879662] PM: Adding info for No Bus:tty55
+[    0.880111] device: 'tty56': device_add
+[    0.880474] PM: Adding info for No Bus:tty56
+[    0.880933] device: 'tty57': device_add
+[    0.881295] PM: Adding info for No Bus:tty57
+[    0.881752] device: 'tty58': device_add
+[    0.882114] PM: Adding info for No Bus:tty58
+[    0.882557] device: 'tty59': device_add
+[    0.882933] PM: Adding info for No Bus:tty59
+[    0.883379] device: 'tty60': device_add
+[    0.883752] PM: Adding info for No Bus:tty60
+[    0.884199] device: 'tty61': device_add
+[    0.884561] PM: Adding info for No Bus:tty61
+[    0.885026] device: 'tty62': device_add
+[    0.885386] PM: Adding info for No Bus:tty62
+[    0.885843] device: 'tty63': device_add
+[    0.886205] PM: Adding info for No Bus:tty63
+[    0.886753] device: 'hw_random': device_add
+[    0.887159] PM: Adding info for No Bus:hw_random
+[    0.887730] NET: Registered PF_INET protocol family
+[    0.888310] IP idents hash table entries: 32768 (order: 6, 262144 bytes, linear)
+[    0.890685] tcp_listen_portaddr_hash hash table entries: 1024 (order: 2, 16384 bytes, linear)
+[    0.891470] Table-perturb hash table entries: 65536 (order: 6, 262144 bytes, linear)
+[    0.892179] TCP established hash table entries: 16384 (order: 5, 131072 bytes, linear)
+[    0.893023] TCP bind hash table entries: 16384 (order: 7, 524288 bytes, linear)
+[    0.894150] TCP: Hash tables configured (established 16384 bind 16384)
+[    0.894812] UDP hash table entries: 1024 (order: 3, 32768 bytes, linear)
+[    0.895468] UDP-Lite hash table entries: 1024 (order: 3, 32768 bytes, linear)
+[    0.896248] NET: Registered PF_UNIX/PF_LOCAL protocol family
+[    0.897412] bus: 'clocksource': registered
+[    0.897810] device: 'clocksource': device_add
+[    0.898221] PM: Adding info for No Bus:clocksource
+[    0.898666] device: 'clocksource0': device_add
+[    0.899074] bus: 'clocksource': add device clocksource0
+[    0.899557] PM: Adding info for clocksource:clocksource0
+[    0.900066] bus: 'platform': add driver alarmtimer
+[    0.900634] bus: 'clockevents': registered
+[    0.901009] device: 'clockevents': device_add
+[    0.901412] PM: Adding info for No Bus:clockevents
+[    0.901853] device: 'clockevent0': device_add
+[    0.902249] bus: 'clockevents': add device clockevent0
+[    0.902729] PM: Adding info for clockevents:clockevent0
+[    0.903217] device: 'clockevent1': device_add
+[    0.903618] bus: 'clockevents': add device clockevent1
+[    0.904090] PM: Adding info for clockevents:clockevent1
+[    0.904581] device: 'clockevent2': device_add
+[    0.904985] bus: 'clockevents': add device clockevent2
+[    0.905458] PM: Adding info for clockevents:clockevent2
+[    0.905949] device: 'clockevent3': device_add
+[    0.906344] bus: 'clockevents': add device clockevent3
+[    0.906824] PM: Adding info for clockevents:clockevent3
+[    0.907310] device: 'clockevent4': device_add
+[    0.907712] bus: 'clockevents': add device clockevent4
+[    0.908183] PM: Adding info for clockevents:clockevent4
+[    0.908675] device: 'clockevent5': device_add
+[    0.909071] bus: 'clockevents': add device clockevent5
+[    0.909542] PM: Adding info for clockevents:clockevent5
+[    0.910031] device: 'broadcast': device_add
+[    0.910415] bus: 'clockevents': add device broadcast
+[    0.910877] PM: Adding info for clockevents:broadcast
+[    0.911476] workingset: timestamp_bits=62 max_order=19 bucket_order=0
+[    0.915687] device class 'bsg': registering
+[    0.916095] Block layer SCSI generic (bsg) driver version 0.4 loaded (major 250)
+[    0.916767] io scheduler mq-deadline registered
+[    0.917175] io scheduler kyber registered
+[    0.917698] bus: 'platform': add driver simple-pm-bus
+[    0.918258] bus: 'platform': __driver_probe_device: matched device ff310000.power-management with driver simple-pm-bus
+[    0.919233] bus: 'platform': really_probe: probing driver simple-pm-bus with device ff310000.power-management
+[    0.920139] simple-pm-bus ff310000.power-management: no pinctrl handle
+[    0.920756] simple-pm-bus: probe of ff310000.power-management rejects match -19
+[    0.921426] bus: 'platform': __driver_probe_device: matched device ff320000.syscon with driver simple-pm-bus
+[    0.922312] bus: 'platform': really_probe: probing driver simple-pm-bus with device ff320000.syscon
+[    0.923129] simple-pm-bus ff320000.syscon: no pinctrl handle
+[    0.923657] simple-pm-bus: probe of ff320000.syscon rejects match -19
+[    0.924276] bus: 'platform': __driver_probe_device: matched device ff770000.syscon with driver simple-pm-bus
+[    0.925162] bus: 'platform': really_probe: probing driver simple-pm-bus with device ff770000.syscon
+[    0.925979] simple-pm-bus ff770000.syscon: no pinctrl handle
+[    0.926502] simple-pm-bus: probe of ff770000.syscon rejects match -19
+[    0.927192] device class 'phy': registering
+[    0.927589] bus: 'platform': add driver rockchip-emmc-phy
+[    0.928147] bus: 'platform': __driver_probe_device: matched device ff770000.syscon:phy@f780 with driver rockchip-emmc-phy
+[    0.929133] bus: 'platform': really_probe: probing driver rockchip-emmc-phy with device ff770000.syscon:phy@f780
+[    0.930052] rockchip-emmc-phy ff770000.syscon:phy@f780: no pinctrl handle
+[    0.930695] phy phy-ff770000.syscon:phy@f780.0: Looking up phy-supply from device tree
+[    0.931407] phy phy-ff770000.syscon:phy@f780.0: Looking up phy-supply property in node /syscon@ff770000/phy@f780 failed
+[    0.932394] device: 'phy-ff770000.syscon:phy@f780.0': device_add
+[    0.932963] PM: Adding info for No Bus:phy-ff770000.syscon:phy@f780.0
+[    0.933571] driver: 'rockchip-emmc-phy': driver_bound: bound to device 'ff770000.syscon:phy@f780'
+[    0.934381] rockchip-emmc-phy ff770000.syscon:phy@f780: Dropping the link to fe330000.mmc
+[    0.935117] device: 'platform:fe330000.mmc--platform:ff770000.syscon:phy@f780': device_unregister
+[    0.935993] bus: 'platform': really_probe: bound device ff770000.syscon:phy@f780 to driver rockchip-emmc-phy
+[    0.936943] bus: 'platform': add driver rockchip-usb2phy
+[    0.937488] bus: 'platform': __driver_probe_device: matched device ff770000.syscon:usb2phy@e450 with driver rockchip-usb2phy
+[    0.938497] bus: 'platform': really_probe: probing driver rockchip-usb2phy with device ff770000.syscon:usb2phy@e450
+[    0.939441] rockchip-usb2phy ff770000.syscon:usb2phy@e450: no pinctrl handle
+[    0.940107] rockchip-usb2phy ff770000.syscon:usb2phy@e450: error -ENXIO: IRQ index 0 not found
+[    0.940889] device class 'extcon': registering
+[    0.941314] device: 'extcon0': device_add
+[    0.941739] PM: Adding info for No Bus:extcon0
+[    0.942192] phy phy-ff770000.syscon:usb2phy@e450.1: Looking up phy-supply from device tree
+[    0.942951] vcc5v0_host: could not add device link phy-ff770000.syscon:usb2phy@e450.1: -ENOENT
+[    0.943762] device: 'regulator:regulator.3--phy:phy-ff770000.syscon:usb2phy@e450.1': device_add
+[    0.944581] phy phy-ff770000.syscon:usb2phy@e450.1: Linked as a consumer to regulator.3
+[    0.945310] device: 'phy-ff770000.syscon:usb2phy@e450.1': device_add
+[    0.945907] PM: Adding info for No Bus:phy-ff770000.syscon:usb2phy@e450.1
+[    0.946793] phy phy-ff770000.syscon:usb2phy@e450.2: Looking up phy-supply from device tree
+[    0.947539] phy phy-ff770000.syscon:usb2phy@e450.2: Looking up phy-supply property in node /syscon@ff770000/usb2phy@e450/otg-port failed
+[    0.948660] device: 'phy-ff770000.syscon:usb2phy@e450.2': device_add
+[    0.949250] PM: Adding info for No Bus:phy-ff770000.syscon:usb2phy@e450.2
+[    0.949900] phy phy-ff770000.syscon:usb2phy@e450.2: Looking up vbus-supply from device tree
+[    0.950658] phy phy-ff770000.syscon:usb2phy@e450.2: Looking up vbus-supply property in node /syscon@ff770000/usb2phy@e450/otg-port failed
+[    0.952675] driver: 'rockchip-usb2phy': driver_bound: bound to device 'ff770000.syscon:usb2phy@e450'
+[    0.953500] usb@fe3a0000 Linked as a fwnode consumer to usb2phy@e450
+[    0.954078] usb@fe3a0000 Dropping the fwnode link to host-port
+[    0.954603] usb@fe380000 Linked as a fwnode consumer to usb2phy@e450
+[    0.955177] usb@fe380000 Dropping the fwnode link to host-port
+[    0.955706] usb@fe800000 Linked as a fwnode consumer to usb2phy@e450
+[    0.956275] usb@fe800000 Dropping the fwnode link to otg-port
+[    0.956806] device: 'platform:ff770000.syscon:usb2phy@e450--platform:usb@fe800000': device_add
+[    0.957634] platform usb@fe800000: Linked as a sync state only consumer to ff770000.syscon:usb2phy@e450
+[    0.958480] usb@fe380000 Dropping the fwnode link to usb2phy@e450
+[    0.959033] usb@fe3a0000 Dropping the fwnode link to usb2phy@e450
+[    0.959586] rockchip-usb2phy ff770000.syscon:usb2phy@e450: Dropping the link to vcc5v0-host-regulator
+[    0.960414] device: 'platform:vcc5v0-host-regulator--platform:ff770000.syscon:usb2phy@e450': device_unregister
+[    0.961389] bus: 'platform': really_probe: bound device ff770000.syscon:usb2phy@e450 to driver rockchip-usb2phy
+[    0.962315] bus: 'platform': __driver_probe_device: matched device ff770000.syscon:usb2phy@e460 with driver rockchip-usb2phy
+[    0.963324] bus: 'platform': really_probe: probing driver rockchip-usb2phy with device ff770000.syscon:usb2phy@e460
+[    0.964268] rockchip-usb2phy ff770000.syscon:usb2phy@e460: no pinctrl handle
+[    0.964938] rockchip-usb2phy ff770000.syscon:usb2phy@e460: error -ENXIO: IRQ index 0 not found
+[    0.965734] device: 'extcon1': device_add
+[    0.966146] PM: Adding info for No Bus:extcon1
+[    0.966590] phy phy-ff770000.syscon:usb2phy@e460.3: Looking up phy-supply from device tree
+[    0.967349] vcc5v0_host: could not add device link phy-ff770000.syscon:usb2phy@e460.3: -ENOENT
+[    0.968157] device: 'regulator:regulator.3--phy:phy-ff770000.syscon:usb2phy@e460.3': device_add
+[    0.968977] phy phy-ff770000.syscon:usb2phy@e460.3: Linked as a consumer to regulator.3
+[    0.969701] device: 'phy-ff770000.syscon:usb2phy@e460.3': device_add
+[    0.970294] PM: Adding info for No Bus:phy-ff770000.syscon:usb2phy@e460.3
+[    0.971127] phy phy-ff770000.syscon:usb2phy@e460.4: Looking up phy-supply from device tree
+[    0.971886] phy phy-ff770000.syscon:usb2phy@e460.4: Looking up phy-supply property in node /syscon@ff770000/usb2phy@e460/otg-port failed
+[    0.973001] device: 'phy-ff770000.syscon:usb2phy@e460.4': device_add
+[    0.973590] PM: Adding info for No Bus:phy-ff770000.syscon:usb2phy@e460.4
+[    0.974242] phy phy-ff770000.syscon:usb2phy@e460.4: Looking up vbus-supply from device tree
+[    0.974998] phy phy-ff770000.syscon:usb2phy@e460.4: Looking up vbus-supply property in node /syscon@ff770000/usb2phy@e460/otg-port failed
+[    0.976856] driver: 'rockchip-usb2phy': driver_bound: bound to device 'ff770000.syscon:usb2phy@e460'
+[    0.977687] usb@fe3e0000 Linked as a fwnode consumer to usb2phy@e460
+[    0.978257] usb@fe3e0000 Dropping the fwnode link to host-port
+[    0.978786] usb@fe3c0000 Linked as a fwnode consumer to usb2phy@e460
+[    0.979355] usb@fe3c0000 Dropping the fwnode link to host-port
+[    0.979884] usb@fe900000 Linked as a fwnode consumer to usb2phy@e460
+[    0.980454] usb@fe900000 Dropping the fwnode link to otg-port
+[    0.980984] device: 'platform:ff770000.syscon:usb2phy@e460--platform:usb@fe900000': device_add
+[    0.981800] platform usb@fe900000: Linked as a sync state only consumer to ff770000.syscon:usb2phy@e460
+[    0.982650] usb@fe3c0000 Dropping the fwnode link to usb2phy@e460
+[    0.983199] usb@fe3e0000 Dropping the fwnode link to usb2phy@e460
+[    0.983754] rockchip-usb2phy ff770000.syscon:usb2phy@e460: Dropping the link to vcc5v0-host-regulator
+[    0.984578] device: 'platform:vcc5v0-host-regulator--platform:ff770000.syscon:usb2phy@e460': device_unregister
+[    0.985547] bus: 'platform': really_probe: bound device ff770000.syscon:usb2phy@e460 to driver rockchip-usb2phy
+[    0.986550] bus: 'platform': add driver rockchip-pcie-phy
+[    0.987192] bus: 'platform': add driver rockchip-typec-phy
+[    0.987760] bus: 'platform': __driver_probe_device: matched device ff7c0000.phy with driver rockchip-typec-phy
+[    0.988661] bus: 'platform': really_probe: probing driver rockchip-typec-phy with device ff7c0000.phy
+[    0.989493] rockchip-typec-phy ff7c0000.phy: no pinctrl handle
+[    0.990237] rockchip-typec-phy ff7c0000.phy: adding to PM domain tcpd0
+[    0.990830] rockchip-typec-phy ff7c0000.phy: genpd_add_device()
+[    0.991369] rockchip-typec-phy ff7c0000.phy: Clock clk_uphy0_tcpdcore con_id (null) managed by runtime PM.
+[    0.992244] rockchip-typec-phy ff7c0000.phy: Clock clk_uphy0_tcpdphy_ref con_id (null) managed by runtime PM.
+[    0.993221] phy phy-ff7c0000.phy.5: Looking up phy-supply from device tree
+[    0.993846] phy phy-ff7c0000.phy.5: Looking up phy-supply property in node /phy@ff7c0000/dp-port failed
+[    0.994710] device: 'phy-ff7c0000.phy.5': device_add
+[    0.995184] PM: Adding info for No Bus:phy-ff7c0000.phy.5
+[    0.995722] phy phy-ff7c0000.phy.6: Looking up phy-supply from device tree
+[    0.996343] phy phy-ff7c0000.phy.6: Looking up phy-supply property in node /phy@ff7c0000/usb3-port failed
+[    0.997212] device: 'phy-ff7c0000.phy.6': device_add
+[    0.997681] PM: Adding info for No Bus:phy-ff7c0000.phy.6
+[    0.998195] driver: 'rockchip-typec-phy': driver_bound: bound to device 'ff7c0000.phy'
+[    0.998919] usb@fe800000 Linked as a fwnode consumer to phy@ff7c0000
+[    0.999488] usb@fe800000 Dropping the fwnode link to usb3-port
+[    1.000023] device: 'platform:ff7c0000.phy--platform:usb@fe800000': device_add
+[    1.000716] platform usb@fe800000: Linked as a sync state only consumer to ff7c0000.phy
+[    1.001460] bus: 'platform': really_probe: bound device ff7c0000.phy to driver rockchip-typec-phy
+[    1.002269] bus: 'platform': __driver_probe_device: matched device ff800000.phy with driver rockchip-typec-phy
+[    1.003170] bus: 'platform': really_probe: probing driver rockchip-typec-phy with device ff800000.phy
+[    1.004005] rockchip-typec-phy ff800000.phy: no pinctrl handle
+[    1.004721] rockchip-typec-phy ff800000.phy: adding to PM domain tcpd1
+[    1.005307] rockchip-typec-phy ff800000.phy: genpd_add_device()
+[    1.005849] rockchip-typec-phy ff800000.phy: Clock clk_uphy1_tcpdcore con_id (null) managed by runtime PM.
+[    1.006722] rockchip-typec-phy ff800000.phy: Clock clk_uphy1_tcpdphy_ref con_id (null) managed by runtime PM.
+[    1.007677] phy phy-ff800000.phy.7: Looking up phy-supply from device tree
+[    1.008296] phy phy-ff800000.phy.7: Looking up phy-supply property in node /phy@ff800000/dp-port failed
+[    1.009152] device: 'phy-ff800000.phy.7': device_add
+[    1.009626] PM: Adding info for No Bus:phy-ff800000.phy.7
+[    1.010146] phy phy-ff800000.phy.8: Looking up phy-supply from device tree
+[    1.010775] phy phy-ff800000.phy.8: Looking up phy-supply property in node /phy@ff800000/usb3-port failed
+[    1.011645] device: 'phy-ff800000.phy.8': device_add
+[    1.012109] PM: Adding info for No Bus:phy-ff800000.phy.8
+[    1.012628] driver: 'rockchip-typec-phy': driver_bound: bound to device 'ff800000.phy'
+[    1.013342] usb@fe900000 Linked as a fwnode consumer to phy@ff800000
+[    1.013917] usb@fe900000 Dropping the fwnode link to usb3-port
+[    1.014448] device: 'platform:ff800000.phy--platform:usb@fe900000': device_add
+[    1.015140] platform usb@fe900000: Linked as a sync state only consumer to ff800000.phy
+[    1.015889] bus: 'platform': really_probe: bound device ff800000.phy to driver rockchip-typec-phy
+[    1.016759] bus: 'platform': add driver basic-mmio-gpio
+[    1.017382] bus: 'platform': add driver rockchip-pwm
+[    1.017931] bus: 'platform': __driver_probe_device: matched device ff420000.pwm with driver rockchip-pwm
+[    1.018785] bus: 'platform': really_probe: probing driver rockchip-pwm with device ff420000.pwm
+[    1.019638] rockchip-pwm ff420000.pwm: no default pinctrl state
+[    1.020256] device: 'pwmchip0': device_add
+[    1.020658] PM: Adding info for No Bus:pwmchip0
+[    1.021098] driver: 'rockchip-pwm': driver_bound: bound to device 'ff420000.pwm'
+[    1.021799] bus: 'platform': really_probe: bound device ff420000.pwm to driver rockchip-pwm
+[    1.022555] bus: 'platform': __driver_probe_device: matched device ff420020.pwm with driver rockchip-pwm
+[    1.023410] bus: 'platform': really_probe: probing driver rockchip-pwm with device ff420020.pwm
+[    1.024228] rockchip-pwm ff420020.pwm: no default pinctrl state
+[    1.024829] device: 'pwmchip1': device_add
+[    1.025227] PM: Adding info for No Bus:pwmchip1
+[    1.025661] driver: 'rockchip-pwm': driver_bound: bound to device 'ff420020.pwm'
+[    1.026351] bus: 'platform': really_probe: bound device ff420020.pwm to driver rockchip-pwm
+[    1.027112] bus: 'platform': __driver_probe_device: matched device ff420030.pwm with driver rockchip-pwm
+[    1.027965] bus: 'platform': really_probe: probing driver rockchip-pwm with device ff420030.pwm
+[    1.028776] rockchip-pwm ff420030.pwm: no default pinctrl state
+[    1.029365] device: 'pwmchip2': device_add
+[    1.029766] PM: Adding info for No Bus:pwmchip2
+[    1.030195] driver: 'rockchip-pwm': driver_bound: bound to device 'ff420030.pwm'
+[    1.030891] bus: 'platform': really_probe: bound device ff420030.pwm to driver rockchip-pwm
+[    1.031770] bus: 'platform': add driver of_fixed_factor_clk
+[    1.032379] bus: 'platform': add driver of_fixed_clk
+[    1.032935] bus: 'platform': add driver gpio-clk
+[    1.033464] bus: 'platform': add driver rk808-clkout
+[    1.033979] bus: 'platform': add driver rockchip-clcok-pvtm
+[    1.034590] bus: 'platform': add driver rockchip-clk-out
+[    1.035181] bus: 'platform': add driver reg-userspace-consumer
+[    1.035771] bus: 'i2c': add driver act8865
+[    1.036157] i2c-core: driver [act8865] registered
+[    1.036585] bus: 'i2c': add driver da9210
+[    1.036966] i2c-core: driver [da9210] registered
+[    1.037386] bus: 'i2c': add driver da9211
+[    1.037770] i2c-core: driver [da9211] registered
+[    1.038190] bus: 'i2c': add driver fan53555-regulator
+[    1.038665] i2c-core: driver [fan53555-regulator] registered
+[    1.039177] bus: 'platform': add driver rk808-regulator
+[    1.039731] device: 'ptyp0': device_add
+[    1.040101] PM: Adding info for No Bus:ptyp0
+[    1.040542] rockchip-pm-domain ff310000.power-management:power-controller: Looking up tcpd0-supply from device tree
+[    1.040608] device: 'ptyp1': device_add
+[    1.041529] rockchip-pm-domain ff310000.power-management:power-controller: Looking up tcpd0-supply property in node /power-management@ff310000/power-controller failed
+[    1.041854] PM: Adding info for No Bus:ptyp1
+[    1.043177] rockchip-pm-domain ff310000.power-management:power-controller: Looking up tcpd1-supply from device tree
+[    1.043609] device: 'ptyp2': device_add
+[    1.044493] rockchip-pm-domain ff310000.power-management:power-controller: Looking up tcpd1-supply property in node /power-management@ff310000/power-controller failed
+[    1.044832] PM: Adding info for No Bus:ptyp2
+[    1.046588] device: 'ptyp3': device_add
+[    1.046964] PM: Adding info for No Bus:ptyp3
+[    1.047430] device: 'ptyp4': device_add
+[    1.047802] PM: Adding info for No Bus:ptyp4
+[    1.048249] device: 'ptyp5': device_add
+[    1.048621] PM: Adding info for No Bus:ptyp5
+[    1.049076] device: 'ptyp6': device_add
+[    1.049440] PM: Adding info for No Bus:ptyp6
+[    1.049904] device: 'ptyp7': device_add
+[    1.050268] PM: Adding info for No Bus:ptyp7
+[    1.050753] device: 'ptyp8': device_add
+[    1.051128] PM: Adding info for No Bus:ptyp8
+[    1.051578] device: 'ptyp9': device_add
+[    1.051951] PM: Adding info for No Bus:ptyp9
+[    1.052400] device: 'ptypa': device_add
+[    1.052772] PM: Adding info for No Bus:ptypa
+[    1.053221] device: 'ptypb': device_add
+[    1.053586] PM: Adding info for No Bus:ptypb
+[    1.054048] device: 'ptypc': device_add
+[    1.054412] PM: Adding info for No Bus:ptypc
+[    1.054872] device: 'ptypd': device_add
+[    1.055236] PM: Adding info for No Bus:ptypd
+[    1.055700] device: 'ptype': device_add
+[    1.056063] PM: Adding info for No Bus:ptype
+[    1.056511] device: 'ptypf': device_add
+[    1.056882] PM: Adding info for No Bus:ptypf
+[    1.057333] device: 'ptyq0': device_add
+[    1.057713] PM: Adding info for No Bus:ptyq0
+[    1.058170] device: 'ptyq1': device_add
+[    1.058532] PM: Adding info for No Bus:ptyq1
+[    1.058996] device: 'ptyq2': device_add
+[    1.059358] PM: Adding info for No Bus:ptyq2
+[    1.059821] device: 'ptyq3': device_add
+[    1.060187] PM: Adding info for No Bus:ptyq3
+[    1.060638] device: 'ptyq4': device_add
+[    1.060999] PM: Adding info for No Bus:ptyq4
+[    1.061449] device: 'ptyq5': device_add
+[    1.061825] PM: Adding info for No Bus:ptyq5
+[    1.062280] device: 'ptyq6': device_add
+[    1.062652] PM: Adding info for No Bus:ptyq6
+[    1.063102] device: 'ptyq7': device_add
+[    1.063465] PM: Adding info for No Bus:ptyq7
+[    1.063928] device: 'ptyq8': device_add
+[    1.064296] PM: Adding info for No Bus:ptyq8
+[    1.064759] device: 'ptyq9': device_add
+[    1.065121] PM: Adding info for No Bus:ptyq9
+[    1.065571] device: 'ptyqa': device_add
+[    1.065947] PM: Adding info for No Bus:ptyqa
+[    1.066396] device: 'ptyqb': device_add
+[    1.066773] PM: Adding info for No Bus:ptyqb
+[    1.067222] device: 'ptyqc': device_add
+[    1.067584] PM: Adding info for No Bus:ptyqc
+[    1.068048] device: 'ptyqd': device_add
+[    1.068410] PM: Adding info for No Bus:ptyqd
+[    1.068889] device: 'ptyqe': device_add
+[    1.069251] PM: Adding info for No Bus:ptyqe
+[    1.069713] device: 'ptyqf': device_add
+[    1.070075] PM: Adding info for No Bus:ptyqf
+[    1.070526] device: 'ptyr0': device_add
+[    1.070914] PM: Adding info for No Bus:ptyr0
+[    1.071369] device: 'ptyr1': device_add
+[    1.071743] PM: Adding info for No Bus:ptyr1
+[    1.072193] device: 'ptyr2': device_add
+[    1.072555] PM: Adding info for No Bus:ptyr2
+[    1.073014] device: 'ptyr3': device_add
+[    1.073380] PM: Adding info for No Bus:ptyr3
+[    1.073840] device: 'ptyr4': device_add
+[    1.074202] PM: Adding info for No Bus:ptyr4
+[    1.074663] device: 'ptyr5': device_add
+[    1.075024] PM: Adding info for No Bus:ptyr5
+[    1.075476] device: 'ptyr6': device_add
+[    1.075846] PM: Adding info for No Bus:ptyr6
+[    1.076296] device: 'ptyr7': device_add
+[    1.076671] PM: Adding info for No Bus:ptyr7
+[    1.077122] device: 'ptyr8': device_add
+[    1.077492] PM: Adding info for No Bus:ptyr8
+[    1.077952] device: 'ptyr9': device_add
+[    1.078314] PM: Adding info for No Bus:ptyr9
+[    1.078774] device: 'ptyra': device_add
+[    1.079135] PM: Adding info for No Bus:ptyra
+[    1.079584] device: 'ptyrb': device_add
+[    1.079960] PM: Adding info for No Bus:ptyrb
+[    1.080410] device: 'ptyrc': device_add
+[    1.080785] PM: Adding info for No Bus:ptyrc
+[    1.081236] device: 'ptyrd': device_add
+[    1.081597] PM: Adding info for No Bus:ptyrd
+[    1.082060] device: 'ptyre': device_add
+[    1.082422] PM: Adding info for No Bus:ptyre
+[    1.082882] device: 'ptyrf': device_add
+[    1.083243] PM: Adding info for No Bus:ptyrf
+[    1.083706] device: 'ptys0': device_add
+[    1.084074] PM: Adding info for No Bus:ptys0
+[    1.084525] device: 'ptys1': device_add
+[    1.084901] PM: Adding info for No Bus:ptys1
+[    1.085355] device: 'ptys2': device_add
+[    1.085729] PM: Adding info for No Bus:ptys2
+[    1.086176] device: 'ptys3': device_add
+[    1.086540] PM: Adding info for No Bus:ptys3
+[    1.087017] device: 'ptys4': device_add
+[    1.087379] PM: Adding info for No Bus:ptys4
+[    1.087839] device: 'ptys5': device_add
+[    1.088201] PM: Adding info for No Bus:ptys5
+[    1.088668] device: 'ptys6': device_add
+[    1.089031] PM: Adding info for No Bus:ptys6
+[    1.089480] device: 'ptys7': device_add
+[    1.089851] PM: Adding info for No Bus:ptys7
+[    1.090301] device: 'ptys8': device_add
+[    1.090677] PM: Adding info for No Bus:ptys8
+[    1.091128] device: 'ptys9': device_add
+[    1.091492] PM: Adding info for No Bus:ptys9
+[    1.091952] device: 'ptysa': device_add
+[    1.092314] PM: Adding info for No Bus:ptysa
+[    1.092774] device: 'ptysb': device_add
+[    1.093140] PM: Adding info for No Bus:ptysb
+[    1.093589] device: 'ptysc': device_add
+[    1.093962] PM: Adding info for No Bus:ptysc
+[    1.094411] device: 'ptysd': device_add
+[    1.094786] PM: Adding info for No Bus:ptysd
+[    1.095238] device: 'ptyse': device_add
+[    1.095600] PM: Adding info for No Bus:ptyse
+[    1.096060] device: 'ptysf': device_add
+[    1.096423] PM: Adding info for No Bus:ptysf
+[    1.096886] device: 'ptyt0': device_add
+[    1.097252] PM: Adding info for No Bus:ptyt0
+[    1.097716] device: 'ptyt1': device_add
+[    1.098079] PM: Adding info for No Bus:ptyt1
+[    1.098528] device: 'ptyt2': device_add
+[    1.098904] PM: Adding info for No Bus:ptyt2
+[    1.099353] device: 'ptyt3': device_add
+[    1.099728] PM: Adding info for No Bus:ptyt3
+[    1.100178] device: 'ptyt4': device_add
+[    1.100539] PM: Adding info for No Bus:ptyt4
+[    1.100998] device: 'ptyt5': device_add
+[    1.101360] PM: Adding info for No Bus:ptyt5
+[    1.101824] device: 'ptyt6': device_add
+[    1.102188] PM: Adding info for No Bus:ptyt6
+[    1.102661] device: 'ptyt7': device_add
+[    1.103023] PM: Adding info for No Bus:ptyt7
+[    1.103473] device: 'ptyt8': device_add
+[    1.103852] PM: Adding info for No Bus:ptyt8
+[    1.104303] device: 'ptyt9': device_add
+[    1.104677] PM: Adding info for No Bus:ptyt9
+[    1.105143] device: 'ptyta': device_add
+[    1.105505] PM: Adding info for No Bus:ptyta
+[    1.105965] device: 'ptytb': device_add
+[    1.106331] PM: Adding info for No Bus:ptytb
+[    1.106796] device: 'ptytc': device_add
+[    1.107159] PM: Adding info for No Bus:ptytc
+[    1.107608] device: 'ptytd': device_add
+[    1.107979] PM: Adding info for No Bus:ptytd
+[    1.108433] device: 'ptyte': device_add
+[    1.108804] PM: Adding info for No Bus:ptyte
+[    1.109253] device: 'ptytf': device_add
+[    1.109626] PM: Adding info for No Bus:ptytf
+[    1.110079] device: 'ptyu0': device_add
+[    1.110445] PM: Adding info for No Bus:ptyu0
+[    1.110911] device: 'ptyu1': device_add
+[    1.111273] PM: Adding info for No Bus:ptyu1
+[    1.111735] device: 'ptyu2': device_add
+[    1.112097] PM: Adding info for No Bus:ptyu2
+[    1.112545] device: 'ptyu3': device_add
+[    1.112922] PM: Adding info for No Bus:ptyu3
+[    1.113372] device: 'ptyu4': device_add
+[    1.113746] PM: Adding info for No Bus:ptyu4
+[    1.114198] device: 'ptyu5': device_add
+[    1.114560] PM: Adding info for No Bus:ptyu5
+[    1.115026] device: 'ptyu6': device_add
+[    1.115388] PM: Adding info for No Bus:ptyu6
+[    1.115850] device: 'ptyu7': device_add
+[    1.116211] PM: Adding info for No Bus:ptyu7
+[    1.116675] device: 'ptyu8': device_add
+[    1.117042] PM: Adding info for No Bus:ptyu8
+[    1.117492] device: 'ptyu9': device_add
+[    1.117865] PM: Adding info for No Bus:ptyu9
+[    1.118315] device: 'ptyua': device_add
+[    1.118689] PM: Adding info for No Bus:ptyua
+[    1.119140] device: 'ptyub': device_add
+[    1.119505] PM: Adding info for No Bus:ptyub
+[    1.119970] device: 'ptyuc': device_add
+[    1.120331] PM: Adding info for No Bus:ptyuc
+[    1.120790] device: 'ptyud': device_add
+[    1.121152] PM: Adding info for No Bus:ptyud
+[    1.121604] device: 'ptyue': device_add
+[    1.121975] PM: Adding info for No Bus:ptyue
+[    1.122425] device: 'ptyuf': device_add
+[    1.122796] PM: Adding info for No Bus:ptyuf
+[    1.123265] device: 'ptyv0': device_add
+[    1.123642] PM: Adding info for No Bus:ptyv0
+[    1.124105] device: 'ptyv1': device_add
+[    1.124468] PM: Adding info for No Bus:ptyv1
+[    1.124928] device: 'ptyv2': device_add
+[    1.125290] PM: Adding info for No Bus:ptyv2
+[    1.125750] device: 'ptyv3': device_add
+[    1.126116] PM: Adding info for No Bus:ptyv3
+[    1.126565] device: 'ptyv4': device_add
+[    1.126941] PM: Adding info for No Bus:ptyv4
+[    1.127393] device: 'ptyv5': device_add
+[    1.127767] PM: Adding info for No Bus:ptyv5
+[    1.128220] device: 'ptyv6': device_add
+[    1.128583] PM: Adding info for No Bus:ptyv6
+[    1.129045] device: 'ptyv7': device_add
+[    1.129407] PM: Adding info for No Bus:ptyv7
+[    1.129870] device: 'ptyv8': device_add
+[    1.130240] PM: Adding info for No Bus:ptyv8
+[    1.130705] device: 'ptyv9': device_add
+[    1.131067] PM: Adding info for No Bus:ptyv9
+[    1.131515] device: 'ptyva': device_add
+[    1.131884] PM: Adding info for No Bus:ptyva
+[    1.132332] device: 'ptyvb': device_add
+[    1.132705] PM: Adding info for No Bus:ptyvb
+[    1.133155] device: 'ptyvc': device_add
+[    1.133517] PM: Adding info for No Bus:ptyvc
+[    1.133976] device: 'ptyvd': device_add
+[    1.134337] PM: Adding info for No Bus:ptyvd
+[    1.134799] device: 'ptyve': device_add
+[    1.135161] PM: Adding info for No Bus:ptyve
+[    1.135610] device: 'ptyvf': device_add
+[    1.135980] PM: Adding info for No Bus:ptyvf
+[    1.136430] device: 'ptyw0': device_add
+[    1.136809] PM: Adding info for No Bus:ptyw0
+[    1.137267] device: 'ptyw1': device_add
+[    1.137640] PM: Adding info for No Bus:ptyw1
+[    1.138090] device: 'ptyw2': device_add
+[    1.138452] PM: Adding info for No Bus:ptyw2
+[    1.138911] device: 'ptyw3': device_add
+[    1.139280] PM: Adding info for No Bus:ptyw3
+[    1.139741] device: 'ptyw4': device_add
+[    1.140103] PM: Adding info for No Bus:ptyw4
+[    1.140552] device: 'ptyw5': device_add
+[    1.140928] PM: Adding info for No Bus:ptyw5
+[    1.141397] device: 'ptyw6': device_add
+[    1.141770] PM: Adding info for No Bus:ptyw6
+[    1.142218] device: 'ptyw7': device_add
+[    1.142581] PM: Adding info for No Bus:ptyw7
+[    1.143043] device: 'ptyw8': device_add
+[    1.143410] PM: Adding info for No Bus:ptyw8
+[    1.143871] device: 'ptyw9': device_add
+[    1.144233] PM: Adding info for No Bus:ptyw9
+[    1.144700] device: 'ptywa': device_add
+[    1.145063] PM: Adding info for No Bus:ptywa
+[    1.145514] device: 'ptywb': device_add
+[    1.145887] PM: Adding info for No Bus:ptywb
+[    1.146338] device: 'ptywc': device_add
+[    1.146709] PM: Adding info for No Bus:ptywc
+[    1.147159] device: 'ptywd': device_add
+[    1.147521] PM: Adding info for No Bus:ptywd
+[    1.147985] device: 'ptywe': device_add
+[    1.148350] PM: Adding info for No Bus:ptywe
+[    1.148813] device: 'ptywf': device_add
+[    1.149175] PM: Adding info for No Bus:ptywf
+[    1.149637] device: 'ptyx0': device_add
+[    1.150006] PM: Adding info for No Bus:ptyx0
+[    1.150461] device: 'ptyx1': device_add
+[    1.150833] PM: Adding info for No Bus:ptyx1
+[    1.151282] device: 'ptyx2': device_add
+[    1.151658] PM: Adding info for No Bus:ptyx2
+[    1.152108] device: 'ptyx3': device_add
+[    1.152475] PM: Adding info for No Bus:ptyx3
+[    1.152935] device: 'ptyx4': device_add
+[    1.153298] PM: Adding info for No Bus:ptyx4
+[    1.153759] device: 'ptyx5': device_add
+[    1.154121] PM: Adding info for No Bus:ptyx5
+[    1.154576] device: 'ptyx6': device_add
+[    1.154949] PM: Adding info for No Bus:ptyx6
+[    1.155401] device: 'ptyx7': device_add
+[    1.155774] PM: Adding info for No Bus:ptyx7
+[    1.156223] device: 'ptyx8': device_add
+[    1.156591] PM: Adding info for No Bus:ptyx8
+[    1.157053] device: 'ptyx9': device_add
+[    1.157415] PM: Adding info for No Bus:ptyx9
+[    1.157878] device: 'ptyxa': device_add
+[    1.158240] PM: Adding info for No Bus:ptyxa
+[    1.158706] device: 'ptyxb': device_add
+[    1.159072] PM: Adding info for No Bus:ptyxb
+[    1.159537] device: 'ptyxc': device_add
+[    1.159907] PM: Adding info for No Bus:ptyxc
+[    1.160357] device: 'ptyxd': device_add
+[    1.160729] PM: Adding info for No Bus:ptyxd
+[    1.161181] device: 'ptyxe': device_add
+[    1.161546] PM: Adding info for No Bus:ptyxe
+[    1.162008] device: 'ptyxf': device_add
+[    1.162370] PM: Adding info for No Bus:ptyxf
+[    1.162835] device: 'ptyy0': device_add
+[    1.163220] PM: Adding info for No Bus:ptyy0
+[    1.163679] device: 'ptyy1': device_add
+[    1.164042] PM: Adding info for No Bus:ptyy1
+[    1.164492] device: 'ptyy2': device_add
+[    1.164866] PM: Adding info for No Bus:ptyy2
+[    1.165316] device: 'ptyy3': device_add
+[    1.165693] PM: Adding info for No Bus:ptyy3
+[    1.166142] device: 'ptyy4': device_add
+[    1.166505] PM: Adding info for No Bus:ptyy4
+[    1.166968] device: 'ptyy5': device_add
+[    1.167331] PM: Adding info for No Bus:ptyy5
+[    1.167795] device: 'ptyy6': device_add
+[    1.168158] PM: Adding info for No Bus:ptyy6
+[    1.168607] device: 'ptyy7': device_add
+[    1.168980] PM: Adding info for No Bus:ptyy7
+[    1.169431] device: 'ptyy8': device_add
+[    1.169809] PM: Adding info for No Bus:ptyy8
+[    1.170259] device: 'ptyy9': device_add
+[    1.170633] PM: Adding info for No Bus:ptyy9
+[    1.171083] device: 'ptyya': device_add
+[    1.171445] PM: Adding info for No Bus:ptyya
+[    1.171913] device: 'ptyyb': device_add
+[    1.172279] PM: Adding info for No Bus:ptyyb
+[    1.172740] device: 'ptyyc': device_add
+[    1.173103] PM: Adding info for No Bus:ptyyc
+[    1.173551] device: 'ptyyd': device_add
+[    1.173921] PM: Adding info for No Bus:ptyyd
+[    1.174375] device: 'ptyye': device_add
+[    1.174751] PM: Adding info for No Bus:ptyye
+[    1.175200] device: 'ptyyf': device_add
+[    1.175562] PM: Adding info for No Bus:ptyyf
+[    1.176028] device: 'ptyz0': device_add
+[    1.176396] PM: Adding info for No Bus:ptyz0
+[    1.176863] device: 'ptyz1': device_add
+[    1.177226] PM: Adding info for No Bus:ptyz1
+[    1.177711] device: 'ptyz2': device_add
+[    1.178074] PM: Adding info for No Bus:ptyz2
+[    1.178522] device: 'ptyz3': device_add
+[    1.178896] PM: Adding info for No Bus:ptyz3
+[    1.179346] device: 'ptyz4': device_add
+[    1.179723] PM: Adding info for No Bus:ptyz4
+[    1.180175] device: 'ptyz5': device_add
+[    1.180538] PM: Adding info for No Bus:ptyz5
+[    1.181001] device: 'ptyz6': device_add
+[    1.181363] PM: Adding info for No Bus:ptyz6
+[    1.181825] device: 'ptyz7': device_add
+[    1.182189] PM: Adding info for No Bus:ptyz7
+[    1.182639] device: 'ptyz8': device_add
+[    1.183007] PM: Adding info for No Bus:ptyz8
+[    1.183457] device: 'ptyz9': device_add
+[    1.183832] PM: Adding info for No Bus:ptyz9
+[    1.184281] device: 'ptyza': device_add
+[    1.184654] PM: Adding info for No Bus:ptyza
+[    1.185102] device: 'ptyzb': device_add
+[    1.185467] PM: Adding info for No Bus:ptyzb
+[    1.185926] device: 'ptyzc': device_add
+[    1.186288] PM: Adding info for No Bus:ptyzc
+[    1.186748] device: 'ptyzd': device_add
+[    1.187109] PM: Adding info for No Bus:ptyzd
+[    1.187562] device: 'ptyze': device_add
+[    1.187935] PM: Adding info for No Bus:ptyze
+[    1.188386] device: 'ptyzf': device_add
+[    1.188757] PM: Adding info for No Bus:ptyzf
+[    1.189207] device: 'ptya0': device_add
+[    1.189574] PM: Adding info for No Bus:ptya0
+[    1.190040] device: 'ptya1': device_add
+[    1.190405] PM: Adding info for No Bus:ptya1
+[    1.190866] device: 'ptya2': device_add
+[    1.191231] PM: Adding info for No Bus:ptya2
+[    1.191687] device: 'ptya3': device_add
+[    1.192052] PM: Adding info for No Bus:ptya3
+[    1.192496] device: 'ptya4': device_add
+[    1.192867] PM: Adding info for No Bus:ptya4
+[    1.193317] device: 'ptya5': device_add
+[    1.193687] PM: Adding info for No Bus:ptya5
+[    1.194137] device: 'ptya6': device_add
+[    1.194500] PM: Adding info for No Bus:ptya6
+[    1.194958] device: 'ptya7': device_add
+[    1.195321] PM: Adding info for No Bus:ptya7
+[    1.195794] device: 'ptya8': device_add
+[    1.196163] PM: Adding info for No Bus:ptya8
+[    1.196607] device: 'ptya9': device_add
+[    1.196980] PM: Adding info for No Bus:ptya9
+[    1.197429] device: 'ptyaa': device_add
+[    1.197801] PM: Adding info for No Bus:ptyaa
+[    1.198248] device: 'ptyab': device_add
+[    1.198629] PM: Adding info for No Bus:ptyab
+[    1.199076] device: 'ptyac': device_add
+[    1.199440] PM: Adding info for No Bus:ptyac
+[    1.199899] device: 'ptyad': device_add
+[    1.200262] PM: Adding info for No Bus:ptyad
+[    1.200726] device: 'ptyae': device_add
+[    1.201090] PM: Adding info for No Bus:ptyae
+[    1.201534] device: 'ptyaf': device_add
+[    1.201905] PM: Adding info for No Bus:ptyaf
+[    1.202353] device: 'ptyb0': device_add
+[    1.202731] PM: Adding info for No Bus:ptyb0
+[    1.203185] device: 'ptyb1': device_add
+[    1.203547] PM: Adding info for No Bus:ptyb1
+[    1.204007] device: 'ptyb2': device_add
+[    1.204371] PM: Adding info for No Bus:ptyb2
+[    1.204827] device: 'ptyb3': device_add
+[    1.205194] PM: Adding info for No Bus:ptyb3
+[    1.205657] device: 'ptyb4': device_add
+[    1.206019] PM: Adding info for No Bus:ptyb4
+[    1.206466] device: 'ptyb5': device_add
+[    1.206837] PM: Adding info for No Bus:ptyb5
+[    1.207289] device: 'ptyb6': device_add
+[    1.207663] PM: Adding info for No Bus:ptyb6
+[    1.208112] device: 'ptyb7': device_add
+[    1.208474] PM: Adding info for No Bus:ptyb7
+[    1.208936] device: 'ptyb8': device_add
+[    1.209304] PM: Adding info for No Bus:ptyb8
+[    1.209763] device: 'ptyb9': device_add
+[    1.210130] PM: Adding info for No Bus:ptyb9
+[    1.210575] device: 'ptyba': device_add
+[    1.210948] PM: Adding info for No Bus:ptyba
+[    1.211394] device: 'ptybb': device_add
+[    1.211772] PM: Adding info for No Bus:ptybb
+[    1.212220] device: 'ptybc': device_add
+[    1.212585] PM: Adding info for No Bus:ptybc
+[    1.213044] device: 'ptybd': device_add
+[    1.213406] PM: Adding info for No Bus:ptybd
+[    1.213886] device: 'ptybe': device_add
+[    1.214248] PM: Adding info for No Bus:ptybe
+[    1.214706] device: 'ptybf': device_add
+[    1.215069] PM: Adding info for No Bus:ptybf
+[    1.215519] device: 'ptyc0': device_add
+[    1.215895] PM: Adding info for No Bus:ptyc0
+[    1.216348] device: 'ptyc1': device_add
+[    1.216723] PM: Adding info for No Bus:ptyc1
+[    1.217170] device: 'ptyc2': device_add
+[    1.217533] PM: Adding info for No Bus:ptyc2
+[    1.217994] device: 'ptyc3': device_add
+[    1.218360] PM: Adding info for No Bus:ptyc3
+[    1.218818] device: 'ptyc4': device_add
+[    1.219181] PM: Adding info for No Bus:ptyc4
+[    1.219635] device: 'ptyc5': device_add
+[    1.219998] PM: Adding info for No Bus:ptyc5
+[    1.220450] device: 'ptyc6': device_add
+[    1.220826] PM: Adding info for No Bus:ptyc6
+[    1.221275] device: 'ptyc7': device_add
+[    1.221653] PM: Adding info for No Bus:ptyc7
+[    1.222101] device: 'ptyc8': device_add
+[    1.222468] PM: Adding info for No Bus:ptyc8
+[    1.222926] device: 'ptyc9': device_add
+[    1.223288] PM: Adding info for No Bus:ptyc9
+[    1.223745] device: 'ptyca': device_add
+[    1.224107] PM: Adding info for No Bus:ptyca
+[    1.224550] device: 'ptycb': device_add
+[    1.224925] PM: Adding info for No Bus:ptycb
+[    1.225375] device: 'ptycc': device_add
+[    1.225747] PM: Adding info for No Bus:ptycc
+[    1.226194] device: 'ptycd': device_add
+[    1.226558] PM: Adding info for No Bus:ptycd
+[    1.227018] device: 'ptyce': device_add
+[    1.227381] PM: Adding info for No Bus:ptyce
+[    1.227840] device: 'ptycf': device_add
+[    1.228201] PM: Adding info for No Bus:ptycf
+[    1.228687] device: 'ptyd0': device_add
+[    1.229054] PM: Adding info for No Bus:ptyd0
+[    1.229505] device: 'ptyd1': device_add
+[    1.229877] PM: Adding info for No Bus:ptyd1
+[    1.230328] device: 'ptyd2': device_add
+[    1.230701] PM: Adding info for No Bus:ptyd2
+[    1.231150] device: 'ptyd3': device_add
+[    1.231516] PM: Adding info for No Bus:ptyd3
+[    1.231991] device: 'ptyd4': device_add
+[    1.232354] PM: Adding info for No Bus:ptyd4
+[    1.232814] device: 'ptyd5': device_add
+[    1.233177] PM: Adding info for No Bus:ptyd5
+[    1.233638] device: 'ptyd6': device_add
+[    1.234004] PM: Adding info for No Bus:ptyd6
+[    1.234453] device: 'ptyd7': device_add
+[    1.234828] PM: Adding info for No Bus:ptyd7
+[    1.235276] device: 'ptyd8': device_add
+[    1.235653] PM: Adding info for No Bus:ptyd8
+[    1.236100] device: 'ptyd9': device_add
+[    1.236462] PM: Adding info for No Bus:ptyd9
+[    1.236926] device: 'ptyda': device_add
+[    1.237292] PM: Adding info for No Bus:ptyda
+[    1.237752] device: 'ptydb': device_add
+[    1.238120] PM: Adding info for No Bus:ptydb
+[    1.238564] device: 'ptydc': device_add
+[    1.238937] PM: Adding info for No Bus:ptydc
+[    1.239383] device: 'ptydd': device_add
+[    1.239754] PM: Adding info for No Bus:ptydd
+[    1.240206] device: 'ptyde': device_add
+[    1.240568] PM: Adding info for No Bus:ptyde
+[    1.241027] device: 'ptydf': device_add
+[    1.241389] PM: Adding info for No Bus:ptydf
+[    1.241851] device: 'ptye0': device_add
+[    1.242218] PM: Adding info for No Bus:ptye0
+[    1.242735] device: 'ptye1': device_add
+[    1.243098] PM: Adding info for No Bus:ptye1
+[    1.243545] device: 'ptye2': device_add
+[    1.243919] PM: Adding info for No Bus:ptye2
+[    1.244364] device: 'ptye3': device_add
+[    1.244739] PM: Adding info for No Bus:ptye3
+[    1.245186] device: 'ptye4': device_add
+[    1.245548] PM: Adding info for No Bus:ptye4
+[    1.246009] device: 'ptye5': device_add
+[    1.246373] PM: Adding info for No Bus:ptye5
+[    1.246831] device: 'ptye6': device_add
+[    1.247206] PM: Adding info for No Bus:ptye6
+[    1.247661] device: 'ptye7': device_add
+[    1.248023] PM: Adding info for No Bus:ptye7
+[    1.248468] device: 'ptye8': device_add
+[    1.248844] PM: Adding info for No Bus:ptye8
+[    1.249296] device: 'ptye9': device_add
+[    1.249673] PM: Adding info for No Bus:ptye9
+[    1.250137] device: 'ptyea': device_add
+[    1.250499] PM: Adding info for No Bus:ptyea
+[    1.250953] device: 'ptyeb': device_add
+[    1.251318] PM: Adding info for No Bus:ptyeb
+[    1.251774] device: 'ptyec': device_add
+[    1.252137] PM: Adding info for No Bus:ptyec
+[    1.252581] device: 'ptyed': device_add
+[    1.252952] PM: Adding info for No Bus:ptyed
+[    1.253402] device: 'ptyee': device_add
+[    1.253772] PM: Adding info for No Bus:ptyee
+[    1.254221] device: 'ptyef': device_add
+[    1.254584] PM: Adding info for No Bus:ptyef
+[    1.255066] device: 'ttyp0': device_add
+[    1.255431] PM: Adding info for No Bus:ttyp0
+[    1.255895] device: 'ttyp1': device_add
+[    1.256258] PM: Adding info for No Bus:ttyp1
+[    1.256719] device: 'ttyp2': device_add
+[    1.257081] PM: Adding info for No Bus:ttyp2
+[    1.257525] device: 'ttyp3': device_add
+[    1.257902] PM: Adding info for No Bus:ttyp3
+[    1.258352] device: 'ttyp4': device_add
+[    1.258726] PM: Adding info for No Bus:ttyp4
+[    1.259173] device: 'ttyp5': device_add
+[    1.259538] PM: Adding info for No Bus:ttyp5
+[    1.259998] device: 'ttyp6': device_add
+[    1.260362] PM: Adding info for No Bus:ttyp6
+[    1.260822] device: 'ttyp7': device_add
+[    1.261190] PM: Adding info for No Bus:ttyp7
+[    1.261636] device: 'ttyp8': device_add
+[    1.262006] PM: Adding info for No Bus:ttyp8
+[    1.262454] device: 'ttyp9': device_add
+[    1.262827] PM: Adding info for No Bus:ttyp9
+[    1.263272] device: 'ttypa': device_add
+[    1.263644] PM: Adding info for No Bus:ttypa
+[    1.264090] device: 'ttypb': device_add
+[    1.264456] PM: Adding info for No Bus:ttypb
+[    1.264913] device: 'ttypc': device_add
+[    1.265276] PM: Adding info for No Bus:ttypc
+[    1.265747] device: 'ttypd': device_add
+[    1.266109] PM: Adding info for No Bus:ttypd
+[    1.266562] device: 'ttype': device_add
+[    1.266935] PM: Adding info for No Bus:ttype
+[    1.267385] device: 'ttypf': device_add
+[    1.267760] PM: Adding info for No Bus:ttypf
+[    1.268213] device: 'ttyq0': device_add
+[    1.268578] PM: Adding info for No Bus:ttyq0
+[    1.269043] device: 'ttyq1': device_add
+[    1.269406] PM: Adding info for No Bus:ttyq1
+[    1.269868] device: 'ttyq2': device_add
+[    1.270231] PM: Adding info for No Bus:ttyq2
+[    1.270696] device: 'ttyq3': device_add
+[    1.271063] PM: Adding info for No Bus:ttyq3
+[    1.271514] device: 'ttyq4': device_add
+[    1.271887] PM: Adding info for No Bus:ttyq4
+[    1.272338] device: 'ttyq5': device_add
+[    1.272710] PM: Adding info for No Bus:ttyq5
+[    1.273166] device: 'ttyq6': device_add
+[    1.273532] PM: Adding info for No Bus:ttyq6
+[    1.273994] device: 'ttyq7': device_add
+[    1.274360] PM: Adding info for No Bus:ttyq7
+[    1.274822] device: 'ttyq8': device_add
+[    1.275188] PM: Adding info for No Bus:ttyq8
+[    1.275640] device: 'ttyq9': device_add
+[    1.276006] PM: Adding info for No Bus:ttyq9
+[    1.276456] device: 'ttyqa': device_add
+[    1.276830] PM: Adding info for No Bus:ttyqa
+[    1.277278] device: 'ttyqb': device_add
+[    1.277654] PM: Adding info for No Bus:ttyqb
+[    1.278103] device: 'ttyqc': device_add
+[    1.278465] PM: Adding info for No Bus:ttyqc
+[    1.278925] device: 'ttyqd': device_add
+[    1.279287] PM: Adding info for No Bus:ttyqd
+[    1.279751] device: 'ttyqe': device_add
+[    1.280113] PM: Adding info for No Bus:ttyqe
+[    1.280576] device: 'ttyqf': device_add
+[    1.280950] PM: Adding info for No Bus:ttyqf
+[    1.281402] device: 'ttyr0': device_add
+[    1.281781] PM: Adding info for No Bus:ttyr0
+[    1.282232] device: 'ttyr1': device_add
+[    1.282600] PM: Adding info for No Bus:ttyr1
+[    1.283060] device: 'ttyr2': device_add
+[    1.283424] PM: Adding info for No Bus:ttyr2
+[    1.283882] device: 'ttyr3': device_add
+[    1.284248] PM: Adding info for No Bus:ttyr3
+[    1.284706] device: 'ttyr4': device_add
+[    1.285068] PM: Adding info for No Bus:ttyr4
+[    1.285514] device: 'ttyr5': device_add
+[    1.285886] PM: Adding info for No Bus:ttyr5
+[    1.286340] device: 'ttyr6': device_add
+[    1.286715] PM: Adding info for No Bus:ttyr6
+[    1.287162] device: 'ttyr7': device_add
+[    1.287529] PM: Adding info for No Bus:ttyr7
+[    1.287985] device: 'ttyr8': device_add
+[    1.288351] PM: Adding info for No Bus:ttyr8
+[    1.288809] device: 'ttyr9': device_add
+[    1.289173] PM: Adding info for No Bus:ttyr9
+[    1.289625] device: 'ttyra': device_add
+[    1.289988] PM: Adding info for No Bus:ttyra
+[    1.290438] device: 'ttyrb': device_add
+[    1.290813] PM: Adding info for No Bus:ttyrb
+[    1.291262] device: 'ttyrc': device_add
+[    1.291633] PM: Adding info for No Bus:ttyrc
+[    1.292080] device: 'ttyrd': device_add
+[    1.292440] PM: Adding info for No Bus:ttyrd
+[    1.292905] device: 'ttyre': device_add
+[    1.293267] PM: Adding info for No Bus:ttyre
+[    1.293728] device: 'ttyrf': device_add
+[    1.294098] PM: Adding info for No Bus:ttyrf
+[    1.294546] device: 'ttys0': device_add
+[    1.294922] PM: Adding info for No Bus:ttys0
+[    1.295372] device: 'ttys1': device_add
+[    1.295745] PM: Adding info for No Bus:ttys1
+[    1.296190] device: 'ttys2': device_add
+[    1.296553] PM: Adding info for No Bus:ttys2
+[    1.297014] device: 'ttys3': device_add
+[    1.297380] PM: Adding info for No Bus:ttys3
+[    1.297843] device: 'ttys4': device_add
+[    1.298208] PM: Adding info for No Bus:ttys4
+[    1.298683] device: 'ttys5': device_add
+[    1.299046] PM: Adding info for No Bus:ttys5
+[    1.299496] device: 'ttys6': device_add
+[    1.299868] PM: Adding info for No Bus:ttys6
+[    1.300319] device: 'ttys7': device_add
+[    1.300696] PM: Adding info for No Bus:ttys7
+[    1.301146] device: 'ttys8': device_add
+[    1.301512] PM: Adding info for No Bus:ttys8
+[    1.301975] device: 'ttys9': device_add
+[    1.302339] PM: Adding info for No Bus:ttys9
+[    1.302797] device: 'ttysa': device_add
+[    1.303160] PM: Adding info for No Bus:ttysa
+[    1.303604] device: 'ttysb': device_add
+[    1.303981] PM: Adding info for No Bus:ttysb
+[    1.304431] device: 'ttysc': device_add
+[    1.304802] PM: Adding info for No Bus:ttysc
+[    1.305250] device: 'ttysd': device_add
+[    1.305622] PM: Adding info for No Bus:ttysd
+[    1.306074] device: 'ttyse': device_add
+[    1.306436] PM: Adding info for No Bus:ttyse
+[    1.306898] device: 'ttysf': device_add
+[    1.307267] PM: Adding info for No Bus:ttysf
+[    1.307729] device: 'ttyt0': device_add
+[    1.308095] PM: Adding info for No Bus:ttyt0
+[    1.308542] device: 'ttyt1': device_add
+[    1.308914] PM: Adding info for No Bus:ttyt1
+[    1.309362] device: 'ttyt2': device_add
+[    1.309736] PM: Adding info for No Bus:ttyt2
+[    1.310185] device: 'ttyt3': device_add
+[    1.310555] PM: Adding info for No Bus:ttyt3
+[    1.311015] device: 'ttyt4': device_add
+[    1.311380] PM: Adding info for No Bus:ttyt4
+[    1.311841] device: 'ttyt5': device_add
+[    1.312204] PM: Adding info for No Bus:ttyt5
+[    1.312666] device: 'ttyt6': device_add
+[    1.313029] PM: Adding info for No Bus:ttyt6
+[    1.313474] device: 'ttyt7': device_add
+[    1.313850] PM: Adding info for No Bus:ttyt7
+[    1.314299] device: 'ttyt8': device_add
+[    1.314676] PM: Adding info for No Bus:ttyt8
+[    1.315127] device: 'ttyt9': device_add
+[    1.315490] PM: Adding info for No Bus:ttyt9
+[    1.315946] device: 'ttyta': device_add
+[    1.316307] PM: Adding info for No Bus:ttyta
+[    1.316781] device: 'ttytb': device_add
+[    1.317146] PM: Adding info for No Bus:ttytb
+[    1.317594] device: 'ttytc': device_add
+[    1.317965] PM: Adding info for No Bus:ttytc
+[    1.318415] device: 'ttytd': device_add
+[    1.318788] PM: Adding info for No Bus:ttytd
+[    1.319239] device: 'ttyte': device_add
+[    1.319600] PM: Adding info for No Bus:ttyte
+[    1.320061] device: 'ttytf': device_add
+[    1.320426] PM: Adding info for No Bus:ttytf
+[    1.320888] device: 'ttyu0': device_add
+[    1.321257] PM: Adding info for No Bus:ttyu0
+[    1.321723] device: 'ttyu1': device_add
+[    1.322088] PM: Adding info for No Bus:ttyu1
+[    1.322533] device: 'ttyu2': device_add
+[    1.322905] PM: Adding info for No Bus:ttyu2
+[    1.323350] device: 'ttyu3': device_add
+[    1.323727] PM: Adding info for No Bus:ttyu3
+[    1.324175] device: 'ttyu4': device_add
+[    1.324538] PM: Adding info for No Bus:ttyu4
+[    1.324997] device: 'ttyu5': device_add
+[    1.325362] PM: Adding info for No Bus:ttyu5
+[    1.325823] device: 'ttyu6': device_add
+[    1.326189] PM: Adding info for No Bus:ttyu6
+[    1.326639] device: 'ttyu7': device_add
+[    1.327006] PM: Adding info for No Bus:ttyu7
+[    1.327454] device: 'ttyu8': device_add
+[    1.327832] PM: Adding info for No Bus:ttyu8
+[    1.328283] device: 'ttyu9': device_add
+[    1.328660] PM: Adding info for No Bus:ttyu9
+[    1.329108] device: 'ttyua': device_add
+[    1.329469] PM: Adding info for No Bus:ttyua
+[    1.329931] device: 'ttyub': device_add
+[    1.330297] PM: Adding info for No Bus:ttyub
+[    1.330761] device: 'ttyuc': device_add
+[    1.331123] PM: Adding info for No Bus:ttyuc
+[    1.331568] device: 'ttyud': device_add
+[    1.331944] PM: Adding info for No Bus:ttyud
+[    1.332397] device: 'ttyue': device_add
+[    1.332776] PM: Adding info for No Bus:ttyue
+[    1.333225] device: 'ttyuf': device_add
+[    1.333590] PM: Adding info for No Bus:ttyuf
+[    1.334053] device: 'ttyv0': device_add
+[    1.334419] PM: Adding info for No Bus:ttyv0
+[    1.334902] device: 'ttyv1': device_add
+[    1.335264] PM: Adding info for No Bus:ttyv1
+[    1.335729] device: 'ttyv2': device_add
+[    1.336092] PM: Adding info for No Bus:ttyv2
+[    1.336541] device: 'ttyv3': device_add
+[    1.336916] PM: Adding info for No Bus:ttyv3
+[    1.337367] device: 'ttyv4': device_add
+[    1.337742] PM: Adding info for No Bus:ttyv4
+[    1.338193] device: 'ttyv5': device_add
+[    1.338556] PM: Adding info for No Bus:ttyv5
+[    1.339023] device: 'ttyv6': device_add
+[    1.339387] PM: Adding info for No Bus:ttyv6
+[    1.339853] device: 'ttyv7': device_add
+[    1.340224] PM: Adding info for No Bus:ttyv7
+[    1.340686] device: 'ttyv8': device_add
+[    1.341053] PM: Adding info for No Bus:ttyv8
+[    1.341503] device: 'ttyv9': device_add
+[    1.341873] PM: Adding info for No Bus:ttyv9
+[    1.342324] device: 'ttyva': device_add
+[    1.342696] PM: Adding info for No Bus:ttyva
+[    1.343151] device: 'ttyvb': device_add
+[    1.343517] PM: Adding info for No Bus:ttyvb
+[    1.343981] device: 'ttyvc': device_add
+[    1.344343] PM: Adding info for No Bus:ttyvc
+[    1.344808] device: 'ttyvd': device_add
+[    1.345174] PM: Adding info for No Bus:ttyvd
+[    1.345635] device: 'ttyve': device_add
+[    1.345998] PM: Adding info for No Bus:ttyve
+[    1.346448] device: 'ttyvf': device_add
+[    1.346825] PM: Adding info for No Bus:ttyvf
+[    1.347290] device: 'ttyw0': device_add
+[    1.347665] PM: Adding info for No Bus:ttyw0
+[    1.348119] device: 'ttyw1': device_add
+[    1.348482] PM: Adding info for No Bus:ttyw1
+[    1.348947] device: 'ttyw2': device_add
+[    1.349310] PM: Adding info for No Bus:ttyw2
+[    1.349775] device: 'ttyw3': device_add
+[    1.350144] PM: Adding info for No Bus:ttyw3
+[    1.350594] device: 'ttyw4': device_add
+[    1.350966] PM: Adding info for No Bus:ttyw4
+[    1.351417] device: 'ttyw5': device_add
+[    1.351790] PM: Adding info for No Bus:ttyw5
+[    1.352245] device: 'ttyw6': device_add
+[    1.352608] PM: Adding info for No Bus:ttyw6
+[    1.353087] device: 'ttyw7': device_add
+[    1.353454] PM: Adding info for No Bus:ttyw7
+[    1.353916] device: 'ttyw8': device_add
+[    1.354282] PM: Adding info for No Bus:ttyw8
+[    1.354747] device: 'ttyw9': device_add
+[    1.355114] PM: Adding info for No Bus:ttyw9
+[    1.355563] device: 'ttywa': device_add
+[    1.355937] PM: Adding info for No Bus:ttywa
+[    1.356388] device: 'ttywb': device_add
+[    1.356763] PM: Adding info for No Bus:ttywb
+[    1.357214] device: 'ttywc': device_add
+[    1.357575] PM: Adding info for No Bus:ttywc
+[    1.358037] device: 'ttywd': device_add
+[    1.358403] PM: Adding info for No Bus:ttywd
+[    1.358868] device: 'ttywe': device_add
+[    1.359231] PM: Adding info for No Bus:ttywe
+[    1.359695] device: 'ttywf': device_add
+[    1.360061] PM: Adding info for No Bus:ttywf
+[    1.360517] device: 'ttyx0': device_add
+[    1.360892] PM: Adding info for No Bus:ttyx0
+[    1.361347] device: 'ttyx1': device_add
+[    1.361719] PM: Adding info for No Bus:ttyx1
+[    1.362171] device: 'ttyx2': device_add
+[    1.362533] PM: Adding info for No Bus:ttyx2
+[    1.362993] device: 'ttyx3': device_add
+[    1.363360] PM: Adding info for No Bus:ttyx3
+[    1.363822] device: 'ttyx4': device_add
+[    1.364186] PM: Adding info for No Bus:ttyx4
+[    1.364636] device: 'ttyx5': device_add
+[    1.365004] PM: Adding info for No Bus:ttyx5
+[    1.365459] device: 'ttyx6': device_add
+[    1.365844] PM: Adding info for No Bus:ttyx6
+[    1.366297] device: 'ttyx7': device_add
+[    1.366675] PM: Adding info for No Bus:ttyx7
+[    1.367127] device: 'ttyx8': device_add
+[    1.367491] PM: Adding info for No Bus:ttyx8
+[    1.367955] device: 'ttyx9': device_add
+[    1.368319] PM: Adding info for No Bus:ttyx9
+[    1.368784] device: 'ttyxa': device_add
+[    1.369148] PM: Adding info for No Bus:ttyxa
+[    1.369597] device: 'ttyxb': device_add
+[    1.369975] PM: Adding info for No Bus:ttyxb
+[    1.370426] device: 'ttyxc': device_add
+[    1.370799] PM: Adding info for No Bus:ttyxc
+[    1.371267] device: 'ttyxd': device_add
+[    1.371638] PM: Adding info for No Bus:ttyxd
+[    1.372091] device: 'ttyxe': device_add
+[    1.372452] PM: Adding info for No Bus:ttyxe
+[    1.372917] device: 'ttyxf': device_add
+[    1.373282] PM: Adding info for No Bus:ttyxf
+[    1.373746] device: 'ttyy0': device_add
+[    1.374111] PM: Adding info for No Bus:ttyy0
+[    1.374564] device: 'ttyy1': device_add
+[    1.374938] PM: Adding info for No Bus:ttyy1
+[    1.375389] device: 'ttyy2': device_add
+[    1.375762] PM: Adding info for No Bus:ttyy2
+[    1.376214] device: 'ttyy3': device_add
+[    1.376579] PM: Adding info for No Bus:ttyy3
+[    1.377042] device: 'ttyy4': device_add
+[    1.377405] PM: Adding info for No Bus:ttyy4
+[    1.377874] device: 'ttyy5': device_add
+[    1.378241] PM: Adding info for No Bus:ttyy5
+[    1.378705] device: 'ttyy6': device_add
+[    1.379068] PM: Adding info for No Bus:ttyy6
+[    1.379518] device: 'ttyy7': device_add
+[    1.379893] PM: Adding info for No Bus:ttyy7
+[    1.380344] device: 'ttyy8': device_add
+[    1.380721] PM: Adding info for No Bus:ttyy8
+[    1.381175] device: 'ttyy9': device_add
+[    1.381537] PM: Adding info for No Bus:ttyy9
+[    1.382002] device: 'ttyya': device_add
+[    1.382367] PM: Adding info for No Bus:ttyya
+[    1.382830] device: 'ttyyb': device_add
+[    1.383198] PM: Adding info for No Bus:ttyyb
+[    1.383663] device: 'ttyyc': device_add
+[    1.384025] PM: Adding info for No Bus:ttyyc
+[    1.384474] device: 'ttyyd': device_add
+[    1.384846] PM: Adding info for No Bus:ttyyd
+[    1.385299] device: 'ttyye': device_add
+[    1.385673] PM: Adding info for No Bus:ttyye
+[    1.386124] device: 'ttyyf': device_add
+[    1.386490] PM: Adding info for No Bus:ttyyf
+[    1.386955] device: 'ttyz0': device_add
+[    1.387320] PM: Adding info for No Bus:ttyz0
+[    1.387792] device: 'ttyz1': device_add
+[    1.388156] PM: Adding info for No Bus:ttyz1
+[    1.388606] device: 'ttyz2': device_add
+[    1.388980] PM: Adding info for No Bus:ttyz2
+[    1.389448] device: 'ttyz3': device_add
+[    1.389825] PM: Adding info for No Bus:ttyz3
+[    1.390275] device: 'ttyz4': device_add
+[    1.390650] PM: Adding info for No Bus:ttyz4
+[    1.391103] device: 'ttyz5': device_add
+[    1.391469] PM: Adding info for No Bus:ttyz5
+[    1.391935] device: 'ttyz6': device_add
+[    1.392298] PM: Adding info for No Bus:ttyz6
+[    1.392760] device: 'ttyz7': device_add
+[    1.393127] PM: Adding info for No Bus:ttyz7
+[    1.393576] device: 'ttyz8': device_add
+[    1.393951] PM: Adding info for No Bus:ttyz8
+[    1.394402] device: 'ttyz9': device_add
+[    1.394776] PM: Adding info for No Bus:ttyz9
+[    1.395232] device: 'ttyza': device_add
+[    1.395598] PM: Adding info for No Bus:ttyza
+[    1.396061] device: 'ttyzb': device_add
+[    1.396428] PM: Adding info for No Bus:ttyzb
+[    1.396890] device: 'ttyzc': device_add
+[    1.397256] PM: Adding info for No Bus:ttyzc
+[    1.397718] device: 'ttyzd': device_add
+[    1.398081] PM: Adding info for No Bus:ttyzd
+[    1.398534] device: 'ttyze': device_add
+[    1.398906] PM: Adding info for No Bus:ttyze
+[    1.399356] device: 'ttyzf': device_add
+[    1.399733] PM: Adding info for No Bus:ttyzf
+[    1.400187] device: 'ttya0': device_add
+[    1.400551] PM: Adding info for No Bus:ttya0
+[    1.401020] device: 'ttya1': device_add
+[    1.401382] PM: Adding info for No Bus:ttya1
+[    1.401844] device: 'ttya2': device_add
+[    1.402207] PM: Adding info for No Bus:ttya2
+[    1.402671] device: 'ttya3': device_add
+[    1.403036] PM: Adding info for No Bus:ttya3
+[    1.403484] device: 'ttya4': device_add
+[    1.403855] PM: Adding info for No Bus:ttya4
+[    1.404307] device: 'ttya5': device_add
+[    1.404680] PM: Adding info for No Bus:ttya5
+[    1.405134] device: 'ttya6': device_add
+[    1.405497] PM: Adding info for No Bus:ttya6
+[    1.405963] device: 'ttya7': device_add
+[    1.406332] PM: Adding info for No Bus:ttya7
+[    1.406795] device: 'ttya8': device_add
+[    1.407163] PM: Adding info for No Bus:ttya8
+[    1.407638] device: 'ttya9': device_add
+[    1.408000] PM: Adding info for No Bus:ttya9
+[    1.408449] device: 'ttyaa': device_add
+[    1.408820] PM: Adding info for No Bus:ttyaa
+[    1.409272] device: 'ttyab': device_add
+[    1.409647] PM: Adding info for No Bus:ttyab
+[    1.410097] device: 'ttyac': device_add
+[    1.410459] PM: Adding info for No Bus:ttyac
+[    1.410923] device: 'ttyad': device_add
+[    1.411285] PM: Adding info for No Bus:ttyad
+[    1.411751] device: 'ttyae': device_add
+[    1.412114] PM: Adding info for No Bus:ttyae
+[    1.412567] device: 'ttyaf': device_add
+[    1.412944] PM: Adding info for No Bus:ttyaf
+[    1.413396] device: 'ttyb0': device_add
+[    1.413770] PM: Adding info for No Bus:ttyb0
+[    1.414225] device: 'ttyb1': device_add
+[    1.414587] PM: Adding info for No Bus:ttyb1
+[    1.415049] device: 'ttyb2': device_add
+[    1.415412] PM: Adding info for No Bus:ttyb2
+[    1.415876] device: 'ttyb3': device_add
+[    1.416242] PM: Adding info for No Bus:ttyb3
+[    1.416705] device: 'ttyb4': device_add
+[    1.417068] PM: Adding info for No Bus:ttyb4
+[    1.417518] device: 'ttyb5': device_add
+[    1.417891] PM: Adding info for No Bus:ttyb5
+[    1.418347] device: 'ttyb6': device_add
+[    1.418721] PM: Adding info for No Bus:ttyb6
+[    1.419173] device: 'ttyb7': device_add
+[    1.419539] PM: Adding info for No Bus:ttyb7
+[    1.420001] device: 'ttyb8': device_add
+[    1.420371] PM: Adding info for No Bus:ttyb8
+[    1.420838] device: 'ttyb9': device_add
+[    1.421205] PM: Adding info for No Bus:ttyb9
+[    1.421669] device: 'ttyba': device_add
+[    1.422031] PM: Adding info for No Bus:ttyba
+[    1.422479] device: 'ttybb': device_add
+[    1.422853] PM: Adding info for No Bus:ttybb
+[    1.423304] device: 'ttybc': device_add
+[    1.423678] PM: Adding info for No Bus:ttybc
+[    1.424129] device: 'ttybd': device_add
+[    1.424492] PM: Adding info for No Bus:ttybd
+[    1.424957] device: 'ttybe': device_add
+[    1.425321] PM: Adding info for No Bus:ttybe
+[    1.425801] device: 'ttybf': device_add
+[    1.426168] PM: Adding info for No Bus:ttybf
+[    1.426629] device: 'ttyc0': device_add
+[    1.426995] PM: Adding info for No Bus:ttyc0
+[    1.427447] device: 'ttyc1': device_add
+[    1.427820] PM: Adding info for No Bus:ttyc1
+[    1.428272] device: 'ttyc2': device_add
+[    1.428646] PM: Adding info for No Bus:ttyc2
+[    1.429096] device: 'ttyc3': device_add
+[    1.429462] PM: Adding info for No Bus:ttyc3
+[    1.429934] device: 'ttyc4': device_add
+[    1.430300] PM: Adding info for No Bus:ttyc4
+[    1.430763] device: 'ttyc5': device_add
+[    1.431127] PM: Adding info for No Bus:ttyc5
+[    1.431580] device: 'ttyc6': device_add
+[    1.431954] PM: Adding info for No Bus:ttyc6
+[    1.432405] device: 'ttyc7': device_add
+[    1.432782] PM: Adding info for No Bus:ttyc7
+[    1.433233] device: 'ttyc8': device_add
+[    1.433601] PM: Adding info for No Bus:ttyc8
+[    1.434071] device: 'ttyc9': device_add
+[    1.434436] PM: Adding info for No Bus:ttyc9
+[    1.434897] device: 'ttyca': device_add
+[    1.435260] PM: Adding info for No Bus:ttyca
+[    1.435719] device: 'ttycb': device_add
+[    1.436085] PM: Adding info for No Bus:ttycb
+[    1.436533] device: 'ttycc': device_add
+[    1.436902] PM: Adding info for No Bus:ttycc
+[    1.437350] device: 'ttycd': device_add
+[    1.437723] PM: Adding info for No Bus:ttycd
+[    1.438176] device: 'ttyce': device_add
+[    1.438539] PM: Adding info for No Bus:ttyce
+[    1.439004] device: 'ttycf': device_add
+[    1.439370] PM: Adding info for No Bus:ttycf
+[    1.439844] device: 'ttyd0': device_add
+[    1.440213] PM: Adding info for No Bus:ttyd0
+[    1.440682] device: 'ttyd1': device_add
+[    1.441046] PM: Adding info for No Bus:ttyd1
+[    1.441494] device: 'ttyd2': device_add
+[    1.441864] PM: Adding info for No Bus:ttyd2
+[    1.442314] device: 'ttyd3': device_add
+[    1.442689] PM: Adding info for No Bus:ttyd3
+[    1.443139] device: 'ttyd4': device_add
+[    1.443502] PM: Adding info for No Bus:ttyd4
+[    1.443983] device: 'ttyd5': device_add
+[    1.444349] PM: Adding info for No Bus:ttyd5
+[    1.444812] device: 'ttyd6': device_add
+[    1.445175] PM: Adding info for No Bus:ttyd6
+[    1.445635] device: 'ttyd7': device_add
+[    1.446002] PM: Adding info for No Bus:ttyd7
+[    1.446452] device: 'ttyd8': device_add
+[    1.446830] PM: Adding info for No Bus:ttyd8
+[    1.447284] device: 'ttyd9': device_add
+[    1.447661] PM: Adding info for No Bus:ttyd9
+[    1.448112] device: 'ttyda': device_add
+[    1.448475] PM: Adding info for No Bus:ttyda
+[    1.448940] device: 'ttydb': device_add
+[    1.449310] PM: Adding info for No Bus:ttydb
+[    1.449772] device: 'ttydc': device_add
+[    1.450134] PM: Adding info for No Bus:ttydc
+[    1.450583] device: 'ttydd': device_add
+[    1.450955] PM: Adding info for No Bus:ttydd
+[    1.451411] device: 'ttyde': device_add
+[    1.451785] PM: Adding info for No Bus:ttyde
+[    1.452237] device: 'ttydf': device_add
+[    1.452602] PM: Adding info for No Bus:ttydf
+[    1.453068] device: 'ttye0': device_add
+[    1.453436] PM: Adding info for No Bus:ttye0
+[    1.453904] device: 'ttye1': device_add
+[    1.454269] PM: Adding info for No Bus:ttye1
+[    1.454731] device: 'ttye2': device_add
+[    1.455094] PM: Adding info for No Bus:ttye2
+[    1.455542] device: 'ttye3': device_add
+[    1.455916] PM: Adding info for No Bus:ttye3
+[    1.456366] device: 'ttye4': device_add
+[    1.456741] PM: Adding info for No Bus:ttye4
+[    1.457191] device: 'ttye5': device_add
+[    1.457555] PM: Adding info for No Bus:ttye5
+[    1.458021] device: 'ttye6': device_add
+[    1.458386] PM: Adding info for No Bus:ttye6
+[    1.458847] device: 'ttye7': device_add
+[    1.459212] PM: Adding info for No Bus:ttye7
+[    1.459677] device: 'ttye8': device_add
+[    1.460043] PM: Adding info for No Bus:ttye8
+[    1.460492] device: 'ttye9': device_add
+[    1.460864] PM: Adding info for No Bus:ttye9
+[    1.461314] device: 'ttyea': device_add
+[    1.461689] PM: Adding info for No Bus:ttyea
+[    1.462156] device: 'ttyeb': device_add
+[    1.462526] PM: Adding info for No Bus:ttyeb
+[    1.462988] device: 'ttyec': device_add
+[    1.463352] PM: Adding info for No Bus:ttyec
+[    1.463812] device: 'ttyed': device_add
+[    1.464175] PM: Adding info for No Bus:ttyed
+[    1.464635] device: 'ttyee': device_add
+[    1.464996] PM: Adding info for No Bus:ttyee
+[    1.465446] device: 'ttyef': device_add
+[    1.465822] PM: Adding info for No Bus:ttyef
+[    1.466284] device: 'ptmx': device_add
+[    1.466657] PM: Adding info for No Bus:ptmx
+[    1.467108] Serial: 8250/16550 driver, 4 ports, IRQ sharing disabled
+[    1.467713] Registering platform device 'serial8250'. Parent at platform
+[    1.468315] device: 'serial8250': device_add
+[    1.468713] bus: 'platform': add device serial8250
+[    1.469163] PM: Adding info for platform:serial8250
+[    1.469656] bus: 'platform': add driver serial8250
+[    1.470177] bus: 'platform': __driver_probe_device: matched device serial8250 with driver serial8250
+[    1.471003] bus: 'platform': really_probe: probing driver serial8250 with device serial8250
+[    1.471766] serial8250 serial8250: no default pinctrl state
+[    1.472280] driver: 'serial8250': driver_bound: bound to device 'serial8250'
+[    1.472931] bus: 'platform': really_probe: bound device serial8250 to driver serial8250
+[    1.473676] bus: 'platform': add driver dw-apb-uart
+[    1.474156] bus: 'platform': __driver_probe_device: matched device ff1a0000.serial with driver dw-apb-uart
+[    1.475029] bus: 'platform': really_probe: probing driver dw-apb-uart with device ff1a0000.serial
+[    1.475912] dw-apb-uart ff1a0000.serial: no init pinctrl state
+[    1.476454] dw-apb-uart ff1a0000.serial: no sleep pinctrl state
+[    1.476991] dw-apb-uart ff1a0000.serial: no idle pinctrl state
+[    1.477751] ff1a0000.serial: ttyS2 at MMIO 0xff1a0000 (irq = 35, base_baud = 1500000) is a 16550A
+[    1.478654] printk: console [ttyS2] enabled
+[    1.478654] printk: console [ttyS2] enabled
+[    1.479398] printk: bootconsole [uart8250] disabled
+[    1.479398] printk: bootconsole [uart8250] disabled
+[    1.480279] device: 'ttyS2': device_add
+[    1.480669] PM: Adding info for No Bus:ttyS2
+[    1.481177] driver: 'dw-apb-uart': driver_bound: bound to device 'ff1a0000.serial'
+[    1.481899] bus: 'platform': really_probe: bound device ff1a0000.serial to driver dw-apb-uart
+[    1.482865] bus: 'platform': add driver smccc_trng
+[    1.483355] led_vk2c21_init
+[    1.483355] =============================================
+[    1.484079] bus: 'platform': add driver lcd_vk2c21
+[    1.484605] bus: 'platform': add driver rk_iommu
+[    1.485109] bus: 'platform': __driver_probe_device: matched device ff650800.iommu with driver rk_iommu
+[    1.485934] bus: 'platform': really_probe: probing driver rk_iommu with device ff650800.iommu
+[    1.486694] rk_iommu ff650800.iommu: no pinctrl handle
+[    1.487173] rk_iommu ff650800.iommu: adding to PM domain vcodec
+[    1.487701] rk_iommu ff650800.iommu: genpd_add_device()
+[    1.488173] rk_iommu ff650800.iommu: Clock aclk_vcodec con_id (null) managed by runtime PM.
+[    1.488916] rk_iommu ff650800.iommu: Clock hclk_vcodec con_id (null) managed by runtime PM.
+[    1.489762] device: 'ff650800.iommu': device_add
+[    1.490194] PM: Adding info for No Bus:ff650800.iommu
+[    1.490795] driver: 'rk_iommu': driver_bound: bound to device 'ff650800.iommu'
+[    1.491460] bus: 'platform': really_probe: bound device ff650800.iommu to driver rk_iommu
+[    1.492197] bus: 'platform': __driver_probe_device: matched device ff660480.iommu with driver rk_iommu
+[    1.493018] bus: 'platform': really_probe: probing driver rk_iommu with device ff660480.iommu
+[    1.493778] rk_iommu ff660480.iommu: no pinctrl handle
+[    1.494250] rk_iommu ff660480.iommu: adding to PM domain vdu
+[    1.494754] rk_iommu ff660480.iommu: genpd_add_device()
+[    1.495221] rk_iommu ff660480.iommu: Clock aclk_vdu con_id (null) managed by runtime PM.
+[    1.495940] rk_iommu ff660480.iommu: Clock hclk_vdu con_id (null) managed by runtime PM.
+[    1.496741] device: 'ff660480.iommu': device_add
+[    1.497178] PM: Adding info for No Bus:ff660480.iommu
+[    1.497756] driver: 'rk_iommu': driver_bound: bound to device 'ff660480.iommu'
+[    1.498418] bus: 'platform': really_probe: bound device ff660480.iommu to driver rk_iommu
+[    1.499148] bus: 'platform': __driver_probe_device: matched device ff670800.iommu with driver rk_iommu
+[    1.499968] bus: 'platform': really_probe: probing driver rk_iommu with device ff670800.iommu
+[    1.500725] rk_iommu ff670800.iommu: no pinctrl handle
+[    1.501197] rk_iommu ff670800.iommu: adding to PM domain iep
+[    1.501702] rk_iommu ff670800.iommu: genpd_add_device()
+[    1.502168] rk_iommu ff670800.iommu: Clock aclk_iep con_id (null) managed by runtime PM.
+[    1.502886] rk_iommu ff670800.iommu: Clock hclk_iep con_id (null) managed by runtime PM.
+[    1.503686] device: 'ff670800.iommu': device_add
+[    1.504120] PM: Adding info for No Bus:ff670800.iommu
+[    1.504695] driver: 'rk_iommu': driver_bound: bound to device 'ff670800.iommu'
+[    1.505356] bus: 'platform': really_probe: bound device ff670800.iommu to driver rk_iommu
+[    1.506107] bus: 'platform': __driver_probe_device: matched device ff8f3f00.iommu with driver rk_iommu
+[    1.506926] bus: 'platform': really_probe: probing driver rk_iommu with device ff8f3f00.iommu
+[    1.507683] rk_iommu ff8f3f00.iommu: no pinctrl handle
+[    1.508156] rk_iommu ff8f3f00.iommu: adding to PM domain vopl
+[    1.508667] rk_iommu ff8f3f00.iommu: genpd_add_device()
+[    1.509135] rk_iommu ff8f3f00.iommu: Clock aclk_vop1 con_id (null) managed by runtime PM.
+[    1.509863] rk_iommu ff8f3f00.iommu: Clock hclk_vop1 con_id (null) managed by runtime PM.
+[    1.510670] device: 'ff8f3f00.iommu': device_add
+[    1.511099] PM: Adding info for No Bus:ff8f3f00.iommu
+[    1.511673] driver: 'rk_iommu': driver_bound: bound to device 'ff8f3f00.iommu'
+[    1.512334] bus: 'platform': really_probe: bound device ff8f3f00.iommu to driver rk_iommu
+[    1.513064] bus: 'platform': __driver_probe_device: matched device ff903f00.iommu with driver rk_iommu
+[    1.513884] bus: 'platform': really_probe: probing driver rk_iommu with device ff903f00.iommu
+[    1.514642] rk_iommu ff903f00.iommu: no pinctrl handle
+[    1.515113] rk_iommu ff903f00.iommu: adding to PM domain vopb
+[    1.515628] rk_iommu ff903f00.iommu: genpd_add_device()
+[    1.516095] rk_iommu ff903f00.iommu: Clock aclk_vop0 con_id (null) managed by runtime PM.
+[    1.516821] rk_iommu ff903f00.iommu: Clock hclk_vop0 con_id (null) managed by runtime PM.
+[    1.517637] device: 'ff903f00.iommu': device_add
+[    1.518067] PM: Adding info for No Bus:ff903f00.iommu
+[    1.518642] driver: 'rk_iommu': driver_bound: bound to device 'ff903f00.iommu'
+[    1.519302] bus: 'platform': really_probe: bound device ff903f00.iommu to driver rk_iommu
+[    1.520090] device class 'drm': registering
+[    1.520515] device class 'drm_dp_aux_dev': registering
+[    1.521006] registering platform driver 0xffffffc008c40258
+[    1.521498] bus: 'platform': add driver rockchip-vop
+[    1.522046] bus: 'platform': __driver_probe_device: matched device ff8f0000.vop with driver rockchip-vop
+[    1.522883] bus: 'platform': really_probe: probing driver rockchip-vop with device ff8f0000.vop
+[    1.523658] rockchip-vop ff8f0000.vop: no pinctrl handle
+[    1.524177] device: 'platform:ff8f3f00.iommu--platform:ff8f0000.vop': device_add
+[    1.524882] devices_kset: Moving ff8f0000.vop to end of list
+[    1.525380] PM: Moving platform:ff8f0000.vop to end of list
+[    1.525879] rockchip-vop ff8f0000.vop: Linked as a consumer to ff8f3f00.iommu
+[    1.526512] rockchip-vop ff8f0000.vop: Adding to iommu group 3
+[    1.527121] rockchip-vop ff8f0000.vop: adding to PM domain vopl
+[    1.527651] rockchip-vop ff8f0000.vop: genpd_add_device()
+[    1.528135] rockchip-vop ff8f0000.vop: Clock aclk_vop1 con_id (null) managed by runtime PM.
+[    1.528878] rockchip-vop ff8f0000.vop: Clock dclk_vop1 con_id (null) managed by runtime PM.
+[    1.529619] rockchip-vop ff8f0000.vop: Clock hclk_vop1 con_id (null) managed by runtime PM.
+[    1.530356] rockchip-vop ff8f0000.vop: Clock dclk_vop1_div con_id (null) managed by runtime PM.
+[    1.531132] rockchip-vop ff8f0000.vop: adding component (ops 0xffffffc00887b2a0)
+[    1.531788] driver: 'rockchip-vop': driver_bound: bound to device 'ff8f0000.vop'
+[    1.532456] rockchip-vop ff8f0000.vop: Dropping the link to ff940000.hdmi
+[    1.533056] device: 'platform:ff940000.hdmi--platform:ff8f0000.vop': device_unregister
+[    1.533826] bus: 'platform': really_probe: bound device ff8f0000.vop to driver rockchip-vop
+[    1.534565] bus: 'platform': __driver_probe_device: matched device ff900000.vop with driver rockchip-vop
+[    1.535402] bus: 'platform': really_probe: probing driver rockchip-vop with device ff900000.vop
+[    1.536175] rockchip-vop ff900000.vop: no pinctrl handle
+[    1.536695] device: 'platform:ff903f00.iommu--platform:ff900000.vop': device_add
+[    1.537381] devices_kset: Moving ff900000.vop to end of list
+[    1.537886] PM: Moving platform:ff900000.vop to end of list
+[    1.538377] rockchip-vop ff900000.vop: Linked as a consumer to ff903f00.iommu
+[    1.539013] rockchip-vop ff900000.vop: Adding to iommu group 4
+[    1.539623] rockchip-vop ff900000.vop: adding to PM domain vopb
+[    1.540147] rockchip-vop ff900000.vop: genpd_add_device()
+[    1.540635] rockchip-vop ff900000.vop: Clock aclk_vop0 con_id (null) managed by runtime PM.
+[    1.541370] rockchip-vop ff900000.vop: Clock dclk_vop0 con_id (null) managed by runtime PM.
+[    1.542111] rockchip-vop ff900000.vop: Clock hclk_vop0 con_id (null) managed by runtime PM.
+[    1.542853] rockchip-vop ff900000.vop: Clock dclk_vop0_div con_id (null) managed by runtime PM.
+[    1.543629] rockchip-vop ff900000.vop: adding component (ops 0xffffffc00887b2a0)
+[    1.544281] driver: 'rockchip-vop': driver_bound: bound to device 'ff900000.vop'
+[    1.544952] rockchip-vop ff900000.vop: Dropping the link to ff940000.hdmi
+[    1.545548] device: 'platform:ff940000.hdmi--platform:ff900000.vop': device_unregister
+[    1.546307] bus: 'platform': really_probe: bound device ff900000.vop to driver rockchip-vop
+[    1.547106] registering platform driver 0xffffffc008c40e80
+[    1.547596] bus: 'platform': add driver rockchip-lvds
+[    1.548282] registering platform driver 0xffffffc008c403a8
+[    1.548776] bus: 'platform': add driver rockchip-dp
+[    1.549410] registering platform driver 0xffffffc008c404c8
+[    1.549903] bus: 'platform': add driver cdn-dp
+[    1.550407] registering platform driver 0xffffffc008c40ac0
+[    1.550900] bus: 'platform': add driver dwhdmi-rockchip
+[    1.551578] bus: 'platform': __driver_probe_device: matched device ff940000.hdmi with driver dwhdmi-rockchip
+[    1.552453] platform ff940000.hdmi: error -EPROBE_DEFER: wait for supplier LDO_REG2
+[    1.553133] platform ff940000.hdmi: Added to deferred list
+[    1.553704] registering platform driver 0xffffffc008c40c90
+[    1.554190] bus: 'platform': add driver dw-mipi-dsi-rockchip
+[    1.554803] registering platform driver 0xffffffc008c40db0
+[    1.555289] bus: 'platform': add driver dw-mipi-dsi2
+[    1.555813] registering platform driver 0xffffffc008c40f50
+[    1.556299] bus: 'platform': add driver rockchip-rgb
+[    1.557175] bus: 'platform': add driver rockchip-drm
+[    1.557628] bus: 'platform': __driver_probe_device: matched device display-subsystem with driver rockchip-drm
+[    1.558497] bus: 'platform': really_probe: probing driver rockchip-drm with device display-subsystem
+[    1.559310] rockchip-drm display-subsystem: no pinctrl handle
+[    1.560013] device: 'platform:ff8f0000.vop--platform:display-subsystem': device_add
+[    1.560731] devices_kset: Moving display-subsystem to end of list
+[    1.561268] PM: Moving platform:display-subsystem to end of list
+[    1.561803] rockchip-drm display-subsystem: Linked as a consumer to ff8f0000.vop
+[    1.562463] device: 'platform:ff900000.vop--platform:display-subsystem': device_add
+[    1.563171] devices_kset: Moving display-subsystem to end of list
+[    1.563715] PM: Moving platform:display-subsystem to end of list
+[    1.564243] rockchip-drm display-subsystem: Linked as a consumer to ff900000.vop
+[    1.565627] device: 'platform:ff940000.hdmi--platform:display-subsystem': device_add
+[    1.566353] devices_kset: Moving display-subsystem to end of list
+[    1.566896] PM: Moving platform:display-subsystem to end of list
+[    1.567425] rockchip-drm display-subsystem: Linked as a consumer to ff940000.hdmi
+[    1.568728] rockchip-drm display-subsystem: trying to bring up adev
+[    1.569281] rockchip-drm display-subsystem: Looking for component 0
+[    1.569839] rockchip-drm display-subsystem: found component ff8f0000.vop, duplicate 0
+[    1.570525] rockchip-drm display-subsystem: Looking for component 1
+[    1.571079] rockchip-drm display-subsystem: found component ff900000.vop, duplicate 0
+[    1.571768] rockchip-drm display-subsystem: Looking for component 2
+[    1.572319] rockchip-drm display-subsystem: master has incomplete components
+[    1.572940] driver: 'rockchip-drm': driver_bound: bound to device 'display-subsystem'
+[    1.573666] bus: 'platform': really_probe: bound device display-subsystem to driver rockchip-drm
+[    1.574544] bus: 'platform': add driver panel-simple
+[    1.576719] bus: 'spi': add driver panel-simple-spi
+[    1.577166] bus: 'mipi-dsi': add driver panel-simple-dsi
+[    1.577660] bus: 'platform': add driver panel-edp
+[    1.578531] bus: 'dp-aux': add driver panel-simple-dp-aux
+[    1.579037] bus: 'platform': add driver dw-hdmi-hdcp
+[    1.579538] bus: 'platform': add driver dw-hdmi-qp-hdcp
+[    1.580065] bus: 'platform': add driver panfrost
+[    1.580898] cacheinfo: Unable to detect cache hierarchy for CPU 0
+[    1.580909] rockchip-pm-domain ff310000.power-management:power-controller: Looking up vcodec-supply from device tree
+[    1.580952] rockchip-pm-domain ff310000.power-management:power-controller: Looking up vcodec-supply property in node /power-management@ff310000/power-controller failed
+[    1.581477] device class 'devcoredump': registering
+[    1.582418] rockchip-pm-domain ff310000.power-management:power-controller: Looking up vdu-supply from device tree
+[    1.583709] bus: 'i2c': add driver rk808
+[    1.584128] rockchip-pm-domain ff310000.power-management:power-controller: Looking up vdu-supply property in node /power-management@ff310000/power-controller failed
+[    1.585041] i2c-core: driver [rk808] registered
+[    1.585375] rockchip-pm-domain ff310000.power-management:power-controller: Looking up iep-supply from device tree
+[    1.586634] device class 'scsi_disk': registering
+[    1.587042] rockchip-pm-domain ff310000.power-management:power-controller: Looking up iep-supply property in node /power-management@ff310000/power-controller failed
+[    1.587952] bus: 'scsi': add driver sd
+[    1.589965] device class 'spidev': registering
+[    1.590378] bus: 'spi': add driver spidev
+[    1.590763] bus: 'platform': add driver rockchip-spi
+[    1.591609] bus: 'platform': add driver rockchip-spi-slave
+[    1.592232] Registering platform device 'Fixed MDIO bus.0'. Parent at platform
+[    1.592873] device: 'Fixed MDIO bus.0': device_add
+[    1.593304] bus: 'platform': add device Fixed MDIO bus.0
+[    1.593799] PM: Adding info for platform:Fixed MDIO bus.0
+[    1.594325] device: 'fixed-0': device_add
+[    1.594899] PM: Adding info for No Bus:fixed-0
+[    1.595310] bus: 'mdio_bus': add driver Rockchip integrated EPHY
+[    1.595886] bus: 'platform': add driver rk_gmac-dwmac
+[    1.596346] bus: 'platform': __driver_probe_device: matched device fe300000.ethernet with driver rk_gmac-dwmac
+[    1.597232] bus: 'platform': really_probe: probing driver rk_gmac-dwmac with device fe300000.ethernet
+[    1.598214] rk_gmac-dwmac fe300000.ethernet: no init pinctrl state
+[    1.598811] rk_gmac-dwmac fe300000.ethernet: no sleep pinctrl state
+[    1.599362] rk_gmac-dwmac fe300000.ethernet: no idle pinctrl state
+[    1.600044] rk_gmac-dwmac fe300000.ethernet: adding to PM domain gmac
+[    1.600618] rk_gmac-dwmac fe300000.ethernet: genpd_add_device()
+[    1.601147] rk_gmac-dwmac fe300000.ethernet: Clock clk_gmac con_id (null) managed by runtime PM.
+[    1.601931] rk_gmac-dwmac fe300000.ethernet: Clock clk_rmii_rx con_id (null) managed by runtime PM.
+[    1.602735] rk_gmac-dwmac fe300000.ethernet: Clock clk_rmii_tx con_id (null) managed by runtime PM.
+[    1.603533] rk_gmac-dwmac fe300000.ethernet: Clock clk_mac_ref con_id (null) managed by runtime PM.
+[    1.604336] rk_gmac-dwmac fe300000.ethernet: Clock clk_mac_refout con_id (null) managed by runtime PM.
+[    1.605163] rk_gmac-dwmac fe300000.ethernet: Clock aclk_gmac con_id (null) managed by runtime PM.
+[    1.605951] rk_gmac-dwmac fe300000.ethernet: Clock pclk_gmac con_id (null) managed by runtime PM.
+[    1.606803] rk_gmac-dwmac fe300000.ethernet: IRQ eth_wake_irq not found
+[    1.607386] rk_gmac-dwmac fe300000.ethernet: IRQ eth_lpi not found
+[    1.608018] rk_gmac-dwmac fe300000.ethernet: PTP uses main clock
+[    1.608558] rk_gmac-dwmac fe300000.ethernet: Looking up phy-supply from device tree
+[    1.609300] device: 'regulator:regulator.4--platform:fe300000.ethernet': device_add
+[    1.610029] devices_kset: Moving fe300000.ethernet to end of list
+[    1.610566] PM: Moving platform:fe300000.ethernet to end of list
+[    1.611101] rk_gmac-dwmac fe300000.ethernet: Linked as a consumer to regulator.4
+[    1.611757] rk_gmac-dwmac fe300000.ethernet: clock input or output? (input).
+[    1.612376] rk_gmac-dwmac fe300000.ethernet: TX delay(0x28).
+[    1.612880] rk_gmac-dwmac fe300000.ethernet: RX delay(0x11).
+[    1.613384] rk_gmac-dwmac fe300000.ethernet: integrated PHY? (no).
+[    1.613963] rk_gmac-dwmac fe300000.ethernet: cannot get clock clk_mac_speed
+[    1.614574] rk_gmac-dwmac fe300000.ethernet: clock input from PHY
+[    1.615334] rk_gmac-dwmac fe300000.ethernet: init for RGMII
+[    1.615969] rk_gmac-dwmac fe300000.ethernet: User ID: 0x10, Synopsys ID: 0x35
+[    1.616600] rk_gmac-dwmac fe300000.ethernet: 	DWMAC1000
+[    1.617074] rk_gmac-dwmac fe300000.ethernet: DMA HW capability register supported
+[    1.617734] rk_gmac-dwmac fe300000.ethernet: RX Checksum Offload Engine supported
+[    1.618388] rk_gmac-dwmac fe300000.ethernet: COE Type 2
+[    1.618857] rk_gmac-dwmac fe300000.ethernet: TX Checksum insertion supported
+[    1.619474] rk_gmac-dwmac fe300000.ethernet: Wake-Up On Lan supported
+[    1.620091] rk_gmac-dwmac fe300000.ethernet: Normal descriptors
+[    1.620618] rk_gmac-dwmac fe300000.ethernet: Ring mode enabled
+[    1.621130] rk_gmac-dwmac fe300000.ethernet: Enable RX Mitigation via HW Watchdog Timer
+[    1.621874] device: 'stmmac-0': device_add
+[    1.622435] PM: Adding info for No Bus:stmmac-0
+[    1.687874] device: 'stmmac-0:00': device_add
+[    1.688276] bus: 'mdio_bus': add device stmmac-0:00
+[    1.688736] PM: Adding info for mdio_bus:stmmac-0:00
+[    1.689424] device: 'stmmac-0:01': device_add
+[    1.689832] bus: 'mdio_bus': add device stmmac-0:01
+[    1.690283] PM: Adding info for mdio_bus:stmmac-0:01
+[    1.697399] mdio_bus stmmac-0:00: attached PHY driver [unbound] (mii_bus:phy_addr=stmmac-0:00, irq=POLL)
+[    1.698242] mdio_bus stmmac-0:01: attached PHY driver [unbound] (mii_bus:phy_addr=stmmac-0:01, irq=POLL)
+[    1.699101] device: 'eth0': device_add
+[    1.699534] PM: Adding info for No Bus:eth0
+[    1.700444] driver: 'rk_gmac-dwmac': driver_bound: bound to device 'fe300000.ethernet'
+[    1.701197] bus: 'platform': really_probe: bound device fe300000.ethernet to driver rk_gmac-dwmac
+[    1.702175] bus: 'platform': add driver stmmaceth
+[    1.702841] bus: 'platform': add driver dwc3
+[    1.703335] bus: 'platform': add driver dwc3-of-simple
+[    1.703824] bus: 'platform': __driver_probe_device: matched device usb@fe800000 with driver dwc3-of-simple
+[    1.704677] bus: 'platform': really_probe: probing driver dwc3-of-simple with device usb@fe800000
+[    1.705465] dwc3-of-simple usb@fe800000: no pinctrl handle
+[    1.706068] device: 'fe800000.usb': device_add
+[    1.706472] bus: 'platform': add device fe800000.usb
+[    1.706941] PM: Adding info for platform:fe800000.usb
+[    1.707422] device: 'platform:ff7c0000.phy--platform:fe800000.usb': device_add
+[    1.708104] devices_kset: Moving fe800000.usb to end of list
+[    1.708602] PM: Moving platform:fe800000.usb to end of list
+[    1.709100] platform fe800000.usb: Linked as a consumer to ff7c0000.phy
+[    1.709685] usb@fe800000 Dropping the fwnode link to phy@ff7c0000
+[    1.710230] device: 'platform:ff770000.syscon:usb2phy@e450--platform:fe800000.usb': device_add
+[    1.711029] devices_kset: Moving fe800000.usb to end of list
+[    1.711528] PM: Moving platform:fe800000.usb to end of list
+[    1.712025] platform fe800000.usb: Linked as a consumer to ff770000.syscon:usb2phy@e450
+[    1.712731] usb@fe800000 Dropping the fwnode link to usb2phy@e450
+[    1.713283] device: 'platform:ff310000.power-management:power-controller--platform:fe800000.usb': device_add
+[    1.714187] devices_kset: Moving fe800000.usb to end of list
+[    1.714691] PM: Moving platform:fe800000.usb to end of list
+[    1.715183] platform fe800000.usb: Linked as a consumer to ff310000.power-management:power-controller
+[    1.715994] usb@fe800000 Dropping the fwnode link to power-controller
+[    1.716564] platform fe800000.usb: Not linking /clock-controller@ff760000 - might never become dev
+[    1.717354] usb@fe800000 Dropping the fwnode link to clock-controller@ff760000
+[    1.717994] platform fe800000.usb: Not linking /interrupt-controller@fee00000 - might never become dev
+[    1.718816] usb@fe800000 Dropping the fwnode link to interrupt-controller@fee00000
+[    1.719566] bus: 'platform': __driver_probe_device: matched device fe800000.usb with driver dwc3
+[    1.720342] bus: 'platform': really_probe: probing driver dwc3 with device fe800000.usb
+[    1.721055] dwc3 fe800000.usb: no pinctrl handle
+[    1.721490] dwc3 fe800000.usb: adding to PM domain usb3
+[    1.721957] dwc3 fe800000.usb: genpd_add_device()
+[    1.722382] dwc3 fe800000.usb: Clock clk_usb3otg0_ref con_id (null) managed by runtime PM.
+[    1.723123] dwc3 fe800000.usb: Clock aclk_usb3otg0 con_id (null) managed by runtime PM.
+[    1.723835] dwc3 fe800000.usb: Clock clk_usb3otg0_suspend con_id (null) managed by runtime PM.
+[    1.724774] device: 'phy:phy-ff770000.syscon:usb2phy@e450.2--platform:fe800000.usb': device_add
+[    1.725579] devices_kset: Moving fe800000.usb to end of list
+[    1.726087] PM: Moving platform:fe800000.usb to end of list
+[    1.726578] dwc3 fe800000.usb: Linked as a consumer to phy-ff770000.syscon:usb2phy@e450.2
+[    1.727318] device: 'phy:phy-ff7c0000.phy.6--platform:fe800000.usb': device_add
+[    1.728003] devices_kset: Moving fe800000.usb to end of list
+[    1.728501] PM: Moving platform:fe800000.usb to end of list
+[    1.728998] dwc3 fe800000.usb: Linked as a consumer to phy-ff7c0000.phy.6
+[    1.729603] rockchip-typec-phy ff7c0000.phy: genpd_runtime_resume()
+[    1.730238] rockchip-typec-phy ff7c0000.phy: genpd_runtime_suspend()
+[    1.732232] rockchip-typec-phy ff7c0000.phy: genpd_runtime_resume()
+[    1.737165] rockchip-typec-phy ff7c0000.phy: Needed 1 loops to turn on
+[    1.737912] Registering platform device 'xhci-hcd.0.auto'. Parent at fe800000.usb
+[    1.738571] device: 'xhci-hcd.0.auto': device_add
+[    1.739005] bus: 'platform': add device xhci-hcd.0.auto
+[    1.739486] PM: Adding info for platform:xhci-hcd.0.auto
+[    1.740013] driver: 'dwc3': driver_bound: bound to device 'fe800000.usb'
+[    1.740645] bus: 'platform': really_probe: bound device fe800000.usb to driver dwc3
+[    1.741327] driver: 'dwc3-of-simple': driver_bound: bound to device 'usb@fe800000'
+[    1.742008] dwc3-of-simple usb@fe800000: Dropping the link to ff310000.power-management:power-controller
+[    1.742841] device: 'platform:ff310000.power-management:power-controller--platform:usb@fe800000': device_unregister
+[    1.743805] dwc3-of-simple usb@fe800000: Dropping the link to ff770000.syscon:usb2phy@e450
+[    1.744530] device: 'platform:ff770000.syscon:usb2phy@e450--platform:usb@fe800000': device_unregister
+[    1.745387] dwc3-of-simple usb@fe800000: Dropping the link to ff7c0000.phy
+[    1.745995] device: 'platform:ff7c0000.phy--platform:usb@fe800000': device_unregister
+[    1.746748] bus: 'platform': really_probe: bound device usb@fe800000 to driver dwc3-of-simple
+[    1.747503] bus: 'platform': __driver_probe_device: matched device usb@fe900000 with driver dwc3-of-simple
+[    1.748357] bus: 'platform': really_probe: probing driver dwc3-of-simple with device usb@fe900000
+[    1.749147] dwc3-of-simple usb@fe900000: no pinctrl handle
+[    1.749738] device: 'fe900000.usb': device_add
+[    1.750141] bus: 'platform': add device fe900000.usb
+[    1.750599] PM: Adding info for platform:fe900000.usb
+[    1.751084] device: 'platform:ff800000.phy--platform:fe900000.usb': device_add
+[    1.751769] devices_kset: Moving fe900000.usb to end of list
+[    1.752267] PM: Moving platform:fe900000.usb to end of list
+[    1.752764] platform fe900000.usb: Linked as a consumer to ff800000.phy
+[    1.753344] usb@fe900000 Dropping the fwnode link to phy@ff800000
+[    1.753893] device: 'platform:ff770000.syscon:usb2phy@e460--platform:fe900000.usb': device_add
+[    1.754694] devices_kset: Moving fe900000.usb to end of list
+[    1.755192] PM: Moving platform:fe900000.usb to end of list
+[    1.755690] platform fe900000.usb: Linked as a consumer to ff770000.syscon:usb2phy@e460
+[    1.756391] usb@fe900000 Dropping the fwnode link to usb2phy@e460
+[    1.756941] device: 'platform:ff310000.power-management:power-controller--platform:fe900000.usb': device_add
+[    1.757841] devices_kset: Moving fe900000.usb to end of list
+[    1.758340] PM: Moving platform:fe900000.usb to end of list
+[    1.758836] platform fe900000.usb: Linked as a consumer to ff310000.power-management:power-controller
+[    1.759646] usb@fe900000 Dropping the fwnode link to power-controller
+[    1.760214] platform fe900000.usb: Not linking /clock-controller@ff760000 - might never become dev
+[    1.761006] usb@fe900000 Dropping the fwnode link to clock-controller@ff760000
+[    1.761647] platform fe900000.usb: Not linking /interrupt-controller@fee00000 - might never become dev
+[    1.762463] usb@fe900000 Dropping the fwnode link to interrupt-controller@fee00000
+[    1.763203] bus: 'platform': __driver_probe_device: matched device fe900000.usb with driver dwc3
+[    1.763979] bus: 'platform': really_probe: probing driver dwc3 with device fe900000.usb
+[    1.764691] dwc3 fe900000.usb: no pinctrl handle
+[    1.765123] dwc3 fe900000.usb: adding to PM domain usb3
+[    1.765584] dwc3 fe900000.usb: genpd_add_device()
+[    1.766012] dwc3 fe900000.usb: Clock clk_usb3otg1_ref con_id (null) managed by runtime PM.
+[    1.766747] dwc3 fe900000.usb: Clock aclk_usb3otg1 con_id (null) managed by runtime PM.
+[    1.767453] dwc3 fe900000.usb: Clock clk_usb3otg1_suspend con_id (null) managed by runtime PM.
+[    1.768380] device: 'phy:phy-ff770000.syscon:usb2phy@e460.4--platform:fe900000.usb': device_add
+[    1.769194] devices_kset: Moving fe900000.usb to end of list
+[    1.769701] PM: Moving platform:fe900000.usb to end of list
+[    1.770193] dwc3 fe900000.usb: Linked as a consumer to phy-ff770000.syscon:usb2phy@e460.4
+[    1.770935] device: 'phy:phy-ff800000.phy.8--platform:fe900000.usb': device_add
+[    1.771625] devices_kset: Moving fe900000.usb to end of list
+[    1.772123] PM: Moving platform:fe900000.usb to end of list
+[    1.772620] dwc3 fe900000.usb: Linked as a consumer to phy-ff800000.phy.8
+[    1.773224] rockchip-typec-phy ff800000.phy: genpd_runtime_resume()
+[    1.774062] rockchip-typec-phy ff800000.phy: genpd_runtime_suspend()
+[    1.775850] rockchip-typec-phy ff800000.phy: genpd_runtime_resume()
+[    1.777577] Registering platform device 'xhci-hcd.1.auto'. Parent at fe900000.usb
+[    1.778249] device: 'xhci-hcd.1.auto': device_add
+[    1.778683] bus: 'platform': add device xhci-hcd.1.auto
+[    1.779160] PM: Adding info for platform:xhci-hcd.1.auto
+[    1.779684] driver: 'dwc3': driver_bound: bound to device 'fe900000.usb'
+[    1.780304] bus: 'platform': really_probe: bound device fe900000.usb to driver dwc3
+[    1.780994] driver: 'dwc3-of-simple': driver_bound: bound to device 'usb@fe900000'
+[    1.781671] dwc3-of-simple usb@fe900000: Dropping the link to ff310000.power-management:power-controller
+[    1.782499] device: 'platform:ff310000.power-management:power-controller--platform:usb@fe900000': device_unregister
+[    1.783460] dwc3-of-simple usb@fe900000: Dropping the link to ff770000.syscon:usb2phy@e460
+[    1.784190] device: 'platform:ff770000.syscon:usb2phy@e460--platform:usb@fe900000': device_unregister
+[    1.785040] dwc3-of-simple usb@fe900000: Dropping the link to ff800000.phy
+[    1.785649] device: 'platform:ff800000.phy--platform:usb@fe900000': device_unregister
+[    1.786392] bus: 'platform': really_probe: bound device usb@fe900000 to driver dwc3-of-simple
+[    1.787371] device class 'usbmon': registering
+[    1.787810] device: 'usbmon0': device_add
+[    1.788187] PM: Adding info for No Bus:usbmon0
+[    1.788723] bus: 'platform': add driver ehci-platform
+[    1.789207] platform fe380000.usb: probing driver ehci-platform asynchronously
+[    1.789865] platform fe3c0000.usb: probing driver ehci-platform asynchronously
+[    1.789873] bus: 'platform': __driver_probe_device: matched device fe380000.usb with driver ehci-platform
+[    1.790513] bus: 'platform': __driver_probe_device: matched device fe3c0000.usb with driver ehci-platform
+[    1.790657] bus: 'platform': add driver ohci-platform
+[    1.790682] platform fe3a0000.usb: probing driver ohci-platform asynchronously
+[    1.790697] platform fe3e0000.usb: probing driver ohci-platform asynchronously
+[    1.790718] bus: 'platform': __driver_probe_device: matched device fe3a0000.usb with driver ohci-platform
+[    1.790718] bus: 'platform': __driver_probe_device: matched device fe3e0000.usb with driver ohci-platform
+[    1.790739] bus: 'platform': really_probe: probing driver ohci-platform with device fe3a0000.usb
+[    1.790740] bus: 'platform': really_probe: probing driver ohci-platform with device fe3e0000.usb
+[    1.790771] ohci-platform fe3a0000.usb: no pinctrl handle
+[    1.790771] ohci-platform fe3e0000.usb: no pinctrl handle
+[    1.790865] ohci-platform fe3e0000.usb: adding to PM domain perihp
+[    1.790873] bus: 'platform': add driver xhci-hcd
+[    1.790875] ohci-platform fe3e0000.usb: genpd_add_device()
+[    1.790907] ohci-platform fe3e0000.usb: Clock hclk_host1 con_id (null) managed by runtime PM.
+[    1.790927] ohci-platform fe3e0000.usb: Clock hclk_host1_arb con_id (null) managed by runtime PM.
+[    1.790947] ohci-platform fe3e0000.usb: Clock clk_usbphy1_480m con_id (null) managed by runtime PM.
+[    1.790971] ohci-platform fe3a0000.usb: adding to PM domain perihp
+[    1.790980] ohci-platform fe3a0000.usb: genpd_add_device()
+[    1.791002] ohci-platform fe3a0000.usb: Clock hclk_host0 con_id (null) managed by runtime PM.
+[    1.791014] bus: 'platform': __driver_probe_device: matched device xhci-hcd.0.auto with driver xhci-hcd
+[    1.791019] ohci-platform fe3a0000.usb: Clock hclk_host0_arb con_id (null) managed by runtime PM.
+[    1.791024] bus: 'platform': really_probe: probing driver xhci-hcd with device xhci-hcd.0.auto
+[    1.791045] xhci-hcd xhci-hcd.0.auto: no default pinctrl state
+[    1.791099] ohci-platform fe3a0000.usb: Clock clk_usbphy0_480m con_id (null) managed by runtime PM.
+[    1.791199] device: 'phy:phy-ff770000.syscon:usb2phy@e460.3--platform:fe3e0000.usb': device_add
+[    1.791280] devices_kset: Moving fe3e0000.usb to end of list
+[    1.791289] PM: Moving platform:fe3e0000.usb to end of list
+[    1.791297] ohci-platform fe3e0000.usb: Linked as a consumer to phy-ff770000.syscon:usb2phy@e460.3
+[    1.791320] device: 'phy:phy-ff770000.syscon:usb2phy@e450.1--platform:fe3a0000.usb': device_add
+[    1.791386] devices_kset: Moving fe3a0000.usb to end of list
+[    1.793356] ohci-platform fe3e0000.usb: Generic Platform OHCI controller
+[    1.793909] PM: Moving platform:fe3a0000.usb to end of list
+[    1.793919] ohci-platform fe3a0000.usb: Linked as a consumer to phy-ff770000.syscon:usb2phy@e450.1
+[    1.794823] device: 'usbmon1': device_add
+[    1.795587] bus: 'platform': really_probe: probing driver ehci-platform with device fe3c0000.usb
+[    1.795587] bus: 'platform': really_probe: probing driver ehci-platform with device fe380000.usb
+[    1.795592] phy phy-ff770000.syscon:usb2phy@e450.2: illegal mode
+[    1.795601] xhci-hcd xhci-hcd.0.auto: xHCI Host Controller
+[    1.795621] ehci-platform fe380000.usb: no pinctrl handle
+[    1.795641] device: 'usbmon2': device_add
+[    1.795671] ehci-platform fe380000.usb: adding to PM domain perihp
+[    1.795679] PM: Adding info for No Bus:usbmon2
+[    1.795680] ehci-platform fe380000.usb: genpd_add_device()
+[    1.795700] ehci-platform fe380000.usb: Clock hclk_host0 con_id (null) managed by runtime PM.
+[    1.795716] ehci-platform fe380000.usb: Clock hclk_host0_arb con_id (null) managed by runtime PM.
+[    1.795731] ehci-platform fe380000.usb: Clock clk_usbphy0_480m con_id (null) managed by runtime PM.
+[    1.795792] xhci-hcd xhci-hcd.0.auto: new USB bus registered, assigned bus number 2
+[    1.795890] device: 'phy:phy-ff770000.syscon:usb2phy@e450.1--platform:fe380000.usb': device_add
+[    1.795904] xhci-hcd xhci-hcd.0.auto: hcc params 0x0220fe64 hci version 0x110 quirks 0x0000008002010010
+[    1.795952] xhci-hcd xhci-hcd.0.auto: irq 42, io mem 0xfe800000
+[    1.795970] devices_kset: Moving fe380000.usb to end of list
+[    1.795978] PM: Moving platform:fe380000.usb to end of list
+[    1.795988] ehci-platform fe380000.usb: Linked as a consumer to phy-ff770000.syscon:usb2phy@e450.1
+[    1.796075] xhci-hcd xhci-hcd.0.auto: xHCI Host Controller
+[    1.796099] device: 'usbmon3': device_add
+[    1.796123] PM: Adding info for No Bus:usbmon3
+[    1.796205] xhci-hcd xhci-hcd.0.auto: new USB bus registered, assigned bus number 3
+[    1.796216] xhci-hcd xhci-hcd.0.auto: Host supports USB 3.0 SuperSpeed
+[    1.796403] PM: Adding info for No Bus:usbmon1
+[    1.796497] device: 'usb2': device_add
+[    1.796583] bus: 'usb': add device usb2
+[    1.796646] PM: Adding info for usb:usb2
+[    1.796841] bus: 'usb': __driver_probe_device: matched device usb2 with driver usb
+[    1.796851] bus: 'usb': really_probe: probing driver usb with device usb2
+[    1.796919] device: '2-0:1.0': device_add
+[    1.796962] bus: 'usb': add device 2-0:1.0
+[    1.796982] PM: Adding info for usb:2-0:1.0
+[    1.797044] bus: 'usb': __driver_probe_device: matched device 2-0:1.0 with driver hub
+[    1.797056] bus: 'usb': really_probe: probing driver hub with device 2-0:1.0
+[    1.797081] hub 2-0:1.0: USB hub found
+[    1.797130] ehci-platform fe3c0000.usb: no pinctrl handle
+[    1.797128] hub 2-0:1.0: 1 port detected
+[    1.797165] ehci-platform fe3c0000.usb: adding to PM domain perihp
+[    1.797212] device: 'usb2-port1': device_add
+[    1.797241] PM: Adding info for No Bus:usb2-port1
+[    1.797252] usb usb2-port1: adding component (ops 0xffffffc0088ad680)
+[    1.797264] rockchip-drm display-subsystem: trying to bring up adev
+[    1.797269] rockchip-drm display-subsystem: Looking for component 0
+[    1.797275] rockchip-drm display-subsystem: Looking for component 1
+[    1.797281] rockchip-drm display-subsystem: Looking for component 2
+[    1.797287] rockchip-drm display-subsystem: master has incomplete components
+[    1.797344] driver: 'hub': driver_bound: bound to device '2-0:1.0'
+[    1.797399] bus: 'usb': really_probe: bound device 2-0:1.0 to driver hub
+[    1.797420] device: 'ep_81': device_add
+[    1.797464] PM: Adding info for No Bus:ep_81
+[    1.797476] driver: 'usb': driver_bound: bound to device 'usb2'
+[    1.797521] bus: 'usb': really_probe: bound device usb2 to driver usb
+[    1.797539] device: 'ep_00': device_add
+[    1.797583] PM: Adding info for No Bus:ep_00
+[    1.797639] ohci-platform fe3a0000.usb: Generic Platform OHCI controller
+[    1.797654] ehci-platform fe380000.usb: EHCI Host Controller
+[    1.797683] usb usb3: We don't know the algorithms for LPM for this host, disabling LPM.
+[    1.797727] ohci-platform fe3e0000.usb: new USB bus registered, assigned bus number 1
+[    1.797846] ohci-platform fe3e0000.usb: irq 44, io mem 0xfe3e0000
+[    1.797882] device: 'usb3': device_add
+[    1.797972] bus: 'usb': add device usb3
+[    1.798016] PM: Adding info for usb:usb3
+[    1.798099] ehci-platform fe3c0000.usb: genpd_add_device()
+[    1.798187] bus: 'usb': __driver_probe_device: matched device usb3 with driver usb
+[    1.798202] bus: 'usb': really_probe: probing driver usb with device usb3
+[    1.798297] device: '3-0:1.0': device_add
+[    1.798339] bus: 'usb': add device 3-0:1.0
+[    1.798356] PM: Adding info for usb:3-0:1.0
+[    1.798411] bus: 'usb': __driver_probe_device: matched device 3-0:1.0 with driver hub
+[    1.798422] bus: 'usb': really_probe: probing driver hub with device 3-0:1.0
+[    1.798446] hub 3-0:1.0: USB hub found
+[    1.798495] hub 3-0:1.0: 1 port detected
+[    1.798568] device: 'usb3-port1': device_add
+[    1.798628] PM: Adding info for No Bus:usb3-port1
+[    1.798643] usb usb3-port1: adding component (ops 0xffffffc0088ad680)
+[    1.799058] ehci-platform fe3c0000.usb: Clock hclk_host1 con_id (null) managed by runtime PM.
+[    1.799534] rockchip-drm display-subsystem: trying to bring up adev
+[    1.800281] ehci-platform fe3c0000.usb: Clock hclk_host1_arb con_id (null) managed by runtime PM.
+[    1.801059] rockchip-drm display-subsystem: Looking for component 0
+[    1.801852] ehci-platform fe3c0000.usb: Clock clk_usbphy1_480m con_id (null) managed by runtime PM.
+[    1.802389] rockchip-drm display-subsystem: Looking for component 1
+[    1.802998] device: 'phy:phy-ff770000.syscon:usb2phy@e460.3--platform:fe3c0000.usb': device_add
+[    1.803622] rockchip-drm display-subsystem: Looking for component 2
+[    1.804493] devices_kset: Moving fe3c0000.usb to end of list
+[    1.805219] rockchip-drm display-subsystem: master has incomplete components
+[    1.805969] PM: Moving platform:fe3c0000.usb to end of list
+[    1.806555] driver: 'hub': driver_bound: bound to device '3-0:1.0'
+[    1.807271] ehci-platform fe3c0000.usb: Linked as a consumer to phy-ff770000.syscon:usb2phy@e460.3
+[    1.860031] ehci-platform fe3c0000.usb: EHCI Host Controller
+[    1.860058] bus: 'usb': really_probe: bound device 3-0:1.0 to driver hub
+[    1.861129] device: 'ep_81': device_add
+[    1.861496] PM: Adding info for No Bus:ep_81
+[    1.861885] driver: 'usb': driver_bound: bound to device 'usb3'
+[    1.862437] bus: 'usb': really_probe: bound device usb3 to driver usb
+[    1.863020] device: 'ep_00': device_add
+[    1.863386] PM: Adding info for No Bus:ep_00
+[    1.863779] driver: 'xhci-hcd': driver_bound: bound to device 'xhci-hcd.0.auto'
+[    1.863805] device: 'usbmon4': device_add
+[    1.863861] device: 'usbmon5': device_add
+[    1.863864] device: 'usbmon6': device_add
+[    1.863920] PM: Adding info for No Bus:usbmon5
+[    1.863922] PM: Adding info for No Bus:usbmon6
+[    1.864041] ohci-platform fe3a0000.usb: new USB bus registered, assigned bus number 6
+[    1.864057] ehci-platform fe380000.usb: new USB bus registered, assigned bus number 5
+[    1.864158] ohci-platform fe3a0000.usb: irq 45, io mem 0xfe3a0000
+[    1.864173] ehci-platform fe380000.usb: irq 46, io mem 0xfe380000
+[    1.864179] device: 'usb1': device_add
+[    1.864270] bus: 'usb': add device usb1
+[    1.864319] PM: Adding info for usb:usb1
+[    1.864446] bus: 'platform': really_probe: bound device xhci-hcd.0.auto to driver xhci-hcd
+[    1.864517] bus: 'usb': __driver_probe_device: matched device usb1 with driver usb
+[    1.864533] bus: 'usb': really_probe: probing driver usb with device usb1
+[    1.864601] device: '1-0:1.0': device_add
+[    1.864659] bus: 'usb': add device 1-0:1.0
+[    1.864675] PM: Adding info for usb:1-0:1.0
+[    1.864723] bus: 'usb': __driver_probe_device: matched device 1-0:1.0 with driver hub
+[    1.864734] bus: 'usb': really_probe: probing driver hub with device 1-0:1.0
+[    1.864762] hub 1-0:1.0: USB hub found
+[    1.864800] PM: Adding info for No Bus:usbmon4
+[    1.864812] hub 1-0:1.0: 1 port detected
+[    1.864890] device: 'usb1-port1': device_add
+[    1.864933] PM: Adding info for No Bus:usb1-port1
+[    1.864947] usb usb1-port1: adding component (ops 0xffffffc0088ad680)
+[    1.864961] rockchip-drm display-subsystem: trying to bring up adev
+[    1.864968] rockchip-drm display-subsystem: Looking for component 0
+[    1.864976] rockchip-drm display-subsystem: Looking for component 1
+[    1.864983] rockchip-drm display-subsystem: Looking for component 2
+[    1.864991] rockchip-drm display-subsystem: master has incomplete components
+[    1.865050] driver: 'hub': driver_bound: bound to device '1-0:1.0'
+[    1.865098] bus: 'usb': really_probe: bound device 1-0:1.0 to driver hub
+[    1.865117] device: 'ep_81': device_add
+[    1.865133] bus: 'platform': __driver_probe_device: matched device xhci-hcd.1.auto with driver xhci-hcd
+[    1.865159] PM: Adding info for No Bus:ep_81
+[    1.865171] driver: 'usb': driver_bound: bound to device 'usb1'
+[    1.865213] bus: 'usb': really_probe: bound device usb1 to driver usb
+[    1.865233] device: 'ep_00': device_add
+[    1.865276] PM: Adding info for No Bus:ep_00
+[    1.865304] driver: 'ohci-platform': driver_bound: bound to device 'fe3e0000.usb'
+[    1.865354] bus: 'platform': really_probe: bound device fe3e0000.usb to driver ohci-platform
+[    1.865367] ohci-platform fe3e0000.usb: driver ohci-platform async attach completed: 0
+[    1.865567] ehci-platform fe3c0000.usb: new USB bus registered, assigned bus number 4
+[    1.865873] bus: 'platform': really_probe: probing driver xhci-hcd with device xhci-hcd.1.auto
+[    1.865891] xhci-hcd xhci-hcd.1.auto: no default pinctrl state
+[    1.866348] ehci-platform fe3c0000.usb: irq 47, io mem 0xfe3c0000
+[    1.867076] phy phy-ff770000.syscon:usb2phy@e460.4: illegal mode
+[    1.870648] ehci-platform fe380000.usb: USB 2.0 started, EHCI 1.00
+[    1.870701] ohci-platform fe3e0000.usb: genpd_runtime_suspend()
+[    1.871099] xhci-hcd xhci-hcd.1.auto: xHCI Host Controller
+[    1.871939] device: 'usb5': device_add
+[    1.877633] ehci-platform fe3c0000.usb: USB 2.0 started, EHCI 1.00
+[    1.878239] bus: 'usb': add device usb5
+[    1.891654] PM: Adding info for usb:usb5
+[    1.892191] bus: 'usb': __driver_probe_device: matched device usb5 with driver usb
+[    1.892936] bus: 'usb': really_probe: probing driver usb with device usb5
+[    1.893646] device: '5-0:1.0': device_add
+[    1.894044] bus: 'usb': add device 5-0:1.0
+[    1.894422] PM: Adding info for usb:5-0:1.0
+[    1.894857] bus: 'usb': __driver_probe_device: matched device 5-0:1.0 with driver hub
+[    1.895553] bus: 'usb': really_probe: probing driver hub with device 5-0:1.0
+[    1.896204] hub 5-0:1.0: USB hub found
+[    1.896605] hub 5-0:1.0: 1 port detected
+[    1.897027] device: 'usb5-port1': device_add
+[    1.897441] PM: Adding info for No Bus:usb5-port1
+[    1.897878] usb usb5-port1: adding component (ops 0xffffffc0088ad680)
+[    1.898455] rockchip-drm display-subsystem: trying to bring up adev
+[    1.899021] rockchip-drm display-subsystem: Looking for component 0
+[    1.899576] rockchip-drm display-subsystem: Looking for component 1
+[    1.900138] rockchip-drm display-subsystem: Looking for component 2
+[    1.900701] rockchip-drm display-subsystem: master has incomplete components
+[    1.901407] driver: 'hub': driver_bound: bound to device '5-0:1.0'
+[    1.902015] bus: 'usb': really_probe: bound device 5-0:1.0 to driver hub
+[    1.902634] device: 'ep_81': device_add
+[    1.903016] PM: Adding info for No Bus:ep_81
+[    1.903402] driver: 'usb': driver_bound: bound to device 'usb5'
+[    1.903976] bus: 'usb': really_probe: bound device usb5 to driver usb
+[    1.904560] device: 'ep_00': device_add
+[    1.904954] PM: Adding info for No Bus:ep_00
+[    1.905357] driver: 'ehci-platform': driver_bound: bound to device 'fe380000.usb'
+[    1.905378] device: 'usbmon7': device_add
+[    1.905601] device: 'usb4': device_add
+[    1.905703] bus: 'usb': add device usb4
+[    1.905750] PM: Adding info for usb:usb4
+[    1.905944] bus: 'usb': __driver_probe_device: matched device usb4 with driver usb
+[    1.905954] bus: 'usb': really_probe: probing driver usb with device usb4
+[    1.906012] device: '4-0:1.0': device_add
+[    1.906060] bus: 'usb': add device 4-0:1.0
+[    1.906076] bus: 'platform': really_probe: bound device fe380000.usb to driver ehci-platform
+[    1.906090] ehci-platform fe380000.usb: driver ehci-platform async attach completed: 0
+[    1.906402] PM: Adding info for No Bus:usbmon7
+[    1.906747] PM: Adding info for usb:4-0:1.0
+[    1.907144] xhci-hcd xhci-hcd.1.auto: new USB bus registered, assigned bus number 7
+[    1.907454] bus: 'usb': __driver_probe_device: matched device 4-0:1.0 with driver hub
+[    1.908174] xhci-hcd xhci-hcd.1.auto: hcc params 0x0220fe64 hci version 0x110 quirks 0x0000008002010010
+[    1.908685] bus: 'usb': really_probe: probing driver hub with device 4-0:1.0
+[    1.909061] xhci-hcd xhci-hcd.1.auto: irq 43, io mem 0xfe900000
+[    1.909411] hub 4-0:1.0: USB hub found
+[    1.910244] xhci-hcd xhci-hcd.1.auto: xHCI Host Controller
+[    1.910903] hub 4-0:1.0: 1 port detected
+[    1.916108] device: 'usb4-port1': device_add
+[    1.916516] PM: Adding info for No Bus:usb4-port1
+[    1.916949] usb usb4-port1: adding component (ops 0xffffffc0088ad680)
+[    1.917519] rockchip-drm display-subsystem: trying to bring up adev
+[    1.918077] rockchip-drm display-subsystem: Looking for component 0
+[    1.918632] rockchip-drm display-subsystem: Looking for component 1
+[    1.919183] rockchip-drm display-subsystem: Looking for component 2
+[    1.919738] rockchip-drm display-subsystem: master has incomplete components
+[    1.920401] driver: 'hub': driver_bound: bound to device '4-0:1.0'
+[    1.920990] bus: 'usb': really_probe: bound device 4-0:1.0 to driver hub
+[    1.921589] device: 'ep_81': device_add
+[    1.921965] PM: Adding info for No Bus:ep_81
+[    1.922347] driver: 'usb': driver_bound: bound to device 'usb4'
+[    1.922900] bus: 'usb': really_probe: bound device usb4 to driver usb
+[    1.923474] device: 'ep_00': device_add
+[    1.923842] PM: Adding info for No Bus:ep_00
+[    1.924236] driver: 'ehci-platform': driver_bound: bound to device 'fe3c0000.usb'
+[    1.924260] device: 'usbmon8': device_add
+[    1.924443] device: 'usb6': device_add
+[    1.924537] bus: 'usb': add device usb6
+[    1.924585] PM: Adding info for usb:usb6
+[    1.924796] bus: 'usb': __driver_probe_device: matched device usb6 with driver usb
+[    1.924809] bus: 'usb': really_probe: probing driver usb with device usb6
+[    1.924872] device: '6-0:1.0': device_add
+[    1.924918] bus: 'usb': add device 6-0:1.0
+[    1.924930] bus: 'platform': really_probe: bound device fe3c0000.usb to driver ehci-platform
+[    1.924940] ehci-platform fe3c0000.usb: driver ehci-platform async attach completed: 0
+[    1.925272] PM: Adding info for No Bus:usbmon8
+[    1.925597] PM: Adding info for usb:6-0:1.0
+[    1.926023] xhci-hcd xhci-hcd.1.auto: new USB bus registered, assigned bus number 8
+[    1.926330] bus: 'usb': __driver_probe_device: matched device 6-0:1.0 with driver hub
+[    1.926957] xhci-hcd xhci-hcd.1.auto: Host supports USB 3.0 SuperSpeed
+[    1.927549] bus: 'usb': really_probe: probing driver hub with device 6-0:1.0
+[    1.933027] hub 6-0:1.0: USB hub found
+[    1.933403] hub 6-0:1.0: 1 port detected
+[    1.933847] device: 'usb6-port1': device_add
+[    1.934268] PM: Adding info for No Bus:usb6-port1
+[    1.934709] usb usb6-port1: adding component (ops 0xffffffc0088ad680)
+[    1.935286] rockchip-drm display-subsystem: trying to bring up adev
+[    1.935850] rockchip-drm display-subsystem: Looking for component 0
+[    1.936405] rockchip-drm display-subsystem: Looking for component 1
+[    1.936969] rockchip-drm display-subsystem: Looking for component 2
+[    1.937525] rockchip-drm display-subsystem: master has incomplete components
+[    1.938211] driver: 'hub': driver_bound: bound to device '6-0:1.0'
+[    1.938817] bus: 'usb': really_probe: bound device 6-0:1.0 to driver hub
+[    1.939422] device: 'ep_81': device_add
+[    1.939820] PM: Adding info for No Bus:ep_81
+[    1.940206] driver: 'usb': driver_bound: bound to device 'usb6'
+[    1.940777] bus: 'usb': really_probe: bound device usb6 to driver usb
+[    1.941356] device: 'ep_00': device_add
+[    1.941745] PM: Adding info for No Bus:ep_00
+[    1.942155] driver: 'ohci-platform': driver_bound: bound to device 'fe3a0000.usb'
+[    1.942301] device: 'usb7': device_add
+[    1.942870] bus: 'platform': really_probe: bound device fe3a0000.usb to driver ohci-platform
+[    1.943209] bus: 'usb': add device usb7
+[    1.943903] ohci-platform fe3a0000.usb: driver ohci-platform async attach completed: 0
+[    1.944259] PM: Adding info for usb:usb7
+[    1.945009] ohci-platform fe3a0000.usb: genpd_runtime_suspend()
+[    1.945434] bus: 'usb': __driver_probe_device: matched device usb7 with driver usb
+[    1.946454] bus: 'usb': really_probe: probing driver usb with device usb7
+[    1.947101] device: '7-0:1.0': device_add
+[    1.947483] bus: 'usb': add device 7-0:1.0
+[    1.947868] PM: Adding info for usb:7-0:1.0
+[    1.948273] bus: 'usb': __driver_probe_device: matched device 7-0:1.0 with driver hub
+[    1.948972] bus: 'usb': really_probe: probing driver hub with device 7-0:1.0
+[    1.949605] hub 7-0:1.0: USB hub found
+[    1.949976] hub 7-0:1.0: 1 port detected
+[    1.950375] device: 'usb7-port1': device_add
+[    1.950789] PM: Adding info for No Bus:usb7-port1
+[    1.951210] usb usb7-port1: adding component (ops 0xffffffc0088ad680)
+[    1.951787] rockchip-drm display-subsystem: trying to bring up adev
+[    1.952337] rockchip-drm display-subsystem: Looking for component 0
+[    1.952894] rockchip-drm display-subsystem: Looking for component 1
+[    1.953445] rockchip-drm display-subsystem: Looking for component 2
+[    1.954001] rockchip-drm display-subsystem: master has incomplete components
+[    1.954662] driver: 'hub': driver_bound: bound to device '7-0:1.0'
+[    1.955241] bus: 'usb': really_probe: bound device 7-0:1.0 to driver hub
+[    1.955849] device: 'ep_81': device_add
+[    1.956214] PM: Adding info for No Bus:ep_81
+[    1.956593] driver: 'usb': driver_bound: bound to device 'usb7'
+[    1.957151] bus: 'usb': really_probe: bound device usb7 to driver usb
+[    1.957732] device: 'ep_00': device_add
+[    1.958096] PM: Adding info for No Bus:ep_00
+[    1.958544] usb usb8: We don't know the algorithms for LPM for this host, disabling LPM.
+[    1.959391] device: 'usb8': device_add
+[    1.959785] bus: 'usb': add device usb8
+[    1.960150] PM: Adding info for usb:usb8
+[    1.960653] bus: 'usb': __driver_probe_device: matched device usb8 with driver usb
+[    1.961321] bus: 'usb': really_probe: probing driver usb with device usb8
+[    1.961985] device: '8-0:1.0': device_add
+[    1.962361] bus: 'usb': add device 8-0:1.0
+[    1.962740] PM: Adding info for usb:8-0:1.0
+[    1.963144] bus: 'usb': __driver_probe_device: matched device 8-0:1.0 with driver hub
+[    1.963841] bus: 'usb': really_probe: probing driver hub with device 8-0:1.0
+[    1.964471] hub 8-0:1.0: USB hub found
+[    1.964834] hub 8-0:1.0: 1 port detected
+[    1.965238] device: 'usb8-port1': device_add
+[    1.965650] PM: Adding info for No Bus:usb8-port1
+[    1.966070] usb usb8-port1: adding component (ops 0xffffffc0088ad680)
+[    1.966647] rockchip-drm display-subsystem: trying to bring up adev
+[    1.967198] rockchip-drm display-subsystem: Looking for component 0
+[    1.967754] rockchip-drm display-subsystem: Looking for component 1
+[    1.968304] rockchip-drm display-subsystem: Looking for component 2
+[    1.968864] rockchip-drm display-subsystem: master has incomplete components
+[    1.969532] driver: 'hub': driver_bound: bound to device '8-0:1.0'
+[    1.970118] bus: 'usb': really_probe: bound device 8-0:1.0 to driver hub
+[    1.970721] device: 'ep_81': device_add
+[    1.971088] PM: Adding info for No Bus:ep_81
+[    1.971468] driver: 'usb': driver_bound: bound to device 'usb8'
+[    1.972024] bus: 'usb': really_probe: bound device usb8 to driver usb
+[    1.972596] device: 'ep_00': device_add
+[    1.972965] PM: Adding info for No Bus:ep_00
+[    1.973346] driver: 'xhci-hcd': driver_bound: bound to device 'xhci-hcd.1.auto'
+[    1.974011] bus: 'platform': really_probe: bound device xhci-hcd.1.auto to driver xhci-hcd
+[    1.974767] bus: 'usb': add driver usb-storage
+[    1.975235] usbcore: registered new interface driver usb-storage
+[    1.975774] bus: 'serio': add driver atkbd
+[    1.976190] bus: 'serio': add driver psmouse
+[    1.976589] i2c_dev: i2c /dev entries driver
+[    1.976977] device class 'i2c-dev': registering
+[    1.977407] bus: 'platform': add driver rk3x-i2c
+[    1.977966] bus: 'platform': __driver_probe_device: matched device ff3c0000.i2c with driver rk3x-i2c
+[    1.978775] bus: 'platform': really_probe: probing driver rk3x-i2c with device ff3c0000.i2c
+[    1.979564] rk3x-i2c ff3c0000.i2c: no init pinctrl state
+[    1.980054] rk3x-i2c ff3c0000.i2c: no sleep pinctrl state
+[    1.980529] rk3x-i2c ff3c0000.i2c: no idle pinctrl state
+[    1.981051] rk3x-i2c ff3c0000.i2c: clock-frequency: 100000
+[    1.981537] rk3x-i2c ff3c0000.i2c: i2c-scl-rising-time-ns: 1000
+[    1.982065] rk3x-i2c ff3c0000.i2c: i2c-scl-falling-time-ns: 300
+[    1.982586] rk3x-i2c ff3c0000.i2c: i2c-scl-internal-delay-ns: 0
+[    1.983113] rk3x-i2c ff3c0000.i2c: i2c-sda-falling-time-ns: 300
+[    1.983639] rk3x-i2c ff3c0000.i2c: i2c-sda-hold-time-ns: 0
+[    1.984122] rk3x-i2c ff3c0000.i2c: i2c-digital-filter-width-ns: 0
+[    1.984662] rk3x-i2c ff3c0000.i2c: i2c-analog-filter-cutoff-frequency: 0
+[    1.985387] rk3x-i2c ff3c0000.i2c: CLK 169000khz, Req 10000ns, Act low 5017ns high 5017ns
+[    1.986129] device: 'i2c-0': device_add
+[    1.986485] bus: 'i2c': add device i2c-0
+[    1.986854] PM: Adding info for i2c:i2c-0
+[    1.987216] device: 'i2c-0': device_add
+[    1.987574] PM: Adding info for No Bus:i2c-0
+[    1.988046] i2c_dev: adapter [rk3x-i2c] registered as minor 0
+[    1.988605] i2c i2c-0: adapter [rk3x-i2c] registered
+[    1.989068] i2c i2c-0: of_i2c: walking child nodes
+[    1.989500] i2c i2c-0: of_i2c: register /i2c@ff3c0000/pmic@1b
+[    1.990031] device: '0-001b': device_add
+[    1.990389] bus: 'i2c': add device 0-001b
+[    1.990761] PM: Adding info for i2c:0-001b
+[    1.991202] device: 'platform:pinctrl--i2c:0-001b': device_add
+[    1.991766] devices_kset: Moving 0-001b to end of list
+[    1.992219] PM: Moving i2c:0-001b to end of list
+[    1.992633] i2c 0-001b: Linked as a consumer to pinctrl
+[    1.993095] pmic@1b Dropping the fwnode link to pinctrl
+[    1.993558] /i2c@ff3c0000/pmic@1b: Relaxing link with /i2c@ff3c0000/pmic@1b/regulators/LDO_REG3
+[    1.994340] i2c 0-001b: Fixed dependency cycle(s) with /i2c@ff3c0000/pmic@1b/regulators/LDO_REG3
+[    1.995131] device: 'platform:vcc3v3-sys--i2c:0-001b': device_add
+[    1.995707] devices_kset: Moving 0-001b to end of list
+[    1.996160] PM: Moving i2c:0-001b to end of list
+[    1.996567] i2c 0-001b: Linked as a consumer to vcc3v3-sys
+[    1.997055] pmic@1b Dropping the fwnode link to vcc3v3-sys
+[    1.997545] device: 'platform:ff730000.gpio--i2c:0-001b': device_add
+[    1.998144] devices_kset: Moving 0-001b to end of list
+[    1.998597] PM: Moving i2c:0-001b to end of list
+[    1.999011] i2c 0-001b: Linked as a consumer to ff730000.gpio
+[    1.999517] pmic@1b Dropping the fwnode link to gpio@ff730000
+[    2.000078] bus: 'i2c': __driver_probe_device: matched device 0-001b with driver rk808
+[    2.000780] bus: 'i2c': really_probe: probing driver rk808 with device 0-001b
+[    2.001473] rk808 0-001b: no init pinctrl state
+[    2.001887] rk808 0-001b: no sleep pinctrl state
+[    2.002295] rk808 0-001b: no idle pinctrl state
+[    2.002812] device: 'wakeup0': device_add
+[    2.003211] rk808 0-001b: probe
+[    2.003509] rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x1b
+[    2.004515] rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
+[    2.005016] rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
+[    2.005516] rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x1b
+[    2.006525] rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
+[    2.007014] rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
+[    2.007507] rk808 0-001b: chip id: 0x0
+[    2.007909] rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x1b
+[    2.008902] rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
+[    2.009391] rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
+[    2.010194] rk3x-i2c ff3c0000.i2c: IRQ: state 2, ipd: 15
+[    2.010680] rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 31
+[    2.011174] rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x1b
+[    2.012177] rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
+[    2.012665] rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
+[    2.013462] rk3x-i2c ff3c0000.i2c: IRQ: state 2, ipd: 15
+[    2.013948] rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 31
+[    2.014441] rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x1b
+[    2.015442] rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
+[    2.015930] rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
+[    2.016424] rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x1b
+[    2.017426] rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
+[    2.017914] rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
+[    2.018406] rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x1b
+[    2.019407] rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
+[    2.019895] rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
+[    2.020386] rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x1b
+[    2.021389] rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
+[    2.021877] rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
+[    2.022673] rk3x-i2c ff3c0000.i2c: IRQ: state 2, ipd: 15
+[    2.023158] rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 31
+[    2.023649] rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x1b
+[    2.024642] rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
+[    2.025128] rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
+[    2.025932] rk3x-i2c ff3c0000.i2c: IRQ: state 2, ipd: 15
+[    2.026416] rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 31
+[    2.027045] rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x1b
+[    2.028054] rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
+[    2.028542] rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
+[    2.029339] rk3x-i2c ff3c0000.i2c: IRQ: state 2, ipd: 15
+[    2.029828] rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 31
+[    2.030319] rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x1b
+[    2.031325] rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
+[    2.031812] rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
+[    2.032304] rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x1b
+[    2.033306] rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
+[    2.033792] rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
+[    2.034588] rk3x-i2c ff3c0000.i2c: IRQ: state 2, ipd: 15
+[    2.035079] rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 31
+[    2.035570] rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x1b
+[    2.036577] rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
+[    2.037068] rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
+[    2.037865] rk3x-i2c ff3c0000.i2c: IRQ: state 2, ipd: 15
+[    2.038349] rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 31
+[    2.039041] Registering platform device 'rk808-clkout'. Parent at 0-001b
+[    2.039643] device: 'rk808-clkout': device_add
+[    2.040042] bus: 'platform': add device rk808-clkout
+[    2.040501] PM: Adding info for platform:rk808-clkout
+[    2.040989] bus: 'platform': __driver_probe_device: matched device rk808-clkout with driver rk808-clkout
+[    2.041831] bus: 'platform': really_probe: probing driver rk808-clkout with device rk808-clkout
+[    2.042602] rk808-clkout rk808-clkout: no default pinctrl state
+[    2.043885] driver: 'rk808-clkout': driver_bound: bound to device 'rk808-clkout'
+[    2.044552] bus: 'platform': really_probe: bound device rk808-clkout to driver rk808-clkout
+[    2.045306] Registering platform device 'rk808-regulator'. Parent at 0-001b
+[    2.045922] device: 'rk808-regulator': device_add
+[    2.046341] bus: 'platform': add device rk808-regulator
+[    2.046828] PM: Adding info for platform:rk808-regulator
+[    2.047320] bus: 'platform': __driver_probe_device: matched device rk808-regulator with driver rk808-regulator
+[    2.048205] bus: 'platform': really_probe: probing driver rk808-regulator with device rk808-regulator
+[    2.049022] rk808-regulator rk808-regulator: no default pinctrl state
+[    2.049623] rk808-regulator rk808-regulator: there is no dvs0 gpio
+[    2.050179] rk808-regulator rk808-regulator: there is no dvs1 gpio
+[    2.050778] rk808 0-001b: Looking up vcc1-supply from device tree
+[    2.051322] vdd_log: supplied by vcc3v3_sys
+[    2.051701] vcc3v3_sys: could not add device link regulator.5: -ENOENT
+[    2.052311] rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x1b
+[    2.053310] rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
+[    2.053800] rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
+[    2.054299] rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x1b
+[    2.055304] rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
+[    2.055794] rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
+[    2.056590] rk3x-i2c ff3c0000.i2c: IRQ: state 2, ipd: 15
+[    2.057074] rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 31
+[    2.057566] rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x1b
+[    2.058572] rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
+[    2.059059] rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
+[    2.059853] rk3x-i2c ff3c0000.i2c: IRQ: state 2, ipd: 15
+[    2.060337] rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 31
+[    2.061131] rk3x-i2c ff3c0000.i2c: IRQ: state 2, ipd: 15
+[    2.061624] rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 31
+[    2.062118] rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x1b
+[    2.063121] rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
+[    2.063610] rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
+[    2.064106] vdd_log: 750 <--> 1350 mV at 900 mV, enabled
+[    2.064579] device: 'regulator.5': device_add
+[    2.065031] PM: Adding info for No Bus:regulator.5
+[    2.065607] rk808 0-001b: Looking up vcc2-supply from device tree
+[    2.066157] vdd_cpu_l: supplied by vcc3v3_sys
+[    2.066544] vcc3v3_sys: could not add device link regulator.6: -ENOENT
+[    2.067147] rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x1b
+[    2.068143] rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
+[    2.068631] rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
+[    2.069432] rk3x-i2c ff3c0000.i2c: IRQ: state 2, ipd: 15
+[    2.069918] rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 31
+[    2.070412] vdd_cpu_l: 750 <--> 1350 mV at 900 mV, enabled
+[    2.070913] device: 'regulator.6': device_add
+[    2.071349] PM: Adding info for No Bus:regulator.6
+[    2.071895] rk808 0-001b: Looking up vcc3-supply from device tree
+[    2.072436] vcc_ddr: supplied by vcc3v3_sys
+[    2.072817] vcc3v3_sys: could not add device link regulator.7: -ENOENT
+[    2.073428] vcc_ddr: at 3300 mV, enabled
+[    2.073783] device: 'regulator.7': device_add
+[    2.074201] PM: Adding info for No Bus:regulator.7
+[    2.074754] rk808 0-001b: Looking up vcc4-supply from device tree
+[    2.075296] vcc_1v8: supplied by vcc3v3_sys
+[    2.075679] vcc3v3_sys: could not add device link regulator.8: -ENOENT
+[    2.076275] rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x1b
+[    2.077273] rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
+[    2.077763] rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
+[    2.078260] rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x1b
+[    2.079268] rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
+[    2.079756] rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
+[    2.080251] vcc_1v8: 1800 mV, enabled
+[    2.080580] device: 'regulator.8': device_add
+[    2.081021] PM: Adding info for No Bus:regulator.8
+[    2.081580] rk808 0-001b: Looking up vcc6-supply from device tree
+[    2.082128] vcc1v8_dvp: supplied by vcc3v3_sys
+[    2.082522] vcc3v3_sys: could not add device link regulator.9: -ENOENT
+[    2.083122] rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x1b
+[    2.084124] rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
+[    2.084614] rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
+[    2.085109] rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x1b
+[    2.086112] rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
+[    2.086599] rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
+[    2.087094] rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x1b
+[    2.088097] rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
+[    2.088584] rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
+[    2.089585] vcc1v8_dvp: 1800 mV, enabled
+[    2.089947] device: 'regulator.9': device_add
+[    2.090376] PM: Adding info for No Bus:regulator.9
+[    2.090929] rk808 0-001b: Looking up vcc6-supply from device tree
+[    2.091471] vcca1v8_hdmi: supplied by vcc3v3_sys
+[    2.091887] vcc3v3_sys: could not add device link regulator.10: -ENOENT
+[    2.092499] rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x1b
+[    2.093496] rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
+[    2.093985] rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
+[    2.094476] vcca1v8_hdmi: Bringing 3000000uV into 1800000-1800000uV
+[    2.095354] rk3x-i2c ff3c0000.i2c: IRQ: state 2, ipd: 15
+[    2.095841] rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 31
+[    2.096847] vcca1v8_hdmi: 1800 mV, enabled
+[    2.097215] device: 'regulator.10': device_add
+[    2.097664] PM: Adding info for No Bus:regulator.10
+[    2.098218] rk808 0-001b: Looking up vcc7-supply from device tree
+[    2.098767] vcc1v8_pmu: supplied by vcc3v3_sys
+[    2.099161] vcc3v3_sys: could not add device link regulator.11: -ENOENT
+[    2.099767] rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x1b
+[    2.100759] rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
+[    2.101249] rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
+[    2.101746] rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x1b
+[    2.102740] rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
+[    2.103227] rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
+[    2.104230] vcc1v8_pmu: 1800 mV, enabled
+[    2.104586] device: 'regulator.11': device_add
+[    2.105036] PM: Adding info for No Bus:regulator.11
+[    2.105606] rk808 0-001b: Looking up vcc9-supply from device tree
+[    2.106160] vcc_sd: supplied by vcc3v3_sys
+[    2.106523] vcc3v3_sys: could not add device link regulator.12: -ENOENT
+[    2.107133] rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x1b
+[    2.108129] rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
+[    2.108619] rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
+[    2.109116] rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x1b
+[    2.110124] rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
+[    2.110612] rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
+[    2.111626] vcc_sd: 1800 <--> 3000 mV at 3000 mV, enabled
+[    2.112106] device: 'regulator.12': device_add
+[    2.112541] PM: Adding info for No Bus:regulator.12
+[    2.113102] rk808 0-001b: Looking up vcc9-supply from device tree
+[    2.113650] vcca3v0_codec: supplied by vcc3v3_sys
+[    2.114067] vcc3v3_sys: could not add device link regulator.13: -ENOENT
+[    2.114689] rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x1b
+[    2.115682] rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
+[    2.116172] rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
+[    2.117180] vcca3v0_codec: 3000 mV, enabled
+[    2.117555] device: 'regulator.13': device_add
+[    2.118002] PM: Adding info for No Bus:regulator.13
+[    2.118557] rk808 0-001b: Looking up vcc10-supply from device tree
+[    2.119115] vcc_1v5: supplied by vcc3v3_sys
+[    2.119486] vcc3v3_sys: could not add device link regulator.14: -ENOENT
+[    2.120094] rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x1b
+[    2.121091] rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
+[    2.121581] rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
+[    2.122077] rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x1b
+[    2.123080] rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
+[    2.123568] rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
+[    2.124572] vcc_1v5: 1500 mV, enabled
+[    2.124912] device: 'regulator.14': device_add
+[    2.125348] PM: Adding info for No Bus:regulator.14
+[    2.125937] rk808 0-001b: Looking up vcc7-supply from device tree
+[    2.126478] vcca0v9_hdmi: supplied by vcc3v3_sys
+[    2.126892] vcc3v3_sys: could not add device link regulator.15: -ENOENT
+[    2.127496] rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x1b
+[    2.128492] rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
+[    2.128981] rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
+[    2.129471] vcca0v9_hdmi: Bringing 1800000uV into 900000-900000uV
+[    2.130334] rk3x-i2c ff3c0000.i2c: IRQ: state 2, ipd: 15
+[    2.130821] rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 31
+[    2.131827] vcca0v9_hdmi: 900 mV, enabled
+[    2.132187] device: 'regulator.15': device_add
+[    2.132632] PM: Adding info for No Bus:regulator.15
+[    2.133188] rk808 0-001b: Looking up vcc11-supply from device tree
+[    2.133743] vcc_3v0: supplied by vcc3v3_sys
+[    2.134114] vcc3v3_sys: could not add device link regulator.16: -ENOENT
+[    2.134730] rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x1b
+[    2.135723] rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
+[    2.136212] rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
+[    2.136716] rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x1b
+[    2.137711] rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
+[    2.138200] rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
+[    2.139207] vcc_3v0: 3000 mV, enabled
+[    2.139538] device: 'regulator.16': device_add
+[    2.139989] PM: Adding info for No Bus:regulator.16
+[    2.140571] rk808 0-001b: Looking up vcc8-supply from device tree
+[    2.141121] vcc3v3_s3: supplied by vcc3v3_sys
+[    2.141507] vcc3v3_sys: could not add device link regulator.17: -ENOENT
+[    2.142436] rk3x-i2c ff3c0000.i2c: IRQ: state 2, ipd: 15
+[    2.142925] rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 31
+[    2.143422] vcc3v3_s3: at 3300 mV, enabled
+[    2.143801] device: 'regulator.17': device_add
+[    2.144228] PM: Adding info for No Bus:regulator.17
+[    2.144811] rk808 0-001b: Looking up vcc12-supply from device tree
+[    2.145360] vcc3v3_s0: supplied by vcc3v3_sys
+[    2.145760] vcc3v3_sys: could not add device link regulator.18: -ENOENT
+[    2.146363] vcc3v3_s0: at 3300 mV, enabled
+[    2.146735] device: 'regulator.18': device_add
+[    2.147165] PM: Adding info for No Bus:regulator.18
+[    2.147706] driver: 'rk808-regulator': driver_bound: bound to device 'rk808-regulator'
+[    2.148421] bus: 'platform': really_probe: bound device rk808-regulator to driver rk808-regulator
+[    2.149222] Registering platform device 'rk808-rtc'. Parent at 0-001b
+[    2.149794] device: 'rk808-rtc': device_add
+[    2.150170] bus: 'platform': add device rk808-rtc
+[    2.150608] PM: Adding info for platform:rk808-rtc
+[    2.151104] driver: 'rk808': driver_bound: bound to device '0-001b'
+[    2.151663] pmic@1b Dropping the fwnode link to LDO_REG3
+[    2.152150] hdmi@ff940000 Linked as a fwnode consumer to pmic@1b
+[    2.152683] hdmi@ff940000 Dropping the fwnode link to LDO_REG2
+[    2.153208] hdmi@ff940000 Dropping the fwnode link to LDO_REG7
+[    2.153748] device: 'i2c:0-001b--platform:ff940000.hdmi': device_add
+[    2.154353] devices_kset: Moving ff940000.hdmi to end of list
+[    2.154868] PM: Moving platform:ff940000.hdmi to end of list
+[    2.155368] devices_kset: Moving display-subsystem to end of list
+[    2.155907] PM: Moving platform:display-subsystem to end of list
+[    2.156436] platform ff940000.hdmi: Linked as a consumer to 0-001b
+[    2.156983] hdmi@ff940000 Dropping the fwnode link to pmic@1b
+[    2.157524] bus: 'i2c': really_probe: bound device 0-001b to driver rk808
+[    2.158137] i2c i2c-0: client [rk808] registered with bus id 0-001b
+[    2.158699] i2c i2c-0: of_i2c: register /i2c@ff3c0000/regulator@40
+[    2.159258] device: '0-0040': device_add
+[    2.159624] bus: 'i2c': add device 0-0040
+[    2.159991] PM: Adding info for i2c:0-0040
+[    2.160386] device: 'platform:vcc5v0-sys--i2c:0-0040': device_add
+[    2.160970] devices_kset: Moving 0-0040 to end of list
+[    2.161423] PM: Moving i2c:0-0040 to end of list
+[    2.161837] i2c 0-0040: Linked as a consumer to vcc5v0-sys
+[    2.162320] regulator@40 Dropping the fwnode link to vcc5v0-sys
+[    2.162862] bus: 'i2c': __driver_probe_device: matched device 0-0040 with driver fan53555-regulator
+[    2.163663] bus: 'i2c': really_probe: probing driver fan53555-regulator with device 0-0040
+[    2.164396] fan53555-regulator 0-0040: no pinctrl handle
+[    2.164890] fan53555-regulator 0-0040: probe
+[    2.165346] rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x40
+[    2.166348] rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
+[    2.166842] rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
+[    2.167338] rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x40
+[    2.168348] rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
+[    2.168837] rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
+[    2.169328] fan53555-regulator 0-0040: FAN53555 Option[8] Rev[1] Detected!
+[    2.169951] fan53555-regulator 0-0040: Looking up vin-supply from device tree
+[    2.170708] vdd_cpu_b: supplied by vcc5v0_sys
+[    2.171096] vcc5v0_sys: could not add device link regulator.19: -ENOENT
+[    2.171709] rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x40
+[    2.172700] rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
+[    2.173188] rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
+[    2.173685] rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x40
+[    2.174680] rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
+[    2.175169] rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
+[    2.175964] rk3x-i2c ff3c0000.i2c: IRQ: state 2, ipd: 15
+[    2.176448] rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 31
+[    2.176940] rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x40
+[    2.177933] rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
+[    2.178422] rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
+[    2.179216] rk3x-i2c ff3c0000.i2c: IRQ: state 2, ipd: 15
+[    2.179700] rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 31
+[    2.180192] rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x40
+[    2.181202] rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
+[    2.181690] rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
+[    2.182187] rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x40
+[    2.183189] rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
+[    2.183677] rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
+[    2.184170] rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x40
+[    2.185176] rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
+[    2.185662] rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
+[    2.186151] vdd_cpu_b: 712 <--> 1500 mV at 1000 mV, enabled
+[    2.186658] device: 'regulator.19': device_add
+[    2.187080] rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x40
+[    2.188083] rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
+[    2.188572] rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
+[    2.189095] PM: Adding info for No Bus:regulator.19
+[    2.189643] rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x40
+[    2.190635] rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
+[    2.191122] rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
+[    2.191649] driver: 'fan53555-regulator': driver_bound: bound to device '0-0040'
+[    2.192336] bus: 'i2c': really_probe: bound device 0-0040 to driver fan53555-regulator
+[    2.193045] i2c i2c-0: client [syr827] registered with bus id 0-0040
+[    2.193608] i2c i2c-0: of_i2c: register /i2c@ff3c0000/regulator@41
+[    2.194172] device: '0-0041': device_add
+[    2.194531] bus: 'i2c': add device 0-0041
+[    2.194910] PM: Adding info for i2c:0-0041
+[    2.195304] device: 'platform:vcc5v0-sys--i2c:0-0041': device_add
+[    2.195889] devices_kset: Moving 0-0041 to end of list
+[    2.196341] PM: Moving i2c:0-0041 to end of list
+[    2.196757] i2c 0-0041: Linked as a consumer to vcc5v0-sys
+[    2.197239] regulator@41 Dropping the fwnode link to vcc5v0-sys
+[    2.197781] bus: 'i2c': __driver_probe_device: matched device 0-0041 with driver fan53555-regulator
+[    2.198576] bus: 'i2c': really_probe: probing driver fan53555-regulator with device 0-0041
+[    2.199311] fan53555-regulator 0-0041: no pinctrl handle
+[    2.199805] fan53555-regulator 0-0041: probe
+[    2.200260] rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x41
+[    2.201259] rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
+[    2.201749] rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
+[    2.202243] rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x41
+[    2.203247] rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
+[    2.203736] rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
+[    2.204225] fan53555-regulator 0-0041: FAN53555 Option[8] Rev[1] Detected!
+[    2.204847] fan53555-regulator 0-0041: Looking up vin-supply from device tree
+[    2.205479] vdd_gpu: supplied by vcc5v0_sys
+[    2.205856] vcc5v0_sys: could not add device link regulator.20: -ENOENT
+[    2.206462] rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x41
+[    2.207460] rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
+[    2.207946] rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
+[    2.208439] rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x41
+[    2.209444] rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
+[    2.209933] rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
+[    2.210729] rk3x-i2c ff3c0000.i2c: IRQ: state 2, ipd: 15
+[    2.211213] rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 31
+[    2.211703] rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x41
+[    2.212696] rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
+[    2.213183] rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
+[    2.213976] rk3x-i2c ff3c0000.i2c: IRQ: state 2, ipd: 15
+[    2.214460] rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 31
+[    2.214952] rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x41
+[    2.215945] rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
+[    2.216435] rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
+[    2.216929] rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x41
+[    2.217923] rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
+[    2.218409] rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
+[    2.218902] rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x41
+[    2.219893] rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
+[    2.220380] rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
+[    2.220867] vdd_gpu: 712 <--> 1500 mV at 1000 mV, enabled
+[    2.221347] device: 'regulator.20': device_add
+[    2.221774] rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x41
+[    2.222765] rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
+[    2.223255] rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
+[    2.223773] PM: Adding info for No Bus:regulator.20
+[    2.224296] rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x41
+[    2.225297] rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
+[    2.225784] rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
+[    2.226301] driver: 'fan53555-regulator': driver_bound: bound to device '0-0041'
+[    2.226994] bus: 'i2c': really_probe: bound device 0-0041 to driver fan53555-regulator
+[    2.227703] i2c i2c-0: client [syr828] registered with bus id 0-0041
+[    2.228269] driver: 'rk3x-i2c': driver_bound: bound to device 'ff3c0000.i2c'
+[    2.228909] rk3x-i2c ff3c0000.i2c: Dropping the link to ff730000.gpio
+[    2.229475] device: 'platform:ff730000.gpio--platform:ff3c0000.i2c': device_unregister
+[    2.230230] rk3x-i2c ff3c0000.i2c: Dropping the link to vcc3v3-sys
+[    2.230784] device: 'platform:vcc3v3-sys--platform:ff3c0000.i2c': device_unregister
+[    2.231497] rk3x-i2c ff3c0000.i2c: Dropping the link to vcc5v0-sys
+[    2.232050] device: 'platform:vcc5v0-sys--platform:ff3c0000.i2c': device_unregister
+[    2.232790] bus: 'platform': really_probe: bound device ff3c0000.i2c to driver rk3x-i2c
+[    2.233722] bus: 'platform': add driver syscon-reboot
+[    2.234320] bus: 'i2c': add driver sbs-battery
+[    2.234755] i2c-core: driver [sbs-battery] registered
+[    2.235205] bus: 'i2c': add driver bq27xxx-battery
+[    2.235674] i2c-core: driver [bq27xxx-battery] registered
+[    2.236157] bus: 'platform': add driver pwrseq_simple
+[    2.236724] bus: 'platform': add driver pwrseq_emmc
+[    2.237279] bus: 'mmc_rpmb': registered
+[    2.237631] bus: 'mmc': add driver mmcblk
+[    2.238004] sdhci: Secure Digital Host Controller Interface driver
+[    2.238545] sdhci: Copyright(c) Pierre Ossman
+[    2.238936] Synopsys Designware Multimedia Card Interface Driver
+[    2.239467] bus: 'platform': add driver dw_mmc
+[    2.240003] bus: 'platform': add driver dwmmc_rockchip
+[    2.240593] sdhci-pltfm: SDHCI platform and OF driver helper
+[    2.241104] bus: 'platform': add driver sdhci-arasan
+[    2.241573] platform fe330000.mmc: probing driver sdhci-arasan asynchronously
+[    2.242224] bus: 'platform': __driver_probe_device: matched device fe330000.mmc with driver sdhci-arasan
+[    2.242465] bus: 'hid': registered
+[    2.243084] bus: 'platform': really_probe: probing driver sdhci-arasan with device fe330000.mmc
+[    2.243388] bus: 'hid': add driver hid-generic
+[    2.244161] sdhci-arasan fe330000.mmc: no pinctrl handle
+[    2.244552] bus: 'hid': add driver a4tech
+[    2.245084] sdhci-arasan fe330000.mmc: adding to PM domain emmc
+[    2.245371] bus: 'hid': add driver belkin
+[    2.245886] sdhci-arasan fe330000.mmc: genpd_add_device()
+[    2.246248] bus: 'hid': add driver cherry
+[    2.246723] sdhci-arasan fe330000.mmc: Clock clk_emmc con_id (null) managed by runtime PM.
+[    2.247080] bus: 'hid': add driver chicony
+[    2.247795] sdhci-arasan fe330000.mmc: Clock aclk_emmc con_id (null) managed by runtime PM.
+[    2.248171] bus: 'hid': add driver cypress
+[    2.249038] device: 'wakeup1': device_add
+[    2.249263] bus: 'hid': add driver ezkey
+[    2.249968] bus: 'hid': add driver itetech
+[    2.250350] bus: 'hid': add driver kensington
+[    2.250699] device: 'phy:phy-ff770000.syscon:phy@f780.0--platform:fe330000.mmc': device_add
+[    2.250765] bus: 'hid': add driver microsoft
+[    2.251535] devices_kset: Moving fe330000.mmc to end of list
+[    2.251872] bus: 'hid': add driver monterey
+[    2.252345] PM: Moving platform:fe330000.mmc to end of list
+[    2.252747] bus: 'hid': add driver redragon
+[    2.253209] sdhci-arasan fe330000.mmc: Linked as a consumer to phy-ff770000.syscon:phy@f780.0
+[    2.253594] bus: 'usb': add driver usbhid
+[    2.254336] sdhci-arasan fe330000.mmc: Looking up vmmc-supply from device tree
+[    2.254715] usbcore: registered new interface driver usbhid
+[    2.255314] sdhci-arasan fe330000.mmc: Looking up vmmc-supply property in node /mmc@fe330000 failed
+[    2.255801] usbhid: USB HID core driver
+[    2.256622] sdhci-arasan fe330000.mmc: Looking up vqmmc-supply from device tree
+[    2.257387] NET: Registered PF_INET6 protocol family
+[    2.257563] sdhci-arasan fe330000.mmc: Looking up vqmmc-supply property in node /mmc@fe330000 failed
+[    2.258834] Segment Routing with IPv6
+[    2.259192] In-situ OAM (IOAM) with IPv6
+[    2.259270] device: 'mmc0': device_add
+[    2.259585] sit: IPv6, IPv4 and MPLS over IPv4 tunneling driver
+[    2.259933] PM: Adding info for No Bus:mmc0
+[    2.260432] device: 'sit0': device_add
+[    2.261220] PM: Adding info for No Bus:sit0
+[    2.261861] NET: Registered PF_PACKET protocol family
+[    2.283962] devices_kset: Moving ff940000.hdmi to end of list
+[    2.284485] PM: Moving platform:ff940000.hdmi to end of list
+[    2.284636] mmc0: SDHCI controller on fe330000.mmc [fe330000.mmc] using ADMA
+[    2.284995] devices_kset: Moving display-subsystem to end of list
+[    2.285752] device: 'wakeup2': device_add
+[    2.286141] PM: Moving platform:display-subsystem to end of list
+[    2.286563] driver: 'sdhci-arasan': driver_bound: bound to device 'fe330000.mmc'
+[    2.287022] platform ff940000.hdmi: Retrying from deferred list
+[    2.287688] sdhci-arasan fe330000.mmc: Dropping the link to ff770000.syscon:phy@f780
+[    2.288253] bus: 'platform': __driver_probe_device: matched device ff940000.hdmi with driver dwhdmi-rockchip
+[    2.288866] device: 'platform:ff770000.syscon:phy@f780--platform:fe330000.mmc': device_unregister
+[    2.290582] bus: 'platform': really_probe: probing driver dwhdmi-rockchip with device ff940000.hdmi
+[    2.290631] bus: 'platform': really_probe: bound device fe330000.mmc to driver sdhci-arasan
+[    2.291678] dwhdmi-rockchip ff940000.hdmi: no init pinctrl state
+[    2.292121] sdhci-arasan fe330000.mmc: driver sdhci-arasan async attach completed: 0
+[    2.292655] dwhdmi-rockchip ff940000.hdmi: no sleep pinctrl state
+[    2.293850] dwhdmi-rockchip ff940000.hdmi: no idle pinctrl state
+[    2.294415] dwhdmi-rockchip ff940000.hdmi: adding to PM domain hdcp
+[    2.294973] dwhdmi-rockchip ff940000.hdmi: genpd_add_device()
+[    2.295495] dwhdmi-rockchip ff940000.hdmi: Clock pclk_hdmi_ctrl con_id (null) managed by runtime PM.
+[    2.296312] dwhdmi-rockchip ff940000.hdmi: Clock clk_hdmi_sfr con_id (null) managed by runtime PM.
+[    2.297115] dwhdmi-rockchip ff940000.hdmi: Clock clk_hdmi_cec con_id (null) managed by runtime PM.
+[    2.297912] dwhdmi-rockchip ff940000.hdmi: Clock pclk_vio_grf con_id (null) managed by runtime PM.
+[    2.298708] dwhdmi-rockchip ff940000.hdmi: Clock vpll con_id (null) managed by runtime PM.
+[    2.299458] dwhdmi-rockchip ff940000.hdmi: genpd_runtime_resume()
+[    2.300003] dwhdmi-rockchip ff940000.hdmi: adding component (ops 0xffffffc00887d978)
+[    2.300690] rockchip-drm display-subsystem: trying to bring up adev
+[    2.301241] rockchip-drm display-subsystem: Looking for component 0
+[    2.301795] rockchip-drm display-subsystem: Looking for component 1
+[    2.302345] rockchip-drm display-subsystem: Looking for component 2
+[    2.302901] rockchip-drm display-subsystem: found component ff940000.hdmi, duplicate 0
+[    2.303750] rockchip-drm display-subsystem: binding ff8f0000.vop (ops 0xffffffc00887b2a0)
+[    2.304685] rockchip-drm display-subsystem: bound ff8f0000.vop (ops 0xffffffc00887b2a0)
+[    2.305392] rockchip-drm display-subsystem: binding ff900000.vop (ops 0xffffffc00887b2a0)
+[    2.306206] [drm] unsupported AFBC format[3231564e]
+[    2.306848] rockchip-drm display-subsystem: bound ff900000.vop (ops 0xffffffc00887b2a0)
+[    2.307555] rockchip-drm display-subsystem: binding ff940000.hdmi (ops 0xffffffc00887d978)
+[    2.308403] dwhdmi-rockchip ff940000.hdmi: Looking up avdd-0v9-supply from device tree
+[    2.309169] device: 'regulator:regulator.15--platform:ff940000.hdmi': device_add
+[    2.309884] devices_kset: Moving ff940000.hdmi to end of list
+[    2.310391] PM: Moving platform:ff940000.hdmi to end of list
+[    2.310895] devices_kset: Moving display-subsystem to end of list
+[    2.311430] PM: Moving platform:display-subsystem to end of list
+[    2.311962] dwhdmi-rockchip ff940000.hdmi: Linked as a consumer to regulator.15
+[    2.312605] dwhdmi-rockchip ff940000.hdmi: Looking up avdd-1v8-supply from device tree
+[    2.313343] device: 'regulator:regulator.10--platform:ff940000.hdmi': device_add
+[    2.314037] devices_kset: Moving ff940000.hdmi to end of list
+[    2.314542] PM: Moving platform:ff940000.hdmi to end of list
+[    2.315045] devices_kset: Moving display-subsystem to end of list
+[    2.315580] PM: Moving platform:display-subsystem to end of list
+[    2.316112] dwhdmi-rockchip ff940000.hdmi: Linked as a consumer to regulator.10
+[    2.316870] dwhdmi-rockchip ff940000.hdmi: Detected HDMI TX controller v2.11a with HDCP (DWC HDMI 2.0 TX PHY)
+[    2.318093] device: 'i2c-9': device_add
+[    2.318451] bus: 'i2c': add device i2c-9
+[    2.318830] PM: Adding info for i2c:i2c-9
+[    2.319195] device: 'i2c-9': device_add
+[    2.319556] PM: Adding info for No Bus:i2c-9
+[    2.320052] i2c_dev: adapter [DesignWare HDMI] registered as minor 9
+[    2.320670] i2c i2c-9: adapter [DesignWare HDMI] registered
+[    2.321173] dwhdmi-rockchip ff940000.hdmi: registered DesignWare HDMI I2C bus driver
+[    2.321920] Registering platform device 'dw-hdmi-i2s-audio.2.auto'. Parent at ff940000.hdmi
+[    2.322660] device: 'dw-hdmi-i2s-audio.2.auto': device_add
+[    2.323149] bus: 'platform': add device dw-hdmi-i2s-audio.2.auto
+[    2.323708] PM: Adding info for platform:dw-hdmi-i2s-audio.2.auto
+[    2.324317] dwhdmi-rockchip ff940000.hdmi: error -ENXIO: IRQ index 1 not found
+[    2.324979] Registering platform device 'dw-hdmi-cec.3.auto'. Parent at ff940000.hdmi
+[    2.325673] device: 'dw-hdmi-cec.3.auto': device_add
+[    2.326116] bus: 'platform': add device dw-hdmi-cec.3.auto
+[    2.326622] PM: Adding info for platform:dw-hdmi-cec.3.auto
+[    2.327159] device: 'extcon2': device_add
+[    2.327544] PM: Adding info for No Bus:extcon2
+[    2.327987] Registering platform device 'dw-hdmi-hdcp.4.auto'. Parent at ff940000.hdmi
+[    2.328690] device: 'dw-hdmi-hdcp.4.auto': device_add
+[    2.329141] bus: 'platform': add device dw-hdmi-hdcp.4.auto
+[    2.329655] PM: Adding info for platform:dw-hdmi-hdcp.4.auto
+[    2.330186] bus: 'platform': __driver_probe_device: matched device dw-hdmi-hdcp.4.auto with driver dw-hdmi-hdcp
+[    2.331080] bus: 'platform': really_probe: probing driver dw-hdmi-hdcp with device dw-hdmi-hdcp.4.auto
+[    2.331915] dw-hdmi-hdcp dw-hdmi-hdcp.4.auto: no default pinctrl state
+[    2.332502] device: 'hdmi_hdcp1x': device_add
+[    2.332910] PM: Adding info for No Bus:hdmi_hdcp1x
+[    2.333430] driver: 'dw-hdmi-hdcp': driver_bound: bound to device 'dw-hdmi-hdcp.4.auto'
+[    2.334164] bus: 'platform': really_probe: bound device dw-hdmi-hdcp.4.auto to driver dw-hdmi-hdcp
+[    2.335024] rockchip-drm display-subsystem: bound ff940000.hdmi (ops 0xffffffc00887d978)
+[    2.336117] device: 'renderD128': device_add
+[    2.336525] PM: Adding info for No Bus:renderD128
+[    2.337151] device: 'card0': device_add
+[    2.337511] PM: Adding info for No Bus:card0
+[    2.338013] device: 'card0-HDMI-A-1': device_add
+[    2.338450] PM: Adding info for No Bus:card0-HDMI-A-1
+[    2.338958] [drm] Initialized rockchip 4.0.0 20140818 for display-subsystem on minor 0
+[    2.339786] rockchip-drm display-subsystem: failed to parse loader memory
+[    2.340491] mmc0: new HS400 Enhanced strobe MMC card at address 0001
+[    2.341103] device: 'mmc0:0001': device_add
+[    2.341549] bus: 'mmc': add device mmc0:0001
+[    2.341972] PM: Adding info for mmc:mmc0:0001
+[    2.342396] bus: 'mmc': __driver_probe_device: matched device mmc0:0001 with driver mmcblk
+[    2.343143] bus: 'mmc': really_probe: probing driver mmcblk with device mmc0:0001
+[    2.343834] mmcblk mmc0:0001: no default pinctrl state
+[    2.346371] mmcblk0: mmc0:0001 Y2P032 29.1 GiB 
+[    2.350116] device: 'mmcblk0': device_add
+[    2.350564] PM: Adding info for No Bus:mmcblk0
+[    2.351549] device: '179:0': device_add
+[    2.351945] PM: Adding info for No Bus:179:0
+[    2.354412]  mmcblk0: p1 p2 p3 p4
+[    2.354754] device: 'mmcblk0p1': device_add
+[    2.355182] PM: Adding info for No Bus:mmcblk0p1
+[    2.355704] device: 'mmcblk0p2': device_add
+[    2.356117] PM: Adding info for No Bus:mmcblk0p2
+[    2.356594] device: 'mmcblk0p3': device_add
+[    2.357016] PM: Adding info for No Bus:mmcblk0p3
+[    2.357492] device: 'mmcblk0p4': device_add
+[    2.357918] PM: Adding info for No Bus:mmcblk0p4
+[    2.360497] mmcblk0boot0: mmc0:0001 Y2P032 4.00 MiB 
+[    2.364266] device: 'mmcblk0boot0': device_add
+[    2.364766] PM: Adding info for No Bus:mmcblk0boot0
+[    2.365802] device: '179:32': device_add
+[    2.366191] PM: Adding info for No Bus:179:32
+[    2.368509] mmcblk0boot1: mmc0:0001 Y2P032 4.00 MiB 
+[    2.372259] device: 'mmcblk0boot1': device_add
+[    2.372750] PM: Adding info for No Bus:mmcblk0boot1
+[    2.373763] device: '179:64': device_add
+[    2.374151] PM: Adding info for No Bus:179:64
+[    2.374643] device: 'mmcblk0rpmb': device_add
+[    2.375044] bus: 'mmc_rpmb': add device mmcblk0rpmb
+[    2.375498] PM: Adding info for mmc_rpmb:mmcblk0rpmb
+[    2.376041] mmcblk0rpmb: mmc0:0001 Y2P032 16.0 MiB, chardev (247:0)
+[    2.376634] driver: 'mmcblk': driver_bound: bound to device 'mmc0:0001'
+[    2.377248] bus: 'mmc': really_probe: bound device mmc0:0001 to driver mmcblk
+[    2.795464] device: 'fb0': device_add
+[    2.795886] PM: Adding info for No Bus:fb0
+[    2.796460] device: 'vtcon1': device_add
+[    2.796500] PM: Adding info for No Bus:vtcon1
+[    3.198014] rockchip-vop ff8f0000.vop: [drm:vop_crtc_atomic_enable] Update mode to 1920x1080p60, type: 11
+[    3.198055] rk_iommu ff8f3f00.iommu: genpd_runtime_resume()
+[    3.198068] rockchip-vop ff8f0000.vop: genpd_runtime_resume()
+[    3.520850] Console: switching to colour frame buffer device 240x67
+[    3.540622] rockchip-drm display-subsystem: [drm] fb0: rockchipdrmfb frame buffer device
+[    3.541340] device: 'crtc-0': device_add
+[    3.541718] PM: Adding info for No Bus:crtc-0
+[    3.542111] device: 'crtc-1': device_add
+[    3.542472] PM: Adding info for No Bus:crtc-1
+[    3.542973] rockchip-drm display-subsystem: [drm] run display error_event monitor
+[    3.543651] driver: 'dwhdmi-rockchip': driver_bound: bound to device 'ff940000.hdmi'
+[    3.544354] dwhdmi-rockchip ff940000.hdmi: Dropping the link to ff8f0000.vop
+[    3.544983] device: 'platform:ff8f0000.vop--platform:ff940000.hdmi': device_unregister
+[    3.545738] dwhdmi-rockchip ff940000.hdmi: Dropping the link to ff900000.vop
+[    3.546358] device: 'platform:ff900000.vop--platform:ff940000.hdmi': device_unregister
+[    3.547137] bus: 'platform': really_probe: bound device ff940000.hdmi to driver dwhdmi-rockchip
+[    3.548670] clk: Disabling unused clocks
+[    3.549346] rk3x-i2c ff3c0000.i2c: Combined write/read from addr 0x1b
+[    3.550352] rk3x-i2c ff3c0000.i2c: IRQ: state 1, ipd: 1b
+[    3.550848] rk3x-i2c ff3c0000.i2c: IRQ: state 3, ipd: 23
+[    3.551745] dw-apb-uart ff1a0000.serial: forbid DMA for kernel console
+[    3.552578] rockchip-pm-domain ff310000.power-management:power-controller: Looking up vopb-supply from device tree
+[    3.553539] rockchip-pm-domain ff310000.power-management:power-controller: Looking up vopb-supply property in node /power-management@ff310000/power-controller failed
+[    3.554896] rockchip-pm-domain ff310000.power-management:power-controller: Looking up edp-supply from device tree
+[    3.555823] rockchip-pm-domain ff310000.power-management:power-controller: Looking up edp-supply property in node /power-management@ff310000/power-controller failed
+[    3.557139] rockchip-pm-domain ff310000.power-management:power-controller: Looking up isp1-supply from device tree
+[    3.558071] rockchip-pm-domain ff310000.power-management:power-controller: Looking up isp1-supply property in node /power-management@ff310000/power-controller failed
+[    3.559230] EXT4-fs (mmcblk0p4): INFO: recovery required on readonly filesystem
+[    3.559397] rockchip-pm-domain ff310000.power-management:power-controller: Looking up isp0-supply from device tree
+[    3.560016] EXT4-fs (mmcblk0p4): write access will be enabled during recovery
+[    3.560936] rockchip-pm-domain ff310000.power-management:power-controller: Looking up isp0-supply property in node /power-management@ff310000/power-controller failed
+[    3.562857] rockchip-pm-domain ff310000.power-management:power-controller: Looking up sdioaudio-supply from device tree
+[    3.563826] rockchip-pm-domain ff310000.power-management:power-controller: Looking up sdioaudio-supply property in node /power-management@ff310000/power-controller failed
+[    3.565186] rockchip-pm-domain ff310000.power-management:power-controller: Looking up sd-supply from device tree
+[    3.566103] rockchip-pm-domain ff310000.power-management:power-controller: Looking up sd-supply property in node /power-management@ff310000/power-controller failed
+[    3.567417] rockchip-pm-domain ff310000.power-management:power-controller: Looking up gpu-supply from device tree
+[    3.568341] rockchip-pm-domain ff310000.power-management:power-controller: Looking up gpu-supply property in node /power-management@ff310000/power-controller failed
+[    3.569659] rockchip-pm-domain ff310000.power-management:power-controller: Looking up rga-supply from device tree
+[    3.570579] rockchip-pm-domain ff310000.power-management:power-controller: Looking up rga-supply property in node /power-management@ff310000/power-controller failed
+[    3.724941] EXT4-fs (mmcblk0p4): recovery complete
+[    3.726064] EXT4-fs (mmcblk0p4): mounted filesystem with ordered data mode. Quota mode: disabled.
+[    3.726889] VFS: Mounted root (ext4 filesystem) readonly on device 179:4.
+[    3.727555] devtmpfs: mounted
+[    3.728447] Freeing unused kernel memory: 1472K
+[    3.728993] Run /sbin/init as init process
+[    3.729357]   with arguments:
+[    3.729630]     /sbin/init
+[    3.729872]   with environment:
+[    3.730151]     HOME=/
+[    3.730362]     TERM=linux
+INIT: version 3.01 booting
+Starting udev
+Starting version 250.14+
+[    4.725211] EXT4-fs (mmcblk0p4): re-mounted. Quota mode: disabled.
+hwclock: can't open '/dev/misc/rtc': No such file or directory
+Fri Mar  9 12:34:56 UTC 2018
+hwclock: can't open '/dev/misc/rtc': No such file or directory
+[    6.899630] random: crng init done
+INIT: Entering runlevel: 5
+Configuring network interfaces... [    7.011153] rk_gmac-dwmac fe300000.ethernet eth0: Register MEM_TYPE_PAGE_POOL RxQ-0
+[    7.013145] driver: 'Generic PHY': driver_bound: bound to device 'stmmac-0:00'
+[    7.013893] phy_rtl8211e_led_fixup in
+[    7.014335] phy_rtl8211e_led_fixup in  val=0xc915
+[    7.015726] rk_gmac-dwmac fe300000.ethernet eth0: PHY [stmmac-0:00] driver [Generic PHY] (irq=POLL)
+[    7.016544] rk_gmac-dwmac fe300000.ethernet eth0: No Safety Features support found
+[    7.017228] rk_gmac-dwmac fe300000.ethernet eth0: PTP not supported by HW
+[    7.018505] rk_gmac-dwmac fe300000.ethernet eth0: configuring for phy/rgmii link mode
+udhcpc: started, v1.35.0
+udhcpc: broadcasting discover
+udhcpc: broadcasting discover
+[   11.115488] rk_gmac-dwmac fe300000.ethernet eth0: Link is Up - 1Gbps/Full - flow control off
+[   11.115510] IPv6: ADDRCONF(NETDEV_CHANGE): eth0: link becomes ready
+udhcpc: broadcasting discover
+udhcpc: no lease, forking to background
+done.
+Starting system message bus: dbus.
+Starting OpenBSD Secure Shell server: sshd
+done.
+Starting Xserver
+
+Starting bluetooth: bluetoothd.
+starting DNS forwarder and DHCP server: dnsmasq... done.
+hwclock: can't open '/dev/misc/rtc': No such file or directory
+Starting network connection manager NetworkManager
+X.Org X Server 1.21.1.8
+X Protocol Version 11, Revision 0
+Current Operating System: Linux rk3399-firefly 6.1.115 #1 SMP Wed Dec 24 10:54:39 UTC 2025 aarch64
+Kernel command line: root=/dev/mmcblk0p4 rootwait rootfstype=ext4 console=ttyS2,1500000 earlycon=uart8250,mmio32,0xff1a0000,1500000n8 loglevel=7 debug deferred_probe_timeout=30
+ 
+Current version of pixman: 0.40.0
+	Before reporting problems, check http://wiki.x.org
+	to make sure that you have the latest version.
+Markers: (--) probed, (**) from config file, (==) default setting,
+	(++) from command line, (!!) notice, (II) informational,
+	(WW) warning, (EE) error, (NI) not implemented, (??) unknown.
+(==) Log file: "/var/log/Xorg.0.log", Time: Fri Mar  9 12:35:08 2018
+(==) Using system config directory "/usr/share/X11/xorg.conf.d"
+[   17.039016] device: 'vcs2': device_add
+[   17.039093] PM: Adding info for No Bus:vcs2
+[   17.039271] device: 'vcsu2': device_add
+[   17.039309] PM: Adding info for No Bus:vcsu2
+[   17.039390] device: 'vcsa2': device_add
+[   17.039428] PM: Adding info for No Bus:vcsa2
+[1;34m[[1;32m  OK  [1;34m][0;39m
+[   17.098386] rockchip-vop ff8f0000.vop: genpd_runtime_suspend()
+[   17.099276] rk_iommu ff8f3f00.iommu: genpd_runtime_suspend()
+[   17.099302] rockchip-pm-domain ff310000.power-management:power-controller: Looking up vopl-supply from device tree
+[   17.099341] rockchip-pm-domain ff310000.power-management:power-controller: Looking up vopl-supply property in node /power-management@ff310000/power-controller failed
+[   17.099430] rockchip-pm-domain ff310000.power-management:power-controller: Looking up vo-supply from device tree
+Starting syslogd/klogd: done
+[   17.103064] rockchip-pm-domain ff310000.power-management:power-controller: Looking up vo-supply property in node /power-management@ff310000/power-controller failed
+[   17.103410] rockchip-vop ff8f0000.vop: [drm:vop_crtc_atomic_enable] Update mode to 1920x1080p60, type: 11
+[   17.103458] rk_iommu ff8f3f00.iommu: genpd_runtime_resume()
+[   17.103499] rockchip-vop ff8f0000.vop: genpd_runtime_resume()
+INIT: cannot execute "/usr/sbin/lxdm"
+INIT: cannot execute "/usr/sbin/lxdm"
+INIT: cannot execute "/usr/sbin/lxdm"
+INIT: cannot execute "/usr/sbin/lxdm"
+INIT: cannot execute "/usr/sbin/lxdm"
+INIT: cannot execute "/usr/sbin/lxdm"
+INIT: cannot execute "/usr/sbin/lxdm"
+INIT: cannot execute "/usr/sbin/lxdm"
+INIT: cannot execute "/usr/sbin/lxdm"
+INIT: cannot execute "/usr/sbin/lxdm"
+INIT: Id "1" respawning too fast: disabled for 5 minutes
+
+Poky (Yocto Project Reference Distro) 4.0.32 rk3399-firefly /dev/ttyS2
+
+rk3399-firefly login: The XKEYBOARD keymap compiler (xkbcomp) reports:
+> Warning:          Could not resolve keysym XF86EmojiPicker
+Errors from xkbcomp are not fatal to the X server
+D-BUS per-session daemon address is: unix:path=/tmp/dbus-gEOrDglTOe,guid=9adbf57d5872f1cf7e17d5b15aa27f7c
+/etc/X11/Xsession.d/89xdgautostart.sh: line 5: xscreensaver: command not found
+Error: No calibratable devices found.
+
+** (xfce-polkit:1252): [1;35mCRITICAL[0m **: [34m12:35:09.328[0m: polkit_agent_listener_register_with_options: assertion 'POLKIT_IS_SUBJECT (subject)' failed
+
+** (xfce4-power-manager:1272): [1;33mWARNING[0m **: [34m12:35:09.370[0m: Failed to get name owner: GDBus.Error:org.freedesktop.DBus.Error.NameHasNoOwner: Could not get owner of name 'org.freedesktop.PowerManagement': no such name
+
+
+** (xfce4-power-manager:1272): [1;33mWARNING[0m **: [34m12:35:09.386[0m: Failed to get name owner: GDBus.Error:org.freedesktop.DBus.Error.NameHasNoOwner: Could not get owner of name 'org.xfce.PowerManager': no such name
+
+
+(xfce4-power-manager:1272): xfce4-power-manager-[1;33mWARNING[0m **: [34m12:35:09.387[0m: Unable to connect to session manager : Failed to connect to the session manager: SESSION_MANAGER environment variable not defined
+dbus-daemon[1299]: Activating service name='org.a11y.atspi.Registry' requested by ':1.4' (uid=0 pid=1280 comm="xfsettingsd")
+dbus-daemon[1299]: Successfully activated service 'org.a11y.atspi.Registry'
+xfsettingsd-[1;32mMessage[0m: [34m12:35:09.476[0m: Skipping screen 0, it already has an xsettings manager...
+SpiRegistry daemon is running with well-known name - org.a11y.atspi.Registry
+[settings daemon] Forking. run with -n to prevent fork
+
+** (xfce4-clipman:1256): [1;33mWARNING[0m **: [34m12:35:09.739[0m: Unable to register GApplication: An object is already exported for the interface org.gtk.Application at /org/xfce/clipman
+
+(xfce4-clipman:1256): GLib-GIO-[1;35mCRITICAL[0m **: [34m12:35:09.741[0m: g_application_get_is_remote: assertion 'application->priv->is_registered' failed
+
+(xfce4-clipman:1256): GLib-[1;33mWARNING[0m **: [34m12:35:09.741[0m: g_set_application_name() called multiple times
+
+(xfce4-power-manager:1272): libnotify-[1;33mWARNING[0m **: [34m12:35:09.755[0m: Failed to connect to proxy
+Failed to connect to session manager: Failed to connect to the session manager: SESSION_MANAGER environment variable not defined
+
+(xfce4-power-manager:1272): xfce4-power-manager-[1;33mWARNING[0m **: [34m12:35:10.144[0m: 'CanStop' method failed : GDBus.Error:org.freedesktop.DBus.Error.ServiceUnknown: The name org.freedesktop.ConsoleKit was not provided by any .service files
+
+(xfce4-power-manager:1272): xfce4-power-manager-[1;33mWARNING[0m **: [34m12:35:10.146[0m: 'CanRestart' method failed : GDBus.Error:org.freedesktop.DBus.Error.ServiceUnknown: The name org.freedesktop.ConsoleKit was not provided by any .service files
+/usr/bin/iceauth:  creating new authority file /tmp/ICEauthority
+xfce4-session: No GPG agent found
+
+** (xfce4-clipman:1256): [1;33mWARNING[0m **: [34m12:35:10.186[0m: Clipboard manager is already running.
+xfce4-session: No SSH authentication agent found
+
+(xfce4-power-manager:1272): GLib-GObject-[1;33mWARNING[0m **: [34m12:35:10.270[0m: ../glib-2.72.3/gobject/gsignal.c:2613: signal 'Changed' is invalid for instance '0x5586e629f0' of type 'GDBusProxy'
+
+(xfce4-power-manager:1272): xfce4-power-manager-[1;33mWARNING[0m **: [34m12:35:10.481[0m: could not map keysym 1008ffa8 to keycode
+
+
+** (xfce4-power-manager:1272): [1;33mWARNING[0m **: [34m12:35:10.483[0m: No outputs have backlight property
+
+(xfce4-power-manager:1272): xfce4-power-manager-[1;33mWARNING[0m **: [34m12:35:10.498[0m: Failed to get keyboard max brightness level : GDBus.Error:org.freedesktop.DBus.Error.UnknownMethod: Object does not exist at path ?/org/freedesktop/UPower/KbdBacklight?
+
+(xfsettingsd:1280): xfsettingsd-[1;33mWARNING[0m **: [34m12:35:10.871[0m: Failed to get the _NET_NUMBER_OF_DESKTOPS property.
+
+(xfwm4:1428): xfwm4-[1;33mWARNING[0m **: [34m12:35:11.071[0m: GLX extension missing, GLX support disabled.
+blueman-applet 12.35.11 ERROR    PluginManager:90 load_plugin: Unable to load plugin module KillSwitch
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/blueman/main/PluginManager.py", line 88, in load_plugin
+    importlib.import_module(self.module_path.__name__ + f".{plugin}")
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/usr/lib/python3.10/site-packages/blueman/plugins/applet/KillSwitch.py", line 24, in <module>
+    raise ImportError('Hardware kill switch not found')
+ImportError: Hardware kill switch not found
+blueman-applet 12.35.11 WARNING  PluginManager:147 __load_plugin: Not loading DhcpClient because its conflict has higher priority
+blueman-applet 12.35.11 WARNING  PluginManager:147 __load_plugin: Not loading PPPSupport because its conflict has higher priority
+blueman-applet 12.35.11 WARNING  TransferService:213 _make_share_path: Failed to get Download dir from XDG
+blueman-applet 12.35.12 WARNING  DiscvManager:119 update_menuitems: warning: Adapter is None
+
+** (wrapper-2.0:1457): [1;33mWARNING[0m **: [34m12:35:14.632[0m: No outputs have backlight property
+
+(wrapper-2.0:1458): GLib-GIO-[1;35mCRITICAL[0m **: [34m12:35:14.713[0m: g_file_new_for_path: assertion 'path != NULL' failed
+
+(wrapper-2.0:1458): GLib-GIO-[1;35mCRITICAL[0m **: [34m12:35:14.715[0m: g_file_monitor_file: assertion 'G_IS_FILE (file)' failed
+
+(wrapper-2.0:1458): GLib-GObject-[1;33mWARNING[0m **: [34m12:35:14.715[0m: invalid (NULL) pointer instance
+
+(wrapper-2.0:1458): GLib-GObject-[1;35mCRITICAL[0m **: [34m12:35:14.715[0m: g_signal_connect_data: assertion 'G_TYPE_CHECK_INSTANCE (instance)' failed
+
+(wrapper-2.0:1458): Gtk-[1;33mWARNING[0m **: [34m12:35:14.715[0m: Attempting to add a widget with type GtkToggleButton to a container of type XfcePanelPlugin, but the widget is already inside a container of type XfcePanelPlugin, please remove the widget from its existing container first.
+
+(wrapper-2.0:1457): Gtk-[1;35mCRITICAL[0m **: [34m12:35:14.770[0m: gtk_icon_theme_has_icon: assertion 'icon_name != NULL' failed
+
+(wrapper-2.0:1457): Gtk-[1;35mCRITICAL[0m **: [34m12:35:14.787[0m: gtk_icon_theme_has_icon: assertion 'icon_name != NULL' failed
+
+(wrapper-2.0:1457): Gtk-[1;35mCRITICAL[0m **: [34m12:35:14.788[0m: gtk_icon_theme_has_icon: assertion 'icon_name != NULL' failed
+
+(wrapper-2.0:1458): Gtk-[1;33mWARNING[0m **: [34m12:35:14.895[0m: Negative content width -3 (allocation 1, extents 2x2) while allocating gadget (node button, owner GtkToggleButton)
+
+(wrapper-2.0:1457): Gtk-[1;35mCRITICAL[0m **: [34m12:35:14.941[0m: gtk_icon_theme_has_icon: assertion 'icon_name != NULL' failed
+
+(wrapper-2.0:1457): Gtk-[1;33mWARNING[0m **: [34m12:35:14.998[0m: Negative content width -3 (allocation 1, extents 2x2) while allocating gadget (node button, owner PowerManagerButton)
+
+(wrapper-2.0:1456): Gtk-[1;33mWARNING[0m **: [34m12:35:15.014[0m: Negative content width -3 (allocation 1, extents 2x2) while allocating gadget (node button, owner PulseaudioButton)
+root
+Password: 
+7[r[999;999H[6n
+(xfdesktop:1528): GVFS-[1;33mWARNING[0m **: [34m12:35:28.604[0m: The peer-to-peer connection failed: Error when getting information for file ?/tmp/gvfsd?: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
+
+(xfdesktop:1528): GVFS-[1;33mWARNING[0m **: [34m12:35:28.611[0m: The peer-to-peer connection failed: Error when getting information for file ?/tmp/gvfsd?: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
+
+(xfdesktop:1528): GVFS-[1;33mWARNING[0m **: [34m12:35:28.613[0m: The peer-to-peer connection failed: Error when getting information for file ?/tmp/gvfsd?: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
+
+(xfdesktop:1528): GVFS-[1;33mWARNING[0m **: [34m12:35:28.617[0m: The peer-to-peer connection failed: Error when getting information for file ?/tmp/gvfsd?: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
+
+(xfdesktop:1528): GVFS-[1;33mWARNING[0m **: [34m12:35:28.620[0m: The peer-to-peer connection failed: Error when getting information for file ?/tmp/gvfsd?: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
+
+(xfdesktop:1528): GVFS-[1;33mWARNING[0m **: [34m12:35:28.623[0m: The peer-to-peer connection failed: Error when getting information for file ?/tmp/gvfsd?: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
+root@rk3399-firefly:~# ifconfig
+eth0      Link encap:Ethernet  HWaddr 16:6C:84:D0:44:49  
+          inet6 addr: fe80::146c:84ff:fed0:4449/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:17 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:13 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:1635 (1.5 KiB)  TX bytes:2094 (2.0 KiB)
+          Interrupt:41 
+
+lo        Link encap:Local Loopback  
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          inet6 addr: ::1/128 Scope:Host
+          UP LOOPBACK RUNNING  MTU:65536  Metric:1
+          RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:0 (0.0 B)  TX bytes:0 (0.0 B)
+
+root@rk3399-firefly:~# 
+root@rk3399-firefly:~# Xfce Power Manager: Another power manager is already running
+Another notification daemon is running, exiting
+
+** (xfce4-screensaver:1582): [1;33mWARNING[0m **: [34m12:35:35.861[0m: screensaver already running in this session
+PCRE2 library was built without JIT support
+blueman-applet 12.35.36 ERROR    PluginManager:90 load_plugin: Unable to load plugin module KillSwitch
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/blueman/main/PluginManager.py", line 88, in load_plugin
+    importlib.import_module(self.module_path.__name__ + f".{plugin}")
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/usr/lib/python3.10/site-packages/blueman/plugins/applet/KillSwitch.py", line 24, in <module>
+    raise ImportError('Hardware kill switch not found')
+ImportError: Hardware kill switch not found
+blueman-applet 12.35.36 WARNING  PluginManager:147 __load_plugin: Not loading DhcpClient because its conflict has higher priority
+blueman-applet 12.35.36 WARNING  PluginManager:147 __load_plugin: Not loading PPPSupport because its conflict has higher priority
+blueman-applet 12.35.36 WARNING  TransferService:213 _make_share_path: Failed to get Download dir from XDG

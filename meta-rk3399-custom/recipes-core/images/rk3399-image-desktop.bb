@@ -36,6 +36,11 @@ IMAGE_INSTALL += " \
     packagegroup-xfce-extended \
 "
 
+# Disable screen saver, DPMS blanking, and set uniform desktop background
+IMAGE_INSTALL += " \
+    packagegroup-display-power-management \
+"
+
 # Static IP helper for RJ45 Ethernet (eth0 -> 10.10.10.1/24)
 IMAGE_INSTALL += " \
     rk3399-static-ip \

@@ -106,6 +106,7 @@
 		regulator-max-microvolt = <5000000>;
 	};
 
+	/* USB 5V: 与厂家 AIO-3399C 一致 - host GPIO1_A0 高有效；OTG GPIO1_A3 由 regulator 拉高（6.1 PHY 不驱动 vbus-5v-gpios） */
 	vcc5v0_host: vcc5v0-host-regulator {
 		compatible = "regulator-fixed";
 		enable-active-high;
@@ -113,6 +114,53 @@
 		pinctrl-names = "default";
 		pinctrl-0 = <&vcc5v0_host_en>;
 		regulator-name = "vcc5v0_host";
+		regulator-always-on;
+		regulator-boot-on;
+		vin-supply = <&vcc5v0_sys>;
+	};
+
+	vcc5v0_otg: vcc5v0-otg-regulator {
+		compatible = "regulator-fixed";
+		enable-active-high;
+		gpio = <&gpio1 RK_PA3 GPIO_ACTIVE_HIGH>;
+		pinctrl-names = "default";
+		pinctrl-0 = <&vcc5v0_otg_en>;
+		regulator-name = "vcc5v0_otg";
+		regulator-always-on;
+		regulator-boot-on;
+		vin-supply = <&vcc5v0_sys>;
+	};
+
+	/* 与厂家 AIO-3399C 一致：USB Hub 供电使能 (host-hub-vcc 三路) */
+	vcc_host_hub_1: vcc-host-hub-1 {
+		compatible = "regulator-fixed";
+		enable-active-high;
+		gpio = <&gpio1 RK_PC7 GPIO_ACTIVE_HIGH>;
+		pinctrl-names = "default";
+		pinctrl-0 = <&host_hub_vcc>;
+		regulator-name = "vcc_host_hub_1";
+		regulator-always-on;
+		regulator-boot-on;
+		vin-supply = <&vcc5v0_sys>;
+	};
+	vcc_host_hub_2: vcc-host-hub-2 {
+		compatible = "regulator-fixed";
+		enable-active-high;
+		gpio = <&gpio2 RK_PA4 GPIO_ACTIVE_HIGH>;
+		pinctrl-names = "default";
+		pinctrl-0 = <&host_hub_vcc>;
+		regulator-name = "vcc_host_hub_2";
+		regulator-always-on;
+		regulator-boot-on;
+		vin-supply = <&vcc5v0_sys>;
+	};
+	vcc_host_hub_3: vcc-host-hub-3 {
+		compatible = "regulator-fixed";
+		enable-active-high;
+		gpio = <&gpio4 RK_PD5 GPIO_ACTIVE_HIGH>;
+		pinctrl-names = "default";
+		pinctrl-0 = <&host_hub_vcc>;
+		regulator-name = "vcc_host_hub_3";
 		regulator-always-on;
 		regulator-boot-on;
 		vin-supply = <&vcc5v0_sys>;
@@ -423,16 +471,16 @@
 	status = "okay";
 };
 
+/* USB: host from vcc5v0_host, OTG from vcc5v0_otg (regulator drives GPIO1_A3; PHY vbus-5v-gpios not used on 6.1) */
 &u2phy0_host {
 	phy-supply = <&vcc5v0_host>;
-	vbus-supply = <&vcc5v0_host>;
 	status = "okay";
 };
 
 &u2phy0_otg {
 	status = "okay";
 	rockchip,vbus-always-on;
-	vbus-5v-gpios = <&gpio1 RK_PA3 GPIO_ACTIVE_HIGH>;
+	phy-supply = <&vcc5v0_otg>;
 };
 
 &u2phy1 {
@@ -441,7 +489,6 @@
 
 &u2phy1_host {
 	phy-supply = <&vcc5v0_host>;
-	vbus-supply = <&vcc5v0_host>;
 	status = "okay";
 };
 
@@ -477,7 +524,6 @@
 &usbdrd_dwc3_0 {
 	dr_mode = "host";
 	phy_type = "utmi_wide";
-	vbus-supply = <&vcc5v0_host>;
 	snps,dis_enblslpm_quirk;
 	snps,dis-u2-freeclk-exists-quirk;
 	snps,dis_u2_susphy_quirk;
@@ -496,7 +542,6 @@
 &usbdrd_dwc3_1 {
 	dr_mode = "host";
 	phy_type = "utmi_wide";
-	vbus-supply = <&vcc5v0_host>;
 	snps,dis_enblslpm_quirk;
 	snps,dis-u2-freeclk-exists-quirk;
 	snps,dis_u2_susphy_quirk;
@@ -529,6 +574,20 @@
 		vcc5v0_host_en: vcc5v0-host-en {
 			rockchip,pins =
 				<1 RK_PA0 RK_FUNC_GPIO &pcfg_pull_none>;
+		};
+		vcc5v0_otg_en: vcc5v0-otg-en {
+			rockchip,pins =
+				<1 RK_PA3 RK_FUNC_GPIO &pcfg_pull_none>;
+		};
+	};
+
+	/* 与厂家 AIO-3399C 一致：USB Hub 供电相关引脚 (GPIO1_B7, GPIO2_A4, GPIO4_D5) */
+	host-hub-vcc {
+		host_hub_vcc: host-hub-vcc {
+			rockchip,pins =
+				<1 RK_PC7 RK_FUNC_GPIO &pcfg_pull_none>,
+				<2 RK_PA4 RK_FUNC_GPIO &pcfg_pull_none>,
+				<4 RK_PD5 RK_FUNC_GPIO &pcfg_pull_none>;
 		};
 	};
 
