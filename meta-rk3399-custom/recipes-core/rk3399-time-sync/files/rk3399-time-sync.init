@@ -1,0 +1,34 @@
+#!/bin/sh
+### BEGIN INIT INFO
+# Provides:          rk3399-time-sync
+# Required-Start:    $network
+# Required-Stop:
+# Default-Start:     2 3 4 5
+# Default-Stop:
+# Short-Description: Sync system time from NTP at boot (for apt / gpg verification)
+### END INIT INFO
+
+NTPDATE=/usr/sbin/ntpdate
+POOL=pool.ntp.org
+
+case "$1" in
+  start)
+    if [ -x "$NTPDATE" ]; then
+      echo "Syncing system time from $POOL..."
+      "$NTPDATE" -s "$POOL" || true
+    fi
+    ;;
+  stop)
+    ;;
+  restart|reload|force-reload)
+    if [ -x "$NTPDATE" ]; then
+      "$NTPDATE" -s "$POOL" || true
+    fi
+    ;;
+  *)
+    echo "Usage: $0 {start|stop|restart}" >&2
+    exit 3
+    ;;
+esac
+
+exit 0

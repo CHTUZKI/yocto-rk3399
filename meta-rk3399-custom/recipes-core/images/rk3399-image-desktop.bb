@@ -46,6 +46,22 @@ IMAGE_INSTALL += " \
     rk3399-static-ip \
 "
 
+# gnupg provides gpgv, required by apt for repository signature verification
+IMAGE_INSTALL += " \
+    gnupg \
+"
+
+# Debian archive keyring so apt-get update works without manual apt-key
+IMAGE_INSTALL += " \
+    debian-archive-keyring \
+"
+
+# Boot time sync from NTP so system time is correct (avoids "Release file is not valid yet")
+IMAGE_INSTALL += " \
+    ntpdate \
+    rk3399-time-sync \
+"
+
 # LinuxCNC - CNC Machine Controller
 # LinuxCNC is a free, open source CNC controller that can drive milling machines,
 # lathes, 3D printers, laser cutters, plasma cutters, robot arms, and more.
