@@ -114,7 +114,7 @@ do_configure() {
             -e '/^\$(DOC_DIR)\/man\/%: \$(DOC_DIR)\/src\/man\/%\.adoc$/,/^\t\$</c\$(DOC_DIR)\/man\/%: \$(DOC_DIR)\/src\/man\/%\.adoc\n\t@:' \
             ${S}/docs/src/Submakefile
     fi
-     
+
     # Run autogen to generate configure script
     ./autogen.sh
     
@@ -190,6 +190,23 @@ do_install() {
     install -d ${D}${datadir}/linuxcnc/nc_files
     if [ -d ${S}/nc_files ]; then
         cp -r ${S}/nc_files/* ${D}${datadir}/linuxcnc/nc_files/ || true
+    fi
+
+    # Fix linuxcnc launcher script to use target system tools instead of
+    # build-host hosttools paths, and keep upstream behaviour for pidof -x.
+    if [ -f ${D}${bindir}/linuxcnc ]; then
+        sed -i 's|^PIDOF=.*|PIDOF="pidof -x"|' ${D}${bindir}/linuxcnc || true
+        sed -i 's|^PS=.*|PS=ps|' ${D}${bindir}/linuxcnc || true
+        sed -i 's|^AWK=.*|AWK=awk|' ${D}${bindir}/linuxcnc || true
+        sed -i 's|^GREP=.*|GREP=grep|' ${D}${bindir}/linuxcnc || true
+        sed -i 's|^IPCS=.*|IPCS=ipcs|' ${D}${bindir}/linuxcnc || true
+        sed -i 's|^KILL=.*|KILL=kill|' ${D}${bindir}/linuxcnc || true
+    fi
+
+    # Ensure Tcl can find the Linuxcnc package when running check_config.tcl
+    if [ -f ${D}${datadir}/linuxcnc/hallib/check_config.tcl ]; then
+        sed -i 's|^# begin|# begin\nlappend auto_path /usr/lib/tcltk/linuxcnc|' \
+            ${D}${datadir}/linuxcnc/hallib/check_config.tcl || true
     fi
 
     if [ -n "${RECIPE_SYSROOT_NATIVE}" ]; then

@@ -5,7 +5,7 @@
 # different name (e.g. enp1s0).
 
 IFACE="${IFACE:-eth0}"
-IP_ADDR="10.10.10.1/24"
+IP_ADDR="192.168.137.5/24"
 
 ip link set "${IFACE}" up 2>/dev/null || true
 

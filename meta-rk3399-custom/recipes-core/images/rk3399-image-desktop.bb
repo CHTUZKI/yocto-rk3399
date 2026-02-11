@@ -41,7 +41,7 @@ IMAGE_INSTALL += " \
     packagegroup-display-power-management \
 "
 
-# Static IP helper for RJ45 Ethernet (eth0 -> 10.10.10.1/24)
+# Static IP helper for RJ45 Ethernet (eth0 -> 192.168.137.5/24)
 IMAGE_INSTALL += " \
     rk3399-static-ip \
 "
@@ -111,6 +111,23 @@ IMAGE_FEATURES += " \
     x11-sato \
     package-management \
 "
+
+# ------------------------------------------------------------------
+# 配置板子上的 /etc/apt/sources.list 为常见的 Debian 源
+# 注意：这是在 Poky/Yocto 系统上直接使用 Debian 仓库，可能存在 ABI 风险，
+#       建议主要用于安装常用用户态工具，慎重升级核心库。
+# ------------------------------------------------------------------
+ROOTFS_POSTPROCESS_COMMAND += "configure_common_apt_sources; "
+
+configure_common_apt_sources() {
+    if [ -d "${IMAGE_ROOTFS}/etc/apt" ]; then
+        cat > "${IMAGE_ROOTFS}/etc/apt/sources.list" << 'EOF'
+deb http://deb.debian.org/debian bookworm main contrib non-free-firmware
+deb http://deb.debian.org/debian-security bookworm-security main contrib non-free-firmware
+deb http://deb.debian.org/debian bookworm-updates main contrib non-free-firmware
+EOF
+    fi
+}
 
 
 # Root filesystem size (larger for desktop)

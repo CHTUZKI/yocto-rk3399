@@ -1,5 +1,5 @@
-SUMMARY = "Set static IP 10.10.10.1 on RJ45 Ethernet"
-DESCRIPTION = "Simple init script that configures a static IPv4 address 10.10.10.1/24 on the primary Ethernet interface (eth0) at boot."
+SUMMARY = "Set static IP 192.168.137.5 on RJ45 Ethernet"
+DESCRIPTION = "Simple init script that configures a static IPv4 address 192.168.137.5/24 on the primary Ethernet interface (eth0) at boot."
 LICENSE = "MIT"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=349504808fb6a3b4c6aefa7e98c7705c"
 

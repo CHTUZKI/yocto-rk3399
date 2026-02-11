@@ -1,0 +1,82 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Yocto RK3399 <you@example.com>
+Date: Wed, 11 Feb 2026 12:00:00 +0000
+Subject: [PATCH] linuxcnc: use system tools and ensure Tcl can find Linuxcnc
+
+On the target image, /usr/bin/linuxcnc currently contains hardcoded
+paths to the Yocto hosttools directory, e.g.:
+
+  PIDOF="/home/xuning/yocto-rk3399/build/tmp/hosttools/pidof -x"
+  GREP=/home/xuning/yocto-rk3399/build/tmp/hosttools/grep
+
+Those paths only exist on the build host, not on the target system,
+so running linuxcnc fails with errors such as:
+
+  /usr/bin/linuxcnc: line 339: /home/.../hosttools/grep: No such file or directory
+
+The correct behaviour is to use the target's own pidof/ps/awk/grep/ipcs/kill
+found in $PATH.
+
+In addition, the Tcl helper script hallib/check_config.tcl calls:
+
+  package require Linuxcnc
+
+but does not ensure that the Linuxcnc Tcl package directory is present
+on Tcl's auto_path, which can cause "can't find package Linuxcnc" at
+runtime on Yocto systems.
+
+This patch fixes both issues:
+
+* linuxcnc.in: drop hardcoded hosttools paths and use plain command
+  names, preserving the upstream "-x" argument for pidof.
+* lib/hallib/check_config.tcl: prepend /usr/lib/tcltk/linuxcnc to
+  auto_path before "package require Linuxcnc".
+
+Upstream-Status: Inappropriate [Yocto-specific path handling]
+
+Signed-off-by: Yocto RK3399 <you@example.com>
+
+---
+ scripts/linuxcnc.in           | 10 +++++-----
+ lib/hallib/check_config.tcl   |  3 +++
+ 2 files changed, 8 insertions(+), 5 deletions(-)
+
+diff --git a/scripts/linuxcnc.in b/scripts/linuxcnc.in
+index 000000000000..111111111111 100755
+--- a/scripts/linuxcnc.in
++++ b/scripts/linuxcnc.in
+@@ -39,12 +39,12 @@
+ prefix=@prefix@
+ exec_prefix=@exec_prefix@
+ 
+-PIDOF="@PIDOF@ -x"
+-PS=@PS@
+-AWK=@AWK@
+-GREP=@GREP@
+-IPCS=@IPCS@
+-KILL=@KILL@
++# Use the target system binaries instead of build-host tools
++PIDOF="pidof -x"
++PS=ps
++AWK=awk
++GREP=grep
++IPCS=ipcs
++KILL=kill
+ 
+ LINUXCNC_HOME=@EMC2_HOME@; export LINUXCNC_HOME
+ 
+diff --git a/lib/hallib/check_config.tcl b/lib/hallib/check_config.tcl
+index 222222222222..333333333333 100755
+--- a/lib/hallib/check_config.tcl
++++ b/lib/hallib/check_config.tcl
+@@ -186,6 +186,9 @@ proc warn_for_multiple_ini_values {} {
+ } ;# warn_for_multiple_ini_values
+ 
+ #----------------------------------------------------------------------
+ # begin
++# Ensure the Linuxcnc Tcl package is visible
++lappend auto_path /usr/lib/tcltk/linuxcnc
++
+ package require Linuxcnc ;# parse_ini
+ 
+ set ::progname [file rootname [file tail [info script]]]

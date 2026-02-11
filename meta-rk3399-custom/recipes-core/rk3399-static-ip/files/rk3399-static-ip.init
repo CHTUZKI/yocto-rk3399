@@ -5,7 +5,7 @@
 # Required-Stop:
 # Default-Start:     2 3 4 5
 # Default-Stop:
-# Short-Description: Configure static IP 10.10.10.1/24 on eth0
+# Short-Description: Configure static IP 192.168.137.5/24 on eth0
 ### END INIT INFO
 
 DAEMON=/usr/sbin/rk3399-static-ip.sh
@@ -13,7 +13,7 @@ DAEMON=/usr/sbin/rk3399-static-ip.sh
 case "$1" in
   start)
     if [ -x "$DAEMON" ]; then
-      echo "Setting static IP 10.10.10.1/24 on eth0"
+      echo "Setting static IP 192.168.137.5/24 on eth0"
       "$DAEMON"
     fi
     ;;
