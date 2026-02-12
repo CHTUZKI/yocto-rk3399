@@ -9,7 +9,7 @@ LIC_FILES_CHKSUM = "file://license.terms;md5=d1b75cd3cd65de13adee2b067107a694"
 SRC_URI = "git://github.com/flightaware/tclx.git;branch=master;protocol=https \
            file://tclx-cross-times.patch \
            "
-SRCREV = "${AUTOREV}"
+SRCREV = "6320ab951ef78dd7c3aeedb6a5a8d2ae9f3e4728"
 PV = "8.6.3+git${SRCPV}"
 
 S = "${WORKDIR}/git"

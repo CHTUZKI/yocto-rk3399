@@ -23,7 +23,11 @@ PV = "2.9+git${SRCPV}"
 
 S = "${WORKDIR}/git"
 
-inherit pkgconfig python3native python3-dir gettext features_check
+BWidgetVersion = "1.9.16"
+TclLibraryPath = "/usr/lib/tcl8.6"
+TkLibraryPath = "/usr/lib/tk8.6"
+
+inherit pkgconfig python3native python3-dir gettext features_check useradd
 
 # Ensure configure can find ps via hosttools
 HOSTTOOLS += "ps"
@@ -70,6 +74,7 @@ RDEPENDS:${PN} = " \
     tcl \
     tk \
     tk-lib \
+    bwidget \
     bash \
     mesa-demos \
     procps \
@@ -80,6 +85,7 @@ RDEPENDS:${PN} = " \
     libgpiod \
     libusb1 \
     libtirpc \
+    xserver-xorg-extension-glx \
 "
 
 # Recommended packages (optional but useful)
@@ -89,6 +95,9 @@ RRECOMMENDS:${PN} = " \
     tclx \
     bwidget \
 "
+
+USERADD_PACKAGES = "${PN}"
+USERADD_PARAM:${PN} = "--system --home-dir /home/linuxcnc --create-home --shell /bin/sh linuxcnc"
 
 # LinuxCNC builds in src subdirectory
 B = "${S}/src"
@@ -201,6 +210,46 @@ do_install() {
         sed -i 's|^GREP=.*|GREP=grep|' ${D}${bindir}/linuxcnc || true
         sed -i 's|^IPCS=.*|IPCS=ipcs|' ${D}${bindir}/linuxcnc || true
         sed -i 's|^KILL=.*|KILL=kill|' ${D}${bindir}/linuxcnc || true
+
+        sed -i 's|^LINUXCNC_CONFIG_PATH=.*|LINUXCNC_CONFIG_PATH="~/linuxcnc/configs:/usr/local/etc/linuxcnc/configs:/usr/share/linuxcnc/configs:/usr/share/doc/linuxcnc/examples/sample-configs"|' ${D}${bindir}/linuxcnc || true
+
+        sed -i '/^LINUXCNC_HOME=/a \
+TCLLIBPATH="/usr/lib/tcltk/linuxcnc /usr/lib/tcl8.6/bwidget${BWidgetVersion}${TCLLIBPATH:+ $TCLLIBPATH}"\
+TCL_LIBRARY="${TclLibraryPath}"\
+TK_LIBRARY="${TkLibraryPath}"\
+export TCLLIBPATH\
+export TCL_LIBRARY\
+export TK_LIBRARY\
+if [ "$(id -u 2>/dev/null)" = "0" ] && [ ! -d "${HOME}" ] && [ -d "/home/root" ]; then\
+    HOME=/home/root\
+    export HOME\
+fi\
+if [ "$(id -u 2>/dev/null)" = "0" ] && [ -z "${RTAPI_UID:-}" ]; then\
+    RTAPI_UID=$(id -u linuxcnc 2>/dev/null || echo 1000)\
+    export RTAPI_UID\
+    RTAPI_FIFO_PATH=/home/linuxcnc/.rtapi_fifo\
+    export RTAPI_FIFO_PATH\
+fi\
+' ${D}${bindir}/linuxcnc || true
+    fi
+
+    install -d ${D}${datadir}/doc/linuxcnc/examples
+    ln -sf ../../linuxcnc/configs ${D}${datadir}/doc/linuxcnc/examples/sample-configs
+
+    if [ -f ${D}${libdir}/linuxcnc/realtime ]; then
+        sed -i 's|^GREP=.*|GREP=grep|' ${D}${libdir}/linuxcnc/realtime || true
+        sed -i 's|^PS=.*|PS=ps|' ${D}${libdir}/linuxcnc/realtime || true
+        sed -i 's|^FUSER=.*|FUSER=fuser|' ${D}${libdir}/linuxcnc/realtime || true
+        sed -i 's|^[[:space:]]*sysconfdir=.*|    sysconfdir=/etc|' ${D}${libdir}/linuxcnc/realtime || true
+    fi
+
+    if [ -d ${D}${libdir} ]; then
+        if [ ! -e ${D}${libdir}/libGL.so ] && [ -e ${D}${libdir}/libGL.so.1 ]; then
+            ln -sf libGL.so.1 ${D}${libdir}/libGL.so
+        fi
+        if [ ! -e ${D}${libdir}/libEGL.so ] && [ -e ${D}${libdir}/libEGL.so.1 ]; then
+            ln -sf libEGL.so.1 ${D}${libdir}/libEGL.so
+        fi
     fi
 
     # Ensure Tcl can find the Linuxcnc package when running check_config.tcl
@@ -216,6 +265,9 @@ do_install() {
                 "$f" || true
         done
     fi
+
+    install -d ${D}${PYTHON_SITEPACKAGES_DIR}
+    echo "/usr/lib/python3/dist-packages" > ${D}${PYTHON_SITEPACKAGES_DIR}/linuxcnc-dist-packages.pth
 }
 
 # Define packages

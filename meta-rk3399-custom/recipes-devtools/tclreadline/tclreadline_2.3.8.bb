@@ -6,7 +6,7 @@ LICENSE = "BSD-3-Clause"
 LIC_FILES_CHKSUM = "file://COPYING;md5=0ed764ffba5b33604dd2f7c917a2a087"
 
 SRC_URI = "git://github.com/flightaware/tclreadline.git;branch=master;protocol=https"
-SRCREV = "${AUTOREV}"
+SRCREV = "da7a1f06965a18b1559b570accb535ddc6f2f7bd"
 PV = "2.3.8+git${SRCPV}"
 
 S = "${WORKDIR}/git"

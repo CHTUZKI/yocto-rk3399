@@ -1,0 +1,41 @@
+Build Configuration:
+BB_VERSION           = "2.0.0"
+BUILD_SYS            = "x86_64-linux"
+NATIVELSBSTRING      = "universal"
+TARGET_SYS           = "aarch64-poky-linux"
+MACHINE              = "rk3399-firefly"
+DISTRO               = "poky"
+DISTRO_VERSION       = "4.0.32"
+TUNE_FEATURES        = "aarch64"
+TARGET_FPU           = ""
+meta
+meta-poky
+meta-yocto-bsp       = "HEAD:2c05660b21c7cc1082aeac8b75d8a2d82e249f63"
+meta-rk3399-custom   = "LinuxCNC:779a82195b71f3a136c36573a061b392a9aad33e"
+meta-oe
+meta-python
+meta-networking
+meta-multimedia
+meta-xfce
+meta-gnome           = "HEAD:97d4be2839754dadfc326c21948472c2fc2985ce"
+
+WARNING: /home/xuning/yocto-rk3399/meta-rk3399-custom/recipes-devtools/yapps2/yapps2-native_2.2.1.bb:do_fetch is tainted from a forced run
+WARNING: /home/xuning/yocto-rk3399/meta-rk3399-custom/recipes-devtools/yapps2/yapps2-native_2.2.1.bb:do_unpack is tainted from a forced run
+WARNING: /home/xuning/yocto-rk3399/meta-rk3399-custom/recipes-devtools/yapps2/yapps2-native_2.2.1.bb:do_populate_lic is tainted from a forced run
+Initialising tasks: 100% |###############################################################################| Time: 0:00:07
+Sstate summary: Wanted 565 Local 106 Mirrors 0 Missed 459 Current 3292 (18% match, 88% complete)
+Removing 111 stale sstate objects for arch rk3399_firefly: 100% |########################################| Time: 0:00:02
+Removing 244 stale sstate objects for arch armv8a: 100% |################################################| Time: 0:00:00
+NOTE: Executing Tasks
+ERROR: mesa-2_22.0.3-r0 do_package_qa: QA Issue: non -dev/-dbg/nativesdk- package libgl-mesa contains symlink .so '/usr/lib/libGL.so' [dev-so]
+ERROR: mesa-2_22.0.3-r0 do_package_qa: QA Issue: non -dev/-dbg/nativesdk- package libegl-mesa contains symlink .so '/usr/lib/libEGL.so' [dev-so]
+ERROR: mesa-2_22.0.3-r0 do_package_qa: Fatal QA errors were found, failing task.
+ERROR: Logfile of failure stored in: /home/xuning/yocto-rk3399/build/tmp/work/armv8a-poky-linux/mesa/2_22.0.3-r0/temp/log.do_package_qa.1342916
+ERROR: Task (/home/xuning/yocto-rk3399/poky/meta/recipes-graphics/mesa/mesa_22.0.3.bb:do_package_qa) failed with exit code '1'
+NOTE: Tasks Summary: Attempted 8140 tasks of which 8114 didn't need to be rerun and 1 failed.
+
+Summary: 1 task failed:
+  /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/mesa/mesa_22.0.3.bb:do_package_qa
+Summary: There were 3 WARNING messages.
+Summary: There were 3 ERROR messages, returning a non-zero exit code.
+xuning@DESKTOP-176A4AI:~/yocto-rk3399/build$

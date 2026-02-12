@@ -5,7 +5,7 @@ LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/GPL-2.0-only;md5=801f80980d171d
 
 # Debian bookworm keyring (all arch)
 # Update version and sha256 when upgrading: https://packages.debian.org/bookworm/debian-archive-keyring
-SRC_URI = "http://ftp.debian.org/debian/pool/main/d/debian-archive-keyring/debian-archive-keyring_2023.3+deb12u2_all.deb;downloadfilename=debian-archive-keyring.deb"
+SRC_URI = "http://ftp.debian.org/debian/pool/main/d/debian-archive-keyring/debian-archive-keyring_2023.3+deb12u2_all.deb;downloadfilename=debian-archive-keyring.deb;unpack=false"
 SRC_URI[sha256sum] = "f699e2f88dca05212f2a452b58475f2993cb6993dfbafb1d0205a3291eb8b4b8"
 
 do_configure[noexec] = "1"
@@ -14,7 +14,7 @@ do_compile[noexec] = "1"
 do_install() {
     install -d ${D}${sysconfdir}/apt/trusted.gpg.d
     cd ${WORKDIR}
-    ar x debian-archive-keyring.deb
+    ar x ${DL_DIR}/debian-archive-keyring.deb
     tar xf data.tar* -C ${D}
     if [ -f ${D}/usr/share/keyrings/debian-archive-keyring.gpg ]; then
         install -m 0644 ${D}/usr/share/keyrings/debian-archive-keyring.gpg ${D}${sysconfdir}/apt/trusted.gpg.d/debian-bookworm-archive.gpg
@@ -22,6 +22,6 @@ do_install() {
     rm -rf ${D}/usr
 }
 
-FILES:${PN} = "${sysconfdir}/apt/trusted.gpg.d/*.gpg"
+FILES:${PN} = "${sysconfdir}/apt/trusted.gpg.d/*.gpg ${sysconfdir}/apt/trusted.gpg.d/*.asc"
 
 INSANE_SKIP:${PN} = "already-stripped ldflags file-rdeps"

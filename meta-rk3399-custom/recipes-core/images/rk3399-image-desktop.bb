@@ -46,9 +46,19 @@ IMAGE_INSTALL += " \
     rk3399-static-ip \
 "
 
+# Real-time tuning at boot (governor/idle/scheduler)
+IMAGE_INSTALL += " \
+    rk3399-rt-tune \
+"
+
 # gnupg provides gpgv, required by apt for repository signature verification
 IMAGE_INSTALL += " \
     gnupg \
+"
+
+# kmod provides lsmod (used by latency-histogram)
+IMAGE_INSTALL += " \
+    kmod \
 "
 
 # Debian archive keyring so apt-get update works without manual apt-key
@@ -141,6 +151,13 @@ configure_common_apt_sources() {
 deb http://deb.debian.org/debian bookworm main contrib non-free-firmware
 deb http://deb.debian.org/debian-security bookworm-security main contrib non-free-firmware
 deb http://deb.debian.org/debian bookworm-updates main contrib non-free-firmware
+EOF
+
+        install -d "${IMAGE_ROOTFS}/etc/apt/sources.list.d"
+        cat > "${IMAGE_ROOTFS}/etc/apt/sources.list.d/bullseye.list" << 'EOF'
+deb http://deb.debian.org/debian bullseye main contrib non-free
+deb http://deb.debian.org/debian-security bullseye-security main contrib non-free
+deb http://deb.debian.org/debian bullseye-updates main contrib non-free
 EOF
     fi
 }

@@ -1,0 +1,32 @@
+#!/bin/sh
+### BEGIN INIT INFO
+# Provides:          rk3399-rt-tune
+# Required-Start:    $remote_fs $syslog
+# Required-Stop:
+# Default-Start:     2 3 4 5
+# Default-Stop:
+# Short-Description: Apply real-time tuning (CPU governor/IRQ/scheduler)
+### END INIT INFO
+
+DAEMON=/usr/sbin/rk3399-rt-tune.sh
+
+case "$1" in
+  start)
+    if [ -x "$DAEMON" ]; then
+      "$DAEMON" || true
+    fi
+    ;;
+  stop)
+    ;;
+  restart|reload|force-reload)
+    if [ -x "$DAEMON" ]; then
+      "$DAEMON" || true
+    fi
+    ;;
+  *)
+    echo "Usage: $0 {start|stop|restart}" >&2
+    exit 3
+    ;;
+esac
+
+exit 0

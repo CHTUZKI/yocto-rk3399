@@ -30,8 +30,13 @@ do_install() {
     if [ ! -f ${D}${libdir}/tcltk/bwidget${PV}/pkgIndex.tcl ]; then
         echo "package ifneeded BWidget ${PV} [list source [file join \$dir bwidget.tcl]]" > ${D}${libdir}/tcltk/bwidget${PV}/pkgIndex.tcl
     fi
+
+    ln -sf ../tcltk/bwidget${PV} ${D}${libdir}/bwidget${PV}
+
+    install -d ${D}${libdir}/tcl8.6
+    ln -sf ../tcltk/bwidget${PV} ${D}${libdir}/tcl8.6/bwidget${PV}
 }
 
-FILES:${PN} = "${libdir}/tcltk/bwidget${PV}"
+FILES:${PN} = "${libdir}/tcltk/bwidget${PV} ${libdir}/bwidget${PV} ${libdir}/tcl8.6/bwidget${PV}"
 
 BBCLASSEXTEND = "native nativesdk"

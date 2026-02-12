@@ -8,6 +8,13 @@ CONFIG_HOTPLUG_CPU=y
 CONFIG_PREEMPT=y
 CONFIG_PREEMPT_VOLUNTARY=y
 
+# System V IPC - required by LinuxCNC uspace RTAPI
+CONFIG_SYSVIPC=y
+CONFIG_SYSVIPC_SYSCTL=y
+CONFIG_SYSV_SHM=y
+CONFIG_SYSV_SEM=y
+CONFIG_SYSV_MSG=y
+
 # Disable EFI STUB to generate standard ARM64 Image for U-Boot
 # CONFIG_EFI_STUB is not set
 # CONFIG_EFI is not set

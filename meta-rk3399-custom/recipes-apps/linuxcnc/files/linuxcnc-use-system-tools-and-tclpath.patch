@@ -39,13 +39,13 @@ Signed-off-by: Yocto RK3399 <you@example.com>
 ---
  scripts/linuxcnc.in           | 10 +++++-----
  lib/hallib/check_config.tcl   |  3 +++
- 2 files changed, 8 insertions(+), 5 deletions(-)
+ 2 files changed, 11 insertions(+), 5 deletions(-)
 
 diff --git a/scripts/linuxcnc.in b/scripts/linuxcnc.in
 index 000000000000..111111111111 100755
 --- a/scripts/linuxcnc.in
 +++ b/scripts/linuxcnc.in
-@@ -39,12 +39,12 @@
+@@ -39,12 +39,18 @@
  prefix=@prefix@
  exec_prefix=@exec_prefix@
  
@@ -62,7 +62,11 @@ index 000000000000..111111111111 100755
 +GREP=grep
 +IPCS=ipcs
 +KILL=kill
- 
++
++# Ensure Tcl can locate LinuxCNC- and BWidget-provided modules
++TCLLIBPATH="/usr/lib/tcltk/linuxcnc:/usr/lib/tcltk/bwidget1.9.16${TCLLIBPATH:+:$TCLLIBPATH}"
++export TCLLIBPATH
+
  LINUXCNC_HOME=@EMC2_HOME@; export LINUXCNC_HOME
  
 diff --git a/lib/hallib/check_config.tcl b/lib/hallib/check_config.tcl
