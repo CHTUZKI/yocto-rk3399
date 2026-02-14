@@ -6,8 +6,8 @@ UBOOT_SUFFIX = "img"
 UBOOT_BINARY = "u-boot.itb"
 
 # Kernel
-PREFERRED_PROVIDER_virtual/kernel = "linux-rockchip"
-PREFERRED_VERSION_linux-rockchip = "6.1%"
+PREFERRED_PROVIDER_virtual/kernel = "linux-mainline"
+PREFERRED_VERSION_linux-mainline = "6.1.163"
 
 # Machine architecture
 TARGET_ARCH = "aarch64"

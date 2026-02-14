@@ -1,41 +1,31 @@
-Build Configuration:
-BB_VERSION           = "2.0.0"
-BUILD_SYS            = "x86_64-linux"
-NATIVELSBSTRING      = "universal"
-TARGET_SYS           = "aarch64-poky-linux"
-MACHINE              = "rk3399-firefly"
-DISTRO               = "poky"
-DISTRO_VERSION       = "4.0.32"
-TUNE_FEATURES        = "aarch64"
-TARGET_FPU           = ""
-meta
-meta-poky
-meta-yocto-bsp       = "HEAD:2c05660b21c7cc1082aeac8b75d8a2d82e249f63"
-meta-rk3399-custom   = "LinuxCNC:779a82195b71f3a136c36573a061b392a9aad33e"
-meta-oe
-meta-python
-meta-networking
-meta-multimedia
-meta-xfce
-meta-gnome           = "HEAD:97d4be2839754dadfc326c21948472c2fc2985ce"
+o_populate_sysroot']
+| NOTE: Installed into sysroot: ['dosfstools-native', 'gptfdisk-native', 'parted-native', 'popt-native']
+| NOTE: Skipping as already exists in sysroot: ['rk-binary-native', 'cross-localedef-native', 'ldconfig-native', 'binutils-cross-aarch64', 'cdrtools-native', 'qemuwrapper-cross', 'depmodwrapper-cross', 'update-rc.d-native', 'apt-native', 'btrfs-tools-native', 'dpkg-native', 'e2fsprogs-native', 'erofs-utils-native', 'makedevs-native', 'mtools-native', 'opkg-utils-native', 'pseudo-native', 'squashfs-tools-native', 'syslinux-native', 'pigz-native', 'bmap-tools-native', 'systemd-systemctl-native', 'gdk-pixbuf-native', 'gtk+3-native', 'python3-native', 'python3-wheel-native', 'python3-setuptools-native', 'python3-installer-native', 'python3-six-native', 'coreutils-native', 'texinfo-dummy-native', 'libtool-native', 'kmod-native', 'perl-native', 'shadow-native', 'gnu-config-native', 'zlib-native', 'flex-native', 'lz4-native', 'util-linux-libuuid-native', 'openssl-native', 'debianutils-native', 'util-linux-native', 'ncurses-native', 'gettext-minimal-native', 'gettext-native', 'xz-native', 'bzip2-native', 'qemu-native', 'readline-native', 'glib-2.0-native', 'gnutls-native', 'libgcrypt-native', 'xxhash-native', 'cmake-native', 'db-native', 'mkfontscale-native', 'desktop-file-utils-native', 'nss-native', 'attr-native', 'lzo-native', 'zstd-native', 'shared-mime-info-native', 'nasm-native', 'gconf-native', 'libpng-native', 'gobject-introspection-native', 'libjpeg-turbo-native', 'libxfixes-native', 'atk-native', 'libxcomposite-native', 'fontconfig-native', 'at-spi2-atk-native', 'libxi-native', 'pango-native', 'cairo-native', 'libxext-native', 'libxrandr-native', 'libx11-native', 'libxdamage-native', 'libxcursor-native', 'libxrender-native', 'libtirpc-native', 'libffi-native', 'libnsl2-native', 'sqlite3-native', 'gdbm-native', 'python3-flit-core-native', 'unzip-native', 'make-native', 'm4-native', 'libpcre2-native', 'libcap-ng-native', 'libpcre-native', 'gmp-native', 'libidn2-native', 'libunistring-native', 'nettle-native', 'libgpg-error-native', 'libcap-native', 'curl-native', 'freetype-native', 'xorgproto-native', 'util-macros-native', 'libfontenc-native', 'nspr-native', 'libxml2-native', 'itstool-native', 'groff-native', 'dbus-native', 'intltool-native', 'dbus-glib-native', 'expat-native', 'at-spi2-core-native', 'libxft-native', 'fribidi-native', 'harfbuzz-native', 'libxcb-native', 'pixman-native', 'libsm-native', 'xtrans-native', 'font-util-native', 'libxml-parser-perl-native', 'libxtst-native', 'icu-native', 'xcb-proto-native', 'libxau-native', 'libpthread-stubs-native', 'libxdmcp-native', 'libice-native']
+| DEBUG: Python function extend_recipe_sysroot finished
+| DEBUG: Executing python function set_image_size
+| DEBUG: 896282.400000 = 689448 * 1.300000
+| DEBUG: 3145728.000000 = max(896282.400000, 3145728)[3145728.000000] + 0
+| DEBUG: 3145728.000000 = int(3145728.000000)
+| DEBUG: 3145728 = aligned(3145728)
+| DEBUG: returning 3145728
+| DEBUG: Python function set_image_size finished
+| DEBUG: Executing shell function do_image_wic
+| INFO: Creating image(s)...
+|
+| ERROR: _exec_cmd: install -m 0644 -D /home/xuning/yocto-rk3399/build/tmp/deploy/images/rk3399-firefly/rk3399-evb.dtb /home/xuning/yocto-rk3399/build/tmp/work/rk3399_firefly-poky-linux/rk3399-image-desktop/1.0-r0/tmp-wic/boot.1/rk3399-evb.dtb returned '1' instead of 0
+| output: install: cannot stat '/home/xuning/yocto-rk3399/build/tmp/deploy/images/rk3399-firefly/rk3399-evb.dtb': No such file or directory
+|
+| WARNING: exit code 1 from a shell command.
+ERROR: Task (/home/xuning/yocto-rk3399/meta-rk3399-custom/recipes-core/images/rk3399-image-desktop.bb:do_image_wic) failed with exit code '1'
+Pseudo log:
+symlink err : 5706662 ['/home/xuning/yocto-rk3399/build/tmp/work/rk3399_firefly-poky-linux/rk3399-image-desktop/1.0-r0/rootfs/boot/Image'] (db '/home/xuning/yocto-rk3399/build/tmp/work/rk3399_firefly-poky-linux/rk3399-image-desktop/1.0-r0/rootfs/boot/Image') db mode 0120777, header mode 0100644 (unlinking db)
+symlink mismatch: '/home/xuning/yocto-rk3399/build/tmp/work/rk3399_firefly-poky-linux/rk3399-image-desktop/1.0-r0/rootfs/boot/Image' [5706662] db mode 0120777, header mode 0100644 (unlinking db)
+Setup complete, sending SIGUSR1 to pid 671419.
 
-WARNING: /home/xuning/yocto-rk3399/meta-rk3399-custom/recipes-devtools/yapps2/yapps2-native_2.2.1.bb:do_fetch is tainted from a forced run
-WARNING: /home/xuning/yocto-rk3399/meta-rk3399-custom/recipes-devtools/yapps2/yapps2-native_2.2.1.bb:do_unpack is tainted from a forced run
-WARNING: /home/xuning/yocto-rk3399/meta-rk3399-custom/recipes-devtools/yapps2/yapps2-native_2.2.1.bb:do_populate_lic is tainted from a forced run
-Initialising tasks: 100% |###############################################################################| Time: 0:00:07
-Sstate summary: Wanted 565 Local 106 Mirrors 0 Missed 459 Current 3292 (18% match, 88% complete)
-Removing 111 stale sstate objects for arch rk3399_firefly: 100% |########################################| Time: 0:00:02
-Removing 244 stale sstate objects for arch armv8a: 100% |################################################| Time: 0:00:00
-NOTE: Executing Tasks
-ERROR: mesa-2_22.0.3-r0 do_package_qa: QA Issue: non -dev/-dbg/nativesdk- package libgl-mesa contains symlink .so '/usr/lib/libGL.so' [dev-so]
-ERROR: mesa-2_22.0.3-r0 do_package_qa: QA Issue: non -dev/-dbg/nativesdk- package libegl-mesa contains symlink .so '/usr/lib/libEGL.so' [dev-so]
-ERROR: mesa-2_22.0.3-r0 do_package_qa: Fatal QA errors were found, failing task.
-ERROR: Logfile of failure stored in: /home/xuning/yocto-rk3399/build/tmp/work/armv8a-poky-linux/mesa/2_22.0.3-r0/temp/log.do_package_qa.1342916
-ERROR: Task (/home/xuning/yocto-rk3399/poky/meta/recipes-graphics/mesa/mesa_22.0.3.bb:do_package_qa) failed with exit code '1'
-NOTE: Tasks Summary: Attempted 8140 tasks of which 8114 didn't need to be rerun and 1 failed.
+NOTE: Tasks Summary: Attempted 9011 tasks of which 8942 didn't need to be rerun and 1 failed.
 
 Summary: 1 task failed:
-  /home/xuning/yocto-rk3399/poky/meta/recipes-graphics/mesa/mesa_22.0.3.bb:do_package_qa
-Summary: There were 3 WARNING messages.
-Summary: There were 3 ERROR messages, returning a non-zero exit code.
+  /home/xuning/yocto-rk3399/meta-rk3399-custom/recipes-core/images/rk3399-image-desktop.bb:do_image_wic
+Summary: There were 4 WARNING messages.
+Summary: There was 1 ERROR message, returning a non-zero exit code.
 xuning@DESKTOP-176A4AI:~/yocto-rk3399/build$

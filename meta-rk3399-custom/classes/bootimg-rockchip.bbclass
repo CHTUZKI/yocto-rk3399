@@ -9,46 +9,15 @@ do_create_boot_script[depends] += " \
 "
 
 do_create_boot_script() {
-    # Find kernel image file name from deploy directory
-    # Look for Image-* files (kernel with version number)
-    kernel_file=""
-    
-    # Priority 1: Try Image-${KERNEL_VERSION} format (e.g., Image-6.1.115)
-    if [ -n "${KERNEL_VERSION}" ] && [ -f "${DEPLOY_DIR_IMAGE}/Image-${KERNEL_VERSION}" ]; then
-        kernel_file="Image-${KERNEL_VERSION}"
-        bbnote "Found kernel file using KERNEL_VERSION: ${kernel_file}"
-    else
-        # Priority 2: Try to find Image-X.Y.Z format (simple version number, not Yocto build name)
-        # Exclude files with Yocto build suffixes like "-r0-rk3399-firefly-..."
-        img_found=$(ls -1 ${DEPLOY_DIR_IMAGE}/Image-* 2>/dev/null | grep -E "Image-[0-9]+\.[0-9]+\.[0-9]+$" | sort -V | tail -1)
-        if [ -n "${img_found}" ] && [ -f "${img_found}" ]; then
-            kernel_file=$(basename ${img_found})
-            bbnote "Found kernel file with version number: ${kernel_file}"
-        else
-            # Priority 3: Try any Image-* file (fallback)
-            img_found=$(ls -1 ${DEPLOY_DIR_IMAGE}/Image-* 2>/dev/null | grep -v "\.bin$" | sort -V | tail -1)
-            if [ -n "${img_found}" ] && [ -f "${img_found}" ]; then
-                kernel_file=$(basename ${img_found})
-                bbnote "Found kernel file by scanning: ${kernel_file}"
-            fi
-        fi
-    fi
-    
-    # Fallback to Image if no versioned file found
-    if [ -z "${kernel_file}" ]; then
-        if [ -f "${DEPLOY_DIR_IMAGE}/Image" ]; then
-            kernel_file="Image"
-            bbnote "Using kernel file without version: ${kernel_file}"
-        else
-            bbfatal "Kernel image file not found in ${DEPLOY_DIR_IMAGE}. Please ensure kernel is built first."
-        fi
+    if [ ! -f "${DEPLOY_DIR_IMAGE}/Image" ]; then
+        bbfatal "Kernel image symlink not found in ${DEPLOY_DIR_IMAGE}/Image. Please ensure kernel is built first."
     fi
     
     # Install kernel and device tree to root filesystem /boot directory
     # This is where U-Boot bootcmd will load them from
     install -d ${IMAGE_ROOTFS}/boot
-    install -m 0644 ${DEPLOY_DIR_IMAGE}/${kernel_file} ${IMAGE_ROOTFS}/boot/Image-6.1.115
-    install -m 0644 ${DEPLOY_DIR_IMAGE}/rk3399-evb.dtb ${IMAGE_ROOTFS}/boot/rk3399-evb.dtb
+    install -m 0644 ${DEPLOY_DIR_IMAGE}/Image ${IMAGE_ROOTFS}/boot/Image
+    install -m 0644 ${DEPLOY_DIR_IMAGE}/rk3399-firefly.dtb ${IMAGE_ROOTFS}/boot/rk3399-firefly.dtb
     bbnote "Installed kernel and DTB to ${IMAGE_ROOTFS}/boot/ for direct U-Boot bootcmd"
 }
 

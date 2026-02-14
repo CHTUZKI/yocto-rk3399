@@ -104,11 +104,8 @@ WKS_FILE = "rk3399-sdimage.wks.in"
 # Boot partition size (in MB)
 BOOT_PARTITION_SIZE = "240"
 
-# Boot files to install in boot partition (FAT partition, optional)
-# Note: kernel and DTB are actually in root filesystem /boot directory
-# boot.scr is also in root filesystem /boot directory, loaded by U-Boot bootcmd
-# Boot partition may be empty or used for compatibility
-IMAGE_BOOT_FILES = "Image rk3399-evb.dtb"
+# Boot files to install in boot partition
+IMAGE_BOOT_FILES = "Image rk3399-firefly.dtb"
 
 # Create .img file from .wic file (compatible with Armbian naming)
 # This creates a .img file by copying the .wic file after all images are built

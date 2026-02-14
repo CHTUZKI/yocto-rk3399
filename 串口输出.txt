@@ -1,0 +1,423 @@
+\0\0DDR Version 1.30 20230417
+In
+channel 0
+CS = 0
+MR0=0x18
+MR4=0x2
+MR5=0x1
+MR8=0x8
+MR12=0x72
+MR14=0x72
+MR18=0x0
+MR19=0x0
+MR24=0x8
+MR25=0x0
+channel 1
+CS = 0
+MR0=0x18
+MR4=0x2
+MR5=0x1
+MR8=0x8
+MR12=0x72
+MR14=0x72
+MR18=0x0
+MR19=0x0
+MR24=0x8
+MR25=0x0
+channel 0 training pass!
+channel 1 training pass!
+change freq to 416MHz 0,1
+Channel 0: LPDDR4,416MHz
+Bus Width=32 Col=10 Bank=8 Row=15 CS=1 Die Bus-Width=16 Size=1024MB
+Channel 1: LPDDR4,416MHz
+Bus Width=32 Col=10 Bank=8 Row=15 CS=1 Die Bus-Width=16 Size=1024MB
+256B stride
+channel 0
+CS = 0
+MR0=0x18
+MR4=0x2
+MR5=0x1
+MR8=0x8
+MR12=0x72
+MR14=0x72
+MR18=0x0
+MR19=0x0
+MR24=0x8
+MR25=0x0
+channel 1
+CS = 0
+MR0=0x18
+MR4=0x2
+MR5=0x1
+MR8=0x8
+MR12=0x72
+MR14=0x72
+MR18=0x0
+MR19=0x0
+MR24=0x8
+MR25=0x0
+channel 0 training pass!
+channel 1 training pass!
+channel 0, cs 0, advanced training done
+channel 1, cs 0, advanced training done
+change freq to 856MHz 1,0
+ch 0 ddrconfig = 0x101, ddrsize = 0x20
+ch 1 ddrconfig = 0x101, ddrsize = 0x20
+pmugrf_os_reg[2] = 0x3281F281, stride = 0x9
+ddr_set_rate to 328MHZ
+ddr_set_rate to 666MHZ
+ddr_set_rate to 928MHZ
+channel 0, cs 0, advanced training done
+channel 1, cs 0, advanced training done
+ddr_set_rate to 416MHZ, ctl_index 0
+ddr_set_rate to 856MHZ, ctl_index 1
+support 416 856 328 666 928 MHz, current 856MHz
+OUT
+Boot1 Release Time: May 26 2022 18:14:35, version: 1.30
+CPUId = 0x0
+ChipType = 0x10, 321
+mmc_set_bus_width: 1
+EmmcClk: 375KHZ
+mmc_switch index:183, value:0x2
+mmc_switch index:185, value:0x2
+EmmcClk: 375KHZ
+mmc_set_bus_width: 8
+EmmcClk: 200000KHZ
+SdmmcInit=2 0
+BootCapSize=100000
+UserCapSize=29820MB
+FwPartOffset=2000 , 100000
+NeedKHz=200KHz, Clock=12000KHz
+NeedKHz=200KHz, Clock=12000KHz
+NeedKHz=200KHz, Clock=12000KHz
+mmc0:cmd8,20
+mmc0:cmd5,20
+mmc0:cmd55,20
+mmc0:cmd1,20
+NeedKHz=200KHz, Clock=12000KHz
+NeedKHz=200KHz, Clock=12000KHz
+mmc0:cmd8,20
+mmc0:cmd5,20
+mmc0:cmd55,20
+mmc0:cmd1,20
+NeedKHz=200KHz, Clock=12000KHz
+NeedKHz=200KHz, Clock=12000KHz
+mmc0:cmd8,20
+mmc0:cmd5,20
+mmc0:cmd55,20
+mmc0:cmd1,20
+NeedKHz=200KHz, Clock=12000KHz
+SdmmcInit=0 1
+StorageInit ok = 83845
+SecureMode = 0
+SecureInit read PBA: 0x4
+SecureInit read PBA: 0x404
+SecureInit read PBA: 0x804
+SecureInit read PBA: 0xc04
+SecureInit read PBA: 0x1004
+SecureInit read PBA: 0x1404
+SecureInit read PBA: 0x1804
+SecureInit read PBA: 0x1c04
+SecureInit ret = 0, SecureMode = 0
+atags_set_bootdev: ret:(0)
+GPT part:  0, name:            uboot, start:0x4000, size:0x2000
+GPT part:  1, name:            trust, start:0x6000, size:0x2000
+GPT part:  2, name:             boot, start:0x8000, size:0x9c000
+GPT part:  3, name:             root, start:0xa4000, size:0x7ccccc
+find part:uboot OK. first_lba:0x4000.
+find part:trust OK. first_lba:0x6000.
+LoadTrust Addr:0x6000
+No find bl30.bin
+No find bl32.bin
+Load uboot, ReadLba = 4000
+Load OK, addr=0x200000, size=0xbe990
+RunBL31 0x40000 @ 113812 us
+NOTICE:  BL31: v1.3(release):8f40012ab
+NOTICE:  BL31: Built : 14:20:53, Feb 16 2023
+NOTICE:  BL31: Rockchip release version: v1.1
+INFO:    GICv3 with legacy support detected. ARM GICV3 driver initialized in EL3
+INFO:    Using opteed sec cpu_context!
+INFO:    boot cpu mask: 0
+INFO:    plat_rockchip_pmu_init(1203): pd status 3e
+INFO:    BL31: Initializing runtime services
+WARNING: No OPTEE provided by BL2 boot loader, Booting device without OPTEE initialization. SMC`s destined for OPTEE will return SMC_UNK
+ERROR:   Error initializing runtime service opteed_fast
+INFO:    BL31: Preparing for EL3 exit to normal world
+INFO:    Entry point address = 0x200000
+INFO:    SPSR = 0x3c9
+
+
+U-Boot 2022.07-rk3399 (Jul 11 2022 - 13:42:58 +0000)
+
+SoC: Rockchip rk3399
+Reset cause: POR
+Model: Firefly-RK3399 Board
+DRAM:  2 GiB
+PMIC:  RK808 
+Core:  259 devices, 27 uclasses, devicetree: separate
+MMC:   mmc@fe330000: 0
+Loading Environment from nowhere... OK
+In:    serial@ff1a0000
+Out:   serial@ff1a0000
+Err:   serial@ff1a0000
+Model: Firefly-RK3399 Board
+Net:   eth0: ethernet@fe300000
+Hit any key to stop autoboot:  2  0
+=> 
+=> 
+=> 
+=> 
+=> 
+=> 
+=> 
+=> 
+=> 
+=> 
+=> 
+=> 
+=> 
+=> 
+=> 
+=> 
+=> 
+=> 
+=> 
+=> 
+=> 
+=> 
+=> 
+=> 
+=> 
+=> 
+=> 
+=> 
+=> 
+=> 
+=> 
+=> 
+=> 
+=> 
+=> 
+=> 
+=> 
+=> 
+=> 
+=> 
+=> 
+=> ext4load mmc 0:4 0x00280000 /boot/Image
+13000712 bytes read in 1225 ms (10.1 MiB/s)
+=> 
+=> ext4load mmc 0:4 0x03000000 /boot/rk3399-firefly.dtb
+63568 bytes read in 22 ms (2.8 MiB/s)
+=> 
+=> setenv bootargs 'console=ttyS2,1500000 earlycon=uart8250,mmio32,0xff1a0000,1500000n8 keep_bootcon ignore_loglevel loglevel=8 debug initcall_debug clk_ignore_unused earlyprintk'
+=> 
+=> booti 0x00280000 - 0x03000000
+Moving Image from 0x280000 to 0x400000, end=10d0000
+## Flattened Device Tree blob at 03000000
+   Booting using the fdt blob at 0x3000000
+   Loading Device Tree to 000000007deef000, end 000000007df0184f ... OK
+
+Starting kernel ...
+
+
+
+
+
+
+
+
+
+
+
+
+
+\0\0DDR Version 1.30 20230417
+In
+channel 0
+CS = 0
+MR0=0x18
+MR4=0x2
+MR5=0x1
+MR8=0x8
+MR12=0x72
+MR14=0x72
+MR18=0x0
+MR19=0x0
+MR24=0x8
+MR25=0x0
+channel 1
+CS = 0
+MR0=0x18
+MR4=0x2
+MR5=0x1
+MR8=0x8
+MR12=0x72
+MR14=0x72
+MR18=0x0
+MR19=0x0
+MR24=0x8
+MR25=0x0
+channel 0 training pass!
+channel 1 training pass!
+change freq to 416MHz 0,1
+Channel 0: LPDDR4,416MHz
+Bus Width=32 Col=10 Bank=8 Row=15 CS=1 Die Bus-Width=16 Size=1024MB
+Channel 1: LPDDR4,416MHz
+Bus Width=32 Col=10 Bank=8 Row=15 CS=1 Die Bus-Width=16 Size=1024MB
+256B stride
+channel 0
+CS = 0
+MR0=0x18
+MR4=0x2
+MR5=0x1
+MR8=0x8
+MR12=0x72
+MR14=0x72
+MR18=0x0
+MR19=0x0
+MR24=0x8
+MR25=0x0
+channel 1
+CS = 0
+MR0=0x18
+MR4=0x2
+MR5=0x1
+MR8=0x8
+MR12=0x72
+MR14=0x72
+MR18=0x0
+MR19=0x0
+MR24=0x8
+MR25=0x0
+channel 0 training pass!
+channel 1 training pass!
+channel 0, cs 0, advanced training done
+channel 1, cs 0, advanced training done
+change freq to 856MHz 1,0
+ch 0 ddrconfig = 0x101, ddrsize = 0x20
+ch 1 ddrconfig = 0x101, ddrsize = 0x20
+pmugrf_os_reg[2] = 0x3281F281, stride = 0x9
+ddr_set_rate to 328MHZ
+ddr_set_rate to 666MHZ
+ddr_set_rate to 928MHZ
+channel 0, cs 0, advanced training done
+channel 1, cs 0, advanced training done
+ddr_set_rate to 416MHZ, ctl_index 0
+ddr_set_rate to 856MHZ, ctl_index 1
+support 416 856 328 666 928 MHz, current 856MHz
+OUT
+Boot1 Release Time: May 26 2022 18:14:35, version: 1.30
+CPUId = 0x0
+ChipType = 0x10, 320
+mmc_set_bus_width: 1
+EmmcClk: 375KHZ
+mmc_switch index:183, value:0x2
+mmc_switch index:185, value:0x2
+EmmcClk: 375KHZ
+mmc_set_bus_width: 8
+EmmcClk: 200000KHZ
+SdmmcInit=2 0
+BootCapSize=100000
+UserCapSize=29820MB
+FwPartOffset=2000 , 100000
+NeedKHz=200KHz, Clock=12000KHz
+NeedKHz=200KHz, Clock=12000KHz
+NeedKHz=200KHz, Clock=12000KHz
+mmc0:cmd8,20
+mmc0:cmd5,20
+mmc0:cmd55,20
+mmc0:cmd1,20
+NeedKHz=200KHz, Clock=12000KHz
+NeedKHz=200KHz, Clock=12000KHz
+mmc0:cmd8,20
+mmc0:cmd5,20
+mmc0:cmd55,20
+mmc0:cmd1,20
+NeedKHz=200KHz, Clock=12000KHz
+NeedKHz=200KHz, Clock=12000KHz
+mmc0:cmd8,20
+mmc0:cmd5,20
+mmc0:cmd55,20
+mmc0:cmd1,20
+NeedKHz=200KHz, Clock=12000KHz
+SdmmcInit=0 1
+StorageInit ok = 83415
+SecureMode = 0
+SecureInit read PBA: 0x4
+SecureInit read PBA: 0x404
+SecureInit read PBA: 0x804
+SecureInit read PBA: 0xc04
+SecureInit read PBA: 0x1004
+SecureInit read PBA: 0x1404
+SecureInit read PBA: 0x1804
+SecureInit read PBA: 0x1c04
+SecureInit ret = 0, SecureMode = 0
+atags_set_bootdev: ret:(0)
+GPT part:  0, name:            uboot, start:0x4000, size:0x2000
+GPT part:  1, name:            trust, start:0x6000, size:0x2000
+GPT part:  2, name:             boot, start:0x8000, size:0x9c000
+GPT part:  3, name:             root, start:0xa4000, size:0x7ccccc
+find part:uboot OK. first_lba:0x4000.
+find part:trust OK. first_lba:0x6000.
+LoadTrust Addr:0x6000
+No find bl30.bin
+No find bl32.bin
+Load uboot, ReadLba = 4000
+Load OK, addr=0x200000, size=0xbe990
+RunBL31 0x40000 @ 113375 us
+NOTICE:  BL31: v1.3(release):8f40012ab
+NOTICE:  BL31: Built : 14:20:53, Feb 16 2023
+NOTICE:  BL31: Rockchip release version: v1.1
+INFO:    GICv3 with legacy support detected. ARM GICV3 driver initialized in EL3
+INFO:    Using opteed sec cpu_context!
+INFO:    boot cpu mask: 0
+INFO:    plat_rockchip_pmu_init(1203): pd status 3e
+INFO:    BL31: Initializing runtime services
+WARNING: No OPTEE provided by BL2 boot loader, Booting device without OPTEE initialization. SMC`s destined for OPTEE will return SMC_UNK
+ERROR:   Error initializing runtime service opteed_fast
+INFO:    BL31: Preparing for EL3 exit to normal world
+INFO:    Entry point address = 0x200000
+INFO:    SPSR = 0x3c9
+
+
+U-Boot 2022.07-rk3399 (Jul 11 2022 - 13:42:58 +0000)
+
+SoC: Rockchip rk3399
+Reset cause: POR
+Model: Firefly-RK3399 Board
+DRAM:  2 GiB
+PMIC:  RK808 
+Core:  259 devices, 27 uclasses, devicetree: separate
+MMC:   mmc@fe330000: 0
+Loading Environment from nowhere... OK
+In:    serial@ff1a0000
+Out:   serial@ff1a0000
+Err:   serial@ff1a0000
+Model: Firefly-RK3399 Board
+Net:   eth0: ethernet@fe300000
+Hit any key to stop autoboot:  2  0
+=> 
+=> 
+=> 
+=> 
+=> 
+=> 
+=> 
+=> ext4load mmc 0:4 0x00280000 /boot/Image
+13000712 bytes read in 1225 ms (10.1 MiB/s)
+=> 
+=> ext4load mmc 0:4 0x03000000 /boot/rk3399-firefly-mainline.dtb
+Failed to load '/boot/rk3399-firefly-mainline.dtb'
+=> 
+=> setenv bootargs 'console=ttyS2,1500000 earlycon=uart8250,mmio32,0xff1a0000,1500000n8 keep_bootcon ignore_loglevel loglevel=8 clk_ignore_unused'
+=> 
+=> booti 0x00280000 - 0x03000000
+Moving Image from 0x280000 to 0x400000, end=10d0000
+ERROR: Did not find a cmdline Flattened Device Tree
+Could not find a valid device tree
+=> 
+Moving Image from 0x280000 to 0x400000, end=10d0000
+ERROR: Did not find a cmdline Flattened Device Tree
+Could not find a valid device tree
+=> 

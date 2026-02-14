@@ -179,7 +179,7 @@ WKS_FILE = "rk3399-sdimage.wks.in"
 BOOT_PARTITION_SIZE = "240"
 
 # Boot files to install in boot partition
-IMAGE_BOOT_FILES = "Image rk3399-evb.dtb"
+IMAGE_BOOT_FILES = "Image rk3399-firefly.dtb"
 
 # Create .img file from .wic file (compatible with Armbian naming)
 do_image_complete[postfuncs] += "create_img_from_wic"

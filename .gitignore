@@ -34,6 +34,9 @@ site.conf.local
 auto.conf
 auto.conf.cmd
 
+# Reference code (keep out of git)
+参考代码/linux-6.1.163/
+
 # Temporary files
 *.bak
 *.orig
