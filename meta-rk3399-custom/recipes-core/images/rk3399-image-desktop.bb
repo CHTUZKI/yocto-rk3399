@@ -80,6 +80,11 @@ IMAGE_INSTALL += " \
     packagegroup-linuxcnc \
 "
 
+# OpenClaw - Personal AI Assistant (CLI gateway)
+IMAGE_INSTALL += " \
+    openclaw \
+"
+
 # Ensure bootloader components are built before image generation
 do_image[depends] += " \
     u-boot-rockchip:do_deploy \
